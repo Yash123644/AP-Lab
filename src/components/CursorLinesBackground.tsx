@@ -33,6 +33,7 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
     let gridLines: GridLine[] = [];
     let time = 0;
     let inView = true;
+    let pullIntensity = 0;
     
     const mouse = {
       x: -1000,
@@ -136,6 +137,7 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
       mouse.active = false;
       mouse.x = -1000;
       mouse.y = -1000;
+      mouse.isDown = false;
     };
 
     const triggerSpin = (clickX: number, clickY: number) => {
@@ -154,25 +156,38 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
 
     const handleMouseDown = (e: MouseEvent) => {
       if (!containerRef.current || isPausedRef.current) return;
+      mouse.isDown = true;
       const rect = containerRef.current.getBoundingClientRect();
       const clickX = e.clientX - rect.left;
       const clickY = e.clientY - rect.top;
       triggerSpin(clickX, clickY);
     };
 
+    const handleMouseUp = () => {
+      mouse.isDown = false;
+    };
+
     const handleTouchStart = (e: TouchEvent) => {
       if (!containerRef.current || e.touches.length === 0 || isPausedRef.current) return;
+      mouse.isDown = true;
       const rect = containerRef.current.getBoundingClientRect();
       const clickX = e.touches[0].clientX - rect.left;
       const clickY = e.touches[0].clientY - rect.top;
       triggerSpin(clickX, clickY);
     };
 
+    const handleTouchEnd = () => {
+      mouse.isDown = false;
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("touchmove", handleTouchMove);
     window.addEventListener("mouseleave", handleMouseLeave);
     window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+    window.addEventListener("touchcancel", handleTouchEnd);
 
     // Animation Loop
     const animate = () => {
@@ -184,9 +199,15 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
 
       ctx.clearRect(0, 0, width, height);
 
-      // Increment time for slow constant rotation
+      // Increment time for slow constant rotation and pull intensity for black hole effect
       if (!isPausedRef.current) {
-        time += 0.008; 
+        if (mouse.isDown) {
+          time += 0.012; 
+          pullIntensity += (1 - pullIntensity) * 0.12;
+        } else {
+          time += 0.008; 
+          pullIntensity += (0 - pullIntensity) * 0.12;
+        }
       }
 
       // Smooth/Ease the cursor coordinate to introduce a lagging "heavy" trail effect
@@ -216,6 +237,7 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
           }
         }
       }
+      easedMouse.isDown = mouse.isDown;
 
       for (let i = 0; i < gridLines.length; i++) {
         const line = gridLines[i];
@@ -227,18 +249,33 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
         // 2. Compute Cursor Influence
         let targetAngle = baseAngle;
         let influence = 0;
+        let drawX = line.cx;
+        let drawY = line.cy;
 
         if (easedMouse.active) {
           const dx = easedMouse.x - line.cx;
           const dy = easedMouse.y - line.cy;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < maxInfluenceDistance) {
-            influence = Math.pow(1 - distance / maxInfluenceDistance, 1.5);
+          const currentMaxDistance = maxInfluenceDistance;
+
+          if (distance < currentMaxDistance) {
+            influence = Math.pow(1 - distance / currentMaxDistance, 1.5);
             const angleToMouse = Math.atan2(dy, dx);
             
+            // Radial pointing: lines point directly to mouse (blackhole center)
+            const targetAngleMouse = angleToMouse;
+
             // Blend base angle and mouse tracking angle
-            targetAngle = baseAngle + (angleToMouse - baseAngle) * influence;
+            targetAngle = baseAngle + (targetAngleMouse - baseAngle) * influence;
+
+            // Black hole pull displacement: pull centers towards the mouse
+            if (pullIntensity > 0 && distance > 5) {
+              const maxPullDistance = cellSpacing * 0.75; // Pull up to 75% of cell spacing (~33px)
+              const pullDist = influence * maxPullDistance * pullIntensity;
+              drawX += (dx / distance) * pullDist;
+              drawY += (dy / distance) * pullDist;
+            }
           }
         }
 
@@ -270,18 +307,19 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
           yOpacity = Math.max(0, 1 - (line.cy - bottomFadeStart) / 250);
         }
 
-        // 5. Determine glowing intensity (0.35 resting, up to 0.85 active)
-        const opacity = (0.35 + influence * 0.48) * yOpacity;
+        // 5. Determine glowing intensity (0.35 resting, up to 0.9 active when clicked)
+        const maxActiveOpacity = easedMouse.isDown ? 0.55 : 0.48;
+        const opacity = (0.35 + influence * maxActiveOpacity) * yOpacity;
         
         // 6. Draw line
         const cos = Math.cos(line.currentAngle);
         const sin = Math.sin(line.currentAngle);
         
         const halfLength = lineLength / 2;
-        const x1 = line.cx - halfLength * cos;
-        const y1 = line.cy - halfLength * sin;
-        const x2 = line.cx + halfLength * cos;
-        const y2 = line.cy + halfLength * sin;
+        const x1 = drawX - halfLength * cos;
+        const y1 = drawY - halfLength * sin;
+        const x2 = drawX + halfLength * cos;
+        const y2 = drawY + halfLength * sin;
 
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -318,7 +356,10 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+      window.removeEventListener("touchcancel", handleTouchEnd);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

@@ -206,7 +206,7 @@ export default function JoinPage() {
               {/* Tab Details Box */}
               <motion.div 
                 variants={itemVariants}
-                className="liquid-glass rounded-2xl p-4 relative min-h-[160px]"
+                className="liquid-glass rounded-2xl p-4 relative min-h-[160px] flex flex-col"
                 style={{ borderColor: activeTabInfo.borderHex }}
               >
                 <AnimatePresence mode="wait">
@@ -216,23 +216,25 @@ export default function JoinPage() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="space-y-3"
+                    className="flex flex-col justify-between flex-grow h-full space-y-4"
                   >
-                    <div className="flex justify-between items-center">
-                      <span 
-                        className="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/10"
-                        style={{ color: activeTabInfo.hex }}
-                      >
-                        {activeTabInfo.badge}
-                      </span>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span 
+                          className="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/10"
+                          style={{ color: activeTabInfo.hex }}
+                        >
+                          {activeTabInfo.badge}
+                        </span>
+                      </div>
+                      
+                      <h3 className="font-manrope font-bold text-white text-lg leading-tight">{activeTabInfo.title}</h3>
+                      <p className="font-inter text-[13px] text-white/70 leading-normal">{activeTabInfo.description}</p>
                     </div>
-                    
-                    <h3 className="font-manrope font-bold text-white text-lg leading-tight">{activeTabInfo.title}</h3>
-                    <p className="font-inter text-[13px] text-white/70 leading-normal">{activeTabInfo.description}</p>
                     
                     <div className="space-y-1.5 pt-1">
                       <h4 className="font-cabin text-[10px] font-bold text-white/50 uppercase tracking-wider">Ideal Experience</h4>
-                      <ul className="space-y-1">
+                      <ul className="space-y-2">
                         {activeTabInfo.skills.map((skill, i) => (
                           <li key={i} className="font-inter text-[11px] text-white/60 flex items-start">
                             <span className="mr-1.5" style={{ color: activeTabInfo.hex }}>•</span>
@@ -248,18 +250,18 @@ export default function JoinPage() {
               {/* Contribution Timeline Flow */}
               <motion.div 
                 variants={itemVariants} 
-                className="liquid-glass rounded-2xl p-4 relative overflow-hidden flex flex-col justify-between"
+                className="liquid-glass rounded-2xl p-4 relative overflow-hidden flex flex-col"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-medical-teal/5 blur-[50px] rounded-full pointer-events-none" />
                 
-                <h3 className="font-cabin font-bold text-white text-xs tracking-wider uppercase mb-3 flex items-center gap-2 relative z-10">
+                <h3 className="font-cabin font-bold text-white text-xs tracking-wider uppercase mb-4 flex items-center gap-2 relative z-10">
                   <span className="w-1.5 h-1.5 rounded-full bg-medical-teal animate-pulse" />
                   The Contribution Loop
                 </h3>
                 
-                <div className="space-y-2.5 relative z-10">
+                <div className="flex flex-col justify-between flex-grow relative z-10 gap-3">
                   {/* Step 1 */}
-                  <div className="group relative rounded-xl p-2.5 bg-white/[0.01] border border-white/5 hover:bg-white/[0.04] hover:border-medical-teal/30 transition-all duration-300">
+                  <div className="group relative rounded-xl p-2.5 bg-white/[0.01] border border-white/5 hover:bg-white/[0.04] hover:border-medical-teal/30 transition-all duration-300 flex-grow flex flex-col justify-center">
                     <div className="flex items-start space-x-3">
                       <div className="w-7 h-7 rounded-lg bg-medical-teal/10 border border-medical-teal/20 flex items-center justify-center font-mono text-[10px] font-bold text-medical-teal shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_10px_rgba(0,242,255,0.05)]">
                         01
@@ -272,7 +274,7 @@ export default function JoinPage() {
                   </div>
 
                   {/* Step 2 */}
-                  <div className="group relative rounded-xl p-2.5 bg-white/[0.01] border border-white/5 hover:bg-white/[0.04] hover:border-primary-purple/30 transition-all duration-300">
+                  <div className="group relative rounded-xl p-2.5 bg-white/[0.01] border border-white/5 hover:bg-white/[0.04] hover:border-primary-purple/30 transition-all duration-300 flex-grow flex flex-col justify-center">
                     <div className="flex items-start space-x-3">
                       <div className="w-7 h-7 rounded-lg bg-primary-purple/10 border border-primary-purple/20 flex items-center justify-center font-mono text-[10px] font-bold text-primary-purple shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_10px_rgba(123,57,252,0.05)]">
                         02
@@ -285,7 +287,7 @@ export default function JoinPage() {
                   </div>
 
                   {/* Step 3 */}
-                  <div className="group relative rounded-xl p-2.5 bg-white/[0.01] border border-white/5 hover:bg-white/[0.04] hover:border-pink-500/30 transition-all duration-300">
+                  <div className="group relative rounded-xl p-2.5 bg-white/[0.01] border border-white/5 hover:bg-white/[0.04] hover:border-pink-500/30 transition-all duration-300 flex-grow flex flex-col justify-center">
                     <div className="flex items-start space-x-3">
                       <div className="w-7 h-7 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center font-mono text-[10px] font-bold text-pink-400 shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_10px_rgba(236,72,153,0.05)]">
                         03

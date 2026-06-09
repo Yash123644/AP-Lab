@@ -110,11 +110,22 @@ export function AuthModal() {
               onMouseMove={handleMouseMove}
               className="relative w-full max-w-[420px] rounded-[2.5rem] bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 p-8 shadow-2xl pointer-events-auto overflow-hidden group/modal"
             >
-              {/* Dynamic Glow following cursor */}
-              <motion.div
-                className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 transition duration-300 group-hover/modal:opacity-100 z-0"
-                style={{ background }}
-              />
+              {/* Cartoony dotted cursor tracker */}
+              <div 
+                className="pointer-events-none absolute z-0 opacity-0 group-hover/modal:opacity-100 transition-opacity duration-300"
+                style={{
+                  left: mouseX,
+                  top: mouseY,
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                <motion.div
+                  className="w-12 h-12 rounded-full border-2 border-dotted border-white/50"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                />
+                <div className="absolute inset-0 m-auto w-1 h-1 rounded-full bg-white/70" />
+              </div>
 
               {/* Glow effect matching the image */}
               <div className="absolute -top-32 -left-32 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />

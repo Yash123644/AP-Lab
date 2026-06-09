@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence, Transition, Variants } from "framer-motion";
 import { CursorLinesBackground } from "./CursorLinesBackground";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
@@ -123,6 +124,12 @@ const SigmaIcon = () => (
   </svg>
 );
 
+const SparkleIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] text-black">
+    <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z" />
+  </svg>
+);
+
 const RulerIcon = () => (
   <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14 md:w-16 md:h-16">
     <rect x="15" y="35" width="70" height="30" rx="3" strokeWidth="2" />
@@ -152,12 +159,57 @@ const PeriodicIcon = () => (
   </svg>
 );
 
+const layoutTransition: Transition = {
+  type: "spring",
+  stiffness: 80,
+  damping: 22,
+  mass: 1
+};
+
+const charVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    filter: "blur(12px)",
+    y: 15,
+  },
+  visible: (index: number) => ({
+    opacity: 1,
+    filter: "blur(0px)",
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number], // easeOutExpo
+      delay: 0.45 + index * 0.03,
+    },
+  }),
+  exit: (index: number) => ({
+    opacity: 0,
+    filter: "blur(12px)",
+    y: -15,
+    transition: {
+      duration: 0.75,
+      ease: [0.4, 0, 1, 1] as [number, number, number, number], // easeIn
+      delay: index * 0.025,
+    },
+  }),
+};
+
 export function HeroSection() {
   const { currentUser } = useAuth();
   const { openAuthModal } = useUI();
   const { scrollY } = useScroll();
-  const scrollIndicatorOpacity = useTransform(scrollY, [0, 200], [1, 0]);
+  const scrollIndicatorOpacity = useTransform(scrollY, [0, 200], [0.55, 0]);
   const isPaused = false;
+
+  const words = ["learning", "discovery", "mastery", "science", "medicine", "knowledge"];
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 pb-32 px-6 md:px-12 overflow-hidden text-center z-10">
@@ -318,63 +370,91 @@ export function HeroSection() {
 
         {/* Massive Headline */}
         <h1 className="font-inter font-bold text-white text-6xl md:text-[96px] leading-[1.05] mb-8 tracking-tight max-w-5xl text-center select-none mix-blend-difference">
-          For the love <br />of learning.
+          For the love <br />
+          <motion.span 
+            layout="position" 
+            transition={layoutTransition} 
+            className="inline-flex items-center justify-center"
+          >
+            <motion.span 
+              layout="position" 
+              transition={layoutTransition} 
+              className="inline-block"
+            >
+              of
+            </motion.span>
+            <span className="w-[0.25em]" />
+            <span className="relative inline-grid grid-cols-1 grid-rows-1 justify-items-center align-middle">
+              <AnimatePresence mode="popLayout">
+                <motion.span
+                  key={words[wordIndex]}
+                  layout="position"
+                  transition={layoutTransition}
+                  className="col-start-1 row-start-1 inline-flex select-none text-white pb-1 whitespace-nowrap"
+                >
+                  {(words[wordIndex] + ".").split("").map((char, index) => (
+                    <motion.span
+                      key={index}
+                      custom={index}
+                      variants={charVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="inline-block whitespace-pre"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </motion.span>
         </h1>
 
         {/* Subtitle formatted like Apple Music's subtext */}
         <p className="font-inter font-medium text-[16px] md:text-[20px] text-white/80 max-w-[820px] mb-12 text-center leading-relaxed text-balance px-4 select-none">
-          Over 30 subjects, always free. The highest prep quality with immersive interactive labs¹ and comprehensive exams.² Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be. <strong className="font-extrabold animate-free-badge">100% Free.</strong>
+          Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams. Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be. <strong className="font-extrabold animate-free-badge">100% Free.</strong>
         </p>
 
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-6 mt-2 relative z-10">
           {currentUser ? (
             <Link href="/dashboard">
-              <button className="uiverse-retro-btn">
-                <span className="text">Go to Dashboard</span>
-                <span className="a l"></span>
-                <span className="a r"></span>
-                <span className="a t"></span>
-                <span className="a b"></span>
-                <span className="backdrop"></span>
+              <button className="pb-ai-button">
+                <span className="pb-ai-sparkle flex items-center justify-center">
+                  <SparkleIcon />
+                </span>
+                <span>Go to Dashboard</span>
               </button>
             </Link>
           ) : (
             <button 
               onClick={() => openAuthModal("signin")}
-              className="uiverse-retro-btn"
+              className="pb-ai-button"
             >
-              <span className="text">Sign In</span>
-              <span className="a l"></span>
-              <span className="a r"></span>
-              <span className="a t"></span>
-              <span className="a b"></span>
-              <span className="backdrop"></span>
+              <span className="pb-ai-sparkle flex items-center justify-center">
+                <SparkleIcon />
+              </span>
+              <span>Sign In</span>
             </button>
           )}
         </div>
       </motion.div>
 
-      {/* Animated Scroll Indicator (Positioned at the absolute bottom but fully visible) */}
+      {/* Animated Scroll Indicator (Smoothly animated white down arrow) */}
       <motion.div 
         style={{ opacity: scrollIndicatorOpacity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 z-30 pointer-events-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
       >
-        <span className="font-cabin text-[10px] text-white/40 uppercase tracking-[0.3em] ml-1">Scroll to Explore</span>
-        <div className="w-[26px] h-[42px] rounded-full border-2 border-white/20 flex justify-center p-1 backdrop-blur-sm">
-          <motion.div 
-            animate={{ 
-              y: [0, 16, 0],
-              opacity: [0, 1, 0]
-            }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className="w-1.5 h-1.5 bg-white rounded-full"
-          />
-        </div>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.0, repeat: Infinity, ease: "easeInOut" }}
+          className="text-white/40"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </motion.div>
       </motion.div>
 
       {/* Inline SVG Filter definitions for retro glowing borders */}
