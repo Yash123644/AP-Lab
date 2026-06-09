@@ -6,9 +6,6 @@
   <br />
   <br />
 
-  <!-- Logo Asset from ChatGPT Image Jun 5, 2026, 05_43_10 PM.png -->
-  <img src="YOUR_PULSE_LOGO_URL_HERE" alt="AP Lab Logo" width="80" height="80" />
-
   <h1>The AP Lab</h1>
   <p>An open-source ecosystem bridging the gap between biological data sciences and academic engineering.</p>
 
