@@ -39,12 +39,14 @@ export function CursorLinesBackground({ isPaused = false }: { isPaused?: boolean
       x: -1000,
       y: -1000,
       active: false,
+      isDown: false,
     };
 
     const easedMouse = {
       x: -1000,
       y: -1000,
       active: false,
+      isDown: false,
     };
 
     const cellSpacing = 45;

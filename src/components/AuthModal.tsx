@@ -111,7 +111,7 @@ export function AuthModal() {
               className="relative w-full max-w-[420px] rounded-[2.5rem] bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 p-8 shadow-2xl pointer-events-auto overflow-hidden group/modal"
             >
               {/* Cartoony dotted cursor tracker */}
-              <div 
+              <motion.div 
                 className="pointer-events-none absolute z-0 opacity-0 group-hover/modal:opacity-100 transition-opacity duration-300"
                 style={{
                   left: mouseX,
@@ -125,7 +125,7 @@ export function AuthModal() {
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 />
                 <div className="absolute inset-0 m-auto w-1 h-1 rounded-full bg-white/70" />
-              </div>
+              </motion.div>
 
               {/* Glow effect matching the image */}
               <div className="absolute -top-32 -left-32 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />
