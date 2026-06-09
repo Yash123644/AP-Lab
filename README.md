@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Brand Banner -->
-  <img src=<img width="1983" height="793" alt="ChatGPT Image Jun 6, 2026, 03_50_43 PM (2)" src="https://github.com/user-attachments/assets/64dc3243-bd08-4c0c-b8ea-c9d7938d09f9" /> alt="The AP Lab Banner" width="100%" />
+  <img src=<img width="1983" height="793" alt="ChatGPT Image Jun 6, 2026, 03_50_43 PM (2)" src="https://github.com/user-attachments/assets/64dc3243-bd08-4c0c-b8ea-c9d7938d09f9"
 
   <br />
   <br />
