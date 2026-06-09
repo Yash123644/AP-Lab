@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Brand Banner -->
-<img src="https://github.com/user-attachments/assets/64dc3243-bd08-4c0c-b8ea-c9d7938d09f9" alt="The AP Lab Banner" width="100%" />
+<img src="https://github.com/user-attachments/assets/64dc3243-bd08-4c0c-b8ea-c9d7938d09f9" alt="The AP Lab Banner" width="100%" style="border-radius: 12px;" />
 
   <br />
   <br />
