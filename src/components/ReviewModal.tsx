@@ -61,11 +61,11 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
             initial={{ opacity: 0, scale: 0.96, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 10 }}
-            className="relative w-full max-w-md bg-[#121212] border border-white/10 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.6)] overflow-hidden"
+            className="relative w-full max-w-md bg-black border border-white/10 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.8)] overflow-hidden"
           >
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 p-1.5 rounded-full bg-neutral-800/80 text-neutral-400 hover:text-white hover:bg-neutral-700/80 transition-colors z-10"
+              className="absolute top-5 right-5 p-1.5 rounded-full bg-neutral-900/80 text-neutral-400 hover:text-white hover:bg-neutral-800/80 transition-colors z-10"
             >
               <X className="w-4 h-4" />
             </button>
@@ -88,7 +88,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     {/* Spotify/Apple Style Rating Selector */}
-                    <div className="flex flex-col items-center py-4 bg-neutral-900 rounded-xl border border-white/5">
+                    <div className="flex flex-col items-center py-4 bg-neutral-950 rounded-xl border border-white/5">
                       <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider mb-2 font-mono">
                         Overall Rating
                       </span>
@@ -127,7 +127,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
                           value={title}
                           onChange={(e) => setTitle(e.target.value)}
                           placeholder="Summarize your review"
-                          className="w-full bg-neutral-900 border border-white/5 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-700 transition-all text-sm font-medium font-manrope"
+                          className="w-full bg-neutral-950 border border-white/5 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-800 transition-all text-sm font-medium font-manrope"
                           required
                         />
                       </div>
@@ -140,7 +140,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
                           onChange={(e) => setDescription(e.target.value)}
                           placeholder="What's your experience been like?"
                           rows={4}
-                          className="w-full bg-neutral-900 border border-white/5 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-700 transition-all text-sm font-medium font-manrope resize-none"
+                          className="w-full bg-neutral-950 border border-white/5 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-800 transition-all text-sm font-medium font-manrope resize-none"
                           required
                         />
                       </div>

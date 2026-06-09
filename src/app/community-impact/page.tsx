@@ -196,7 +196,7 @@ export default function CommunityImpactPage() {
              </div>
              <div className="relative z-10">
                <div className="text-5xl font-instrument mb-2 text-white tracking-tighter">98.4%</div>
-               <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Pass Rate Matrix</span>
+               <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">questions answered correctly</span>
              </div>
           </motion.div>
 
@@ -213,7 +213,7 @@ export default function CommunityImpactPage() {
                  <div className="w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center">
                    <Activity className="w-5 h-5 text-cyan-400" />
                  </div>
-                 <span className="font-mono text-[10px] uppercase tracking-widest text-cyan-400">Traffic Analysis</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-cyan-400">total site visits</span>
                </div>
                <div className="text-6xl font-instrument text-white tracking-tighter">84.2K</div>
              </div>

@@ -25,8 +25,8 @@ export function Footer() {
             Navigation:
           </span>
           <div className="flex space-x-4">
-            <Link href="#" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
-              Study Resources
+            <Link href="/" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Home
             </Link>
             <span className="text-white/20">/</span>
             <Link href="/dashboard" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">

@@ -314,6 +314,14 @@ export default function Dashboard() {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMinLoading, setIsMinLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsMinLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -329,7 +337,7 @@ export default function Dashboard() {
     }
   }, [currentUser, authLoading, router]);
 
-  if (authLoading || progressLoading || !currentUser) {
+  if (authLoading || progressLoading || !currentUser || isMinLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-deep-navy">
         <LoadingSpinner />

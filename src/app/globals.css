@@ -348,4 +348,278 @@ body {
     0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
 }
 
+@keyframes hang-swing {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(-12deg); }
+  30% { transform: rotate(10deg); }
+  45% { transform: rotate(-6deg); }
+  60% { transform: rotate(4deg); }
+  75% { transform: rotate(-2deg); }
+  90% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes flow-green {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-free-badge {
+  background: linear-gradient(90deg, #ffffff 0%, #e2fbf0 50%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flow-green 4s linear infinite;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.animate-free-badge:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Discord Invite Button from Uiverse.io by vinodjangid07 */
+.discord-invite-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.discord-invite-svg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.discord-invite-bg {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #7289da;
+  z-index: -1;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.discord-invite-btn:hover .discord-invite-bg {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.discord-invite-btn:hover .discord-invite-svg-container {
+  border: 1px solid rgba(206, 206, 206, 0.466);
+  background-color: rgba(214, 214, 214, 0.466);
+  backdrop-filter: blur(4px);
+}
+
+/* Retro Grid Button from Uiverse.io by SelfMadeSystem */
+.uiverse-retro-btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 220px;
+  height: 50px;
+  background: #111;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.uiverse-retro-btn:active {
+  transform: scale(0.98);
+}
+
+.uiverse-retro-btn .text {
+  position: relative;
+  z-index: 1;
+}
+
+.uiverse-retro-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+      circle at 50% 50%,
+      #0000 0,
+      #0000 20%,
+      #111111aa 50%
+    ),
+    radial-gradient(ellipse 100% 100%, #fff, #fff0);
+  background-size:
+    3px 3px,
+    auto auto;
+  transition: 0.3s;
+}
+
+.uiverse-retro-btn:hover::before {
+  opacity: 0.3;
+}
+
+.uiverse-retro-btn .a {
+  pointer-events: none;
+  position: absolute;
+  --w: 2px;
+  --t: -40px;
+  --s: calc(var(--t) * -1);
+  --e: calc(100% + var(--t));
+  --g: #fff0, #fff3 var(--s), #fffa var(--s), #fff, #fffa var(--e),
+    #fff3 var(--e), #fff0;
+}
+
+.uiverse-retro-btn .a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(4px) url(#unopaq);
+  z-index: -2;
+}
+
+.uiverse-retro-btn .a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(10px) url(#unopaq);
+  opacity: 0;
+  z-index: -2;
+  transition: 0.3s;
+}
+
+.uiverse-retro-btn:hover .a::after {
+  opacity: 1;
+}
+
+.uiverse-retro-btn .l {
+  left: -2px;
+}
+
+.uiverse-retro-btn .r {
+  right: -2px;
+}
+
+.uiverse-retro-btn .l,
+.uiverse-retro-btn .r {
+  background: linear-gradient(var(--g));
+  top: var(--t);
+  bottom: var(--t);
+  width: var(--w);
+}
+
+.uiverse-retro-btn .t {
+  top: -2px;
+}
+
+.uiverse-retro-btn .b {
+  bottom: -2px;
+}
+
+.uiverse-retro-btn .t,
+.uiverse-retro-btn .b {
+  background: linear-gradient(90deg, var(--g));
+  left: var(--t);
+  right: var(--t);
+  height: var(--w);
+}
+
+.uiverse-retro-btn .backdrop {
+  position: absolute;
+  inset: -9900%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #0000 0,
+    #0000 20%,
+    #111111aa 50%
+  );
+  background-size: 3px 3px;
+  z-index: -1;
+}
+
+/* From Uiverse.io by mRcOol7 */ 
+.LinkedinBtn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.LinkedinBtn .svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 1px; /* Adjusted letter spacing */
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.LinkedinBtn .BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #0077b5;
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.LinkedinBtn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow effect */
+}
+
+.LinkedinBtn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.LinkedinBtn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+
+
+
+
 

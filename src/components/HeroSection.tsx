@@ -306,7 +306,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col items-center justify-center z-10 w-full max-w-6xl -mt-12 relative"
+        className="flex flex-col items-center justify-center w-full max-w-6xl -mt-12 relative"
       >
         {/* Apple-style Logo Header */}
         <div className="flex items-center gap-2 mb-8 text-white select-none">
@@ -323,42 +323,34 @@ export function HeroSection() {
 
         {/* Subtitle formatted like Apple Music's subtext */}
         <p className="font-inter font-medium text-[16px] md:text-[20px] text-white/80 max-w-[820px] mb-12 text-center leading-relaxed text-balance px-4 select-none">
-          Over 30 subjects, always free. The highest prep quality with immersive interactive labs¹ and comprehensive exams.² Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be. <strong className="font-extrabold text-white">100% Free.</strong>
+          Over 30 subjects, always free. The highest prep quality with immersive interactive labs¹ and comprehensive exams.² Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be. <strong className="font-extrabold animate-free-badge">100% Free.</strong>
         </p>
 
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-6 mt-2 relative z-10">
           {currentUser ? (
             <Link href="/dashboard">
-              <button className="uiverse-glossy-button">
-                <div className="uiverse-glossy-button-wrap">
-                  <p>
-                    <span>Go to Dashboard</span>
-                    <span>Go to Dashboard</span>
-                  </p>
-                </div>
+              <button className="uiverse-retro-btn">
+                <span className="text">Go to Dashboard</span>
+                <span className="a l"></span>
+                <span className="a r"></span>
+                <span className="a t"></span>
+                <span className="a b"></span>
+                <span className="backdrop"></span>
               </button>
             </Link>
           ) : (
-            <>
-              <button 
-                onClick={() => openAuthModal("signup")}
-                className="uiverse-glossy-button"
-              >
-                <div className="uiverse-glossy-button-wrap">
-                  <p>
-                    <span>Go to Dashboard</span>
-                    <span>Go to Dashboard</span>
-                  </p>
-                </div>
-              </button>
-              <button 
-                onClick={() => openAuthModal("signin")}
-                className="bg-transparent border border-white/20 text-white font-inter font-medium text-[16px] px-10 py-4 rounded-full hover:border-white/40 hover:bg-white/5 active:scale-[0.98] transition-all duration-300"
-              >
-                Sign In
-              </button>
-            </>
+            <button 
+              onClick={() => openAuthModal("signin")}
+              className="uiverse-retro-btn"
+            >
+              <span className="text">Sign In</span>
+              <span className="a l"></span>
+              <span className="a r"></span>
+              <span className="a t"></span>
+              <span className="a b"></span>
+              <span className="backdrop"></span>
+            </button>
           )}
         </div>
       </motion.div>
@@ -384,6 +376,15 @@ export function HeroSection() {
           />
         </div>
       </motion.div>
+
+      {/* Inline SVG Filter definitions for retro glowing borders */}
+      <svg style={{ position: "absolute", width: 0, height: 0, pointerEvents: "none" }} width="0" height="0">
+        <defs>
+          <filter id="unopaq">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" />
+          </filter>
+        </defs>
+      </svg>
     </section>
   );
 }

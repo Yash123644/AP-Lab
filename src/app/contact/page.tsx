@@ -56,11 +56,11 @@ export default function ContactPage() {
       
       {/* Sophisticated Grid Pattern Background */}
       <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 grid-pattern opacity-60" />
-        <div className="absolute inset-0 grid-pattern-bold opacity-40" />
         {/* Radial Gradient Mask for Vignette Effect */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-navy/50 to-deep-navy" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,2,2,0.8)_100%)]" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.8]" />
+        <div className="absolute inset-0 grid-pattern-bold opacity-[0.5]" />
       </div>
 
       <Navbar />
@@ -98,7 +98,12 @@ export default function ContactPage() {
               </div>
 
               {/* Discord Card */}
-              <div className="liquid-glass rounded-2xl p-6 flex items-center justify-between group cursor-pointer hover:bg-white/10 transition-colors">
+              <a 
+                href="https://discord.com/invite/dUSaevPETd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="liquid-glass rounded-2xl p-6 flex items-center justify-between group cursor-pointer hover:bg-white/10 transition-colors block"
+              >
                 <div className="flex items-center space-x-5">
                   <div className="w-12 h-12 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                     {/* Discord Icon */}
@@ -112,7 +117,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-white transition-colors" />
-              </div>
+              </a>
 
             </motion.div>
           </div>

@@ -87,6 +87,11 @@ export function LogoFieldBackground({
       const startRow = Math.floor(-scrollY / spacingY) - 1;
       const endRow = Math.ceil((height - scrollY) / spacingY) + 1;
 
+      // Calculate relative mouse coordinates on canvas dynamically (accounts for scroll)
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = mouseRef.current.x === -1000 ? -1000 : mouseRef.current.x - rect.left;
+      const mouseY = mouseRef.current.y === -1000 ? -1000 : mouseRef.current.y - rect.top;
+
       // Draw rows of logos
       for (let r = startRow; r <= endRow; r++) {
         const posY = r * spacingY + scrollY;
@@ -102,8 +107,8 @@ export function LogoFieldBackground({
           // Calculate distance to mouse
           const logoCenterX = posX + 18;
           const logoCenterY = posY + 18;
-          const dx = logoCenterX - mouseRef.current.x;
-          const dy = logoCenterY - mouseRef.current.y;
+          const dx = logoCenterX - mouseX;
+          const dy = logoCenterY - mouseY;
           const dist = Math.sqrt(dx * dx + dy * dy);
           
           let currentOpacity = opacity;
@@ -178,7 +183,7 @@ export function LogoFieldBackground({
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none -z-10"
+      className="fixed inset-0 w-full h-full pointer-events-none -z-30"
       style={{ display: "block" }}
     />
   );

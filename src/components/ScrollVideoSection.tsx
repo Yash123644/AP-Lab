@@ -33,11 +33,11 @@ export function ScrollVideoSection() {
   // Track scroll progress of this section
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "center center"]
+    offset: ["start end", "center start"]
   });
 
-  // Perspective animation: start tilted back, animate to flat
-  const rotateX = useTransform(scrollYProgress, [0, 1], [35, 0]);
+  // Perspective animation: start tilted back, animate to flat later in the scroll
+  const rotateX = useTransform(scrollYProgress, [0, 0.75, 1], [20, 10, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
@@ -73,7 +73,10 @@ export function ScrollVideoSection() {
           mouseY.set(-200);
         }}
         onMouseMove={handleMouseMove}
-        style={{ cursor: isHovered ? "none" : "auto" }}
+        style={{ 
+          cursor: isHovered ? "none" : "auto",
+          perspective: "1200px"
+        }}
       >
         {/* Custom Inverted Play Cursor — sibling of the card, NOT inside overflow-hidden */}
         <motion.div

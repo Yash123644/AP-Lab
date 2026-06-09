@@ -78,20 +78,12 @@ export function Navbar() {
               </button>
             </Link>
           ) : (
-            <>
-              <button 
-                onClick={() => openAuthModal("signin")}
-                className="font-manrope font-semibold text-[13px] text-white/60 hover:text-white transition-colors"
-              >
-                Sign In
-              </button>
-              <button
-                onClick={() => openAuthModal("signup")}
-                className="bg-white text-black font-manrope font-semibold text-[13px] px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
-              >
-                Get Started
-              </button>
-            </>
+            <button
+              onClick={() => openAuthModal("signin")}
+              className="bg-white text-black font-manrope font-semibold text-[13px] px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+            >
+              Sign In
+            </button>
           )}
         </div>
 

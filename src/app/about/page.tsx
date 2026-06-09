@@ -155,7 +155,8 @@ function TeamCard({ member, idx }: { member: typeof team[0]; idx: number }) {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 select-none pointer-events-none"
+                  draggable={false}
                 />
               </div>
             ) : (
@@ -169,9 +170,26 @@ function TeamCard({ member, idx }: { member: typeof team[0]; idx: number }) {
               </div>
             )}
 
-            <h3 className="font-manrope font-bold text-white text-[15px] leading-tight tracking-tight mb-1">
-              {member.name}
-            </h3>
+            <div className="flex items-center justify-between gap-1 mb-1">
+              <h3 className="font-manrope font-bold text-white text-[15px] leading-tight tracking-tight">
+                {member.name}
+              </h3>
+              {member.name === "Yash Patil" && (
+                <a
+                  href="https://www.linkedin.com/in/yash-patil2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="LinkedinBtn scale-[0.6] origin-center -my-3 -mr-3 shrink-0"
+                >
+                  <div className="BG"></div>
+                  <div className="svgContainer">
+                    <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                </a>
+              )}
+            </div>
             <span className="font-mono text-[9px] text-medical-teal uppercase tracking-widest mb-3 block">
               {member.role}
             </span>
