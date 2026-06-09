@@ -520,48 +520,69 @@ export default function Dashboard() {
             </p>
           </div>
 
-          {/* Minimalist Clean Timeline */}
-          <div className="max-w-xl mx-auto relative pl-8 border-l border-white/10 space-y-10">
+          {/* Premium Upcoming Classes Bento Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
             
-            {/* Timeline Item 1 */}
-            <div className="relative group">
-              {/* Timeline Dot Indicator */}
-              <div className="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-[#020308] border border-medical-teal flex items-center justify-center shadow-[0_0_10px_rgba(79,209,197,0.3)] group-hover:scale-110 transition-transform duration-300">
-                <div className="w-1.5 h-1.5 rounded-full bg-medical-teal" />
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="font-mono text-[10px] text-medical-teal uppercase tracking-widest font-bold">Fall 2026</span>
-                  <h3 className="font-manrope font-semibold text-white text-base mt-0.5 group-hover:text-medical-teal transition-colors duration-300">AP Physics 1</h3>
+            {/* Physics Card */}
+            <div className="liquid-glass rounded-2xl p-5 border border-white/5 hover:border-medical-teal/30 hover:bg-white/[0.02] transition-all duration-300 relative group overflow-hidden flex flex-col justify-between h-[180px]">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-medical-teal/5 blur-[35px] rounded-full pointer-events-none group-hover:bg-medical-teal/10 transition-colors duration-500" />
+              <div className="flex items-start justify-between">
+                <div className="w-10 h-10 rounded-lg bg-medical-teal/10 border border-medical-teal/20 flex items-center justify-center text-medical-teal shadow-[0_0_10px_rgba(79,209,197,0.1)] group-hover:scale-105 transition-transform">
+                  <Atom className="w-5 h-5" />
                 </div>
+                <span className="font-mono text-[9px] font-bold text-medical-teal uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-medical-teal/10 border border-medical-teal/20">
+                  Fall 2026
+                </span>
+              </div>
+              <div>
+                <h3 className="font-manrope font-bold text-white text-base leading-tight mb-1 group-hover:text-medical-teal transition-colors">
+                  AP Physics 1
+                </h3>
+                <p className="font-inter text-xs text-white/50 leading-relaxed">
+                  Newtonian mechanics, work, energy, power, and rotational dynamics.
+                </p>
               </div>
             </div>
 
-            {/* Timeline Item 2 */}
-            <div className="relative group">
-              {/* Timeline Dot Indicator */}
-              <div className="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-[#020308] border border-primary-purple flex items-center justify-center shadow-[0_0_10px_rgba(164,132,215,0.3)] group-hover:scale-110 transition-transform duration-300">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary-purple" />
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="font-mono text-[10px] text-primary-purple uppercase tracking-widest font-bold">Winter 2026</span>
-                  <h3 className="font-manrope font-semibold text-white text-base mt-0.5 group-hover:text-primary-purple transition-colors duration-300">AP World History</h3>
+            {/* History Card */}
+            <div className="liquid-glass rounded-2xl p-5 border border-white/5 hover:border-primary-purple/30 hover:bg-white/[0.02] transition-all duration-300 relative group overflow-hidden flex flex-col justify-between h-[180px]">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary-purple/5 blur-[35px] rounded-full pointer-events-none group-hover:bg-primary-purple/10 transition-colors duration-500" />
+              <div className="flex items-start justify-between">
+                <div className="w-10 h-10 rounded-lg bg-primary-purple/10 border border-primary-purple/20 flex items-center justify-center text-primary-purple shadow-[0_0_10px_rgba(164,132,215,0.1)] group-hover:scale-105 transition-transform">
+                  <History className="w-5 h-5" />
                 </div>
+                <span className="font-mono text-[9px] font-bold text-primary-purple uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-primary-purple/10 border border-primary-purple/20">
+                  Winter 2026
+                </span>
+              </div>
+              <div>
+                <h3 className="font-manrope font-bold text-white text-base leading-tight mb-1 group-hover:text-primary-purple transition-colors">
+                  AP World History
+                </h3>
+                <p className="font-inter text-xs text-white/50 leading-relaxed">
+                  Global developments, cultural developments, and interaction between societies.
+                </p>
               </div>
             </div>
 
-            {/* Timeline Item 3 */}
-            <div className="relative group">
-              {/* Timeline Dot Indicator */}
-              <div className="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-[#020308] border border-amber-400 flex items-center justify-center shadow-[0_0_10px_rgba(251,191,36,0.3)] group-hover:scale-110 transition-transform duration-300">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="font-mono text-[10px] text-amber-400 uppercase tracking-widest font-bold">Spring 2027</span>
-                  <h3 className="font-manrope font-semibold text-white text-base mt-0.5 group-hover:text-amber-400 transition-colors duration-300">AP Precalculus</h3>
+            {/* Precalc Card */}
+            <div className="liquid-glass rounded-2xl p-5 border border-white/5 hover:border-amber-400/30 hover:bg-white/[0.02] transition-all duration-300 relative group overflow-hidden flex flex-col justify-between h-[180px]">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-400/5 blur-[35px] rounded-full pointer-events-none group-hover:bg-amber-400/10 transition-colors duration-500" />
+              <div className="flex items-start justify-between">
+                <div className="w-10 h-10 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.1)] group-hover:scale-105 transition-transform">
+                  <Sigma className="w-5 h-5" />
                 </div>
+                <span className="font-mono text-[9px] font-bold text-amber-400 uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/20">
+                  Spring 2027
+                </span>
+              </div>
+              <div>
+                <h3 className="font-manrope font-bold text-white text-base leading-tight mb-1 group-hover:text-amber-400 transition-colors">
+                  AP Precalculus
+                </h3>
+                <p className="font-inter text-xs text-white/50 leading-relaxed">
+                  Polynomial, rational, exponential, logarithmic, and trigonometric functions.
+                </p>
               </div>
             </div>
 
