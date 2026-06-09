@@ -22,3 +22,4 @@ const facebookProvider = new FacebookAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
 
 export { app, auth, db, Timestamp, googleProvider, githubProvider, facebookProvider, twitterProvider };
+// force fresh domain build
