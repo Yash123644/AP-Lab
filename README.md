@@ -1,95 +1,73 @@
-# Hey there, I'm Yash 👋
+<div align="center">
 
-<p align="left">
-  <!-- Insert your banner image link below -->
-  <img src="YOUR_BANNER_IMAGE_URL_HERE" alt="Yash's Banner" width="100%" />
-</p>
+  <!-- Brand Banner -->
+  <img src="YOUR_BANNER_IMAGE_URL_HERE" alt="The AP Lab Banner" width="100%" />
 
-<p align="center">
-  <strong>Full-Stack Developer & Builder | Pioneering the Intersection of Biological Sciences and Modern Web Technology</strong>
-</p>
+  <br />
 
-<p align="center">
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://x.com/YOUR_X_HANDLE"><img src="https://img.shields.io/badge/X.com-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
-</p>
+  <h1>🧬 The AP Lab</h1>
+  <p><strong>The Advanced open-source ecosystem bridging the gap between biological data sciences and academic engineering.</strong></p>
 
----
+  <p>
+    <a href="https://theaplab.org"><strong>Explore the Platform »</strong></a>
+  </p>
 
-### 🧬 About Me
+  <!-- Premium Unified Badge Bar -->
+  <p>
+    <a href="https://theaplab.org"><img src="https://img.shields.io/badge/Production-theaplab.org-000000?style=for-the-badge&logo=vercel&logoColor=white&labelColor=111" alt="Live Site" /></a>
+    <a href="https://discord.com/invite/dUSaevPETd"><img src="https://img.shields.io/badge/Community-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=111" alt="Discord" /></a>
+    <a href="https://x.com/APLabss"><img src="https://img.shields.io/badge/Updates-X.com-000000?style=for-the-badge&logo=x&logoColor=white&labelColor=111" alt="X Twitter" /></a>
+  </p>
 
-I am a developer and creator focused on building high-performance, visually stunning software. My passion lies in engineering robust digital tools, designing immersive frontends, and applying computational solutions to complex biomedical concepts.
-
-- 🚀 **Founder & Lead Organizer** of **Vitalitics**, a specialized medical-themed hackathon pushing boundaries in healthcare innovation.
-- 🤖 **FIRST Tech Challenge** veteran, programming and designing advanced competitive robotics since the 4th grade.
-- 🔬 Developing data-driven education platforms to empower the next generation of scientific researchers.
+</div>
 
 ---
 
-### 📦 Spotlight Project: The AP Lab
+### 💻 System Overview
 
-<p align="left">
-  <strong><a href="https://theaplab.org">theaplab.org</a></strong> — An immersive, full-stack resource and development hub built to streamline biological data analysis and advanced coursework.
-</p>
+**The AP Lab** is an immersive, production-grade resource and development hub engineered to handle biological data visualization, advanced analytical modeling, and structured academic workflows. Built on a modern serverless architecture, the platform focuses on delivering lightning-fast client interactions, rigid data type safety, and real-time state synchronizations.
 
-- **Tech Stack:** Next.js, TypeScript, Framer Motion, Firebase, Vercel
-- **Core Engineering:** Built with strict type safety, real-time data sync, fluid hardware-accelerated animations, and global edge-cached deployments.
+*   🌐 **Real-Time Synergy:** Fully integrated backend synchronizations for instantaneous authentication and dataset management.
+*   🧬 **Analytical Visualizations:** Built-in tools configured for analyzing complex biological and structural data pipelines.
+*   ⚡ **Fluid Motion Engineering:** Hardware-accelerated transitions that ensure complex data components render dynamically without dropping frames.
 
 ---
 
-### 💻 Core Tech Stack
+### 🛠️ Architecture & Core Tech Stack
 
-<table align="left">
+The application infrastructure is strictly decoupled, leveraging microservices, optimized compilation pipelines, and low-latency global edge distribution networks.
+
+<table width="100%">
   <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="Next.js" />
-      <br />Next.js
+    <td width="50%" valign="top">
+      <h4>⚙️ Core Frontend Engine</h4>
+      <ul>
+        <li><strong>Framework:</strong> Next.js (App Router layout pipelines)</li>
+        <li><strong>Language:</strong> TypeScript (Strict compile-time type safety)</li>
+        <li><strong>Styling:</strong> Tailwind CSS (Utility-first fluid layouts)</li>
+        <li><strong>Animations:</strong> Framer Motion (Declarative layout transitions)</li>
+      </ul>
     </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=ts" width="48" height="48" alt="TypeScript" />
-      <br />TypeScript
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" />
-      <br />React
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind" />
-      <br />Tailwind
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=firebase" width="48" height="48" alt="Firebase" />
-      <br />Firebase
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=vercel" width="48" height="48" alt="Vercel" />
-      <br />Vercel
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=github" width="48" height="48" alt="GitHub" />
-      <br />GitHub
+    <td width="50%" valign="top">
+      <h4>☁️ Backend & Deployment</h4>
+      <ul>
+        <li><strong>Environment:</strong> Node.js runtime layers</li>
+        <li><strong>Database / Auth:</strong> Firebase Ecosystem (Firestore & OAuth protocols)</li>
+        <li><strong>Hosting Partner:</strong> Vercel Global Edge Network</li>
+        <li><strong>CI/CD Pipelines:</strong> Integrated GitHub Version Automation</li>
+      </ul>
     </td>
   </tr>
 </table>
 
-<br clear="both" />
-<br />
-
 ---
 
-### 📊 GitHub Analytics
+### 🚀 Getting Started Locally
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="GitHub Stats" height="180" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9" alt="Top Languages" height="180" />
-</p>
+To spin up a local instance of the application for debugging or feature expansion, execute the following standard sequence:
 
----
-
-### 🤝 Connect with Me
-
-- 💼 **LinkedIn:** [/in/YOUR_LINKEDIN](https://linkedin.com/in/YOUR_LINKEDIN)
-- 🐦 **X (Twitter):** [@YOUR_X_HANDLE](https://x.com/YOUR_X_HANDLE)
-- 💻 **GitHub:** [@YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
-
-⚡ *"The best way to predict the future is to build it."*
+#### 1. Clone and Install Dependencies
+```bash
+git clone [https://github.com/YOUR_GITHUB_USERNAME/AP-Lab.git](https://github.com/YOUR_GITHUB_USERNAME/AP-Lab.git)
+cd AP-Lab
+npm install
