@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
-import { AlertCircle, ArrowRight } from "lucide-react";
+import { AlertCircle, ArrowRight, Activity } from "lucide-react";
 import { 
   signInWithPopup, 
   AuthProvider,
@@ -198,7 +198,7 @@ export default function LoginPage() {
         return (
           <div
             key={point.id}
-            className="absolute bg-white pointer-events-none rounded-none z-10"
+            className="absolute bg-white pointer-events-none rounded-none z-50"
             style={{
               left: point.x,
               top: point.y,
@@ -211,26 +211,29 @@ export default function LoginPage() {
         );
       })}
 
-      {/* Left Column: Splash & 3D Pulse Logo */}
-      <div className="hidden lg:flex lg:col-span-5 flex-col justify-center items-center p-12 relative overflow-hidden z-20 border-r border-white/5 bg-[#030303]/20">
+      {/* Brand Header matching the exact Navbar logo style (placed absolutely at the top-left) */}
+      <div className="absolute top-12 left-12 z-30">
+        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
+          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
+            <Activity className="w-5 h-5 text-white animate-pulse" />
+          </div>
+          <span className="font-manrope font-bold text-white tracking-tight text-lg">AP Lab</span>
+        </Link>
+      </div>
+
+      {/* Left Column: 3D Pulse Logo (fully transparent background, no border) */}
+      <div className="hidden lg:flex lg:col-span-5 flex-col justify-center items-center p-12 relative overflow-hidden z-20">
         {/* Soft background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-white/5 rounded-full blur-[80px] pointer-events-none" />
         
-        {/* Brand Header */}
-        <div className="absolute top-12 left-12 flex items-center space-x-3">
-          <Link href="/" className="font-manrope font-extrabold text-white tracking-tight text-xl uppercase">
-            AP Lab
-          </Link>
-        </div>
-
         {/* 3D Rotating EKG Pulse Wave */}
         <div className="w-full h-full flex items-center justify-center">
           <RotatingPulse3D />
         </div>
       </div>
 
-      {/* Right Column: Form Container */}
-      <div className="lg:col-span-7 flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 relative z-20 w-full min-h-screen bg-black">
+      {/* Right Column: Form Container (fully transparent background, sharing container) */}
+      <div className="lg:col-span-7 flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 relative z-20 w-full min-h-screen">
         <div className="w-full max-w-[400px]">
           {/* Headings */}
           <div className="mb-8">

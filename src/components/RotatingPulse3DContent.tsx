@@ -59,18 +59,26 @@ function PulseModel() {
   const cubes = [];
   const startX = -2.1;
   const endX = 2.1;
-  const stepX = 0.07;
-  const startZ = -0.20;
-  const endZ = 0.20;
-  const stepZ = 0.08;
+  const stepX = 0.09; // Spaced out X step to make them clearly separate pixels
+  const radius = 0.15; // Radius of the hollow tube
+  const N = 6; // Number of pixels around the circumference forming a hollow tube
 
+  const rgbColors = ["#ff3333", "#33ff33", "#3333ff"]; // RGB screen subpixel colors
+
+  let pixelIndex = 0;
   for (let x = startX; x <= endX; x += stepX) {
-    const y = getPulseHeight(x);
-    for (let z = startZ; z <= endZ; z += stepZ) {
+    const yCenter = getPulseHeight(x);
+    for (let i = 0; i < N; i++) {
+      const theta = (i / N) * Math.PI * 2;
+      const y = yCenter + radius * Math.cos(theta);
+      const z = radius * Math.sin(theta);
+      
       cubes.push({
         position: [x, y, z] as [number, number, number],
-        id: `${x.toFixed(3)}_${z.toFixed(3)}`
+        color: rgbColors[pixelIndex % 3], // Assign repeating Red, Green, Blue
+        id: `${x.toFixed(3)}_${i}`
       });
+      pixelIndex++;
     }
   }
 
@@ -78,11 +86,11 @@ function PulseModel() {
     <group ref={groupRef}>
       {cubes.map((cube) => (
         <mesh key={cube.id} position={cube.position}>
-          <boxGeometry args={[0.042, 0.042, 0.042]} />
+          <boxGeometry args={[0.035, 0.035, 0.035]} />
           <meshStandardMaterial 
             color="#ffffff" 
-            emissive="#ffffff"
-            emissiveIntensity={0.9}
+            emissive={cube.color}
+            emissiveIntensity={0.8} // Screen pixel brightness (preserves 3D face shading under key lights)
             roughness={0.2}
             metalness={0.7}
           />
