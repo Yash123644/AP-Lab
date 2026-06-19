@@ -4,13 +4,7 @@ import { generateState, generateCodeVerifier, generateCodeChallenge } from "@/li
 
 export async function GET(request: Request) {
   try {
-    const clientId = process.env.TWITTER_CLIENT_ID;
-    if (!clientId) {
-      return NextResponse.json(
-        { error: "TWITTER_CLIENT_ID is not configured in environment variables." },
-        { status: 500 }
-      );
-    }
+    const clientId = process.env.TWITTER_CLIENT_ID || "Y1NnSWtLdlhYN1g2ZTdHM2FUUmY6MTpjaQ";
 
     const state = generateState();
     const codeVerifier = generateCodeVerifier();

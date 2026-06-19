@@ -112,6 +112,7 @@ function TeamCard({ member, idx }: { member: typeof team[0]; idx: number }) {
   const panRotate = useMotionValue(0);
   const springRotate = useSpring(panRotate, { stiffness: 60, damping: 6, mass: 2 });
   const combinedRotate = useTransform(() => member.rotate + springRotate.get());
+  const isCensored = member.name !== "Yash Patil";
 
   return (
     <div 
@@ -149,7 +150,10 @@ function TeamCard({ member, idx }: { member: typeof team[0]; idx: number }) {
             <div className="w-2 h-2 rounded-full bg-white/30" />
           </div>
 
-          <div className="liquid-glass-strong w-[160px] md:w-[200px] rounded-3xl p-4 md:p-5 flex flex-col border border-white/10 group-hover:border-white/30 transition-colors bg-[#0a0a0a]">
+          <div className={cn(
+            "liquid-glass-strong w-[160px] md:w-[200px] rounded-3xl p-4 md:p-5 flex flex-col border border-white/10 group-hover:border-white/30 transition-colors bg-[#0a0a0a]",
+            isCensored && "filter blur-[6px] opacity-40 select-none pointer-events-none"
+          )}>
             {member.image ? (
               <div className="w-full aspect-square rounded-2xl mb-4 flex items-center justify-center relative overflow-hidden bg-zinc-900 border border-white/5">
                 <img

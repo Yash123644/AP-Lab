@@ -33,12 +33,27 @@ export function AuthModal() {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { currentTarget, clientX, clientY } = e;
     const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+    const x = clientX - left;
+    const y = clientY - top;
+    mouseX.set(x);
+    mouseY.set(y);
+
+    setTrail((prev) => {
+      const newTrail = [...prev, { x, y, id: Math.random() }];
+      if (newTrail.length > 20) {
+        return newTrail.slice(newTrail.length - 20);
+      }
+      return newTrail;
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTrail([]);
   };
 
   const background = useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(255,255,255,0.06), transparent 80%)`;
@@ -171,24 +186,30 @@ export function AuthModal() {
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
               className="relative w-full max-w-[420px] rounded-[2.5rem] bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 p-8 shadow-2xl pointer-events-auto overflow-hidden group/modal"
             >
-              {/* Cartoony dotted cursor tracker */}
-              <motion.div 
-                className="pointer-events-none absolute z-0 opacity-0 group-hover/modal:opacity-100 transition-opacity duration-300"
-                style={{
-                  left: mouseX,
-                  top: mouseY,
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <motion.div
-                  className="w-12 h-12 rounded-full border-2 border-dotted border-white/50"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                />
-                <div className="absolute inset-0 m-auto w-1 h-1 rounded-full bg-white/70" />
-              </motion.div>
+              {/* Pixel grid cursor trail */}
+              {trail.map((point, index) => {
+                const ratio = index / trail.length;
+                const size = Math.max(2, Math.round(8 * ratio));
+                const opacity = ratio * 0.8;
+                return (
+                  <div
+                    key={point.id}
+                    className="absolute bg-white pointer-events-none rounded-none"
+                    style={{
+                      left: point.x,
+                      top: point.y,
+                      width: `${size}px`,
+                      height: `${size}px`,
+                      opacity: opacity,
+                      transform: "translate(-50%, -50%)",
+                      zIndex: 0,
+                    }}
+                  />
+                );
+              })}
 
               {/* Glow effect matching the image */}
               <div className="absolute -top-32 -left-32 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />

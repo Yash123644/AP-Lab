@@ -70,12 +70,8 @@ export async function GET(request: Request) {
     cookieStore.delete("twitter_oauth_state");
     cookieStore.delete("twitter_oauth_code_verifier");
 
-    const clientId = process.env.TWITTER_CLIENT_ID;
-    const clientSecret = process.env.TWITTER_CLIENT_SECRET;
-
-    if (!clientId || !clientSecret) {
-      throw new Error("X client ID or client secret is not configured.");
-    }
+    const clientId = process.env.TWITTER_CLIENT_ID || "Y1NnSWtLdlhYN1g2ZTdHM2FUUmY6MTpjaQ";
+    const clientSecret = process.env.TWITTER_CLIENT_SECRET || "0wP6_BuApD6cYZedRbiGBEkdjsQD4pq_8pYiL95avRMPkM8X0j";
 
     if (!code || !state) {
       throw new Error("Missing code or state query parameters from X redirect.");
