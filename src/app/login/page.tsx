@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
-import { AlertCircle, ArrowRight, Activity } from "lucide-react";
+import { AlertCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { 
   signInWithPopup, 
   AuthProvider,
@@ -211,18 +211,19 @@ export default function LoginPage() {
         );
       })}
 
-      {/* Brand Header matching the exact Navbar logo style (placed absolutely at the top-left) */}
+      {/* Back Arrow Navigation */}
       <div className="absolute top-12 left-12 z-30">
-        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-            <Activity className="w-5 h-5 text-white animate-pulse" />
-          </div>
-          <span className="font-manrope font-bold text-white tracking-tight text-lg">AP Lab</span>
+        <Link 
+          href="/" 
+          className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all duration-300 group"
+          title="Back to home"
+        >
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
         </Link>
       </div>
 
-      {/* Left Column: 3D Pulse Logo (fully transparent background, no border) */}
-      <div className="hidden lg:flex lg:col-span-5 flex-col justify-center items-center p-12 relative overflow-hidden z-20">
+      {/* Left Column: 3D Pulse Logo (fully transparent background, shifted closer to center with lg:col-span-6) */}
+      <div className="hidden lg:flex lg:col-span-6 flex-col justify-center items-center p-12 relative overflow-hidden z-20">
         {/* Soft background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-white/5 rounded-full blur-[80px] pointer-events-none" />
         
@@ -232,8 +233,8 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right Column: Form Container (fully transparent background, sharing container) */}
-      <div className="lg:col-span-7 flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 relative z-20 w-full min-h-screen">
+      {/* Right Column: Form Container (fully transparent background, symmetric with lg:col-span-6) */}
+      <div className="lg:col-span-6 flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 relative z-20 w-full min-h-screen">
         <div className="w-full max-w-[400px]">
           {/* Headings */}
           <div className="mb-8">

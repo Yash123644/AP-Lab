@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -25,74 +25,106 @@ function getPulseHeight(x: number): number {
   return 0; // x >= 1.2
 }
 
+const startX = -2.1;
+const endX = 2.1;
+const stepX = 0.09; // Spaced out X step to make them clearly separate pixels
+const radius = 0.15; // Radius of the hollow tube
+const N = 6; // Number of pixels around the circumference forming a hollow tube
+
+// Pre-generate the base coordinates of the cubes
+const cubes: { basePosition: [number, number, number]; id: string }[] = [];
+for (let x = startX; x <= endX; x += stepX) {
+  const yCenter = getPulseHeight(x);
+  for (let i = 0; i < N; i++) {
+    const theta = (i / N) * Math.PI * 2;
+    const y = yCenter + radius * Math.cos(theta);
+    const z = radius * Math.sin(theta);
+    
+    cubes.push({
+      basePosition: [x, y, z],
+      id: `${x.toFixed(3)}_${i}`
+    });
+  }
+}
+
 function PulseModel() {
   const groupRef = useRef<THREE.Group>(null);
-  const mouse = useRef({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleGlobalMouseMove = (event: MouseEvent) => {
-      // Normalize mouse positions between -1 and 1
-      mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    };
-    window.addEventListener("mousemove", handleGlobalMouseMove);
-    return () => window.removeEventListener("mousemove", handleGlobalMouseMove);
-  }, []);
-
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (groupRef.current) {
+      const time = state.clock.getElapsedTime();
+      const pointerX = state.pointer.x;
+      const pointerY = state.pointer.y;
+
       // Auto-rotation baseline oscillation on Y (gentle horizontal swaying)
-      const baseY = Math.sin(state.clock.getElapsedTime() * 0.4) * 0.15;
+      const baseY = Math.sin(time * 0.4) * 0.15;
       
       // Interactive target rotations (mouse movement tilts the model)
-      const targetY = baseY + mouse.current.x * 0.35;
-      const targetX = mouse.current.y * 0.3;
-      const targetZ = -mouse.current.x * 0.08;
+      const targetY = baseY + pointerX * 0.35;
+      const targetX = pointerY * 0.3;
+      const targetZ = -pointerX * 0.08;
       
       // Smooth interpolation (lerp)
       groupRef.current.rotation.y += (targetY - groupRef.current.rotation.y) * 0.08;
       groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.08;
       groupRef.current.rotation.z += (targetZ - groupRef.current.rotation.z) * 0.08;
+
+      // Project mouse pointer NDC [-1, 1] into local 3D coordinates based on canvas viewport dimensions
+      const mx = pointerX * (state.viewport.width / 2);
+      const my = pointerY * (state.viewport.height / 2);
+
+      groupRef.current.children.forEach((child, index) => {
+        const cube = cubes[index];
+        if (!cube) return;
+
+        const [origX, origY, origZ] = cube.basePosition;
+
+        // 1. Futuristic wiggling/distortion (digital screen noise wiggles)
+        const wiggleX = Math.sin(time * 6 + origX * 10) * 0.015;
+        const wiggleY = Math.cos(time * 6 + origY * 10) * 0.015;
+        const wiggleZ = Math.sin(time * 6 + origZ * 10) * 0.015;
+
+        // 2. Interactive parting effect (disperse cubes when cursor is near)
+        let pushX = 0;
+        let pushY = 0;
+        
+        const dx = origX - mx;
+        const dy = origY - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        const pushRadius = 0.8; // Radius of mouse parting influence
+        if (dist < pushRadius) {
+          const force = (1 - dist / pushRadius) * 0.38; // Max push distance: 0.38 units
+          const angle = dist > 0.01 ? Math.atan2(dy, dx) : Math.random() * Math.PI * 2;
+          pushX = Math.cos(angle) * force;
+          pushY = Math.sin(angle) * force;
+        }
+
+        // Apply updated position
+        child.position.set(
+          origX + wiggleX + pushX,
+          origY + wiggleY + pushY,
+          origZ + wiggleZ
+        );
+
+        // 3. Scanline/CRT pixel scale flicker (Futuristic digital screen breathe)
+        const scaleFlicker = 1 + Math.sin(time * 12 + origX * 15) * 0.08;
+        child.scale.set(scaleFlicker, scaleFlicker, scaleFlicker);
+      });
     }
   });
-
-  const cubes = [];
-  const startX = -2.1;
-  const endX = 2.1;
-  const stepX = 0.09; // Spaced out X step to make them clearly separate pixels
-  const radius = 0.15; // Radius of the hollow tube
-  const N = 6; // Number of pixels around the circumference forming a hollow tube
-
-  const rgbColors = ["#ff3333", "#33ff33", "#3333ff"]; // RGB screen subpixel colors
-
-  let pixelIndex = 0;
-  for (let x = startX; x <= endX; x += stepX) {
-    const yCenter = getPulseHeight(x);
-    for (let i = 0; i < N; i++) {
-      const theta = (i / N) * Math.PI * 2;
-      const y = yCenter + radius * Math.cos(theta);
-      const z = radius * Math.sin(theta);
-      
-      cubes.push({
-        position: [x, y, z] as [number, number, number],
-        color: rgbColors[pixelIndex % 3], // Assign repeating Red, Green, Blue
-        id: `${x.toFixed(3)}_${i}`
-      });
-      pixelIndex++;
-    }
-  }
 
   return (
     <group ref={groupRef}>
       {cubes.map((cube) => (
-        <mesh key={cube.id} position={cube.position}>
+        <mesh key={cube.id} position={cube.basePosition}>
           <boxGeometry args={[0.035, 0.035, 0.035]} />
           <meshStandardMaterial 
             color="#ffffff" 
-            emissive={cube.color}
-            emissiveIntensity={0.8} // Screen pixel brightness (preserves 3D face shading under key lights)
-            roughness={0.2}
-            metalness={0.7}
+            emissive="#ffffff"
+            emissiveIntensity={1.4} // Glowing white screen pixels!
+            roughness={0.15}
+            metalness={0.5}
           />
         </mesh>
       ))}
