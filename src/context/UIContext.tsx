@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type AuthView = "signin" | "signup";
 
@@ -15,12 +16,12 @@ interface UIContextType {
 const UIContext = createContext<UIContextType | undefined>(undefined);
 
 export function UIProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authView, setAuthView] = useState<AuthView>("signin");
 
   const openAuthModal = (view: AuthView = "signin") => {
-    setAuthView(view);
-    setIsAuthModalOpen(true);
+    router.push(`/login?view=${view}`);
   };
 
   const closeAuthModal = () => {
