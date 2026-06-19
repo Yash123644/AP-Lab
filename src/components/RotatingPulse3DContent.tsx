@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -27,49 +27,89 @@ function getPulseHeight(x: number): number {
 
 const startX = -2.1;
 const endX = 2.1;
-const stepX = 0.09; // Spaced out X step to make them clearly separate pixels
+const ds = 0.09; // Spaced out curve step (constant distance along the EKG path)
 const radius = 0.15; // Radius of the hollow tube
 const N = 6; // Number of pixels around the circumference forming a hollow tube
 
-// Pre-generate the base coordinates of the cubes
+// Pre-generate base coordinates of cubes using uniform arc-length sampling
 const cubes: { basePosition: [number, number, number]; id: string }[] = [];
-for (let x = startX; x <= endX; x += stepX) {
-  const yCenter = getPulseHeight(x);
+let currentX = startX;
+let currentY = getPulseHeight(startX);
+let idCounter = 0;
+
+const addRing = (cx: number, cy: number) => {
   for (let i = 0; i < N; i++) {
     const theta = (i / N) * Math.PI * 2;
-    const y = yCenter + radius * Math.cos(theta);
+    const y = cy + radius * Math.cos(theta);
     const z = radius * Math.sin(theta);
-    
     cubes.push({
-      basePosition: [x, y, z],
-      id: `${x.toFixed(3)}_${i}`
+      basePosition: [cx, y, z],
+      id: `${cx.toFixed(3)}_${i}_${idCounter++}`
     });
+  }
+};
+
+// Start by placing the first ring
+addRing(currentX, currentY);
+
+// Numerically integrate along the EKG curve for uniform thickness
+while (currentX < endX) {
+  let accumulatedDistance = 0;
+  let tempX = currentX;
+  let tempY = currentY;
+  const integrationStep = 0.001; // Small X increments for precision
+  
+  while (accumulatedDistance < ds && tempX < endX) {
+    tempX += integrationStep;
+    const nextY = getPulseHeight(tempX);
+    const dx = tempX - currentX;
+    const dy = nextY - currentY;
+    accumulatedDistance = Math.sqrt(dx * dx + dy * dy);
+  }
+  
+  currentX = tempX;
+  currentY = getPulseHeight(currentX);
+  
+  if (currentX <= endX) {
+    addRing(currentX, currentY);
   }
 }
 
 function PulseModel() {
   const groupRef = useRef<THREE.Group>(null);
+  const globalMouse = useRef({ x: 0, y: 0 });
+
+  // Track cursor position globally across the entire screen window for perspective tilt
+  useEffect(() => {
+    const handleGlobalMouseMove = (event: MouseEvent) => {
+      // Normalize position between -1 and 1
+      globalMouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+      globalMouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    };
+    window.addEventListener("mousemove", handleGlobalMouseMove);
+    return () => window.removeEventListener("mousemove", handleGlobalMouseMove);
+  }, []);
 
   useFrame((state) => {
     if (groupRef.current) {
       const time = state.clock.getElapsedTime();
-      const pointerX = state.pointer.x;
-      const pointerY = state.pointer.y;
-
+      
       // Auto-rotation baseline oscillation on Y (gentle horizontal swaying)
       const baseY = Math.sin(time * 0.4) * 0.15;
       
-      // Interactive target rotations (mouse movement tilts the model)
-      const targetY = baseY + pointerX * 0.35;
-      const targetX = pointerY * 0.3;
-      const targetZ = -pointerX * 0.08;
+      // Global target rotations driven by window-wide mouse position
+      const targetY = baseY + globalMouse.current.x * 0.35;
+      const targetX = globalMouse.current.y * 0.3;
+      const targetZ = -globalMouse.current.x * 0.08;
       
       // Smooth interpolation (lerp)
       groupRef.current.rotation.y += (targetY - groupRef.current.rotation.y) * 0.08;
       groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.08;
       groupRef.current.rotation.z += (targetZ - groupRef.current.rotation.z) * 0.08;
 
-      // Project mouse pointer NDC [-1, 1] into local 3D coordinates based on canvas viewport dimensions
+      // Project Canvas local pointer NDC [-1, 1] into 3D scene space for local parting effect
+      const pointerX = state.pointer.x;
+      const pointerY = state.pointer.y;
       const mx = pointerX * (state.viewport.width / 2);
       const my = pointerY * (state.viewport.height / 2);
 
@@ -100,7 +140,7 @@ function PulseModel() {
           pushY = Math.sin(angle) * force;
         }
 
-        // Apply updated position
+        // Apply updated position in local space
         child.position.set(
           origX + wiggleX + pushX,
           origY + wiggleY + pushY,
