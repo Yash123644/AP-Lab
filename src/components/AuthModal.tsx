@@ -9,9 +9,10 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   setPersistence,
-  browserLocalPersistence
+  browserLocalPersistence,
+  signInWithCustomToken
 } from "firebase/auth";
-import { auth, googleProvider, githubProvider, twitterProvider } from "@/lib/firebase";
+import { auth, googleProvider, githubProvider } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { useUI } from "@/context/UIContext";
 
@@ -58,6 +59,68 @@ export function AuthModal() {
         setError("An error occurred during sign in.");
       }
     } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleTwitterSignIn = async () => {
+    try {
+      setError(null);
+      setLoading(true);
+
+      const width = 600;
+      const height = 600;
+      const left = window.screen.width / 2 - width / 2;
+      const top = window.screen.height / 2 - height / 2;
+
+      const popup = window.open(
+        "/api/auth/twitter/login",
+        "twitter-oauth",
+        `width=${width},height=${height},left=${left},top=${top},status=no,resizable=yes,scrollbars=yes`
+      );
+
+      if (!popup) {
+        setError("Failed to open sign-in popup. Please check your popup blocker settings.");
+        setLoading(false);
+        return;
+      }
+
+      const handleMessage = async (event: MessageEvent) => {
+        if (event.origin !== window.location.origin) return;
+
+        if (event.data?.type === "twitter-auth-success") {
+          window.removeEventListener("message", handleMessage);
+          try {
+            const { token } = event.data;
+            await setPersistence(auth, browserLocalPersistence);
+            await signInWithCustomToken(auth, token);
+            onClose();
+            router.push("/dashboard");
+          } catch (err: any) {
+            console.error("Firebase Custom Auth Error:", err);
+            setError(err.message || "Failed to sign in with custom token.");
+            setLoading(false);
+          }
+        } else if (event.data?.type === "twitter-auth-error") {
+          window.removeEventListener("message", handleMessage);
+          setError(event.data.error || "An error occurred during sign in with X.");
+          setLoading(false);
+        }
+      };
+
+      window.addEventListener("message", handleMessage);
+
+      const checkPopupClosed = setInterval(() => {
+        if (popup.closed) {
+          clearInterval(checkPopupClosed);
+          window.removeEventListener("message", handleMessage);
+          setLoading(false);
+        }
+      }, 1000);
+
+    } catch (err: any) {
+      console.error("Twitter Signin Setup Error:", err);
+      setError("An error occurred during sign in setup.");
       setLoading(false);
     }
   };
@@ -236,7 +299,7 @@ export function AuthModal() {
                   {/* X (formerly Twitter) Sign In */}
                   <button
                     type="button"
-                    onClick={() => handleOAuth(twitterProvider)}
+                    onClick={handleTwitterSignIn}
                     disabled={loading}
                     className="w-full flex items-center justify-between px-6 py-[18px] bg-[#141414] hover:bg-[#1a1a1a] border border-white/5 hover:border-white/10 rounded-[2rem] transition-all group disabled:opacity-50"
                   >

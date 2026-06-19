@@ -17,6 +17,7 @@
     "clsx": "^2.1.1",
     "d3-geo": "^3.1.1",
     "firebase": "^12.12.1",
+    "firebase-admin": "^14.0.0",
     "framer-motion": "^12.38.0",
     "katex": "^0.16.45",
     "lucide-react": "^1.11.0",
