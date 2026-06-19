@@ -230,7 +230,7 @@ export default function LoginPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-white/5 rounded-full blur-[80px] pointer-events-none" />
           
           {/* 3D Rotating EKG Pulse Wave */}
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full flex items-center justify-center">
             <RotatingPulse3D />
           </div>
         </div>

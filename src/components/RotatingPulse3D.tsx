@@ -16,7 +16,7 @@ const RotatingPulse3DContent = dynamic(
 
 export function RotatingPulse3D() {
   return (
-    <div className="w-full h-full min-h-[350px] max-h-[500px]">
+    <div className="w-full h-[450px] relative">
       <RotatingPulse3DContent />
     </div>
   );

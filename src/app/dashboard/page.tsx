@@ -314,14 +314,6 @@ export default function Dashboard() {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMinLoading, setIsMinLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsMinLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -337,7 +329,7 @@ export default function Dashboard() {
     }
   }, [currentUser, authLoading, router]);
 
-  if (authLoading || progressLoading || !currentUser || isMinLoading) {
+  if (authLoading || progressLoading || !currentUser) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-deep-navy">
         <LoadingSpinner />
@@ -613,10 +605,9 @@ export default function Dashboard() {
                 <LogOut className="w-5 h-5 text-red-400" />
               </div>
 
-              <h3 className="font-manrope font-bold text-xl text-white text-center mb-2 relative z-10">Sign Out</h3>
-              <p className="font-inter text-white/50 mb-6 text-sm text-center max-w-[280px] mx-auto leading-relaxed relative z-10">
-                Are you sure you want to securely disconnect from the Command Center?
-              </p>
+              <h3 className="font-manrope font-bold text-lg text-white text-center mb-6 px-2 relative z-10">
+                Are you sure you want to sign out?
+              </h3>
               
               <div className="flex items-center space-x-3 w-full relative z-10">
                 <button

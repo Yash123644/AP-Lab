@@ -175,7 +175,7 @@ function PulseModel() {
 export function RotatingPulse3DContent() {
   return (
     <div className="w-full h-full relative">
-      <Canvas camera={{ position: [0, 0, 4.8], fov: 45 }}>
+      <Canvas camera={{ position: [0, 0, 3.8], fov: 45 }}>
         <color attach="background" args={["#000000"]} />
         <ambientLight intensity={0.15} />
         
