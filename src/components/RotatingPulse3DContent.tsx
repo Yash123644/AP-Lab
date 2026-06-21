@@ -175,28 +175,17 @@ function PulseModel() {
 export function RotatingPulse3DContent() {
   return (
     <div className="w-full h-full relative">
-      <Canvas camera={{ position: [0, 0, 3.8], fov: 45 }}>
-        <color attach="background" args={["#000000"]} />
+      <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
         <ambientLight intensity={0.15} />
         
         {/* Key lights for 3D depth and cube face shading */}
         <pointLight position={[5, 10, 5]} intensity={2.0} />
         <pointLight position={[-5, -10, -5]} intensity={0.3} />
         
-        {/* Soft center-bottom point light to produce the glow/reflection on the floor plane */}
+        {/* Soft center-bottom point light to produce the glow/reflection */}
         <pointLight position={[0, -1.2, 0.3]} intensity={2.5} distance={3.0} color="#ffffff" />
         
         <PulseModel />
-
-        {/* Ground reflective floor plane matching the uploaded design */}
-        <mesh position={[0, -1.8, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[15, 15]} />
-          <meshStandardMaterial 
-            color="#000000"
-            roughness={0.55}
-            metalness={0.95}
-          />
-        </mesh>
       </Canvas>
     </div>
   );
