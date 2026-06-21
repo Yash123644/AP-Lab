@@ -185,143 +185,133 @@ const getCourseNameFromSlug = (slug: string) => {
 };
 
 function UpcomingCourseFallback({ slug }: { slug: string }) {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleNotify = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setIsSubmitting(true);
-    await new Promise(r => setTimeout(r, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setEmail("");
-  };
-
   const courseName = getCourseNameFromSlug(slug);
 
   return (
-    <div className="min-h-screen bg-[#020308] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-medical-teal/10 blur-[150px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary-purple/10 blur-[150px] rounded-full pointer-events-none z-0" />
-      
-      {/* Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
-
-      <div className="max-w-2xl w-full text-center relative z-10 space-y-8 flex flex-col items-center">
-        {/* Animated Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.02)]"
-        >
-          <span className="w-2 h-2 rounded-full bg-medical-teal animate-pulse" />
-          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-medical-teal">Workspace Curation Loop</span>
-        </motion.div>
-
-        {/* Clean Image Container with Glass Effects */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.1, type: "spring", stiffness: 80 }}
-          className="relative group w-64 h-64 md:w-80 md:h-80 rounded-[32px] overflow-hidden border border-white/10 bg-white/[0.01] shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center justify-center"
-        >
-          {/* Volumetric light ray overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10" />
-          
-          <motion.img 
-            src="/images/course_upcoming.png" 
-            alt="Course In Curation" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            animate={{
-              y: [0, -8, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.div>
-
-        {/* Course Info */}
-        <div className="space-y-4 max-w-lg">
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-5xl font-instrument text-white tracking-tight leading-tight"
-          >
-            {courseName} is under development
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-inter text-white/50 text-sm md:text-base leading-relaxed"
-          >
-            We are curating high-yield pre-med modules, clinical correlations, and interactive diagnostic simulation labs for this course. Be the first to build here.
-          </motion.p>
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans">
+      {/* Header Bar */}
+      <header className="h-20 bg-white border-b border-slate-100 flex items-center justify-between px-6 max-w-7xl mx-auto w-full">
+        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
+          <div className="w-10 h-10 rounded-full bg-[#5865f2] flex items-center justify-center border border-[#5865f2] transition-transform duration-300 group-hover:scale-105">
+            <Activity className="w-5 h-5 text-white animate-pulse" />
+          </div>
+          <span className="font-manrope font-black text-slate-900 text-lg tracking-tight">AP Lab</span>
+        </Link>
+        
+        <div className="hidden md:flex items-center space-x-8">
+          <Link href="/" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Home</Link>
+          <Link href="/dashboard" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Dashboard</Link>
+          <Link href="/about" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">About</Link>
+          <Link href="/community-impact" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Impact</Link>
+          <Link href="/join" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Join</Link>
         </div>
 
-        {/* Notify Me Form */}
-        <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="w-full max-w-md"
+        <Link 
+          href="/dashboard" 
+          className="px-6 py-2.5 rounded-full bg-[#5865f2] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#404eed] transition-all hover:scale-102 active:scale-98 shadow-md"
         >
-          <AnimatePresence mode="wait">
-            {submitted ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-medical-teal/10 border border-medical-teal/30 rounded-2xl p-4 text-center text-medical-teal font-medium text-sm shadow-[0_0_20px_rgba(0,242,255,0.05)]"
-              >
-                ✓ We'll notify you the moment this course becomes available.
-              </motion.div>
-            ) : (
-              <form onSubmit={handleNotify} className="flex gap-2 p-1 bg-white/[0.02] border border-white/10 rounded-2xl focus-within:border-medical-teal/50 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-                <input 
-                  type="email"
-                  required
-                  placeholder="Enter email for early access..."
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-transparent border-none text-white focus:outline-none px-4 py-3 text-sm placeholder:text-white/20"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-5 py-2.5 rounded-xl bg-medical-teal text-black font-semibold text-xs tracking-wider uppercase hover:brightness-110 active:scale-98 transition-all flex items-center gap-1.5"
-                >
-                  {isSubmitting ? "Syncing..." : "Notify Me"}
-                </button>
-              </form>
-            )}
-          </AnimatePresence>
-        </motion.div>
+          Open App
+        </Link>
+      </header>
 
-        {/* Back Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="pt-4"
-        >
-          <Link 
-            href="/dashboard" 
-            className="inline-flex items-center space-x-2 text-white/40 hover:text-white font-mono text-[10px] uppercase tracking-widest transition-colors group"
-          >
-            <span>← Return to Command Center</span>
+      {/* Main Content Area */}
+      <main className="flex-1 flex items-center max-w-7xl mx-auto w-full px-6 py-12 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+          {/* Left Column: Information */}
+          <div className="space-y-8 text-left">
+            <h1 className="font-black text-[#5865f2] text-4xl md:text-6xl tracking-tighter leading-none">
+              WRONG TURN?
+            </h1>
+            <p className="font-inter text-slate-600 text-base md:text-lg leading-relaxed">
+              You look lost, scholar. You know what helps when a class workspace is not ready? A cup of hot coffee and a bit of patience. Take a seat, we're frantically at work here cooking up something good. We're currently curating high-yield prep content, review questions, and interactive clinical labs for <strong className="text-slate-900 font-semibold">{courseName}</strong>. Oh, you need something to study in the meantime? These might help you:
+            </p>
+            <div className="flex flex-col space-y-3 pt-4">
+              <Link href="/" className="text-[#5865f2] hover:underline font-bold text-base flex items-center space-x-1">
+                <span>Return to Home Page</span>
+              </Link>
+              <Link href="/dashboard" className="text-[#5865f2] hover:underline font-bold text-base flex items-center space-x-1">
+                <span>Go to Dashboard</span>
+              </Link>
+              <Link href="/community-impact" className="text-[#5865f2] hover:underline font-bold text-base flex items-center space-x-1">
+                <span>Explore Community Impact</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column: Illustration */}
+          <div className="flex justify-center md:justify-end">
+            <motion.img 
+              src="/images/course_upcoming.png" 
+              alt="Cozy Bear Lab" 
+              className="w-full max-w-[440px] md:max-w-[480px] object-contain"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            />
+          </div>
+        </div>
+      </main>
+
+      {/* Custom Discord-Style Footer */}
+      <footer className="w-full bg-[#5865f2] text-white py-16 px-6 md:px-12 mt-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 border-b border-white/20 pb-12">
+          {/* Left side brand column */}
+          <div className="md:col-span-2 space-y-6 text-left">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                <Activity className="w-4.5 h-4.5 text-white animate-pulse" />
+              </div>
+              <span className="font-manrope font-black text-xl tracking-tight text-white">AP Lab</span>
+            </div>
+            
+            {/* Language select mock */}
+            <div className="relative w-fit">
+              <div className="flex items-center space-x-2 bg-black/20 hover:bg-black/30 border border-white/10 px-4 py-2 rounded-lg text-xs font-semibold cursor-pointer select-none">
+                <span className="inline-block w-4 h-4 bg-white/20 rounded-full flex items-center justify-center">🇺🇸</span>
+                <span>English, USA</span>
+                <ChevronDown className="w-3 h-3 text-white/50" />
+              </div>
+            </div>
+          </div>
+          
+          {/* Link grids */}
+          <div className="space-y-4 text-left">
+            <h4 className="text-white/50 text-[11px] font-black uppercase tracking-wider">Product</h4>
+            <div className="flex flex-col space-y-2.5 text-sm font-medium">
+              <Link href="/" className="hover:underline">Home</Link>
+              <Link href="/dashboard" className="hover:underline">Dashboard</Link>
+              <Link href="/live-analytics" className="hover:underline">Live Analytics</Link>
+            </div>
+          </div>
+          
+          <div className="space-y-4 text-left">
+            <h4 className="text-white/50 text-[11px] font-black uppercase tracking-wider">Company</h4>
+            <div className="flex flex-col space-y-2.5 text-sm font-medium">
+              <Link href="/about" className="hover:underline">About Us</Link>
+              <Link href="/join" className="hover:underline">Join Team</Link>
+              <Link href="/contact" className="hover:underline">Contact Support</Link>
+            </div>
+          </div>
+          
+          <div className="space-y-4 text-left">
+            <h4 className="text-white/50 text-[11px] font-black uppercase tracking-wider">Resources</h4>
+            <div className="flex flex-col space-y-2.5 text-sm font-medium">
+              <Link href="/terms" className="hover:underline">Terms of Service</Link>
+              <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+              <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:underline">GitHub</a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="text-xs text-white/60 font-mono">
+            © {new Date().getFullYear()} AP Lab. All rights reserved.
+          </span>
+          <Link href="/dashboard" className="px-6 py-2 rounded-full bg-white text-[#5865f2] font-bold text-xs uppercase tracking-wider hover:bg-white/90 transition-all shadow-md">
+            Open App
           </Link>
-        </motion.div>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }
