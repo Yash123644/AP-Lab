@@ -1,17 +1,232 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, X, BookOpen, Video, Clock, Star } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 import { BiologyDNA3D } from "./BiologyDNA3D";
 import { ChemistryMolecule3D } from "./ChemistryMolecule3D";
 import { PhysicsOrbit3D } from "./PhysicsOrbit3D";
 
+interface CoursePreview {
+  id: string;
+  name: string;
+  badge: string;
+  category: string;
+  description: string;
+  accentHex: string;
+  stats: { label: string; value: string }[];
+  units: { number: string; title: string; desc: string }[];
+  highlights: string[];
+  visualType: "dna" | "calculus" | "physics" | "chemistry";
+  slug: string;
+}
+
+const COURSE_PREVIEWS: CoursePreview[] = [
+  {
+    id: "biology",
+    name: "AP Biology",
+    badge: "32 Articles • 16 Videos",
+    category: "STEM & Sciences",
+    description: "Explore the fundamental principles of life. Decode the cellular matrix, delve into evolutionary models, and unravel gene replication mechanics with deep-dive visual modules, laboratory guides, and interactive simulations.",
+    accentHex: "#10b981",
+    slug: "ap-biology",
+    stats: [
+      { label: "Articles", value: "32" },
+      { label: "Videos", value: "16" },
+      { label: "Est. Study", value: "48h" },
+      { label: "Practice Qs", value: "1,200+" }
+    ],
+    units: [
+      { number: "Unit 1", title: "Chemistry of Life", desc: "Properties of water, macromolecule structures, biological polymers, and cellular chemical reactions." },
+      { number: "Unit 2", title: "Cell Structure & Function", desc: "Organelle specialization, membrane permeability, active/passive transport, and tonicity." },
+      { number: "Unit 3", title: "Cellular Energetics", desc: "Enzyme kinetics, metabolic pathways, photosynthesis light/dark reactions, and respiration." },
+      { number: "Unit 4", title: "Genetics & Gene Regulation", desc: "Meiotic division, Mendelian inheritance, chromatin remodeling, and transcription regulation." }
+    ],
+    highlights: [
+      "Interactive 3D DNA Double Helix & Organelle Visualizers: Explore molecular models and eukaryotic cell structure in a fully rotational 3D canvas environment.",
+      "Dynamic Membrane Transport & Osmosis Sandbox: Experiment with concentration gradients, active/passive transport, and semi-permeable membranes.",
+      "Comprehensive Lab Reports & AP Review Guides: Master enzyme kinetics, cellular respiration, and photosynthesis calculations with step-by-step guides.",
+      "Practice Exam Simulator with Detailed Score Reports: Access realistic multiple-choice questions and free-response grading rubrics.",
+      "Real-time Progress Tracker & Flashcard Decks: Study high-yield biology vocabulary (e.g., endosymbiosis, transduction) with smart reviews."
+    ],
+    visualType: "dna"
+  },
+  {
+    id: "calculus",
+    name: "AP Calculus",
+    badge: "28 Articles • 14 Videos",
+    category: "Mathematical Logic",
+    description: "Conquer the foundations of limits, derivatives, and integrals. Build intuitive geometric understanding through interactive coordinate models, dynamic slope visualizations, and step-by-step calculus proofs.",
+    accentHex: "#c084fc",
+    slug: "ap-calc-bc",
+    stats: [
+      { label: "Articles", value: "28" },
+      { label: "Videos", value: "14" },
+      { label: "Est. Study", value: "42h" },
+      { label: "Practice Qs", value: "1,500+" }
+    ],
+    units: [
+      { number: "Unit 1", title: "Limits & Continuity", desc: "Definition of limit, algebraic evaluation, intermediate value theorem, and asymptote behaviors." },
+      { number: "Unit 2", title: "Differentiation Foundations", desc: "Derivative definition, derivative rules, rates of change, and implicit differentiation." },
+      { number: "Unit 3", title: "Analytical Applications", desc: "Extreme Value Theorem, Mean Value Theorem, optimization scenarios, and curve sketching." },
+      { number: "Unit 4", title: "Integration & Accumulation", desc: "Riemann sums, Fundamental Theorem of Calculus, accumulation functions, and area calculations." }
+    ],
+    highlights: [
+      "Dynamic SVG Function Graphing & Tangent Line Simulator: Traces derivative slopes along customizable curves to visualize local linearity.",
+      "Interactive Riemann Sum & Area Estimator: Visually construct rectangular and trapezoidal slices to approximate definite integrals.",
+      "Formal Step-by-Step Analytical Proof Templates: Master Mean Value Theorem, Intermediate Value Theorem, and L'Hopital's rule.",
+      "Volume of Solids of Revolution 3D Visuals: conceptualize disk, washer, and shell methods about axes of rotation.",
+      "Targeted AP Free Response Question (FRQ) Drill Sets: Practice calculating rates of change, accumulation, and separation of variables."
+    ],
+    visualType: "calculus"
+  },
+  {
+    id: "physics",
+    name: "AP Physics",
+    badge: "24 Articles • 12 Videos",
+    category: "STEM & Sciences",
+    description: "Master the laws governing the universe. Investigate particle dynamics, electromagnetism, and energy conservation models with precision vector setups, force diagrams, and physical system sandboxes.",
+    accentHex: "#818cf8",
+    slug: "ap-physics-c",
+    stats: [
+      { label: "Articles", value: "24" },
+      { label: "Videos", value: "12" },
+      { label: "Est. Study", value: "38h" },
+      { label: "Practice Qs", value: "950+" }
+    ],
+    units: [
+      { number: "Unit 1", title: "Kinematics & Dynamics", desc: "Motion vector analysis, projectile paths, Newton's laws of motion, and friction coefficients." },
+      { number: "Unit 2", title: "Work, Energy & Power", desc: "Conservation of mechanical energy, work-energy theorem, and conservative forces." },
+      { number: "Unit 3", title: "Momentum & Rotation", desc: "Elastic and inelastic collisions, torque, center of mass, and rotational inertia." },
+      { number: "Unit 4", title: "Oscillations & Gravity", desc: "Simple harmonic oscillators, gravitational force fields, and Kepler's laws." }
+    ],
+    highlights: [
+      "3D Planetary Gravity & Keplerian Orbit Simulator: Visualize vector forces, orbital paths, and angular momentum in real time.",
+      "Interactive Vector Fields & Force Diagram Builder: Construct free-body diagrams and calculate net force, torque, and tension.",
+      "Real-Time Mass-Spring & Pendulum Oscillation Sandbox: Adjust damping coefficients, spring constants, and gravity to analyze simple harmonic motion.",
+      "Work-Energy Conservation System Visuals: Model elastic and inelastic collisions and analyze kinetic/potential energy transformations.",
+      "AP Physics C Calculus-Based Mechanics Review Modules: Master derivation of kinematics formulas using derivatives and integrals."
+    ],
+    visualType: "physics"
+  },
+  {
+    id: "chemistry",
+    name: "AP Chemistry",
+    badge: "30 Articles • 15 Videos",
+    category: "STEM & Sciences",
+    description: "Deconstruct the micro-world. Analyze thermodynamic systems, equilibrium math, kinetics, and molecular orbital structures using fully interactive chemical reaction simulations and molecular models.",
+    accentHex: "#60a5fa",
+    slug: "ap-chemistry",
+    stats: [
+      { label: "Articles", value: "30" },
+      { label: "Videos", value: "15" },
+      { label: "Est. Study", value: "45h" },
+      { label: "Practice Qs", value: "1,100+" }
+    ],
+    units: [
+      { number: "Unit 1", title: "Atomic Structure & Properties", desc: "Electron configuration, periodic trends (electronegativity, atomic radius), and bonding types." },
+      { number: "Unit 2", title: "Chemical Reactions", desc: "Stoichiometry, net ionic equations, precipitation, and redox reaction processes." },
+      { number: "Unit 3", title: "Kinetics & Equilibrium", desc: "Rate laws, activation energy, collision theory, and Le Chatelier's equilibrium principle." },
+      { number: "Unit 4", title: "Thermodynamics & pH", desc: "Enthalpy, entropy, Gibbs free energy, acid-base theories, and buffer system math." }
+    ],
+    highlights: [
+      "Interactive 3D Molecular Bonding & Orbital Orbit Visualizer: Conceptualize hybridization, molecular geometry, and electron configuration.",
+      "Dynamic Le Chatelier Chemical Equilibrium Simulator: Adjust temperature, pressure, and concentrations to see shifts in real-time reaction quotients.",
+      "Virtual Titration Laboratory & pH Curver: Conduct simulated acid-base titrations and calculate equivalence points and buffer capacities.",
+      "Thermodynamic Calorimetry & Rate Law Calculators: Analyze enthalpy, entropy, activation energy, and half-life reaction rates.",
+      "Solubility & Precipitation Visual Product Guide: Master net ionic equations and precipitation reactions with visual cues."
+    ],
+    visualType: "chemistry"
+  }
+];
+
+function CalculusVisual() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[200px] select-none cursor-pointer overflow-hidden rounded-2xl relative bg-white/[0.01]">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent pointer-events-none" />
+      <svg width="320" height="220" viewBox="0 0 320 220" className="w-full h-full max-w-[320px] z-10 p-4">
+        <defs>
+          <linearGradient id="calcGradModal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#c084fc" />
+            <stop offset="100%" stopColor="#818cf8" />
+          </linearGradient>
+        </defs>
+        {/* Axes */}
+        <line x1="20" y1="110" x2="300" y2="110" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
+        <line x1="160" y1="20" x2="160" y2="200" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
+        
+        {/* Grid lines */}
+        {[60, 110, 210, 260].map(x => (
+          <line key={`x-${x}`} x1={x} y1="20" x2={x} y2="200" stroke="rgba(255,255,255,0.02)" strokeWidth="1" />
+        ))}
+        {[60, 160].map(y => (
+          <line key={`y-${y}`} x1="20" y1={y} x2="300" y2={y} stroke="rgba(255,255,255,0.02)" strokeWidth="1" />
+        ))}
+
+        {/* Function Curve */}
+        <motion.path
+          d="M 20 160 Q 90 20, 160 110 T 300 60"
+          fill="none"
+          stroke="url(#calcGradModal)"
+          strokeWidth="3.5"
+        />
+
+        {/* Tangent line */}
+        <motion.line
+          x1="60" y1="130" x2="120" y2="50"
+          stroke="#10b981"
+          strokeWidth="2"
+          animate={{
+            x1: [30, 130, 230, 130, 30],
+            y1: [150, 70, 70, 70, 150],
+            x2: [90, 190, 270, 190, 90],
+            y2: [110, 150, 50, 150, 110],
+          }}
+          transition={{
+            duration: 6, repeat: Infinity, ease: "easeInOut"
+          }}
+        />
+
+        {/* Tracing Point */}
+        <motion.circle
+          r="6"
+          fill="#ffffff"
+          animate={{
+            cx: [60, 160, 250, 160, 60],
+            cy: [130, 110, 60, 110, 130],
+          }}
+          transition={{
+            duration: 6, repeat: Infinity, ease: "easeInOut"
+          }}
+        />
+      </svg>
+    </div>
+  );
+}
+
 export function SubjectLabs() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [activeCourse, setActiveCourse] = useState<string | null>(null);
+  const router = useRouter();
+  const { currentUser } = useAuth();
+
+  useEffect(() => {
+    if (activeCourse) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeCourse]);
+
+  const activeCourseData = COURSE_PREVIEWS.find(c => c.id === activeCourse);
 
   return (
-    <section className="relative w-full py-[160px] px-6 md:px-[120px] bg-deep-navy overflow-hidden z-10">
+    <section className={`relative w-full py-[160px] px-6 md:px-[120px] bg-deep-navy overflow-hidden ${activeCourse ? "z-[60]" : "z-10"}`}>
       {/* Decorative ambient background glows */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none -z-10" />
@@ -50,6 +265,7 @@ export function SubjectLabs() {
             transition={{ duration: 0.7 }}
             onMouseEnter={() => setHoveredCard("biology")}
             onMouseLeave={() => setHoveredCard(null)}
+            onClick={() => setActiveCourse("biology")}
             whileHover={{ y: -6 }}
             className="lg:col-span-2 md:col-span-2 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
@@ -98,6 +314,7 @@ export function SubjectLabs() {
             transition={{ duration: 0.7, delay: 0.15 }}
             onMouseEnter={() => setHoveredCard("calculus")}
             onMouseLeave={() => setHoveredCard(null)}
+            onClick={() => setActiveCourse("calculus")}
             whileHover={{ y: -6 }}
             className="lg:col-span-1 md:col-span-1 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
@@ -177,6 +394,7 @@ export function SubjectLabs() {
             transition={{ duration: 0.7, delay: 0.15 }}
             onMouseEnter={() => setHoveredCard("physics")}
             onMouseLeave={() => setHoveredCard(null)}
+            onClick={() => setActiveCourse("physics")}
             whileHover={{ y: -6 }}
             className="lg:col-span-1 md:col-span-1 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
@@ -216,6 +434,7 @@ export function SubjectLabs() {
             transition={{ duration: 0.7 }}
             onMouseEnter={() => setHoveredCard("chemistry")}
             onMouseLeave={() => setHoveredCard(null)}
+            onClick={() => setActiveCourse("chemistry")}
             whileHover={{ y: -6 }}
             className="lg:col-span-2 md:col-span-2 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row-reverse justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
@@ -252,6 +471,204 @@ export function SubjectLabs() {
 
         </div>
       </div>
+
+      {/* Aesthetic detailed course preview modal */}
+      <AnimatePresence>
+        {activeCourseData && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 overflow-hidden">
+            {/* Backdrop with strong blur */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActiveCourse(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+            
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 250 }}
+              className="relative w-full max-w-5xl bg-[#0a0a0c] border border-white/10 rounded-[32px] shadow-[0_30px_70px_rgba(0,0,0,0.9)] overflow-hidden max-h-[90vh] flex flex-col z-10"
+            >
+              {/* Colored accent line at the top */}
+              <div 
+                className="absolute top-0 inset-x-0 h-1 pointer-events-none"
+                style={{
+                  background: `linear-gradient(to right, transparent, ${activeCourseData.accentHex}, transparent)`
+                }}
+              />
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setActiveCourse(null)}
+                className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all z-20 border border-white/5"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Scrollable Container */}
+              <div className="p-8 md:p-12 overflow-y-auto w-full max-h-[90vh] no-scrollbar">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-stretch">
+                  
+                  {/* Left Column: General Info, Badges, Stats & Highlights */}
+                  <div className="lg:col-span-7 flex flex-col justify-between">
+                    <div>
+                      {/* Tags */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 border border-white/5 text-white/60">
+                          {activeCourseData.category}
+                        </span>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#1db954] font-semibold">
+                          {activeCourseData.badge}
+                        </span>
+                      </div>
+                      
+                      {/* Name */}
+                      <h2 className="text-4xl md:text-5xl font-manrope font-extrabold text-white tracking-tight leading-none mb-4">
+                        {activeCourseData.name}
+                      </h2>
+                      
+                      {/* Description */}
+                      <p className="text-white/60 text-sm md:text-base leading-relaxed mb-8">
+                        {activeCourseData.description}
+                      </p>
+                      
+                      {/* Stats Grid */}
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                        {activeCourseData.stats.map((stat, i) => {
+                          let StatIcon = BookOpen;
+                          if (stat.label.includes("Video")) StatIcon = Video;
+                          if (stat.label.includes("Study")) StatIcon = Clock;
+                          if (stat.label.includes("Rate")) StatIcon = Star;
+                          
+                          return (
+                            <div 
+                              key={i}
+                              className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-4 flex flex-col justify-between h-[100px] hover:border-white/10 transition-all"
+                            >
+                              <StatIcon className="w-4 h-4 text-white/40" />
+                              <div>
+                                <div className="text-xl font-bold text-white tracking-tight leading-none mb-1">
+                                  {stat.value}
+                                </div>
+                                <div className="text-[10px] uppercase tracking-widest font-mono text-white/40">
+                                  {stat.label}
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      
+                      {/* Highlights */}
+                      <div className="space-y-3.5 mb-8">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-white/40 mb-3.5">
+                          Course Highlights & Features
+                        </h4>
+                        {activeCourseData.highlights.map((highlight, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <span 
+                              className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 animate-pulse" 
+                              style={{ backgroundColor: activeCourseData.accentHex }}
+                            />
+                            <span className="text-sm text-white/80">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white/5">
+                      <button
+                        onClick={() => {
+                          if (currentUser) {
+                            router.push(`/dashboard/${activeCourseData.slug}`);
+                          } else {
+                            router.push("/login?view=signin");
+                          }
+                          setActiveCourse(null);
+                        }}
+                        className="flex-1 py-3.5 px-6 rounded-2xl bg-white hover:bg-white/90 text-black font-semibold text-center active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer transition-all duration-300"
+                        style={{
+                          boxShadow: `0 4px 25px ${activeCourseData.accentHex}40`
+                        }}
+                      >
+                        <span>Start Course</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => setActiveCourse(null)}
+                        className="flex-1 py-3.5 px-6 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-semibold text-center border border-white/5 active:scale-[0.98] transition-all cursor-pointer"
+                      >
+                        Close Preview
+                      </button>
+                    </div>
+                  </div>
+                  
+                  {/* Right Column: Concept Preview Visual & Syllabus Units */}
+                  <div className="lg:col-span-5 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-white/5 pt-8 lg:pt-0 lg:pl-8">
+                    <div>
+                      {/* Visual */}
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-white/40 mb-3">
+                        Interactive Concept Preview
+                      </h4>
+                      <div 
+                        className="h-[200px] w-full rounded-2xl border border-white/5 bg-white/[0.01] relative overflow-hidden flex items-center justify-center select-none"
+                      >
+                        {activeCourseData.visualType === "dna" && (
+                          <BiologyDNA3D isHovered={true} />
+                        )}
+                        {activeCourseData.visualType === "chemistry" && (
+                          <ChemistryMolecule3D isHovered={true} />
+                        )}
+                        {activeCourseData.visualType === "physics" && (
+                          <PhysicsOrbit3D isHovered={true} />
+                        )}
+                        {activeCourseData.visualType === "calculus" && (
+                          <CalculusVisual />
+                        )}
+                      </div>
+                      
+                      {/* Syllabus */}
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-white/40 mt-8 mb-4">
+                        Curriculum Syllabus (4 Main Units)
+                      </h4>
+                      <div className="space-y-3">
+                        {activeCourseData.units.map((unit, index) => (
+                          <div 
+                            key={index}
+                            className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-4 hover:bg-white/[0.04] transition-all duration-300"
+                          >
+                            <div className="flex items-center justify-between mb-1">
+                              <span 
+                                className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5"
+                                style={{ color: activeCourseData.accentHex }}
+                              >
+                                {unit.number}
+                              </span>
+                            </div>
+                            <h5 className="text-sm font-semibold text-white">
+                              {unit.title}
+                            </h5>
+                            <p className="text-white/40 text-xs mt-1 leading-relaxed">
+                              {unit.desc}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 }

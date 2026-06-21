@@ -29,7 +29,7 @@ const fsSource = `
   uniform vec2 u_resolution;
   uniform float u_clickImpulse;
 
-  // Simple 2D noise
+  // Simple 2D noise for subtle background fluid simulation
   float random(vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
   }
@@ -43,19 +43,6 @@ const fsSource = `
     float d = random(i + vec2(1.0, 1.0));
     vec2 u = f * f * (3.0 - 2.0 * f);
     return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
-  }
-
-  // 3-octave Fractional Brownian Motion (fBm) for organic details
-  float fbm(vec2 st) {
-    float value = 0.0;
-    float amplitude = 0.5;
-    float frequency = 1.0;
-    for (int i = 0; i < 3; i++) {
-      value += amplitude * noise(st * frequency);
-      amplitude *= 0.5;
-      frequency *= 2.0;
-    }
-    return value;
   }
 
   // Center the 1024x512 text dynamically and scale it
@@ -87,7 +74,7 @@ const fsSource = `
     float dist = length(diff);
 
     // Influence radius (expands on click shockwave)
-    float radius = 0.14 + u_clickImpulse * 0.08;
+    float radius = 0.16 + u_clickImpulse * 0.12;
     float effect = smoothstep(radius, 0.0, dist) * u_mouseActive;
 
     // Sharp rendering bypass: immediately output raw texture when cursor is not in proximity
@@ -98,56 +85,42 @@ const fsSource = `
     }
 
     // Repulsion direction from the cursor
-    vec2 repelDir = normalize(diff / aspect);
-
-    // Dynamic liquid noise (ripples faster during mouse movement)
-    float speedMultiplier = 1.0 + length(u_mouseVel) * 6.0;
-    float nX = fbm(uv * 5.0 + u_time * 1.2 * speedMultiplier) * 2.0 - 1.0;
-    float nY = fbm(uv * 5.0 - u_time * 1.2 * speedMultiplier) * 2.0 - 1.0;
-    vec2 noiseDir = vec2(nX, nY);
-
-    // Blend repulsion vector with turbulence noise
-    vec2 warpDir = mix(repelDir, noiseDir, 0.45);
-    
-    // Warp offset is stronger on click!
-    vec2 warpOffset = warpDir * effect * (0.07 + u_clickImpulse * 0.1);
-
-    // Smudge trail in direction of cursor movement
-    vec2 smudgeVec = u_mouseVel * effect * 2.2;
-
-    vec4 finalColor = vec4(0.0);
-    float totalWeight = 0.0;
-    const int SAMPLES = 28; // Density of the sand/particle clumps
-
-    // Multi-sample loop to create 3D granular dissolve look
-    for (int i = 0; i < SAMPLES; i++) {
-      float t = float(i) / float(SAMPLES - 1);
-
-      // Low-medium frequency noise for organic sand/powder clumps (frequency 130.0)
-      float noiseVal = noise(uv * 130.0 + vec2(float(i) * 12.3, u_time * 2.2));
-      float angle = noiseVal * 6.283185;
-
-      // Jitter extends further to form the grain dispersion
-      float jitterDist = t * effect * (0.10 + u_clickImpulse * 0.08);
-      vec2 jitter = vec2(cos(angle), sin(angle)) * jitterDist;
-
-      // Displaced coordinates combining smudge, warp, and granular jitter
-      vec2 displacedUv = uv - warpOffset - smudgeVec * t * 0.9 + jitter;
-
-      vec2 textUv = getCenteredUv(displacedUv, u_resolution);
-      vec4 texColor = sampleTextTexture(textUv);
-
-      // Shading to simulate granular depth
-      float shading = mix(0.35, 1.0, noiseVal);
-
-      // Weight decay along the particle displacement
-      float weight = 1.0 - t * 0.8;
-
-      finalColor += texColor * weight * shading;
-      totalWeight += weight;
+    vec2 repelDir = vec2(0.0);
+    if (dist > 0.0001) {
+      repelDir = normalize(diff / aspect);
     }
 
-    finalColor = finalColor / totalWeight;
+    // Fluid swirl / noise rotation
+    float angle = noise(uv * 3.0 + u_time * 0.5) * 6.28318;
+    vec2 swirlDir = vec2(cos(angle), sin(angle));
+
+    // Combine repulsion, mouse velocity smudge, and swirl noise
+    vec2 warpDir = mix(repelDir, swirlDir, 0.25);
+    
+    // Lens distortion formula (refraction index style)
+    float refractionStrength = 0.06 + u_clickImpulse * 0.12;
+    vec2 warp = warpDir * effect * refractionStrength;
+    
+    // Smudge trail in direction of cursor movement
+    vec2 smudgeVec = u_mouseVel * effect * 1.5;
+    
+    // Final warp vector
+    vec2 totalWarp = warp + smudgeVec;
+
+    // Sample RGB channels separately to create beautiful chromatic aberration
+    // Red channel has a slightly larger displacement
+    float r = sampleTextTexture(getCenteredUv(uv - totalWarp * 1.25, u_resolution)).r;
+    // Green channel has the standard displacement
+    float g = sampleTextTexture(getCenteredUv(uv - totalWarp, u_resolution)).g;
+    // Blue channel has a slightly smaller displacement
+    float b = sampleTextTexture(getCenteredUv(uv - totalWarp * 0.75, u_resolution)).b;
+
+    // Combine channels
+    vec4 finalColor = vec4(r, g, b, 1.0);
+
+    // Add a subtle volumetric ring highlight around the lens distortion edge
+    float ringEffect = smoothstep(0.03, 0.0, abs(dist - radius * 0.8));
+    finalColor += vec4(vec3(0.06) * ringEffect * u_mouseActive, 0.0);
 
     gl_FragColor = finalColor;
   }
