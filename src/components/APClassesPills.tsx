@@ -21,18 +21,18 @@ import { useUI } from "@/context/UIContext";
 import { useRouter } from "next/navigation";
 
 const apClasses = [
-  { name: "AP Chemistry", icon: FlaskConical, hex: "#00f2ff" },
-  { name: "AP Biology", icon: Dna, hex: "#10b981" },
-  { name: "AP Physics 1", icon: Zap, hex: "#7b39fc" },
-  { name: "AP Calculus BC", icon: Divide, hex: "#f59e0b" },
-  { name: "AP Statistics", icon: BarChart, hex: "#ec4899" },
-  { name: "AP Computer Science", icon: Code, hex: "#3b82f6" },
-  { name: "AP World History", icon: Globe, hex: "#f59e0b" },
-  { name: "AP US History", icon: Flag, hex: "#ef4444" },
-  { name: "AP Psychology", icon: Brain, hex: "#a855f7" },
-  { name: "AP Lang", icon: PenTool, hex: "#ec4899" },
-  { name: "AP Macroeconomics", icon: TrendingUp, hex: "#10b981" },
-  { name: "AP Environmental", icon: Leaf, hex: "#10b981" },
+  { name: "AP Chemistry", icon: FlaskConical, hex: "#00f2ff", slug: "ap-chemistry" },
+  { name: "AP Biology", icon: Dna, hex: "#10b981", slug: "ap-biology" },
+  { name: "AP Physics 1", icon: Zap, hex: "#7b39fc", slug: "ap-physics-1" },
+  { name: "AP Calculus BC", icon: Divide, hex: "#f59e0b", slug: "ap-calc-bc" },
+  { name: "AP Statistics", icon: BarChart, hex: "#ec4899", slug: "ap-stats" },
+  { name: "AP Computer Science", icon: Code, hex: "#3b82f6", slug: "ap-csa" },
+  { name: "AP World History", icon: Globe, hex: "#f59e0b", slug: "ap-world-history" },
+  { name: "AP US History", icon: Flag, hex: "#ef4444", slug: "ap-ush" },
+  { name: "AP Psychology", icon: Brain, hex: "#a855f7", slug: "ap-psych" },
+  { name: "AP Lang", icon: PenTool, hex: "#ec4899", slug: "ap-eng-lang" },
+  { name: "AP Macroeconomics", icon: TrendingUp, hex: "#10b981", slug: "ap-macroeconomics" },
+  { name: "AP Environmental", icon: Leaf, hex: "#10b981", slug: "ap-environmental" },
 ];
 
 export function APClassesPills() {
@@ -79,7 +79,7 @@ export function APClassesPills() {
 
         <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 relative z-10">
           {apClasses.map((ap, index) => {
-            const slug = ap.name.toLowerCase().replace(/ /g, "-");
+            const slug = ap.slug;
             const isHovered = hoveredIndex === index;
             return (
               <motion.button

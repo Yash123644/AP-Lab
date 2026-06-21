@@ -167,6 +167,165 @@ function getInsightLabel(slug: string) {
   return "Academic Insight";
 }
 
+const getCourseNameFromSlug = (slug: string) => {
+  const map: Record<string, string> = {
+    "ap-physics-1": "AP Physics 1",
+    "ap-world-history": "AP World History",
+    "ap-macroeconomics": "AP Macroeconomics",
+    "ap-environmental": "AP Environmental",
+    "ap-physics-c": "AP Physics C",
+    "ap-calc-bc": "AP Calculus BC",
+    "ap-stats": "AP Statistics",
+    "ap-csa": "AP Computer Science A",
+    "ap-ush": "AP US History",
+    "ap-psych": "AP Psychology",
+    "ap-eng-lang": "AP English Language",
+  };
+  return map[slug] || slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+};
+
+function UpcomingCourseFallback({ slug }: { slug: string }) {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNotify = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setIsSubmitting(true);
+    await new Promise(r => setTimeout(r, 1000));
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setEmail("");
+  };
+
+  const courseName = getCourseNameFromSlug(slug);
+
+  return (
+    <div className="min-h-screen bg-[#020308] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-medical-teal/10 blur-[150px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary-purple/10 blur-[150px] rounded-full pointer-events-none z-0" />
+      
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+
+      <div className="max-w-2xl w-full text-center relative z-10 space-y-8 flex flex-col items-center">
+        {/* Animated Badge */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.02)]"
+        >
+          <span className="w-2 h-2 rounded-full bg-medical-teal animate-pulse" />
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-medical-teal">Workspace Curation Loop</span>
+        </motion.div>
+
+        {/* Clean Image Container with Glass Effects */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.1, type: "spring", stiffness: 80 }}
+          className="relative group w-64 h-64 md:w-80 md:h-80 rounded-[32px] overflow-hidden border border-white/10 bg-white/[0.01] shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center justify-center"
+        >
+          {/* Volumetric light ray overlay */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10" />
+          
+          <motion.img 
+            src="/images/course_upcoming.png" 
+            alt="Course In Curation" 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.div>
+
+        {/* Course Info */}
+        <div className="space-y-4 max-w-lg">
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-3xl md:text-5xl font-instrument text-white tracking-tight leading-tight"
+          >
+            {courseName} is under development
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="font-inter text-white/50 text-sm md:text-base leading-relaxed"
+          >
+            We are curating high-yield pre-med modules, clinical correlations, and interactive diagnostic simulation labs for this course. Be the first to build here.
+          </motion.p>
+        </div>
+
+        {/* Notify Me Form */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="w-full max-w-md"
+        >
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="bg-medical-teal/10 border border-medical-teal/30 rounded-2xl p-4 text-center text-medical-teal font-medium text-sm shadow-[0_0_20px_rgba(0,242,255,0.05)]"
+              >
+                ✓ We'll notify you the moment this course becomes available.
+              </motion.div>
+            ) : (
+              <form onSubmit={handleNotify} className="flex gap-2 p-1 bg-white/[0.02] border border-white/10 rounded-2xl focus-within:border-medical-teal/50 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
+                <input 
+                  type="email"
+                  required
+                  placeholder="Enter email for early access..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-transparent border-none text-white focus:outline-none px-4 py-3 text-sm placeholder:text-white/20"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-5 py-2.5 rounded-xl bg-medical-teal text-black font-semibold text-xs tracking-wider uppercase hover:brightness-110 active:scale-98 transition-all flex items-center gap-1.5"
+                >
+                  {isSubmitting ? "Syncing..." : "Notify Me"}
+                </button>
+              </form>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Back Link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="pt-4"
+        >
+          <Link 
+            href="/dashboard" 
+            className="inline-flex items-center space-x-2 text-white/40 hover:text-white font-mono text-[10px] uppercase tracking-widest transition-colors group"
+          >
+            <span>← Return to Command Center</span>
+          </Link>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 export default function APDynamicCoursePage() {
   const params = useParams();
   const router = useRouter();
@@ -195,19 +354,7 @@ export default function APDynamicCoursePage() {
   }, [course]);
 
   if (!course) {
-    return (
-      <div className="min-h-screen bg-deep-navy flex flex-col items-center justify-center p-6 text-center space-y-6">
-        <AlertCircle className="w-16 h-16 text-red-500 animate-pulse" />
-        <h2 className="text-3xl font-instrument text-white">Course Not Found</h2>
-        <p className="text-white/60 max-w-md">The requested course directory does not exist or is currently being curated by our board.</p>
-        <Link 
-          href="/dashboard" 
-          className="px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl text-white text-sm font-semibold transition-colors"
-        >
-          Return to Command Center
-        </Link>
-      </div>
-    );
+    return <UpcomingCourseFallback slug={slug} />;
   }
 
   const toggleUnit = (id: number) => {

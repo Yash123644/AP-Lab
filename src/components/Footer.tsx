@@ -14,25 +14,9 @@ export function Footer() {
           <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
             © {new Date().getFullYear()} All Rights Reserved.
           </span>
-          <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">
+          <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest mb-4">
             AP Lab: The Pre-Med Accelerator
           </span>
-        </div>
-
-        {/* Center Column */}
-        <div className="flex flex-col md:border-r border-white/10 md:px-8">
-          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
-            Navigation:
-          </span>
-          <div className="flex space-x-4 mb-2">
-            <Link href="/" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
-              Home
-            </Link>
-            <span className="text-white/20">/</span>
-            <Link href="/dashboard" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
-              The Dashboard
-            </Link>
-          </div>
           <div className="flex space-x-4">
             <Link href="/terms" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
               Terms of Service
@@ -40,6 +24,22 @@ export function Footer() {
             <span className="text-white/20">/</span>
             <Link href="/privacy" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
               Privacy Policy
+            </Link>
+          </div>
+        </div>
+
+        {/* Center Column */}
+        <div className="flex flex-col md:border-r border-white/10 md:px-8">
+          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
+            Navigation:
+          </span>
+          <div className="flex space-x-4">
+            <Link href="/" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Home
+            </Link>
+            <span className="text-white/20">/</span>
+            <Link href="/dashboard" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              The Dashboard
             </Link>
           </div>
         </div>
