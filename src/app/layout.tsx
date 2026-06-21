@@ -30,6 +30,9 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "AP Lab",
   description: "Bridging the gap between AP coursework and clinical medicine.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
