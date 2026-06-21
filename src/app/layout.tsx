@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: "AP Lab",
   description: "Bridging the gap between AP coursework and clinical medicine.",
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.svg?v=2",
   },
 };
 
