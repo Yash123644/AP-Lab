@@ -6,8 +6,8 @@ import * as THREE from "three";
 
 // Clean EKG heartbeat pulse shape (single cycle: flat -> rise -> fall -> recover -> flat)
 function getPulseHeight(x: number): number {
-  const Hp = 1.35; // Peak height
-  const Ht = 0.95; // Trough depth
+  const Hp = 1.55; // Increased peak height to make logo vertically taller and more prominent
+  const Ht = 1.10; // Increased trough depth
   
   if (x < -0.8) return 0;
   if (x >= -0.8 && x < 0.0) {
@@ -75,7 +75,11 @@ while (currentX < endX) {
   }
 }
 
-function PulseModel() {
+interface PulseModelProps {
+  isHovered: React.RefObject<boolean>;
+}
+
+function PulseModel({ isHovered }: PulseModelProps) {
   const groupRef = useRef<THREE.Group>(null);
   const globalMouse = useRef({ x: 0, y: 0 });
 
@@ -132,16 +136,19 @@ function PulseModel() {
         let targetPushX = 0;
         let targetPushY = 0;
         
-        const dx = origX - mx;
-        const dy = origY - my;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        const pushRadius = 0.95; // Radius of mouse parting influence
-        if (dist < pushRadius) {
-          const force = (1 - dist / pushRadius) * 0.42; // Max push distance: 0.42 units
-          const angle = dist > 0.01 ? Math.atan2(dy, dx) : Math.random() * Math.PI * 2;
-          targetPushX = Math.cos(angle) * force;
-          targetPushY = Math.sin(angle) * force;
+        // Only trigger parting effect when mouse is actively inside the logo container
+        if (isHovered.current) {
+          const dx = origX - mx;
+          const dy = origY - my;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          const pushRadius = 0.95; // Radius of mouse parting influence
+          if (dist < pushRadius) {
+            const force = (1 - dist / pushRadius) * 0.42; // Max push distance: 0.42 units
+            const angle = dist > 0.01 ? Math.atan2(dy, dx) : Math.random() * Math.PI * 2;
+            targetPushX = Math.cos(angle) * force;
+            targetPushY = Math.sin(angle) * force;
+          }
         }
 
         // Smoothly interpolate the push displacement using a lerp factor
@@ -181,9 +188,32 @@ function PulseModel() {
 }
 
 export function RotatingPulse3DContent() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isHovered = useRef(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const onEnter = () => {
+      isHovered.current = true;
+    };
+    const onLeave = () => {
+      isHovered.current = false;
+    };
+
+    el.addEventListener("mouseenter", onEnter);
+    el.addEventListener("mouseleave", onLeave);
+    return () => {
+      el.removeEventListener("mouseenter", onEnter);
+      el.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-full relative">
-      <Canvas camera={{ position: [0, 0, 4.4], fov: 45 }}>
+    <div ref={containerRef} className="w-full h-full relative">
+      {/* Adjusted camera position z to 4.8 to prevent side-cutting of the 3D model */}
+      <Canvas camera={{ position: [0, 0, 4.8], fov: 45 }}>
         <ambientLight intensity={0.15} />
         
         {/* Key lights for 3D depth and cube face shading */}
@@ -193,7 +223,7 @@ export function RotatingPulse3DContent() {
         {/* Soft center-bottom point light to produce the glow/reflection */}
         <pointLight position={[0, -1.2, 0.3]} intensity={2.5} distance={3.0} color="#ffffff" />
         
-        <PulseModel />
+        <PulseModel isHovered={isHovered} />
       </Canvas>
     </div>
   );

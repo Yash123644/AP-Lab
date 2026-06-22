@@ -6,17 +6,9 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 
-interface Particle {
+interface Point {
   x: number;
   y: number;
-  bx: number;
-  by: number;
-  vx: number;
-  vy: number;
-  size: number;
-  alpha: number;
-  color: string;
-  speed: number;
 }
 
 export default function NotFound() {
@@ -31,6 +23,39 @@ export default function NotFound() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Fixed size offscreen canvas for crisp text sampling
+    const offscreenCanvas = document.createElement("canvas");
+    const offscreenCtx = offscreenCanvas.getContext("2d");
+    const textWidth = 1000;
+    const textHeight = 500;
+    offscreenCanvas.width = textWidth;
+    offscreenCanvas.height = textHeight;
+
+    if (offscreenCtx) {
+      offscreenCtx.fillStyle = "#ffffff";
+      offscreenCtx.font = "900 290px system-ui, -apple-system, sans-serif";
+      offscreenCtx.textAlign = "center";
+      offscreenCtx.textBaseline = "middle";
+      offscreenCtx.fillText("404", textWidth / 2, textHeight / 2);
+    }
+
+    const imgData = offscreenCtx ? offscreenCtx.getImageData(0, 0, textWidth, textHeight) : null;
+    const data = imgData ? imgData.data : [];
+    
+    // Sample coordinates of the text pixels
+    const textPoints: Point[] = [];
+    const step = 3.5; // Controls fiber density and performance
+    if (imgData) {
+      for (let y = 0; y < textHeight; y += step) {
+        for (let x = 0; x < textWidth; x += step) {
+          const index = (Math.floor(y) * textWidth + Math.floor(x)) * 4;
+          if (data[index + 3] > 128) {
+            textPoints.push({ x, y });
+          }
+        }
+      }
+    }
+
     // Set canvas dimensions
     const resizeCanvas = () => {
       const rect = container.getBoundingClientRect();
@@ -42,71 +67,19 @@ export default function NotFound() {
 
     resizeCanvas();
 
-    // Setup offscreen canvas to render "404" and sample pixel positions
-    const offscreenCanvas = document.createElement("canvas");
-    const offscreenCtx = offscreenCanvas.getContext("2d");
-    
-    // Scale text based on container size
-    const isMobile = window.innerWidth < 768;
-    const textScale = isMobile ? 0.75 : 1.0;
-    
-    const textWidth = 500 * textScale;
-    const textHeight = 220 * textScale;
-    offscreenCanvas.width = textWidth;
-    offscreenCanvas.height = textHeight;
-
-    if (offscreenCtx) {
-      offscreenCtx.fillStyle = "#ffffff";
-      // Using Outfit or a modern high-end system sans-serif font
-      offscreenCtx.font = `900 ${Math.floor(160 * textScale)}px system-ui, -apple-system, sans-serif`;
-      offscreenCtx.textAlign = "center";
-      offscreenCtx.textBaseline = "middle";
-      offscreenCtx.fillText("404", textWidth / 2, textHeight / 2);
-    }
-
-    const imgData = offscreenCtx ? offscreenCtx.getImageData(0, 0, textWidth, textHeight) : null;
-    const data = imgData ? imgData.data : [];
-    
-    const particles: Particle[] = [];
-    const gap = isMobile ? 3 : 2.5; // pixel spacing
-
-    const viewWidth = canvas.width / (window.devicePixelRatio || 1);
-    const viewHeight = canvas.height / (window.devicePixelRatio || 1);
-
-    if (imgData) {
-      for (let y = 0; y < textHeight; y += gap) {
-        for (let x = 0; x < textWidth; x += gap) {
-          const index = (Math.floor(y) * textWidth + Math.floor(x)) * 4;
-          if (data[index + 3] > 128) {
-            // Spawn particles at random points around the center for a glowing futuristic assembly
-            particles.push({
-              x: viewWidth / 2 + (Math.random() - 0.5) * 600,
-              y: viewHeight / 2 + (Math.random() - 0.5) * 400,
-              bx: x,
-              by: y,
-              vx: (Math.random() - 0.5) * 2,
-              vy: (Math.random() - 0.5) * 2,
-              size: Math.random() * 1.6 + 1.2,
-              alpha: Math.random() * 0.35 + 0.65,
-              color: Math.random() > 0.42 ? "#ffffff" : "#5865f2", // glowing white & AP Lab indigo
-              speed: Math.random() * 0.04 + 0.025, // spring rate
-            });
-          }
-        }
-      }
-    }
-
-    // Mouse coordinates
+    // Mouse coordinates (relative to scaled canvas)
     const mouse = {
       x: -1000,
       y: -1000,
-      active: false,
       targetX: -1000,
       targetY: -1000,
+      active: false,
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      // We want coordinates in standard CSS pixels since ctx.scale(dpr, dpr) takes care of resolution scaling
       mouse.targetX = e.clientX - rect.left;
       mouse.targetY = e.clientY - rect.top;
       mouse.active = true;
@@ -141,134 +114,95 @@ export default function NotFound() {
     window.addEventListener("resize", handleResize);
 
     let animationFrameId: number;
-    let time = 0;
 
     const animate = () => {
-      time += 1;
       const w = canvas.width / (window.devicePixelRatio || 1);
       const h = canvas.height / (window.devicePixelRatio || 1);
 
-      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(0, 0, w, h);
 
-      // Smoothly interpolate mouse target position for fluid drag trails
+      // Smoothly interpolate mouse position for a fluid smudge/pull effect
       if (mouse.active) {
         if (mouse.x === -1000) {
           mouse.x = mouse.targetX;
           mouse.y = mouse.targetY;
         } else {
-          mouse.x += (mouse.targetX - mouse.x) * 0.12;
-          mouse.y += (mouse.targetY - mouse.y) * 0.12;
+          mouse.x += (mouse.targetX - mouse.x) * 0.15;
+          mouse.y += (mouse.targetY - mouse.y) * 0.15;
         }
       } else {
         mouse.x = -1000;
         mouse.y = -1000;
       }
 
-      // Draw subtle glow ring behind cursor
+      // Calculate centering offset for the text image
+      const scale = Math.min(w / textWidth, h / textHeight) * 0.85;
+      const drawWidth = textWidth * scale;
+      const drawHeight = textHeight * scale;
+      const dx = (w - drawWidth) / 2;
+      const dy = (h - drawHeight) / 2;
+
+      // Step 1: Draw the solid crisp white 404 text
+      ctx.drawImage(offscreenCanvas, dx, dy, drawWidth, drawHeight);
+
+      // Step 2: Erase text under the cursor using circular gradient mask
       if (mouse.active && mouse.x !== -1000) {
-        const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 110);
-        gradient.addColorStop(0, "rgba(88, 101, 242, 0.08)");
-        gradient.addColorStop(0.5, "rgba(88, 101, 242, 0.03)");
-        gradient.addColorStop(1, "rgba(88, 101, 242, 0)");
-        ctx.fillStyle = gradient;
+        ctx.globalCompositeOperation = "destination-out";
+        const eraseRadius = 135;
+        const eraseGrad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, eraseRadius);
+        eraseGrad.addColorStop(0, "rgba(0, 0, 0, 1.0)");
+        eraseGrad.addColorStop(0.3, "rgba(0, 0, 0, 0.95)");
+        eraseGrad.addColorStop(0.7, "rgba(0, 0, 0, 0.35)");
+        eraseGrad.addColorStop(1, "rgba(0, 0, 0, 0.0)");
+        
+        ctx.fillStyle = eraseGrad;
         ctx.beginPath();
-        ctx.arc(mouse.x, mouse.y, 110, 0, Math.PI * 2);
+        ctx.arc(mouse.x, mouse.y, eraseRadius, 0, Math.PI * 2);
         ctx.fill();
-      }
+        ctx.globalCompositeOperation = "source-over";
 
-      const centerX = w / 2;
-      const centerY = h / 2;
+        // Step 3: Draw fuzzy, grainy fibers stretching from erased coordinates towards the cursor
+        ctx.lineWidth = 0.5;
 
-      // Update and draw particles
-      particles.forEach((p, index) => {
-        // Base target position centered in viewport
-        const tx = centerX - textWidth / 2 + p.bx;
-        const ty = centerY - textHeight / 2 + p.by;
+        textPoints.forEach((p) => {
+          // Map to current screen coordinate
+          const sx = dx + p.x * scale;
+          const sy = dy + p.y * scale;
 
-        // 1. Hover/Repulsion Force
-        let force = 0;
-        let pushX = 0;
-        let pushY = 0;
+          const diffX = mouse.x - sx;
+          const diffY = mouse.y - sy;
+          const dist = Math.sqrt(diffX * diffX + diffY * diffY);
+          const pullRadius = 140;
 
-        if (mouse.active && mouse.x !== -1000) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const pushRadius = 110;
+          if (dist < pullRadius) {
+            // Eased pull force: stronger as it gets closer to cursor
+            const pull = Math.pow((pullRadius - dist) / pullRadius, 2.0);
 
-          if (dist < pushRadius) {
-            force = (pushRadius - dist) / pushRadius; // 0 to 1
-            const strength = 14;
-            const angle = Math.atan2(dy, dx);
-            
-            // Linear push
-            pushX = Math.cos(angle) * force * strength;
-            pushY = Math.sin(angle) * force * strength;
+            // Stretches towards the cursor with organic grainy noise
+            const tx = sx + diffX * pull * 0.65 + (Math.random() - 0.5) * 14 * pull;
+            const ty = sy + diffY * pull * 0.65 + (Math.random() - 0.5) * 14 * pull;
 
-            // Swirl / Vortex rotation component
-            const swirlStrength = 3.0;
-            const swirlAngle = angle + Math.PI / 2;
-            pushX += Math.cos(swirlAngle) * force * swirlStrength;
-            pushY += Math.sin(swirlAngle) * force * swirlStrength;
-          }
-        }
+            // Draw line fiber
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 + 0.45 * pull})`;
+            ctx.moveTo(sx, sy);
+            ctx.lineTo(tx, ty);
+            ctx.stroke();
 
-        // 2. Base Spring Return Force
-        const springX = (tx - p.x) * p.speed;
-        const springY = (ty - p.y) * p.speed;
-
-        // Apply forces to velocity
-        p.vx += springX + pushX;
-        p.vy += springY + pushY;
-
-        // Friction / Damping
-        p.vx *= 0.86;
-        p.vy *= 0.86;
-
-        // Update positions
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // 3. Subtle floating stardust noise (ambient micro-sway)
-        p.x += Math.sin(time * 0.03 + p.bx * 0.04) * 0.07;
-        p.y += Math.cos(time * 0.03 + p.by * 0.04) * 0.07;
-
-        // Draw dynamic connecting grid lines for particles near cursor (constellation grid)
-        if (mouse.active && mouse.x !== -1000) {
-          const dxToMouse = p.x - mouse.x;
-          const dyToMouse = p.y - mouse.y;
-          const distToMouse = Math.sqrt(dxToMouse * dxToMouse + dyToMouse * dyToMouse);
-
-          if (distToMouse < 60) {
-            // Check a tiny spatial slice of nearby particles in the list
-            for (let j = index + 1; j < index + 16; j++) {
-              const p2 = particles[j % particles.length];
-              const dx2 = p.x - p2.x;
-              const dy2 = p.y - p2.y;
-              const dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
-
-              if (dist2 < 28) {
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(88, 101, 242, ${0.14 * (1 - dist2 / 28) * (1 - distToMouse / 60)})`;
-                ctx.lineWidth = 0.45;
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(p2.x, p2.y);
-                ctx.stroke();
-              }
+            // Render grain noise particles around target pull location
+            if (Math.random() < 0.22) {
+              ctx.fillStyle = `rgba(255, 255, 255, ${0.25 + 0.5 * pull})`;
+              ctx.fillRect(
+                tx + (Math.random() - 0.5) * 8 * pull,
+                ty + (Math.random() - 0.5) * 8 * pull,
+                1.2,
+                1.2
+              );
             }
           }
-        }
-
-        // Draw particle
-        ctx.beginPath();
-        const pulse = 1 + Math.sin(time * 0.05 + p.bx) * 0.15; // subtle size glow breathe
-        ctx.arc(p.x, p.y, p.size * pulse, 0, Math.PI * 2);
-        
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.alpha;
-        ctx.fill();
-        ctx.globalAlpha = 1.0;
-      });
+        });
+      }
 
       animationFrameId = requestAnimationFrame(animate);
     };

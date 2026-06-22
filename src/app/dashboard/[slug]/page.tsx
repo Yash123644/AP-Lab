@@ -184,49 +184,190 @@ const getCourseNameFromSlug = (slug: string) => {
   return map[slug] || slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 };
 
+interface RadarBlip {
+  distance: number;
+  angle: number;
+  speed: number;
+  intensity: number;
+}
+
+function RadarBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Hardcode small canvas resolution for authentic pixelated rendering
+    canvas.width = 256;
+    canvas.height = 256;
+
+    const cx = 128;
+    const cy = 128;
+    let sweepAngle = 0;
+
+    // Setup blips with randomized starting states
+    const blips: RadarBlip[] = [
+      { distance: 115, angle: 0.6, speed: 0.15, intensity: 0 },
+      { distance: 90, angle: 2.2, speed: 0.11, intensity: 0 },
+      { distance: 65, angle: 3.7, speed: 0.13, intensity: 0 },
+      { distance: 105, angle: 5.0, speed: 0.17, intensity: 0 },
+      { distance: 45, angle: 1.1, speed: 0.09, intensity: 0 },
+    ];
+
+    let animationId: number;
+
+    const render = () => {
+      // Radial fade to create trails
+      ctx.fillStyle = "rgba(1, 12, 1, 0.07)";
+      ctx.fillRect(0, 0, 256, 256);
+
+      // 1. Draw radar concentric circle grids (pixelated stroke)
+      ctx.strokeStyle = "rgba(0, 180, 0, 0.16)";
+      ctx.lineWidth = 1;
+
+      // Vertical & horizontal lines through center
+      ctx.beginPath();
+      ctx.moveTo(cx, 0);
+      ctx.lineTo(cx, 256);
+      ctx.moveTo(0, cy);
+      ctx.lineTo(256, cy);
+      ctx.stroke();
+
+      // Concentric circles
+      [35, 72, 108].forEach((radius) => {
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // 2. Update and render blips (incoming dots)
+      blips.forEach((blip) => {
+        // Move closer to center over time
+        blip.distance -= blip.speed;
+        
+        // Loop seamlessly: reset when blips reach the center
+        if (blip.distance < 6) {
+          blip.distance = 115 + Math.random() * 10;
+          blip.angle = Math.random() * Math.PI * 2;
+          blip.speed = Math.random() * 0.10 + 0.12;
+          blip.intensity = 0;
+        }
+
+        // Detect sweep line crossing the blip's angle to trigger ping
+        const diff = Math.abs((sweepAngle % (Math.PI * 2)) - (blip.angle % (Math.PI * 2)));
+        if (diff < 0.04) {
+          blip.intensity = 1.0;
+        }
+
+        // Fade blip intensity
+        blip.intensity *= 0.96;
+
+        if (blip.intensity > 0.02) {
+          const bx = cx + Math.cos(blip.angle) * blip.distance;
+          const by = cy + Math.sin(blip.angle) * blip.distance;
+
+          // Inner pixel core
+          ctx.fillStyle = `rgba(0, 255, 0, ${blip.intensity})`;
+          ctx.fillRect(Math.round(bx - 1.5), Math.round(by - 1.5), 3, 3);
+          
+          // Outer glow ring
+          ctx.fillStyle = `rgba(0, 255, 0, ${blip.intensity * 0.28})`;
+          ctx.fillRect(Math.round(bx - 2.5), Math.round(by - 2.5), 5, 5);
+        }
+      });
+
+      // 3. Draw radar sweep line
+      sweepAngle += 0.022;
+      if (sweepAngle > Math.PI * 2) {
+        sweepAngle -= Math.PI * 2;
+      }
+
+      // Draw phosphor sweep sector (trailing line sweeps)
+      const trails = 20;
+      for (let i = 0; i < trails; i++) {
+        const trailAngle = sweepAngle - i * 0.015;
+        const alpha = ((trails - i) / trails) * 0.22;
+        ctx.strokeStyle = `rgba(0, 255, 0, ${alpha})`;
+        ctx.lineWidth = 1;
+
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(
+          cx + Math.cos(trailAngle) * 120,
+          cy + Math.sin(trailAngle) * 120
+        );
+        ctx.stroke();
+      }
+
+      animationId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      style={{ imageRendering: "pixelated" }}
+    />
+  );
+}
+
 function UpcomingCourseFallback({ slug }: { slug: string }) {
   const courseName = getCourseNameFromSlug(slug);
 
   return (
-    <div className="min-h-screen bg-[#030712] text-white flex flex-col font-sans relative overflow-hidden select-none">
+    <div className="min-h-screen bg-[#010601] text-white flex flex-col font-sans relative overflow-hidden select-none">
+      {/* Pixelated green radar background */}
+      <RadarBackground />
+
+      {/* Subtle green ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
+
       {/* Subtle top header bar */}
       <header className="h-20 flex items-center justify-between px-8 max-w-7xl mx-auto w-full z-10">
         <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
-          <div className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center border border-white/10 transition-transform duration-300 group-hover:scale-105">
-            <Activity className="w-4.5 h-4.5 text-white/80 animate-pulse" />
+          <div className="w-9 h-9 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20 transition-transform duration-300 group-hover:scale-105">
+            <Activity className="w-4.5 h-4.5 text-green-400 animate-pulse" />
           </div>
-          <span className="font-manrope font-bold text-white/90 text-md tracking-tight">AP Lab</span>
+          <span className="font-manrope font-bold text-green-400/90 text-md tracking-tight">AP Lab</span>
         </Link>
       </header>
 
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/[0.03] blur-[150px] rounded-full pointer-events-none" />
-
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 z-10 -mt-16 text-center">
-        <div className="flex flex-col items-center max-w-2xl">
-          {/* Animated pulsing icon */}
-          <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(255,255,255,0.02)]">
-            <Activity className="w-7 h-7 text-white/70 animate-pulse" />
+        <div className="flex flex-col items-center max-w-2xl bg-black/40 backdrop-blur-md border border-green-500/10 rounded-[32px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {/* Animated pulsing activity radar icon */}
+          <div className="w-16 h-16 rounded-full bg-green-500/5 border border-green-500/20 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(34,197,94,0.05)]">
+            <Activity className="w-7 h-7 text-green-400 animate-pulse" />
           </div>
 
-          <span className="text-[10px] font-manrope font-black text-indigo-400 uppercase tracking-[0.2em] mb-4">
-            Under Construction • {courseName}
+          <span className="text-[10px] font-manrope font-black text-green-400 uppercase tracking-[0.25em] mb-4">
+            Workspace Mapping • {courseName}
           </span>
 
           <h1 className="font-instrument text-4xl md:text-5xl text-white font-medium tracking-tight mb-4 leading-tight">
             We are working on creating this course
           </h1>
 
-          <p className="font-inter text-white/40 text-sm md:text-base leading-relaxed max-w-md mb-10">
-            Our team is curating high-yield prep tracks, review quizzes, and interactive clinical labs to prepare you for the exam. Take a break, and check back soon!
+          <p className="font-inter text-white/50 text-sm md:text-base leading-relaxed max-w-md mb-10">
+            Our team is curating clinical interactive modules, exam reviews, and practice questions. The radar indicates the data nodes are routing in. Check back shortly.
           </p>
 
           <Link href="/">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-3.5 rounded-full bg-white text-black font-manrope font-bold text-xs uppercase tracking-widest hover:bg-neutral-200 transition-all shadow-[0_8px_30px_rgba(255,255,255,0.1)]"
+              className="px-8 py-3.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 font-manrope font-bold text-xs uppercase tracking-widest hover:bg-green-500 hover:text-black hover:border-green-500 hover:shadow-[0_0_25px_rgba(34,197,94,0.45)] transition-all duration-300"
             >
               Go Back to Home Page
             </motion.button>
@@ -236,7 +377,7 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
 
       {/* Minimal Footer */}
       <footer className="h-16 flex items-center justify-center px-8 z-10">
-        <span className="text-xs text-white/20 font-mono">
+        <span className="text-xs text-green-500/30 font-mono">
           © {new Date().getFullYear()} AP Lab. All rights reserved.
         </span>
       </footer>
