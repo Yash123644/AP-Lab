@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageSquare, Send, Sparkles, AlertCircle, Bot, User, RotateCcw } from "lucide-react";
+import { X, MessageSquare, Send, Sparkles, AlertCircle, Bot, User, RotateCcw, Settings } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -49,7 +49,26 @@ export function AIAssistantDrawer({
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [tempKey, setTempKey] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setTempKey(localStorage.getItem("gemini_api_key") || "");
+    }
+  }, []);
+
+  const handleSaveKey = () => {
+    localStorage.setItem("gemini_api_key", tempKey.trim());
+    setIsSettingsOpen(false);
+  };
+
+  const handleClearKey = () => {
+    localStorage.removeItem("gemini_api_key");
+    setTempKey("");
+    setIsSettingsOpen(false);
+  };
   
   // Count user messages to enforce limit
   const userMessageCount = messages.filter(m => m.role === "user").length;
@@ -90,10 +109,14 @@ export function AIAssistantDrawer({
     setMessages(newMessages);
     setIsLoading(true);
 
+    const clientKey = typeof window !== "undefined" ? localStorage.getItem("gemini_api_key") : null;
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          ...(clientKey ? { "x-gemini-key": clientKey } : {})
+        },
         body: JSON.stringify({
           messages: newMessages.slice(1), // Exclude initial greeting
           course
@@ -111,7 +134,7 @@ export function AIAssistantDrawer({
       console.error(error);
       let errorMsg = `**Error:** ${error.message}. Please try again later.`;
       if (error.message.includes("API Key") || error.message.includes("configured") || error.message.includes("placeholder")) {
-        errorMsg = `### ⚠️ Gemini API Key Not Configured\n\nIt looks like your Gemini API Key is missing or using the placeholder value.\n\n**To fix this:**\n1. Open [\`.env.local\`](file:///${process.cwd()}/.env.local) in your workspace.\n2. Find the line: \`GEMINI_API_KEY=your_gemini_api_key_here\`\n3. Replace \`your_gemini_api_key_here\` with your real API key from Google AI Studio.\n4. **Restart** your Next.js development server (\`npm run dev\`) in your terminal for the changes to take effect.`;
+        errorMsg = `### ⚠️ Gemini API Key Not Configured\n\nIt looks like your Gemini API Key is missing or using the placeholder value.\n\n**To fix this:**\n1. Open [\`.env.local\`](file:///${process.cwd()}/.env.local) in your workspace.\n2. Find the line: \`GEMINI_API_KEY=your_gemini_api_key_here\`\n3. Replace \`your_gemini_api_key_here\` with your real API key from Google AI Studio.\n4. **Restart** your Next.js development server (\`npm run dev\`) in your terminal for the changes to take effect.\n\n*Alternatively*, click the **settings gear** in the top-right corner of this chat panel and paste your key directly!`;
       }
       setMessages(prev => [...prev, { role: "assistant", content: errorMsg }]);
     } finally {
@@ -166,16 +189,61 @@ export function AIAssistantDrawer({
                   </p>
                 </div>
               </div>
-              <button 
-                onClick={onClose}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/40 hover:text-white"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/40 hover:text-white"
+                  title="Tutor Settings"
+                >
+                  <Settings className="w-5 h-5" />
+                </button>
+                <button 
+                  onClick={onClose}
+                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/40 hover:text-white"
+                  title="Close panel"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
+            {/* Settings Pane */}
+            {isSettingsOpen && (
+              <div className="bg-white/[0.02] border-b border-white/10 p-5 space-y-3.5 backdrop-blur-md">
+                <div className="flex flex-col space-y-1.5">
+                  <label className="text-xs font-semibold text-white/70 uppercase tracking-wide">Gemini API Key Fallback</label>
+                  <p className="text-[11px] text-white/40">
+                    If your `.env.local` API key is not configured, paste your Gemini API Key here. It will be stored securely in your browser's local storage.
+                  </p>
+                </div>
+                <div className="flex space-x-2">
+                  <input
+                    type="password"
+                    placeholder="AIzaSy..."
+                    value={tempKey}
+                    onChange={(e) => setTempKey(e.target.value)}
+                    className="flex-1 bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/50 rounded-xl px-4 py-2.5 text-white focus:outline-none transition-all text-xs placeholder:text-white/20"
+                  />
+                  <button
+                    onClick={handleSaveKey}
+                    className="bg-white text-black font-semibold text-xs rounded-xl px-4 py-2.5 hover:bg-white/90 transition-all"
+                  >
+                    Save
+                  </button>
+                </div>
+                {tempKey && (
+                  <button
+                    onClick={handleClearKey}
+                    className="text-[10px] text-red-400/80 hover:text-red-400 font-medium transition-colors mt-1 animate-pulse"
+                  >
+                    Clear custom key
+                  </button>
+                )}
+              </div>
+            )}
+
             {/* Chat Messages */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth select-text scrollbar-thin">
+            <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth select-text no-scrollbar">
               {messages.map((msg, idx) => (
                 <div 
                   key={idx} 

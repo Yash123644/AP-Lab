@@ -12,7 +12,7 @@ import {
   browserLocalPersistence,
   signInWithCustomToken
 } from "firebase/auth";
-import { auth, googleProvider, githubProvider } from "@/lib/firebase";
+import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { useUI } from "@/context/UIContext";
 
@@ -291,12 +291,7 @@ export function AuthModal() {
                   {isSignUp ? "Sign up for a new account" : "Sign in to your account"}
                 </p>
 
-                {error && (
-                  <div className="w-full mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-start space-x-3 text-red-400">
-                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                    <span className="text-sm">{error}</span>
-                  </div>
-                )}
+                {/* Error Banner (Hidden from UI per user request, logged to console) */}
 
                 <form onSubmit={handleEmailAuth} className="w-full flex flex-col space-y-3 mb-8">
                   <div className="relative flex items-center bg-[#141414] border border-white/5 hover:border-white/10 focus-within:border-white/20 transition-colors rounded-[2rem] px-5 py-2.5 h-[64px]">
@@ -377,18 +372,21 @@ export function AuthModal() {
                     <ArrowRight className="w-[18px] h-[18px] text-white/20 group-hover:text-white/50 transition-colors" />
                   </button>
 
-                  {/* X (formerly Twitter) Sign In */}
+                  {/* Microsoft Sign In */}
                   <button
                     type="button"
-                    onClick={handleTwitterSignIn}
+                    onClick={() => handleOAuth(microsoftProvider)}
                     disabled={loading}
                     className="w-full flex items-center justify-between px-6 py-[18px] bg-[#141414] hover:bg-[#1a1a1a] border border-white/5 hover:border-white/10 rounded-[2rem] transition-all group disabled:opacity-50"
                   >
                     <div className="flex items-center space-x-4">
-                      <svg className="w-[18px] h-[18px] text-white/40 group-hover:text-white transition-all duration-300" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+                      <svg className="w-[18px] h-[18px] grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" viewBox="0 0 23 23">
+                        <rect x="0" y="0" width="11" height="11" fill="#F25022"/>
+                        <rect x="12" y="0" width="11" height="11" fill="#7FBA00"/>
+                        <rect x="0" y="12" width="11" height="11" fill="#00A4EF"/>
+                        <rect x="12" y="12" width="11" height="11" fill="#FFB900"/>
                       </svg>
-                      <span className="text-[14px] font-medium text-white/70 group-hover:text-white transition-colors">Continue with X</span>
+                      <span className="text-[14px] font-medium text-white/70 group-hover:text-white transition-colors">Continue with Microsoft</span>
                     </div>
                     <ArrowRight className="w-[18px] h-[18px] text-white/20 group-hover:text-white/50 transition-colors" />
                   </button>

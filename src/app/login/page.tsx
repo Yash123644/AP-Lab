@@ -14,7 +14,7 @@ import {
   browserLocalPersistence,
   signInWithCustomToken
 } from "firebase/auth";
-import { auth, googleProvider, githubProvider } from "@/lib/firebase";
+import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { RotatingPulse3D } from "@/components/RotatingPulse3D";
 
 export default function LoginPage() {
@@ -309,13 +309,7 @@ export default function LoginPage() {
               </p>
             </div>
 
-            {/* Error Banner */}
-            {error && (
-              <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-start space-x-3 text-red-400">
-                <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                <span className="text-sm">{error}</span>
-              </div>
-            )}
+            {/* Error Banner (Hidden from UI per user request, logged to console) */}
 
             {/* Social Logins */}
             <div className="grid grid-cols-3 gap-4 mb-6">
@@ -349,16 +343,19 @@ export default function LoginPage() {
                 </svg>
               </button>
 
-              {/* X */}
+              {/* Microsoft */}
               <button
                 type="button"
-                onClick={handleTwitterSignIn}
+                onClick={() => handleOAuth(microsoftProvider)}
                 disabled={loading}
                 className="flex items-center justify-center py-3 bg-[#111111] hover:bg-[#1a1a1a] border border-white/10 hover:border-white/20 rounded-xl transition-all group disabled:opacity-50"
-                title="Continue with X"
+                title="Continue with Microsoft"
               >
-                <svg className="w-[18px] h-[18px] text-white/50 group-hover:text-white opacity-50 group-hover:opacity-100 transition-all duration-300" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+                <svg className="w-[18px] h-[18px] grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" viewBox="0 0 23 23">
+                  <rect x="0" y="0" width="11" height="11" fill="#F25022"/>
+                  <rect x="12" y="0" width="11" height="11" fill="#7FBA00"/>
+                  <rect x="0" y="12" width="11" height="11" fill="#00A4EF"/>
+                  <rect x="12" y="12" width="11" height="11" fill="#FFB900"/>
                 </svg>
               </button>
             </div>

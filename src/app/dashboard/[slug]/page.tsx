@@ -1103,7 +1103,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
                 onClick={handleCheck}
                 disabled={selectedOption === null}
                 accentColor={accentColor}
-                className="liquid-glass-strong px-12 py-4 rounded-2xl text-white font-manrope font-black uppercase tracking-widest text-xs disabled:opacity-30 disabled:cursor-not-allowed"
+                className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 backdrop-blur-md px-12 py-4 rounded-2xl text-white font-manrope font-black uppercase tracking-widest text-xs disabled:opacity-30 disabled:cursor-not-allowed transition-all"
               >
                 <span className="flex items-center space-x-2 relative z-10">
                   <span>Check Answer</span>

@@ -15,13 +15,18 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid messages/message format" }, { status: 400 });
     }
 
-    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === "your_gemini_api_key_here") {
+    const clientKey = req.headers.get("x-gemini-key");
+    const apiKey = (clientKey && clientKey !== "null" && clientKey !== "undefined" && clientKey.trim() !== "")
+      ? clientKey.trim()
+      : process.env.GEMINI_API_KEY;
+
+    if (!apiKey || apiKey === "your_gemini_api_key_here") {
       return NextResponse.json({ 
-        error: "Gemini API Key not configured. Please open .env.local, replace 'your_gemini_api_key_here' with a valid key, and restart the dev server." 
+        error: "Gemini API Key not configured. Please open .env.local, replace 'your_gemini_api_key_here' with a valid key, and restart the dev server. Alternatively, configure your API key in the tutor settings." 
       }, { status: 500 });
     }
 
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    const ai = new GoogleGenAI({ apiKey });
 
     // Build system instruction
     let systemInstruction = "You are an elite, supportive AI assistant for the AP Lab educational platform. " +
