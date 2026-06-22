@@ -15,10 +15,20 @@ import {
 import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { useUI } from "@/context/UIContext";
+import { useAuth } from "@/context/AuthContext";
 
 export function AuthModal() {
   const { isAuthModalOpen: isOpen, closeAuthModal: onClose, authView } = useUI();
   const router = useRouter();
+  const { currentUser, loading: authLoading } = useAuth();
+
+  useEffect(() => {
+    if (!authLoading && currentUser && isOpen) {
+      onClose();
+      router.push("/dashboard");
+    }
+  }, [currentUser, authLoading, isOpen, onClose, router]);
+
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

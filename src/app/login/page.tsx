@@ -16,10 +16,18 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { RotatingPulse3D } from "@/components/RotatingPulse3D";
+import { useAuth } from "@/context/AuthContext";
 
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { currentUser, loading: authLoading } = useAuth();
+
+  useEffect(() => {
+    if (!authLoading && currentUser) {
+      router.push("/dashboard");
+    }
+  }, [currentUser, authLoading, router]);
   
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");

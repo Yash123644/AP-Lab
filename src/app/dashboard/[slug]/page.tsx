@@ -324,16 +324,405 @@ function RadarBackground() {
   );
 }
 
+function ForestBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = 256;
+    canvas.height = 256;
+
+    const layers = [
+      { speed: 0.12, height: 42, color: "rgba(16, 185, 129, 0.08)", offset: 0 },
+      { speed: 0.07, height: 32, color: "rgba(4, 120, 87, 0.05)", offset: 50 },
+      { speed: 0.03, height: 22, color: "rgba(6, 78, 59, 0.03)", offset: 110 }
+    ];
+
+    const leaves = Array.from({ length: 15 }, () => ({
+      x: Math.random() * 256,
+      y: Math.random() * 256,
+      speedY: 0.3 + Math.random() * 0.4,
+      speedX: -0.1 + Math.random() * 0.2
+    }));
+
+    let animId: number;
+
+    const render = () => {
+      ctx.fillStyle = "rgba(1, 8, 1, 0.12)";
+      ctx.fillRect(0, 0, 256, 256);
+
+      // Draw starry sky
+      ctx.fillStyle = "rgba(255, 255, 255, 0.12)";
+      for (let i = 0; i < 10; i++) {
+        const sx = (Math.sin(i * 12345) * 0.5 + 0.5) * 256;
+        const sy = (Math.cos(i * 54321) * 0.5 + 0.5) * 120;
+        ctx.fillRect(Math.round(sx), Math.round(sy), 1, 1);
+      }
+
+      // Draw layers
+      layers.forEach((layer) => {
+        layer.offset -= layer.speed;
+        if (layer.offset < -256) layer.offset += 256;
+
+        ctx.fillStyle = layer.color;
+        // Draw pine trees procedurally
+        for (let x = layer.offset - 30; x < 256 + 60; x += 40) {
+          const rx = Math.round(x);
+          const ry = 220;
+          // Pine tree layers (triangles)
+          ctx.beginPath();
+          ctx.moveTo(rx, ry - layer.height);
+          ctx.lineTo(rx - layer.height * 0.35, ry - layer.height * 0.4);
+          ctx.lineTo(rx + layer.height * 0.35, ry - layer.height * 0.4);
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.moveTo(rx, ry - layer.height * 0.5);
+          ctx.lineTo(rx - layer.height * 0.25, ry - layer.height * 0.1);
+          ctx.lineTo(rx + layer.height * 0.25, ry - layer.height * 0.1);
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.moveTo(rx, ry - layer.height * 0.1);
+          ctx.lineTo(rx - layer.height * 0.15, ry + 10);
+          ctx.lineTo(rx + layer.height * 0.15, ry + 10);
+          ctx.fill();
+        }
+      });
+
+      // Leaves falling
+      ctx.fillStyle = "rgba(52, 211, 153, 0.22)";
+      leaves.forEach((l) => {
+        l.y += l.speedY;
+        l.x += l.speedX;
+        if (l.y > 256) {
+          l.y = -5;
+          l.x = Math.random() * 256;
+        }
+        ctx.fillRect(Math.round(l.x), Math.round(l.y), 1.5, 1.5);
+      });
+
+      animId = requestAnimationFrame(render);
+    };
+
+    render();
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      style={{ imageRendering: "pixelated" }}
+    />
+  );
+}
+
+function PhysicsBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = 256;
+    canvas.height = 256;
+
+    let time = 0;
+    let animId: number;
+
+    const render = () => {
+      ctx.fillStyle = "rgba(1, 1, 10, 0.12)";
+      ctx.fillRect(0, 0, 256, 256);
+
+      // Draw gravity grid warping
+      ctx.strokeStyle = "rgba(129, 140, 248, 0.08)";
+      ctx.lineWidth = 1;
+      const step = 32;
+      for (let x = 0; x <= 256; x += step) {
+        ctx.beginPath();
+        for (let y = 0; y <= 256; y += 4) {
+          const dx = x - 128;
+          const dy = y - 128;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const warp = Math.min(16, 260 / (dist + 16));
+          const wx = x - (dx / (dist + 0.1)) * warp;
+          const wy = y - (dy / (dist + 0.1)) * warp;
+          if (y === 0) ctx.moveTo(wx, wy);
+          else ctx.lineTo(wx, wy);
+        }
+        ctx.stroke();
+      }
+      for (let y = 0; y <= 256; y += step) {
+        ctx.beginPath();
+        for (let x = 0; x <= 256; x += 4) {
+          const dx = x - 128;
+          const dy = y - 128;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const warp = Math.min(16, 260 / (dist + 16));
+          const wx = x - (dx / (dist + 0.1)) * warp;
+          const wy = y - (dy / (dist + 0.1)) * warp;
+          if (x === 0) ctx.moveTo(wx, wy);
+          else ctx.lineTo(wx, wy);
+        }
+        ctx.stroke();
+      }
+
+      // Orbiting particles
+      time += 0.015;
+      const orbits = [
+        { rx: 65, ry: 25, speed: 1.2, color: "rgba(129, 140, 248, 0.7)", rot: 0.4 },
+        { rx: 95, ry: 35, speed: 0.8, color: "rgba(167, 139, 250, 0.7)", rot: -0.6 }
+      ];
+
+      orbits.forEach((orb) => {
+        const theta = time * orb.speed;
+        const ox = Math.cos(theta) * orb.rx;
+        const oy = Math.sin(theta) * orb.ry;
+
+        // Apply rotation to ellipse orbit path
+        const rx = 128 + ox * Math.cos(orb.rot) - oy * Math.sin(orb.rot);
+        const ry = 128 + ox * Math.sin(orb.rot) + oy * Math.cos(orb.rot);
+
+        // Draw orbital trail path
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.02)";
+        ctx.beginPath();
+        ctx.ellipse(128, 128, orb.rx, orb.ry, orb.rot, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Draw particle core
+        ctx.fillStyle = orb.color;
+        ctx.fillRect(Math.round(rx - 1.5), Math.round(ry - 1.5), 3, 3);
+      });
+
+      // Nuclear core
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+      ctx.fillRect(126, 126, 4, 4);
+
+      animId = requestAnimationFrame(render);
+    };
+
+    render();
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      style={{ imageRendering: "pixelated" }}
+    />
+  );
+}
+
+function HistoryBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = 256;
+    canvas.height = 256;
+
+    let time = 0;
+    let animId: number;
+
+    const render = () => {
+      ctx.fillStyle = "rgba(10, 5, 1, 0.12)";
+      ctx.fillRect(0, 0, 256, 256);
+
+      ctx.strokeStyle = "rgba(245, 158, 11, 0.08)";
+      ctx.lineWidth = 1;
+
+      time += 0.006;
+      const r = 72;
+
+      // Outer circle
+      ctx.beginPath();
+      ctx.arc(128, 128, r, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Latitude lines
+      for (let lat = -2; lat <= 2; lat++) {
+        const h = r * Math.sin(lat * 0.35);
+        const w = r * Math.cos(lat * 0.35);
+        ctx.beginPath();
+        ctx.ellipse(128, 128 + h, w, w * 0.25, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Longitude lines (rotating)
+      for (let i = 0; i < 4; i++) {
+        const rot = time + (i * Math.PI) / 4;
+        const w = r * Math.sin(rot);
+        ctx.beginPath();
+        ctx.ellipse(128, 128, Math.abs(w), r, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      animId = requestAnimationFrame(render);
+    };
+
+    render();
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      style={{ imageRendering: "pixelated" }}
+    />
+  );
+}
+
+function EconomicsBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = 256;
+    canvas.height = 256;
+
+    // Set up initial candles
+    const candles = Array.from({ length: 16 }, (_, i) => {
+      const open = 110 + Math.sin(i * 0.5) * 30 + Math.random() * 10;
+      const close = open + (Math.random() - 0.5) * 20;
+      return {
+        x: i * 18 + 10,
+        open,
+        close,
+        high: Math.max(open, close) + Math.random() * 8,
+        low: Math.min(open, close) - Math.random() * 8
+      };
+    });
+
+    let animId: number;
+
+    const render = () => {
+      ctx.fillStyle = "rgba(1, 8, 1, 0.12)";
+      ctx.fillRect(0, 0, 256, 256);
+
+      // Draw grid lines
+      ctx.strokeStyle = "rgba(16, 185, 129, 0.03)";
+      ctx.lineWidth = 1;
+      for (let x = 0; x <= 256; x += 32) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, 256);
+        ctx.stroke();
+      }
+      for (let y = 0; y <= 256; y += 32) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(256, y);
+        ctx.stroke();
+      }
+
+      // Shift candles left
+      candles.forEach((c) => {
+        c.x -= 0.35;
+      });
+
+      // Wrap-around candles
+      if (candles[0].x < -15) {
+        candles.shift();
+        const last = candles[candles.length - 1];
+        const lastOpen = last.close;
+        const nextClose = lastOpen + (Math.random() - 0.48) * 24; // slight upward trend
+        const nextHigh = Math.max(lastOpen, nextClose) + Math.random() * 10;
+        const nextLow = Math.min(lastOpen, nextClose) - Math.random() * 10;
+        
+        candles.push({
+          x: last.x + 18,
+          open: lastOpen,
+          close: nextClose,
+          high: Math.min(230, Math.max(20, nextHigh)),
+          low: Math.min(230, Math.max(20, nextLow))
+        });
+      }
+
+      // Draw candles
+      candles.forEach((c) => {
+        const isUp = c.close >= c.open;
+        ctx.strokeStyle = isUp ? "rgba(16, 185, 129, 0.28)" : "rgba(239, 68, 68, 0.28)";
+        ctx.fillStyle = isUp ? "rgba(16, 185, 129, 0.25)" : "rgba(239, 68, 68, 0.25)";
+        ctx.lineWidth = 1.5;
+
+        // Wick
+        ctx.beginPath();
+        ctx.moveTo(Math.round(c.x), Math.round(c.low));
+        ctx.lineTo(Math.round(c.x), Math.round(c.high));
+        ctx.stroke();
+
+        // Body
+        const top = Math.min(c.open, c.close);
+        const bottom = Math.max(c.open, c.close);
+        const h = Math.max(2, bottom - top);
+        ctx.fillRect(Math.round(c.x - 4), Math.round(top), 8, Math.round(h));
+      });
+
+      animId = requestAnimationFrame(render);
+    };
+
+    render();
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      style={{ imageRendering: "pixelated" }}
+    />
+  );
+}
+
 function UpcomingCourseFallback({ slug }: { slug: string }) {
   const courseName = getCourseNameFromSlug(slug);
 
-  return (
-    <div className="min-h-screen bg-[#010601] text-white flex flex-col font-sans relative overflow-hidden select-none">
-      {/* Pixelated green radar background */}
-      <RadarBackground />
+  let Background = RadarBackground;
+  let themeBg = "bg-[#010601]";
+  let ambientColor = "bg-green-500/[0.03]";
 
-      {/* Subtle green ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
+  if (slug === "ap-environmental") {
+    Background = ForestBackground;
+    themeBg = "bg-[#010801]";
+    ambientColor = "bg-emerald-500/[0.04]";
+  } else if (slug === "ap-physics-1" || slug === "ap-physics-c") {
+    Background = PhysicsBackground;
+    themeBg = "bg-[#01020d]";
+    ambientColor = "bg-indigo-500/[0.04]";
+  } else if (slug === "ap-world-history") {
+    Background = HistoryBackground;
+    themeBg = "bg-[#0a0501]";
+    ambientColor = "bg-amber-500/[0.03]";
+  } else if (slug === "ap-macroeconomics") {
+    Background = EconomicsBackground;
+    themeBg = "bg-[#010601]";
+    ambientColor = "bg-green-500/[0.03]";
+  }
+
+  return (
+    <div className={`min-h-screen ${themeBg} text-white flex flex-col font-sans relative overflow-hidden select-none`}>
+      {/* Dynamic themed pixelated background */}
+      <Background />
+
+      {/* Dynamic ambient lighting */}
+      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] ${ambientColor} blur-[160px] rounded-full pointer-events-none`} />
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 z-10 text-center">
@@ -344,7 +733,7 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
           </div>
 
           <span className="text-[10px] font-manrope font-black text-white/40 uppercase tracking-[0.25em] mb-4">
-            Workspace Mapping • {courseName}
+            {courseName}
           </span>
 
           <h1 className="font-instrument text-4xl md:text-5xl text-white font-medium tracking-tight mb-4 leading-tight">

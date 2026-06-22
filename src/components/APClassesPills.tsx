@@ -23,16 +23,16 @@ import { useRouter } from "next/navigation";
 const apClasses = [
   { name: "AP Chemistry", icon: FlaskConical, hex: "#00f2ff", slug: "ap-chemistry" },
   { name: "AP Biology", icon: Dna, hex: "#10b981", slug: "ap-biology" },
-  { name: "AP Physics 1", icon: Zap, hex: "#7b39fc", slug: "ap-physics-1" },
+  { name: "AP Physics 1", icon: Zap, hex: "#7b39fc", slug: "ap-physics-1", upcoming: true },
   { name: "AP Calculus BC", icon: Divide, hex: "#f59e0b", slug: "ap-calc-bc" },
   { name: "AP Statistics", icon: BarChart, hex: "#ec4899", slug: "ap-stats" },
   { name: "AP Computer Science", icon: Code, hex: "#3b82f6", slug: "ap-csa" },
-  { name: "AP World History", icon: Globe, hex: "#f59e0b", slug: "ap-world-history" },
+  { name: "AP World History", icon: Globe, hex: "#f59e0b", slug: "ap-world-history", upcoming: true },
   { name: "AP US History", icon: Flag, hex: "#ef4444", slug: "ap-ush" },
   { name: "AP Psychology", icon: Brain, hex: "#a855f7", slug: "ap-psych" },
   { name: "AP Lang", icon: PenTool, hex: "#ec4899", slug: "ap-eng-lang" },
-  { name: "AP Macroeconomics", icon: TrendingUp, hex: "#10b981", slug: "ap-macroeconomics" },
-  { name: "AP Environmental", icon: Leaf, hex: "#10b981", slug: "ap-environmental" },
+  { name: "AP Macroeconomics", icon: TrendingUp, hex: "#10b981", slug: "ap-macroeconomics", upcoming: true },
+  { name: "AP Environmental", icon: Leaf, hex: "#10b981", slug: "ap-environmental", upcoming: true },
 ];
 
 export function APClassesPills() {
@@ -110,6 +110,12 @@ export function APClassesPills() {
                   backgroundColor: isHovered ? "#222222" : "rgba(24, 24, 24, 0.9)"
                 }}
               >
+                {/* Upcoming Badge */}
+                {ap.upcoming && (
+                  <span className="absolute -top-2.5 -right-1.5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[7px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-full z-20 select-none">
+                    Upcoming
+                  </span>
+                )}
                 {/* Icon Container */}
                 <div 
                   className="flex items-center justify-center w-8 h-8 rounded-full bg-white/[0.04] transition-colors duration-300 z-10 relative"

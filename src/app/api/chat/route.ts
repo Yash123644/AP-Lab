@@ -21,9 +21,33 @@ export async function POST(req: Request) {
       : process.env.GEMINI_API_KEY;
 
     if (!apiKey || apiKey === "your_gemini_api_key_here") {
-      return NextResponse.json({ 
-        error: "Gemini API Key not configured. Please open .env.local, replace 'your_gemini_api_key_here' with a valid key, and restart the dev server. Alternatively, configure your API key in the tutor settings." 
-      }, { status: 500 });
+      // Sandbox fallback mode when key is not configured
+      let responseText = "### 📚 Sandbox Tutor Mode\n\nI am currently in sandbox demo mode because the Gemini API Key is not configured. To enable live AI responses, please add your API key in the tutor settings.\n\nHere is information from the curriculum:";
+      if (course) {
+        let slug = course;
+        if (slug === "chemistry") slug = "ap-chemistry";
+        if (slug === "biology") slug = "ap-biology";
+
+        const courseData = courseRegistry[slug];
+        if (courseData && courseData.units) {
+          const allTopics = courseData.units.flatMap(u => u.topics || []);
+          const lastUserMessage = chatMessages.filter((msg: any) => msg.role === "user").pop();
+          const userQuery = lastUserMessage ? lastUserMessage.content.toLowerCase() : "";
+          
+          const matchedTopic = allTopics.find(t => 
+            userQuery.includes(t.title.toLowerCase()) || 
+            t.title.toLowerCase().includes(userQuery) ||
+            (t.article && t.article.toLowerCase().includes(userQuery))
+          );
+          
+          if (matchedTopic) {
+            responseText = `### 📚 Sandbox Tutor Mode: ${matchedTopic.title}\n\nHere is a summary of this concept from the curriculum:\n\n${matchedTopic.article || "No detailed notes available."}\n\n*Note: To chat dynamically with the live AI, please configure your Gemini API Key in the settings gear.*`;
+          } else {
+            responseText = `### 📚 Sandbox Tutor Mode\n\nI am currently operating in sandbox mode using the curriculum database. Here are the units covered in this course:\n\n${courseData.units.map(u => `- **Unit ${u.id}:** ${u.title}`).join("\n")}\n\n*To unlock full interactive chat with the AI Tutor, please click the settings gear (⚙️) in the top-right and add your Gemini API Key.*`;
+          }
+        }
+      }
+      return NextResponse.json({ text: responseText });
     }
 
     const ai = new GoogleGenAI({ apiKey });
