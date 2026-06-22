@@ -262,17 +262,36 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
             {/* Clickable classes inside (fully visible when cover slides down) */}
             <div className="absolute inset-0 flex flex-col justify-center space-y-2.5 p-5 z-10">
               {classes.map((subject) => {
+                const progressPercent = Math.round(progressData[subject.slug] || 0);
                 return (
                   <Link 
                     key={subject.name}
                     href={`/dashboard/${subject.slug}`}
-                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group/item"
+                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group/item w-full"
                   >
-                    <div className="flex items-center space-x-3">
-                      <subject.icon className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors" style={{ color: accent }} />
-                      <span className="text-sm font-manrope font-semibold text-white/80 group-hover/item:text-white transition-colors">{subject.name}</span>
+                    <div className="flex items-center flex-1 mr-4 overflow-hidden">
+                      <subject.icon className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" style={{ color: accent }} />
+                      <div className="flex-1 flex flex-col items-start ml-3 min-w-0">
+                        <span className="text-xs font-manrope font-semibold text-white/80 group-hover/item:text-white transition-colors truncate w-full text-left">{subject.name}</span>
+                        {/* Premium micro progress bar */}
+                        <div className="w-full h-0.5 bg-white/10 rounded-full mt-1.5 overflow-hidden">
+                          <div 
+                            className="h-full rounded-full transition-all duration-500"
+                            style={{ 
+                              width: `${progressPercent}%`,
+                              backgroundColor: accent 
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-white/20 group-hover/item:text-white/60 transition-colors" />
+                    
+                    <div className="flex items-center space-x-2 shrink-0">
+                      <span className="text-[10px] font-mono font-medium text-white/40 group-hover/item:text-white/70 transition-colors">
+                        {progressPercent}%
+                      </span>
+                      <ChevronRight className="w-3.5 h-3.5 text-white/20 group-hover/item:text-white/60 transition-colors" />
+                    </div>
                   </Link>
                 );
               })}

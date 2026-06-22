@@ -512,54 +512,52 @@ export default function APDynamicCoursePage() {
         {/* Sidebar Navigation */}
         <aside className="w-80 border-r border-white/5 bg-black/10 flex flex-col hidden lg:flex">
           <div className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-2">
-            {course.units.map((unit) => (
-              <div key={unit.id} className="space-y-1">
-                <button
-                  onClick={() => toggleUnit(unit.id)}
-                  className={cn(
-                    "w-full flex items-center justify-between p-3 rounded-xl transition-all duration-300 relative overflow-hidden group",
-                    activeUnit === unit.id ? "bg-white/5" : "hover:bg-white/5"
-                  )}
-                >
-                  <div className="flex flex-col items-start text-left relative z-10">
-                    <span className="text-[10px] font-manrope font-black uppercase tracking-widest mb-1 subject-accent-text">
-                      Unit {unit.id} • {unit.masteryWeight}
-                    </span>
-                    <span className={cn(
-                      "text-sm font-medium leading-tight",
-                      activeUnit === unit.id ? "text-white" : "text-white/60"
-                    )}>
-                      {unit.title}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 relative z-10">
-                    {expandedUnits.includes(unit.id) ? (
-                      <ChevronDown className="w-4 h-4 text-white/40" />
-                    ) : (
-                      <ChevronRight className="w-4 h-4 text-white/40" />
+            {course.units.map((unit) => {
+              const isUnitCompleted = unit.topics.length > 0 && unit.topics.every(topic => 
+                progress.completedTopics.includes(`${course.masteryPrefix}-${topic.id}`)
+              );
+
+              return (
+                <div key={unit.id} className="space-y-1">
+                  <button
+                    onClick={() => toggleUnit(unit.id)}
+                    className={cn(
+                      "w-full flex items-center justify-between p-3 rounded-xl transition-all duration-300 relative overflow-hidden group",
+                      activeUnit === unit.id ? "bg-white/5" : "hover:bg-white/5"
                     )}
-                  </div>
-
-                  {/* Unit Watermark Background decoration */}
-                  <div 
-                    className="absolute right-3 -bottom-1.5 w-14 h-14 opacity-[0.05] group-hover:opacity-[0.10] transition-opacity duration-300 pointer-events-none select-none z-0"
-                    style={{ color: course.accentColor }}
                   >
-                    {getUnitWatermark(unit.id)}
-                  </div>
-
-                  {/* Unit Background Image (Specific to AP Chemistry) */}
-                  {slug === "ap-chemistry" && (
-                    <div className="absolute inset-0 opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-300 pointer-events-none z-0">
-                      <img 
-                        src={`/images/chemistry/units/unit${unit.id}.png`} 
-                        alt="" 
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/50 to-transparent" />
+                    <div className="flex flex-col items-start text-left relative z-10">
+                      <span className="text-[10px] font-manrope font-black uppercase tracking-widest mb-1 subject-accent-text flex items-center gap-1.5">
+                        <span>Unit {unit.id} • {unit.masteryWeight}</span>
+                        {isUnitCompleted && (
+                          <span className="text-[8px] px-1.5 py-0.5 rounded bg-white/10 border border-white/15 text-white/90 font-black tracking-widest uppercase">
+                            ✓ Done
+                          </span>
+                        )}
+                      </span>
+                      <span className={cn(
+                        "text-sm font-medium leading-tight",
+                        activeUnit === unit.id ? "text-white" : "text-white/60"
+                      )}>
+                        {unit.title}
+                      </span>
                     </div>
-                  )}
-                </button>
+                    <div className="flex items-center space-x-2 relative z-10">
+                      {expandedUnits.includes(unit.id) ? (
+                        <ChevronDown className="w-4 h-4 text-white/40" />
+                      ) : (
+                        <ChevronRight className="w-4 h-4 text-white/40" />
+                      )}
+                    </div>
+
+                    {/* Unit Watermark Background decoration */}
+                    <div 
+                      className="absolute right-3 -bottom-1.5 w-14 h-14 opacity-[0.05] group-hover:opacity-[0.10] transition-opacity duration-300 pointer-events-none select-none z-0"
+                      style={{ color: course.accentColor }}
+                    >
+                      {getUnitWatermark(unit.id)}
+                    </div>
+                  </button>
 
                 <AnimatePresence>
                   {expandedUnits.includes(unit.id) && (
@@ -610,7 +608,7 @@ export default function APDynamicCoursePage() {
                   )}
                 </AnimatePresence>
               </div>
-            ))}
+            )})}
           </div>
           
           <div className="p-4 border-t border-white/5">
