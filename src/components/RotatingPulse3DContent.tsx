@@ -124,26 +124,34 @@ function PulseModel() {
         const wiggleY = Math.cos(time * 6 + origY * 10) * 0.015;
         const wiggleZ = Math.sin(time * 6 + origZ * 10) * 0.015;
 
+        // Initialize smooth parting coordinates in userData
+        if (child.userData.pushX === undefined) child.userData.pushX = 0;
+        if (child.userData.pushY === undefined) child.userData.pushY = 0;
+
         // 2. Interactive parting effect (disperse cubes when cursor is near)
-        let pushX = 0;
-        let pushY = 0;
+        let targetPushX = 0;
+        let targetPushY = 0;
         
         const dx = origX - mx;
         const dy = origY - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
         
-        const pushRadius = 0.8; // Radius of mouse parting influence
+        const pushRadius = 0.95; // Radius of mouse parting influence
         if (dist < pushRadius) {
-          const force = (1 - dist / pushRadius) * 0.38; // Max push distance: 0.38 units
+          const force = (1 - dist / pushRadius) * 0.42; // Max push distance: 0.42 units
           const angle = dist > 0.01 ? Math.atan2(dy, dx) : Math.random() * Math.PI * 2;
-          pushX = Math.cos(angle) * force;
-          pushY = Math.sin(angle) * force;
+          targetPushX = Math.cos(angle) * force;
+          targetPushY = Math.sin(angle) * force;
         }
+
+        // Smoothly interpolate the push displacement using a lerp factor
+        child.userData.pushX += (targetPushX - child.userData.pushX) * 0.12;
+        child.userData.pushY += (targetPushY - child.userData.pushY) * 0.12;
 
         // Apply updated position in local space
         child.position.set(
-          origX + wiggleX + pushX,
-          origY + wiggleY + pushY,
+          origX + wiggleX + child.userData.pushX,
+          origY + wiggleY + child.userData.pushY,
           origZ + wiggleZ
         );
 
@@ -175,7 +183,7 @@ function PulseModel() {
 export function RotatingPulse3DContent() {
   return (
     <div className="w-full h-full relative">
-      <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
+      <Canvas camera={{ position: [0, 0, 4.4], fov: 45 }}>
         <ambientLight intensity={0.15} />
         
         {/* Key lights for 3D depth and cube face shading */}

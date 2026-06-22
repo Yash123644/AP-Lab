@@ -188,129 +188,57 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
   const courseName = getCourseNameFromSlug(slug);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans">
-      {/* Header Bar */}
-      <header className="h-20 bg-white border-b border-slate-100 flex items-center justify-between px-6 max-w-7xl mx-auto w-full">
+    <div className="min-h-screen bg-[#030712] text-white flex flex-col font-sans relative overflow-hidden select-none">
+      {/* Subtle top header bar */}
+      <header className="h-20 flex items-center justify-between px-8 max-w-7xl mx-auto w-full z-10">
         <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
-          <div className="w-10 h-10 rounded-full bg-[#5865f2] flex items-center justify-center border border-[#5865f2] transition-transform duration-300 group-hover:scale-105">
-            <Activity className="w-5 h-5 text-white animate-pulse" />
+          <div className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center border border-white/10 transition-transform duration-300 group-hover:scale-105">
+            <Activity className="w-4.5 h-4.5 text-white/80 animate-pulse" />
           </div>
-          <span className="font-manrope font-black text-slate-900 text-lg tracking-tight">AP Lab</span>
-        </Link>
-        
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Home</Link>
-          <Link href="/dashboard" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Dashboard</Link>
-          <Link href="/about" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">About</Link>
-          <Link href="/community-impact" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Impact</Link>
-          <Link href="/join" className="text-sm font-bold text-slate-700 hover:text-[#5865f2] transition-colors uppercase tracking-wider">Join</Link>
-        </div>
-
-        <Link 
-          href="/dashboard" 
-          className="px-6 py-2.5 rounded-full bg-[#5865f2] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#404eed] transition-all hover:scale-102 active:scale-98 shadow-md"
-        >
-          Open App
+          <span className="font-manrope font-bold text-white/90 text-md tracking-tight">AP Lab</span>
         </Link>
       </header>
 
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/[0.03] blur-[150px] rounded-full pointer-events-none" />
+
       {/* Main Content Area */}
-      <main className="flex-1 flex items-center max-w-7xl mx-auto w-full px-6 py-12 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Left Column: Information */}
-          <div className="space-y-8 text-left">
-            <h1 className="font-black text-[#5865f2] text-4xl md:text-6xl tracking-tighter leading-none">
-              WRONG TURN?
-            </h1>
-            <p className="font-inter text-slate-600 text-base md:text-lg leading-relaxed">
-              You look lost, scholar. You know what helps when a class workspace is not ready? A cup of hot coffee and a bit of patience. Take a seat, we're frantically at work here cooking up something good. We're currently curating high-yield prep content, review questions, and interactive clinical labs for <strong className="text-slate-900 font-semibold">{courseName}</strong>. Oh, you need something to study in the meantime? These might help you:
-            </p>
-            <div className="flex flex-col space-y-3 pt-4">
-              <Link href="/" className="text-[#5865f2] hover:underline font-bold text-base flex items-center space-x-1">
-                <span>Return to Home Page</span>
-              </Link>
-              <Link href="/dashboard" className="text-[#5865f2] hover:underline font-bold text-base flex items-center space-x-1">
-                <span>Go to Dashboard</span>
-              </Link>
-              <Link href="/community-impact" className="text-[#5865f2] hover:underline font-bold text-base flex items-center space-x-1">
-                <span>Explore Community Impact</span>
-              </Link>
-            </div>
+      <main className="flex-1 flex flex-col items-center justify-center px-6 z-10 -mt-16 text-center">
+        <div className="flex flex-col items-center max-w-2xl">
+          {/* Animated pulsing icon */}
+          <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(255,255,255,0.02)]">
+            <Activity className="w-7 h-7 text-white/70 animate-pulse" />
           </div>
 
-          {/* Right Column: Illustration */}
-          <div className="flex justify-center md:justify-end">
-            <motion.img 
-              src="/images/course_upcoming.png" 
-              alt="Cozy Bear Lab" 
-              className="w-full max-w-[440px] md:max-w-[480px] object-contain"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            />
-          </div>
+          <span className="text-[10px] font-manrope font-black text-indigo-400 uppercase tracking-[0.2em] mb-4">
+            Under Construction • {courseName}
+          </span>
+
+          <h1 className="font-instrument text-4xl md:text-5xl text-white font-medium tracking-tight mb-4 leading-tight">
+            We are working on creating this course
+          </h1>
+
+          <p className="font-inter text-white/40 text-sm md:text-base leading-relaxed max-w-md mb-10">
+            Our team is curating high-yield prep tracks, review quizzes, and interactive clinical labs to prepare you for the exam. Take a break, and check back soon!
+          </p>
+
+          <Link href="/">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-3.5 rounded-full bg-white text-black font-manrope font-bold text-xs uppercase tracking-widest hover:bg-neutral-200 transition-all shadow-[0_8px_30px_rgba(255,255,255,0.1)]"
+            >
+              Go Back to Home Page
+            </motion.button>
+          </Link>
         </div>
       </main>
 
-      {/* Custom Discord-Style Footer */}
-      <footer className="w-full bg-[#5865f2] text-white py-16 px-6 md:px-12 mt-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 border-b border-white/20 pb-12">
-          {/* Left side brand column */}
-          <div className="md:col-span-2 space-y-6 text-left">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                <Activity className="w-4.5 h-4.5 text-white animate-pulse" />
-              </div>
-              <span className="font-manrope font-black text-xl tracking-tight text-white">AP Lab</span>
-            </div>
-            
-            {/* Language select mock */}
-            <div className="relative w-fit">
-              <div className="flex items-center space-x-2 bg-black/20 hover:bg-black/30 border border-white/10 px-4 py-2 rounded-lg text-xs font-semibold cursor-pointer select-none">
-                <span className="inline-block w-4 h-4 bg-white/20 rounded-full flex items-center justify-center">🇺🇸</span>
-                <span>English, USA</span>
-                <ChevronDown className="w-3 h-3 text-white/50" />
-              </div>
-            </div>
-          </div>
-          
-          {/* Link grids */}
-          <div className="space-y-4 text-left">
-            <h4 className="text-white/50 text-[11px] font-black uppercase tracking-wider">Product</h4>
-            <div className="flex flex-col space-y-2.5 text-sm font-medium">
-              <Link href="/" className="hover:underline">Home</Link>
-              <Link href="/dashboard" className="hover:underline">Dashboard</Link>
-              <Link href="/live-analytics" className="hover:underline">Live Analytics</Link>
-            </div>
-          </div>
-          
-          <div className="space-y-4 text-left">
-            <h4 className="text-white/50 text-[11px] font-black uppercase tracking-wider">Company</h4>
-            <div className="flex flex-col space-y-2.5 text-sm font-medium">
-              <Link href="/about" className="hover:underline">About Us</Link>
-              <Link href="/join" className="hover:underline">Join Team</Link>
-              <Link href="/contact" className="hover:underline">Contact Support</Link>
-            </div>
-          </div>
-          
-          <div className="space-y-4 text-left">
-            <h4 className="text-white/50 text-[11px] font-black uppercase tracking-wider">Resources</h4>
-            <div className="flex flex-col space-y-2.5 text-sm font-medium">
-              <Link href="/terms" className="hover:underline">Terms of Service</Link>
-              <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:underline">GitHub</a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-white/60 font-mono">
-            © {new Date().getFullYear()} AP Lab. All rights reserved.
-          </span>
-          <Link href="/dashboard" className="px-6 py-2 rounded-full bg-white text-[#5865f2] font-bold text-xs uppercase tracking-wider hover:bg-white/90 transition-all shadow-md">
-            Open App
-          </Link>
-        </div>
+      {/* Minimal Footer */}
+      <footer className="h-16 flex items-center justify-center px-8 z-10">
+        <span className="text-xs text-white/20 font-mono">
+          © {new Date().getFullYear()} AP Lab. All rights reserved.
+        </span>
       </footer>
     </div>
   );
