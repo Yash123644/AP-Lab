@@ -89,7 +89,7 @@ const apBiologyUnits: CourseUnit[] = apBiologyData.map((unit) => ({
   })),
 }));
 
-// High-yield Mock Course Data for the 7 new subjects
+// Complete high-yield curricula for the 7 additional dashboard courses
 const apPhysicsUnits: CourseUnit[] = [
   {
     id: 1,
@@ -127,15 +127,6 @@ Kinematics describes motion without considering its forces. In calculus-based ph
             correctIndex: 2,
             hint: "Differentiate $x(t)$ with respect to $t$.",
             explanation: "Velocity is $v(t) = \\frac{dx}{dt} = 6t - 4$. At $t = 2$, $v(2) = 6(2) - 4 = 8\\text{ m/s}$."
-          },
-          {
-            id: "q_phys_1.1.2",
-            unitId: 1,
-            text: "Which derivative of position yields acceleration?",
-            options: ["First derivative", "Second derivative", "Third derivative", "Integral of position"],
-            correctIndex: 1,
-            hint: "Acceleration is the rate of change of velocity.",
-            explanation: "Acceleration is the second derivative of position, $a(t) = \\frac{d^2x}{dt^2}$."
           }
         ]
       }
@@ -158,7 +149,7 @@ Newton's Second Law state that the net force on a system equals the mass times a
 $$\\Sigma \\vec{F} = m \\vec{a}$$
 
 ## Friction Forces
-Friction is modeled as proportional to the Normal force $F_N$:
+- Friction is modeled as proportional to the Normal force $F_N$:
 - **Static Friction**: Resists initial movement, variable up to a maximum:
   $$F_f \\le \\mu_s F_N$$
 - **Kinetic Friction**: Occurs when surfaces slide:
@@ -173,6 +164,82 @@ Friction is modeled as proportional to the Normal force $F_N$:
             correctIndex: 1,
             hint: "Consider the forces parallel to the incline.",
             explanation: "Since the block is at rest, the static friction force balances the component of gravity down the incline, which is $mg \\sin\\theta$."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Work, Energy, and Power",
+    masteryWeight: "14–17%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Work-Energy Theorem & Conservation",
+        description: "Evaluate conservative forces, kinetic energy, and potential energy functions.",
+        youtubeId: "2WS1sG9-A6w",
+        article: `
+# Work, Energy, and Power
+
+The Work-Energy Theorem states that the net work done on a particle equals its change in kinetic energy:
+$$W_{net} = \\Delta K$$
+
+## Work Done by a Variable Force
+For a force that varies with position $x$:
+$$W = \\int_{x_i}^{x_f} F(x) dx$$
+
+## Conservative Forces and Potential Energy
+A force is conservative if the work done is path-independent. Potential energy $U(x)$ is defined by:
+$$F(x) = -\\frac{dU}{dx}$$
+`,
+        questions: [
+          {
+            id: "q_phys_3.1.1",
+            unitId: 3,
+            text: "If the potential energy function of a particle is given by $U(x) = 2x^3 - 4x$, what is the force acting on the particle at $x = 2$?",
+            options: ["-20 N", "-8 N", "8 N", "20 N"],
+            correctIndex: 0,
+            hint: "Differentiate U(x) with respect to x and multiply by negative one.",
+            explanation: "Force is $F(x) = -\\frac{dU}{dx} = -(6x^2 - 4) = 4 - 6x^2$. At $x = 2$, $F(2) = 4 - 6(4) = -20\\text{ N}$."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Systems of Particles & Momentum",
+    masteryWeight: "14–17%",
+    topics: [
+      {
+        id: "4.1",
+        title: "Center of Mass and Collisions",
+        description: "Determine center of mass for systems and apply conservation of linear momentum.",
+        youtubeId: "Y-QOF2K-Dac",
+        article: `
+# Systems of Particles and Linear Momentum
+
+The center of mass $x_{cm}$ of a discrete system of particles is defined by:
+$$x_{cm} = \\frac{\\sum m_i x_i}{\\sum m_i}$$
+
+## Conservation of Linear Momentum
+In the absence of external net forces, the total momentum of a system is conserved:
+$$\\vec{P}_{initial} = \\vec{P}_{final}$$
+
+## Impulse and Momentum
+Impulse $\\vec{J}$ is the change in linear momentum:
+$$\\vec{J} = \\int \\vec{F} dt = \\Delta \\vec{p}$$
+`,
+        questions: [
+          {
+            id: "q_phys_4.1.1",
+            unitId: 4,
+            text: "A 2 kg block moving at 4 m/s collides and sticks to a stationary 2 kg block. What is their final velocity?",
+            options: ["1 m/s", "2 m/s", "3 m/s", "4 m/s"],
+            correctIndex: 1,
+            hint: "Apply conservation of momentum: m1*v1 + m2*v2 = (m1+m2)*v_final.",
+            explanation: "Total initial momentum is $2 \\times 4 + 2 \\times 0 = 8\\text{ kg m/s}$. Final mass is $4\\text{ kg}$. Final velocity is $8 / 4 = 2\\text{ m/s}$."
           }
         ]
       }
@@ -220,7 +287,7 @@ Prior to European arrival in 1492, the Americas were home to diverse indigenous 
     topics: [
       {
         id: "2.1",
-        title: "Colonial Development patterns",
+        title: "Colonial Development Patterns",
         description: "Compare Spanish, French, Dutch, and British colonization schemes.",
         youtubeId: "D7i81Xk3H-o",
         article: `
@@ -240,6 +307,70 @@ European powers had diverse motives and colonial structures:
             correctIndex: 2,
             hint: "This power established Quebec and traded along the Mississippi.",
             explanation: "The French focused heavily on trade alliances, particularly in fur trading, and maintained amicable relations with Native tribes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Period 3: 1754–1800",
+    masteryWeight: "12%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Revolution & Constitution",
+        description: "Analyze the causes of the American Revolution and the drafting of the U.S. Constitution.",
+        youtubeId: "3E7k713vG4M",
+        article: `
+# The American Revolution and the Constitution
+
+Tensions arose following the Seven Years' War due to imperial restructuring and taxation:
+- **Stamp Act (1765) & Townshend Acts**: Prompted colonial protests under "No taxation without representation."
+- **Common Sense by Thomas Paine**: Galvanized public opinion towards independence.
+- **Constitutional Convention (1787)**: Formulated a new federal government based on checks and balances, the Great Compromise, and the Bill of Rights.
+`,
+        questions: [
+          {
+            id: "q_ush_3.1.1",
+            unitId: 3,
+            text: "Which 1776 publication directly convinced many common colonists to support separation from Great Britain?",
+            options: ["Common Sense", "The Federalist Papers", "The Albany Plan", "Letters from a Pennsylvania Farmer"],
+            correctIndex: 0,
+            hint: "Written by Thomas Paine in accessible, plain language.",
+            explanation: "Thomas Paine's pamphlet Common Sense laid out clear arguments for American independence in simple prose."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Period 4: 1800–1848",
+    masteryWeight: "10%",
+    topics: [
+      {
+        id: "4.1",
+        title: "The Market Revolution",
+        description: "Examine technological innovations and economic changes in the early 19th century.",
+        youtubeId: "J8mE6A0J3K0",
+        article: `
+# The Market Revolution
+
+The early 19th century saw massive shifts in trade, technology, and labor:
+- **Transportation**: Canals (Erie Canal), steamboats, and early railroads linked regional economies.
+- **Factory System**: The Lowell System mobilized young female labor in textile production.
+- **Political Ideologies**: Emergence of the Second Party System (Democrats vs. Whigs) and social reform movements.
+`,
+        questions: [
+          {
+            id: "q_ush_4.1.1",
+            unitId: 4,
+            text: "Which infrastructure project completed in 1825 connected the Hudson River with the Great Lakes, triggering boomtowns in upstate New York?",
+            options: ["Erie Canal", "National Road", "Baltimore and Ohio Railroad", "Chesapeake and Ohio Canal"],
+            correctIndex: 0,
+            hint: "Completed in New York State under Governor DeWitt Clinton.",
+            explanation: "The Erie Canal revolutionized transportation and commerce by linking Buffalo on the Great Lakes with New York City."
           }
         ]
       }
@@ -310,6 +441,70 @@ Information travels through a neuron electrically and between neurons chemically
         ]
       }
     ]
+  },
+  {
+    id: 3,
+    title: "Sensation and Perception",
+    masteryWeight: "6–8%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Sensory Mechanisms & Thresholds",
+        description: "Examine absolute thresholds, signal detection, and visual/auditory transduction.",
+        youtubeId: "unWnApudb2E",
+        article: `
+# Sensation and Perception
+
+Sensation is the activation of receptors, while perception is the organization and interpretation of sensory inputs:
+- **Absolute Threshold**: The minimum stimulation needed to detect a stimulus 50% of the time.
+- **Transduction**: Conversion of physical energy (light/sound waves) into neural impulses.
+- **Gestalt Principles**: Laws describing how the brain groups visual elements (e.g., proximity, similarity).
+`,
+        questions: [
+          {
+            id: "q_psych_3.1.1",
+            unitId: 3,
+            text: "What term describes the process by which raw sensory energy is converted into electrochemical neural signals?",
+            options: ["Accommodation", "Transduction", "Adaptation", "Habituation"],
+            correctIndex: 1,
+            hint: "Think of translating one form of energy into another.",
+            explanation: "Transduction is the transformation of stimulus energies, such as sights and sounds, into neural impulses our brain can interpret."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Cognitive Psychology & Learning",
+    masteryWeight: "13–17%",
+    topics: [
+      {
+        id: "4.1",
+        title: "Classical Conditioning & Memory",
+        description: "Apply behaviorist learning principles and structural models of memory.",
+        youtubeId: "H6LEcM0E0io",
+        article: `
+# Cognitive Psychology and Learning
+
+How humans acquire, process, and store information:
+- **Classical Conditioning**: Learning via association, discovered by Ivan Pavlov (CS, US, CR, UR).
+- **Operant Conditioning**: Learning via reinforcement or punishment (B.F. Skinner).
+- **Memory Stages**: Sensory memory, Short-Term memory (working memory), and Long-Term memory.
+`,
+        questions: [
+          {
+            id: "q_psych_4.1.1",
+            unitId: 4,
+            text: "In Pavlov's classic dog experiment, what type of stimulus was the meat powder before conditioning?",
+            options: ["Conditioned Stimulus", "Unconditioned Stimulus", "Neutral Stimulus", "Conditioned Response"],
+            correctIndex: 1,
+            hint: "The dog naturally salivated to it without any prior training.",
+            explanation: "The food/meat powder naturally triggers salivation, representing the Unconditioned Stimulus (US)."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -342,6 +537,70 @@ A writer's choices are guided by the Rhetorical Situation:
             correctIndex: 1,
             hint: "Derived from Latin meaning 'demand'.",
             explanation: "Exigence is the event, problem, or issue that inspires or stimulates a writer to create a message."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Argumentation & Synthesis",
+    masteryWeight: "33%",
+    topics: [
+      {
+        id: "2.1",
+        title: "Structuring Logical Claims",
+        description: "Evaluate source evidence and construct coherent synthesis essays.",
+        youtubeId: "eYyF0W_aCik",
+        article: `
+# Argumentation and Synthesis
+
+Strong academic writing relies on structured claims supported by evidence:
+- **Thesis Statement**: A defensible opinion or position that establishes the essay's path.
+- **Synthesis**: Integrating perspectives from multiple sources to support a central argument.
+- **Logical Fallacies**: Errors in reasoning that weaken arguments (e.g. straw man, ad hominem).
+`,
+        questions: [
+          {
+            id: "q_eng_2.1.1",
+            unitId: 2,
+            text: "Which fallacy attacks the character of an opponent rather than address the substance of their argument?",
+            options: ["Straw Man", "Ad Hominem", "Slippery Slope", "False Dilemma"],
+            correctIndex: 1,
+            hint: "Latin for 'to the person'.",
+            explanation: "An ad hominem fallacy directly attacks the arguer personally rather than addressing their actual point."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Style and Rhetorical Choice",
+    masteryWeight: "34%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Tone, Diction, and Syntax",
+        description: "Analyze stylistic strategies used to affect reader responses.",
+        youtubeId: "aU9c8F1wOjo",
+        article: `
+# Tone, Diction, and Syntax
+
+Stylistic strategies allow authors to refine their rhetorical impact:
+- **Diction**: Choice of words to establish precise connotations.
+- **Syntax**: Sentence structures (e.g., parallelisms, periodic sentences) that guide pacing.
+- **Tone**: The writer's attitude toward the subject, expressed through diction.
+`,
+        questions: [
+          {
+            id: "q_eng_3.1.1",
+            unitId: 3,
+            text: "Which syntactic device involves the repetition of a chosen grammatical pattern across sentences?",
+            options: ["Anaphora", "Parallelism", "Asyndeton", "Hyperbole"],
+            correctIndex: 1,
+            hint: "Creates balance, rhythm, and clarity in prose.",
+            explanation: "Parallelism is the use of matching structures in series to create a balanced, rhythmic delivery."
           }
         ]
       }
@@ -423,6 +682,74 @@ $$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(0)}{n!} x^n$$
         ]
       }
     ]
+  },
+  {
+    id: 3,
+    title: "Integration Applications",
+    masteryWeight: "12–15%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Area and Volumes of Revolution",
+        description: "Determine area between intersecting curves and volumes using disk/washer methods.",
+        youtubeId: "E0RnyF83Pzo",
+        article: `
+# Integration Applications
+
+Integrals determine areas and volumes:
+- **Area Between Curves**:
+  $$A = \\int_{a}^{b} [f(x) - g(x)] dx$$
+
+- **Volume of Revolution (Disk/Washer)**:
+  $$V = \\pi \\int_{a}^{b} [R(x)^2 - r(x)^2] dx$$
+`,
+        questions: [
+          {
+            id: "q_calc_3.1.1",
+            unitId: 3,
+            text: "What is the area of the region bounded by $y = x^2$ and $y = x$ from $x=0$ to $x=1$?",
+            options: ["$1/2$", "$1/3$", "$1/6$", "$5/6$"],
+            correctIndex: 2,
+            hint: "Evaluate the integral: integral of (x - x^2) from 0 to 1.",
+            explanation: "Area is $\\int_{0}^{1} (x - x^2) dx = [\\frac{x^2}{2} - \\frac{x^3}{3}]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Parametric, Vector & Polar",
+    masteryWeight: "10–12%",
+    topics: [
+      {
+        id: "4.1",
+        title: "Calculus of Polar Curves",
+        description: "Analyze arc length and polar area integration.",
+        youtubeId: "2v4u6s3o1wM",
+        article: `
+# Parametric, Vector, and Polar Functions
+
+Integrate polar curves:
+- **Area in Polar Coordinates**:
+  $$A = \\frac{1}{2} \\int_{\\alpha}^{\\beta} r(\\theta)^2 d\\theta$$
+
+- **Arc Length of Parametric Curves**:
+  $$L = \\int_{a}^{b} \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} dt$$
+`,
+        questions: [
+          {
+            id: "q_calc_4.1.1",
+            unitId: 4,
+            text: "Evaluate the integral representing the area of a circle defined by $r(\\theta) = 4$ from $\\theta=0$ to $\\theta=2\\pi$.",
+            options: ["$4\\pi$", "$8\\pi$", "$16\\pi$", "$32\\pi$"],
+            correctIndex: 2,
+            hint: "Use the polar area formula: 1/2 * integral of r^2.",
+            explanation: "Area is $\\frac{1}{2} \\int_{0}^{2\\pi} 16 d\\theta = 8 [\\theta]_0^{2\\pi} = 16\\pi$."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -456,6 +783,106 @@ $$z = \\frac{x - \\mu}{\\sigma}$$
             correctIndex: 1,
             hint: "Use the formula $z = (x - \\mu) / \\sigma$.",
             explanation: "$z = (85 - 75) / 5 = 10 / 5 = 2.0$."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Exploring Two-Variable Data",
+    masteryWeight: "10–15%",
+    topics: [
+      {
+        id: "2.1",
+        title: "Regression & Correlation Coefficient",
+        description: "Calculate least-squares regression lines and analyze scatterplots.",
+        youtubeId: "q5q4U6aU0m0",
+        article: `
+# Exploring Two-Variable Data
+
+Examine linear relationships between two variables:
+- **Correlation Coefficient ($r$)**: Measures the strength and direction of a linear relationship ($-1 \\le r \\le 1$).
+- **Coefficient of Determination ($r^2$)**: Explains the proportion of variation in $y$ explained by the regression line.
+- **Least-Squares Regression Line**:
+  $$\\hat{y} = a + bx$$
+`,
+        questions: [
+          {
+            id: "q_stats_2.1.1",
+            unitId: 2,
+            text: "If $r = -0.8$, what is the value of the coefficient of determination $r^2$?",
+            options: ["-0.64", "0.64", "0.80", "0.16"],
+            correctIndex: 1,
+            hint: "Square the value of r.",
+            explanation: "$r^2 = (-0.8)^2 = 0.64$."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Collecting Data & Probability",
+    masteryWeight: "15–20%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Sampling and General Probability",
+        description: "Compare surveys, experiments, and evaluate probability unions and intersections.",
+        youtubeId: "fHwP8cR5Z4k",
+        article: `
+# Collecting Data and Probability
+
+How we collect and model random data:
+- **Sampling Methods**: Simple Random Sample (SRS), Stratified Sample, Cluster Sample.
+- **General Addition Rule**:
+  $$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$
+- **Conditional Probability**:
+  $$P(A | B) = \\frac{P(A \\cap B)}{P(B)}$$
+`,
+        questions: [
+          {
+            id: "q_stats_3.1.1",
+            unitId: 3,
+            text: "If $P(A) = 0.5$, $P(B) = 0.3$, and A and B are independent events, what is $P(A \\cap B)$?",
+            options: ["0.8", "0.2", "0.15", "0.6"],
+            correctIndex: 2,
+            hint: "For independent events, multiply their individual probabilities.",
+            explanation: "For independent events, $P(A \\cap B) = P(A) \\times P(B) = 0.5 \\times 0.3 = 0.15$."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Statistical Inference",
+    masteryWeight: "20–30%",
+    topics: [
+      {
+        id: "4.1",
+        title: "Confidence Intervals & Significance Tests",
+        description: "Perform hypothesis tests for proportions and means.",
+        youtubeId: "tK4m7wPzN3E",
+        article: `
+# Statistical Inference
+
+We draw conclusions about populations from sample statistics:
+- **Confidence Interval**:
+  $$\\text{Estimate} \\pm \\text{Margin of Error}$$
+- **Significance Testing**: Evaluate a null hypothesis $H_0$ against an alternative hypothesis $H_a$.
+- **P-Value**: The probability of obtaining results at least as extreme as observed, assuming $H_0$ is true. If P-value $\\le \\alpha$, reject $H_0$.
+`,
+        questions: [
+          {
+            id: "q_stats_4.1.1",
+            unitId: 4,
+            text: "A study reports a P-value of 0.03. If the significance level is alpha = 0.05, what is the appropriate decision?",
+            options: ["Reject Ho", "Fail to reject Ho", "Accept Ho", "Increase sample size"],
+            correctIndex: 0,
+            hint: "Compare the P-value directly with the significance level.",
+            explanation: "Since the P-value (0.03) is less than alpha (0.05), we reject the null hypothesis $H_0$."
           }
         ]
       }
@@ -533,6 +960,81 @@ for(int i = 0; i < nums.length; i++) {
             correctIndex: 2,
             hint: "Indices are 0-indexed, so the max index is length minus 1.",
             explanation: "Arrays are 0-indexed, so the index of the last element is \`arr.length - 1\`."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Conditional Logic",
+    masteryWeight: "15%",
+    topics: [
+      {
+        id: "3.1",
+        title: "Boolean Expressions & Conditional Statements",
+        description: "Formulate compound statements using logical AND/OR and structure nesting.",
+        youtubeId: "AoxM0J7a6hI",
+        article: `
+# Conditional Logic
+
+Conditional statements control code execution:
+- **Logical AND (\`&&\`)**: Evaluates to true only if both operands are true.
+- **Logical OR (\`||\`)**: Evaluates to true if at least one operand is true.
+- **Logical NOT (\`!\`)**: Inverts boolean values.
+- **De Morgan's Laws**:
+  - \`!(A && B)\` is equivalent to \`!A || !B\`
+  - \`!(A || B)\` is equivalent to \`!A && !B\`
+`,
+        questions: [
+          {
+            id: "q_csa_3.1.1",
+            unitId: 3,
+            text: "According to De Morgan's Laws, the expression \`!(x > 3 && y == 4)\` is equivalent to which of the following?",
+            options: [
+              "\`x <= 3 && y != 4\`",
+              "\`x <= 3 || y != 4\`",
+              "\`x > 3 || y != 4\`",
+              "\`x <= 3 || y == 4\`"
+            ],
+            correctIndex: 1,
+            hint: "Distribute the NOT operator, flipping the AND to an OR.",
+            explanation: "De Morgan's Laws dictate that \`!(A && B)\` becomes \`!A || !B\`. Since \`!(x > 3)\` is \`x <= 3\` and \`!(y == 4)\` is \`y != 4\`, the result is \`x <= 3 || y != 4\`."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Classes & Inheritance",
+    masteryWeight: "15%",
+    topics: [
+      {
+        id: "4.1",
+        title: "Constructors, Methods & Polymorphism",
+        description: "Formulate sub-classes and implement method overriding.",
+        youtubeId: "d3dF1W_aCjk",
+        article: `
+# Classes and Inheritance
+
+Inheritance establishes a superclass/subclass relationship ("is-a" relationship):
+- **Super Keyword**: Calls constructors or overridden methods of the parent class:
+  \`\`\`java
+  super(); // calls parent constructor
+  \`\`\`
+- **Method Overriding**: Declaring a method in a subclass that has the same signature as a method in the superclass.
+- **Polymorphism**: An object of a subclass can be assigned to a reference variable of the superclass.
+`,
+        questions: [
+          {
+            id: "q_csa_4.1.1",
+            unitId: 4,
+            text: "Which keyword is used to call a superclass constructor from inside a subclass constructor?",
+            options: ["\`this\`", "\`super\`", "\`parent\`", "\`extends\`"],
+            correctIndex: 1,
+            hint: "Must be the very first statement inside the subclass constructor.",
+            explanation: "The \`super\` keyword is used to call the superclass's constructor."
           }
         ]
       }

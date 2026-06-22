@@ -333,25 +333,15 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
       {/* Subtle green ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-500/[0.03] blur-[160px] rounded-full pointer-events-none" />
 
-      {/* Subtle top header bar */}
-      <header className="h-20 flex items-center justify-between px-8 max-w-7xl mx-auto w-full z-10">
-        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
-          <div className="w-9 h-9 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20 transition-transform duration-300 group-hover:scale-105">
-            <Activity className="w-4.5 h-4.5 text-green-400 animate-pulse" />
-          </div>
-          <span className="font-manrope font-bold text-green-400/90 text-md tracking-tight">AP Lab</span>
-        </Link>
-      </header>
-
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 z-10 -mt-16 text-center">
-        <div className="flex flex-col items-center max-w-2xl bg-black/40 backdrop-blur-md border border-green-500/10 rounded-[32px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 z-10 text-center">
+        <div className="flex flex-col items-center max-w-2xl bg-black/40 backdrop-blur-md border border-white/10 rounded-[32px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
           {/* Animated pulsing activity radar icon */}
-          <div className="w-16 h-16 rounded-full bg-green-500/5 border border-green-500/20 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(34,197,94,0.05)]">
-            <Activity className="w-7 h-7 text-green-400 animate-pulse" />
+          <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(255,255,255,0.02)]">
+            <Activity className="w-7 h-7 text-white/80 animate-pulse" />
           </div>
 
-          <span className="text-[10px] font-manrope font-black text-green-400 uppercase tracking-[0.25em] mb-4">
+          <span className="text-[10px] font-manrope font-black text-white/40 uppercase tracking-[0.25em] mb-4">
             Workspace Mapping • {courseName}
           </span>
 
@@ -360,14 +350,14 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
           </h1>
 
           <p className="font-inter text-white/50 text-sm md:text-base leading-relaxed max-w-md mb-10">
-            Our team is curating clinical interactive modules, exam reviews, and practice questions. The radar indicates the data nodes are routing in. Check back shortly.
+            We are actively creating the curriculum for this course.
           </p>
 
           <Link href="/">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-3.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 font-manrope font-bold text-xs uppercase tracking-widest hover:bg-green-500 hover:text-black hover:border-green-500 hover:shadow-[0_0_25px_rgba(34,197,94,0.45)] transition-all duration-300"
+              className="px-8 py-3.5 rounded-full bg-white text-black font-manrope font-bold text-xs uppercase tracking-widest hover:bg-neutral-200 transition-all shadow-[0_8px_30px_rgba(255,255,255,0.15)]"
             >
               Go Back to Home Page
             </motion.button>
@@ -377,7 +367,7 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
 
       {/* Minimal Footer */}
       <footer className="h-16 flex items-center justify-center px-8 z-10">
-        <span className="text-xs text-green-500/30 font-mono">
+        <span className="text-xs text-white/20 font-mono">
           © {new Date().getFullYear()} AP Lab. All rights reserved.
         </span>
       </footer>

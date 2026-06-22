@@ -58,12 +58,64 @@ export function AuthModal() {
 
   const background = useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, rgba(255,255,255,0.06), transparent 80%)`;
 
+  const createLoadingRescue = (onRescue: () => void) => {
+    let rescueTimer: NodeJS.Timeout;
+    let interactionTimeout: NodeJS.Timeout;
+    let isCleanedUp = false;
+
+    const reset = () => {
+      if (isCleanedUp) return;
+      onRescue();
+      cleanup();
+    };
+
+    const handleFocus = () => {
+      setTimeout(reset, 800);
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") {
+        setTimeout(reset, 800);
+      }
+    };
+
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("visibilitychange", handleVisibility);
+    
+    interactionTimeout = setTimeout(() => {
+      window.addEventListener("click", reset, { once: true });
+      window.addEventListener("mousemove", reset, { once: true });
+      window.addEventListener("keydown", reset, { once: true });
+    }, 2000);
+
+    rescueTimer = setTimeout(reset, 15000);
+
+    const cleanup = () => {
+      isCleanedUp = true;
+      clearTimeout(rescueTimer);
+      clearTimeout(interactionTimeout);
+      window.removeEventListener("focus", handleFocus);
+      window.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("click", reset);
+      window.removeEventListener("mousemove", reset);
+      window.removeEventListener("keydown", reset);
+    };
+
+    return cleanup;
+  };
+
   const handleOAuth = async (provider: AuthProvider) => {
+    let cleanupRescue = () => {};
     try {
       setError(null);
       setLoading(true);
+
+      cleanupRescue = createLoadingRescue(() => setLoading(false));
+
       await setPersistence(auth, browserLocalPersistence);
       await signInWithPopup(auth, provider);
+
+      cleanupRescue();
       onClose();
       router.push("/dashboard");
     } catch (err) {
@@ -73,15 +125,18 @@ export function AuthModal() {
       } else {
         setError("An error occurred during sign in.");
       }
-    } finally {
+      cleanupRescue();
       setLoading(false);
     }
   };
 
   const handleTwitterSignIn = async () => {
+    let cleanupRescue = () => {};
     try {
       setError(null);
       setLoading(true);
+
+      cleanupRescue = createLoadingRescue(() => setLoading(false));
 
       const width = 600;
       const height = 600;
@@ -97,6 +152,7 @@ export function AuthModal() {
       if (!popup) {
         setError("Failed to open sign-in popup. Please check your popup blocker settings.");
         setLoading(false);
+        cleanupRescue();
         return;
       }
 
@@ -105,6 +161,7 @@ export function AuthModal() {
 
         if (event.data?.type === "twitter-auth-success") {
           window.removeEventListener("message", handleMessage);
+          cleanupRescue();
           try {
             const { token } = event.data;
             await setPersistence(auth, browserLocalPersistence);
@@ -118,6 +175,7 @@ export function AuthModal() {
           }
         } else if (event.data?.type === "twitter-auth-error") {
           window.removeEventListener("message", handleMessage);
+          cleanupRescue();
           setError(event.data.error || "An error occurred during sign in with X.");
           setLoading(false);
         }
@@ -129,6 +187,7 @@ export function AuthModal() {
         if (popup.closed) {
           clearInterval(checkPopupClosed);
           window.removeEventListener("message", handleMessage);
+          cleanupRescue();
           setLoading(false);
         }
       }, 1000);
@@ -136,6 +195,7 @@ export function AuthModal() {
     } catch (err: any) {
       console.error("Twitter Signin Setup Error:", err);
       setError("An error occurred during sign in setup.");
+      cleanupRescue();
       setLoading(false);
     }
   };
