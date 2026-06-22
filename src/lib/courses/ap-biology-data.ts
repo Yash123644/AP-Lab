@@ -34,7 +34,7 @@ export const apBiologyData: APBioUnit[] = [
         id: "1.1",
         title: "Structure of Water and Hydrogen Bonding",
         description: "Explore the molecular structure of water and its life-sustaining properties.",
-        youtubeId: "ASLUY2U1krc",
+        youtubeId: "3jwAGWky98c",
         image: "/images/biology/water_diagram.png",
         article: `
 # Structure of Water and Hydrogen Bonding
@@ -99,7 +99,7 @@ A hydrogen bond is a weak attraction between the $\\delta^+$ hydrogen of one wat
         id: "1.5",
         title: "Structure of Nucleic Acids",
         description: "DNA and RNA structural differences and directionality.",
-        youtubeId: "032sCo86Eew",
+        youtubeId: "vQdzKdu-L5c",
         article: `
 # Structure of Nucleic Acids
 
@@ -235,7 +235,7 @@ Movement against the gradient requiring energy (ATP).
         id: "3.2",
         title: "Enzyme Catalysis",
         description: "Factors affecting the rate of biological reactions.",
-        youtubeId: "qkUvD4gLscY",
+        youtubeId: "qgVFkRn8f10",
         image: "/images/biology/enzyme_structure.png",
         article: `
 # Enzyme Catalysis & Molecular Mechanisms
@@ -444,7 +444,7 @@ Protons flow back down their concentration gradient into the matrix through **AT
         id: "5.3",
         title: "Mendelian Genetics",
         description: "Laws of inheritance and Punnett square probability.",
-        youtubeId: "WYW0533-Z14",
+        youtubeId: "i-0rSv6oxSY",
         article: `
 # Mendelian Genetics
 

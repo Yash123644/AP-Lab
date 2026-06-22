@@ -100,7 +100,7 @@ const apPhysicsUnits: CourseUnit[] = [
         id: "1.1",
         title: "Motion in One Dimension",
         description: "Analyze velocity, acceleration, and position as derivatives.",
-        youtubeId: "70T5277oEGs",
+        youtubeId: "ZM83OS4p1Og",
         article: `
 # Motion in One Dimension
 
@@ -141,7 +141,7 @@ Kinematics describes motion without considering its forces. In calculus-based ph
         id: "2.1",
         title: "Systems and Friction",
         description: "Analyze force interactions, static and kinetic friction, and inclined planes.",
-        youtubeId: "l48o_n7t0_Q",
+        youtubeId: "ZM83OS4p1Og",
         article: `
 # Systems and Friction
 
@@ -216,7 +216,7 @@ $$F(x) = -\\frac{dU}{dx}$$
         id: "4.1",
         title: "Center of Mass and Collisions",
         description: "Determine center of mass for systems and apply conservation of linear momentum.",
-        youtubeId: "l48o_n7t0_Q",
+        youtubeId: "ZM83OS4p1Og",
         article: `
 # Systems of Particles and Linear Momentum
 
@@ -551,7 +551,7 @@ A writer's choices are guided by the Rhetorical Situation:
         id: "2.1",
         title: "Structuring Logical Claims",
         description: "Evaluate source evidence and construct coherent synthesis essays.",
-        youtubeId: "eYyF0W_aCik",
+        youtubeId: "pM70cPYnsQs",
         article: `
 # Argumentation and Synthesis
 
@@ -618,7 +618,7 @@ const apCalcUnits: CourseUnit[] = [
         id: "1.1",
         title: "Limits at Infinity and Continuity",
         description: "Understand limits, formal definitions, and continuity.",
-        youtubeId: "70T5277oEGs",
+        youtubeId: "riXcZT2ICjA",
         article: `
 # Limits and Continuity
 
@@ -763,7 +763,7 @@ const apStatsUnits: CourseUnit[] = [
         id: "1.1",
         title: "Normal Distributions and Z-Scores",
         description: "Calculate standard scores and find percentiles.",
-        youtubeId: "l48o_n7t0_Q",
+        youtubeId: "V1Ypy8B9n_I",
         article: `
 # Normal Distributions and Z-Scores
 
@@ -797,7 +797,7 @@ $$z = \\frac{x - \\mu}{\\sigma}$$
         id: "2.1",
         title: "Regression & Correlation Coefficient",
         description: "Calculate least-squares regression lines and analyze scatterplots.",
-        youtubeId: "uhxtUt_-GyM",
+        youtubeId: "V1Ypy8B9n_I",
         article: `
 # Exploring Two-Variable Data
 
@@ -830,7 +830,7 @@ Examine linear relationships between two variables:
         id: "3.1",
         title: "Sampling and General Probability",
         description: "Compare surveys, experiments, and evaluate probability unions and intersections.",
-        youtubeId: "uhxtUt_-GyM",
+        youtubeId: "V1Ypy8B9n_I",
         article: `
 # Collecting Data and Probability
 
@@ -864,7 +864,7 @@ How we collect and model random data:
         id: "4.1",
         title: "Confidence Intervals & Significance Tests",
         description: "Perform hypothesis tests for proportions and means.",
-        youtubeId: "uhxtUt_-GyM",
+        youtubeId: "V1Ypy8B9n_I",
         article: `
 # Statistical Inference
 
@@ -900,7 +900,7 @@ const apCsaUnits: CourseUnit[] = [
         id: "1.1",
         title: "Primitive Types and String Objects",
         description: "Understand Java variables, basic arithmetic, and String operations.",
-        youtubeId: "w3U_Yw-U3nU",
+        youtubeId: "O5nskjZ_GoI",
         article: `
 # Primitive Types and Strings
 
@@ -937,7 +937,7 @@ Strings are immutable sequences of characters. Standard operations:
         id: "2.1",
         title: "Iterating 1D Arrays",
         description: "Learn standard loops and enhanced for-loops.",
-        youtubeId: "w3U_Yw-U3nU",
+        youtubeId: "O5nskjZ_GoI",
         article: `
 # Iterating 1D Arrays
 
@@ -974,7 +974,7 @@ for(int i = 0; i < nums.length; i++) {
         id: "3.1",
         title: "Boolean Expressions & Conditional Statements",
         description: "Formulate compound statements using logical AND/OR and structure nesting.",
-        youtubeId: "w3U_Yw-U3nU",
+        youtubeId: "O5nskjZ_GoI",
         article: `
 # Conditional Logic
 
@@ -1014,7 +1014,7 @@ Conditional statements control code execution:
         id: "4.1",
         title: "Constructors, Methods & Polymorphism",
         description: "Formulate sub-classes and implement method overriding.",
-        youtubeId: "w3U_Yw-U3nU",
+        youtubeId: "O5nskjZ_GoI",
         article: `
 # Classes and Inheritance
 
