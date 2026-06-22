@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { User, onAuthStateChanged } from "firebase/auth";
+import { User, onAuthStateChanged, getRedirectResult } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
 interface AuthContextType {
@@ -21,6 +21,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Catch Microsoft or other provider redirect sign-ins
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result?.user) {
+          window.location.href = "/dashboard";
+        }
+      })
+      .catch((error) => {
+        console.error("Firebase Redirect Auth Error:", error);
+      });
+
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);

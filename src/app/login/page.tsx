@@ -7,6 +7,7 @@ import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { AlertCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { 
   signInWithPopup, 
+  signInWithRedirect,
   AuthProvider,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -138,10 +139,14 @@ export default function LoginPage() {
       cleanupRescue = createLoadingRescue(() => setLoading(false));
 
       await setPersistence(auth, browserLocalPersistence);
-      await signInWithPopup(auth, provider);
-
-      cleanupRescue();
-      router.push("/dashboard");
+      
+      if (provider.providerId === "microsoft.com") {
+        await signInWithRedirect(auth, provider);
+      } else {
+        await signInWithPopup(auth, provider);
+        cleanupRescue();
+        router.push("/dashboard");
+      }
     } catch (err) {
       console.error("Firebase OAuth Error:", err);
       if (err instanceof Error) {

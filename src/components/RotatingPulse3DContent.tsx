@@ -170,7 +170,7 @@ function PulseModel({ isHovered }: PulseModelProps) {
   });
 
   return (
-    <group ref={groupRef} scale={0.85}>
+    <group ref={groupRef} scale={1.5}>
       {cubes.map((cube) => (
         <mesh key={cube.id} position={cube.basePosition}>
           <boxGeometry args={[0.035, 0.035, 0.035]} />
@@ -212,8 +212,8 @@ export function RotatingPulse3DContent() {
 
   return (
     <div ref={containerRef} className="w-full h-full relative">
-      {/* Adjusted camera position z to 5.4 to prevent side-cutting of the 3D model */}
-      <Canvas camera={{ position: [0, 0, 5.4], fov: 45 }}>
+      {/* Adjusted camera position z to 6.0 to prevent side-cutting of the enlarged 3D model */}
+      <Canvas camera={{ position: [0, 0, 6.0], fov: 45 }}>
         <ambientLight intensity={0.15} />
         
         {/* Key lights for 3D depth and cube face shading */}

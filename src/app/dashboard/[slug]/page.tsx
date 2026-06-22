@@ -336,66 +336,163 @@ function ForestBackground() {
     canvas.width = 256;
     canvas.height = 256;
 
+    // Detailed large trees for 3 parallax layers (height, speed, colors, offset, spacing)
     const layers = [
-      { speed: 0.12, height: 42, color: "rgba(16, 185, 129, 0.08)", offset: 0 },
-      { speed: 0.07, height: 32, color: "rgba(4, 120, 87, 0.05)", offset: 50 },
-      { speed: 0.03, height: 22, color: "rgba(6, 78, 59, 0.03)", offset: 110 }
+      {
+        speed: 0.15,
+        height: 105,
+        foliage: "#0e5c38",
+        foliageHighlight: "#1b9d62",
+        foliageShadow: "#073c24",
+        trunk: "#2c1f17",
+        offset: 0,
+        spacing: 90
+      },
+      {
+        speed: 0.08,
+        height: 80,
+        foliage: "#083822",
+        foliageHighlight: "#0e5b38",
+        foliageShadow: "#052014",
+        trunk: "#1b140f",
+        offset: 60,
+        spacing: 75
+      },
+      {
+        speed: 0.03,
+        height: 60,
+        foliage: "#051b11",
+        foliageHighlight: "#082c1b",
+        foliageShadow: "#03110b",
+        trunk: "#0e0b09",
+        offset: 130,
+        spacing: 60
+      }
     ];
 
     const leaves = Array.from({ length: 15 }, () => ({
       x: Math.random() * 256,
       y: Math.random() * 256,
-      speedY: 0.3 + Math.random() * 0.4,
-      speedX: -0.1 + Math.random() * 0.2
+      speedY: 0.35 + Math.random() * 0.4,
+      speedX: -0.15 + Math.random() * 0.3
     }));
 
     let animId: number;
 
+    const drawPixelTree = (
+      rx: number,
+      ry: number,
+      height: number,
+      foliageColor: string,
+      shadowColor: string,
+      highlightColor: string,
+      trunkColor: string
+    ) => {
+      const trunkW = Math.max(3, Math.round(height * 0.08));
+      const trunkH = Math.round(height * 0.35);
+      const foliageH = height - trunkH;
+      
+      // 1. Draw trunk with bark texture (vertical stripes)
+      ctx.fillStyle = trunkColor;
+      ctx.fillRect(rx - Math.floor(trunkW / 2), ry - trunkH, trunkW, trunkH);
+      
+      // Left highlight stripe
+      ctx.fillStyle = "rgba(255, 255, 255, 0.06)";
+      ctx.fillRect(rx - Math.floor(trunkW / 2), ry - trunkH, Math.max(1, Math.floor(trunkW / 3)), trunkH);
+      
+      // Right shadow stripe
+      ctx.fillStyle = "rgba(0, 0, 0, 0.12)";
+      ctx.fillRect(rx + Math.floor(trunkW / 2) - Math.max(1, Math.floor(trunkW / 3)), ry - trunkH, Math.max(1, Math.floor(trunkW / 3)), trunkH);
+
+      // 2. Draw Pine Foliage (layered triangles with jagged edges)
+      // 3 overlapping tiers.
+      const tiers = 3;
+      const tierH = foliageH / tiers;
+      
+      for (let t = 0; t < tiers; t++) {
+        const tierBottomY = ry - trunkH - t * (tierH * 0.75);
+        const tierTopY = tierBottomY - tierH;
+        
+        // Width of this tier
+        const maxW = height * 0.45 * (1 - t * 0.28);
+        
+        // Draw jagged foliage for this tier row-by-row
+        const step = 2; // pixel block size
+        for (let py = Math.round(tierTopY); py <= Math.round(tierBottomY); py += step) {
+          const progress = (py - tierTopY) / (tierBottomY - tierTopY);
+          const rowW = maxW * (0.2 + progress * 0.8);
+          
+          const rxStart = rx - rowW / 2;
+          const rxEnd = rx + rowW / 2;
+          
+          // Draw base foliage row
+          ctx.fillStyle = foliageColor;
+          ctx.fillRect(Math.round(rxStart), py, Math.round(rowW), step);
+          
+          // Add jagged branch tips at the edges
+          if (py % 4 === 0) {
+            ctx.fillRect(Math.round(rxStart - 2), py, 2, step);
+            ctx.fillRect(Math.round(rxEnd), py, 2, step);
+          }
+          
+          // Highlight on the top-left edge
+          ctx.fillStyle = highlightColor;
+          ctx.fillRect(Math.round(rxStart), py, Math.max(1, Math.round(rowW * 0.22)), step);
+          
+          // Shadow on the bottom-right edge
+          ctx.fillStyle = shadowColor;
+          ctx.fillRect(Math.round(rxEnd - Math.max(1, Math.round(rowW * 0.35))), py, Math.max(1, Math.round(rowW * 0.35)), step);
+        }
+      }
+    };
+
     const render = () => {
-      ctx.fillStyle = "rgba(1, 8, 1, 0.12)";
+      // Clear the canvas completely (no-smear)
+      ctx.fillStyle = "#010801";
       ctx.fillRect(0, 0, 256, 256);
 
       // Draw starry sky
-      ctx.fillStyle = "rgba(255, 255, 255, 0.12)";
-      for (let i = 0; i < 10; i++) {
+      ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
+      for (let i = 0; i < 15; i++) {
         const sx = (Math.sin(i * 12345) * 0.5 + 0.5) * 256;
         const sy = (Math.cos(i * 54321) * 0.5 + 0.5) * 120;
         ctx.fillRect(Math.round(sx), Math.round(sy), 1, 1);
       }
 
-      // Draw layers
+      // Draw layers of detailed trees
       layers.forEach((layer) => {
         layer.offset -= layer.speed;
         if (layer.offset < -256) layer.offset += 256;
 
-        ctx.fillStyle = layer.color;
-        // Draw pine trees procedurally
-        for (let x = layer.offset - 30; x < 256 + 60; x += 40) {
+        for (let x = layer.offset - 40; x < 256 + 80; x += layer.spacing) {
           const rx = Math.round(x);
-          const ry = 220;
-          // Pine tree layers (triangles)
-          ctx.beginPath();
-          ctx.moveTo(rx, ry - layer.height);
-          ctx.lineTo(rx - layer.height * 0.35, ry - layer.height * 0.4);
-          ctx.lineTo(rx + layer.height * 0.35, ry - layer.height * 0.4);
-          ctx.fill();
-
-          ctx.beginPath();
-          ctx.moveTo(rx, ry - layer.height * 0.5);
-          ctx.lineTo(rx - layer.height * 0.25, ry - layer.height * 0.1);
-          ctx.lineTo(rx + layer.height * 0.25, ry - layer.height * 0.1);
-          ctx.fill();
-
-          ctx.beginPath();
-          ctx.moveTo(rx, ry - layer.height * 0.1);
-          ctx.lineTo(rx - layer.height * 0.15, ry + 10);
-          ctx.lineTo(rx + layer.height * 0.15, ry + 10);
-          ctx.fill();
+          const ry = 220; // Ground line
+          
+          drawPixelTree(
+            rx,
+            ry,
+            layer.height,
+            layer.foliage,
+            layer.foliageShadow,
+            layer.foliageHighlight,
+            layer.trunk
+          );
         }
       });
 
+      // Draw ground
+      ctx.fillStyle = "#05180f";
+      ctx.fillRect(0, 220, 256, 36);
+      ctx.fillStyle = "#083822";
+      ctx.fillRect(0, 220, 256, 4);
+      // Add pixelated grass details on ground
+      ctx.fillStyle = "#1b9d62";
+      for (let gx = 0; gx < 256; gx += 8) {
+        ctx.fillRect(gx + (Math.floor(gx * 0.7) % 4), 218, 2, 2);
+      }
+
       // Leaves falling
-      ctx.fillStyle = "rgba(52, 211, 153, 0.22)";
+      ctx.fillStyle = "#34d399";
       leaves.forEach((l) => {
         l.y += l.speedY;
         l.x += l.speedX;
@@ -403,7 +500,7 @@ function ForestBackground() {
           l.y = -5;
           l.x = Math.random() * 256;
         }
-        ctx.fillRect(Math.round(l.x), Math.round(l.y), 1.5, 1.5);
+        ctx.fillRect(Math.round(l.x), Math.round(l.y), 2, 2);
       });
 
       animId = requestAnimationFrame(render);
@@ -530,44 +627,98 @@ function HistoryBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Detailed pixelated map of the world (64 columns)
+    const mapData = [
+      "                      ....                                      ",
+      "   ......            ......                          ......     ",
+      "  ........          ........        .....           ........    ",
+      " ..........        ..........      .......         ..........   ",
+      " ..........         ........      .........       ............  ",
+      "  ........            ....        .........      .............. ",
+      "   ......             ...        ...........      ............  ",
+      "   ......             ..         ...........       ..........   ",
+      "    ....                         ..........         ........    ",
+      "    ...                           ........                      ",
+      "    .                              ......             ....      ",
+      "                                    ....             ......     ",
+      "                                     ..               ....      ",
+      "                                      .                         "
+    ];
+
     canvas.width = 256;
     canvas.height = 256;
 
-    let time = 0;
+    let scrollX = 0;
+    let scanY = 0;
     let animId: number;
 
     const render = () => {
-      ctx.fillStyle = "rgba(10, 5, 1, 0.12)";
+      // Historical dark brown parchment/satellite radar bg
+      ctx.fillStyle = "rgba(12, 6, 2, 0.14)";
       ctx.fillRect(0, 0, 256, 256);
 
-      ctx.strokeStyle = "rgba(245, 158, 11, 0.08)";
+      // Draw grid lines
+      ctx.strokeStyle = "rgba(245, 158, 11, 0.02)";
       ctx.lineWidth = 1;
+      for (let x = 0; x <= 256; x += 16) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, 256);
+        ctx.stroke();
+      }
+      for (let y = 0; y <= 256; y += 16) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(256, y);
+        ctx.stroke();
+      }
 
-      time += 0.006;
-      const r = 72;
+      // Scroll world map
+      scrollX += 0.35;
+      if (scrollX >= 256) scrollX -= 256;
 
-      // Outer circle
+      const scaleX = 4;
+      const scaleY = 4;
+      const startY = 80;
+
+      // Draw pixel map
+      ctx.fillStyle = "rgba(245, 158, 11, 0.16)";
+      for (let r = 0; r < mapData.length; r++) {
+        const row = mapData[r];
+        for (let c = 0; c < row.length; c++) {
+          if (row[c] === ".") {
+            const x1 = Math.round((c * scaleX + scrollX) % 256);
+            const y1 = Math.round(startY + r * scaleY);
+            ctx.fillRect(x1, y1, 3, 3);
+          }
+        }
+      }
+
+      // Blinking research indicators
+      const pulse = Math.floor(Date.now() / 350) % 2 === 0;
+      if (pulse) {
+        ctx.fillStyle = "rgba(239, 68, 68, 0.85)";
+        const dots = [
+          { cx: 16, cy: 4 },
+          { cx: 32, cy: 3 },
+          { cx: 52, cy: 4 },
+          { cx: 58, cy: 12 }
+        ];
+        dots.forEach((dot) => {
+          const dx = Math.round((dot.cx * scaleX + scrollX) % 256);
+          const dy = Math.round(startY + dot.cy * scaleY);
+          ctx.fillRect(dx - 1, dy - 1, 3, 3);
+        });
+      }
+
+      // Scanning radar line
+      scanY += 1.25;
+      if (scanY > 256) scanY = 0;
+      ctx.strokeStyle = "rgba(245, 158, 11, 0.08)";
       ctx.beginPath();
-      ctx.arc(128, 128, r, 0, Math.PI * 2);
+      ctx.moveTo(0, Math.round(scanY));
+      ctx.lineTo(256, Math.round(scanY));
       ctx.stroke();
-
-      // Latitude lines
-      for (let lat = -2; lat <= 2; lat++) {
-        const h = r * Math.sin(lat * 0.35);
-        const w = r * Math.cos(lat * 0.35);
-        ctx.beginPath();
-        ctx.ellipse(128, 128 + h, w, w * 0.25, 0, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-
-      // Longitude lines (rotating)
-      for (let i = 0; i < 4; i++) {
-        const rot = time + (i * Math.PI) / 4;
-        const w = r * Math.sin(rot);
-        ctx.beginPath();
-        ctx.ellipse(128, 128, Math.abs(w), r, 0, 0, Math.PI * 2);
-        ctx.stroke();
-      }
 
       animId = requestAnimationFrame(render);
     };

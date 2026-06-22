@@ -110,11 +110,28 @@ export function APClassesPills() {
                   backgroundColor: isHovered ? "#222222" : "rgba(24, 24, 24, 0.9)"
                 }}
               >
-                {/* Upcoming Badge */}
+                {/* Connected Upcoming Tag */}
                 {ap.upcoming && (
-                  <span className="absolute -top-2.5 -right-1.5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[7px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-full z-20 select-none">
-                    Upcoming
-                  </span>
+                  <div className="absolute -top-[19px] right-6 flex flex-col items-center z-20 select-none pointer-events-none">
+                    {/* Physical thread/string */}
+                    <div className="w-[1px] h-2 bg-white/40" />
+                    {/* Tag box */}
+                    <div 
+                      className="flex items-center gap-1.5 px-2 py-0.5 rounded-sm border text-[8px] font-mono font-black tracking-wider uppercase shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
+                      style={{
+                        backgroundColor: "#121212",
+                        borderColor: ap.hex,
+                        color: ap.hex,
+                      }}
+                    >
+                      {/* Mini tie-hole */}
+                      <div 
+                        className="w-1 h-1 rounded-full" 
+                        style={{ backgroundColor: `${ap.hex}40` }}
+                      />
+                      <span>Upcoming</span>
+                    </div>
+                  </div>
                 )}
                 {/* Icon Container */}
                 <div 
