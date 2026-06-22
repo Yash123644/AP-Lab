@@ -13,7 +13,9 @@ import {
   Trophy,
   Brain,
   AlertCircle,
-  Activity
+  Activity,
+  XCircle,
+  RotateCcw
 } from "lucide-react";
 import Link from "next/link";
 import { courseRegistry, CourseUnit, CourseTopic } from "@/lib/courses/course-registry";
@@ -842,6 +844,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   const [isCorrect, setIsCorrect] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [hasRewarded, setHasRewarded] = useState(false);
 
   useEffect(() => {
     setCurrentIdx(0);
@@ -850,10 +853,12 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     setShowHint(false);
     setCorrectAnswers(0);
     setIsFinished(false);
+    setHasRewarded(false);
   }, [topicId]);
 
   useEffect(() => {
-    if (isFinished) {
+    if (isFinished && !hasRewarded) {
+      setHasRewarded(true);
       const percentage = Math.round((correctAnswers / questions.length) * 100);
       if (percentage >= 60) {
         onComplete(percentage);
@@ -865,7 +870,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
         });
       }
     }
-  }, [isFinished, correctAnswers, questions.length, onComplete, accentColor]);
+  }, [isFinished, hasRewarded, correctAnswers, questions.length, onComplete, accentColor]);
 
   if (!questions || questions.length === 0) {
     return (
@@ -883,6 +888,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     setShowHint(false);
     setCorrectAnswers(0);
     setIsFinished(false);
+    setHasRewarded(false);
   };
 
   if (isFinished) {
@@ -906,7 +912,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
             {passed ? (
               <Trophy className="w-10 h-10 text-green-400" />
             ) : (
-              <AlertCircle className="w-10 h-10 text-red-400" />
+              <XCircle className="w-10 h-10 text-red-400 animate-pulse" />
             )}
           </div>
 
@@ -1048,7 +1054,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
                   "p-2 rounded-xl shrink-0",
                   isCorrect ? "bg-green-500/20" : "bg-red-500/20"
                 )}>
-                  {isCorrect ? <CheckCircle2 className="w-5 h-5 text-green-400" /> : <Brain className="w-5 h-5 text-red-400" />}
+                  {isCorrect ? <CheckCircle2 className="w-5 h-5 text-green-400" /> : <XCircle className="w-5 h-5 text-red-400" />}
                 </div>
                 <div className="space-y-1">
                   <h4 className={cn("font-bold text-sm", isCorrect ? "text-green-400" : "text-red-400")}>

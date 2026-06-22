@@ -46,18 +46,27 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     const localKey = `ap-lab-progress-${currentUser.uid}`;
     
     // 1. Initial load from localStorage for instant offline/session recovery
+    let hasLocal = false;
     try {
       const saved = localStorage.getItem(localKey);
       if (saved) {
         setProgress(JSON.parse(saved));
+        setLoading(false);
+        hasLocal = true;
       }
     } catch (e) {
       console.error("Error reading progress from localStorage:", e);
     }
 
+    // Safeguard: Force loading to false after 1.5 seconds regardless of Firestore connection speed
+    const forceTimer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
     // 2. Set up Firestore real-time listener
     const docRef = doc(db, "userProgress", currentUser.uid);
     const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      clearTimeout(forceTimer);
       if (docSnap.exists()) {
         const firestoreData = docSnap.data() as UserProgress;
         
@@ -94,10 +103,14 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       setLoading(false);
     }, (error) => {
       console.error("Error fetching progress from Firestore:", error);
+      clearTimeout(forceTimer);
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => {
+      unsubscribe();
+      clearTimeout(forceTimer);
+    };
   }, [currentUser]);
 
   const completeTopic = async (topicId: string, score: number) => {

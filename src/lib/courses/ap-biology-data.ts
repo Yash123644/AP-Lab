@@ -236,15 +236,25 @@ Movement against the gradient requiring energy (ATP).
         title: "Enzyme Catalysis",
         description: "Factors affecting the rate of biological reactions.",
         youtubeId: "qkUvD4gLscY",
+        image: "/images/biology/enzyme_structure.png",
         article: `
-# Enzyme Catalysis
+# Enzyme Catalysis & Molecular Mechanisms
 
-Enzymes speed up reactions by lowering the activation energy barrier.
+Enzymes are highly specialized proteins that act as biological catalysts. They accelerate chemical reactions by lowering the activation energy barrier without being consumed by the reaction itself.
 
-## Factors Affecting Rate
-1. **Temperature**: Increases rate until denaturation.
-2. **pH**: Each enzyme has an optimal pH range.
-3. **Concentration**: Higher substrate concentration increases rate until saturation.
+## Enzyme-Substrate Mechanics
+The reactant an enzyme acts upon is the **substrate**. It binds to a specific region on the enzyme called the **active site**, which is shaped and chemically tuned specifically for that substrate.
+- **Induced Fit**: When a substrate binds, the enzyme undergoes a subtle conformational change, wrapping more tightly around the substrate to catalyze the reaction.
+- **Activation Energy ($E_a$)**: The initial input of energy needed to start a reaction. Enzymes lower $E_a$ by aligning substrates, bending bonds, or providing a microenvironment favorable for catalysis. Crucially, they do not change the net free energy ($\\Delta G$) of the reaction.
+
+## Factors Affecting Catalysis Rate
+1. **Temperature**: Increasing temperature increases kinetic energy, causing more collisions between enzymes and substrates. However, exceeding the optimal temperature causes the enzyme to **denature** (lose its 3D shape and active site conformation).
+2. **pH**: Deviations from the optimal pH alter the ionization of amino acid side chains, disrupting ionic bonds and denaturing the enzyme.
+3. **Concentration**: Higher substrate or enzyme concentration increases reaction rate up to a **saturation point**, where all active sites are constantly occupied.
+
+## Inhibition Mechanisms
+- **<vocab term="Competitive Inhibition" definition="A form of enzyme inhibition where the inhibitor binds to the active site, preventing the substrate from binding.">Competitive Inhibitors</vocab>**: Molecules that compete directly with the substrate for binding at the active site. This can be overcome by increasing substrate concentration.
+- **<vocab term="Non-competitive Inhibition" definition="Inhibition where the inhibitor binds to an allosteric site, changing the active site shape so the substrate cannot bind effectively.">Non-competitive (Allosteric) Inhibitors</vocab>**: Molecules that bind to a different location (allosteric site) and change the active site conformation, preventing catalysis regardless of substrate concentration.
 `,
         questions: [
           {
@@ -285,6 +295,140 @@ Enzymes speed up reactions by lowering the activation energy barrier.
             options: ["The active site", "An allosteric site", "The substrate", "The product"],
             correctIndex: 1,
             explanation: "They change the enzyme's shape from elsewhere.",
+            unitId: 3
+          }
+        ]
+      },
+      {
+        id: "3.5",
+        title: "Photosynthesis and the Calvin Cycle",
+        description: "Transforming light energy into chemical energy through light-dependent and light-independent processes.",
+        youtubeId: "sQK3Yr4Sc_k",
+        image: "/images/biology/calvin_cycle.png",
+        article: `
+# Photosynthesis & The Calvin Cycle
+
+Photosynthesis converts solar energy into chemical energy stored in organic molecules. The overall balanced equation is:
+$$6CO_2 + 6H_2O + \\text{light} \\rightarrow C_6H_{12}O_6 + 6O_2$$
+
+## Light-Dependent Reactions
+These reactions occur within the **thylakoid membranes** of chloroplasts:
+- **Light Absorption**: Pigments (chlorophyll a and b) in Photosystems II and I absorb photons, exciting electrons.
+- **Photolysis**: Water is split ($H_2O \\rightarrow 2H^+ + \\frac{1}{2}O_2 + 2e^-$) to replace lost electrons in Photosystem II, generating Oxygen ($O_2$) as a waste product.
+- **Proton Gradient & ATP**: Excited electrons travel down an Electron Transport Chain (ETC). As they pass, protons are pumped into the thylakoid space. This electrochemical proton gradient drives the synthesis of ATP via **ATP Synthase** (photophosphorylation).
+- **NADPH Production**: The final electron acceptor of the ETC is NADP+, which reduces to NADPH.
+
+## Light-Independent Reactions (The Calvin Cycle)
+This occurs in the **stroma** and uses the ATP and NADPH produced in the light reactions:
+1. **Carbon Fixation**: The enzyme **RuBisCO** attaches $CO_2$ to a 5-carbon sugar (RuBP). The resulting 6-carbon intermediate splits into two 3-carbon molecules (3-PGA).
+2. **Reduction**: ATP and NADPH reduce 3-PGA into **G3P** (a 3-carbon carbohydrate). For every six G3P produced, one leaves to form glucose.
+3. **Regeneration**: The remaining five G3P molecules use ATP to regenerate RuBP, completing the cycle.
+`,
+        questions: [
+          {
+            id: "3.5.1",
+            text: "Where do the light-dependent reactions of photosynthesis take place?",
+            options: ["Stroma", "Thylakoid membrane", "Outer membrane", "Cytosol"],
+            correctIndex: 1,
+            explanation: "The light-dependent reactions happen in the thylakoid membrane where photosystems are located.",
+            unitId: 3
+          },
+          {
+            id: "3.5.2",
+            text: "What is the primary role of water in the light-dependent reactions?",
+            options: ["To provide carbon atoms", "To act as the final electron acceptor", "To provide electrons to replace those lost by PSII", "To absorb photons"],
+            correctIndex: 2,
+            explanation: "Water photolysis provides electrons to replace those excited out of Photosystem II.",
+            unitId: 3
+          },
+          {
+            id: "3.5.3",
+            text: "Which enzyme is responsible for fixing carbon dioxide in the Calvin Cycle?",
+            options: ["ATP Synthase", "RuBisCO", "Amylase", "PEP Carboxylase"],
+            correctIndex: 1,
+            explanation: "RuBisCO fixes CO2 by attaching it to RuBP in the stroma.",
+            unitId: 3
+          },
+          {
+            id: "3.5.4",
+            text: "What are the primary products of the light reactions used to drive the Calvin Cycle?",
+            options: ["Oxygen and Glucose", "Carbon Dioxide and Water", "ATP and NADPH", "NADP+ and ADP"],
+            correctIndex: 2,
+            explanation: "ATP and NADPH act as chemical energy inputs that drive the reduction and regeneration phases of the Calvin Cycle.",
+            unitId: 3
+          },
+          {
+            id: "3.5.5",
+            text: "How many cycles of the Calvin Cycle (fixing one CO2 each) are required to produce one net G3P molecule?",
+            options: ["1", "3", "6", "12"],
+            correctIndex: 1,
+            explanation: "G3P is a 3-carbon sugar, meaning 3 fixed CO2 molecules (and thus 3 turns of the cycle) are needed to produce one net G3P.",
+            unitId: 3
+          }
+        ]
+      },
+      {
+        id: "3.6",
+        title: "Cellular Respiration and the Electron Transport Chain",
+        description: "Harvesting chemical energy from glucose through glycolysis, the Krebs cycle, and oxidative phosphorylation.",
+        youtubeId: "00jbG_cfGuQ",
+        image: "/images/biology/etc_diagram.png",
+        article: `
+# Cellular Respiration & Chemiosmosis
+
+Cellular respiration extracts chemical energy from glucose and stores it in ATP. The overall balanced equation is:
+$$C_6H_{12}O_6 + 6O_2 \\rightarrow 6CO_2 + 6H_2O + \\text{ATP}$$
+
+## Key Stages
+1. **Glycolysis** (Cytoplasm): Splits 1 glucose into 2 pyruvates, yielding a net of 2 ATP and 2 NADH. This process is anaerobic (does not require oxygen).
+2. **Krebs Cycle** (Mitochondrial Matrix): Converts pyruvate to Acetyl-CoA, which enters the cycle. Releasing $CO_2$, the cycle yields 2 ATP, 6 NADH, and 2 $FADH_2$ per glucose molecule.
+3. **Electron Transport Chain (ETC)** (Inner Mitochondrial Membrane):
+   - NADH and $FADH_2$ deliver high-energy electrons to ETC protein complexes.
+   - As electrons pass through the ETC, protons ($H^+$) are pumped from the matrix to the intermembrane space, creating an electrochemical gradient (proton motive force).
+   - Oxygen ($O_2$) acts as the **final electron acceptor**, combining with protons and electrons to form water ($H_2O$).
+
+## Chemiosmosis & ATP Synthesis
+Protons flow back down their concentration gradient into the matrix through **ATP Synthase**. This proton flow causes the ATP Synthase rotor to spin, converting mechanical energy into chemical energy to phosphorylate ADP into ATP, yielding approximately 30-32 ATP per glucose molecule.
+`,
+        questions: [
+          {
+            id: "3.6.1",
+            text: "Which stage of cellular respiration does NOT require oxygen?",
+            options: ["Glycolysis", "Krebs Cycle", "Electron Transport Chain", "Oxidative Phosphorylation"],
+            correctIndex: 0,
+            explanation: "Glycolysis occurs in the cytosol and is anaerobic, not requiring oxygen.",
+            unitId: 3
+          },
+          {
+            id: "3.6.2",
+            text: "What is the final electron acceptor in the mitochondrial electron transport chain?",
+            options: ["NAD+", "FAD", "Oxygen (O2)", "Water (H2O)"],
+            correctIndex: 2,
+            explanation: "Oxygen acts as the terminal electron acceptor, combining with electrons and protons to form water.",
+            unitId: 3
+          },
+          {
+            id: "3.6.3",
+            text: "Where are protons pumped to create the gradient that drives ATP Synthase?",
+            options: ["Mitochondrial matrix", "Intermembrane space", "Inner membrane", "Cytosol"],
+            correctIndex: 1,
+            explanation: "Protons are pumped out of the matrix into the intermembrane space, establishing a high proton concentration there.",
+            unitId: 3
+          },
+          {
+            id: "3.6.4",
+            text: "During chemiosmosis, protons flow back into the matrix through which complex?",
+            options: ["Cytochrome c", "ATP Synthase", "NADH dehydrogenase", "Ubiquinone"],
+            correctIndex: 1,
+            explanation: "ATP Synthase acts as the channel through which protons diffuse down their gradient to make ATP.",
+            unitId: 3
+          },
+          {
+            id: "3.6.5",
+            text: "Which molecule donates electrons directly to the first complex of the Electron Transport Chain?",
+            options: ["FADH2", "NADH", "Pyruvate", "Glucose"],
+            correctIndex: 1,
+            explanation: "NADH donates its electrons at Complex I, while FADH2 donates at Complex II.",
             unitId: 3
           }
         ]

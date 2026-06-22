@@ -15,8 +15,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid messages/message format" }, { status: 400 });
     }
 
-    if (!process.env.GEMINI_API_KEY) {
-      return NextResponse.json({ error: "Gemini API Key not configured" }, { status: 500 });
+    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === "your_gemini_api_key_here") {
+      return NextResponse.json({ 
+        error: "Gemini API Key not configured. Please open .env.local, replace 'your_gemini_api_key_here' with a valid key, and restart the dev server." 
+      }, { status: 500 });
     }
 
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
