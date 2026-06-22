@@ -43,20 +43,57 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       return;
     }
 
-    const docRef = doc(db, "userProgress", currentUser.uid);
+    const localKey = `ap-lab-progress-${currentUser.uid}`;
     
-    // Set up real-time listener
+    // 1. Initial load from localStorage for instant offline/session recovery
+    try {
+      const saved = localStorage.getItem(localKey);
+      if (saved) {
+        setProgress(JSON.parse(saved));
+      }
+    } catch (e) {
+      console.error("Error reading progress from localStorage:", e);
+    }
+
+    // 2. Set up Firestore real-time listener
+    const docRef = doc(db, "userProgress", currentUser.uid);
     const unsubscribe = onSnapshot(docRef, (docSnap) => {
       if (docSnap.exists()) {
-        setProgress(docSnap.data() as UserProgress);
-      } else {
-        // Initialize if doesn't exist
-        setProgress(defaultProgress);
+        const firestoreData = docSnap.data() as UserProgress;
+        
+        // Merge strategy: take the union of completed topics and the max of scores
+        setProgress((prev) => {
+          const completedTopics = Array.from(new Set([
+            ...(prev.completedTopics || []),
+            ...(firestoreData.completedTopics || [])
+          ]));
+
+          const masteryScores = { ...(prev.masteryScores || {}) };
+          if (firestoreData.masteryScores) {
+            Object.entries(firestoreData.masteryScores).forEach(([k, v]) => {
+              masteryScores[k] = Math.max(masteryScores[k] || 0, v as number);
+            });
+          }
+
+          const merged: UserProgress = {
+            completedTopics,
+            masteryScores,
+            lastAccessed: firestoreData.lastAccessed || prev.lastAccessed
+          };
+
+          // Save merged back to localStorage
+          try {
+            localStorage.setItem(localKey, JSON.stringify(merged));
+          } catch (e) {
+            console.error("Error writing progress to localStorage:", e);
+          }
+
+          return merged;
+        });
       }
       setLoading(false);
     }, (error) => {
-      console.error("Error fetching progress:", error);
-      setProgress(defaultProgress);
+      console.error("Error fetching progress from Firestore:", error);
       setLoading(false);
     });
 
@@ -66,16 +103,33 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   const completeTopic = async (topicId: string, score: number) => {
     if (!currentUser) return;
 
+    const localKey = `ap-lab-progress-${currentUser.uid}`;
     const docRef = doc(db, "userProgress", currentUser.uid);
     
     try {
-      // Check if doc exists first to either set or update
-      // But updateDoc with arrayUnion is cleaner if it exists.
-      // We'll use setDoc with merge: true to handle both cases easily.
-      
       const currentScore = progress.masteryScores[topicId] || 0;
       const newScore = Math.max(currentScore, score);
 
+      const updatedProgress: UserProgress = {
+        completedTopics: progress.completedTopics.includes(topicId)
+          ? progress.completedTopics
+          : [...progress.completedTopics, topicId],
+        masteryScores: {
+          ...progress.masteryScores,
+          [topicId]: newScore
+        },
+        lastAccessed: new Date()
+      };
+
+      // 1. Immediately update local React state and LocalStorage for zero-latency UI
+      setProgress(updatedProgress);
+      try {
+        localStorage.setItem(localKey, JSON.stringify(updatedProgress));
+      } catch (e) {
+        console.error("Error writing progress to localStorage:", e);
+      }
+
+      // 2. Sync to Firestore in the background
       await setDoc(docRef, {
         completedTopics: arrayUnion(topicId),
         masteryScores: {
@@ -86,7 +140,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       }, { merge: true });
 
     } catch (error) {
-      console.error("Error updating progress:", error);
+      console.error("Error updating progress in Firestore:", error);
     }
   };
 

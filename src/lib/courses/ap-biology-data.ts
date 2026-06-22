@@ -34,7 +34,7 @@ export const apBiologyData: APBioUnit[] = [
         id: "1.1",
         title: "Structure of Water and Hydrogen Bonding",
         description: "Explore the molecular structure of water and its life-sustaining properties.",
-        youtubeId: "SGMvK_Lp77M",
+        youtubeId: "ASLUY2U1krc",
         image: "/images/biology/water_diagram.png",
         article: `
 # Structure of Water and Hydrogen Bonding
@@ -99,7 +99,7 @@ A hydrogen bond is a weak attraction between the $\\delta^+$ hydrogen of one wat
         id: "1.5",
         title: "Structure of Nucleic Acids",
         description: "DNA and RNA structural differences and directionality.",
-        youtubeId: "MA-6m-4t0Y8",
+        youtubeId: "032sCo86Eew",
         article: `
 # Structure of Nucleic Acids
 
@@ -166,7 +166,7 @@ Nucleic acids have a 3' end and a 5' end. DNA is antiparallel, meaning the stran
         id: "2.5",
         title: "Membrane Transport",
         description: "Passive and active mechanisms for moving molecules.",
-        youtubeId: "Ptmlvtei8hw",
+        youtubeId: "dPKvHrD1eS4",
         article: `
 # Membrane Transport
 
@@ -235,7 +235,7 @@ Movement against the gradient requiring energy (ATP).
         id: "3.2",
         title: "Enzyme Catalysis",
         description: "Factors affecting the rate of biological reactions.",
-        youtubeId: "8LePrupS3_A",
+        youtubeId: "qkUvD4gLscY",
         article: `
 # Enzyme Catalysis
 
@@ -300,7 +300,7 @@ Enzymes speed up reactions by lowering the activation energy barrier.
         id: "5.3",
         title: "Mendelian Genetics",
         description: "Laws of inheritance and Punnett square probability.",
-        youtubeId: "3f_juOUPTTo",
+        youtubeId: "WYW0533-Z14",
         article: `
 # Mendelian Genetics
 
@@ -369,7 +369,7 @@ Punnett squares predict the likely outcomes of genetic crosses.
         id: "7.9",
         title: "Phylogeny",
         description: "Reconstructing evolutionary history using cladograms and phylogenetic trees.",
-        youtubeId: "6_XMKm4_WNo",
+        youtubeId: "fIv3gM8w2Fw",
         article: `
 # Phylogeny
 

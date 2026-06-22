@@ -840,19 +840,109 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   const [showFeedback, setShowFeedback] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     setCurrentIdx(0);
     setSelectedOption(null);
     setShowFeedback(false);
     setShowHint(false);
+    setCorrectAnswers(0);
+    setIsFinished(false);
   }, [topicId]);
+
+  useEffect(() => {
+    if (isFinished) {
+      const percentage = Math.round((correctAnswers / questions.length) * 100);
+      if (percentage >= 60) {
+        onComplete(percentage);
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: [accentColor, "#ffffff", "#22c55e"]
+        });
+      }
+    }
+  }, [isFinished, correctAnswers, questions.length, onComplete, accentColor]);
 
   if (!questions || questions.length === 0) {
     return (
       <div className="liquid-glass-strong rounded-[32px] p-12 text-center border border-white/10">
         <Brain className="w-12 h-12 text-white/20 mx-auto mb-4" />
         <p className="text-white/40">No practice questions available for this topic yet.</p>
+      </div>
+    );
+  }
+
+  const handleRetake = () => {
+    setCurrentIdx(0);
+    setSelectedOption(null);
+    setShowFeedback(false);
+    setShowHint(false);
+    setCorrectAnswers(0);
+    setIsFinished(false);
+  };
+
+  if (isFinished) {
+    const percentage = Math.round((correctAnswers / questions.length) * 100);
+    const passed = percentage >= 60;
+
+    return (
+      <div className="liquid-glass-strong rounded-[32px] p-8 md:p-12 border border-white/10 space-y-8 text-center flex flex-col items-center justify-center min-h-[400px]">
+        <div className="space-y-4 max-w-md">
+          {/* Animated/Glowing Icon */}
+          <div className="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center rounded-full border border-white/10 bg-white/5">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              className="absolute inset-0 rounded-full blur-xl opacity-30"
+              style={{
+                backgroundColor: passed ? "#22c55e" : "#ef4444"
+              }}
+            />
+            {passed ? (
+              <Trophy className="w-10 h-10 text-green-400" />
+            ) : (
+              <AlertCircle className="w-10 h-10 text-red-400" />
+            )}
+          </div>
+
+          <span className="text-[10px] font-manrope font-black text-white/40 uppercase tracking-[0.25em]">
+            Topic Practice Complete
+          </span>
+
+          <h3 className="font-instrument text-4xl text-white font-medium">
+            {passed ? "Topic Mastered!" : "Keep Practicing"}
+          </h3>
+
+          <div className="py-4">
+            <span className="text-6xl font-instrument italic font-bold animate-pulse" style={{ color: passed ? "#22c55e" : "#ef4444" }}>
+              {percentage}%
+            </span>
+            <p className="text-white/40 font-inter text-xs mt-2 uppercase tracking-widest">
+              Score: {correctAnswers} / {questions.length} Correct
+            </p>
+          </div>
+
+          <p className="font-inter text-white/60 text-sm leading-relaxed">
+            {passed
+              ? "Fantastic work! You have exceeded the 60% passing threshold and successfully completed this section."
+              : "You need at least 60% to count this section as completed. Review the article and video tabs, and try again!"}
+          </p>
+
+          <div className="pt-8">
+            <MagneticButton
+              onClick={handleRetake}
+              accentColor={accentColor}
+              className="px-12 py-4 rounded-2xl text-black bg-white hover:bg-neutral-200 transition-all font-manrope font-black uppercase tracking-widest text-xs shadow-lg"
+            >
+              <span className="relative z-10 text-black">Retake Quiz</span>
+            </MagneticButton>
+          </div>
+        </div>
       </div>
     );
   }
@@ -873,10 +963,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
         origin: { y: 0.6 },
         colors: [accentColor, "#ffffff"]
       });
-      
-      if (currentIdx + 1 === questions.length) {
-        onComplete(100);
-      }
+      setCorrectAnswers((prev) => prev + 1);
     }
   };
 
@@ -1021,9 +1108,10 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
               <MagneticButton
                 onClick={() => {
                   if (currentIdx + 1 === questions.length) {
-                    onComplete(100);
+                    setIsFinished(true);
+                  } else {
+                    nextQuestion();
                   }
-                  nextQuestion();
                 }}
                 accentColor={accentColor}
                 className="bg-white/10 px-12 py-4 rounded-2xl text-white font-manrope font-black uppercase tracking-widest text-xs"

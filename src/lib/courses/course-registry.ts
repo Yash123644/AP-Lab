@@ -100,7 +100,7 @@ const apPhysicsUnits: CourseUnit[] = [
         id: "1.1",
         title: "Motion in One Dimension",
         description: "Analyze velocity, acceleration, and position as derivatives.",
-        youtubeId: "mN22tL1vY4k",
+        youtubeId: "70T5277oEGs",
         article: `
 # Motion in One Dimension
 
@@ -141,7 +141,7 @@ Kinematics describes motion without considering its forces. In calculus-based ph
         id: "2.1",
         title: "Systems and Friction",
         description: "Analyze force interactions, static and kinetic friction, and inclined planes.",
-        youtubeId: "x0S1h4a0x9U",
+        youtubeId: "l48o_n7t0_Q",
         article: `
 # Systems and Friction
 
@@ -178,7 +178,7 @@ $$\\Sigma \\vec{F} = m \\vec{a}$$
         id: "3.1",
         title: "Work-Energy Theorem & Conservation",
         description: "Evaluate conservative forces, kinetic energy, and potential energy functions.",
-        youtubeId: "2WS1sG9-A6w",
+        youtubeId: "QnQe0xW_JY4",
         article: `
 # Work, Energy, and Power
 
@@ -216,7 +216,7 @@ $$F(x) = -\\frac{dU}{dx}$$
         id: "4.1",
         title: "Center of Mass and Collisions",
         description: "Determine center of mass for systems and apply conservation of linear momentum.",
-        youtubeId: "Y-QOF2K-Dac",
+        youtubeId: "l48o_n7t0_Q",
         article: `
 # Systems of Particles and Linear Momentum
 
@@ -257,7 +257,7 @@ const apUshUnits: CourseUnit[] = [
         id: "1.1",
         title: "Demographics and Native Societies",
         description: "Native American cultures prior to European contact.",
-        youtubeId: "r2T1F4bH50s",
+        youtubeId: "6E9WU9TGrec",
         article: `
 # Demographics and Native Societies
 
@@ -289,7 +289,7 @@ Prior to European arrival in 1492, the Americas were home to diverse indigenous 
         id: "2.1",
         title: "Colonial Development Patterns",
         description: "Compare Spanish, French, Dutch, and British colonization schemes.",
-        youtubeId: "D7i81Xk3H-o",
+        youtubeId: "6E9WU9TGrec",
         article: `
 # Colonial Development Patterns
 
@@ -321,7 +321,7 @@ European powers had diverse motives and colonial structures:
         id: "3.1",
         title: "Revolution & Constitution",
         description: "Analyze the causes of the American Revolution and the drafting of the U.S. Constitution.",
-        youtubeId: "3E7k713vG4M",
+        youtubeId: "6E9WU9TGrec",
         article: `
 # The American Revolution and the Constitution
 
@@ -353,7 +353,7 @@ Tensions arose following the Seven Years' War due to imperial restructuring and 
         id: "4.1",
         title: "The Market Revolution",
         description: "Examine technological innovations and economic changes in the early 19th century.",
-        youtubeId: "J8mE6A0J3K0",
+        youtubeId: "6E9WU9TGrec",
         article: `
 # The Market Revolution
 
@@ -388,7 +388,7 @@ const apPsychUnits: CourseUnit[] = [
         id: "1.1",
         title: "Research Methods in Psychology",
         description: "Understand experimental design, correlation, and ethical variables.",
-        youtubeId: "hFV71QPvX2I",
+        youtubeId: "vo4pMVb0R6M",
         article: `
 # Research Methods in Psychology
 
@@ -420,7 +420,7 @@ Psychology uses scientific methods to investigate behavior:
         id: "2.1",
         title: "Neural Transmission and the Brain",
         description: "Structure of neurons and synaptic communication.",
-        youtubeId: "VyT9vKxMwXY",
+        youtubeId: "vo4pMVb0R6M",
         article: `
 # Neural Transmission and the Brain
 
@@ -451,7 +451,7 @@ Information travels through a neuron electrically and between neurons chemically
         id: "3.1",
         title: "Sensory Mechanisms & Thresholds",
         description: "Examine absolute thresholds, signal detection, and visual/auditory transduction.",
-        youtubeId: "unWnApudb2E",
+        youtubeId: "vo4pMVb0R6M",
         article: `
 # Sensation and Perception
 
@@ -483,7 +483,7 @@ Sensation is the activation of receptors, while perception is the organization a
         id: "4.1",
         title: "Classical Conditioning & Memory",
         description: "Apply behaviorist learning principles and structural models of memory.",
-        youtubeId: "H6LEcM0E0io",
+        youtubeId: "vo4pMVb0R6M",
         article: `
 # Cognitive Psychology and Learning
 
@@ -518,7 +518,7 @@ const apEngLangUnits: CourseUnit[] = [
         id: "1.1",
         title: "The Rhetorical Situation",
         description: "Analyze how writers create messages for specific audiences and contexts.",
-        youtubeId: "o58pQk2k0m0",
+        youtubeId: "vo4pMVb0R6M",
         article: `
 # The Rhetorical Situation
 
@@ -583,7 +583,7 @@ Strong academic writing relies on structured claims supported by evidence:
         id: "3.1",
         title: "Tone, Diction, and Syntax",
         description: "Analyze stylistic strategies used to affect reader responses.",
-        youtubeId: "aU9c8F1wOjo",
+        youtubeId: "vo4pMVb0R6M",
         article: `
 # Tone, Diction, and Syntax
 
@@ -618,7 +618,7 @@ const apCalcUnits: CourseUnit[] = [
         id: "1.1",
         title: "Limits at Infinity and Continuity",
         description: "Understand limits, formal definitions, and continuity.",
-        youtubeId: "mN22tL1vY4k",
+        youtubeId: "70T5277oEGs",
         article: `
 # Limits and Continuity
 
@@ -654,7 +654,7 @@ A function $f(x)$ is continuous at $x = a$ if and only if:
         id: "2.1",
         title: "Taylor and Maclaurin Series",
         description: "Construct power series approximations for transcendental functions.",
-        youtubeId: "3d6DsjIBzJ4",
+        youtubeId: "riXcZT2ICjA",
         article: `
 # Taylor and Maclaurin Series
 
@@ -692,7 +692,7 @@ $$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(0)}{n!} x^n$$
         id: "3.1",
         title: "Area and Volumes of Revolution",
         description: "Determine area between intersecting curves and volumes using disk/washer methods.",
-        youtubeId: "E0RnyF83Pzo",
+        youtubeId: "riXcZT2ICjA",
         article: `
 # Integration Applications
 
@@ -726,7 +726,7 @@ Integrals determine areas and volumes:
         id: "4.1",
         title: "Calculus of Polar Curves",
         description: "Analyze arc length and polar area integration.",
-        youtubeId: "2v4u6s3o1wM",
+        youtubeId: "riXcZT2ICjA",
         article: `
 # Parametric, Vector, and Polar Functions
 
@@ -763,7 +763,7 @@ const apStatsUnits: CourseUnit[] = [
         id: "1.1",
         title: "Normal Distributions and Z-Scores",
         description: "Calculate standard scores and find percentiles.",
-        youtubeId: "x0S1h4a0x9U",
+        youtubeId: "l48o_n7t0_Q",
         article: `
 # Normal Distributions and Z-Scores
 
@@ -797,7 +797,7 @@ $$z = \\frac{x - \\mu}{\\sigma}$$
         id: "2.1",
         title: "Regression & Correlation Coefficient",
         description: "Calculate least-squares regression lines and analyze scatterplots.",
-        youtubeId: "q5q4U6aU0m0",
+        youtubeId: "uhxtUt_-GyM",
         article: `
 # Exploring Two-Variable Data
 
@@ -830,7 +830,7 @@ Examine linear relationships between two variables:
         id: "3.1",
         title: "Sampling and General Probability",
         description: "Compare surveys, experiments, and evaluate probability unions and intersections.",
-        youtubeId: "fHwP8cR5Z4k",
+        youtubeId: "uhxtUt_-GyM",
         article: `
 # Collecting Data and Probability
 
@@ -864,7 +864,7 @@ How we collect and model random data:
         id: "4.1",
         title: "Confidence Intervals & Significance Tests",
         description: "Perform hypothesis tests for proportions and means.",
-        youtubeId: "tK4m7wPzN3E",
+        youtubeId: "uhxtUt_-GyM",
         article: `
 # Statistical Inference
 
@@ -900,7 +900,7 @@ const apCsaUnits: CourseUnit[] = [
         id: "1.1",
         title: "Primitive Types and String Objects",
         description: "Understand Java variables, basic arithmetic, and String operations.",
-        youtubeId: "4ekASokKgT0",
+        youtubeId: "w3U_Yw-U3nU",
         article: `
 # Primitive Types and Strings
 
@@ -937,7 +937,7 @@ Strings are immutable sequences of characters. Standard operations:
         id: "2.1",
         title: "Iterating 1D Arrays",
         description: "Learn standard loops and enhanced for-loops.",
-        youtubeId: "EowJsC7phzw",
+        youtubeId: "w3U_Yw-U3nU",
         article: `
 # Iterating 1D Arrays
 
@@ -974,7 +974,7 @@ for(int i = 0; i < nums.length; i++) {
         id: "3.1",
         title: "Boolean Expressions & Conditional Statements",
         description: "Formulate compound statements using logical AND/OR and structure nesting.",
-        youtubeId: "AoxM0J7a6hI",
+        youtubeId: "w3U_Yw-U3nU",
         article: `
 # Conditional Logic
 
@@ -1014,7 +1014,7 @@ Conditional statements control code execution:
         id: "4.1",
         title: "Constructors, Methods & Polymorphism",
         description: "Formulate sub-classes and implement method overriding.",
-        youtubeId: "d3dF1W_aCjk",
+        youtubeId: "w3U_Yw-U3nU",
         article: `
 # Classes and Inheritance
 

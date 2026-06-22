@@ -35,7 +35,7 @@ export const apChemistryData: APChemUnit[] = [
         id: "1.1",
         title: "Moles and Molar Mass",
         description: "The fundamental unit of measurement and calculation in chemical systems.",
-        youtubeId: "EowJsC7phzw",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Moles and <vocab term="molar mass" definition="The mass of one mole of a substance, typically expressed in grams per mole (g/mol).">Molar Mass</vocab>
@@ -111,7 +111,7 @@ Where:
         id: "1.2",
         title: "Mass Spectra of Elements",
         description: "Determining isotopic abundance and average atomic mass using spectroscopy.",
-        youtubeId: "euk2Tg1WBA8",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Mass Spectra of Elements
@@ -181,7 +181,7 @@ $$Avg = (0.20 \\times 10) + (0.80 \\times 11) = 2 + 8.8 = 10.8 \\text{ } amu$$
         id: "1.3",
         title: "Elemental Composition of Pure Substances",
         description: "Calculating percent composition and empirical formulas.",
-        youtubeId: "JeSSucG-CVw",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Elemental Composition
@@ -250,7 +250,7 @@ A compound always contains the same elements in exactly the same proportions by 
         id: "1.4",
         title: "Composition of Mixtures",
         description: "Analyzing the purity of mixtures and the properties of solutions.",
-        youtubeId: "shG8B5Z-pYI",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Composition of Mixtures
@@ -317,7 +317,7 @@ $$\\% \\text{ } Purity = \\frac{Mass \\text{ } of \\text{ } Pure \\text{ } Subst
         id: "1.5",
         title: "Atomic Structure and Electron Configuration",
         description: "Quantum numbers, orbitals, and the arrangement of electrons in atoms.",
-        youtubeId: "tB_3n_i7n3Y",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Atomic Structure
@@ -390,7 +390,7 @@ The modern model of the atom is based on quantum mechanics. Electrons occupy spe
         id: "1.6",
         title: "Photoelectron Spectroscopy",
         description: "Using high-energy photons to probe electron binding energies.",
-        youtubeId: "NRIqXeY1R_I",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Photoelectron Spectroscopy (PES)
@@ -457,7 +457,7 @@ Where $IE$ is the **Binding Energy** (<vocab term="ionization energy" definition
         id: "1.7",
         title: "Periodic Trends",
         description: "Atomic radius, ionization energy, electronegativity, and electron affinity.",
-        youtubeId: "06yN2vN6q3M",
+        youtubeId: "0X6S06mR2p0",
         
         image: "/images/chemistry/periodic_trends.png",
         article: `
@@ -526,7 +526,7 @@ Inner electrons shield valence electrons from the full charge of the nucleus, ke
         id: "1.8",
         title: "Valence Electrons and Ionic Compounds",
         description: "The relationship between electron configuration and the formation of ions.",
-        youtubeId: "Y3Bf_C673vA",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Valence Electrons and Ions
@@ -602,7 +602,7 @@ $Cl ([Ne] 3s^2 3p^5) + e^- \\rightarrow Cl^- ([Ar])$
         id: "2.1",
         title: "Types of Chemical Bonds",
         description: "Exploring Ionic, Covalent, and Metallic bonding.",
-        youtubeId: "1ZPUBB_812U",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Types of Chemical Bonds
@@ -674,7 +674,7 @@ Metallic bonds occur in pure metals. Valence electrons are delocalized in a "sea
         id: "2.2",
         title: "Intramolecular Force and Potential Energy",
         description: "Analyzing the energy changes during bond formation.",
-        youtubeId: "W9pY_D8i83k",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Intramolecular Force and Potential Energy
@@ -742,7 +742,7 @@ Bond energy is the energy required to break a bond. It is equal to the depth of 
         id: "2.3",
         title: "Structure of Ionic Solids",
         description: "Lattice structures and properties of ionic compounds.",
-        youtubeId: "vJ92YvP6SNA",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Structure of Ionic Solids
@@ -812,7 +812,7 @@ $$E = k \\frac{q_1 q_2}{r}$$
         id: "2.4",
         title: "Structure of Metals and Alloys",
         description: "Metallic bonding and the properties of alloys.",
-        youtubeId: "XpS-Y6V9k3U",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Structure of Metals and Alloys
@@ -879,7 +879,7 @@ Metals are held together by a "sea of delocalized electrons." This explains thei
         id: "2.5",
         title: "Lewis Diagrams",
         description: "Representing valence electrons and bonding in molecules.",
-        youtubeId: "1ZPUBB_812U",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Lewis Diagrams
@@ -944,7 +944,7 @@ Lewis structures show how valence electrons are arranged in atoms, ions, and mol
         id: "2.6",
         title: "Resonance and Formal Charge",
         description: "Evaluating the best Lewis structures using formal charge and resonance.",
-        youtubeId: "q6S0M3Yq0wM",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # <vocab term="resonance" definition="A condition in which more than one valid Lewis structure can be written for a molecule.">Resonance</vocab> and <vocab term="formal charge" definition="The charge assigned to an atom in a molecule, assuming shared electrons are divided equally.">Formal Charge</vocab>
@@ -1010,7 +1010,7 @@ $$FC = (Valence \\text{ } e^-) - (Lone \\text{ } pair \\text{ } e^-) - \\frac{1}
         id: "2.7",
         title: "VSEPR and Bond Hybridization",
         description: "Predicting molecular geometry and orbital hybridization.",
-        youtubeId: "8F-l3w-X24Q",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # VSEPR and <vocab term="hybridization" definition="The mixing of several atomic orbitals to form a new set of equivalent hybrid orbitals.">Hybridization</vocab>
@@ -1086,7 +1086,7 @@ Atomic orbitals mix to form new hybrid orbitals for bonding.
         id: "3.1",
         title: "Intermolecular Forces",
         description: "Exploring the forces that hold molecules together in different phases.",
-        youtubeId: "S8QsLUO_tgQ",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # <vocab term="intermolecular forces" definition="The forces of attraction between molecules (e.g. hydrogen bonding, dipole-dipole, London dispersion).">Intermolecular Forces</vocab> (IMF)
@@ -1160,7 +1160,7 @@ As the number of electrons increases, the electron cloud is more easily distorte
         id: "3.2",
         title: "Properties of Solids",
         description: "Ionic, covalent network, metallic, and molecular solids.",
-        youtubeId: "k_O7_8U6p_g",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Properties of Solids
@@ -1239,7 +1239,7 @@ Individual molecules held by IMFs (LDF, Dipole-Dipole, H-bond).
         id: "3.3",
         title: "Solids, Liquids, and Gases",
         description: "Comparing the states of matter based on particle arrangement and motion.",
-        youtubeId: "K9s13n5eKkU",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Solids, Liquids, and Gases
@@ -1307,7 +1307,7 @@ Energy is released as IMFs form (Exothermic: Freezing, Condensation, Deposition)
         id: "3.4",
         title: "Ideal Gas Law",
         description: "Relationship between pressure, volume, temperature, and moles of a gas.",
-        youtubeId: "0X6S06mR2p0",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # <vocab term="ideal gas" definition="A hypothetical gas that perfectly fits all the assumptions of the kinetic-molecular theory.">Ideal Gas</vocab> Law
@@ -1380,7 +1380,7 @@ Where $X_i$ is the mole fraction.
         id: "3.5",
         title: "Kinetic Molecular Theory",
         description: "Modeling gas behavior at the molecular level.",
-        youtubeId: "VzP3v6rU35g",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Kinetic Molecular Theory (KMT)
@@ -1451,7 +1451,7 @@ This graph shows the distribution of particle speeds in a gas.
         id: "3.6",
         title: "Deviation from Ideal Gas Law",
         description: "When real gases do not behave ideally (Real Gases).",
-        youtubeId: "ZtJ3G-G_mE0",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Deviation from Ideal Behavior
@@ -1519,7 +1519,7 @@ $$[P + a(n/V)^2][V - nb] = nRT$$
         id: "3.7",
         title: "Solutions and Mixtures",
         description: "Understanding concentrations and the nature of homogeneous mixtures.",
-        youtubeId: "JeSSucG-CVw",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Solutions and Mixtures
@@ -1591,7 +1591,7 @@ In a diagram:
         id: "3.8",
         title: "Representations of Solutions",
         description: "Visualizing solute-solvent interactions at the particulate level.",
-        youtubeId: "3G47P7h7q5I",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Particulate Representations of Solutions
@@ -1660,7 +1660,7 @@ When an ionic compound dissolves, water molecules surround individual ions.
         id: "3.9",
         title: "Separation of Solutions and Mixtures",
         description: "Methods like filtration, distillation, and chromatography.",
-        youtubeId: "3p9wZ35I274",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Separation Techniques
@@ -1731,7 +1731,7 @@ Separates components based on differences in **<vocab term="intermolecular force
         id: "3.10",
         title: "Solubility",
         description: "Factors affecting how much solute can dissolve in a solvent.",
-        youtubeId: "JeSSucG-CVw",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # <vocab term="solubility" definition="The maximum amount of a solute that can dissolve in a given amount of solvent at a specific temperature.">Solubility</vocab>
@@ -1801,7 +1801,7 @@ Separates components based on differences in **<vocab term="intermolecular force
         id: "3.11",
         title: "Spectroscopy and the EM Spectrum",
         description: "How light interacts with matter to reveal molecular structure.",
-        youtubeId: "m8s3Fp7gXUo",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Spectroscopy
@@ -1872,7 +1872,7 @@ $$E = h\\nu = \\frac{hc}{\\lambda}$$
         id: "3.12",
         title: "Photoelectric Effect",
         description: "Evidence for the particle nature of light.",
-        youtubeId: "y28R2kG0_vE",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Photoelectric Effect
@@ -1940,7 +1940,7 @@ $$E_{photon} = \\text{Work Function} + KE_{electron}$$
         id: "3.13",
         title: "Beer-Lambert Law",
         description: "Analyze light absorption to quantify solute concentrations dynamically.",
-        youtubeId: "JeSSucG-CVw",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Beer-Lambert Law & <vocab term="spectrophotometry" definition="An analytical method for measuring the amount of light absorbed by a chemical substance at specific wavelengths.">Spectrophotometry</vocab>
@@ -2083,7 +2083,7 @@ The linear relationship of Beer's Law only holds in dilute solutions (typically 
         id: "4.1",
         title: "Introduction for Reactions",
         description: "Representing chemical changes through equations and stoichiometry.",
-        youtubeId: "TStHgub_S8E",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Introduction to Chemical Reactions
@@ -2149,7 +2149,7 @@ $$Ratio = \\frac{moles \\text{ } of \\text{ } A}{moles \\text{ } of \\text{ } B}
         id: "4.2",
         title: "Net Ionic Equations",
         description: "Focusing on the species that actually change in a reaction.",
-        youtubeId: "0D_5H_F_W_E",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Net Ionic Equations
@@ -2217,7 +2217,7 @@ In aqueous reactions, many ions are just "spectators" and do not participate in 
         id: "4.3",
         title: "Representations of Reactions",
         description: "Visualizing chemical changes at the particulate level.",
-        youtubeId: "0-wS8-HhOBA",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Particulate Representations of Reactions
@@ -2282,7 +2282,7 @@ Diagrams can show the stoichiometry and limiting reactants of a process.
         id: "4.4",
         title: "Physical and Chemical Changes",
         description: "Distinguishing between changes in state and changes in identity.",
-        youtubeId: "XpS-Y6V9k3U",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Physical vs. Chemical Changes
@@ -2357,7 +2357,7 @@ Involve the breaking and forming of chemical bonds to create new substances.
         id: "5.1",
         title: "Reaction Rates",
         description: "Understanding how fast reactions occur and the factors affecting them.",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Reaction Rates
@@ -2426,7 +2426,7 @@ $$Rate = -\\frac{\\Delta[Reactant]}{\\Delta t} = \\frac{\\Delta[Product]}{\\Delt
         id: "5.2",
         title: "Introduction to Rate Law",
         description: "Determining the relationship between concentration and rate.",
-        youtubeId: "vD6-8E8nSLA",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Rate Laws
@@ -2497,7 +2497,7 @@ By comparing trials where only one reactant <vocab term="concentration" definiti
         id: "5.3",
         title: "Concentration Changes Over Time",
         description: "Using integrated rate laws to find concentration at any time.",
-        youtubeId: "0X6S06mR2p0",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Integrated Rate Laws
@@ -2566,7 +2566,7 @@ The time required for <vocab term="concentration" definition="The amount of solu
         id: "5.4",
         title: "Elementary Reactions",
         description: "Individual molecular steps in a reaction mechanism.",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Elementary Reactions
@@ -2634,7 +2634,7 @@ Unlike overall reactions, the rate law for an elementary step **CAN** be written
         id: "5.5",
         title: "Collision Model",
         description: "Microscopic basis for reaction rates.",
-        youtubeId: "mN3_Cg3x-kk",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # The Collision Model
@@ -2703,7 +2703,7 @@ $$k = Ae^{-E_a/RT}$$
         id: "5.6",
         title: "Reaction Energy Profile",
         description: "Visualizing energy changes during a reaction coordinate.",
-        youtubeId: "mN3_Cg3x-kk",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Reaction Energy Profiles
@@ -2772,7 +2772,7 @@ A graph of potential energy vs. reaction progress.
         id: "5.7",
         title: "Introduction to Reaction Mechanisms",
         description: "Breaking down complex reactions into individual steps.",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Reaction Mechanisms
@@ -2840,7 +2840,7 @@ For a mechanism to be valid:
         id: "5.8",
         title: "Reaction Mechanism and Rate Law",
         description: "Connecting mechanisms to experimental data.",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Connecting Mechanisms and Rate Laws
@@ -2906,7 +2906,7 @@ If the first step is fast and reversible, an intermediate may appear in the RDS 
         id: "5.9",
         title: "Steady-State Approximation",
         description: "Advanced technique for solving rate laws (Conceptual).",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Steady-State Approximation
@@ -2970,7 +2970,7 @@ While complex, the AP curriculum focuses on the concept that intermediates have 
         id: "5.10",
         title: "Multistep Reaction Energy Profile",
         description: "Visualizing complex mechanisms.",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Multistep Profiles
@@ -3033,7 +3033,7 @@ Detailed analysis of energy changes across a mechanism.
         id: "5.11",
         title: "Catalysis",
         description: "How catalysts change reaction rates.",
-        youtubeId: "7qOFMBZ6Z74",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Catalysis
@@ -3108,7 +3108,7 @@ A <vocab term="catalyst" definition="A substance that increases the rate of a ch
         id: "6.1",
         title: "Endothermic and Exothermic Processes",
         description: "Understanding energy changes in chemical reactions.",
-        youtubeId: "URz_Qc10iTo",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Thermodynamics: Energy Changes
@@ -3175,7 +3175,7 @@ Thermodynamics is the study of energy and its transformations.
         id: "6.2",
         title: "Energy Diagrams",
         description: "Visualizing enthalpy changes.",
-        youtubeId: "hQ-0eTzYj2I",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # <vocab term="enthalpy" definition="A thermodynamic quantity equivalent to the total heat content of a chemical system (H).">Enthalpy</vocab> Diagrams
@@ -3237,7 +3237,7 @@ Visual representations of the relative energy of reactants and products.
         id: "6.3",
         title: "Heat Transfer and Thermal Equilibrium",
         description: "How energy moves between objects at different temperatures.",
-        youtubeId: "zS3N3e4L0wY",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Heat Transfer
@@ -3301,7 +3301,7 @@ At equilibrium, both objects reach the same temperature ($T_f$).
         id: "6.4",
         title: "Heat Capacity and Calorimetry",
         description: "Quantifying heat exchange in the lab.",
-        youtubeId: "888h-Gg3mAk",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Calorimetry
@@ -3371,7 +3371,7 @@ $$q_{rxn} = -q_{soln} = -(m_{soln} c_{soln} \\Delta T)$$
         id: "6.5",
         title: "Energy of Phase Changes",
         description: "Heat involved in melting, boiling, and freezing.",
-        youtubeId: "x8J3_t5r2kE",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Phase Changes
@@ -3436,7 +3436,7 @@ Energy is required to break <vocab term="intermolecular forces" definition="The 
         id: "6.6",
         title: "Introduction to Enthalpy of Reaction",
         description: "Defining and calculating $\\Delta H_{rxn}$.",
-        youtubeId: "hQ-0eTzYj2I",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # <vocab term="enthalpy" definition="A thermodynamic quantity equivalent to the total heat content of a chemical system (H).">Enthalpy</vocab> of Reaction
@@ -3500,7 +3500,7 @@ The <vocab term="enthalpy" definition="A thermodynamic quantity equivalent to th
         id: "6.7",
         title: "Bond Enthalpies",
         description: "Calculating $\\Delta H$ from bond breaking and forming.",
-        youtubeId: "22eK-t1x3n8",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Bond <vocab term="enthalpy" definition="A thermodynamic quantity equivalent to the total heat content of a chemical system (H).">Enthalpy</vocab>
@@ -3565,7 +3565,7 @@ $$\\Delta H_{rxn} = \\sum \\text{Bonds Broken} - \\sum \\text{Bonds Formed}$$
         id: "6.8",
         title: "Enthalpy of Formation",
         description: "Using standard values to calculate $\\Delta H_{rxn}$.",
-        youtubeId: "888h-Gg3mAk",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # <vocab term="enthalpy" definition="A thermodynamic quantity equivalent to the total heat content of a chemical system (H).">Enthalpy</vocab> of Formation ($\\Delta H_f^\\circ$)
@@ -3630,7 +3630,7 @@ $$\\Delta H_{rxn}^\\circ = \\sum n \\Delta H_f^\\circ(\\text{Products}) - \\sum 
         id: "6.9",
         title: "Hess's Law",
         description: "Adding reaction steps to find an overall $\\Delta H$.",
-        youtubeId: "i3F3W7O_t7k",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Hess's Law
@@ -3700,7 +3700,7 @@ If a reaction is carried out in a series of steps, $\\Delta H$ for the overall r
         id: "7.1",
         title: "Introduction to Equilibrium",
         description: "Understanding the state where forward and reverse rates are equal.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Chemical Equilibrium
@@ -3764,7 +3764,7 @@ Equilibrium is a dynamic state where the rate of the forward reaction equals the
         id: "7.2",
         title: "Direction of Reversible Reactions",
         description: "How reactions approach equilibrium.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Reversibility
@@ -3828,7 +3828,7 @@ The state reached eventually is independent of whether you start with only react
         id: "7.3",
         title: "Reaction Quotient and Equilibrium Constant",
         description: "Defining $Q$ and $K$.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # $Q$ vs $K$
@@ -3897,7 +3897,7 @@ $$K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$$
         id: "7.4",
         title: "Calculating the Equilibrium Constant",
         description: "Using ICE tables to find $K$.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # The ICE Table
@@ -3961,7 +3961,7 @@ $$K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$$
         id: "7.5",
         title: "Magnitude of the Equilibrium Constant",
         description: "Interpreting what $K$ tells us about the reaction.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Interpreting $K$
@@ -4022,7 +4022,7 @@ $$K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$$
         id: "7.6",
         title: "Properties of the Equilibrium Constant",
         description: "Manipulating $K$ values.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Manipulating $K$
@@ -4083,7 +4083,7 @@ $$K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$$
         id: "7.7",
         title: "Calculating Equilibrium Concentrations",
         description: "Solving for concentrations at equilibrium.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Solving for Concentrations
@@ -4145,7 +4145,7 @@ Commonly involves:
         id: "7.8",
         title: "Representations of Equilibrium",
         description: "Visualizing equilibrium at the molecular level.",
-        youtubeId: "dUMmoPdwBy4",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Particle Diagrams
@@ -4208,7 +4208,7 @@ Using 'box diagrams' to show equilibrium.
         id: "7.9",
         title: "Introduction to Le Chatelier’s Principle",
         description: "How systems respond to stress.",
-        youtubeId: "7zuUV0SiWDg",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # <vocab term="le chatelier's principle" definition="If a system at equilibrium is disturbed, the system will shift in a direction that minimizes the disturbance.">Le Chatelier's Principle</vocab>
@@ -4272,7 +4272,7 @@ If a stress is applied to a system at equilibrium, the system shifts to countera
         id: "7.10",
         title: "Reaction Quotient and Le Chatelier’s Principle",
         description: "Explaining shifts using $Q$.",
-        youtubeId: "7zuUV0SiWDg",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Explaining Shifts with $Q$
@@ -4333,7 +4333,7 @@ When a system is stressed, $Q$ no longer equals $K$.
         id: "7.11",
         title: "Introduction to Solubility Equilibria",
         description: "Understanding $K_{sp}$.",
-        youtubeId: "DP-vWN1yX0g",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # <vocab term="solubility" definition="The maximum amount of a solute that can dissolve in a given amount of solvent at a specific temperature.">Solubility</vocab> Product ($K_{sp}$)
@@ -4397,7 +4397,7 @@ $$K_{sp} = [Ag^+][Cl^-]$$
         id: "7.12",
         title: "Common-Ion Effect",
         description: "How adding a shared ion affects solubility.",
-        youtubeId: "DP-vWN1yX0g",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Common-Ion Effect
@@ -4461,7 +4461,7 @@ Excess $Cl^-$ (from $NaCl$) causes $AgCl$ to precipitate.
         id: "7.13",
         title: "pH and Solubility",
         description: "How acidity affects dissolving.",
-        youtubeId: "DP-vWN1yX0g",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # pH Effects
@@ -4523,7 +4523,7 @@ $H^+$ reacts with the basic anion, removing it from equilibrium. This shifts the
         id: "7.14",
         title: "Free Energy of Dissolution",
         description: "Thermodynamics of dissolving.",
-        youtubeId: "DP-vWN1yX0g",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Thermodynamics of <vocab term="solubility" definition="The maximum amount of a solute that can dissolve in a given amount of solvent at a specific temperature.">Solubility</vocab>
@@ -4593,7 +4593,7 @@ $$\\Delta G^\\circ = -RT \\ln K_{sp}$$
         id: "8.1",
         title: "Introduction to Acids and Bases",
         description: "Defining acids and bases and the pH scale.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Acids and Bases
@@ -4659,7 +4659,7 @@ $$K_w = [H_3O^+][OH^-] = 1.0 \\times 10^{-14} \\text{ (at 25°C)}$$
         id: "8.2",
         title: "pH and pOH of Strong Acids and Bases",
         description: "Calculating pH for complete dissociation.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Strong Acids and Bases
@@ -4726,7 +4726,7 @@ For a strong monoprotic acid: $[H_3O^+] = [Acid]_{initial}$.
         id: "8.3",
         title: "Weak Acid and Base Equilibria",
         description: "Using $K_a$ and $K_b$.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Weak Species
@@ -4792,7 +4792,7 @@ $$\\% = \\frac{[H^+]_{equil}}{[HA]_{initial}} \\times 100$$
         id: "8.4",
         title: "Acid-Base Reactions and Buffers",
         description: "What happens when you mix acids and bases.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Neutralization
@@ -4856,7 +4856,7 @@ A solution containing a weak acid and its conjugate base. Buffers resist changes
         id: "8.5",
         title: "Acid-Base Titrations",
         description: "Analyzing titration curves.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Titrations
@@ -4922,7 +4922,7 @@ Choose an indicator with a $pK_a$ close to the pH of the equivalence point.
         id: "8.6",
         title: "Molecular Structure of Acids and Bases",
         description: "Why some acids are stronger than others.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Acid Strength and Structure
@@ -4987,7 +4987,7 @@ Choose an indicator with a $pK_a$ close to the pH of the equivalence point.
         id: "8.7",
         title: "pH and pKa",
         description: "Predicting the dominant species in solution.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # pH vs pKa
@@ -5048,7 +5048,7 @@ Choose an indicator with a $pK_a$ close to the pH of the equivalence point.
         id: "8.8",
         title: "Properties of Buffers",
         description: "How buffers maintain pH.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # <vocab term="buffer" definition="A solution that resists changes in pH when small amounts of acid or base are added.">Buffer</vocab> Action
@@ -5112,7 +5112,7 @@ As long as the additions are small compared to the <vocab term="buffer" definiti
         id: "8.9",
         title: "Henderson-Hasselbalch Equation",
         description: "The shortcut for buffer calculations.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Henderson-Hasselbalch
@@ -5176,7 +5176,7 @@ $$pH = pK_a + \\log \\left( \\frac{[A^-]}{[HA]} \\right)$$
         id: "8.10",
         title: "Buffer Capacity",
         description: "The limits of a buffer.",
-        youtubeId: "Xeuyc55t9xE",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # <vocab term="buffer" definition="A solution that resists changes in pH when small amounts of acid or base are added.">Buffer</vocab> Capacity
@@ -5245,7 +5245,7 @@ The amount of acid or base a <vocab term="buffer" definition="A solution that re
         id: "9.1",
         title: "Introduction to Entropy",
         description: "Understanding disorder and the Second Law of Thermodynamics.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # <vocab term="entropy" definition="A measure of the thermal energy per unit temperature in a system that is unavailable for doing work (S).">Entropy</vocab> ($S$)
@@ -5310,7 +5310,7 @@ The amount of acid or base a <vocab term="buffer" definition="A solution that re
         id: "9.2",
         title: "Absolute Entropy and Entropy Change",
         description: "Calculating $\\Delta S_{rxn}$ using standard values.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "ASLUY2U1krc",
         
         article: `
 # Calculating $\\Delta S$
@@ -5374,7 +5374,7 @@ Units for <vocab term="entropy" definition="A measure of the thermal energy per 
         id: "9.3",
         title: "Gibbs Free Energy and Thermodynamic Favorability",
         description: "Predicting if a reaction will happen.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Gibbs <vocab term="free energy" definition="A thermodynamic quantity that measures the maximum useful work obtainable from a chemical reaction (G).">Free Energy</vocab> ($\\Delta G$)
@@ -5446,7 +5446,7 @@ $$\\Delta G = \\Delta H - T\\Delta S$$
         id: "9.4",
         title: "Thermodynamic and Kinetic Control",
         description: "Why some favorable reactions don't happen.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Thermodynamics vs. Kinetics
@@ -5508,7 +5508,7 @@ A reaction with a negative $\Delta G$ but a very high <vocab term="activation en
         id: "9.5",
         title: "Free Energy and Equilibrium",
         description: "Relating $\\Delta G^\circ$ to $K$.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Linking $\Delta G$ and $K$
@@ -5571,7 +5571,7 @@ $$\\Delta G^\circ = -RT \\ln K$$
         id: "9.6",
         title: "Coupled Reactions",
         description: "Using favorable reactions to drive unfavorable ones.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "0X6S06mR2p0",
         
         article: `
 # Reaction Coupling
@@ -5632,7 +5632,7 @@ $$\\Delta G_{total} = \\Delta G_1 + \\Delta G_2$$
         id: "9.7",
         title: "Galvanic (Voltaic) and Electrolytic Cells",
         description: "Understanding electrochemical systems.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "ASLUY2U1krc",
         
         image: "/images/chemistry/galvanic_cell.png",
         article: `
@@ -5700,7 +5700,7 @@ $$\\Delta G_{total} = \\Delta G_1 + \\Delta G_2$$
         id: "9.8",
         title: "Cell Potential and Free Energy",
         description: "Calculating voltage and energy.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "qkUvD4gLscY",
         
         article: `
 # Calculating $E_{cell}$
@@ -5764,7 +5764,7 @@ $$\\Delta G^\circ = -nFE_{cell}^\circ$$
         id: "9.9",
         title: "Cell Potential Under Nonstandard Conditions",
         description: "The Nernst Equation and concentration cells.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "vo4pMVb0R6M",
         
         article: `
 # Nonstandard Cells
@@ -5831,7 +5831,7 @@ At 298 K: $E_{cell} = E_{cell}^\circ - \\frac{0.0592}{n} \\log Q$.
         id: "9.10",
         title: "Electrolysis and Faraday's Law",
         description: "Stoichiometry of electrochemistry.",
-        youtubeId: "8yG8G5K-vEk",
+        youtubeId: "l48o_n7t0_Q",
         
         article: `
 # Electrolysis Calculations
