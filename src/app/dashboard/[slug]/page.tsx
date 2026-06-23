@@ -1710,7 +1710,7 @@ export default function APDynamicCoursePage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="space-y-8"
+                      className="space-y-8 article-content-container"
                     >
                       {activeTopic.article.split("##").map((section, idx) => {
                         if (!section.trim()) return null;
@@ -1998,7 +1998,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     setIsCorrect(correct);
     setShowFeedback(true);
 
-    recordQuestionAttempt(correct);
+    recordQuestionAttempt(correct, masteryKey);
 
     if (correct) {
       confetti({

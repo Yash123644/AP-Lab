@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { collection, query, orderBy, limit, onSnapshot } from "firebase/firestore";
-import { db } from "@/lib/firebase";
 import { LevelBadge } from "@/components/LevelBadge";
-import { Trophy, Crown, Award, User, Loader2 } from "lucide-react";
+import { Trophy, Crown, Award, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useProgress } from "@/context/ProgressContext";
 
 interface LeaderboardUser {
   uid: string;
@@ -18,44 +17,31 @@ interface LeaderboardUser {
 export function LevelLeaderboard() {
   const [users, setUsers] = useState<LeaderboardUser[]>([]);
   const [loading, setLoading] = useState(true);
+  const { progress } = useProgress();
+
+  const fetchLeaderboard = async (showLoading = false) => {
+    if (showLoading) setLoading(true);
+    try {
+      const res = await fetch("/api/leaderboard");
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          setUsers(data);
+        }
+      }
+    } catch (e) {
+      console.error("Error fetching leaderboard:", e);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    // Reference the userProgress collection
-    const q = query(
-      collection(db, "userProgress"),
-      orderBy("xp", "desc"),
-      limit(10)
-    );
-
-    const unsubscribe = onSnapshot(
-      q,
-      (snapshot) => {
-        const leaderList: LeaderboardUser[] = [];
-        snapshot.forEach((doc) => {
-          const data = doc.data();
-          // Only add users who have some progress info (at least uid and level/xp)
-          leaderList.push({
-            uid: doc.id,
-            displayName: data.displayName || "AP Scholar",
-            photoURL: data.photoURL || "",
-            xp: data.xp || 0,
-            level: data.level || 1,
-          });
-        });
-        
-        // In case there are duplicates or empty entries, clean them up, then sort
-        const sortedList = leaderList.sort((a, b) => (b.xp || 0) - (a.xp || 0));
-        setUsers(sortedList);
-        setLoading(false);
-      },
-      (error) => {
-        console.error("Error listening to leaderboard progress: ", error);
-        setLoading(false);
-      }
-    );
-
-    return () => unsubscribe();
-  }, []);
+    fetchLeaderboard(users.length === 0);
+    // Poll every 10 seconds to keep it fresh
+    const interval = setInterval(() => fetchLeaderboard(false), 10000);
+    return () => clearInterval(interval);
+  }, [progress?.xp]);
 
   const getRankStyle = (index: number) => {
     switch (index) {

@@ -15,7 +15,11 @@ export function SelectionAIPopover({ onAsk }: { onAsk: (text: string) => void })
         const windowSelection = window.getSelection();
         const text = windowSelection?.toString().trim();
 
-        if (text && text.length > 0 && windowSelection && windowSelection.rangeCount > 0) {
+        const anchorNode = windowSelection?.anchorNode;
+        const parentElement = anchorNode?.parentElement;
+        const isInsideArticle = parentElement ? !!parentElement.closest(".article-content-container") : false;
+
+        if (isInsideArticle && text && text.length > 0 && windowSelection && windowSelection.rangeCount > 0) {
           const range = windowSelection.getRangeAt(0);
           const rect = range.getBoundingClientRect();
           

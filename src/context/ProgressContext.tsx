@@ -26,7 +26,7 @@ interface ProgressContextType {
   progress: UserProgress;
   loading: boolean;
   completeTopic: (topicId: string, score: number) => Promise<void>;
-  recordQuestionAttempt: (isCorrect: boolean) => Promise<void>;
+  recordQuestionAttempt: (isCorrect: boolean, masteryKey?: string) => Promise<void>;
   recordTutorMessage: () => Promise<void>;
 }
 
@@ -50,7 +50,7 @@ const ProgressContext = createContext<ProgressContextType>({
   progress: defaultProgress,
   loading: true,
   completeTopic: async () => {},
-  recordQuestionAttempt: async () => {},
+  recordQuestionAttempt: async (isCorrect: boolean, masteryKey?: string) => {},
   recordTutorMessage: async () => {},
 });
 
@@ -61,6 +61,15 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   const [progress, setProgress] = useState<UserProgress>(defaultProgress);
   const [loading, setLoading] = useState(true);
   const [xpAnimations, setXpAnimations] = useState<{ id: number; amount: number }[]>([]);
+  const [xpToasts, setXpToasts] = useState<{ id: number; amount: number; message: string; type: "question" | "section" }[]>([]);
+
+  const triggerXpToast = (amount: number, message: string, type: "question" | "section") => {
+    const id = Date.now() + Math.random();
+    setXpToasts((prev) => [...prev, { id, amount, message, type }]);
+    setTimeout(() => {
+      setXpToasts((prev) => prev.filter((t) => t.id !== id));
+    }, 3500);
+  };
 
   const triggerXpGain = (amount: number) => {
     const id = Date.now() + Math.random();
@@ -251,6 +260,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
       if (xpEarned > 0) {
         triggerXpGain(xpEarned);
+        triggerXpToast(xpEarned, "Section Completed!", "section");
       }
 
       // 1. Immediately update local React state and LocalStorage for zero-latency UI
@@ -278,7 +288,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
-  const recordQuestionAttempt = async (isCorrect: boolean) => {
+  const recordQuestionAttempt = async (isCorrect: boolean, masteryKey?: string) => {
     if (!currentUser) return;
 
     const localKey = `ap-lab-progress-${currentUser.uid}`;
@@ -289,7 +299,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         const updatedAnswered = (prev.totalQuestionsAnswered || 0) + 1;
         const updatedCorrect = (prev.totalQuestionsCorrect || 0) + (isCorrect ? 1 : 0);
         
-        const xpEarned = isCorrect ? 10 : 0;
+        const isCompleted = masteryKey ? prev.completedTopics.includes(masteryKey) : false;
+        const xpEarned = isCorrect ? (isCompleted ? 5 : 10) : 0;
         const currentXp = prev.xp || 0;
         const newXp = currentXp + xpEarned;
         const newLevel = Math.min(100, Math.floor(newXp / 100) + 1);
@@ -305,6 +316,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
         if (xpEarned > 0) {
           triggerXpGain(xpEarned);
+          triggerXpToast(xpEarned, isCompleted ? "Practice Repeated (Halved XP)" : "Question Correct!", "question");
         }
 
         // 1. Immediately update LocalStorage
@@ -396,6 +408,32 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
               className="flex items-center space-x-1.5 bg-gradient-to-r from-green-400/90 to-emerald-500/90 border border-green-300/30 text-white font-mono tracking-widest px-4 py-2 rounded-2xl shadow-[0_8px_32px_rgba(34,197,94,0.4)] backdrop-blur-md"
             >
               <span className="text-lg font-black">+{anim.amount} XP</span>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
+      {/* Top-Right XP Earned Toasts */}
+      <div className="fixed top-6 right-6 pointer-events-none z-[99999] flex flex-col items-end space-y-3">
+        <AnimatePresence>
+          {xpToasts.map((toast) => (
+            <motion.div
+              key={toast.id}
+              initial={{ opacity: 0, x: 100, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 50, scale: 0.9, transition: { duration: 0.2 } }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="flex items-center space-x-3 pointer-events-auto bg-black/85 backdrop-blur-md border border-white/10 text-white px-4 py-3 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border-l-4 border-l-green-400"
+            >
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-500/20 text-green-400 shadow-[0_0_15px_rgba(74,222,128,0.2)]">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">{toast.message}</span>
+                <span className="text-sm font-black text-white font-mono tracking-wide">+{toast.amount} XP</span>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
