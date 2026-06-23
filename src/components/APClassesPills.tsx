@@ -115,11 +115,11 @@ export function APClassesPills() {
                   <div 
                     className="absolute top-[8px] -right-5 w-[75px] rotate-[32deg] py-0.5 border-y shadow-sm z-20 flex items-center justify-center select-none pointer-events-none"
                     style={{
-                      background: "repeating-linear-gradient(-45deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.25) 5px, rgba(10, 10, 10, 0.65) 5px, rgba(10, 10, 10, 0.65) 10px)",
-                      borderColor: "rgba(245, 158, 11, 0.4)"
+                      background: "repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15) 5px, rgba(15, 15, 15, 0.9) 5px, rgba(15, 15, 15, 0.9) 10px)",
+                      borderColor: "rgba(255, 255, 255, 0.25)"
                     }}
                   >
-                    <span className="text-[6.5px] font-mono font-black tracking-widest text-[#f59e0b] uppercase">
+                    <span className="text-[7.5px] font-mono font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]">
                       Upcoming
                     </span>
                   </div>

@@ -11,6 +11,8 @@ interface UserProgress {
   lastAccessed: any;
   totalQuestionsAnswered?: number;
   totalQuestionsCorrect?: number;
+  dailyTutorMessagesCount?: number;
+  dailyTutorMessagesDate?: string;
 }
 
 interface ProgressContextType {
@@ -18,6 +20,7 @@ interface ProgressContextType {
   loading: boolean;
   completeTopic: (topicId: string, score: number) => Promise<void>;
   recordQuestionAttempt: (isCorrect: boolean) => Promise<void>;
+  recordTutorMessage: () => Promise<void>;
 }
 
 const defaultProgress: UserProgress = {
@@ -26,6 +29,8 @@ const defaultProgress: UserProgress = {
   lastAccessed: null,
   totalQuestionsAnswered: 0,
   totalQuestionsCorrect: 0,
+  dailyTutorMessagesCount: 0,
+  dailyTutorMessagesDate: "",
 };
 
 const ProgressContext = createContext<ProgressContextType>({
@@ -33,6 +38,7 @@ const ProgressContext = createContext<ProgressContextType>({
   loading: true,
   completeTopic: async () => {},
   recordQuestionAttempt: async () => {},
+  recordTutorMessage: async () => {},
 });
 
 export const useProgress = () => useContext(ProgressContext);
@@ -90,11 +96,30 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
             });
           }
 
+          // Merge daily tutor message counts based on local date
+          const todayStr = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD
+          let mergedMessagesCount = prev.dailyTutorMessagesCount || 0;
+          let mergedMessagesDate = prev.dailyTutorMessagesDate || todayStr;
+
+          if (firestoreData.dailyTutorMessagesDate === todayStr) {
+            if (prev.dailyTutorMessagesDate === todayStr) {
+              mergedMessagesCount = Math.max(prev.dailyTutorMessagesCount || 0, firestoreData.dailyTutorMessagesCount || 0);
+            } else {
+              mergedMessagesCount = firestoreData.dailyTutorMessagesCount || 0;
+              mergedMessagesDate = todayStr;
+            }
+          } else if (prev.dailyTutorMessagesDate !== todayStr) {
+            mergedMessagesCount = 0;
+            mergedMessagesDate = todayStr;
+          }
+
           const merged: UserProgress = {
             completedTopics,
             masteryScores,
             totalQuestionsAnswered: Math.max(prev.totalQuestionsAnswered || 0, firestoreData.totalQuestionsAnswered || 0),
             totalQuestionsCorrect: Math.max(prev.totalQuestionsCorrect || 0, firestoreData.totalQuestionsCorrect || 0),
+            dailyTutorMessagesCount: mergedMessagesCount,
+            dailyTutorMessagesDate: mergedMessagesDate,
             lastAccessed: firestoreData.lastAccessed || prev.lastAccessed
           };
 
@@ -209,8 +234,51 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  const recordTutorMessage = async () => {
+    if (!currentUser) return;
+
+    const localKey = `ap-lab-progress-${currentUser.uid}`;
+    const docRef = doc(db, "userProgress", currentUser.uid);
+    const todayStr = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD
+
+    try {
+      setProgress((prev) => {
+        const isSameDay = prev.dailyTutorMessagesDate === todayStr;
+        const newCount = isSameDay ? (prev.dailyTutorMessagesCount || 0) + 1 : 1;
+
+        const updatedProgress: UserProgress = {
+          ...prev,
+          dailyTutorMessagesCount: newCount,
+          dailyTutorMessagesDate: todayStr,
+          lastAccessed: new Date()
+        };
+
+        // 1. Immediately update LocalStorage
+        try {
+          localStorage.setItem(localKey, JSON.stringify(updatedProgress));
+        } catch (e) {
+          console.error("Error writing progress to localStorage:", e);
+        }
+
+        // 2. Sync to Firestore in the background
+        setDoc(docRef, {
+          dailyTutorMessagesCount: newCount,
+          dailyTutorMessagesDate: todayStr,
+          lastAccessed: serverTimestamp()
+        }, { merge: true }).catch((err) => {
+          console.error("Error syncing message count to Firestore:", err);
+        });
+
+        return updatedProgress;
+      });
+
+    } catch (error) {
+      console.error("Error setting up message count update:", error);
+    }
+  };
+
   return (
-    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt }}>
+    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage }}>
       {children}
     </ProgressContext.Provider>
   );

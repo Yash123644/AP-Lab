@@ -138,7 +138,7 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
                 onClick={startExam}
                 className="w-full exam-accent-bg hover:opacity-90 text-black font-manrope font-black py-4 rounded-2xl transition-all exam-accent-glow"
               >
-                START PROCTORED EXAM
+                START EXAM
               </button>
               <button onClick={onClose} className="text-white/40 hover:text-white transition-colors text-sm font-medium">Cancel</button>
             </div>

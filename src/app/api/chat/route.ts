@@ -17,34 +17,8 @@ export async function POST(req: Request) {
 
     const apiKey = process.env.GEMINI_API_KEY;
 
-    if (!apiKey || apiKey === "your_gemini_api_key_here") {
-      // Sandbox fallback mode when key is not configured
-      let responseText = "### 📚 Sandbox Tutor Mode\n\nI am currently in sandbox demo mode because the Gemini API Key is not configured. To enable live AI responses, please configure your API key on the server.\n\nHere is information from the curriculum:";
-      if (course) {
-        let slug = course;
-        if (slug === "chemistry") slug = "ap-chemistry";
-        if (slug === "biology") slug = "ap-biology";
-
-        const courseData = courseRegistry[slug];
-        if (courseData && courseData.units) {
-          const allTopics = courseData.units.flatMap(u => u.topics || []);
-          const lastUserMessage = chatMessages.filter((msg: any) => msg.role === "user").pop();
-          const userQuery = lastUserMessage ? lastUserMessage.content.toLowerCase() : "";
-          
-          const matchedTopic = allTopics.find(t => 
-            userQuery.includes(t.title.toLowerCase()) || 
-            t.title.toLowerCase().includes(userQuery) ||
-            (t.article && t.article.toLowerCase().includes(userQuery))
-          );
-          
-          if (matchedTopic) {
-            responseText = `### 📚 Sandbox Tutor Mode: ${matchedTopic.title}\n\nHere is a summary of this concept from the curriculum:\n\n${matchedTopic.article || "No detailed notes available."}\n\n*Note: To unlock live AI tutoring chat, configure the server-side Gemini API Key in your deployment.*`;
-          } else {
-            responseText = `### 📚 Sandbox Tutor Mode\n\nI am currently operating in sandbox mode using the curriculum database. Here are the units covered in this course:\n\n${courseData.units.map(u => `- **Unit ${u.id}:** ${u.title}`).join("\n")}\n\n*To unlock live AI tutoring chat, configure the server-side Gemini API Key in your deployment.*`;
-          }
-        }
-      }
-      return NextResponse.json({ text: responseText });
+    if (!apiKey) {
+      return NextResponse.json({ error: "Gemini API key is not configured on the server." }, { status: 500 });
     }
 
     const ai = new GoogleGenAI({ apiKey });

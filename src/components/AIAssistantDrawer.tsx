@@ -1,12 +1,13 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, AlertCircle, ArrowUp } from "lucide-react";
+import { X, Sparkles, AlertCircle, ArrowUp, Activity } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { courseRegistry } from "@/lib/courses/course-registry";
+import { useProgress } from "@/context/ProgressContext";
 
 interface Message {
   role: "user" | "assistant";
@@ -51,8 +52,13 @@ export function AIAssistantDrawer({
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Count user messages to enforce limit
-  const userMessageCount = messages.filter(m => m.role === "user").length;
+  const { progress, recordTutorMessage } = useProgress();
+
+  // Resolve count from context (synced to Firestore/LocalStorage)
+  const todayStr = new Date().toLocaleDateString('en-CA');
+  const userMessageCount = progress.dailyTutorMessagesDate === todayStr 
+    ? (progress.dailyTutorMessagesCount || 0) 
+    : 0;
   const isLimitReached = userMessageCount >= 10;
 
   const suggestions = [
@@ -91,6 +97,8 @@ export function AIAssistantDrawer({
     setIsLoading(true);
 
     try {
+      await recordTutorMessage();
+
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { 
@@ -146,14 +154,14 @@ export function AIAssistantDrawer({
             <div className="h-20 border-b border-white/5 flex items-center justify-between px-6 bg-white/[0.01]">
               <div className="flex items-center space-x-3.5">
                 <div 
-                  className="w-10 h-10 rounded-xl bg-white/[0.02] border flex items-center justify-center relative overflow-hidden group shadow-inner"
+                  className="w-10 h-10 rounded-full bg-white/[0.02] border flex items-center justify-center relative overflow-hidden group shadow-inner"
                   style={{ borderColor: `${accentColor}30` }}
                 >
                   <div 
                     className="absolute inset-0 opacity-10 transition-opacity duration-300 group-hover:opacity-20"
                     style={{ backgroundColor: accentColor }}
                   />
-                  <Sparkles className="w-5 h-5 relative z-10" style={{ color: accentColor }} />
+                  <Activity className="w-5 h-5 relative z-10 animate-pulse" style={{ color: accentColor }} />
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
@@ -187,7 +195,7 @@ export function AIAssistantDrawer({
                     /* User Message Bubble */
                     <div className="max-w-[78%] flex flex-col items-end">
                       <div 
-                        className="rounded-[20px] rounded-br-[4px] px-4.5 py-2 text-sm font-inter leading-relaxed text-white"
+                        className="rounded-[20px] rounded-br-[4px] px-5 py-2.5 text-sm font-inter leading-relaxed text-white w-full overflow-hidden break-words whitespace-normal"
                         style={{
                           backgroundColor: accentColor,
                         }}
@@ -200,8 +208,8 @@ export function AIAssistantDrawer({
                   ) : (
                     /* AI Assistant Message Bubble */
                     <div className="max-w-[82%] flex flex-col items-start">
-                      <div className="rounded-[20px] rounded-bl-[4px] px-4.5 py-2 text-sm font-inter leading-relaxed text-white/95 bg-[#242429]">
-                        <div className="prose prose-invert prose-sm max-w-none leading-relaxed select-text break-words">
+                      <div className="rounded-[20px] rounded-bl-[4px] px-5 py-2.5 text-sm font-inter leading-relaxed text-white/95 bg-[#242429] w-full overflow-hidden break-words whitespace-normal">
+                        <div className="prose prose-invert prose-sm max-w-none leading-relaxed select-text break-words whitespace-normal">
                           <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
                             {msg.content}
                           </ReactMarkdown>
@@ -270,7 +278,7 @@ export function AIAssistantDrawer({
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
-                      placeholder="iMessage"
+                      placeholder="Ask a curriculum question..."
                       className="w-full bg-transparent border-none focus:outline-none text-sm text-white placeholder-white/25 pr-10 font-inter py-1"
                       style={{
                         caretColor: accentColor
