@@ -112,47 +112,60 @@ export function APClassesPills() {
               >
                 {/* Connected Upcoming Tag */}
                 {ap.upcoming && (
-                  <div className="absolute -top-[30px] right-4 select-none pointer-events-none z-20 w-[110px] h-[40px]">
-                    <svg width="110" height="40" viewBox="0 0 110 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_3px_6px_rgba(0,0,0,0.45)]">
+                  <motion.div 
+                    className="absolute -top-[22px] -right-8 w-[80px] h-[30px] z-20 select-none pointer-events-none"
+                    animate={{
+                      rotate: [-4, 4, -4],
+                    }}
+                    transition={{
+                      duration: 3.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    style={{
+                      transformOrigin: "12px 28px",
+                    }}
+                  >
+                    <svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_2.5px_4px_rgba(0,0,0,0.5)]">
                       {/* Thread loop tying the tag to the pill */}
                       <path 
-                        d="M 82 38 C 72 28, 43 14, 43 16 C 43 18, 74 32, 86 38" 
+                        d="M 12 28 C 15 22, 28 12, 32 14 C 33 15, 23 24, 14 28" 
                         stroke="rgba(255, 255, 255, 0.35)" 
                         strokeWidth="1.2" 
                         strokeLinecap="round"
                       />
                       {/* Small knot on the thread */}
-                      <circle cx="43" cy="16" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+                      <circle cx="32" cy="14" r="1.2" fill="rgba(255, 255, 255, 0.7)" />
                       
                       {/* Clothes Tag Body */}
-                      <g transform="translate(30, 6) rotate(-10)">
+                      <g transform="translate(25, 4) rotate(15)">
                         {/* Tag Shape: clipped corners at the left end where the hole is */}
                         <path 
-                          d="M 0 10 L 10 0 L 70 0 L 70 20 L 10 20 Z" 
-                          fill="#0d0d0d" 
-                          stroke="#cccccc" 
-                          strokeWidth="1.2" 
+                          d="M 0 8 L 8 0 L 50 0 L 50 16 L 8 16 Z" 
+                          fill="#0c0c0c" 
+                          stroke="#dddddd" 
+                          strokeWidth="1.1" 
                           strokeLinejoin="round"
                         />
                         {/* Metal/Silver Reinforcement Ring (Grommet) */}
-                        <circle cx="12" cy="10" r="3.5" fill="#181818" stroke="#888888" strokeWidth="0.8" />
+                        <circle cx="10" cy="8" r="3" fill="#181818" stroke="#888888" strokeWidth="0.8" />
                         {/* The hole itself */}
-                        <circle cx="12" cy="10" r="1.5" fill="#000000" />
+                        <circle cx="10" cy="8" r="1.2" fill="#000000" />
                         {/* Monochrome text */}
                         <text 
-                          x="22" 
-                          y="13" 
+                          x="18" 
+                          y="11" 
                           fill="#ffffff" 
                           fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" 
-                          fontSize="7.5" 
+                          fontSize="6.5" 
                           fontWeight="900" 
-                          letterSpacing="0.8"
+                          letterSpacing="0.5"
                         >
                           UPCOMING
                         </text>
                       </g>
                     </svg>
-                  </div>
+                  </motion.div>
                 )}
                 {/* Icon Container */}
                 <div 

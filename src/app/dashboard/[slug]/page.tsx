@@ -922,6 +922,410 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
   );
 }
 
+interface UnitBannerBackgroundProps {
+  slug: string;
+  unitId: number;
+  accentColor: string;
+}
+
+function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroundProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = 480;
+    canvas.height = 160;
+
+    let animId: number;
+    let frame = 0;
+
+    const seedRandom = (str: string) => {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      return () => {
+        const x = Math.sin(hash++) * 10000;
+        return x - Math.floor(x);
+      };
+    };
+
+    const rng = seedRandom(`${slug}-${unitId}`);
+    const particles: any[] = [];
+
+    if (slug === "ap-biology") {
+      for (let i = 0; i < 20; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          size: 2 + rng() * 3,
+          speedY: 0.2 + rng() * 0.4,
+          speedX: -0.2 + rng() * 0.4,
+          color: rng() > 0.5 ? "rgba(34, 197, 94, 0.25)" : "rgba(16, 185, 129, 0.15)",
+          wiggleSpeed: 0.02 + rng() * 0.03,
+          seed: rng() * 100
+        });
+      }
+    } else if (slug === "ap-chemistry") {
+      for (let i = 0; i < 15; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: canvas.height + rng() * 40,
+          size: 3 + rng() * 5,
+          speedY: -0.3 - rng() * 0.6,
+          speedX: -0.1 + rng() * 0.2,
+          color: rng() > 0.4 ? "rgba(0, 242, 255, 0.2)" : "rgba(59, 130, 246, 0.15)"
+        });
+      }
+    } else if (slug === "ap-physics-c") {
+      for (let i = 0; i < 12; i++) {
+        particles.push({
+          cx: rng() * canvas.width,
+          cy: rng() * canvas.height,
+          radius: 15 + rng() * 30,
+          speed: 0.01 + rng() * 0.02,
+          angle: rng() * Math.PI * 2,
+          size: 2 + rng() * 2,
+          color: "rgba(129, 140, 248, 0.3)"
+        });
+      }
+    } else if (slug === "ap-ush") {
+      for (let i = 0; i < 25; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          size: 1 + rng() * 2,
+          speedX: -0.15 - rng() * 0.25,
+          color: rng() > 0.5 ? "rgba(251, 191, 36, 0.12)" : "rgba(245, 158, 11, 0.08)"
+        });
+      }
+    } else if (slug === "ap-psych") {
+      for (let i = 0; i < 16; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          targetX: rng() * canvas.width,
+          targetY: rng() * canvas.height,
+          speed: 0.005 + rng() * 0.01,
+          size: 1.5 + rng() * 2,
+          color: "rgba(168, 85, 247, 0.25)"
+        });
+      }
+    } else if (slug === "ap-eng-lang") {
+      const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890{}[]<>/".split("");
+      for (let i = 0; i < 18; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          char: chars[Math.floor(rng() * chars.length)],
+          speedY: 0.25 + rng() * 0.4,
+          color: rng() > 0.5 ? "rgba(251, 113, 133, 0.18)" : "rgba(244, 63, 94, 0.12)"
+        });
+      }
+    } else if (slug === "ap-stats") {
+      for (let i = 0; i < 30; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          size: 2.5,
+          color: rng() > 0.4 ? "rgba(56, 189, 248, 0.25)" : "rgba(14, 165, 233, 0.15)"
+        });
+      }
+    } else if (slug === "ap-csa") {
+      for (let i = 0; i < 24; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          val: rng() > 0.5 ? "0" : "1",
+          speedY: 0.5 + rng() * 0.8,
+          color: rng() > 0.5 ? "rgba(167, 139, 250, 0.22)" : "rgba(139, 92, 246, 0.14)"
+        });
+      }
+    } else {
+      for (let i = 0; i < 20; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          targetX: rng() * canvas.width,
+          targetY: rng() * canvas.height,
+          speed: 0.005 + rng() * 0.01,
+          size: 1.5 + rng() * 2
+        });
+      }
+    }
+
+    const render = () => {
+      ctx.fillStyle = "#06060c";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.015)";
+      ctx.lineWidth = 1;
+      const gridSize = 16;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      frame++;
+
+      if (slug === "ap-biology") {
+        ctx.fillStyle = "rgba(34, 197, 94, 0.05)";
+        ctx.strokeStyle = "rgba(34, 197, 94, 0.08)";
+        ctx.lineWidth = 2;
+        const amplitude = 25;
+        const wavelength = 120;
+        
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 4) {
+          const y1 = canvas.height / 2 + Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
+          if (x === 0) ctx.moveTo(x, y1);
+          else ctx.lineTo(x, y1);
+        }
+        ctx.stroke();
+
+        ctx.strokeStyle = "rgba(16, 185, 129, 0.08)";
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 4) {
+          const y2 = canvas.height / 2 - Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
+          if (x === 0) ctx.moveTo(x, y2);
+          else ctx.lineTo(x, y2);
+        }
+        ctx.stroke();
+
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.03)";
+        ctx.lineWidth = 1;
+        for (let x = 20; x < canvas.width; x += 24) {
+          const y1 = canvas.height / 2 + Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
+          const y2 = canvas.height / 2 - Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
+          ctx.beginPath();
+          ctx.moveTo(x, y1);
+          ctx.lineTo(x, y2);
+          ctx.stroke();
+        }
+
+        particles.forEach((p) => {
+          p.y += p.speedY;
+          p.x += Math.sin(frame * p.wiggleSpeed + p.seed) * 0.15;
+          if (p.y > canvas.height) {
+            p.y = -10;
+            p.x = Math.random() * canvas.width;
+          }
+          ctx.fillStyle = p.color;
+          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+        });
+
+      } else if (slug === "ap-chemistry") {
+        particles.forEach((p) => {
+          p.y += p.speedY;
+          p.x += p.speedX;
+          if (p.y < -10) {
+            p.y = canvas.height + 10;
+            p.x = Math.random() * canvas.width;
+          }
+          ctx.fillStyle = p.color;
+          ctx.strokeStyle = p.color.replace("0.2", "0.4").replace("0.15", "0.3");
+          ctx.lineWidth = 1;
+          
+          ctx.beginPath();
+          ctx.arc(Math.round(p.x), Math.round(p.y), p.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+        });
+
+      } else if (slug === "ap-physics-c") {
+        particles.forEach((p) => {
+          p.angle += p.speed;
+          const x = p.cx + Math.cos(p.angle) * p.radius;
+          const y = p.cy + Math.sin(p.angle) * p.radius;
+          ctx.fillStyle = p.color;
+          ctx.fillRect(Math.round(x), Math.round(y), p.size, p.size);
+          
+          ctx.strokeStyle = "rgba(129, 140, 248, 0.03)";
+          ctx.beginPath();
+          ctx.arc(Math.round(p.cx), Math.round(p.cy), p.radius, 0, Math.PI * 2);
+          ctx.stroke();
+        });
+
+      } else if (slug === "ap-ush") {
+        particles.forEach((p) => {
+          p.x += p.speedX;
+          if (p.x < -10) {
+            p.x = canvas.width + 10;
+            p.y = Math.random() * canvas.height;
+          }
+          ctx.fillStyle = p.color;
+          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+        });
+
+        ctx.strokeStyle = "rgba(251, 191, 36, 0.03)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 10) {
+          const y = 80 + Math.sin(x / 80 + unitId) * 15 + Math.cos(x / 40) * 5;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+      } else if (slug === "ap-psych") {
+        particles.forEach((p) => {
+          p.x += (p.targetX - p.x) * p.speed;
+          p.y += (p.targetY - p.y) * p.speed;
+          if (Math.abs(p.x - p.targetX) < 2 && Math.abs(p.y - p.targetY) < 2) {
+            p.targetX = Math.random() * canvas.width;
+            p.targetY = Math.random() * canvas.height;
+          }
+          ctx.fillStyle = p.color;
+          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+        });
+
+        ctx.strokeStyle = "rgba(168, 85, 247, 0.04)";
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 60) {
+              ctx.beginPath();
+              ctx.moveTo(Math.round(particles[i].x), Math.round(particles[i].y));
+              ctx.lineTo(Math.round(particles[j].x), Math.round(particles[j].y));
+              ctx.stroke();
+            }
+          }
+        }
+
+      } else if (slug === "ap-eng-lang") {
+        ctx.font = "bold 9px monospace";
+        particles.forEach((p) => {
+          p.y += p.speedY;
+          if (p.y > canvas.height + 15) {
+            p.y = -15;
+            p.x = Math.random() * canvas.width;
+          }
+          ctx.fillStyle = p.color;
+          ctx.fillText(p.char, Math.round(p.x), Math.round(p.y));
+        });
+
+      } else if (slug === "ap-calc-bc") {
+        ctx.fillStyle = "rgba(52, 211, 153, 0.06)";
+        ctx.strokeStyle = "rgba(52, 211, 153, 0.12)";
+        ctx.lineWidth = 1;
+
+        const rectWidth = 12;
+        const amplitude = 30;
+        const frequency = 0.02;
+        for (let x = 10; x < canvas.width - 10; x += rectWidth + 4) {
+          const y = canvas.height / 2 + Math.sin(x * frequency + frame * 0.015) * amplitude;
+          const rectHeight = (canvas.height / 2) - y;
+          ctx.fillRect(x, y, rectWidth, rectHeight);
+          ctx.strokeRect(x, y, rectWidth, rectHeight);
+        }
+
+        ctx.strokeStyle = "rgba(52, 211, 153, 0.3)";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 4) {
+          const y = canvas.height / 2 + Math.sin(x * frequency + frame * 0.015) * amplitude;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+      } else if (slug === "ap-stats") {
+        particles.forEach((p) => {
+          ctx.fillStyle = p.color;
+          ctx.fillRect(p.x, p.y, p.size, p.size);
+        });
+
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.15)";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        const startY = 120 + Math.sin(frame * 0.01) * 15;
+        const endY = 40 + Math.cos(frame * 0.01) * 15;
+        ctx.moveTo(10, startY);
+        ctx.lineTo(canvas.width - 10, endY);
+        ctx.stroke();
+
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.05)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 2) {
+          const dx = (x - canvas.width / 2) / 80;
+          const y = canvas.height - 15 - Math.exp(-dx * dx) * 90;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+      } else if (slug === "ap-csa") {
+        ctx.font = "7px monospace";
+        particles.forEach((p) => {
+          p.y += p.speedY;
+          if (p.y > canvas.height + 10) {
+            p.y = -10;
+            p.x = Math.random() * canvas.width;
+          }
+          ctx.fillStyle = p.color;
+          ctx.fillText(p.val, Math.round(p.x), Math.round(p.y));
+        });
+      } else {
+        particles.forEach((p) => {
+          p.x += (p.targetX - p.x) * p.speed;
+          p.y += (p.targetY - p.y) * p.speed;
+          if (Math.abs(p.x - p.targetX) < 2 && Math.abs(p.y - p.targetY) < 2) {
+            p.targetX = Math.random() * canvas.width;
+            p.targetY = Math.random() * canvas.height;
+          }
+          ctx.fillStyle = accentColor + "33";
+          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+        });
+
+        ctx.strokeStyle = accentColor + "10";
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 50) {
+              ctx.beginPath();
+              ctx.moveTo(Math.round(particles[i].x), Math.round(particles[i].y));
+              ctx.lineTo(Math.round(particles[j].x), Math.round(particles[j].y));
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      animId = requestAnimationFrame(render);
+    };
+
+    render();
+    return () => cancelAnimationFrame(animId);
+  }, [slug, unitId, accentColor]);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      style={{ imageRendering: "pixelated" }}
+    />
+  );
+}
+
 export default function APDynamicCoursePage() {
   const params = useParams();
   const router = useRouter();
@@ -1179,29 +1583,41 @@ export default function APDynamicCoursePage() {
         <main className="flex-1 overflow-y-auto scroll-smooth">
           {activeTopic ? (
             <div className="max-w-5xl mx-auto p-6 md:p-12 space-y-8">
-              {/* Breadcrumbs */}
-              <div className="flex items-center space-x-2 text-[10px] font-manrope font-black text-white/30 uppercase tracking-[0.2em]">
-                <span>{course.name}</span>
-                <ChevronRight className="w-3 h-3" />
-                <span className="text-white/50">Unit {activeUnit}</span>
-                <ChevronRight className="w-3 h-3" />
-                <span className="subject-accent-text">Topic {activeTopic.id}</span>
-              </div>
-
-              {/* Title & Mastery */}
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div className="space-y-2">
-                  <h2 className="font-instrument text-4xl md:text-5xl text-white tracking-tight">
-                    {activeTopic.title}
-                  </h2>
-                  <p className="font-inter text-white/50 max-w-2xl">
-                    {activeTopic.description}
-                  </p>
+              {/* Unit Header Banner Card */}
+              <div className="relative w-full rounded-[24px] overflow-hidden border border-white/10 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.5)] z-10">
+                {/* Pixel Background Banner */}
+                <div className="absolute inset-0 -z-10">
+                  <UnitBannerBackground slug={course.slug} unitId={activeUnit} accentColor={course.accentColor} />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
                 </div>
-                <div className="w-full md:w-64 space-y-3">
+                
+                {/* Left: Breadcrumbs + Title + Description */}
+                <div className="space-y-4 max-w-2xl relative z-20">
+                  {/* Breadcrumbs */}
+                  <div className="flex items-center space-x-2 text-[10px] font-manrope font-black text-white/40 uppercase tracking-[0.2em]">
+                    <span>{course.name}</span>
+                    <ChevronRight className="w-3 h-3 text-white/20" />
+                    <span className="text-white/60">Unit {activeUnit}</span>
+                    <ChevronRight className="w-3 h-3 text-white/20" />
+                    <span className="subject-accent-text font-bold">Topic {activeTopic.id}</span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h2 className="font-instrument text-3xl md:text-4xl text-white tracking-tight leading-tight">
+                      {activeTopic.title}
+                    </h2>
+                    <p className="font-inter text-white/60 text-xs md:text-sm leading-relaxed">
+                      {activeTopic.description}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Right: Mastery Progress */}
+                <div className="w-full md:w-64 space-y-3 bg-black/50 p-4 rounded-xl border border-white/5 backdrop-blur-md shrink-0 relative z-20">
                   <div className="flex justify-between items-end">
                     <span className="text-[10px] font-manrope font-black text-white/40 uppercase tracking-widest">Topic Mastery</span>
-                    <span className="text-lg font-instrument italic subject-accent-text">
+                    <span className="text-sm font-instrument italic subject-accent-text font-bold">
                       {masteryScore}%
                     </span>
                   </div>
