@@ -15,14 +15,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid messages/message format" }, { status: 400 });
     }
 
-    const clientKey = req.headers.get("x-gemini-key");
-    const apiKey = (clientKey && clientKey !== "null" && clientKey !== "undefined" && clientKey.trim() !== "")
-      ? clientKey.trim()
-      : process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey || apiKey === "your_gemini_api_key_here") {
       // Sandbox fallback mode when key is not configured
-      let responseText = "### 📚 Sandbox Tutor Mode\n\nI am currently in sandbox demo mode because the Gemini API Key is not configured. To enable live AI responses, please add your API key in the tutor settings.\n\nHere is information from the curriculum:";
+      let responseText = "### 📚 Sandbox Tutor Mode\n\nI am currently in sandbox demo mode because the Gemini API Key is not configured. To enable live AI responses, please configure your API key on the server.\n\nHere is information from the curriculum:";
       if (course) {
         let slug = course;
         if (slug === "chemistry") slug = "ap-chemistry";
@@ -41,9 +38,9 @@ export async function POST(req: Request) {
           );
           
           if (matchedTopic) {
-            responseText = `### 📚 Sandbox Tutor Mode: ${matchedTopic.title}\n\nHere is a summary of this concept from the curriculum:\n\n${matchedTopic.article || "No detailed notes available."}\n\n*Note: To chat dynamically with the live AI, please configure your Gemini API Key in the settings gear.*`;
+            responseText = `### 📚 Sandbox Tutor Mode: ${matchedTopic.title}\n\nHere is a summary of this concept from the curriculum:\n\n${matchedTopic.article || "No detailed notes available."}\n\n*Note: To unlock live AI tutoring chat, configure the server-side Gemini API Key in your deployment.*`;
           } else {
-            responseText = `### 📚 Sandbox Tutor Mode\n\nI am currently operating in sandbox mode using the curriculum database. Here are the units covered in this course:\n\n${courseData.units.map(u => `- **Unit ${u.id}:** ${u.title}`).join("\n")}\n\n*To unlock full interactive chat with the AI Tutor, please click the settings gear (⚙️) in the top-right and add your Gemini API Key.*`;
+            responseText = `### 📚 Sandbox Tutor Mode\n\nI am currently operating in sandbox mode using the curriculum database. Here are the units covered in this course:\n\n${courseData.units.map(u => `- **Unit ${u.id}:** ${u.title}`).join("\n")}\n\n*To unlock live AI tutoring chat, configure the server-side Gemini API Key in your deployment.*`;
           }
         }
       }

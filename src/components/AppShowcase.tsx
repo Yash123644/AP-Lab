@@ -52,7 +52,7 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             {/* Typography & Call to Action */}
             <div className="text-center relative z-10 flex flex-col items-center">
@@ -71,12 +71,6 @@ export function AppShowcase() {
                 </span>
               </div>
             </div>
-
-            <div className="text-center relative z-10 flex flex-col items-center">
-              <button className="bg-white hover:bg-neutral-200 text-black font-inter text-xs px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform active:scale-95">
-                Explore Chemistry
-              </button>
-            </div>
           </motion.div>
 
           {/* Box 2 (Top Right) - INTERACTIVE LESSONS */}
@@ -85,7 +79,7 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
               <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">INTERACTIVE LESSONS</span>
@@ -134,12 +128,6 @@ export function AppShowcase() {
                 <div className="w-16 h-1 bg-[#b5b5be] rounded-b-md" />
               </div>
             </div>
-
-            <div className="text-center relative z-10 flex flex-col items-center">
-              <button className="bg-black hover:bg-neutral-900 text-white font-inter text-xs px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform active:scale-95 shadow-md">
-                Explore Biology
-              </button>
-            </div>
           </motion.div>
 
           {/* Box 3 (Bottom Left) - 24/7 AI TUTOR */}
@@ -148,7 +136,7 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#e0f2fe] border border-blue-200/50 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#e0f2fe] border border-blue-200/50 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
               <span className="text-[10px] font-mono tracking-widest text-blue-600/60 font-bold uppercase mb-1">24/7 AI TUTOR</span>
@@ -177,12 +165,6 @@ export function AppShowcase() {
                 </div>
               </div>
             </div>
-
-            <div className="text-center relative z-10 flex flex-col items-center">
-              <button className="bg-black hover:bg-neutral-900 text-white font-inter text-xs px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform active:scale-95 shadow-md">
-                Initialize Tutor
-              </button>
-            </div>
           </motion.div>
 
           {/* Box 4 (Bottom Right) - EXAM SIMULATOR */}
@@ -191,7 +173,7 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
               <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">EXAM SIMULATOR</span>
@@ -222,12 +204,6 @@ export function AppShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="text-center relative z-10 flex flex-col items-center">
-              <button className="bg-white hover:bg-neutral-200 text-black font-inter text-xs px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform active:scale-95">
-                Launch Exams
-              </button>
             </div>
           </motion.div>
 

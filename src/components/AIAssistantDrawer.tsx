@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageSquare, Send, Sparkles, AlertCircle, Bot, User, RotateCcw, Settings } from "lucide-react";
+import { X, Sparkles, AlertCircle, ArrowUp } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -45,34 +45,15 @@ export function AIAssistantDrawer({
   const accentColor = courseData?.accentColor || "#8b5cf6"; // Default violet/purple
 
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: `Hi! I'm your AP Lab AI Tutor. I can answer up to 5 questions about your ${getCourseDisplayName(course)} curriculum today. How can I help?` }
+    { role: "assistant", content: `Hi! I'm your AP Lab AI Tutor. I can answer up to 10 questions about your ${getCourseDisplayName(course)} curriculum today. How can I help?` }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [tempKey, setTempKey] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setTempKey(localStorage.getItem("gemini_api_key") || "");
-    }
-  }, []);
-
-  const handleSaveKey = () => {
-    localStorage.setItem("gemini_api_key", tempKey.trim());
-    setIsSettingsOpen(false);
-  };
-
-  const handleClearKey = () => {
-    localStorage.removeItem("gemini_api_key");
-    setTempKey("");
-    setIsSettingsOpen(false);
-  };
-  
   // Count user messages to enforce limit
   const userMessageCount = messages.filter(m => m.role === "user").length;
-  const isLimitReached = userMessageCount >= 5;
+  const isLimitReached = userMessageCount >= 10;
 
   const suggestions = [
     { label: "🔍 Explain concept", text: "Can you explain the key concepts of this topic in detail?" },
@@ -109,13 +90,11 @@ export function AIAssistantDrawer({
     setMessages(newMessages);
     setIsLoading(true);
 
-    const clientKey = typeof window !== "undefined" ? localStorage.getItem("gemini_api_key") : null;
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { 
-          "Content-Type": "application/json",
-          ...(clientKey ? { "x-gemini-key": clientKey } : {})
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           messages: newMessages.slice(1), // Exclude initial greeting
@@ -134,7 +113,7 @@ export function AIAssistantDrawer({
       console.error(error);
       let errorMsg = `**Error:** ${error.message}. Please try again later.`;
       if (error.message.includes("API Key") || error.message.includes("configured") || error.message.includes("placeholder")) {
-        errorMsg = `### ⚠️ Gemini API Key Not Configured\n\nIt looks like your Gemini API Key is missing or using the placeholder value.\n\n**To fix this:**\n1. Open [\`.env.local\`](file:///${process.cwd()}/.env.local) in your workspace.\n2. Find the line: \`GEMINI_API_KEY=your_gemini_api_key_here\`\n3. Replace \`your_gemini_api_key_here\` with your real API key from Google AI Studio.\n4. **Restart** your Next.js development server (\`npm run dev\`) in your terminal for the changes to take effect.\n\n*Alternatively*, click the **settings gear** in the top-right corner of this chat panel and paste your key directly!`;
+        errorMsg = `### ⚠️ Gemini API Key Not Configured\n\nIt looks like your Gemini API Key is missing or using the placeholder value.\n\n**To fix this:**\n1. Open \`.env.local\` in your workspace.\n2. Add your real API key under \`GEMINI_API_KEY\`.\n3. **Restart** your Next.js development server.`;
       }
       setMessages(prev => [...prev, { role: "assistant", content: errorMsg }]);
     } finally {
@@ -179,24 +158,14 @@ export function AIAssistantDrawer({
                 <div>
                   <div className="flex items-center space-x-2">
                     <h3 className="font-instrument text-lg text-white font-medium">AI Tutor</h3>
-                    <div className="flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20 text-[9px] text-green-400 font-bold uppercase tracking-wider select-none">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                      <span>Active</span>
-                    </div>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" title="Active" />
                   </div>
-                  <p className="font-mono text-[9px] text-white/40 uppercase tracking-widest mt-1">
-                    {getCourseDisplayName(course)} Study Session
+                  <p className="text-xs text-white/40 mt-0.5">
+                    {getCourseDisplayName(course)} • {userMessageCount}/10 messages
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/40 hover:text-white"
-                  title="Tutor Settings"
-                >
-                  <Settings className="w-5 h-5" />
-                </button>
                 <button 
                   onClick={onClose}
                   className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/40 hover:text-white"
@@ -207,43 +176,8 @@ export function AIAssistantDrawer({
               </div>
             </div>
 
-            {/* Settings Pane */}
-            {isSettingsOpen && (
-              <div className="bg-white/[0.02] border-b border-white/10 p-5 space-y-3.5 backdrop-blur-md">
-                <div className="flex flex-col space-y-1.5">
-                  <label className="text-xs font-semibold text-white/70 uppercase tracking-wide">Gemini API Key Fallback</label>
-                  <p className="text-[11px] text-white/40">
-                    If your `.env.local` API key is not configured, paste your Gemini API Key here. It will be stored securely in your browser's local storage.
-                  </p>
-                </div>
-                <div className="flex space-x-2">
-                  <input
-                    type="password"
-                    placeholder="AIzaSy..."
-                    value={tempKey}
-                    onChange={(e) => setTempKey(e.target.value)}
-                    className="flex-1 bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/50 rounded-xl px-4 py-2.5 text-white focus:outline-none transition-all text-xs placeholder:text-white/20"
-                  />
-                  <button
-                    onClick={handleSaveKey}
-                    className="bg-white text-black font-semibold text-xs rounded-xl px-4 py-2.5 hover:bg-white/90 transition-all"
-                  >
-                    Save
-                  </button>
-                </div>
-                {tempKey && (
-                  <button
-                    onClick={handleClearKey}
-                    className="text-[10px] text-red-400/80 hover:text-red-400 font-medium transition-colors mt-1 animate-pulse"
-                  >
-                    Clear custom key
-                  </button>
-                )}
-              </div>
-            )}
-
-            {/* Chat Messages */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth select-text no-scrollbar">
+            {/* Chat Messages (Clean i-Message layout) */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-3.5 scroll-smooth select-text no-scrollbar">
               {messages.map((msg, idx) => (
                 <div 
                   key={idx} 
@@ -251,36 +185,28 @@ export function AIAssistantDrawer({
                 >
                   {msg.role === "user" ? (
                     /* User Message Bubble */
-                    <div className="flex flex-col items-end space-y-1.5 max-w-[85%]">
+                    <div className="max-w-[78%] flex flex-col items-end">
                       <div 
-                        className="rounded-2xl rounded-tr-none p-4 text-sm font-inter leading-relaxed text-white/90 shadow-lg border bg-white/[0.03]"
+                        className="rounded-[20px] rounded-br-[4px] px-4.5 py-2 text-sm font-inter leading-relaxed text-white"
                         style={{
-                          borderColor: `${accentColor}25`,
-                          boxShadow: `0 8px 32px 0 ${accentColor}08`
+                          backgroundColor: accentColor,
                         }}
                       >
-                        <div className="prose prose-invert prose-sm max-w-none">
+                        <div className="prose prose-invert prose-sm max-w-none text-white break-words select-text">
                           {msg.content}
                         </div>
                       </div>
-                      <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest mr-1">You</span>
                     </div>
                   ) : (
                     /* AI Assistant Message Bubble */
-                    <div className="flex flex-col items-start space-y-1.5 max-w-[85%]">
-                      <div 
-                        className="rounded-2xl rounded-tl-none p-4 text-sm font-inter leading-relaxed text-white/80 border bg-white/[0.01]"
-                        style={{
-                          borderColor: `rgba(255, 255, 255, 0.05)`
-                        }}
-                      >
-                        <div className="prose prose-invert prose-sm max-w-none leading-relaxed select-text">
+                    <div className="max-w-[82%] flex flex-col items-start">
+                      <div className="rounded-[20px] rounded-bl-[4px] px-4.5 py-2 text-sm font-inter leading-relaxed text-white/95 bg-[#242429]">
+                        <div className="prose prose-invert prose-sm max-w-none leading-relaxed select-text break-words">
                           <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
                             {msg.content}
                           </ReactMarkdown>
                         </div>
                       </div>
-                      <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest ml-1">AI Tutor</span>
                     </div>
                   )}
                 </div>
@@ -288,13 +214,12 @@ export function AIAssistantDrawer({
               
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="flex flex-col items-start space-y-1.5 max-w-[85%]">
-                    <div className="rounded-2xl rounded-tl-none border border-white/5 bg-white/[0.01] p-4 flex space-x-1.5 items-center">
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/30 animate-pulse" style={{ backgroundColor: accentColor }} />
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/30 animate-pulse" style={{ backgroundColor: accentColor, animationDelay: "0.15s" }} />
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/30 animate-pulse" style={{ backgroundColor: accentColor, animationDelay: "0.3s" }} />
+                  <div className="max-w-[82%] flex flex-col items-start">
+                    <div className="rounded-[20px] rounded-bl-[4px] bg-[#242429] p-4 flex space-x-1.5 items-center">
+                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: accentColor, animationDelay: "0s" }} />
+                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: accentColor, animationDelay: "0.15s" }} />
+                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: accentColor, animationDelay: "0.3s" }} />
                     </div>
-                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest ml-1">Thinking</span>
                   </div>
                 </div>
               )}
@@ -310,7 +235,7 @@ export function AIAssistantDrawer({
                 >
                   <AlertCircle className="w-5 h-5 text-amber-500/80" />
                   <p className="text-xs font-inter text-white/70 leading-relaxed">
-                    Message limit reached (5/5). Close the drawer or review the resources to continue studying!
+                    Message limit reached (10/10). Close the drawer or review the resources to continue studying!
                   </p>
                 </div>
               ) : (
@@ -340,13 +265,13 @@ export function AIAssistantDrawer({
                     ))}
                   </div>
 
-                  <form onSubmit={handleSubmit} className="relative">
+                  <form onSubmit={handleSubmit} className="relative flex items-center bg-[#1c1c1f] rounded-full border border-white/5 px-4 py-1.5 w-full">
                     <input
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask a curriculum question..."
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 pr-12 text-sm text-white placeholder-white/20 focus:outline-none focus:ring-1 focus:border-white/20 focus:ring-white/20 transition-all font-inter"
+                      placeholder="iMessage"
+                      className="w-full bg-transparent border-none focus:outline-none text-sm text-white placeholder-white/25 pr-10 font-inter py-1"
                       style={{
                         caretColor: accentColor
                       }}
@@ -354,25 +279,16 @@ export function AIAssistantDrawer({
                     <button
                       type="submit"
                       disabled={!input.trim() || isLoading}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-lg text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-lg hover:scale-105 active:scale-95"
+                      className="w-7 h-7 flex items-center justify-center rounded-full text-white disabled:opacity-20 transition-all hover:scale-105 active:scale-95 absolute right-2"
                       style={{
                         backgroundColor: accentColor,
-                        boxShadow: `0 4px 14px ${accentColor}40`
                       }}
                     >
-                      <Send className="w-4.5 h-4.5 text-black font-black" />
+                      <ArrowUp className="w-4 h-4 text-black stroke-[3px]" />
                     </button>
                   </form>
                 </div>
               )}
-              <div className="mt-4 flex justify-between px-1">
-                <span className="text-[9px] font-mono text-white/20 uppercase tracking-wider">
-                  Gemini 2.5 Flash
-                </span>
-                <span className="text-[9px] font-mono text-white/30 uppercase tracking-wider">
-                  {userMessageCount} / 5 Questions
-                </span>
-              </div>
             </div>
           </motion.div>
         </>

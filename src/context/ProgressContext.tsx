@@ -9,24 +9,30 @@ interface UserProgress {
   completedTopics: string[];
   masteryScores: Record<string, number>;
   lastAccessed: any;
+  totalQuestionsAnswered?: number;
+  totalQuestionsCorrect?: number;
 }
 
 interface ProgressContextType {
   progress: UserProgress;
   loading: boolean;
   completeTopic: (topicId: string, score: number) => Promise<void>;
+  recordQuestionAttempt: (isCorrect: boolean) => Promise<void>;
 }
 
 const defaultProgress: UserProgress = {
   completedTopics: [],
   masteryScores: {},
   lastAccessed: null,
+  totalQuestionsAnswered: 0,
+  totalQuestionsCorrect: 0,
 };
 
 const ProgressContext = createContext<ProgressContextType>({
   progress: defaultProgress,
   loading: true,
   completeTopic: async () => {},
+  recordQuestionAttempt: async () => {},
 });
 
 export const useProgress = () => useContext(ProgressContext);
@@ -70,7 +76,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       if (docSnap.exists()) {
         const firestoreData = docSnap.data() as UserProgress;
         
-        // Merge strategy: take the union of completed topics and the max of scores
+        // Merge strategy: take the union of completed topics and the max of scores/stats
         setProgress((prev) => {
           const completedTopics = Array.from(new Set([
             ...(prev.completedTopics || []),
@@ -87,6 +93,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           const merged: UserProgress = {
             completedTopics,
             masteryScores,
+            totalQuestionsAnswered: Math.max(prev.totalQuestionsAnswered || 0, firestoreData.totalQuestionsAnswered || 0),
+            totalQuestionsCorrect: Math.max(prev.totalQuestionsCorrect || 0, firestoreData.totalQuestionsCorrect || 0),
             lastAccessed: firestoreData.lastAccessed || prev.lastAccessed
           };
 
@@ -131,6 +139,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           ...progress.masteryScores,
           [topicId]: newScore
         },
+        totalQuestionsAnswered: progress.totalQuestionsAnswered || 0,
+        totalQuestionsCorrect: progress.totalQuestionsCorrect || 0,
         lastAccessed: new Date()
       };
 
@@ -157,8 +167,50 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  const recordQuestionAttempt = async (isCorrect: boolean) => {
+    if (!currentUser) return;
+
+    const localKey = `ap-lab-progress-${currentUser.uid}`;
+    const docRef = doc(db, "userProgress", currentUser.uid);
+
+    try {
+      setProgress((prev) => {
+        const updatedAnswered = (prev.totalQuestionsAnswered || 0) + 1;
+        const updatedCorrect = (prev.totalQuestionsCorrect || 0) + (isCorrect ? 1 : 0);
+
+        const updatedProgress: UserProgress = {
+          ...prev,
+          totalQuestionsAnswered: updatedAnswered,
+          totalQuestionsCorrect: updatedCorrect,
+          lastAccessed: new Date()
+        };
+
+        // 1. Immediately update LocalStorage
+        try {
+          localStorage.setItem(localKey, JSON.stringify(updatedProgress));
+        } catch (e) {
+          console.error("Error writing progress to localStorage:", e);
+        }
+
+        // 2. Sync to Firestore in the background
+        setDoc(docRef, {
+          totalQuestionsAnswered: updatedAnswered,
+          totalQuestionsCorrect: updatedCorrect,
+          lastAccessed: serverTimestamp()
+        }, { merge: true }).catch((err) => {
+          console.error("Error syncing question attempt to Firestore:", err);
+        });
+
+        return updatedProgress;
+      });
+
+    } catch (error) {
+      console.error("Error setting up question attempt update:", error);
+    }
+  };
+
   return (
-    <ProgressContext.Provider value={{ progress, loading, completeTopic }}>
+    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt }}>
       {children}
     </ProgressContext.Provider>
   );

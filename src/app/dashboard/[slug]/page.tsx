@@ -15,12 +15,16 @@ import {
   AlertCircle,
   Activity,
   XCircle,
-  RotateCcw
+  RotateCcw,
+  User,
+  Mail,
+  X
 } from "lucide-react";
 import Link from "next/link";
 import { courseRegistry, CourseUnit, CourseTopic } from "@/lib/courses/course-registry";
 import { cn } from "@/lib/utils";
 import { useProgress } from "@/context/ProgressContext";
+import { useAuth } from "@/context/AuthContext";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import confetti from "canvas-confetti";
@@ -1334,12 +1338,14 @@ export default function APDynamicCoursePage() {
   const course = courseRegistry[slug];
   
   const { progress, completeTopic } = useProgress();
+  const { currentUser } = useAuth();
   
   const [activeUnit, setActiveUnit] = useState<number>(1);
   const [activeTopic, setActiveTopic] = useState<CourseTopic | null>(null);
   const [activeTab, setActiveTab] = useState<"video" | "article" | "practice">("video");
   const [expandedUnits, setExpandedUnits] = useState<number[]>([1]);
   const [showExam, setShowExam] = useState(false);
+  const [showAccountPopup, setShowAccountPopup] = useState(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
   const [assistantQuery, setAssistantQuery] = useState("");
   const [topicInteracted, setTopicInteracted] = useState(false);
@@ -1396,6 +1402,17 @@ export default function APDynamicCoursePage() {
           onClose={() => setShowExam(false)} 
         />
       )}
+
+      <AnimatePresence>
+        {showAccountPopup && (
+          <AccountStatsModal
+            course={course}
+            progress={progress}
+            currentUser={currentUser}
+            onClose={() => setShowAccountPopup(false)}
+          />
+        )}
+      </AnimatePresence>
       
       <AIAssistantDrawer 
         course={course.slug} 
@@ -1447,14 +1464,14 @@ export default function APDynamicCoursePage() {
         </div>
         <div className="flex items-center space-x-6">
           <button 
-            onClick={() => setShowExam(true)}
+            onClick={() => setShowAccountPopup(true)}
             className="flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all"
             style={{
               borderColor: `${course.accentColor}33`
             }}
           >
-            <Trophy className="w-4 h-4 text-white/80" />
-            <span className="text-xs font-manrope font-bold uppercase tracking-widest">Mock Exam</span>
+            <User className="w-4 h-4 text-white/80" />
+            <span className="text-xs font-manrope font-bold uppercase tracking-widest">Account</span>
           </button>
         </div>
       </header>
@@ -1914,6 +1931,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     );
   }
 
+  const { recordQuestionAttempt } = useProgress();
   const question = questions[currentIdx];
 
   const handleCheck = () => {
@@ -1922,6 +1940,8 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     const correct = selectedOption === question.correctIndex;
     setIsCorrect(correct);
     setShowFeedback(true);
+
+    recordQuestionAttempt(correct);
 
     if (correct) {
       confetti({
@@ -2092,6 +2112,150 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+interface AccountStatsModalProps {
+  course: any;
+  progress: any;
+  currentUser: any;
+  onClose: () => void;
+}
+
+function AccountStatsModal({ course, progress, currentUser, onClose }: AccountStatsModalProps) {
+  const totalTopics = course.units.reduce((acc: number, u: any) => acc + (u.topics?.length || 0), 0);
+  const completedTopicsCount = course.units.reduce((acc: number, u: any) => {
+    return acc + (u.topics?.filter((t: any) => 
+      progress.completedTopics.includes(`${course.masteryPrefix}-${t.id}`)
+    ).length || 0);
+  }, 0);
+  const courseProgressPercent = totalTopics > 0 ? Math.round((completedTopicsCount / totalTopics) * 100) : 0;
+
+  const totalAnswered = progress.totalQuestionsAnswered || 0;
+  const totalCorrect = progress.totalQuestionsCorrect || 0;
+  const accuracyRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+
+  const userInitial = currentUser?.displayName 
+    ? currentUser.displayName.charAt(0).toUpperCase() 
+    : (currentUser?.email ? currentUser.email.charAt(0).toUpperCase() : "U");
+
+  return (
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ type: "spring", duration: 0.5 }}
+        className="w-full max-w-lg bg-[#07080e]/95 border border-white/10 rounded-[32px] overflow-hidden relative shadow-[0_0_80px_rgba(0,0,0,0.8)] backdrop-blur-3xl p-8"
+      >
+        {/* Glow effect */}
+        <div 
+          className="absolute -top-24 -left-24 w-48 h-48 rounded-full blur-[100px] opacity-35"
+          style={{ backgroundColor: course.accentColor }}
+        />
+        
+        {/* Close button */}
+        <button 
+          onClick={onClose}
+          className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/5 border border-transparent hover:border-white/10 text-white/40 hover:text-white transition-all"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        {/* Profile info */}
+        <div className="flex items-center space-x-4 mb-8">
+          <div 
+            className="w-14 h-14 rounded-2xl flex items-center justify-center font-instrument text-2xl font-bold text-black shadow-lg"
+            style={{
+              background: `linear-gradient(135deg, ${course.accentColor}, #ffffff)`,
+            }}
+          >
+            {userInitial}
+          </div>
+          <div className="space-y-1">
+            <h3 className="font-instrument text-2xl text-white font-medium">
+              {currentUser?.displayName || "AP Scholar"}
+            </h3>
+            <div className="flex items-center space-x-2 text-white/50 text-xs">
+              <Mail className="w-3.5 h-3.5" />
+              <span>{currentUser?.email || "anonymous@theaplab.org"}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Header */}
+          <div className="border-b border-white/5 pb-4">
+            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/40 uppercase">Academic Portal Stats</span>
+          </div>
+
+          {/* Core metrics grid */}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-28">
+              <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest font-semibold leading-tight">Questions Answered</span>
+              <div className="font-instrument text-3xl font-bold text-white mt-2">
+                {totalAnswered}
+              </div>
+            </div>
+            
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-28">
+              <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest font-semibold leading-tight">Correct Answers</span>
+              <div className="font-instrument text-3xl font-bold text-green-400 mt-2">
+                {totalCorrect}
+              </div>
+            </div>
+
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-28">
+              <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest font-semibold leading-tight">Overall Accuracy</span>
+              <div className="font-instrument text-3xl font-bold mt-2" style={{ color: course.accentColor }}>
+                {accuracyRate}%
+              </div>
+            </div>
+          </div>
+
+          {/* Current Course completion card */}
+          <div 
+            className="border rounded-2xl p-5 bg-white/[0.01] space-y-4"
+            style={{ borderColor: `${course.accentColor}22` }}
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="text-white text-sm font-semibold">{course.name}</h4>
+                <p className="text-[10px] font-mono text-white/40 uppercase tracking-wider mt-0.5">Course Completion Progress</p>
+              </div>
+              <span className="text-sm font-instrument italic font-bold" style={{ color: course.accentColor }}>
+                {completedTopicsCount} / {totalTopics} Topics
+              </span>
+            </div>
+
+            {/* Progress bar */}
+            <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+              <div 
+                className="h-full rounded-full transition-all duration-500 ease-out"
+                style={{ 
+                  backgroundColor: course.accentColor,
+                  width: `${courseProgressPercent}%` 
+                }}
+              />
+            </div>
+
+            <div className="flex items-center justify-between text-[10px] text-white/30 font-mono">
+              <span>0% Started</span>
+              <span>{courseProgressPercent}% Mastered</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 flex justify-end">
+          <button
+            onClick={onClose}
+            className="px-6 py-2.5 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 text-white/80 hover:text-white transition-all text-xs font-semibold"
+          >
+            Close Profile
+          </button>
+        </div>
+      </motion.div>
     </div>
   );
 }
