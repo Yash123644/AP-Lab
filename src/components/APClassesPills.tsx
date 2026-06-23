@@ -112,25 +112,46 @@ export function APClassesPills() {
               >
                 {/* Connected Upcoming Tag */}
                 {ap.upcoming && (
-                  <div className="absolute -top-[19px] right-6 flex flex-col items-center z-20 select-none pointer-events-none">
-                    {/* Physical thread/string */}
-                    <div className="w-[1px] h-2 bg-white/40" />
-                    {/* Tag box */}
-                    <div 
-                      className="flex items-center gap-1.5 px-2 py-0.5 rounded-sm border text-[8px] font-mono font-black tracking-wider uppercase shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
-                      style={{
-                        backgroundColor: "#121212",
-                        borderColor: ap.hex,
-                        color: ap.hex,
-                      }}
-                    >
-                      {/* Mini tie-hole */}
-                      <div 
-                        className="w-1 h-1 rounded-full" 
-                        style={{ backgroundColor: `${ap.hex}40` }}
+                  <div className="absolute -top-[30px] right-4 select-none pointer-events-none z-20 w-[110px] h-[40px]">
+                    <svg width="110" height="40" viewBox="0 0 110 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_3px_6px_rgba(0,0,0,0.45)]">
+                      {/* Thread loop tying the tag to the pill */}
+                      <path 
+                        d="M 82 38 C 72 28, 43 14, 43 16 C 43 18, 74 32, 86 38" 
+                        stroke="rgba(255, 255, 255, 0.35)" 
+                        strokeWidth="1.2" 
+                        strokeLinecap="round"
                       />
-                      <span>Upcoming</span>
-                    </div>
+                      {/* Small knot on the thread */}
+                      <circle cx="43" cy="16" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+                      
+                      {/* Clothes Tag Body */}
+                      <g transform="translate(30, 6) rotate(-10)">
+                        {/* Tag Shape: clipped corners at the left end where the hole is */}
+                        <path 
+                          d="M 0 10 L 10 0 L 70 0 L 70 20 L 10 20 Z" 
+                          fill="#0d0d0d" 
+                          stroke="#cccccc" 
+                          strokeWidth="1.2" 
+                          strokeLinejoin="round"
+                        />
+                        {/* Metal/Silver Reinforcement Ring (Grommet) */}
+                        <circle cx="12" cy="10" r="3.5" fill="#181818" stroke="#888888" strokeWidth="0.8" />
+                        {/* The hole itself */}
+                        <circle cx="12" cy="10" r="1.5" fill="#000000" />
+                        {/* Monochrome text */}
+                        <text 
+                          x="22" 
+                          y="13" 
+                          fill="#ffffff" 
+                          fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" 
+                          fontSize="7.5" 
+                          fontWeight="900" 
+                          letterSpacing="0.8"
+                        >
+                          UPCOMING
+                        </text>
+                      </g>
+                    </svg>
                   </div>
                 )}
                 {/* Icon Container */}

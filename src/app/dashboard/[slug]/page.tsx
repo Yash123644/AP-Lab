@@ -627,22 +627,27 @@ function HistoryBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Detailed pixelated map of the world (64 columns)
+    // Highly detailed pixelated map of the world (80 columns x 19 rows)
     const mapData = [
-      "                      ....                                      ",
-      "   ......            ......                          ......     ",
-      "  ........          ........        .....           ........    ",
-      " ..........        ..........      .......         ..........   ",
-      " ..........         ........      .........       ............  ",
-      "  ........            ....        .........      .............. ",
-      "   ......             ...        ...........      ............  ",
-      "   ......             ..         ...........       ..........   ",
-      "    ....                         ..........         ........    ",
-      "    ...                           ........                      ",
-      "    .                              ......             ....      ",
-      "                                    ....             ......     ",
-      "                                     ..               ....      ",
-      "                                      .                         "
+      "                       ...........                                              ",
+      "                  .  .............                                       ....   ",
+      "  .  ....     ...... .............                 .    ..        ............. ",
+      " .......    ........  ...........                 ..   ...       .............. ",
+      ".........  ..........   .......         .       ....  ....      ................",
+      ".........  ..........    .....                 ..........      ................ ",
+      " ........  .........      .                   ..........     .................. ",
+      "  ......   .......                           ... ........     ..............     ",
+      "   ....    .....                            ...........     ..............      ",
+      "    .     ......                            ..........       ...........        ",
+      "          .......                           .........         .........         ",
+      "         .........                           .......          .......   .       ",
+      "         .........                           ......            ....      .      ",
+      "          .......                            .....             ..               ",
+      "          ......                             ....               .      ......   ",
+      "           ....                               ..                      ........  ",
+      "           ...                                 .                      ........  ",
+      "            .                                                          ......   ",
+      "                                                                          .     "
     ];
 
     canvas.width = 256;
@@ -677,9 +682,9 @@ function HistoryBackground() {
       scrollX += 0.35;
       if (scrollX >= 256) scrollX -= 256;
 
-      const scaleX = 4;
-      const scaleY = 4;
-      const startY = 80;
+      const scaleX = 3.2; // 256 width / 80 columns
+      const scaleY = 3.8;
+      const startY = 85;
 
       // Draw pixel map
       ctx.fillStyle = "rgba(245, 158, 11, 0.16)";
@@ -689,20 +694,20 @@ function HistoryBackground() {
           if (row[c] === ".") {
             const x1 = Math.round((c * scaleX + scrollX) % 256);
             const y1 = Math.round(startY + r * scaleY);
-            ctx.fillRect(x1, y1, 3, 3);
+            ctx.fillRect(x1, y1, 2.5, 2.5);
           }
         }
       }
 
-      // Blinking research indicators
+      // Blinking research indicators at historical centers
       const pulse = Math.floor(Date.now() / 350) % 2 === 0;
       if (pulse) {
         ctx.fillStyle = "rgba(239, 68, 68, 0.85)";
         const dots = [
-          { cx: 16, cy: 4 },
-          { cx: 32, cy: 3 },
-          { cx: 52, cy: 4 },
-          { cx: 58, cy: 12 }
+          { cx: 14, cy: 5 },  // North America (East Coast)
+          { cx: 48, cy: 4 },  // Western Europe
+          { cx: 48, cy: 7 },  // Egypt / Middle East
+          { cx: 66, cy: 5 }   // East Asia
         ];
         dots.forEach((dot) => {
           const dx = Math.round((dot.cx * scaleX + scrollX) % 256);
