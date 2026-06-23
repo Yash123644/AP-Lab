@@ -134,21 +134,14 @@ function AnimatedArticleHighlight() {
                     <AnimatePresence>
                       {step >= 2 && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                          initial={{ opacity: 0, y: 5, scale: 0.95 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.9 }}
+                          exit={{ opacity: 0, scale: 0.95 }}
                           transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                          className="absolute -top-16 left-1/2 -translate-x-1/2 z-50 pb-4"
+                          className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2"
                         >
-                          <div className="relative">
-                            <div className="bg-[#2c2c2e]/95 backdrop-blur-xl border border-white/10 px-4 py-1.5 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] whitespace-nowrap text-white font-medium flex items-center">
-                              <span className="text-[11px] font-sans font-medium tracking-normal text-white">
-                                Ask AI
-                              </span>
-                            </div>
-                            {/* iMessage Double Bubble Tail */}
-                            <div className="absolute bottom-[-4px] left-[50%] -translate-x-1/2 w-2.5 h-2.5 bg-[#2c2c2e] border-r border-b border-white/10 rounded-full" />
-                            <div className="absolute bottom-[-8px] left-[42%] w-1.5 h-1.5 bg-[#2c2c2e] border-r border-b border-white/10 rounded-full" />
+                          <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
+                            <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
                           </div>
                         </motion.div>
                       )}

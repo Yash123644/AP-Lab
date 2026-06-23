@@ -176,6 +176,35 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
           return merged;
         });
+      } else {
+        // Document does not exist in Firestore! Initialize it with default values
+        const initialDoc: UserProgress = {
+          completedTopics: [],
+          masteryScores: {},
+          lastAccessed: new Date(),
+          totalQuestionsAnswered: 0,
+          totalQuestionsCorrect: 0,
+          dailyTutorMessagesCount: 0,
+          dailyTutorMessagesDate: new Date().toLocaleDateString('en-CA'),
+          xp: 0,
+          level: 1,
+          displayName: currentUser.displayName || "AP Scholar",
+          photoURL: currentUser.photoURL || "",
+          email: currentUser.email || "",
+          uid: currentUser.uid,
+        };
+
+        setProgress(initialDoc);
+
+        try {
+          localStorage.setItem(localKey, JSON.stringify(initialDoc));
+        } catch (e) {
+          console.error("Error writing initial progress to localStorage:", e);
+        }
+
+        setDoc(docRef, initialDoc).catch((err) => {
+          console.error("Error initializing userProgress document in Firestore: ", err);
+        });
       }
       setLoading(false);
     }, (error) => {

@@ -1,108 +1,218 @@
 "use client";
 
 import React from "react";
-import { Shield, Award, Flame, Sparkles, Crown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface LevelBadgeProps {
   level: number;
   className?: string;
+  size?: "sm" | "md" | "lg";
 }
 
-export function LevelBadge({ level, className }: LevelBadgeProps) {
+export function LevelBadge({ level, className, size = "sm" }: LevelBadgeProps) {
   // Clamp level between 1 and 100
   const displayLevel = Math.max(1, Math.min(100, level));
 
-  // Determine tier styles and icons
+  // 1. Generate unique color hues based on the level using the golden ratio distribution
+  // This guarantees each level from 1 to 100 has a completely distinct and vibrant color scheme!
+  const hue = Math.round((displayLevel * 137.5) % 360);
+  const nextHue = (hue + 45) % 360;
+  
+  const primaryColor = `hsl(${hue}, 85%, 55%)`;
+  const secondaryColor = `hsl(${nextHue}, 90%, 40%)`;
+  const glowColor = `rgba(${hslToRgb(hue, 0.85, 0.55).join(",")}, 0.5)`;
+
+  // 2. Generate unique geometric properties based on the level
+  const sides = 3 + (displayLevel % 7); // Shifting polygon shapes: triangle to nonagon
+  const radius = 14;
+  const cx = 20;
+  const cy = 20;
+  
+  // Calculate regular polygon path
+  const points = [];
+  for (let i = 0; i < sides; i++) {
+    const angle = (i * 2 * Math.PI) / sides - Math.PI / 2;
+    points.push(`${cx + radius * Math.cos(angle)},${cy + radius * Math.sin(angle)}`);
+  }
+  const polygonPath = `M ${points.join(" L ")} Z`;
+
+  // 3. Determine tier name and inner detail icon/shape based on level range
   let tierName = "Apprentice";
-  let badgeStyles = "";
-  let textStyles = "";
-  let Icon = Shield;
-  let glowColor = "";
+  let innerEmblem = null;
 
   if (displayLevel === 100) {
     tierName = "Grandmaster";
-    badgeStyles = "bg-black/90 relative p-[2px] shadow-[0_0_30px_rgba(168,85,247,0.7)] border-transparent overflow-hidden rounded-full animate-pulse";
-    textStyles = "bg-gradient-to-r from-red-400 via-yellow-400 to-violet-400 bg-clip-text text-transparent font-black tracking-widest text-[11px]";
-    Icon = Crown;
+    // Crown path
+    innerEmblem = (
+      <path
+        d="M12 14 L14 26 L26 26 L28 14 L23 18 L20 12 L17 18 Z"
+        fill="#ffffff"
+        className="animate-pulse"
+      />
+    );
   } else if (displayLevel >= 90) {
     tierName = "Ascendant";
-    badgeStyles = "border border-rose-500/80 bg-rose-950/40 shadow-[0_0_20px_rgba(244,63,94,0.5)] rounded-full px-3 py-1";
-    textStyles = "bg-gradient-to-r from-rose-400 to-amber-400 bg-clip-text text-transparent font-black text-[10px]";
-    Icon = Flame;
-    glowColor = "shadow-rose-500/40";
+    // Star path
+    innerEmblem = (
+      <polygon
+        points="20,11 22,17 28,17 23,21 25,27 20,23 15,27 17,21 12,17 18,17"
+        fill="#ffffff"
+      />
+    );
   } else if (displayLevel >= 70) {
     tierName = "Elite";
-    badgeStyles = "border border-fuchsia-500/70 bg-fuchsia-950/30 shadow-[0_0_15px_rgba(217,70,239,0.4)] rounded-full px-3 py-1 animate-pulse";
-    textStyles = "text-fuchsia-300 font-extrabold text-[10px]";
-    Icon = Sparkles;
+    // Flame/fire symbol
+    innerEmblem = (
+      <path
+        d="M20 11 C20 11 23 15 23 18 C23 21 20 25 17 22 C15 20 16 16 16 16 C16 16 14 18 14 21 C14 24 17 27 20 27 C24 27 26 23 26 19 C26 15 20 11 20 11 Z"
+        fill="#ffffff"
+      />
+    );
   } else if (displayLevel >= 50) {
     tierName = "Master";
-    badgeStyles = "border border-cyan-400/60 bg-cyan-950/30 shadow-[0_0_15px_rgba(34,211,238,0.3)] rounded-full px-2.5 py-0.5";
-    textStyles = "text-cyan-300 font-extrabold text-[10px]";
-    Icon = Award;
+    // Diamond path
+    innerEmblem = (
+      <polygon
+        points="20,11 26,20 20,29 14,20"
+        fill="#ffffff"
+      />
+    );
   } else if (displayLevel >= 30) {
     tierName = "Expert";
-    badgeStyles = "border border-amber-500/50 bg-amber-500/10 shadow-[0_0_10px_rgba(245,158,11,0.2)] rounded-full px-2.5 py-0.5";
-    textStyles = "text-amber-400 font-bold text-[10px]";
-    Icon = Award;
+    // Shield path
+    innerEmblem = (
+      <path
+        d="M15 13 L20 11 L25 13 L25 20 C25 24 20 28 20 28 C20 28 15 24 15 20 Z"
+        fill="#ffffff"
+      />
+    );
   } else if (displayLevel >= 10) {
     tierName = "Scholar";
-    badgeStyles = "border border-zinc-400/40 bg-zinc-400/10 rounded-full px-2 py-0.5 shadow-sm";
-    textStyles = "text-zinc-200 font-bold text-[10px]";
-    Icon = Shield;
+    // Simple target circle
+    innerEmblem = <circle cx="20" cy="20" r="4" fill="#ffffff" />;
   } else {
     tierName = "Apprentice";
-    badgeStyles = "border border-slate-600/30 bg-slate-600/10 rounded-full px-2 py-0.5";
-    textStyles = "text-slate-400 font-semibold text-[10px]";
-    Icon = Shield;
+    // Dot
+    innerEmblem = <circle cx="20" cy="20" r="2.5" fill="#ffffff" />;
   }
 
-  // Special layout for level 100 Grandmaster to support an animated spinning border
-  if (displayLevel === 100) {
-    return (
-      <div className={cn("relative inline-flex items-center justify-center overflow-hidden rounded-full group", className)}>
-        {/* Animated rainbow gradient background */}
-        <span className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444,#f59e0b,#10b981,#3b82f6,#8b5cf6,#ec4899,#ef4444)] bg-[length:200%_auto] animate-[gradient_3s_linear_infinite] pointer-events-none rounded-full" />
-        
-        {/* Inner static badge body */}
-        <div className="relative flex items-center space-x-1 bg-[#090b16] rounded-full px-3 py-1 m-[1px] z-10">
-          <Icon className="w-3.5 h-3.5 text-yellow-400 animate-bounce" />
-          <span className="font-mono text-[9px] uppercase tracking-wider font-extrabold text-white/50">
-            {tierName}
-          </span>
-          <span className={textStyles}>
-            LVL {displayLevel}
-          </span>
-        </div>
-        
-        {/* CSS animation inline styled to avoid needing global edits for gradient shift */}
-        <style jsx global>{`
-          @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-        `}</style>
-      </div>
-    );
-  }
+  // Ring styling
+  const dashArray = `${(displayLevel * 2) % 8 + 2} ${(displayLevel * 3) % 6 + 2}`;
+
+  // Dimensions based on size parameter
+  const badgeSize = size === "sm" ? "w-10 h-10" : size === "md" ? "w-14 h-14" : "w-20 h-20";
 
   return (
-    <div
-      className={cn(
-        "inline-flex items-center space-x-1 font-mono tracking-wide select-none cursor-default transition-all duration-300",
-        badgeStyles,
-        className
-      )}
-    >
-      <Icon className="w-3 h-3 text-current shrink-0" />
-      <span className="text-[9px] uppercase tracking-wider font-extrabold opacity-60">
-        {tierName}
-      </span>
-      <span className={cn("font-black", textStyles)}>
-        LVL {displayLevel}
-      </span>
+    <div className={cn("inline-flex items-center space-x-1.5 select-none", className)}>
+      {/* SVG Emblem Image */}
+      <div 
+        className={cn("relative shrink-0 flex items-center justify-center rounded-xl overflow-visible", badgeSize)}
+        style={{
+          filter: `drop-shadow(0 0 6px ${glowColor})`,
+        }}
+      >
+        <svg 
+          viewBox="0 0 40 40" 
+          className="w-full h-full overflow-visible"
+        >
+          <defs>
+            <linearGradient id={`grad-${displayLevel}`} x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor={primaryColor} />
+              <stop offset="100%" stopColor={secondaryColor} />
+            </linearGradient>
+          </defs>
+
+          {/* Outer Level Orbit Ring */}
+          <circle
+            cx="20"
+            cy="20"
+            r="18"
+            fill="none"
+            stroke={primaryColor}
+            strokeWidth="1.5"
+            strokeDasharray={dashArray}
+            opacity="0.7"
+            className={cn(displayLevel >= 70 ? "animate-spin-slow" : "")}
+            style={{
+              transformOrigin: "center",
+              animationDuration: displayLevel === 100 ? "4s" : "12s"
+            }}
+          />
+
+          {/* Inner Shard Glow */}
+          <circle
+            cx="20"
+            cy="20"
+            r="15"
+            fill="none"
+            stroke={secondaryColor}
+            strokeWidth="1"
+            opacity="0.3"
+          />
+
+          {/* Dynamic Polygon Shield Backdrop */}
+          <path
+            d={polygonPath}
+            fill={`url(#grad-${displayLevel})`}
+            stroke="#ffffff"
+            strokeWidth="1"
+            strokeOpacity="0.4"
+            className={cn(displayLevel === 100 ? "animate-pulse" : "")}
+          />
+
+          {/* Inner Crest Emblem */}
+          {innerEmblem}
+
+          {/* Glowing Shard Overlay for High Levels */}
+          {displayLevel >= 90 && (
+            <circle cx="20" cy="20" r="13" fill="none" stroke="#ffffff" strokeWidth="0.75" strokeDasharray="2 6" opacity="0.6" />
+          )}
+        </svg>
+      </div>
+
+      {/* Label and Badge Level text */}
+      <div className="flex flex-col items-start leading-none">
+        <span className="text-[8px] uppercase tracking-widest opacity-40 font-mono font-bold">
+          {tierName}
+        </span>
+        <span 
+          className="font-mono text-[11px] font-black tracking-wider"
+          style={{
+            color: primaryColor,
+            textShadow: `0 0 8px ${glowColor}`
+          }}
+        >
+          LVL {displayLevel}
+        </span>
+      </div>
     </div>
   );
+}
+
+// HSL to RGB helper for canvas/shadow color formatting
+function hslToRgb(h: number, s: number, l: number): [number, number, number] {
+  h /= 360;
+  let r, g, b;
+
+  if (s === 0) {
+    r = g = b = l; // achromatic
+  } else {
+    const hue2rgb = (p: number, q: number, t: number) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
+    };
+
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+  }
+
+  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 }

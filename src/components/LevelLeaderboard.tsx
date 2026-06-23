@@ -97,9 +97,6 @@ export function LevelLeaderboard() {
       <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="text-center mb-10">
-        <span className="text-[10px] font-mono font-bold tracking-[0.25em] text-cyan-400 uppercase bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20 mb-3 inline-block">
-          LIVE GLOBAL RANKINGS
-        </span>
         <h2 className="font-instrument text-4xl md:text-5xl text-white font-medium tracking-tight mt-2">
           Global Level Leaderboard
         </h2>
@@ -109,9 +106,23 @@ export function LevelLeaderboard() {
       </div>
 
       {loading ? (
-        <div className="flex flex-col items-center justify-center py-20">
-          <Loader2 className="w-8 h-8 text-cyan-400 animate-spin mb-3" />
-          <span className="text-white/40 font-mono text-xs uppercase tracking-widest">Loading Live Board...</span>
+        <div className="space-y-3.5 py-2 animate-pulse">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="flex items-center justify-between p-4 md:px-6 rounded-2xl border border-white/5 bg-white/[0.01]">
+              <div className="flex items-center space-x-4">
+                <div className="w-8 h-5 bg-white/5 rounded" />
+                <div className="w-10 h-10 bg-white/5 rounded-xl" />
+                <div className="flex flex-col space-y-2">
+                  <div className="w-28 h-4 bg-white/5 rounded" />
+                  <div className="w-16 h-3 bg-white/5 rounded" />
+                </div>
+              </div>
+              <div className="flex flex-col items-end space-y-2">
+                <div className="w-12 h-5 bg-white/5 rounded" />
+                <div className="w-8 h-2 bg-white/5 rounded" />
+              </div>
+            </div>
+          ))}
         </div>
       ) : users.length === 0 ? (
         <div className="text-center py-16 border border-dashed border-white/10 rounded-2xl">

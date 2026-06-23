@@ -486,18 +486,11 @@ export default function Dashboard() {
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm md:text-base uppercase tracking-[0.3em] font-bold block mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
+            className="text-sm md:text-base uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-3 mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
           >
-            WELCOME BACK, {firstName.toUpperCase()}
+            <span>WELCOME BACK, {firstName.toUpperCase()}</span>
+            <LevelBadge level={progress.level || 1} className="normal-case tracking-normal shrink-0" />
           </motion.span>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1 }}
-            className="mb-4"
-          >
-            <LevelBadge level={progress.level || 1} />
-          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}

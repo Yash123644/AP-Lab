@@ -46,7 +46,7 @@ export function AIAssistantDrawer({
   const accentColor = courseData?.accentColor || "#8b5cf6"; // Default violet/purple
 
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: `Hi! I'm your AP Lab AI Tutor. I can answer up to 10 questions about your ${getCourseDisplayName(course)} curriculum today. How can I help?` }
+    { role: "assistant", content: `Hi! I'm your AP Lab AI Tutor. I can answer up to 1000 questions about your ${getCourseDisplayName(course)} curriculum today. How can I help?` }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -59,7 +59,7 @@ export function AIAssistantDrawer({
   const userMessageCount = progress.dailyTutorMessagesDate === todayStr 
     ? (progress.dailyTutorMessagesCount || 0) 
     : 0;
-  const isLimitReached = userMessageCount >= 10;
+  const isLimitReached = userMessageCount >= 1000;
 
   const suggestions = [
     { label: "🔍 Explain concept", text: "Can you explain the key concepts of this topic in detail?" },
@@ -169,7 +169,7 @@ export function AIAssistantDrawer({
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" title="Active" />
                   </div>
                   <p className="text-xs text-white/40 mt-0.5">
-                    {getCourseDisplayName(course)} • {userMessageCount}/10 messages
+                    {getCourseDisplayName(course)} • {userMessageCount}/1000 messages
                   </p>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export function AIAssistantDrawer({
                 >
                   <AlertCircle className="w-5 h-5 text-amber-500/80" />
                   <p className="text-xs font-inter text-white/70 leading-relaxed">
-                    Message limit reached (10/10). Close the drawer or review the resources to continue studying!
+                    Message limit reached (1000/1000). Close the drawer or review the resources to continue studying!
                   </p>
                 </div>
               ) : (

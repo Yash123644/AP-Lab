@@ -1824,6 +1824,40 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [hasRewarded, setHasRewarded] = useState(false);
+  const [shuffledQuestions, setShuffledQuestions] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (!questions || questions.length === 0) {
+      setShuffledQuestions([]);
+      return;
+    }
+
+    const shuffled = questions.map((q) => {
+      // Create options with their original index so we can trace which one was correct
+      const optionsWithIndex = q.options.map((opt: string, index: number) => ({
+        opt,
+        isCorrect: index === q.correctIndex,
+      }));
+
+      // Fisher-Yates shuffle options
+      const shuffledOpts = [...optionsWithIndex];
+      for (let i = shuffledOpts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledOpts[i], shuffledOpts[j]] = [shuffledOpts[j], shuffledOpts[i]];
+      }
+
+      // Find the new index of the correct option
+      const newCorrectIndex = shuffledOpts.findIndex((item) => item.isCorrect);
+
+      return {
+        ...q,
+        options: shuffledOpts.map((item) => item.opt),
+        correctIndex: newCorrectIndex,
+      };
+    });
+
+    setShuffledQuestions(shuffled);
+  }, [questions]);
 
   useEffect(() => {
     setCurrentIdx(0);
@@ -1835,10 +1869,12 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     setHasRewarded(false);
   }, [topicId]);
 
+  const activeQuestions = shuffledQuestions.length > 0 ? shuffledQuestions : questions;
+
   useEffect(() => {
-    if (isFinished && !hasRewarded) {
+    if (isFinished && !hasRewarded && activeQuestions.length > 0) {
       setHasRewarded(true);
-      const percentage = Math.round((correctAnswers / questions.length) * 100);
+      const percentage = Math.round((correctAnswers / activeQuestions.length) * 100);
       if (percentage >= 60) {
         onComplete(percentage);
         confetti({
@@ -1849,7 +1885,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
         });
       }
     }
-  }, [isFinished, hasRewarded, correctAnswers, questions.length, onComplete, accentColor]);
+  }, [isFinished, hasRewarded, correctAnswers, activeQuestions.length, onComplete, accentColor]);
 
   if (!questions || questions.length === 0) {
     return (
@@ -1861,6 +1897,26 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   }
 
   const handleRetake = () => {
+    // Re-shuffle on retake
+    const shuffled = questions.map((q) => {
+      const optionsWithIndex = q.options.map((opt: string, index: number) => ({
+        opt,
+        isCorrect: index === q.correctIndex,
+      }));
+      const shuffledOpts = [...optionsWithIndex];
+      for (let i = shuffledOpts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledOpts[i], shuffledOpts[j]] = [shuffledOpts[j], shuffledOpts[i]];
+      }
+      const newCorrectIndex = shuffledOpts.findIndex((item) => item.isCorrect);
+      return {
+        ...q,
+        options: shuffledOpts.map((item) => item.opt),
+        correctIndex: newCorrectIndex,
+      };
+    });
+    setShuffledQuestions(shuffled);
+
     setCurrentIdx(0);
     setSelectedOption(null);
     setShowFeedback(false);
@@ -1871,7 +1927,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   };
 
   if (isFinished) {
-    const percentage = Math.round((correctAnswers / questions.length) * 100);
+    const percentage = Math.round((correctAnswers / activeQuestions.length) * 100);
     const passed = percentage >= 60;
 
     return (
@@ -1908,7 +1964,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
               {percentage}%
             </span>
             <p className="text-white/40 font-inter text-xs mt-2 uppercase tracking-widest">
-              Score: {correctAnswers} / {questions.length} Correct
+              Score: {correctAnswers} / {activeQuestions.length} Correct
             </p>
           </div>
 
@@ -1933,10 +1989,10 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   }
 
   const { recordQuestionAttempt } = useProgress();
-  const question = questions[currentIdx];
+  const question = activeQuestions[currentIdx];
 
   const handleCheck = () => {
-    if (selectedOption === null) return;
+    if (selectedOption === null || !question) return;
     
     const correct = selectedOption === question.correctIndex;
     setIsCorrect(correct);
@@ -1956,21 +2012,30 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   };
 
   const nextQuestion = () => {
-    setCurrentIdx((prev) => (prev + 1) % questions.length);
+    setCurrentIdx((prev) => (prev + 1) % activeQuestions.length);
     setSelectedOption(null);
     setShowFeedback(false);
     setShowHint(false);
   };
+
+  if (!question) {
+    return (
+      <div className="liquid-glass-strong rounded-[32px] p-12 text-center border border-white/10">
+        <Brain className="w-12 h-12 text-white/20 mx-auto mb-4" />
+        <p className="text-white/40">Loading practice questions...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="liquid-glass-strong rounded-[32px] p-8 md:p-12 border border-white/10 space-y-8">
       <div className="flex items-center justify-between">
         <div className="space-y-1">
           <h3 className="font-instrument text-3xl text-white">Check Understanding</h3>
-          <p className="text-xs font-manrope font-bold uppercase tracking-[0.2em] subject-accent-text">Question {currentIdx + 1} of {questions.length}</p>
+          <p className="text-xs font-manrope font-bold uppercase tracking-[0.2em] subject-accent-text">Question {currentIdx + 1} of {activeQuestions.length}</p>
         </div>
         <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
-          <span className="text-xs font-bold text-white/40">{Math.round(((currentIdx) / questions.length) * 100)}%</span>
+          <span className="text-xs font-bold text-white/40">{Math.round(((currentIdx) / activeQuestions.length) * 100)}%</span>
         </div>
       </div>
 
@@ -2095,7 +2160,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
             ) : (
               <MagneticButton
                 onClick={() => {
-                  if (currentIdx + 1 === questions.length) {
+                  if (currentIdx + 1 === activeQuestions.length) {
                     setIsFinished(true);
                   } else {
                     nextQuestion();
@@ -2105,7 +2170,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
                 className="bg-white/10 px-12 py-4 rounded-2xl text-white font-manrope font-black uppercase tracking-widest text-xs"
               >
                 <span className="flex items-center space-x-2 relative z-10">
-                  <span>{currentIdx + 1 === questions.length ? "Finish Practice" : "Next Question"}</span>
+                  <span>{currentIdx + 1 === activeQuestions.length ? "Finish Practice" : "Next Question"}</span>
                   <ChevronRight className="w-4 h-4" />
                 </span>
               </MagneticButton>
