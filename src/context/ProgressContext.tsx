@@ -64,6 +64,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   const [xpToasts, setXpToasts] = useState<{ id: number; amount: number; message: string; type: "question" | "section" }[]>([]);
 
   const triggerXpToast = (amount: number, message: string, type: "question" | "section") => {
+    console.log("AP Lab XP Toast triggered:", { amount, message, type });
     const id = Date.now() + Math.random();
     setXpToasts((prev) => [...prev, { id, amount, message, type }]);
     setTimeout(() => {
@@ -72,6 +73,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   const triggerXpGain = (amount: number) => {
+    console.log("AP Lab XP Animation triggered:", { amount });
     const id = Date.now() + Math.random();
     setXpAnimations((prev) => [...prev, { id, amount }]);
   };
