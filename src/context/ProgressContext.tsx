@@ -402,7 +402,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       {children}
       
       {/* Floating XP Gain Animations */}
-      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 pointer-events-none z-[9999] flex flex-col items-center space-y-2">
+      <div className="fixed bottom-16 left-0 right-0 pointer-events-none z-[9999] flex flex-col items-center justify-end space-y-2">
         <AnimatePresence>
           {xpAnimations.map((anim) => (
             <motion.div
@@ -423,7 +423,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       </div>
 
       {/* Top-Center XP Earned Toasts */}
-      <div className="fixed top-24 left-1/2 -translate-x-1/2 pointer-events-none z-[99999] flex flex-col items-center space-y-3">
+      <div className="fixed top-24 left-0 right-0 pointer-events-none z-[99999] flex flex-col items-center justify-start space-y-3">
         <AnimatePresence>
           {xpToasts.map((toast) => (
             <motion.div
