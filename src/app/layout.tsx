@@ -31,7 +31,16 @@ export const metadata: Metadata = {
   title: "AP Lab",
   description: "Bridging the gap between AP coursework and clinical medicine.",
   icons: {
-    icon: "/icon.svg?v=2",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-144.png", sizes: "144x144", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" }
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" }
+    ]
   },
 };
 

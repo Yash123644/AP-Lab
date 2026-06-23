@@ -129,6 +129,15 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       if (docSnap.exists()) {
         const firestoreData = docSnap.data() as UserProgress;
         
+        if (firestoreData.xp === undefined || firestoreData.level === undefined) {
+          setDoc(docRef, {
+            xp: firestoreData.xp ?? 0,
+            level: firestoreData.level ?? 1,
+          }, { merge: true }).catch((err) => {
+            console.error("Error initializing missing XP/level in Firestore:", err);
+          });
+        }
+        
         // Merge strategy: take the union of completed topics and the max of scores/stats
         setProgress((prev) => {
           const completedTopics = Array.from(new Set([
@@ -413,15 +422,15 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         </AnimatePresence>
       </div>
 
-      {/* Top-Right XP Earned Toasts */}
-      <div className="fixed top-6 right-6 pointer-events-none z-[99999] flex flex-col items-end space-y-3">
+      {/* Top-Center XP Earned Toasts */}
+      <div className="fixed top-24 left-1/2 -translate-x-1/2 pointer-events-none z-[99999] flex flex-col items-center space-y-3">
         <AnimatePresence>
           {xpToasts.map((toast) => (
             <motion.div
               key={toast.id}
-              initial={{ opacity: 0, x: 100, y: -20, scale: 0.9 }}
-              animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-              exit={{ opacity: 0, x: 50, scale: 0.9, transition: { duration: 0.2 } }}
+              initial={{ opacity: 0, y: -50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.9, transition: { duration: 0.2 } }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="flex items-center space-x-3 pointer-events-auto bg-black/85 backdrop-blur-md border border-white/10 text-white px-4 py-3 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border-l-4 border-l-green-400"
             >

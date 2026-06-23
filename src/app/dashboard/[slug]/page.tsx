@@ -38,6 +38,7 @@ import { AIAssistantDrawer } from "@/components/AIAssistantDrawer";
 import { SelectionAIPopover } from "@/components/SelectionAIPopover";
 import { VocabularyPopover } from "@/components/VocabularyPopover";
 import { DiagramContainer } from "@/components/DiagramContainer";
+import { playSuccessSound, playFailureSound } from "@/lib/sounds";
 
 function MagneticButton({ children, className, onClick, disabled, accentColor }: { children: React.ReactNode, className?: string, onClick?: () => void, disabled?: boolean, accentColor: string }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -1856,7 +1857,14 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
       };
     });
 
-    setShuffledQuestions(shuffled);
+    // Fisher-Yates shuffle the list of questions
+    const shuffledQuestionsList = [...shuffled];
+    for (let i = shuffledQuestionsList.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledQuestionsList[i], shuffledQuestionsList[j]] = [shuffledQuestionsList[j], shuffledQuestionsList[i]];
+    }
+
+    setShuffledQuestions(shuffledQuestionsList);
   }, [questions]);
 
   useEffect(() => {
@@ -2001,6 +2009,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     recordQuestionAttempt(correct, masteryKey);
 
     if (correct) {
+      playSuccessSound();
       confetti({
         particleCount: 100,
         spread: 70,
@@ -2008,6 +2017,8 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
         colors: [accentColor, "#ffffff"]
       });
       setCorrectAnswers((prev) => prev + 1);
+    } else {
+      playFailureSound();
     }
   };
 
