@@ -304,49 +304,47 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     const docRef = doc(db, "userProgress", currentUser.uid);
 
     try {
-      setProgress((prev) => {
-        const updatedAnswered = (prev.totalQuestionsAnswered || 0) + 1;
-        const updatedCorrect = (prev.totalQuestionsCorrect || 0) + (isCorrect ? 1 : 0);
-        
-        const isCompleted = masteryKey ? prev.completedTopics.includes(masteryKey) : false;
-        const xpEarned = isCorrect ? (isCompleted ? 5 : 10) : 0;
-        const currentXp = prev.xp || 0;
-        const newXp = currentXp + xpEarned;
-        const newLevel = Math.min(100, Math.floor(newXp / 100) + 1);
+      const isCompleted = masteryKey ? progress.completedTopics.includes(masteryKey) : false;
+      const xpEarned = isCorrect ? (isCompleted ? 5 : 10) : 0;
+      
+      const updatedAnswered = (progress.totalQuestionsAnswered || 0) + 1;
+      const updatedCorrect = (progress.totalQuestionsCorrect || 0) + (isCorrect ? 1 : 0);
+      const currentXp = progress.xp || 0;
+      const newXp = currentXp + xpEarned;
+      const newLevel = Math.min(100, Math.floor(newXp / 100) + 1);
 
-        const updatedProgress: UserProgress = {
-          ...prev,
-          totalQuestionsAnswered: updatedAnswered,
-          totalQuestionsCorrect: updatedCorrect,
-          xp: newXp,
-          level: newLevel,
-          lastAccessed: new Date()
-        };
+      const updatedProgress: UserProgress = {
+        ...progress,
+        totalQuestionsAnswered: updatedAnswered,
+        totalQuestionsCorrect: updatedCorrect,
+        xp: newXp,
+        level: newLevel,
+        lastAccessed: new Date()
+      };
 
-        if (xpEarned > 0) {
-          triggerXpGain(xpEarned);
-          triggerXpToast(xpEarned, isCompleted ? "Practice Repeated (Halved XP)" : "Question Correct!", "question");
-        }
+      if (xpEarned > 0) {
+        triggerXpGain(xpEarned);
+        triggerXpToast(xpEarned, isCompleted ? "Practice Repeated (Halved XP)" : "Question Correct!", "question");
+      }
 
-        // 1. Immediately update LocalStorage
-        try {
-          localStorage.setItem(localKey, JSON.stringify(updatedProgress));
-        } catch (e) {
-          console.error("Error writing progress to localStorage:", e);
-        }
+      setProgress(updatedProgress);
 
-        // 2. Sync to Firestore in the background
-        setDoc(docRef, {
-          totalQuestionsAnswered: updatedAnswered,
-          totalQuestionsCorrect: updatedCorrect,
-          xp: newXp,
-          level: newLevel,
-          lastAccessed: serverTimestamp()
-        }, { merge: true }).catch((err) => {
-          console.error("Error syncing question attempt to Firestore:", err);
-        });
+      // 1. Immediately update LocalStorage
+      try {
+        localStorage.setItem(localKey, JSON.stringify(updatedProgress));
+      } catch (e) {
+        console.error("Error writing progress to localStorage:", e);
+      }
 
-        return updatedProgress;
+      // 2. Sync to Firestore in the background
+      setDoc(docRef, {
+        totalQuestionsAnswered: updatedAnswered,
+        totalQuestionsCorrect: updatedCorrect,
+        xp: newXp,
+        level: newLevel,
+        lastAccessed: serverTimestamp()
+      }, { merge: true }).catch((err) => {
+        console.error("Error syncing question attempt to Firestore:", err);
       });
 
     } catch (error) {

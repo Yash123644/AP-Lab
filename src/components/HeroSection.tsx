@@ -381,7 +381,7 @@ export function HeroSection() {
               transition={layoutTransition} 
               className="inline-block"
             >
-              of
+              of{" "}
             </motion.span>
             <span className="w-[0.25em]" />
             <span className="relative inline-grid grid-cols-1 grid-rows-1 justify-items-center align-middle">

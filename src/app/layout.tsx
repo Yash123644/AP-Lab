@@ -29,7 +29,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "AP Lab",
-  description: "Bridging the gap between AP coursework and clinical medicine.",
+  description: "For the love of learning. Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -42,6 +42,28 @@ export const metadata: Metadata = {
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" }
     ]
   },
+  openGraph: {
+    title: "AP Lab",
+    description: "For the love of learning. Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams.",
+    url: "https://theaplab.org",
+    siteName: "AP Lab",
+    images: [
+      {
+        url: "https://theaplab.org/images/abstract-showcase.png",
+        width: 1200,
+        height: 630,
+        alt: "AP Lab - Bridging AP Coursework and Clinical Medicine",
+      }
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AP Lab",
+    description: "For the love of learning. Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams.",
+    images: ["https://theaplab.org/images/abstract-showcase.png"],
+  }
 };
 
 export default function RootLayout({
