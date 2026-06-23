@@ -101,7 +101,7 @@ export function APClassesPills() {
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group relative flex items-center gap-3 px-6 py-3 rounded-full cursor-pointer bg-[#181818]/90 border shadow-[0_4px_12px_rgba(0,0,0,0.35)] transition-all duration-300"
+                className="group relative flex items-center gap-3 px-6 py-3 rounded-full cursor-pointer bg-[#181818]/90 border shadow-[0_4px_12px_rgba(0,0,0,0.35)] transition-all duration-300 overflow-hidden"
                 style={{
                   borderColor: isHovered ? `${ap.hex}40` : "rgba(255, 255, 255, 0.04)",
                   boxShadow: isHovered 
@@ -110,62 +110,19 @@ export function APClassesPills() {
                   backgroundColor: isHovered ? "#222222" : "rgba(24, 24, 24, 0.9)"
                 }}
               >
-                {/* Connected Upcoming Tag */}
+                {/* Caution Tape Badge */}
                 {ap.upcoming && (
-                  <motion.div 
-                    className="absolute -top-[22px] -right-8 w-[80px] h-[30px] z-20 select-none pointer-events-none"
-                    animate={{
-                      rotate: [-4, 4, -4],
-                    }}
-                    transition={{
-                      duration: 3.5,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
+                  <div 
+                    className="absolute top-[8px] -right-5 w-[75px] rotate-[32deg] py-0.5 border-y shadow-sm z-20 flex items-center justify-center select-none pointer-events-none"
                     style={{
-                      transformOrigin: "12px 28px",
+                      background: "repeating-linear-gradient(-45deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.25) 5px, rgba(10, 10, 10, 0.65) 5px, rgba(10, 10, 10, 0.65) 10px)",
+                      borderColor: "rgba(245, 158, 11, 0.4)"
                     }}
                   >
-                    <svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_2.5px_4px_rgba(0,0,0,0.5)]">
-                      {/* Thread loop tying the tag to the pill */}
-                      <path 
-                        d="M 12 28 C 15 22, 28 12, 32 14 C 33 15, 23 24, 14 28" 
-                        stroke="rgba(255, 255, 255, 0.35)" 
-                        strokeWidth="1.2" 
-                        strokeLinecap="round"
-                      />
-                      {/* Small knot on the thread */}
-                      <circle cx="32" cy="14" r="1.2" fill="rgba(255, 255, 255, 0.7)" />
-                      
-                      {/* Clothes Tag Body */}
-                      <g transform="translate(25, 4) rotate(15)">
-                        {/* Tag Shape: clipped corners at the left end where the hole is */}
-                        <path 
-                          d="M 0 8 L 8 0 L 50 0 L 50 16 L 8 16 Z" 
-                          fill="#0c0c0c" 
-                          stroke="#dddddd" 
-                          strokeWidth="1.1" 
-                          strokeLinejoin="round"
-                        />
-                        {/* Metal/Silver Reinforcement Ring (Grommet) */}
-                        <circle cx="10" cy="8" r="3" fill="#181818" stroke="#888888" strokeWidth="0.8" />
-                        {/* The hole itself */}
-                        <circle cx="10" cy="8" r="1.2" fill="#000000" />
-                        {/* Monochrome text */}
-                        <text 
-                          x="18" 
-                          y="11" 
-                          fill="#ffffff" 
-                          fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" 
-                          fontSize="6.5" 
-                          fontWeight="900" 
-                          letterSpacing="0.5"
-                        >
-                          UPCOMING
-                        </text>
-                      </g>
-                    </svg>
-                  </motion.div>
+                    <span className="text-[6.5px] font-mono font-black tracking-widest text-[#f59e0b] uppercase">
+                      Upcoming
+                    </span>
+                  </div>
                 )}
                 {/* Icon Container */}
                 <div 

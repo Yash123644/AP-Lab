@@ -46,7 +46,7 @@ export function AppShowcase() {
         {/* Apple-Style 2x2 Bento Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto mt-16">
           
-          {/* Box 1 (Top Left) - QUANTUM RECALL */}
+          {/* Box 1 (Top Left) - STUDY GUIDES */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -56,8 +56,11 @@ export function AppShowcase() {
           >
             {/* Typography & Call to Action */}
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">QUANTUM RECALL</span>
+              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">STUDY GUIDES</span>
               <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">High-Yield AP Chemistry Blueprints.</h3>
+              <p className="text-white/50 font-inter text-xs max-w-sm mt-2 leading-relaxed">
+                Complete coverage of all 8 College Board units with high-yield blueprints.
+              </p>
             </div>
 
             {/* Center Graphic: Formula in a glass frame */}
@@ -76,7 +79,7 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
-          {/* Box 2 (Top Right) - MACROSYSTEMS */}
+          {/* Box 2 (Top Right) - INTERACTIVE LESSONS */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,8 +88,11 @@ export function AppShowcase() {
             className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">MACROSYSTEMS</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">AP Biology Deep-Dives.</h3>
+              <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">INTERACTIVE LESSONS</span>
+              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-1">AP Biology Deep-Dives.</h3>
+              <p className="text-black/50 font-inter text-xs max-w-sm mt-1 leading-relaxed">
+                Curated curriculum mapping video modules and reading articles seamlessly.
+              </p>
             </div>
 
             {/* Graphic: MacBook Pro Keyboard chassis and screen display with biological structure */}
@@ -136,7 +142,7 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
-          {/* Box 3 (Bottom Left) - SOCRATIC AI */}
+          {/* Box 3 (Bottom Left) - 24/7 AI TUTOR */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +151,7 @@ export function AppShowcase() {
             className="bg-[#e0f2fe] border border-blue-200/50 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-blue-600/60 font-bold uppercase mb-1">SOCRATIC AI</span>
+              <span className="text-[10px] font-mono tracking-widest text-blue-600/60 font-bold uppercase mb-1">24/7 AI TUTOR</span>
               <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">Your 24/7 Context-Aware Academic Partner.</h3>
             </div>
 
@@ -179,7 +185,7 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
-          {/* Box 4 (Bottom Right) - EXAM PROTOCOLS */}
+          {/* Box 4 (Bottom Right) - EXAM SIMULATOR */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,10 +194,10 @@ export function AppShowcase() {
             className="bg-[#000000] border border-white/10 rounded-[28px] h-[480px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">EXAM PROTOCOLS</span>
+              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">EXAM SIMULATOR</span>
               <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight mb-1">Comprehensive Mock Diagnostics.</h3>
-              <p className="text-white/50 font-inter text-xs max-w-sm mt-1 leading-relaxed">
-                Curated, full-length practice exams built to match the exact complexity of the actual test.
+              <p className="text-white/50 font-inter text-xs max-w-sm mt-2 leading-relaxed">
+                Full-length, timed diagnostic mock exams built to match the exact scoring weight of the actual test.
               </p>
             </div>
 

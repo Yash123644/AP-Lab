@@ -140,11 +140,9 @@ export default function LoginPage() {
 
       await setPersistence(auth, browserLocalPersistence);
       
-      if (provider.providerId === "microsoft.com") {
-        await signInWithRedirect(auth, provider);
-      } else {
-        await signInWithPopup(auth, provider);
-        cleanupRescue();
+      const result = await signInWithPopup(auth, provider);
+      cleanupRescue();
+      if (result?.user) {
         router.push("/dashboard");
       }
     } catch (err) {
