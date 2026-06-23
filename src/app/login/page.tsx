@@ -13,7 +13,8 @@ import {
   createUserWithEmailAndPassword,
   setPersistence,
   browserLocalPersistence,
-  signInWithCustomToken
+  signInWithCustomToken,
+  updateProfile
 } from "firebase/auth";
 import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { RotatingPulse3D } from "@/components/RotatingPulse3D";
@@ -233,7 +234,10 @@ export default function LoginPage() {
       setLoading(true);
       await setPersistence(auth, browserLocalPersistence);
       if (isSignUp) {
-        await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        if (userCredential.user && name) {
+          await updateProfile(userCredential.user, { displayName: name });
+        }
       } else {
         await signInWithEmailAndPassword(auth, email, password);
       }

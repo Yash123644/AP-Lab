@@ -25,6 +25,7 @@ import { courseRegistry, CourseUnit, CourseTopic } from "@/lib/courses/course-re
 import { cn } from "@/lib/utils";
 import { useProgress } from "@/context/ProgressContext";
 import { useAuth } from "@/context/AuthContext";
+import { LevelBadge } from "@/components/LevelBadge";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import confetti from "canvas-confetti";
@@ -2136,6 +2137,11 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
   const totalCorrect = progress.totalQuestionsCorrect || 0;
   const accuracyRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
 
+  const xp = progress.xp || 0;
+  const level = progress.level || 1;
+  const xpInCurrentLevel = xp % 100;
+  const progressPercent = (xpInCurrentLevel / 100) * 100;
+
   const userInitial = currentUser?.displayName 
     ? currentUser.displayName.charAt(0).toUpperCase() 
     : (currentUser?.email ? currentUser.email.charAt(0).toUpperCase() : "U");
@@ -2165,18 +2171,29 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
 
         {/* Profile info */}
         <div className="flex items-center space-x-4 mb-8">
-          <div 
-            className="w-14 h-14 rounded-2xl flex items-center justify-center font-instrument text-2xl font-bold text-black shadow-lg"
-            style={{
-              background: `linear-gradient(135deg, ${course.accentColor}, #ffffff)`,
-            }}
-          >
-            {userInitial}
-          </div>
+          {currentUser?.photoURL ? (
+            <img
+              src={currentUser.photoURL}
+              alt={currentUser.displayName || "Avatar"}
+              className="w-14 h-14 rounded-2xl object-cover border border-white/15"
+            />
+          ) : (
+            <div 
+              className="w-14 h-14 rounded-2xl flex items-center justify-center font-instrument text-2xl font-bold text-black shadow-lg"
+              style={{
+                background: `linear-gradient(135deg, ${course.accentColor}, #ffffff)`,
+              }}
+            >
+              {userInitial}
+            </div>
+          )}
           <div className="space-y-1">
-            <h3 className="font-instrument text-2xl text-white font-medium">
-              {currentUser?.displayName || "AP Scholar"}
-            </h3>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <h3 className="font-instrument text-2xl text-white font-medium">
+                {currentUser?.displayName || "AP Scholar"}
+              </h3>
+              <LevelBadge level={level} />
+            </div>
             <div className="flex items-center space-x-2 text-white/50 text-xs">
               <Mail className="w-3.5 h-3.5" />
               <span>{currentUser?.email || "anonymous@theaplab.org"}</span>
@@ -2188,6 +2205,34 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
           {/* Header */}
           <div className="border-b border-white/5 pb-4">
             <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/40 uppercase">Academic Portal Stats</span>
+          </div>
+
+          {/* Level / XP Progress Section */}
+          <div 
+            className="border rounded-2xl p-5 bg-white/[0.01] space-y-4"
+            style={{ borderColor: `${course.accentColor}22` }}
+          >
+            <div className="flex justify-between items-end">
+              <div className="space-y-1">
+                <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest block">LEVEL PROGRESS</span>
+                <span className="text-white font-bold text-lg">Level {level}</span>
+              </div>
+              <div className="text-right">
+                <span className="text-white/40 text-xs">{xpInCurrentLevel} / 100 XP</span>
+              </div>
+            </div>
+            <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+              <div 
+                className="h-full rounded-full transition-all duration-500 ease-out"
+                style={{ 
+                  backgroundColor: course.accentColor,
+                  width: `${progressPercent}%` 
+                }}
+              />
+            </div>
+            <div className="text-center text-[10px] text-white/30 tracking-wider">
+              Total XP Earned: <span className="text-white font-bold">{xp.toLocaleString()} XP</span>
+            </div>
           </div>
 
           {/* Core metrics grid */}

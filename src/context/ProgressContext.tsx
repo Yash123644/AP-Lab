@@ -1,9 +1,10 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { doc, onSnapshot, setDoc, updateDoc, arrayUnion, serverTimestamp } from "firebase/firestore";
+import { doc, onSnapshot, setDoc, arrayUnion, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "./AuthContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface UserProgress {
   completedTopics: string[];
@@ -13,6 +14,12 @@ interface UserProgress {
   totalQuestionsCorrect?: number;
   dailyTutorMessagesCount?: number;
   dailyTutorMessagesDate?: string;
+  xp?: number;
+  level?: number;
+  displayName?: string;
+  photoURL?: string;
+  email?: string;
+  uid?: string;
 }
 
 interface ProgressContextType {
@@ -31,6 +38,12 @@ const defaultProgress: UserProgress = {
   totalQuestionsCorrect: 0,
   dailyTutorMessagesCount: 0,
   dailyTutorMessagesDate: "",
+  xp: 0,
+  level: 1,
+  displayName: "",
+  photoURL: "",
+  email: "",
+  uid: "",
 };
 
 const ProgressContext = createContext<ProgressContextType>({
@@ -47,6 +60,31 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   const { currentUser } = useAuth();
   const [progress, setProgress] = useState<UserProgress>(defaultProgress);
   const [loading, setLoading] = useState(true);
+  const [xpAnimations, setXpAnimations] = useState<{ id: number; amount: number }[]>([]);
+
+  const triggerXpGain = (amount: number) => {
+    const id = Date.now() + Math.random();
+    setXpAnimations((prev) => [...prev, { id, amount }]);
+  };
+
+  // Sync profile details to Firestore in background whenever user loads in
+  useEffect(() => {
+    if (currentUser) {
+      const docRef = doc(db, "userProgress", currentUser.uid);
+      setDoc(
+        docRef,
+        {
+          uid: currentUser.uid,
+          displayName: currentUser.displayName || "AP Scholar",
+          photoURL: currentUser.photoURL || "",
+          email: currentUser.email || "",
+        },
+        { merge: true }
+      ).catch((err) => {
+        console.error("Error syncing profile info: ", err);
+      });
+    }
+  }, [currentUser]);
 
   useEffect(() => {
     if (!currentUser) {
@@ -120,7 +158,13 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
             totalQuestionsCorrect: Math.max(prev.totalQuestionsCorrect || 0, firestoreData.totalQuestionsCorrect || 0),
             dailyTutorMessagesCount: mergedMessagesCount,
             dailyTutorMessagesDate: mergedMessagesDate,
-            lastAccessed: firestoreData.lastAccessed || prev.lastAccessed
+            lastAccessed: firestoreData.lastAccessed || prev.lastAccessed,
+            xp: Math.max(prev.xp || 0, firestoreData.xp || 0),
+            level: Math.max(prev.level || 1, firestoreData.level || 1),
+            displayName: firestoreData.displayName || prev.displayName || currentUser.displayName || "AP Scholar",
+            photoURL: firestoreData.photoURL || prev.photoURL || currentUser.photoURL || "",
+            email: firestoreData.email || prev.email || currentUser.email || "",
+            uid: firestoreData.uid || prev.uid || currentUser.uid || "",
           };
 
           // Save merged back to localStorage
@@ -155,19 +199,30 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     try {
       const currentScore = progress.masteryScores[topicId] || 0;
       const newScore = Math.max(currentScore, score);
+      const isFirstTime = !progress.completedTopics.includes(topicId);
+
+      const xpEarned = isFirstTime ? 100 : 0;
+      const currentXp = progress.xp || 0;
+      const newXp = currentXp + xpEarned;
+      const newLevel = Math.min(100, Math.floor(newXp / 100) + 1);
 
       const updatedProgress: UserProgress = {
-        completedTopics: progress.completedTopics.includes(topicId)
-          ? progress.completedTopics
-          : [...progress.completedTopics, topicId],
+        ...progress,
+        completedTopics: isFirstTime
+          ? [...progress.completedTopics, topicId]
+          : progress.completedTopics,
         masteryScores: {
           ...progress.masteryScores,
           [topicId]: newScore
         },
-        totalQuestionsAnswered: progress.totalQuestionsAnswered || 0,
-        totalQuestionsCorrect: progress.totalQuestionsCorrect || 0,
+        xp: newXp,
+        level: newLevel,
         lastAccessed: new Date()
       };
+
+      if (xpEarned > 0) {
+        triggerXpGain(xpEarned);
+      }
 
       // 1. Immediately update local React state and LocalStorage for zero-latency UI
       setProgress(updatedProgress);
@@ -184,6 +239,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           ...progress.masteryScores,
           [topicId]: newScore
         },
+        xp: newXp,
+        level: newLevel,
         lastAccessed: serverTimestamp()
       }, { merge: true });
 
@@ -202,13 +259,24 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       setProgress((prev) => {
         const updatedAnswered = (prev.totalQuestionsAnswered || 0) + 1;
         const updatedCorrect = (prev.totalQuestionsCorrect || 0) + (isCorrect ? 1 : 0);
+        
+        const xpEarned = isCorrect ? 10 : 0;
+        const currentXp = prev.xp || 0;
+        const newXp = currentXp + xpEarned;
+        const newLevel = Math.min(100, Math.floor(newXp / 100) + 1);
 
         const updatedProgress: UserProgress = {
           ...prev,
           totalQuestionsAnswered: updatedAnswered,
           totalQuestionsCorrect: updatedCorrect,
+          xp: newXp,
+          level: newLevel,
           lastAccessed: new Date()
         };
+
+        if (xpEarned > 0) {
+          triggerXpGain(xpEarned);
+        }
 
         // 1. Immediately update LocalStorage
         try {
@@ -221,6 +289,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         setDoc(docRef, {
           totalQuestionsAnswered: updatedAnswered,
           totalQuestionsCorrect: updatedCorrect,
+          xp: newXp,
+          level: newLevel,
           lastAccessed: serverTimestamp()
         }, { merge: true }).catch((err) => {
           console.error("Error syncing question attempt to Firestore:", err);
@@ -280,6 +350,28 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   return (
     <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage }}>
       {children}
+      
+      {/* Floating XP Gain Animations */}
+      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 pointer-events-none z-[9999] flex flex-col items-center space-y-2">
+        <AnimatePresence>
+          {xpAnimations.map((anim) => (
+            <motion.div
+              key={anim.id}
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1.2 }}
+              exit={{ opacity: 0, y: -60, scale: 0.9 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              onAnimationComplete={() => {
+                setXpAnimations((prev) => prev.filter((a) => a.id !== anim.id));
+              }}
+              className="flex items-center space-x-1.5 bg-gradient-to-r from-green-400/90 to-emerald-500/90 border border-green-300/30 text-white font-mono tracking-widest px-4 py-2 rounded-2xl shadow-[0_8px_32px_rgba(34,197,94,0.4)] backdrop-blur-md"
+            >
+              <span className="text-lg font-black">+{anim.amount} XP</span>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
     </ProgressContext.Provider>
   );
 };
+

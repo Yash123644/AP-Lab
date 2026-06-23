@@ -130,7 +130,7 @@ function AnimatedArticleHighlight() {
                       Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
                     </span>
                     
-                    {/* Contextual Popover */}
+                     {/* Contextual Popover */}
                     <AnimatePresence>
                       {step >= 2 && (
                         <motion.div
@@ -138,12 +138,18 @@ function AnimatedArticleHighlight() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.9 }}
                           transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                          className="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center space-x-2 bg-deep-navy border border-medical-teal/40 px-3 py-1.5 rounded-xl shadow-xl whitespace-nowrap z-50"
+                          className="absolute -top-16 left-1/2 -translate-x-1/2 z-50 pb-4"
                         >
-                          <Sparkles className="w-3 h-3 text-medical-teal" />
-                          <span className="text-[10px] font-manrope font-bold text-white uppercase tracking-widest">
-                            Ask AI
-                          </span>
+                          <div className="relative">
+                            <div className="bg-[#2c2c2e]/95 backdrop-blur-xl border border-white/10 px-4 py-1.5 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] whitespace-nowrap text-white font-medium flex items-center">
+                              <span className="text-[11px] font-sans font-medium tracking-normal text-white">
+                                Ask AI
+                              </span>
+                            </div>
+                            {/* iMessage Double Bubble Tail */}
+                            <div className="absolute bottom-[-4px] left-[50%] -translate-x-1/2 w-2.5 h-2.5 bg-[#2c2c2e] border-r border-b border-white/10 rounded-full" />
+                            <div className="absolute bottom-[-8px] left-[42%] w-1.5 h-1.5 bg-[#2c2c2e] border-r border-b border-white/10 rounded-full" />
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>

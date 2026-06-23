@@ -8,8 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
-  ChevronRight, Activity, Star
+  ChevronRight, Activity, Star, User, Mail, X
 } from "lucide-react";
+import { LevelBadge } from "@/components/LevelBadge";
+import { LevelLeaderboard } from "@/components/LevelLeaderboard";
 import MuxPlayer from "@mux/mux-player-react";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
@@ -330,6 +332,7 @@ export default function Dashboard() {
   const { progress, loading: progressLoading } = useProgress();
   const router = useRouter();
   const [showSignOutConfirm, setShowSignOutConfirm] = useState(false);
+  const [showAccountPopup, setShowAccountPopup] = useState(false);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -365,6 +368,15 @@ export default function Dashboard() {
   };
 
   const firstName = currentUser?.displayName?.split(' ')[0] || 'Scholar';
+
+  const totalAnswered = progress.totalQuestionsAnswered || 0;
+  const totalCorrect = progress.totalQuestionsCorrect || 0;
+  const accuracyRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+  
+  const xp = progress.xp || 0;
+  const level = progress.level || 1;
+  const xpInCurrentLevel = xp % 100;
+  const progressPercent = (xpInCurrentLevel / 100) * 100;
 
   // Calculate Progress for each class
   const calculateCourseProgress = (slug: string) => {
@@ -457,11 +469,11 @@ export default function Dashboard() {
             <Star className="w-4.5 h-4.5 text-white/80" />
           </button>
           <button
-            onClick={handleSignOut}
-            className="flex items-center space-x-2 px-4 py-2 rounded-full hover:bg-white/10 transition-colors"
+            onClick={() => setShowAccountPopup(true)}
+            className="flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all"
           >
-            <span className="font-manrope text-sm font-medium text-white hidden sm:block">Sign Out</span>
-            <LogOut className="w-4 h-4 text-white/70" />
+            <User className="w-4 h-4 text-white/80" />
+            <span className="text-xs font-manrope font-bold uppercase tracking-widest hidden sm:block">Account</span>
           </button>
         </div>
       </nav>
@@ -470,18 +482,26 @@ export default function Dashboard() {
       <main className="flex-1 pt-40 pb-24 px-6 md:px-12 z-10 flex flex-col items-center">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 flex flex-col items-center justify-center">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm md:text-base uppercase tracking-[0.3em] font-bold block mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
+            className="text-sm md:text-base uppercase tracking-[0.3em] font-bold block mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
           >
             WELCOME BACK, {firstName.toUpperCase()}
           </motion.span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1 }}
+            className="mb-4"
+          >
+            <LevelBadge level={progress.level || 1} />
+          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.15 }}
             className="font-inter font-extrabold text-white text-3xl md:text-5xl tracking-tight mb-4"
           >
             Included Workspace
@@ -489,7 +509,7 @@ export default function Dashboard() {
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.25 }}
             className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed"
           >
             Navigate your folders or initiate a new study module below.
@@ -515,89 +535,14 @@ export default function Dashboard() {
           ))}
         </motion.div>
 
-        {/* Upcoming Courses Section */}
+        {/* Level Leaderboard Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="w-full max-w-4xl"
         >
-          <div className="text-center mb-16">
-            <h2 className="font-inter font-extrabold text-white text-3xl md:text-5xl tracking-tight mb-4">
-              Upcoming Classes
-            </h2>
-            <p className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
-              Expand your curriculum with our upcoming high-yield preparation tracks.
-            </p>
-          </div>
-
-          {/* Premium Upcoming Classes Bento Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
-            
-            {/* Physics Card */}
-            <div className="liquid-glass rounded-2xl p-5 border border-white/5 hover:border-medical-teal/30 hover:bg-white/[0.02] transition-all duration-300 relative group overflow-hidden flex flex-col justify-between h-[180px]">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-medical-teal/5 blur-[35px] rounded-full pointer-events-none group-hover:bg-medical-teal/10 transition-colors duration-500" />
-              <div className="flex items-start justify-between">
-                <div className="w-10 h-10 rounded-lg bg-medical-teal/10 border border-medical-teal/20 flex items-center justify-center text-medical-teal shadow-[0_0_10px_rgba(79,209,197,0.1)] group-hover:scale-105 transition-transform">
-                  <Atom className="w-5 h-5" />
-                </div>
-                <span className="font-mono text-[9px] font-bold text-medical-teal uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-medical-teal/10 border border-medical-teal/20">
-                  Fall 2026
-                </span>
-              </div>
-              <div>
-                <h3 className="font-manrope font-bold text-white text-base leading-tight mb-1 group-hover:text-medical-teal transition-colors">
-                  AP Physics 1
-                </h3>
-                <p className="font-inter text-xs text-white/50 leading-relaxed">
-                  Newtonian mechanics, work, energy, power, and rotational dynamics.
-                </p>
-              </div>
-            </div>
-
-            {/* History Card */}
-            <div className="liquid-glass rounded-2xl p-5 border border-white/5 hover:border-primary-purple/30 hover:bg-white/[0.02] transition-all duration-300 relative group overflow-hidden flex flex-col justify-between h-[180px]">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-primary-purple/5 blur-[35px] rounded-full pointer-events-none group-hover:bg-primary-purple/10 transition-colors duration-500" />
-              <div className="flex items-start justify-between">
-                <div className="w-10 h-10 rounded-lg bg-primary-purple/10 border border-primary-purple/20 flex items-center justify-center text-primary-purple shadow-[0_0_10px_rgba(164,132,215,0.1)] group-hover:scale-105 transition-transform">
-                  <History className="w-5 h-5" />
-                </div>
-                <span className="font-mono text-[9px] font-bold text-primary-purple uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-primary-purple/10 border border-primary-purple/20">
-                  Winter 2026
-                </span>
-              </div>
-              <div>
-                <h3 className="font-manrope font-bold text-white text-base leading-tight mb-1 group-hover:text-primary-purple transition-colors">
-                  AP World History
-                </h3>
-                <p className="font-inter text-xs text-white/50 leading-relaxed">
-                  Global developments, cultural developments, and interaction between societies.
-                </p>
-              </div>
-            </div>
-
-            {/* Precalc Card */}
-            <div className="liquid-glass rounded-2xl p-5 border border-white/5 hover:border-amber-400/30 hover:bg-white/[0.02] transition-all duration-300 relative group overflow-hidden flex flex-col justify-between h-[180px]">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-400/5 blur-[35px] rounded-full pointer-events-none group-hover:bg-amber-400/10 transition-colors duration-500" />
-              <div className="flex items-start justify-between">
-                <div className="w-10 h-10 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.1)] group-hover:scale-105 transition-transform">
-                  <Sigma className="w-5 h-5" />
-                </div>
-                <span className="font-mono text-[9px] font-bold text-amber-400 uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/20">
-                  Spring 2027
-                </span>
-              </div>
-              <div>
-                <h3 className="font-manrope font-bold text-white text-base leading-tight mb-1 group-hover:text-amber-400 transition-colors">
-                  AP Precalculus
-                </h3>
-                <p className="font-inter text-xs text-white/50 leading-relaxed">
-                  Polynomial, rational, exponential, logarithmic, and trigonometric functions.
-                </p>
-              </div>
-            </div>
-
-          </div>
+          <LevelLeaderboard />
         </motion.div>
 
       </main>
@@ -657,6 +602,123 @@ export default function Dashboard() {
         isOpen={isReviewModalOpen} 
         onClose={() => setIsReviewModalOpen(false)} 
       />
+
+      {/* Account Profile Stats Modal */}
+      <AnimatePresence>
+        {showAccountPopup && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="w-full max-w-lg bg-[#07080e]/95 border border-white/10 rounded-[32px] overflow-hidden relative shadow-[0_0_80px_rgba(0,0,0,0.8)] backdrop-blur-3xl p-8"
+            >
+              {/* Glow effect */}
+              <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full blur-[100px] opacity-35 bg-cyan-500" />
+              
+              {/* Close button */}
+              <button 
+                onClick={() => setShowAccountPopup(false)}
+                className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/5 border border-transparent hover:border-white/10 text-white/40 hover:text-white transition-all"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Profile info */}
+              <div className="flex items-center space-x-4 mb-8">
+                {currentUser?.photoURL ? (
+                  <img
+                    src={currentUser.photoURL}
+                    alt={currentUser.displayName || "Avatar"}
+                    className="w-14 h-14 rounded-2xl object-cover border border-white/15"
+                  />
+                ) : (
+                  <div 
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center font-instrument text-2xl font-bold text-black shadow-lg bg-gradient-to-br from-cyan-400 to-white"
+                  >
+                    {firstName.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <div className="space-y-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                    <h3 className="font-instrument text-2xl text-white font-medium">
+                      {currentUser?.displayName || "AP Scholar"}
+                    </h3>
+                    <LevelBadge level={level} />
+                  </div>
+                  <div className="flex items-center space-x-2 text-white/50 text-xs">
+                    <Mail className="w-3.5 h-3.5" />
+                    <span>{currentUser?.email || "anonymous@theaplab.org"}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                {/* Header */}
+                <div className="border-b border-white/5 pb-4">
+                  <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/40 uppercase">Academic Portal Stats</span>
+                </div>
+
+                {/* Level / XP Progress Section */}
+                <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 space-y-4">
+                  <div className="flex justify-between items-end">
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest block">LEVEL PROGRESS</span>
+                      <span className="text-white font-bold text-lg">Level {level}</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-white/40 text-xs">{xpInCurrentLevel} / 100 XP</span>
+                    </div>
+                  </div>
+                  <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-500" style={{ width: `${progressPercent}%` }} />
+                  </div>
+                  <div className="text-center text-[10px] text-white/30 tracking-wider">
+                    Total XP Earned: <span className="text-white font-bold">{xp.toLocaleString()} XP</span>
+                  </div>
+                </div>
+
+                {/* Core metrics grid */}
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-28">
+                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest font-semibold leading-tight">Questions Answered</span>
+                    <div className="font-instrument text-3xl font-bold text-white mt-2">
+                      {totalAnswered}
+                    </div>
+                  </div>
+                  <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-28">
+                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest font-semibold leading-tight">Correct Answers</span>
+                    <div className="font-instrument text-3xl font-bold text-white mt-2">
+                      {totalCorrect}
+                    </div>
+                  </div>
+                  <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-28">
+                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest font-semibold leading-tight">Accuracy Rate</span>
+                    <div className="font-instrument text-3xl font-bold text-white mt-2">
+                      {accuracyRate}%
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick actions / Sign Out inside the Account statistics */}
+                <div className="pt-4 border-t border-white/5 flex justify-end space-x-3">
+                  <button
+                    onClick={() => {
+                      setShowAccountPopup(false);
+                      setShowSignOutConfirm(true);
+                    }}
+                    className="flex items-center space-x-2 px-5 py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer text-white font-semibold text-xs uppercase tracking-widest"
+                  >
+                    <LogOut className="w-3.5 h-3.5 text-white/70" />
+                    <span>Sign Out</span>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
