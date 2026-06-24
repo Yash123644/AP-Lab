@@ -60,7 +60,6 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   const { currentUser } = useAuth();
   const [progress, setProgress] = useState<UserProgress>(defaultProgress);
   const [loading, setLoading] = useState(true);
-  const [xpAnimations, setXpAnimations] = useState<{ id: number; amount: number }[]>([]);
   const [xpToasts, setXpToasts] = useState<{ id: number; amount: number; message: string; type: "question" | "section" }[]>([]);
 
   const triggerXpToast = (amount: number, message: string, type: "question" | "section") => {
@@ -70,12 +69,6 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     setTimeout(() => {
       setXpToasts((prev) => prev.filter((t) => t.id !== id));
     }, 3500);
-  };
-
-  const triggerXpGain = (amount: number) => {
-    console.log("AP Lab XP Animation triggered:", { amount });
-    const id = Date.now() + Math.random();
-    setXpAnimations((prev) => [...prev, { id, amount }]);
   };
 
   // Sync profile details to Firestore in background whenever user loads in
@@ -278,7 +271,6 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       };
 
       if (xpEarned > 0) {
-        triggerXpGain(xpEarned);
         triggerXpToast(xpEarned, "Section Completed!", "section");
       }
 
@@ -333,7 +325,6 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       };
 
       if (xpEarned > 0) {
-        triggerXpGain(xpEarned);
         triggerXpToast(xpEarned, isCompleted ? "Practice Repeated (Halved XP)" : "Question Correct!", "question");
       }
 
@@ -411,26 +402,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage }}>
       {children}
       
-      {/* Floating XP Gain Animations */}
-      <div className="fixed bottom-16 left-0 right-0 pointer-events-none z-[9999] flex flex-col items-center justify-end space-y-2">
-        <AnimatePresence>
-          {xpAnimations.map((anim) => (
-            <motion.div
-              key={anim.id}
-              initial={{ opacity: 0, y: 50, scale: 0.8 }}
-              animate={{ opacity: 1, y: 0, scale: 1.2 }}
-              exit={{ opacity: 0, y: -60, scale: 0.9 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              onAnimationComplete={() => {
-                setXpAnimations((prev) => prev.filter((a) => a.id !== anim.id));
-              }}
-              className="flex items-center space-x-1.5 bg-gradient-to-r from-green-400/90 to-emerald-500/90 border border-green-300/30 text-white font-mono tracking-widest px-4 py-2 rounded-2xl shadow-[0_8px_32px_rgba(34,197,94,0.4)] backdrop-blur-md"
-            >
-              <span className="text-lg font-black">+{anim.amount} XP</span>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
+
 
       {/* Top-Center XP Earned Toasts */}
       <div className="fixed top-24 left-0 right-0 pointer-events-none z-[99999] flex flex-col items-center justify-start space-y-3">

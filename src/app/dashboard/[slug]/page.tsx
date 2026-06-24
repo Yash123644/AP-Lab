@@ -2434,7 +2434,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.72]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -2715,8 +2715,8 @@ export default function APDynamicCoursePage() {
                 {/* Pixel Background Banner */}
                 <div className="absolute inset-0 -z-10">
                   <UnitBannerBackground slug={course.slug} unitId={activeUnit} accentColor={course.accentColor} />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/90" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/45" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                 </div>
                 
                 {/* Left: Breadcrumbs + Title + Description */}
