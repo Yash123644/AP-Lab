@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LogoFieldBackground } from "@/components/LogoFieldBackground";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Loader2, Code2, Sparkles, BookOpen } from "lucide-react";
+import { CheckCircle2, Loader2, Code2, Palette, BookOpen } from "lucide-react";
 
 type TabType = "academic" | "developer" | "designer";
 
@@ -188,7 +188,7 @@ export default function JoinPage() {
                   >
                     {tab === "academic" && <BookOpen className="w-5 h-5 mb-1.5 transition-colors" style={{ color: isActive ? info.hex : "rgba(255,255,255,0.4)" }} />}
                     {tab === "developer" && <Code2 className="w-5 h-5 mb-1.5 transition-colors" style={{ color: isActive ? info.hex : "rgba(255,255,255,0.4)" }} />}
-                    {tab === "designer" && <Sparkles className="w-5 h-5 mb-1.5 transition-colors" style={{ color: isActive ? info.hex : "rgba(255,255,255,0.4)" }} />}
+                    {tab === "designer" && <Palette className="w-5 h-5 mb-1.5 transition-colors" style={{ color: isActive ? info.hex : "rgba(255,255,255,0.4)" }} />}
                     
                     <span 
                       className="font-manrope font-bold text-xs uppercase tracking-wider transition-colors"
@@ -217,7 +217,7 @@ export default function JoinPage() {
                 <div className="absolute -right-4 -top-4 w-36 h-36 opacity-[0.03] text-white pointer-events-none select-none">
                   {selectedTab === "academic" && <BookOpen className="w-full h-full" />}
                   {selectedTab === "developer" && <Code2 className="w-full h-full" />}
-                  {selectedTab === "designer" && <Sparkles className="w-full h-full" />}
+                  {selectedTab === "designer" && <Palette className="w-full h-full" />}
                 </div>
 
                 <AnimatePresence mode="wait">
@@ -273,8 +273,6 @@ export default function JoinPage() {
                   background: "radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.05), transparent 60%)"
                 }}
               >
-                {/* Vertical timeline line */}
-                <div className="absolute left-[38px] top-[80px] bottom-12 w-[1.5px] bg-gradient-to-b from-[#00f2ff] via-[#7b39fc] to-[#ec4899] opacity-25 z-0 pointer-events-none hidden sm:block" />
                 
                 <h3 className="font-manrope font-extrabold text-white text-xs tracking-widest uppercase mb-6 flex items-center gap-2 relative z-10 text-left">
                   <span className="w-2 h-2 rounded-full bg-medical-teal animate-pulse shadow-[0_0_10px_#00f2ff]" />

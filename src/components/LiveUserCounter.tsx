@@ -31,18 +31,18 @@ function Digit({ digit }: { digit: string }) {
 }
 
 export function LiveUserCounter() {
-  const [count, setCount] = useState(12482);
+  const [count, setCount] = useState(38);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef);
 
   useEffect(() => {
     if (!isInView) return;
 
-    // Fluctuate count by -4 to +4 every 3.5 seconds
+    // Fluctuate count by -2 to +2 every 3.5 seconds
     const interval = setInterval(() => {
       setCount((prev) => {
-        const change = Math.floor(Math.random() * 9) - 4; // -4 to +4
-        return Math.max(10000, prev + change);
+        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
+        return Math.max(8, prev + change);
       });
     }, 3500);
 

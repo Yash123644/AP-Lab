@@ -88,80 +88,12 @@ function MagneticButton({ children, className, onClick, disabled, accentColor }:
   );
 }
 
-function getUnitWatermark(unitId: number) {
-  switch (unitId) {
-    case 1:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <circle cx="12" cy="12" r="3" />
-          <ellipse cx="12" cy="12" rx="10" ry="3" transform="rotate(30 12 12)" />
-          <ellipse cx="12" cy="12" rx="10" ry="3" transform="rotate(-30 12 12)" />
-        </svg>
-      );
-    case 2:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <circle cx="6" cy="12" r="2.5" />
-          <circle cx="18" cy="12" r="2.5" />
-          <circle cx="12" cy="6" r="3.5" />
-          <line x1="7.7" y1="10.3" x2="10.3" y2="7.7" />
-          <line x1="16.3" y1="10.3" x2="13.7" y2="7.7" />
-        </svg>
-      );
-    case 3:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <circle cx="5" cy="8" r="2" />
-          <circle cx="19" cy="8" r="2" />
-          <circle cx="12" cy="16" r="2" />
-          <line x1="7" y1="9" x2="10" y2="14" strokeDasharray="2 2" />
-          <line x1="17" y1="9" x2="14" y2="14" strokeDasharray="2 2" />
-        </svg>
-      );
-    case 4:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <path d="M6 3v3m12-3v3M6 21h12a2 2 0 002-2V8H4v11a2 2 0 002 2z" />
-          <circle cx="9" cy="12" r="1" />
-          <circle cx="15" cy="15" r="1" />
-          <circle cx="12" cy="18" r="1" />
-        </svg>
-      );
-    case 5:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <circle cx="12" cy="13" r="8" />
-          <path d="M12 5V2m-3 0h6m-3 7v4l3 2" />
-        </svg>
-      );
-    case 6:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3.5-.72 1.5-1.5 2-1.5 3.5A2.5 2.5 0 0011 14.5zM12 2c0 0 7 4 7 11a7 7 0 11-14 0c0-7 7-11 7-11z" />
-        </svg>
-      );
-    case 7:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <path d="M4 9h16M20 9l-4-4M4 15h16M4 15l4 4" />
-        </svg>
-      );
-    case 8:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM7 7h10M7 12h10M7 17h5" />
-        </svg>
-      );
-    case 9:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-          <rect x="6" y="7" width="12" height="12" rx="2" />
-          <path d="M9 7V5h2v2M13 7V5h2v2M9 13h6" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+function getRomanNumeral(n: number): string {
+  const map: Record<number, string> = {
+    1: "I", 2: "II", 3: "III", 4: "IV", 5: "V",
+    6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X"
+  };
+  return map[n] || n.toString();
 }
 
 function getInsightLabel(slug: string) {
@@ -1773,12 +1705,12 @@ export default function APDynamicCoursePage() {
                       )}
                     </div>
 
-                    {/* Unit Watermark Background decoration */}
+                    {/* Unit Roman Numeral Background decoration */}
                     <div 
-                      className="absolute right-3 -bottom-1.5 w-14 h-14 opacity-[0.05] group-hover:opacity-[0.10] transition-opacity duration-300 pointer-events-none select-none z-0"
+                      className="absolute right-4 bottom-[-14px] text-6xl font-mono font-black opacity-[0.07] group-hover:opacity-[0.14] transition-opacity duration-300 pointer-events-none select-none z-0 tracking-tighter"
                       style={{ color: course.accentColor }}
                     >
-                      {getUnitWatermark(unit.id)}
+                      {getRomanNumeral(unit.id)}
                     </div>
                   </button>
 

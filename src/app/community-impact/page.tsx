@@ -139,7 +139,7 @@ export default function CommunityImpactPage() {
               </div>
             </div>
             <div className="relative z-10">
-              <div className="text-7xl md:text-8xl font-instrument mb-4 tracking-tighter text-white">8,245</div>
+              <div className="text-7xl md:text-8xl font-instrument mb-4 tracking-tighter text-white">128</div>
               <div className="flex items-center space-x-4">
                 <div className="h-[2px] w-12 bg-medical-teal/50" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Verified Concurrent Scholars</span>
@@ -159,10 +159,10 @@ export default function CommunityImpactPage() {
              <div className="w-10 h-10 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center mb-8">
                <Star className="w-5 h-5 text-yellow-400" />
              </div>
-             <div>
-               <div className="text-5xl font-instrument mb-2 text-white">4.7</div>
-               <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Average AP Score</span>
-             </div>
+              <div>
+                <div className="text-5xl font-instrument mb-2 text-white">4.6</div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Average AP Score</span>
+              </div>
           </motion.div>
 
           {/* Pass Rate Matrix */}
@@ -194,10 +194,10 @@ export default function CommunityImpactPage() {
              <div className="w-10 h-10 rounded-xl bg-primary-purple/10 border border-primary-purple/20 flex items-center justify-center mb-8 relative z-10">
                <Trophy className="w-5 h-5 text-primary-purple" />
              </div>
-             <div className="relative z-10">
-               <div className="text-5xl font-instrument mb-2 text-white tracking-tighter">95.2%</div>
-               <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">questions answered correctly</span>
-             </div>
+              <div className="relative z-10">
+                <div className="text-5xl font-instrument mb-2 text-white tracking-tighter">88.4%</div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">questions answered correctly</span>
+              </div>
           </motion.div>
 
           {/* Monthly Traffic */}
@@ -215,7 +215,7 @@ export default function CommunityImpactPage() {
                  </div>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-cyan-400">total site visits</span>
                </div>
-               <div className="text-6xl font-instrument text-white tracking-tighter">62.4K</div>
+                <div className="text-6xl font-instrument text-white tracking-tighter">3.4K</div>
              </div>
              <div className="absolute right-0 bottom-0 top-0 w-1/2 opacity-20 flex items-end justify-between px-6 pb-6">
                {[40, 70, 45, 90, 60, 100, 80, 120].map((h, i) => (
@@ -248,12 +248,12 @@ export default function CommunityImpactPage() {
             </p>
             <div className="flex items-center space-x-8">
               <div>
-                <div className="text-4xl font-instrument mb-1 text-white">50</div>
+                <div className="text-4xl font-instrument mb-1 text-white">15</div>
                 <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-white/30">States Active</div>
               </div>
               <div className="w-[1px] h-12 bg-white/10" />
               <div>
-                <div className="text-4xl font-instrument mb-1 text-white">820K+</div>
+                <div className="text-4xl font-instrument mb-1 text-white">4.8K+</div>
                 <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-white/30">Scholars Reached</div>
               </div>
             </div>
