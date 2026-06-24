@@ -8,21 +8,28 @@ const privateKey = process.env.FIREBASE_PRIVATE_KEY || "-----BEGIN PRIVATE KEY--
 
 let app: App;
 
-// Clean the private key string to handle potential formatting/quoting issues from hosting dashboards like Vercel
-let cleanedPrivateKey = privateKey;
-if (cleanedPrivateKey) {
-  cleanedPrivateKey = cleanedPrivateKey.trim();
-  if (cleanedPrivateKey.startsWith('"') && cleanedPrivateKey.endsWith('"')) {
-    cleanedPrivateKey = cleanedPrivateKey.substring(1, cleanedPrivateKey.length - 1);
-  }
-  if (cleanedPrivateKey.startsWith("'") && cleanedPrivateKey.endsWith("'")) {
-    cleanedPrivateKey = cleanedPrivateKey.substring(1, cleanedPrivateKey.length - 1);
-  }
-  cleanedPrivateKey = cleanedPrivateKey.trim().replace(/\\n/g, "\n");
-}
+function getFirebaseAdminApp(): App {
+  if (app) return app;
 
-const existingApps = getApps();
-if (existingApps.length === 0) {
+  const existingApps = getApps();
+  if (existingApps.length > 0) {
+    app = getApp();
+    return app;
+  }
+
+  // Clean the private key string to handle potential formatting/quoting issues from hosting dashboards like Vercel
+  let cleanedPrivateKey = privateKey;
+  if (cleanedPrivateKey) {
+    cleanedPrivateKey = cleanedPrivateKey.trim();
+    if (cleanedPrivateKey.startsWith('"') && cleanedPrivateKey.endsWith('"')) {
+      cleanedPrivateKey = cleanedPrivateKey.substring(1, cleanedPrivateKey.length - 1);
+    }
+    if (cleanedPrivateKey.startsWith("'") && cleanedPrivateKey.endsWith("'")) {
+      cleanedPrivateKey = cleanedPrivateKey.substring(1, cleanedPrivateKey.length - 1);
+    }
+    cleanedPrivateKey = cleanedPrivateKey.trim().replace(/\\n/g, "\n");
+  }
+
   if (cleanedPrivateKey && clientEmail && projectId && !cleanedPrivateKey.includes("YOUR_PRIVATE_KEY_HERE")) {
     try {
       app = initializeApp({
@@ -46,11 +53,16 @@ if (existingApps.length === 0) {
     });
     console.warn("Firebase Admin initialized without service account certificate (fallback).");
   }
-} else {
-  app = getApp();
+
+  return app;
 }
 
-export const adminAuth = getAuth(app);
-export const adminDb = getFirestore(app);
-export { app as firebaseAdminApp };
+export function getAdminAuth() {
+  return getAuth(getFirebaseAdminApp());
+}
+
+export function getAdminDb() {
+  return getFirestore(getFirebaseAdminApp());
+}
+
 

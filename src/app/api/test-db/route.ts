@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { adminDb } from "@/lib/firebaseAdmin";
+import { getAdminDb } from "@/lib/firebaseAdmin";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +9,7 @@ export async function GET() {
   };
 
   try {
+    const adminDb = getAdminDb();
     info.step = "querying";
     const snap = await adminDb.collection("userProgress").limit(1).get();
     info.success = true;

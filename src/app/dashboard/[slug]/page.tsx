@@ -1991,15 +1991,17 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
       }
     } else if (slug === "ap-chemistry") {
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 12; i++) {
         particles.push({
           x: rng() * canvas.width,
-          y: canvas.height + rng() * 40,
-          size: 3 + rng() * 5,
-          speedY: -0.3 - rng() * 0.6,
-          speedX: -0.1 + rng() * 0.2,
-          color: rng() > 0.4 ? "rgba(0, 242, 255, 0.2)" : "rgba(59, 130, 246, 0.15)",
-          seed: rng() * 10
+          y: rng() * canvas.height,
+          speedX: -0.25 + rng() * 0.5,
+          speedY: -0.2 + rng() * 0.4,
+          radius: 8 + rng() * 6,
+          orbitSpeed: 0.03 + rng() * 0.04,
+          orbitAngle: rng() * Math.PI * 2,
+          color: rng() > 0.4 ? "rgba(0, 242, 255, 0.35)" : "rgba(59, 130, 246, 0.25)",
+          size: 3.5 + rng() * 2
         });
       }
     } else if (slug === "ap-physics-c") {
@@ -2046,6 +2048,18 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           char: chars[Math.floor(rng() * chars.length)],
           speedY: 0.25 + rng() * 0.4,
           color: rng() > 0.5 ? "rgba(251, 113, 133, 0.18)" : "rgba(244, 63, 94, 0.12)"
+        });
+      }
+    } else if (slug === "ap-calc-bc") {
+      const mathSymbols = ["dx", "dy", "∫", "Σ", "π", "lim", "f(x)", "Δx", "∞"];
+      for (let i = 0; i < 14; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          symbol: mathSymbols[Math.floor(rng() * mathSymbols.length)],
+          speedY: -0.15 - rng() * 0.25,
+          speedX: -0.1 + rng() * 0.2,
+          color: rng() > 0.5 ? "rgba(52, 211, 153, 0.22)" : "rgba(16, 185, 129, 0.16)"
         });
       }
     } else if (slug === "ap-stats") {
@@ -2151,48 +2165,54 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
 
       } else if (slug === "ap-chemistry") {
-        // Draw molecular benzene-like hexagonal lattice pattern
-        ctx.strokeStyle = "rgba(0, 242, 255, 0.04)";
-        ctx.fillStyle = "rgba(0, 242, 255, 0.02)";
-        ctx.lineWidth = 2;
-        
-        const drawHex = (cx: number, cy: number, r: number) => {
-          ctx.beginPath();
-          for (let i = 0; i < 6; i++) {
-            const angle = (i * Math.PI) / 3 + frame * 0.003;
-            const x = cx + Math.cos(angle) * r;
-            const y = cy + Math.sin(angle) * r;
-            if (i === 0) ctx.moveTo(Math.round(x), Math.round(y));
-            else ctx.lineTo(Math.round(x), Math.round(y));
-          }
-          ctx.closePath();
-          ctx.stroke();
-        };
-
-        // Draw multiple hex nodes representing compounds
-        drawHex(80, 45, 18);
-        drawHex(180, 110, 24);
-        drawHex(320, 50, 20);
-
-        // Connection bonds between node centers
-        ctx.strokeStyle = "rgba(0, 242, 255, 0.03)";
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.moveTo(80, 45); ctx.lineTo(180, 110);
-        ctx.lineTo(320, 50);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Rising blocky pixel bubbles
-        particles.forEach((p) => {
+        // Covalent bonding and electron orbital simulation
+        particles.forEach((p, i) => {
+          // Update atom position
+          p.x += p.speedX;
           p.y += p.speedY;
-          p.x += Math.sin(frame * 0.02 + (p.seed || 0)) * 0.25;
-          if (p.y < -10) {
-            p.y = canvas.height + 10;
-            p.x = Math.random() * canvas.width;
-          }
+
+          // Bounce boundaries to keep within canvas
+          if (p.x < 15 || p.x > canvas.width - 15) p.speedX *= -1;
+          if (p.y < 15 || p.y > canvas.height - 15) p.speedY *= -1;
+
+          // 1. Draw atom nucleus (glowing square core)
           ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+          ctx.fillRect(Math.round(p.x - p.size / 2), Math.round(p.y - p.size / 2), Math.round(p.size), Math.round(p.size));
+
+          // 2. Draw dotted electron shell ring
+          ctx.strokeStyle = "rgba(0, 242, 255, 0.05)";
+          ctx.lineWidth = 1;
+          ctx.setLineDash([2, 3]);
+          ctx.beginPath();
+          ctx.arc(Math.round(p.x), Math.round(p.y), p.radius, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          // 3. Draw valence electron spinning along shell
+          p.orbitAngle += p.orbitSpeed;
+          const ex = p.x + Math.cos(p.orbitAngle) * p.radius;
+          const ey = p.y + Math.sin(p.orbitAngle) * p.radius;
+          ctx.fillStyle = "rgba(0, 242, 255, 0.7)";
+          ctx.fillRect(Math.round(ex - 1), Math.round(ey - 1), 2.5, 2.5);
+
+          // 4. Draw covalent sharing bonds with nearby atoms
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 65) {
+              const alpha = 0.16 * (1 - dist / 65);
+              ctx.strokeStyle = `rgba(0, 242, 255, ${alpha})`;
+              ctx.lineWidth = 1;
+              ctx.setLineDash([3, 3]);
+              ctx.beginPath();
+              ctx.moveTo(Math.round(p.x), Math.round(p.y));
+              ctx.lineTo(Math.round(p2.x), Math.round(p2.y));
+              ctx.stroke();
+              ctx.setLineDash([]);
+            }
+          }
         });
 
       } else if (slug === "ap-physics-c") {
@@ -2293,6 +2313,20 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
 
       } else if (slug === "ap-calc-bc") {
+        // Cascading math symbols
+        ctx.font = "bold 8px monospace";
+        particles.forEach((p) => {
+          p.y += p.speedY;
+          p.x += p.speedX;
+          if (p.y < -12) {
+            p.y = canvas.height + 12;
+            p.x = Math.random() * canvas.width;
+          }
+          ctx.fillStyle = p.color;
+          ctx.fillText(p.symbol, Math.round(p.x), Math.round(p.y));
+        });
+
+        // Riemann rectangles and sine curve
         ctx.fillStyle = "rgba(52, 211, 153, 0.04)";
         ctx.strokeStyle = "rgba(52, 211, 153, 0.12)";
         ctx.lineWidth = 1;

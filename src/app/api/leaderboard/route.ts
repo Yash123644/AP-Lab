@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
-import { adminDb } from "@/lib/firebaseAdmin";
+import { getAdminDb } from "@/lib/firebaseAdmin";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    const adminDb = getAdminDb();
     let snapshot = await adminDb
       .collection("userProgress")
       .orderBy("xp", "desc")
