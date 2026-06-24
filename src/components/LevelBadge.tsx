@@ -13,17 +13,108 @@ export function LevelBadge({ level, className, size = "sm" }: LevelBadgeProps) {
   // Clamp level between 1 and 100
   const displayLevel = Math.max(1, Math.min(100, level));
 
-  // 1. Generate unique color hues based on the level using the golden ratio distribution
-  // This guarantees each level from 1 to 100 has a completely distinct and vibrant color scheme!
-  const hue = Math.round((displayLevel * 137.5) % 360);
-  const nextHue = (hue + 45) % 360;
+  // Determine tier name, geometric properties, base hues, and inner emblems
+  let tierName = "Apprentice";
+  let baseHue = 130; // Apprentice is green/teal
+  let tierSides = 3; // Triangle
+  let hueOffsetMultiplier = 6;
+  let tierMinLevel = 1;
+  let innerEmblem = null;
+
+  if (displayLevel === 100) {
+    tierName = "Grandmaster";
+    baseHue = 45; // Gold
+    tierSides = 10; // Decagon
+    hueOffsetMultiplier = 0;
+    tierMinLevel = 100;
+    // Crown path
+    innerEmblem = (
+      <path
+        d="M12 14 L14 26 L26 26 L28 14 L23 18 L20 12 L17 18 Z"
+        fill="#ffffff"
+        className="animate-pulse"
+      />
+    );
+  } else if (displayLevel >= 90) {
+    tierName = "Ascendant";
+    baseHue = 280; // Cosmic purple/magenta
+    tierSides = 8; // Octagon
+    hueOffsetMultiplier = 6;
+    tierMinLevel = 90;
+    // Star path
+    innerEmblem = (
+      <polygon
+        points="20,11 22,17 28,17 23,21 25,27 20,23 15,27 17,21 12,17 18,17"
+        fill="#ffffff"
+      />
+    );
+  } else if (displayLevel >= 70) {
+    tierName = "Elite";
+    baseHue = 350; // Crimson Red
+    tierSides = 7; // Heptagon
+    hueOffsetMultiplier = 4;
+    tierMinLevel = 70;
+    // Flame/fire symbol
+    innerEmblem = (
+      <path
+        d="M20 11 C20 11 23 15 23 18 C23 21 20 25 17 22 C15 20 16 16 16 16 C16 16 14 18 14 21 C14 24 17 27 20 27 C24 27 26 23 26 19 C26 15 20 11 20 11 Z"
+        fill="#ffffff"
+      />
+    );
+  } else if (displayLevel >= 50) {
+    tierName = "Master";
+    baseHue = 25; // Amber/Gold
+    tierSides = 6; // Hexagon
+    hueOffsetMultiplier = 4;
+    tierMinLevel = 50;
+    // Diamond path
+    innerEmblem = (
+      <polygon
+        points="20,11 26,20 20,29 14,20"
+        fill="#ffffff"
+      />
+    );
+  } else if (displayLevel >= 30) {
+    tierName = "Expert";
+    baseHue = 270; // Purple/Violet
+    tierSides = 5; // Pentagon
+    hueOffsetMultiplier = 3;
+    tierMinLevel = 30;
+    // Shield path
+    innerEmblem = (
+      <path
+        d="M15 13 L20 11 L25 13 L25 20 C25 24 20 28 20 28 C20 28 15 24 15 20 Z"
+        fill="#ffffff"
+      />
+    );
+  } else if (displayLevel >= 10) {
+    tierName = "Scholar";
+    baseHue = 200; // Blue/Cyan
+    tierSides = 4; // Square/Diamond
+    hueOffsetMultiplier = 3.5;
+    tierMinLevel = 10;
+    // Simple target circle
+    innerEmblem = <circle cx="20" cy="20" r="4" fill="#ffffff" />;
+  } else {
+    tierName = "Apprentice";
+    baseHue = 130; // Green/Teal
+    tierSides = 3; // Triangle
+    hueOffsetMultiplier = 6;
+    tierMinLevel = 1;
+    // Dot
+    innerEmblem = <circle cx="20" cy="20" r="2.5" fill="#ffffff" />;
+  }
+
+  // Calculate final hue
+  const hue = Math.round((baseHue + (displayLevel - tierMinLevel) * hueOffsetMultiplier) % 360);
+  const nextHue = (hue + 40) % 360;
   
   const primaryColor = `hsl(${hue}, 85%, 55%)`;
   const secondaryColor = `hsl(${nextHue}, 90%, 40%)`;
   const glowColor = `rgba(${hslToRgb(hue, 0.85, 0.55).join(",")}, 0.5)`;
 
-  // 2. Generate unique geometric properties based on the level
-  const sides = 3 + (displayLevel % 7); // Shifting polygon shapes: triangle to nonagon
+  // Generate unique geometric properties based on the tier sides
+  const sides = tierSides;
   const radius = 14;
   const cx = 20;
   const cy = 20;
@@ -35,66 +126,6 @@ export function LevelBadge({ level, className, size = "sm" }: LevelBadgeProps) {
     points.push(`${cx + radius * Math.cos(angle)},${cy + radius * Math.sin(angle)}`);
   }
   const polygonPath = `M ${points.join(" L ")} Z`;
-
-  // 3. Determine tier name and inner detail icon/shape based on level range
-  let tierName = "Apprentice";
-  let innerEmblem = null;
-
-  if (displayLevel === 100) {
-    tierName = "Grandmaster";
-    // Crown path
-    innerEmblem = (
-      <path
-        d="M12 14 L14 26 L26 26 L28 14 L23 18 L20 12 L17 18 Z"
-        fill="#ffffff"
-        className="animate-pulse"
-      />
-    );
-  } else if (displayLevel >= 90) {
-    tierName = "Ascendant";
-    // Star path
-    innerEmblem = (
-      <polygon
-        points="20,11 22,17 28,17 23,21 25,27 20,23 15,27 17,21 12,17 18,17"
-        fill="#ffffff"
-      />
-    );
-  } else if (displayLevel >= 70) {
-    tierName = "Elite";
-    // Flame/fire symbol
-    innerEmblem = (
-      <path
-        d="M20 11 C20 11 23 15 23 18 C23 21 20 25 17 22 C15 20 16 16 16 16 C16 16 14 18 14 21 C14 24 17 27 20 27 C24 27 26 23 26 19 C26 15 20 11 20 11 Z"
-        fill="#ffffff"
-      />
-    );
-  } else if (displayLevel >= 50) {
-    tierName = "Master";
-    // Diamond path
-    innerEmblem = (
-      <polygon
-        points="20,11 26,20 20,29 14,20"
-        fill="#ffffff"
-      />
-    );
-  } else if (displayLevel >= 30) {
-    tierName = "Expert";
-    // Shield path
-    innerEmblem = (
-      <path
-        d="M15 13 L20 11 L25 13 L25 20 C25 24 20 28 20 28 C20 28 15 24 15 20 Z"
-        fill="#ffffff"
-      />
-    );
-  } else if (displayLevel >= 10) {
-    tierName = "Scholar";
-    // Simple target circle
-    innerEmblem = <circle cx="20" cy="20" r="4" fill="#ffffff" />;
-  } else {
-    tierName = "Apprentice";
-    // Dot
-    innerEmblem = <circle cx="20" cy="20" r="2.5" fill="#ffffff" />;
-  }
 
   // Ring styling
   const dashArray = `${(displayLevel * 2) % 8 + 2} ${(displayLevel * 3) % 6 + 2}`;

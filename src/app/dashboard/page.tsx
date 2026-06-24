@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
-  ChevronRight, Activity, Star, User, Mail, X
+  ChevronRight, Activity, Star, User, Mail, X, Sparkles
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
@@ -20,6 +20,7 @@ import { useProgress } from "@/context/ProgressContext";
 import { courseRegistry } from "@/lib/courses/course-registry";
 import { ReviewModal } from "@/components/ReviewModal";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
+import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
 
 
 const folders = [
@@ -265,34 +266,65 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
             <div className="absolute inset-0 flex flex-col justify-center space-y-2.5 p-5 z-10">
               {classes.map((subject) => {
                 const progressPercent = Math.round(progressData[subject.slug] || 0);
+                const isCompleted = progressPercent === 100;
                 return (
                   <Link 
                     key={subject.name}
                     href={`/dashboard/${subject.slug}`}
-                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group/item w-full"
+                    className={cn(
+                      "flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group/item w-full relative overflow-hidden",
+                      isCompleted && "border-amber-400 bg-amber-500/[0.05] shadow-[0_0_20px_rgba(245,158,11,0.2)]"
+                    )}
                   >
-                    <div className="flex items-center flex-1 mr-4 overflow-hidden">
-                      <subject.icon className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" style={{ color: accent }} />
+                    {isCompleted && (
+                      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl z-0">
+                        {/* Beautiful golden animated shimmer overlay */}
+                        <div className="absolute inset-0 animate-shimmer-gold" />
+                        <Sparkles className="absolute top-1 left-1.5 w-3.5 h-3.5 text-amber-300 animate-pulse" style={{ animationDuration: "1.5s" }} />
+                        <Sparkles className="absolute bottom-1 right-1.5 w-3.5 h-3.5 text-amber-300 animate-pulse" style={{ animationDuration: "2s" }} />
+                      </div>
+                    )}
+
+                    <div className="flex items-center flex-1 mr-4 overflow-hidden relative z-10">
+                      <subject.icon 
+                        className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" 
+                        style={{ color: isCompleted ? "#fbbf24" : accent }} 
+                      />
                       <div className="flex-1 flex flex-col items-start ml-3 min-w-0">
-                        <span className="text-xs font-manrope font-semibold text-white/80 group-hover/item:text-white transition-colors truncate w-full text-left">{subject.name}</span>
+                        <span className={cn(
+                          "text-xs font-manrope font-semibold text-white/80 group-hover/item:text-white transition-colors truncate w-full text-left",
+                          isCompleted && "text-yellow-400 group-hover/item:text-yellow-300 font-extrabold"
+                        )}>
+                          {subject.name}
+                        </span>
                         {/* Premium micro progress bar */}
-                        <div className="w-full h-0.5 bg-white/10 rounded-full mt-1.5 overflow-hidden">
+                        <div className={cn(
+                          "w-full h-0.5 bg-white/10 rounded-full mt-1.5 overflow-hidden",
+                          isCompleted && "bg-yellow-500/20"
+                        )}>
                           <div 
                             className="h-full rounded-full transition-all duration-500"
                             style={{ 
                               width: `${progressPercent}%`,
-                              backgroundColor: accent 
+                              backgroundColor: isCompleted ? "#fbbf24" : accent 
                             }}
                           />
                         </div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-2 shrink-0">
-                      <span className="text-[10px] font-mono font-medium text-white/40 group-hover/item:text-white/70 transition-colors">
+                    <div className="flex items-center space-x-2 shrink-0 relative z-10">
+                      <span className={cn(
+                        "text-[10px] font-mono font-medium text-white/40 group-hover/item:text-white/70 transition-colors flex items-center gap-1",
+                        isCompleted && "text-yellow-400 font-bold group-hover/item:text-yellow-300"
+                      )}>
+                        {isCompleted && <Sparkles className="w-3 h-3 text-yellow-400 animate-pulse" />}
                         {progressPercent}%
                       </span>
-                      <ChevronRight className="w-3.5 h-3.5 text-white/20 group-hover/item:text-white/60 transition-colors" />
+                      <ChevronRight className={cn(
+                        "w-3.5 h-3.5 text-white/20 group-hover/item:text-white/60 transition-colors",
+                        isCompleted && "text-yellow-400/50 group-hover/item:text-yellow-400"
+                      )} />
                     </div>
                   </Link>
                 );
@@ -374,9 +406,12 @@ export default function Dashboard() {
   const accuracyRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
   
   const xp = progress.xp || 0;
-  const level = progress.level || 1;
-  const xpInCurrentLevel = xp % 100;
-  const progressPercent = (xpInCurrentLevel / 100) * 100;
+  const level = getLevelForXp(xp);
+  const currentLevelThreshold = getXpThresholdForLevel(level);
+  const nextLevelThreshold = getXpThresholdForLevel(level + 1);
+  const xpNeededForNext = nextLevelThreshold - currentLevelThreshold;
+  const xpInCurrentLevel = xp - currentLevelThreshold;
+  const progressPercent = Math.min(100, Math.max(0, (xpInCurrentLevel / xpNeededForNext) * 100));
 
   // Calculate Progress for each class
   const calculateCourseProgress = (slug: string) => {
@@ -489,7 +524,7 @@ export default function Dashboard() {
             className="text-sm md:text-base uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-3 mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
           >
             <span>WELCOME BACK, {firstName.toUpperCase()}</span>
-            <LevelBadge level={progress.level || 1} className="normal-case tracking-normal shrink-0" />
+            <LevelBadge level={level} className="normal-case tracking-normal shrink-0" />
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}
@@ -661,7 +696,7 @@ export default function Dashboard() {
                       <span className="text-white font-bold text-lg">Level {level}</span>
                     </div>
                     <div className="text-right">
-                      <span className="text-white/40 text-xs">{xpInCurrentLevel} / 100 XP</span>
+                      <span className="text-white/40 text-xs">{xpInCurrentLevel} / {xpNeededForNext} XP</span>
                     </div>
                   </div>
                   <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">

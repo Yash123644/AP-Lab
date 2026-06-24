@@ -109,7 +109,13 @@ export async function GET() {
       };
     });
 
-    return NextResponse.json(leaderList);
+    return new NextResponse(JSON.stringify(leaderList), {
+      status: 200,
+      headers: {
+        "Cache-Control": "no-store, max-age=0, must-revalidate",
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error: any) {
     console.error("Leaderboard API error:", error);
     return NextResponse.json({ 

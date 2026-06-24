@@ -5,6 +5,7 @@ import { LevelBadge } from "@/components/LevelBadge";
 import { Trophy, Crown, Award, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useProgress } from "@/context/ProgressContext";
+import { cn } from "@/lib/utils";
 
 interface LeaderboardUser {
   uid: string;
@@ -22,7 +23,7 @@ export function LevelLeaderboard() {
   const fetchLeaderboard = async (showLoading = false) => {
     if (showLoading) setLoading(true);
     try {
-      const res = await fetch("/api/leaderboard");
+      const res = await fetch(`/api/leaderboard?t=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error || `Server responded with status ${res.status}`);
@@ -125,6 +126,7 @@ export function LevelLeaderboard() {
               const initials = user.displayName
                 ? user.displayName.split(" ").map(n => n[0]).join("").toUpperCase().substring(0, 2)
                 : "AP";
+              const isCurrentUser = user.uid === progress?.uid;
 
               return (
                 <motion.div
@@ -132,7 +134,13 @@ export function LevelLeaderboard() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className={`flex items-center justify-between p-4 md:px-6 rounded-2xl border transition-all duration-300 ${rankInfo.rowClass} ${rankInfo.glowClass}`}
+                  className={cn(
+                    "flex items-center justify-between p-4 md:px-6 rounded-2xl border transition-all duration-300",
+                    isCurrentUser 
+                      ? "border-cyan-500/40 bg-cyan-950/25 shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                      : rankInfo.rowClass,
+                    !isCurrentUser && rankInfo.glowClass
+                  )}
                 >
                   <div className="flex items-center space-x-4">
                     {/* Rank Indicator */}
@@ -169,8 +177,13 @@ export function LevelLeaderboard() {
 
                     {/* User Name & Level Badge */}
                     <div className="flex flex-col md:flex-row md:items-center space-y-1.5 md:space-y-0 md:space-x-3">
-                      <span className="font-manrope font-bold text-white text-sm md:text-base leading-tight">
+                      <span className="font-manrope font-bold text-white text-sm md:text-base leading-tight flex items-center gap-1.5">
                         {user.displayName || "AP Scholar"}
+                        {isCurrentUser && (
+                          <span className="text-[9px] bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-1.5 py-0.5 rounded-full uppercase tracking-widest font-mono font-bold">
+                            You
+                          </span>
+                        )}
                       </span>
                       <LevelBadge level={user.level || 1} />
                     </div>

@@ -27,6 +27,7 @@ import { cn } from "@/lib/utils";
 import { useProgress } from "@/context/ProgressContext";
 import { useAuth } from "@/context/AuthContext";
 import { LevelBadge } from "@/components/LevelBadge";
+import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
 import "katex/dist/katex.min.css";
 import { InlineMath } from "react-katex";
 import confetti from "canvas-confetti";
@@ -1578,7 +1579,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[1.0]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.82]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -2466,9 +2467,12 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
   const accuracyRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
 
   const xp = progress.xp || 0;
-  const level = progress.level || 1;
-  const xpInCurrentLevel = xp % 100;
-  const progressPercent = (xpInCurrentLevel / 100) * 100;
+  const level = getLevelForXp(xp);
+  const currentLevelThreshold = getXpThresholdForLevel(level);
+  const nextLevelThreshold = getXpThresholdForLevel(level + 1);
+  const xpNeededForNext = nextLevelThreshold - currentLevelThreshold;
+  const xpInCurrentLevel = xp - currentLevelThreshold;
+  const progressPercent = Math.min(100, Math.max(0, (xpInCurrentLevel / xpNeededForNext) * 100));
 
   const userInitial = currentUser?.displayName 
     ? currentUser.displayName.charAt(0).toUpperCase() 
@@ -2546,7 +2550,7 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
                 <span className="text-white font-bold text-lg">Level {level}</span>
               </div>
               <div className="text-right">
-                <span className="text-white/40 text-xs">{xpInCurrentLevel} / 100 XP</span>
+                <span className="text-white/40 text-xs">{xpInCurrentLevel} / {xpNeededForNext} XP</span>
               </div>
             </div>
             <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">

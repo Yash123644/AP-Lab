@@ -59,6 +59,46 @@ export function playSuccessSound() {
   osc2.stop(now + 0.25);
 }
 
+export function playLevelUpSound() {
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  if (ctx.state === "suspended") {
+    ctx.resume();
+  }
+
+  const now = ctx.currentTime;
+  const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 arpeggio
+  
+  notes.forEach((freq, index) => {
+    const time = now + index * 0.12;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(freq, time);
+    
+    // Pitch modulation (vibrato) for a richer sound
+    const vibrato = ctx.createOscillator();
+    const vibratoGain = ctx.createGain();
+    vibrato.frequency.value = 8; 
+    vibratoGain.gain.value = 4;
+    vibrato.connect(vibratoGain);
+    vibratoGain.connect(osc.frequency);
+    vibrato.start(time);
+    vibrato.stop(time + 0.5);
+    
+    gain.gain.setValueAtTime(0.1, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.5);
+    
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    
+    osc.start(time);
+    osc.stop(time + 0.5);
+  });
+}
+
 export function playFailureSound() {
   const ctx = getAudioContext();
   if (!ctx) return;
