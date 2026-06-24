@@ -8,14 +8,26 @@ const privateKey = process.env.FIREBASE_PRIVATE_KEY || "-----BEGIN PRIVATE KEY--
 
 let app: App;
 
+// Clean the private key string to handle potential formatting/quoting issues from hosting dashboards like Vercel
+let cleanedPrivateKey = privateKey;
+if (cleanedPrivateKey) {
+  if (cleanedPrivateKey.startsWith('"') && cleanedPrivateKey.endsWith('"')) {
+    cleanedPrivateKey = cleanedPrivateKey.substring(1, cleanedPrivateKey.length - 1);
+  }
+  if (cleanedPrivateKey.startsWith("'") && cleanedPrivateKey.endsWith("'")) {
+    cleanedPrivateKey = cleanedPrivateKey.substring(1, cleanedPrivateKey.length - 1);
+  }
+  cleanedPrivateKey = cleanedPrivateKey.replace(/\\n/g, "\n");
+}
+
 const existingApps = getApps();
 if (existingApps.length === 0) {
-  if (privateKey && clientEmail && projectId && !privateKey.includes("YOUR_PRIVATE_KEY_HERE")) {
+  if (cleanedPrivateKey && clientEmail && projectId && !cleanedPrivateKey.includes("YOUR_PRIVATE_KEY_HERE")) {
     app = initializeApp({
       credential: cert({
         projectId,
         clientEmail,
-        privateKey: privateKey.replace(/\\n/g, "\n"),
+        privateKey: cleanedPrivateKey,
       }),
     });
     console.log("Firebase Admin initialized with service account certificate.");

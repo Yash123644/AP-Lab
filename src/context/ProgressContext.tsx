@@ -99,7 +99,17 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
   useEffect(() => {
     if (!currentUser) {
-      setProgress(defaultProgress);
+      const guestKey = "ap-lab-progress-guest";
+      try {
+        const saved = localStorage.getItem(guestKey);
+        if (saved) {
+          setProgress(JSON.parse(saved));
+        } else {
+          setProgress(defaultProgress);
+        }
+      } catch (e) {
+        setProgress(defaultProgress);
+      }
       setLoading(false);
       return;
     }
@@ -240,10 +250,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   }, [currentUser]);
 
   const completeTopic = async (topicId: string, score: number) => {
-    if (!currentUser) return;
-
-    const localKey = `ap-lab-progress-${currentUser.uid}`;
-    const docRef = doc(db, "userProgress", currentUser.uid);
+    const localKey = currentUser ? `ap-lab-progress-${currentUser.uid}` : "ap-lab-progress-guest";
+    const docRef = currentUser ? doc(db, "userProgress", currentUser.uid) : null;
     
     try {
       const currentScore = progress.masteryScores[topicId] || 0;
@@ -283,16 +291,18 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       }
 
       // 2. Sync to Firestore in the background
-      await setDoc(docRef, {
-        completedTopics: arrayUnion(topicId),
-        masteryScores: {
-          ...progress.masteryScores,
-          [topicId]: newScore
-        },
-        xp: newXp,
-        level: newLevel,
-        lastAccessed: serverTimestamp()
-      }, { merge: true });
+      if (docRef) {
+        await setDoc(docRef, {
+          completedTopics: arrayUnion(topicId),
+          masteryScores: {
+            ...progress.masteryScores,
+            [topicId]: newScore
+          },
+          xp: newXp,
+          level: newLevel,
+          lastAccessed: serverTimestamp()
+        }, { merge: true });
+      }
 
     } catch (error) {
       console.error("Error updating progress in Firestore:", error);
@@ -300,10 +310,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   const recordQuestionAttempt = async (isCorrect: boolean, masteryKey?: string) => {
-    if (!currentUser) return;
-
-    const localKey = `ap-lab-progress-${currentUser.uid}`;
-    const docRef = doc(db, "userProgress", currentUser.uid);
+    const localKey = currentUser ? `ap-lab-progress-${currentUser.uid}` : "ap-lab-progress-guest";
+    const docRef = currentUser ? doc(db, "userProgress", currentUser.uid) : null;
 
     try {
       const isCompleted = masteryKey ? progress.completedTopics.includes(masteryKey) : false;
@@ -339,15 +347,17 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       }
 
       // 2. Sync to Firestore in the background
-      setDoc(docRef, {
-        totalQuestionsAnswered: updatedAnswered,
-        totalQuestionsCorrect: updatedCorrect,
-        xp: newXp,
-        level: newLevel,
-        lastAccessed: serverTimestamp()
-      }, { merge: true }).catch((err) => {
-        console.error("Error syncing question attempt to Firestore:", err);
-      });
+      if (docRef) {
+        setDoc(docRef, {
+          totalQuestionsAnswered: updatedAnswered,
+          totalQuestionsCorrect: updatedCorrect,
+          xp: newXp,
+          level: newLevel,
+          lastAccessed: serverTimestamp()
+        }, { merge: true }).catch((err) => {
+          console.error("Error syncing question attempt to Firestore:", err);
+        });
+      }
 
     } catch (error) {
       console.error("Error setting up question attempt update:", error);
@@ -355,10 +365,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   const recordTutorMessage = async () => {
-    if (!currentUser) return;
-
-    const localKey = `ap-lab-progress-${currentUser.uid}`;
-    const docRef = doc(db, "userProgress", currentUser.uid);
+    const localKey = currentUser ? `ap-lab-progress-${currentUser.uid}` : "ap-lab-progress-guest";
+    const docRef = currentUser ? doc(db, "userProgress", currentUser.uid) : null;
     const todayStr = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD
 
     try {
@@ -381,13 +389,15 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         }
 
         // 2. Sync to Firestore in the background
-        setDoc(docRef, {
-          dailyTutorMessagesCount: newCount,
-          dailyTutorMessagesDate: todayStr,
-          lastAccessed: serverTimestamp()
-        }, { merge: true }).catch((err) => {
-          console.error("Error syncing message count to Firestore:", err);
-        });
+        if (docRef) {
+          setDoc(docRef, {
+            dailyTutorMessagesCount: newCount,
+            dailyTutorMessagesDate: todayStr,
+            lastAccessed: serverTimestamp()
+          }, { merge: true }).catch((err) => {
+            console.error("Error syncing message count to Firestore:", err);
+          });
+        }
 
         return updatedProgress;
       });
