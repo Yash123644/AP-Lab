@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://theaplab.org/images/abstract-showcase.png",
-        width: 1200,
-        height: 630,
-        alt: "AP Lab - Bridging AP Coursework and Clinical Medicine",
+        width: 1024,
+        height: 409,
+        alt: "AP Lab - Website Logo Preview",
       }
     ],
     locale: "en_US",
