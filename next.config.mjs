@@ -3,6 +3,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    serverComponentsExternalPackages: ['firebase-admin', 'jwks-rsa', 'jose'],
   },
   webpack: (config, { dev }) => {
     if (dev) {

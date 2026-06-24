@@ -325,7 +325,7 @@ function RadarBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -520,7 +520,7 @@ function ForestBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -619,7 +619,7 @@ function PhysicsBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -742,7 +742,7 @@ function HistoryBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -848,7 +848,7 @@ function EconomicsBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -978,7 +978,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           size: 2 + rng() * 3,
           speedY: 0.15 + rng() * 0.35,
           speedX: -0.15 + rng() * 0.3,
-          color: rng() > 0.5 ? "rgba(34, 197, 94, 0.25)" : "rgba(16, 185, 129, 0.15)",
+          color: rng() > 0.5 ? "rgba(34, 197, 94, 0.55)" : "rgba(16, 185, 129, 0.45)",
           wiggleSpeed: 0.02 + rng() * 0.03,
           seed: rng() * 100,
           text: rng() > 0.7 ? labels[Math.floor(rng() * labels.length)] : null
@@ -997,7 +997,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           size: 14 + rng() * 6,
           speedX: -0.15 + rng() * 0.3,
           speedY: -0.1 + rng() * 0.2,
-          color: rng() > 0.5 ? "rgba(0, 242, 255, 0.3)" : "rgba(59, 130, 246, 0.25)"
+          color: rng() > 0.5 ? "rgba(0, 242, 255, 0.65)" : "rgba(59, 130, 246, 0.55)"
         });
       }
 
@@ -1011,7 +1011,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           text: isFormula ? formulas[Math.floor(rng() * formulas.length)] : elements[Math.floor(rng() * elements.length)],
           speedX: -0.2 + rng() * 0.4,
           speedY: -0.2 + rng() * 0.4,
-          color: "rgba(0, 242, 255, 0.3)"
+          color: "rgba(0, 242, 255, 0.6)"
         });
       }
 
@@ -1024,7 +1024,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           size: 1.5 + rng() * 2,
           speedY: -0.3 - rng() * 0.5,
           speedX: -0.1 + rng() * 0.2,
-          color: "rgba(0, 242, 255, 0.4)"
+          color: "rgba(0, 242, 255, 0.8)"
         });
       }
     } else if (slug === "ap-physics-c") {
@@ -1040,7 +1040,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           cx: rng() * canvas.width,
           cy: rng() * canvas.height,
           size: 2 + rng() * 2,
-          color: "rgba(129, 140, 248, 0.3)",
+          color: "rgba(129, 140, 248, 0.65)",
           vx: -0.2 + rng() * 0.4,
           vy: -0.2 + rng() * 0.4
         });
@@ -1054,7 +1054,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           text: rng() > 0.4 ? dates[Math.floor(rng() * dates.length)] : null,
           size: 1.5 + rng() * 2,
           speedX: -0.1 - rng() * 0.2,
-          color: rng() > 0.5 ? "rgba(251, 191, 36, 0.2)" : "rgba(245, 158, 11, 0.12)"
+          color: rng() > 0.5 ? "rgba(251, 191, 36, 0.5)" : "rgba(245, 158, 11, 0.4)"
         });
       }
     } else if (slug === "ap-psych") {
@@ -1068,7 +1068,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           speed: 0.005 + rng() * 0.01,
           size: 2 + rng() * 2,
           text: rng() > 0.6 ? brainTerms[Math.floor(rng() * brainTerms.length)] : null,
-          color: "rgba(168, 85, 247, 0.25)",
+          color: "rgba(168, 85, 247, 0.6)",
           pulseOffset: Math.floor(rng() * 120)
         });
       }
@@ -1083,7 +1083,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           char: isWord ? words[Math.floor(rng() * words.length)] : chars[Math.floor(rng() * chars.length)],
           isWord: isWord,
           speedY: 0.2 + rng() * 0.35,
-          color: rng() > 0.5 ? "rgba(251, 113, 133, 0.22)" : "rgba(244, 63, 94, 0.15)"
+          color: rng() > 0.5 ? "rgba(251, 113, 133, 0.55)" : "rgba(244, 63, 94, 0.45)"
         });
       }
     } else if (slug === "ap-calc-bc") {
@@ -1095,7 +1095,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           symbol: mathSymbols[Math.floor(rng() * mathSymbols.length)],
           speedY: -0.15 - rng() * 0.25,
           speedX: -0.1 + rng() * 0.2,
-          color: rng() > 0.5 ? "rgba(52, 211, 153, 0.25)" : "rgba(16, 185, 129, 0.18)"
+          color: rng() > 0.5 ? "rgba(52, 211, 153, 0.6)" : "rgba(16, 185, 129, 0.45)"
         });
       }
     } else if (slug === "ap-stats") {
@@ -1108,7 +1108,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           size: 2.5,
           speedX: -0.1 + rng() * 0.2,
           speedY: -0.05 + rng() * 0.1,
-          color: rng() > 0.4 ? "rgba(56, 189, 248, 0.28)" : "rgba(14, 165, 233, 0.18)"
+          color: rng() > 0.4 ? "rgba(56, 189, 248, 0.6)" : "rgba(14, 165, 233, 0.45)"
         });
       }
     } else if (slug === "ap-csa") {
@@ -1121,7 +1121,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           val: isWord ? codeKeywords[Math.floor(rng() * codeKeywords.length)] : (rng() > 0.5 ? "0" : "1"),
           isWord: isWord,
           speedY: 0.4 + rng() * 0.6,
-          color: rng() > 0.5 ? "rgba(167, 139, 250, 0.25)" : "rgba(139, 92, 246, 0.18)"
+          color: rng() > 0.5 ? "rgba(167, 139, 250, 0.6)" : "rgba(139, 92, 246, 0.45)"
         });
       }
     } else {
@@ -1141,7 +1141,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
       ctx.fillStyle = "#06060c";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.015)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
       ctx.lineWidth = 1;
       const gridSize = 16;
       for (let x = 0; x < canvas.width; x += gridSize) {
@@ -1161,7 +1161,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
       if (slug === "ap-biology") {
         // DNA horizontal double-helix waves
-        ctx.strokeStyle = "rgba(34, 197, 94, 0.06)";
+        ctx.strokeStyle = "rgba(34, 197, 94, 0.22)";
         ctx.lineWidth = 2;
         const amplitude = 22;
         const wavelength = 120;
@@ -1174,7 +1174,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
         ctx.stroke();
 
-        ctx.strokeStyle = "rgba(16, 185, 129, 0.06)";
+        ctx.strokeStyle = "rgba(16, 185, 129, 0.22)";
         ctx.beginPath();
         for (let x = 0; x < canvas.width; x += 4) {
           const y2 = canvas.height / 2 - Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
@@ -1184,7 +1184,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         ctx.stroke();
 
         // Connectors
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.02)";
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
         ctx.lineWidth = 1;
         for (let x = 20; x < canvas.width; x += 24) {
           const y1 = canvas.height / 2 + Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
@@ -1205,7 +1205,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           }
           if (p.text) {
             ctx.save();
-            ctx.fillStyle = "rgba(34, 197, 94, 0.32)";
+            ctx.fillStyle = "rgba(34, 197, 94, 0.65)";
             ctx.font = "bold 8px Courier New";
             ctx.fillText(p.text, Math.round(p.x), Math.round(p.y));
             ctx.restore();
@@ -1234,7 +1234,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
           if (p.type === "beaker") {
             ctx.save();
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.22)";
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
             ctx.lineWidth = 1;
             
             // Draw beaker/flask body outline
@@ -1261,13 +1261,13 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
             ctx.restore();
           } else if (p.type === "element") {
             ctx.save();
-            ctx.strokeStyle = "rgba(0, 242, 255, 0.12)";
+            ctx.strokeStyle = "rgba(0, 242, 255, 0.35)";
             ctx.lineWidth = 1;
             ctx.strokeRect(p.x - 8, p.y - 8, 16, 16);
-            ctx.fillStyle = "rgba(0, 242, 255, 0.03)";
+            ctx.fillStyle = "rgba(0, 242, 255, 0.15)";
             ctx.fillRect(p.x - 8, p.y - 8, 16, 16);
 
-            ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
+            ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
             ctx.font = "bold 8px Courier New";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -1275,7 +1275,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
             ctx.restore();
           } else if (p.type === "formula") {
             ctx.save();
-            ctx.fillStyle = "rgba(0, 242, 255, 0.28)";
+            ctx.fillStyle = "rgba(0, 242, 255, 0.65)";
             ctx.font = "bold 8px Courier New";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -1289,7 +1289,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
       } else if (slug === "ap-physics-c") {
         // Space-time warp grid lines
-        ctx.strokeStyle = "rgba(129, 140, 248, 0.05)";
+        ctx.strokeStyle = "rgba(129, 140, 248, 0.2)";
         ctx.lineWidth = 1;
         const spacing = 20;
         for (let gx = 0; gx < canvas.width; gx += spacing) {
@@ -1314,7 +1314,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
           // Vector arrows
           ctx.save();
-          ctx.strokeStyle = "rgba(129, 140, 248, 0.2)";
+          ctx.strokeStyle = "rgba(129, 140, 248, 0.5)";
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
@@ -1325,7 +1325,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           ctx.fillRect(Math.round(p.x) - 1, Math.round(p.y) - 1, p.size, p.size);
 
           if (p.text) {
-            ctx.fillStyle = "rgba(129, 140, 248, 0.35)";
+            ctx.fillStyle = "rgba(129, 140, 248, 0.7)";
             ctx.font = "bold 8px Courier New";
             ctx.fillText(p.text, p.x + 4, p.y + 3);
           }
@@ -1333,14 +1333,14 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
 
       } else if (slug === "ap-ush") {
-        ctx.fillStyle = "rgba(239, 68, 68, 0.02)"; // Red
+        ctx.fillStyle = "rgba(239, 68, 68, 0.08)"; // Red
         ctx.fillRect(0, 15, canvas.width, 25);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.01)"; // White
+        ctx.fillStyle = "rgba(255, 255, 255, 0.05)"; // White
         ctx.fillRect(0, 40, canvas.width, 25);
-        ctx.fillStyle = "rgba(59, 130, 246, 0.02)"; // Blue
+        ctx.fillStyle = "rgba(59, 130, 246, 0.08)"; // Blue
         ctx.fillRect(0, 65, canvas.width, 25);
 
-        ctx.strokeStyle = "rgba(251, 191, 36, 0.06)";
+        ctx.strokeStyle = "rgba(251, 191, 36, 0.22)";
         ctx.lineWidth = 2;
         ctx.beginPath();
         for (let x = 0; x < canvas.width; x += 12) {
@@ -1358,7 +1358,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           }
           if (p.text) {
             ctx.save();
-            ctx.fillStyle = "rgba(251, 191, 36, 0.3)";
+            ctx.fillStyle = "rgba(251, 191, 36, 0.65)";
             ctx.font = "bold 8px Courier New";
             ctx.fillText(p.text, p.x, p.y);
             ctx.restore();
@@ -1370,7 +1370,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
       } else if (slug === "ap-psych") {
         // Synaptic network
-        ctx.strokeStyle = "rgba(168, 85, 247, 0.06)";
+        ctx.strokeStyle = "rgba(168, 85, 247, 0.22)";
         ctx.lineWidth = 1.5;
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
@@ -1387,7 +1387,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
 
         // EEG brainwaves
-        ctx.strokeStyle = "rgba(168, 85, 247, 0.04)";
+        ctx.strokeStyle = "rgba(168, 85, 247, 0.2)";
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         for (let x = 0; x < canvas.width; x += 6) {
@@ -1416,7 +1416,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
           if (p.text) {
             ctx.save();
-            ctx.fillStyle = "rgba(168, 85, 247, 0.35)";
+            ctx.fillStyle = "rgba(168, 85, 247, 0.7)";
             ctx.font = "bold 8px Courier New";
             ctx.fillText(p.text, p.x + 6, p.y + 3);
             ctx.restore();
@@ -1434,7 +1434,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           ctx.fillStyle = p.color;
           if (p.isWord) {
             ctx.save();
-            ctx.fillStyle = "rgba(251, 113, 133, 0.32)";
+            ctx.fillStyle = "rgba(251, 113, 133, 0.7)";
             ctx.fillText(p.char, Math.round(p.x), Math.round(p.y));
             ctx.restore();
           } else {
@@ -1456,8 +1456,8 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
 
         // Riemann blocks
-        ctx.fillStyle = "rgba(52, 211, 153, 0.04)";
-        ctx.strokeStyle = "rgba(52, 211, 153, 0.12)";
+        ctx.fillStyle = "rgba(52, 211, 153, 0.15)";
+        ctx.strokeStyle = "rgba(52, 211, 153, 0.35)";
         ctx.lineWidth = 1;
 
         const rectWidth = 14;
@@ -1470,7 +1470,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           ctx.strokeRect(x, y, rectWidth, rectHeight);
         }
 
-        ctx.strokeStyle = "rgba(52, 211, 153, 0.25)";
+        ctx.strokeStyle = "rgba(52, 211, 153, 0.6)";
         ctx.lineWidth = 2;
         ctx.beginPath();
         for (let x = 0; x < canvas.width; x += 5) {
@@ -1481,7 +1481,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         ctx.stroke();
 
       } else if (slug === "ap-stats") {
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.15)";
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
         ctx.lineWidth = 2;
         ctx.beginPath();
         for (let x = 0; x < canvas.width; x += 4) {
@@ -1492,7 +1492,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
         ctx.stroke();
 
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.08)";
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
         ctx.beginPath();
         const startY = 120 + Math.sin(frame * 0.01) * 12;
         const endY = 40 + Math.cos(frame * 0.01) * 12;
@@ -1508,7 +1508,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
 
           if (p.text) {
             ctx.save();
-            ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
+            ctx.fillStyle = "rgba(56, 189, 248, 0.7)";
             ctx.font = "bold 9px Courier New";
             ctx.fillText(p.text, p.x, p.y);
             ctx.restore();
@@ -1532,7 +1532,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           ctx.fillStyle = p.color;
           if (p.isWord) {
             ctx.save();
-            ctx.fillStyle = "rgba(167, 139, 250, 0.32)";
+            ctx.fillStyle = "rgba(167, 139, 250, 0.7)";
             ctx.fillText(p.val, Math.round(p.x), Math.round(p.y));
             ctx.restore();
           } else {
@@ -1547,11 +1547,11 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
             p.targetX = Math.random() * canvas.width;
             p.targetY = Math.random() * canvas.height;
           }
-          ctx.fillStyle = accentColor + "33";
+          ctx.fillStyle = accentColor + "77";
           ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
         });
 
-        ctx.strokeStyle = accentColor + "10";
+        ctx.strokeStyle = accentColor + "33";
         ctx.lineWidth = 0.5;
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
@@ -1578,7 +1578,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.92]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[1.0]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -1859,8 +1859,8 @@ export default function APDynamicCoursePage() {
                 {/* Pixel Background Banner */}
                 <div className="absolute inset-0 -z-10">
                   <UnitBannerBackground slug={course.slug} unitId={activeUnit} accentColor={course.accentColor} />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/45" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-black/25" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
                 </div>
                 
                 {/* Left: Breadcrumbs + Title + Description */}
