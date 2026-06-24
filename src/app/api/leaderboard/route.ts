@@ -6,11 +6,21 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   try {
     const adminDb = getAdminDb();
-    let snapshot = await adminDb
+
+    // Create a database fetch promise
+    const fetchPromise = adminDb
       .collection("userProgress")
       .orderBy("xp", "desc")
       .limit(10)
       .get();
+
+    // Create a 4-second timeout promise to prevent Lambda function hangs on Vercel
+    const timeoutPromise = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("Database connection timeout")), 4000)
+    );
+
+    // Race the fetch call against the timeout
+    let snapshot = (await Promise.race([fetchPromise, timeoutPromise])) as any;
 
     // If the database is empty, seed it with initial mock student profiles
     if (snapshot.empty) {
@@ -73,18 +83,22 @@ export async function GET() {
           lastAccessed: new Date()
         });
       });
-      await batch.commit();
+      
+      // Also race batch commit with a 4-second timeout
+      const commitPromise = batch.commit();
+      await Promise.race([commitPromise, timeoutPromise]);
       console.log("Mock student data committed successfully!");
 
-      // Re-fetch the newly seeded documents
-      snapshot = await adminDb
+      // Re-fetch the newly seeded documents with timeout race
+      const refetchPromise = adminDb
         .collection("userProgress")
         .orderBy("xp", "desc")
         .limit(10)
         .get();
+      snapshot = await Promise.race([refetchPromise, timeoutPromise]);
     }
 
-    const leaderList = snapshot.docs.map((doc) => {
+    const leaderList = snapshot.docs.map((doc: any) => {
       const data = doc.data();
       return {
         uid: doc.id,
@@ -98,6 +112,13 @@ export async function GET() {
     return NextResponse.json(leaderList);
   } catch (error: any) {
     console.error("Leaderboard API error:", error);
-    return NextResponse.json({ error: error.message || "Failed to fetch leaderboard" }, { status: 500 });
+    return NextResponse.json({ 
+      error: error.message || "Failed to fetch leaderboard",
+      stack: error.stack,
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || process.env.FIREBASE_PROJECT_ID || "not set",
+      hasPrivateKey: !!process.env.FIREBASE_PRIVATE_KEY,
+      privateKeyLength: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.length : 0,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL || "not set"
+    }, { status: 500 });
   }
 }

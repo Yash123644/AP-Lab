@@ -325,7 +325,7 @@ function RadarBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -520,7 +520,7 @@ function ForestBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -619,7 +619,7 @@ function PhysicsBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -742,7 +742,7 @@ function HistoryBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -848,7 +848,7 @@ function EconomicsBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.24]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.45]"
       style={{ imageRendering: "pixelated" }}
     />
   );
@@ -1578,7 +1578,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.72]"
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.92]"
       style={{ imageRendering: "pixelated" }}
     />
   );
