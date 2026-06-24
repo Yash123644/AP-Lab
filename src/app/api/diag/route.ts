@@ -1,10 +1,20 @@
 import { NextResponse } from "next/server";
+import { getAdminDb } from "@/lib/firebaseAdmin";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  let adminDbStatus = "not called";
+  try {
+    const db = getAdminDb();
+    adminDbStatus = "success";
+  } catch (dbError: any) {
+    adminDbStatus = `error: ${dbError.message}`;
+  }
+
   const diagInfo: any = {
     timestamp: new Date().toISOString(),
+    adminDbStatus,
     env: {
       FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || "not set",
       NEXT_PUBLIC_FIREBASE_PROJECT_ID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "not set",
