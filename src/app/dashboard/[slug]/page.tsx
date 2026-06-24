@@ -929,1014 +929,6 @@ function UpcomingCourseFallback({ slug }: { slug: string }) {
   );
 }
 
-function drawPixelDiagram(ctx: CanvasRenderingContext2D, cx: number, cy: number, slug: string, unitId: number, frame: number, accentColor: string) {
-  ctx.save();
-  ctx.fillStyle = accentColor;
-  ctx.strokeStyle = accentColor;
-  ctx.lineWidth = 2;
-
-  if (slug === "ap-biology") {
-    switch (unitId) {
-      case 1: // Chemistry of Life
-        // Water molecule with hydrogen bonds
-        ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
-        ctx.beginPath();
-        ctx.arc(cx, cy - 6, 10, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx - 12, cy + 8, 6, 0, Math.PI * 2);
-        ctx.arc(cx + 12, cy + 8, 6, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.setLineDash([2, 2]);
-        ctx.beginPath();
-        ctx.moveTo(cx - 3, cy - 2);
-        ctx.lineTo(cx - 10, cy + 5);
-        ctx.moveTo(cx + 3, cy - 2);
-        ctx.lineTo(cx + 10, cy + 5);
-        ctx.stroke();
-        break;
-      case 2: // Cell Structure and Function
-        // Phospholipid bilayer with a channel protein
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
-        ctx.strokeRect(cx - 24, cy - 24, 48, 48);
-        
-        ctx.fillStyle = accentColor;
-        // Channel protein in center
-        ctx.fillRect(cx - 6, cy - 20, 12, 40);
-        ctx.fillStyle = "rgba(255,255,255,0.6)";
-        ctx.fillRect(cx - 2, cy - 20, 4, 40);
-        
-        // Phospholipid heads (circles)
-        ctx.fillStyle = accentColor;
-        for (let x = -20; x <= 20; x += 8) {
-          if (Math.abs(x) > 6) {
-            ctx.beginPath();
-            ctx.arc(cx + x, cy - 14, 3, 0, Math.PI * 2);
-            ctx.arc(cx + x, cy + 14, 3, 0, Math.PI * 2);
-            ctx.fill();
-            // Tails
-            ctx.fillRect(cx + x - 0.5, cy - 11, 1, 8);
-            ctx.fillRect(cx + x - 0.5, cy + 3, 1, 8);
-          }
-        }
-        break;
-      case 3: // Cellular Energetics
-        // Mitochondrion showing folded inner membrane (cristae)
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.ellipse(cx, cy, 26, 16, Math.PI / 6, 0, Math.PI * 2);
-        ctx.stroke();
-        
-        ctx.strokeStyle = "rgba(255,255,255,0.5)";
-        ctx.beginPath();
-        // Folded inner membrane path
-        ctx.moveTo(cx - 18, cy - 5);
-        ctx.lineTo(cx - 10, cy + 5);
-        ctx.lineTo(cx - 5, cy - 8);
-        ctx.lineTo(cx + 2, cy + 8);
-        ctx.lineTo(cx + 8, cy - 6);
-        ctx.lineTo(cx + 18, cy + 5);
-        ctx.stroke();
-        
-        // Energy star pulses
-        const pulse = 2 + Math.abs(Math.sin(frame * 0.05)) * 4;
-        ctx.fillStyle = "rgba(251, 191, 36, 0.8)";
-        ctx.fillRect(cx - 20, cy + 10, pulse, pulse);
-        ctx.fillRect(cx + 15, cy - 14, pulse, pulse);
-        break;
-      case 5: // Heredity
-        // Punnett Square
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
-        ctx.strokeRect(cx - 18, cy - 18, 36, 36);
-        ctx.beginPath();
-        ctx.moveTo(cx, cy - 18);
-        ctx.lineTo(cx, cy + 18);
-        ctx.moveTo(cx - 18, cy);
-        ctx.lineTo(cx + 18, cy);
-        ctx.stroke();
-        
-        ctx.fillStyle = accentColor;
-        ctx.font = "bold 10px Courier New";
-        ctx.fillText("B", cx - 12, cy - 4);
-        ctx.fillText("b", cx + 6, cy - 4);
-        ctx.fillText("B", cx - 12, cy + 12);
-        ctx.fillText("b", cx + 6, cy + 12);
-        
-        // Animate a scanning selection grid
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1;
-        const gridSel = (Math.floor(frame / 20) % 4);
-        const gx = gridSel % 2 === 0 ? -18 : 0;
-        const gy = gridSel >= 2 ? 0 : -18;
-        ctx.strokeRect(cx + gx, cy + gy, 18, 18);
-        break;
-      case 7: // Natural Selection
-        // DNA spiral selection fork
-        ctx.strokeStyle = "rgba(255,255,255,0.15)";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        for (let x = -20; x <= 20; x += 2) {
-          const y1 = Math.sin(x * 0.15 + frame * 0.05) * 10;
-          const y2 = -Math.sin(x * 0.15 + frame * 0.05) * 10;
-          ctx.fillRect(cx + x, cy + y1, 1.5, 1.5);
-          ctx.fillRect(cx + x, cy + y2, 1.5, 1.5);
-          if (x % 6 === 0) {
-            ctx.moveTo(cx + x, cy + y1);
-            ctx.lineTo(cx + x, cy + y2);
-          }
-        }
-        ctx.stroke();
-        break;
-      default:
-        // Generic double helix loop
-        ctx.strokeStyle = accentColor;
-        ctx.beginPath();
-        for (let x = -16; x <= 16; x += 1) {
-          const y = Math.sin(x * 0.15 + frame * 0.05) * 10;
-          ctx.fillRect(cx + x - 1, cy + y - 1, 2, 2);
-        }
-    }
-  } else if (slug === "ap-chemistry") {
-    switch (unitId) {
-      case 1: // Atomic Structure and Properties
-        // Bohr atom model with orbiting electrons
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
-        ctx.beginPath();
-        ctx.arc(cx, cy, 12, 0, Math.PI * 2);
-        ctx.arc(cx, cy, 22, 0, Math.PI * 2);
-        ctx.stroke();
-        
-        // Nucleus
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx, cy, 5, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Orbiting electrons
-        const angle = frame * 0.04;
-        ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-        ctx.fillRect(cx + Math.cos(angle) * 12 - 1.5, cy + Math.sin(angle) * 12 - 1.5, 3, 3);
-        ctx.fillRect(cx + Math.cos(-angle * 0.7) * 22 - 1.5, cy + Math.sin(-angle * 0.7) * 22 - 1.5, 3, 3);
-        break;
-      case 2: // Molecular and Ionic Compound Structure and Properties
-        // Ionic lattice grid (3D cube look)
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.lineWidth = 1;
-        
-        const drawNode = (x: number, y: number, size: number, isAlt: boolean) => {
-          ctx.beginPath();
-          ctx.arc(x, y, size, 0, Math.PI * 2);
-          ctx.fillStyle = isAlt ? accentColor : "#ffffff";
-          ctx.fill();
-        };
-        
-        // Front face lines
-        ctx.strokeRect(cx - 12, cy - 12, 24, 24);
-        // Depth lines
-        ctx.beginPath();
-        ctx.moveTo(cx - 12, cy - 12); ctx.lineTo(cx - 4, cy - 20);
-        ctx.moveTo(cx + 12, cy - 12); ctx.lineTo(cx + 20, cy - 20);
-        ctx.moveTo(cx - 12, cy + 12); ctx.lineTo(cx - 4, cy + 4);
-        ctx.moveTo(cx + 12, cy + 12); ctx.lineTo(cx + 20, cy + 4);
-        ctx.stroke();
-        
-        // Nodes
-        drawNode(cx - 12, cy - 12, 4, true);
-        drawNode(cx + 12, cy - 12, 3, false);
-        drawNode(cx - 12, cy + 12, 3, false);
-        drawNode(cx + 12, cy + 12, 4, true);
-        drawNode(cx - 4, cy - 20, 3, false);
-        drawNode(cx + 20, cy - 20, 4, true);
-        drawNode(cx - 4, cy + 4, 4, true);
-        drawNode(cx + 20, cy + 4, 3, false);
-        break;
-      case 3: // Intermolecular Forces and Properties
-        // Two separate dipole molecules with dotted IMF force lines
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx - 14, cy - 6, 6, 0, Math.PI * 2);
-        ctx.arc(cx + 14, cy + 6, 6, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
-        ctx.beginPath();
-        ctx.arc(cx - 8, cy + 6, 4, 0, Math.PI * 2);
-        ctx.arc(cx + 8, cy - 6, 4, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // IMF lines
-        ctx.strokeStyle = "rgba(255,255,255,0.3)";
-        ctx.setLineDash([2, 3]);
-        ctx.beginPath();
-        ctx.moveTo(cx - 8, cy + 6);
-        ctx.lineTo(cx + 8, cy - 6);
-        ctx.stroke();
-        ctx.setLineDash([]);
-        break;
-      case 4: // Chemical Reactions
-        // Lab flask with boiling/bubbling solution
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.4)";
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(cx - 4, cy - 18);
-        ctx.lineTo(cx + 4, cy - 18);
-        ctx.moveTo(cx - 3, cy - 18);
-        ctx.lineTo(cx - 3, cy - 8);
-        ctx.lineTo(cx - 16, cy + 14);
-        ctx.lineTo(cx + 16, cy + 14);
-        ctx.lineTo(cx + 3, cy - 8);
-        ctx.lineTo(cx + 3, cy - 18);
-        ctx.stroke();
-        
-        // Liquid
-        ctx.fillStyle = `${accentColor}4D`;
-        ctx.beginPath();
-        ctx.moveTo(cx - 10, cy + 4);
-        ctx.lineTo(cx + 10, cy + 4);
-        ctx.lineTo(cx + 14, cy + 12);
-        ctx.lineTo(cx - 14, cy + 12);
-        ctx.closePath();
-        ctx.fill();
-        
-        // Bubbles
-        ctx.fillStyle = "#ffffff";
-        const bubbleY1 = cy + 10 - ((frame * 0.4) % 18);
-        const bubbleY2 = cy + 12 - (((frame + 15) * 0.4) % 18);
-        if (bubbleY1 > cy - 8) ctx.fillRect(cx - 3, bubbleY1, 2, 2);
-        if (bubbleY2 > cy - 8) ctx.fillRect(cx + 2, bubbleY2, 1.5, 1.5);
-        break;
-      case 5: // Kinetics
-        // Reaction rate activation energy curve
-        ctx.strokeStyle = "rgba(255,255,255,0.15)";
-        ctx.beginPath();
-        ctx.moveTo(cx - 22, cy + 16); ctx.lineTo(cx + 22, cy + 16);
-        ctx.moveTo(cx - 22, cy - 16); ctx.lineTo(cx - 22, cy + 16);
-        ctx.stroke();
-        
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(cx - 22, cy + 6);
-        ctx.quadraticCurveTo(cx - 6, cy - 25, cx, cy - 25);
-        ctx.quadraticCurveTo(cx + 6, cy - 25, cx + 22, cy + 14);
-        ctx.stroke();
-        
-        // Pulse marker running along curve
-        const progressX = ((frame * 0.4) % 44) - 22;
-        let progressY = cy + 6;
-        if (progressX < 0) {
-          const t = (progressX + 22) / 22;
-          progressY = cy + 6 - (t * 31); // Peak at 25px above cy
-        } else {
-          const t = progressX / 22;
-          progressY = cy - 25 + (t * 39);
-        }
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(cx + progressX, progressY, 3, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      case 6: // Thermodynamics
-        // Flame heating a beaker
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
-        ctx.strokeRect(cx - 14, cy - 16, 28, 20);
-        // Liquid
-        ctx.fillStyle = `${accentColor}33`;
-        ctx.fillRect(cx - 13, cy - 6, 26, 9);
-        
-        // Flame underneath
-        const flameHeight = 6 + Math.abs(Math.sin(frame * 0.1)) * 6;
-        ctx.fillStyle = "#ef4444";
-        ctx.beginPath();
-        ctx.moveTo(cx - 8, cy + 18);
-        ctx.quadraticCurveTo(cx, cy + 18 - flameHeight, cx, cy + 6);
-        ctx.quadraticCurveTo(cx, cy + 18 - flameHeight, cx + 8, cy + 18);
-        ctx.closePath();
-        ctx.fill();
-        ctx.fillStyle = "#f59e0b";
-        ctx.beginPath();
-        ctx.moveTo(cx - 4, cy + 18);
-        ctx.quadraticCurveTo(cx, cy + 18 - (flameHeight * 0.6), cx, cy + 10);
-        ctx.quadraticCurveTo(cx, cy + 18 - (flameHeight * 0.6), cx + 4, cy + 18);
-        ctx.closePath();
-        ctx.fill();
-        break;
-      case 7: // Equilibrium
-        // Balance scale
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.beginPath();
-        ctx.moveTo(cx, cy - 12); ctx.lineTo(cx, cy + 14);
-        ctx.moveTo(cx - 10, cy + 14); ctx.lineTo(cx + 10, cy + 14);
-        
-        // Pivot bar
-        const pivotAngle = Math.sin(frame * 0.05) * 0.1;
-        const barX = Math.cos(pivotAngle) * 16;
-        const barY = Math.sin(pivotAngle) * 16;
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 2;
-        ctx.moveTo(cx - barX, cy - 8 - barY);
-        ctx.lineTo(cx + barX, cy - 8 + barY);
-        ctx.stroke();
-        
-        // Hanging pans
-        ctx.strokeStyle = "rgba(255,255,255,0.4)";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(cx - barX, cy - 8 - barY);
-        ctx.lineTo(cx - barX - 4, cy + 4);
-        ctx.lineTo(cx - barX + 4, cy + 4);
-        ctx.closePath();
-        ctx.moveTo(cx + barX, cy - 8 + barY);
-        ctx.lineTo(cx + barX - 4, cy + 4);
-        ctx.lineTo(cx + barX + 4, cy + 4);
-        ctx.closePath();
-        ctx.stroke();
-        break;
-      case 8: // Acids and Bases
-        // pH Color scale strip with droplet
-        const grad = ctx.createLinearGradient(cx - 20, cy + 8, cx + 20, cy + 8);
-        grad.addColorStop(0, "#ef4444"); // Acid red
-        grad.addColorStop(0.5, "#22c55e"); // Neutral green
-        grad.addColorStop(1, "#a855f7"); // Alkaline purple
-        ctx.fillStyle = grad;
-        ctx.fillRect(cx - 20, cy + 6, 40, 6);
-        
-        // Falling droplet
-        const dropY = cy - 16 + ((frame * 0.5) % 20);
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx, dropY, 2.5, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      case 9: // Applications of Thermodynamics
-        // Galvanic electrochemical cell represention
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
-        ctx.strokeRect(cx - 22, cy - 4, 18, 18);
-        ctx.strokeRect(cx + 4, cy - 4, 18, 18);
-        
-        // Electrodes
-        ctx.fillStyle = "#94a3b8"; // Anode
-        ctx.fillRect(cx - 16, cy - 12, 4, 20);
-        ctx.fillStyle = "#b45309"; // Cathode (copper look)
-        ctx.fillRect(cx + 12, cy - 12, 4, 20);
-        
-        // Wire bridge
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(cx - 14, cy - 12);
-        ctx.lineTo(cx - 14, cy - 18);
-        ctx.lineTo(cx + 14, cy - 18);
-        ctx.lineTo(cx + 14, cy - 12);
-        ctx.stroke();
-        
-        // Electron dots on wire
-        const ePos = (frame * 0.5) % 28;
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(cx - 14 + ePos - 1, cy - 19, 2, 2);
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-physics-c") {
-    switch (unitId) {
-      case 1: // Kinematics
-        // Cannon firing a parabolic projectile
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
-        ctx.beginPath();
-        ctx.moveTo(cx - 22, cy + 16); ctx.lineTo(cx + 22, cy + 16);
-        ctx.stroke();
-        
-        // Parabolic trajectory path
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([2, 2]);
-        ctx.beginPath();
-        for (let x = -20; x <= 20; x += 2) {
-          const y = 16 - (0.05 * (x + 10) * (x - 22));
-          if (x === -20) ctx.moveTo(cx + x, cy + 16 - y);
-          else ctx.lineTo(cx + x, cy + 16 - y);
-        }
-        ctx.stroke();
-        ctx.setLineDash([]);
-        
-        // Projectile ball
-        const pFrame = (frame * 0.4) % 40;
-        const px = -20 + pFrame;
-        const py = 16 - (0.05 * (px + 10) * (px - 22));
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(cx + px, cy + 16 - py, 3, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      case 2: // Newton's Laws of Motion
-        // Inclined plane with sliding block
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
-        ctx.beginPath();
-        ctx.moveTo(cx - 20, cy + 14);
-        ctx.lineTo(cx + 20, cy - 10);
-        ctx.lineTo(cx + 20, cy + 14);
-        ctx.closePath();
-        ctx.stroke();
-        
-        // Block
-        ctx.save();
-        ctx.translate(cx, cy + 1);
-        ctx.rotate(-0.54); // Match incline angle
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(-6, -8, 12, 8);
-        // Force arrow
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(0, -4); ctx.lineTo(14, -4);
-        ctx.moveTo(10, -6); ctx.lineTo(14, -4); ctx.lineTo(10, -2);
-        ctx.stroke();
-        ctx.restore();
-        break;
-      case 3: // Work, Energy, and Power
-        // Roller coaster loop potential energy well
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        // Parabolic track
-        for (let x = -20; x <= 20; x += 1) {
-          const y = (x * x * 0.06) - 10;
-          if (x === -20) ctx.moveTo(cx + x, cy + y);
-          else ctx.lineTo(cx + x, cy + y);
-        }
-        ctx.stroke();
-        
-        // Rolling cart
-        const cartAngle = (frame * 0.05) % (Math.PI * 2);
-        const cxOffset = Math.sin(cartAngle) * 18;
-        const cyOffset = (cxOffset * cxOffset * 0.06) - 10;
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(cx + cxOffset, cy + cyOffset - 3, 3, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      case 4: // Systems of Particles & Momentum
-        // Spheres colliding
-        const collT = (frame * 0.04) % Math.PI;
-        const dist = Math.abs(Math.cos(collT)) * 16;
-        
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx - dist, cy, 6, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-        ctx.beginPath();
-        ctx.arc(cx + dist, cy, 4, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Velocity vector arrows
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.5;
-        if (dist > 1) {
-          ctx.beginPath();
-          ctx.moveTo(cx - dist - 12, cy); ctx.lineTo(cx - dist - 6, cy);
-          ctx.moveTo(cx + dist + 10, cy); ctx.lineTo(cx + dist + 5, cy);
-          ctx.stroke();
-        }
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-ush") {
-    switch (unitId) {
-      case 1: // Period 1
-        // Native Maize (corn) plant growing
-        ctx.fillStyle = "#22c55e"; // Green stalk
-        ctx.fillRect(cx - 1.5, cy - 14, 3, 28);
-        ctx.fillStyle = accentColor; // Orange corn cob
-        ctx.fillRect(cx - 5, cy - 6, 4, 8);
-        ctx.fillRect(cx + 1, cy + 2, 4, 8);
-        
-        // Leaves
-        ctx.strokeStyle = "#22c55e";
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(cx - 1, cy - 10); ctx.quadraticCurveTo(cx - 8, cy - 14, cx - 10, cy - 6);
-        ctx.moveTo(cx + 1, cy - 4); ctx.quadraticCurveTo(cx + 8, cy - 8, cx + 10, cy);
-        ctx.stroke();
-        break;
-      case 2: // Period 2
-        // Colonial Ship Mayflower sailing
-        // Waves
-        ctx.fillStyle = "#3b82f6";
-        const waveY = cy + 8 + Math.sin(frame * 0.06) * 2;
-        ctx.fillRect(cx - 24, waveY, 48, 12);
-        
-        // Wooden hull
-        ctx.fillStyle = "#78350f";
-        ctx.beginPath();
-        ctx.moveTo(cx - 16, waveY - 2);
-        ctx.lineTo(cx + 16, waveY - 2);
-        ctx.lineTo(cx + 10, waveY + 5);
-        ctx.lineTo(cx - 10, waveY + 5);
-        ctx.closePath();
-        ctx.fill();
-        
-        // Mast & Sails
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(cx - 1, waveY - 20, 2, 18);
-        ctx.beginPath();
-        ctx.moveTo(cx - 8, waveY - 18);
-        ctx.quadraticCurveTo(cx - 1, waveY - 14, cx - 1, waveY - 6);
-        ctx.lineTo(cx - 8, waveY - 6);
-        ctx.closePath();
-        ctx.fill();
-        break;
-      case 3: // Period 3
-        // Liberty Bell
-        ctx.strokeStyle = "rgba(255,255,255,0.15)";
-        ctx.strokeRect(cx - 18, cy - 18, 36, 36);
-        
-        // Bell shape
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx, cy - 4, 8, Math.PI, 0);
-        ctx.lineTo(cx + 10, cy + 8);
-        ctx.lineTo(cx - 10, cy + 8);
-        ctx.closePath();
-        ctx.fill();
-        
-        // Crack in the bell
-        ctx.strokeStyle = "#000000";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(cx, cy + 8);
-        ctx.lineTo(cx - 2, cy + 1);
-        ctx.lineTo(cx + 1, cy - 4);
-        ctx.stroke();
-        break;
-      case 4: // Period 4
-        // Steam locomotive train
-        ctx.fillStyle = "#4b5563"; // Boiler
-        ctx.fillRect(cx - 14, cy - 6, 24, 14);
-        ctx.fillStyle = accentColor; // Cabin
-        ctx.fillRect(cx + 4, cy - 14, 12, 22);
-        
-        // Wheels
-        ctx.fillStyle = "#ffffff";
-        const wAngle = frame * 0.1;
-        const wRadius = 3;
-        for (let offset = -10; offset <= 10; offset += 10) {
-          ctx.beginPath();
-          ctx.arc(cx + offset, cy + 11, wRadius, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        
-        // Steam smoke
-        const sSize = 2 + Math.abs(Math.sin(frame * 0.07)) * 4;
-        ctx.fillStyle = "rgba(255,255,255,0.25)";
-        ctx.beginPath();
-        ctx.arc(cx - 10, cy - 14, sSize, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-psych") {
-    switch (unitId) {
-      case 1: // Scientific Foundations
-        // Brain with pulsing lightbulb gear
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.strokeRect(cx - 18, cy - 18, 36, 36);
-        // Brain lobes representation
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx - 6, cy - 4, 8, 0, Math.PI * 2);
-        ctx.arc(cx + 6, cy - 4, 8, 0, Math.PI * 2);
-        ctx.arc(cx, cy + 4, 8, 0, Math.PI * 2);
-        ctx.fill();
-        // Pulse
-        ctx.fillStyle = "#ffffff";
-        const bPulse = 2 + Math.abs(Math.sin(frame * 0.05)) * 3;
-        ctx.beginPath();
-        ctx.arc(cx, cy - 2, bPulse, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      case 2: // Biological Bases of Behavior
-        // Neuron Synapse connection
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.lineWidth = 1;
-        // Axon terminal
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(cx - 12, cy, 7, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillRect(cx - 24, cy - 2, 12, 4);
-        
-        // Postsynaptic membrane
-        ctx.fillStyle = "rgba(255,255,255,0.3)";
-        ctx.fillRect(cx + 8, cy - 16, 4, 32);
-        
-        // Synaptic vesicles / neurotransmitters
-        ctx.fillStyle = "#ffffff";
-        const vPos = (frame * 0.3) % 18;
-        ctx.fillRect(cx - 8 + vPos, cy - 3, 2, 2);
-        ctx.fillRect(cx - 6 + (vPos * 0.8), cy + 4, 1.5, 1.5);
-        break;
-      case 3: // Sensation and Perception
-        // Eye focus lens diagram
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.beginPath();
-        ctx.arc(cx + 8, cy, 14, -Math.PI / 2, Math.PI / 2);
-        ctx.stroke();
-        
-        // Lens in center
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.ellipse(cx - 4, cy, 4, 10, 0, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Light rays focusing
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(cx - 22, cy - 10);
-        ctx.lineTo(cx - 4, cy);
-        ctx.lineTo(cx + 16, cy);
-        ctx.moveTo(cx - 22, cy + 10);
-        ctx.lineTo(cx - 4, cy);
-        ctx.stroke();
-        break;
-      case 4: // Cognitive Psychology & Learning
-        // Pavlovian Bell swinging
-        ctx.save();
-        ctx.translate(cx, cy - 10);
-        const bAngle = Math.sin(frame * 0.08) * 0.25;
-        ctx.rotate(bAngle);
-        // Draw bell
-        ctx.fillStyle = accentColor;
-        ctx.beginPath();
-        ctx.arc(0, 0, 6, Math.PI, 0);
-        ctx.lineTo(8, 14);
-        ctx.lineTo(-8, 14);
-        ctx.closePath();
-        ctx.fill();
-        // Clapper
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(0, 16, 2, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-eng-lang") {
-    switch (unitId) {
-      case 1: // Rhetorical Analysis
-        // Rhetorical triangle with quill pen
-        ctx.strokeStyle = "rgba(255,255,255,0.25)";
-        ctx.beginPath();
-        ctx.moveTo(cx, cy - 16);
-        ctx.lineTo(cx + 16, cy + 12);
-        ctx.lineTo(cx - 16, cy + 12);
-        ctx.closePath();
-        ctx.stroke();
-        
-        // Quill pen
-        ctx.save();
-        ctx.translate(cx - 2, cy - 2);
-        ctx.rotate(-0.6);
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(-2, -12, 4, 18);
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.moveTo(0, 6);
-        ctx.lineTo(2, 10);
-        ctx.lineTo(-2, 10);
-        ctx.closePath();
-        ctx.fill();
-        ctx.restore();
-        break;
-      case 2: // Argumentation & Synthesis
-        // Stack of scrolls
-        ctx.fillStyle = "rgba(255,255,255,0.15)";
-        ctx.strokeRect(cx - 16, cy - 12, 32, 24);
-        // Synthesis lines
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(cx - 10, cy - 4); ctx.lineTo(cx + 10, cy - 4);
-        ctx.moveTo(cx - 10, cy + 4); ctx.lineTo(cx + 10, cy + 4);
-        ctx.stroke();
-        
-        // Highlight pen
-        const penX = cx - 12 + ((frame * 0.4) % 24);
-        ctx.fillStyle = "#fb7185"; // Rose highlights
-        ctx.fillRect(penX, cy - 6, 3, 4);
-        break;
-      case 3: // Style and Rhetorical Choice
-        // Open book with magnifying glass
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 18, cy - 10, 17, 18);
-        ctx.fillRect(cx + 1, cy - 10, 17, 18);
-        
-        ctx.fillStyle = "#000000";
-        // Book text lines
-        ctx.fillRect(cx - 14, cy - 6, 9, 2);
-        ctx.fillRect(cx - 14, cy - 1, 11, 2);
-        ctx.fillRect(cx - 14, cy + 4, 7, 2);
-        ctx.fillRect(cx + 5, cy - 6, 9, 2);
-        ctx.fillRect(cx + 5, cy - 1, 7, 2);
-        ctx.fillRect(cx + 5, cy + 4, 11, 2);
-        
-        // Magnifying glass lens
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.arc(cx + 6, cy + 4, 6, 0, Math.PI * 2);
-        ctx.moveTo(cx + 10, cy + 8);
-        ctx.lineTo(cx + 15, cy + 13);
-        ctx.stroke();
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-calc-bc") {
-    switch (unitId) {
-      case 1: // Limits and Continuity
-        // Discontinuous function curve with hollow limit gap
-        ctx.strokeStyle = "rgba(255,255,255,0.15)";
-        ctx.beginPath();
-        ctx.moveTo(cx - 20, cy); ctx.lineTo(cx + 20, cy);
-        ctx.stroke();
-        
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        // Left side curve
-        for (let x = -20; x < -4; x += 1) {
-          const y = (x * 0.6) + 4;
-          if (x === -20) ctx.moveTo(cx + x, cy - y);
-          else ctx.lineTo(cx + x, cy - y);
-        }
-        ctx.stroke();
-        
-        // Right side curve starting higher
-        ctx.beginPath();
-        for (let x = -4; x <= 20; x += 1) {
-          const y = (x * 0.4) - 8;
-          if (x === -4) ctx.moveTo(cx + x, cy - y);
-          else ctx.lineTo(cx + x, cy - y);
-        }
-        ctx.stroke();
-        
-        // Limit hollow point circles
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.arc(cx - 4, cy - (( -4 * 0.6) + 4), 3, 0, Math.PI * 2);
-        ctx.arc(cx - 4, cy - (( -4 * 0.4) - 8), 3, 0, Math.PI * 2);
-        ctx.stroke();
-        break;
-      case 2: // Infinite Sequences and Series
-        // Sigma summation symbol
-        ctx.strokeStyle = "rgba(255,255,255,0.25)";
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(cx - 10, cy - 14);
-        ctx.lineTo(cx + 10, cy - 14);
-        ctx.lineTo(cx - 2, cy);
-        ctx.lineTo(cx + 10, cy + 14);
-        ctx.lineTo(cx - 10, cy + 14);
-        ctx.stroke();
-        
-        // Dots converging to a point
-        ctx.fillStyle = accentColor;
-        const conv1 = cx + 8 + Math.sin(frame * 0.05) * 4;
-        ctx.fillRect(conv1, cy - 4, 3, 3);
-        ctx.fillRect(cx + 14, cy, 2, 2);
-        ctx.fillRect(cx + 18, cy + 2, 1.5, 1.5);
-        break;
-      case 3: // Integration Applications
-        // Riemann integration rectangles under a curve
-        ctx.fillStyle = `${accentColor}33`;
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1;
-        
-        const w = 6;
-        for (let x = -18; x <= 18; x += w) {
-          const rx = cx + x;
-          const ry = cy + (x * x * 0.035) - 8;
-          const rh = (cy + 16) - ry;
-          ctx.fillRect(rx, ry, w - 1, rh);
-          ctx.strokeRect(rx, ry, w - 1, rh);
-        }
-        
-        // Smooth curve
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        for (let x = -18; x <= 18; x += 1) {
-          const y = (x * x * 0.035) - 8;
-          if (x === -18) ctx.moveTo(cx + x, cy + y);
-          else ctx.lineTo(cx + x, cy + y);
-        }
-        ctx.stroke();
-        break;
-      case 4: // Parametric, Vector & Polar
-        // Polar coordinates cardioid spiral
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        for (let theta = 0; theta < Math.PI * 2; theta += 0.1) {
-          const r = 14 * (1 - Math.sin(theta + frame * 0.02));
-          const rx = cx + r * Math.cos(theta);
-          const ry = cy + r * Math.sin(theta);
-          if (theta === 0) ctx.moveTo(rx, ry);
-          else ctx.lineTo(rx, ry);
-        }
-        ctx.stroke();
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-stats") {
-    switch (unitId) {
-      case 1: // Exploring One-Variable Data
-        // Histogram and a boxplot
-        ctx.fillStyle = `${accentColor}4D`;
-        ctx.fillRect(cx - 16, cy + 2, 7, 12);
-        ctx.fillRect(cx - 8, cy - 6, 7, 20);
-        ctx.fillRect(cx, cy - 12, 7, 26);
-        ctx.fillRect(cx + 8, cy - 2, 7, 16);
-        
-        ctx.strokeStyle = "rgba(255,255,255,0.4)";
-        ctx.lineWidth = 1;
-        // Box plot outline
-        ctx.strokeRect(cx - 12, cy - 18, 24, 6);
-        ctx.beginPath();
-        ctx.moveTo(cx - 20, cy - 15); ctx.lineTo(cx - 12, cy - 15);
-        ctx.moveTo(cx + 12, cy - 15); ctx.lineTo(cx + 20, cy - 15);
-        ctx.moveTo(cx, cy - 18); ctx.lineTo(cx, cy - 12);
-        ctx.stroke();
-        break;
-      case 2: // Exploring Two-Variable Data
-        // Scatter plot and regression line
-        ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-        const points = [
-          [-14, 8], [-10, 4], [-6, 6], [-2, -2], [2, 0], [6, -4], [10, -6], [14, -10]
-        ];
-        points.forEach(([px, py]) => {
-          ctx.fillRect(cx + px - 1, cy + py - 1, 2.5, 2.5);
-        });
-        
-        // Regression line
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(cx - 18, cy + 10);
-        ctx.lineTo(cx + 18, cy - 12);
-        ctx.stroke();
-        break;
-      case 3: // Collecting Data & Probability
-        // Intersection Venn diagram circles
-        ctx.fillStyle = "rgba(255,255,255,0.15)";
-        ctx.beginPath();
-        ctx.arc(cx - 6, cy, 12, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = "rgba(255,255,255,0.3)";
-        ctx.stroke();
-        
-        ctx.fillStyle = `${accentColor}33`;
-        ctx.beginPath();
-        ctx.arc(cx + 6, cy, 12, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = accentColor;
-        ctx.stroke();
-        break;
-      case 4: // Statistical Inference
-        // Normal bell curve with shaded tails
-        ctx.fillStyle = `${accentColor}4D`;
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1.5;
-        
-        // Draw bell curve
-        ctx.beginPath();
-        for (let x = -22; x <= 22; x += 1) {
-          const dx = x / 9;
-          const y = Math.exp(-dx * dx) * 22;
-          if (x === -22) ctx.moveTo(cx + x, cy + 14 - y);
-          else ctx.lineTo(cx + x, cy + 14 - y);
-        }
-        ctx.stroke();
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else if (slug === "ap-csa") {
-    switch (unitId) {
-      case 1: // Primitive Types & Objects
-        // Memory stack diagram with variable values
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.strokeRect(cx - 18, cy - 18, 36, 36);
-        
-        ctx.fillStyle = accentColor;
-        ctx.font = "bold 8px monospace";
-        ctx.fillText("int x=42", cx - 14, cy - 6);
-        ctx.fillText("double y=3.1", cx - 14, cy + 4);
-        ctx.fillText("char c='A'", cx - 14, cy + 14);
-        break;
-      case 2: // Arrays & ArrayLists
-        // Memory list array boxes
-        ctx.strokeStyle = accentColor;
-        ctx.lineWidth = 1.5;
-        const boxSize = 10;
-        for (let i = 0; i < 4; i++) {
-          const rx = cx - 20 + i * boxSize;
-          ctx.strokeRect(rx, cy - 5, boxSize, boxSize);
-          
-          ctx.fillStyle = "rgba(255,255,255,0.4)";
-          ctx.font = "bold 7px monospace";
-          ctx.fillText(i.toString(), rx + 3, cy + 12);
-        }
-        
-        // Element index arrow
-        const pointerIdx = Math.floor(frame / 25) % 4;
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.moveTo(cx - 20 + pointerIdx * boxSize + 5, cy - 14);
-        ctx.lineTo(cx - 20 + pointerIdx * boxSize + 5, cy - 8);
-        ctx.stroke();
-        break;
-      case 3: // Conditional Logic
-        // IF-ELSE diamond branch flow diagram
-        ctx.strokeStyle = "rgba(255,255,255,0.25)";
-        ctx.beginPath();
-        // Decision Diamond
-        ctx.moveTo(cx, cy - 14);
-        ctx.lineTo(cx + 12, cy - 4);
-        ctx.lineTo(cx, cy + 6);
-        ctx.lineTo(cx - 12, cy - 4);
-        ctx.closePath();
-        ctx.stroke();
-        
-        ctx.fillStyle = accentColor;
-        ctx.font = "bold 6px monospace";
-        ctx.fillText("?", cx - 2, cy - 2);
-        
-        // Branch arrow paths
-        ctx.strokeStyle = accentColor;
-        ctx.beginPath();
-        ctx.moveTo(cx + 12, cy - 4); ctx.lineTo(cx + 20, cy - 4); ctx.lineTo(cx + 20, cy + 10);
-        ctx.moveTo(cx - 12, cy - 4); ctx.lineTo(cx - 20, cy - 4); ctx.lineTo(cx - 20, cy + 10);
-        ctx.stroke();
-        break;
-      case 4: // Classes & Inheritance
-        // Superclass / Subclass boxes with inheritence arrow
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
-        ctx.strokeRect(cx - 16, cy - 18, 32, 10); // Superclass
-        ctx.strokeRect(cx - 16, cy + 8, 32, 10);  // Subclass
-        
-        ctx.fillStyle = accentColor;
-        ctx.font = "bold 6px monospace";
-        ctx.fillText("Parent", cx - 11, cy - 11);
-        ctx.fillText("Child", cx - 11, cy + 15);
-        
-        // Upward arrow
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(cx, cy + 6);
-        ctx.lineTo(cx, cy - 4);
-        ctx.moveTo(cx - 3, cy - 1);
-        ctx.lineTo(cx, cy - 5);
-        ctx.lineTo(cx + 3, cy - 1);
-        ctx.stroke();
-        break;
-      default:
-        ctx.fillStyle = accentColor;
-        ctx.fillRect(cx - 6, cy - 6, 12, 12);
-    }
-  } else {
-    // Other courses fallback
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
-    ctx.strokeRect(cx - 18, cy - 18, 36, 36);
-    ctx.fillStyle = accentColor;
-    ctx.font = "bold 12px Courier New";
-    ctx.fillText(`U${unitId}`, cx - 7, cy + 4);
-  }
-
-  ctx.restore();
-}
-
 interface UnitBannerBackgroundProps {
   slug: string;
   unitId: number;
@@ -1978,107 +970,158 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
     const particles: any[] = [];
 
     if (slug === "ap-biology") {
+      const labels = ["DNA", "RNA", "ATP", "CELL"];
       for (let i = 0; i < 20; i++) {
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
           size: 2 + rng() * 3,
-          speedY: 0.2 + rng() * 0.4,
-          speedX: -0.2 + rng() * 0.4,
+          speedY: 0.15 + rng() * 0.35,
+          speedX: -0.15 + rng() * 0.3,
           color: rng() > 0.5 ? "rgba(34, 197, 94, 0.25)" : "rgba(16, 185, 129, 0.15)",
           wiggleSpeed: 0.02 + rng() * 0.03,
-          seed: rng() * 100
+          seed: rng() * 100,
+          text: rng() > 0.7 ? labels[Math.floor(rng() * labels.length)] : null
         });
       }
     } else if (slug === "ap-chemistry") {
-      for (let i = 0; i < 12; i++) {
+      const elements = ["H", "C", "O", "N", "Na", "Cl", "Fe", "Cu"];
+      const formulas = ["H2O", "CO2", "NaCl", "HCl", "NH3", "CH4"];
+      
+      // Floating flasks/beakers
+      for (let i = 0; i < 4; i++) {
         particles.push({
+          type: "beaker",
+          x: 50 + rng() * (canvas.width - 100),
+          y: 40 + rng() * (canvas.height - 80),
+          size: 14 + rng() * 6,
+          speedX: -0.15 + rng() * 0.3,
+          speedY: -0.1 + rng() * 0.2,
+          color: rng() > 0.5 ? "rgba(0, 242, 255, 0.3)" : "rgba(59, 130, 246, 0.25)"
+        });
+      }
+
+      // Floating elements/formulas
+      for (let i = 0; i < 8; i++) {
+        const isFormula = rng() > 0.5;
+        particles.push({
+          type: isFormula ? "formula" : "element",
           x: rng() * canvas.width,
           y: rng() * canvas.height,
-          speedX: -0.25 + rng() * 0.5,
+          text: isFormula ? formulas[Math.floor(rng() * formulas.length)] : elements[Math.floor(rng() * elements.length)],
+          speedX: -0.2 + rng() * 0.4,
           speedY: -0.2 + rng() * 0.4,
-          radius: 8 + rng() * 6,
-          orbitSpeed: 0.03 + rng() * 0.04,
-          orbitAngle: rng() * Math.PI * 2,
-          color: rng() > 0.4 ? "rgba(0, 242, 255, 0.35)" : "rgba(59, 130, 246, 0.25)",
-          size: 3.5 + rng() * 2
+          color: "rgba(0, 242, 255, 0.3)"
+        });
+      }
+
+      // Bubbling particles rising up
+      for (let i = 0; i < 15; i++) {
+        particles.push({
+          type: "bubble",
+          x: rng() * canvas.width,
+          y: canvas.height + rng() * 20,
+          size: 1.5 + rng() * 2,
+          speedY: -0.3 - rng() * 0.5,
+          speedX: -0.1 + rng() * 0.2,
+          color: "rgba(0, 242, 255, 0.4)"
         });
       }
     } else if (slug === "ap-physics-c") {
+      const formulas = ["F=ma", "E=mc²", "p=mv", "τ=rF", "Δp", "v=d/t"];
       for (let i = 0; i < 12; i++) {
-        particles.push({
-          cx: rng() * canvas.width,
-          cy: rng() * canvas.height,
-          radius: 15 + rng() * 30,
-          speed: 0.01 + rng() * 0.02,
-          angle: rng() * Math.PI * 2,
-          size: 2 + rng() * 2,
-          color: "rgba(129, 140, 248, 0.3)"
-        });
-      }
-    } else if (slug === "ap-ush") {
-      for (let i = 0; i < 25; i++) {
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
-          size: 1 + rng() * 2,
-          speedX: -0.15 - rng() * 0.25,
-          color: rng() > 0.5 ? "rgba(251, 191, 36, 0.12)" : "rgba(245, 158, 11, 0.08)"
+          text: rng() > 0.5 ? formulas[Math.floor(rng() * formulas.length)] : null,
+          angle: rng() * Math.PI * 2,
+          speed: 0.01 + rng() * 0.02,
+          radius: 15 + rng() * 30,
+          cx: rng() * canvas.width,
+          cy: rng() * canvas.height,
+          size: 2 + rng() * 2,
+          color: "rgba(129, 140, 248, 0.3)",
+          vx: -0.2 + rng() * 0.4,
+          vy: -0.2 + rng() * 0.4
+        });
+      }
+    } else if (slug === "ap-ush") {
+      const dates = ["1776", "1787", "1865", "1945", "USA"];
+      for (let i = 0; i < 15; i++) {
+        particles.push({
+          x: rng() * canvas.width,
+          y: rng() * canvas.height,
+          text: rng() > 0.4 ? dates[Math.floor(rng() * dates.length)] : null,
+          size: 1.5 + rng() * 2,
+          speedX: -0.1 - rng() * 0.2,
+          color: rng() > 0.5 ? "rgba(251, 191, 36, 0.2)" : "rgba(245, 158, 11, 0.12)"
         });
       }
     } else if (slug === "ap-psych") {
-      for (let i = 0; i < 16; i++) {
+      const brainTerms = ["Dopamine", "Serotonin", "CNS", "EEG", "Brain"];
+      for (let i = 0; i < 14; i++) {
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
           targetX: rng() * canvas.width,
           targetY: rng() * canvas.height,
           speed: 0.005 + rng() * 0.01,
-          size: 1.5 + rng() * 2,
+          size: 2 + rng() * 2,
+          text: rng() > 0.6 ? brainTerms[Math.floor(rng() * brainTerms.length)] : null,
           color: "rgba(168, 85, 247, 0.25)",
           pulseOffset: Math.floor(rng() * 120)
         });
       }
     } else if (slug === "ap-eng-lang") {
-      const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890{}[]<>/".split("");
-      for (let i = 0; i < 18; i++) {
+      const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?,!;:\"'".split("");
+      const words = ["LOGOS", "PATHOS", "ETHOS", "SOAPSTone", "Rhetoric"];
+      for (let i = 0; i < 20; i++) {
+        const isWord = rng() > 0.8;
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
-          char: chars[Math.floor(rng() * chars.length)],
-          speedY: 0.25 + rng() * 0.4,
-          color: rng() > 0.5 ? "rgba(251, 113, 133, 0.18)" : "rgba(244, 63, 94, 0.12)"
+          char: isWord ? words[Math.floor(rng() * words.length)] : chars[Math.floor(rng() * chars.length)],
+          isWord: isWord,
+          speedY: 0.2 + rng() * 0.35,
+          color: rng() > 0.5 ? "rgba(251, 113, 133, 0.22)" : "rgba(244, 63, 94, 0.15)"
         });
       }
     } else if (slug === "ap-calc-bc") {
       const mathSymbols = ["dx", "dy", "∫", "Σ", "π", "lim", "f(x)", "Δx", "∞"];
-      for (let i = 0; i < 14; i++) {
+      for (let i = 0; i < 15; i++) {
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
           symbol: mathSymbols[Math.floor(rng() * mathSymbols.length)],
           speedY: -0.15 - rng() * 0.25,
           speedX: -0.1 + rng() * 0.2,
-          color: rng() > 0.5 ? "rgba(52, 211, 153, 0.22)" : "rgba(16, 185, 129, 0.16)"
+          color: rng() > 0.5 ? "rgba(52, 211, 153, 0.25)" : "rgba(16, 185, 129, 0.18)"
         });
       }
     } else if (slug === "ap-stats") {
-      for (let i = 0; i < 30; i++) {
+      const statsTerms = ["μ", "σ", "x̄", "p-val", "z-score", "R²", "df"];
+      for (let i = 0; i < 25; i++) {
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
+          text: rng() > 0.6 ? statsTerms[Math.floor(rng() * statsTerms.length)] : null,
           size: 2.5,
-          color: rng() > 0.4 ? "rgba(56, 189, 248, 0.25)" : "rgba(14, 165, 233, 0.15)"
+          speedX: -0.1 + rng() * 0.2,
+          speedY: -0.05 + rng() * 0.1,
+          color: rng() > 0.4 ? "rgba(56, 189, 248, 0.28)" : "rgba(14, 165, 233, 0.18)"
         });
       }
     } else if (slug === "ap-csa") {
-      for (let i = 0; i < 24; i++) {
+      const codeKeywords = ["public", "class", "void", "main", "int", "for", "if", "while", "new", "null"];
+      for (let i = 0; i < 22; i++) {
+        const isWord = rng() > 0.75;
         particles.push({
           x: rng() * canvas.width,
           y: rng() * canvas.height,
-          val: rng() > 0.5 ? "0" : "1",
-          speedY: 0.5 + rng() * 0.8,
-          color: rng() > 0.5 ? "rgba(167, 139, 250, 0.22)" : "rgba(139, 92, 246, 0.14)"
+          val: isWord ? codeKeywords[Math.floor(rng() * codeKeywords.length)] : (rng() > 0.5 ? "0" : "1"),
+          isWord: isWord,
+          speedY: 0.4 + rng() * 0.6,
+          color: rng() > 0.5 ? "rgba(167, 139, 250, 0.25)" : "rgba(139, 92, 246, 0.18)"
         });
       }
     } else {
@@ -2160,84 +1203,136 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
             p.y = -10;
             p.x = Math.random() * canvas.width;
           }
-          ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+          if (p.text) {
+            ctx.save();
+            ctx.fillStyle = "rgba(34, 197, 94, 0.32)";
+            ctx.font = "bold 8px Courier New";
+            ctx.fillText(p.text, Math.round(p.x), Math.round(p.y));
+            ctx.restore();
+          } else {
+            ctx.fillStyle = p.color;
+            ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+          }
         });
 
       } else if (slug === "ap-chemistry") {
-        // Covalent bonding and electron orbital simulation
-        particles.forEach((p, i) => {
-          // Update atom position
-          p.x += p.speedX;
-          p.y += p.speedY;
+        particles.forEach((p) => {
+          p.x += p.speedX || 0;
+          p.y += p.speedY || 0;
 
-          // Bounce boundaries to keep within canvas
-          if (p.x < 15 || p.x > canvas.width - 15) p.speedX *= -1;
-          if (p.y < 15 || p.y > canvas.height - 15) p.speedY *= -1;
-
-          // 1. Draw atom nucleus (glowing square core)
-          ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(p.x - p.size / 2), Math.round(p.y - p.size / 2), Math.round(p.size), Math.round(p.size));
-
-          // 2. Draw dotted electron shell ring
-          ctx.strokeStyle = "rgba(0, 242, 255, 0.05)";
-          ctx.lineWidth = 1;
-          ctx.setLineDash([2, 3]);
-          ctx.beginPath();
-          ctx.arc(Math.round(p.x), Math.round(p.y), p.radius, 0, Math.PI * 2);
-          ctx.stroke();
-          ctx.setLineDash([]);
-
-          // 3. Draw valence electron spinning along shell
-          p.orbitAngle += p.orbitSpeed;
-          const ex = p.x + Math.cos(p.orbitAngle) * p.radius;
-          const ey = p.y + Math.sin(p.orbitAngle) * p.radius;
-          ctx.fillStyle = "rgba(0, 242, 255, 0.7)";
-          ctx.fillRect(Math.round(ex - 1), Math.round(ey - 1), 2.5, 2.5);
-
-          // 4. Draw covalent sharing bonds with nearby atoms
-          for (let j = i + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dx = p.x - p2.x;
-            const dy = p.y - p2.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 65) {
-              const alpha = 0.16 * (1 - dist / 65);
-              ctx.strokeStyle = `rgba(0, 242, 255, ${alpha})`;
-              ctx.lineWidth = 1;
-              ctx.setLineDash([3, 3]);
-              ctx.beginPath();
-              ctx.moveTo(Math.round(p.x), Math.round(p.y));
-              ctx.lineTo(Math.round(p2.x), Math.round(p2.y));
-              ctx.stroke();
-              ctx.setLineDash([]);
+          if (p.type === "bubble") {
+            if (p.y < -10) {
+              p.y = canvas.height + 10;
+              p.x = Math.random() * canvas.width;
             }
+          } else {
+            if (p.x < -20) p.x = canvas.width + 20;
+            if (p.x > canvas.width + 20) p.x = -20;
+            if (p.y < -20) p.y = canvas.height + 20;
+            if (p.y > canvas.height + 20) p.y = -20;
+          }
+
+          if (p.type === "beaker") {
+            ctx.save();
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.22)";
+            ctx.lineWidth = 1;
+            
+            // Draw beaker/flask body outline
+            ctx.beginPath();
+            ctx.moveTo(p.x - 3, p.y - 10);
+            ctx.lineTo(p.x + 3, p.y - 10);
+            ctx.moveTo(p.x - 2, p.y - 10);
+            ctx.lineTo(p.x - 2, p.y - 3);
+            ctx.lineTo(p.x - 8, p.y + 8);
+            ctx.lineTo(p.x + 8, p.y + 8);
+            ctx.lineTo(p.x + 2, p.y - 3);
+            ctx.lineTo(p.x + 2, p.y - 10);
+            ctx.stroke();
+
+            // Draw liquid level inside the flask
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.moveTo(p.x - 5, p.y + 2);
+            ctx.lineTo(p.x + 5, p.y + 2);
+            ctx.lineTo(p.x + 7, p.y + 7);
+            ctx.lineTo(p.x - 7, p.y + 7);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+          } else if (p.type === "element") {
+            ctx.save();
+            ctx.strokeStyle = "rgba(0, 242, 255, 0.12)";
+            ctx.lineWidth = 1;
+            ctx.strokeRect(p.x - 8, p.y - 8, 16, 16);
+            ctx.fillStyle = "rgba(0, 242, 255, 0.03)";
+            ctx.fillRect(p.x - 8, p.y - 8, 16, 16);
+
+            ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
+            ctx.font = "bold 8px Courier New";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(p.text, p.x, p.y + 0.5);
+            ctx.restore();
+          } else if (p.type === "formula") {
+            ctx.save();
+            ctx.fillStyle = "rgba(0, 242, 255, 0.28)";
+            ctx.font = "bold 8px Courier New";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(p.text, p.x, p.y);
+            ctx.restore();
+          } else if (p.type === "bubble") {
+            ctx.fillStyle = p.color;
+            ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
           }
         });
 
       } else if (slug === "ap-physics-c") {
-        ctx.strokeStyle = "rgba(129, 140, 248, 0.04)";
-        ctx.lineWidth = 1.5;
-        // Draw concentric orbital field lines with dash pattern to look retro/pixelated
-        ctx.setLineDash([3, 5]);
-        for (let r = 30; r <= 150; r += 40) {
+        // Space-time warp grid lines
+        ctx.strokeStyle = "rgba(129, 140, 248, 0.05)";
+        ctx.lineWidth = 1;
+        const spacing = 20;
+        for (let gx = 0; gx < canvas.width; gx += spacing) {
           ctx.beginPath();
-          ctx.arc(canvas.width / 2, canvas.height / 2, r, 0, Math.PI * 2);
+          for (let gy = 0; gy < canvas.height; gy += 4) {
+            const dx = Math.sin((gy + frame) * 0.04) * 8 * Math.sin(gx * 0.01);
+            if (gy === 0) ctx.moveTo(gx + dx, gy);
+            else ctx.lineTo(gx + dx, gy);
+          }
           ctx.stroke();
         }
-        ctx.setLineDash([]);
 
-        // Orbiting blocky pixel particles
         particles.forEach((p) => {
+          p.x = p.cx + Math.cos(p.angle) * p.radius;
+          p.y = p.cy + Math.sin(p.angle) * p.radius;
           p.angle += p.speed;
-          const x = (canvas.width / 2) + Math.cos(p.angle) * p.radius;
-          const y = (canvas.height / 2) + Math.sin(p.angle) * p.radius;
+
+          p.cx += p.vx;
+          p.cy += p.vy;
+          if (p.cx < 0 || p.cx > canvas.width) p.vx *= -1;
+          if (p.cy < 0 || p.cy > canvas.height) p.vy *= -1;
+
+          // Vector arrows
+          ctx.save();
+          ctx.strokeStyle = "rgba(129, 140, 248, 0.2)";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.x + Math.cos(p.angle + Math.PI/2) * 8, p.y + Math.sin(p.angle + Math.PI/2) * 8);
+          ctx.stroke();
+
           ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(x) - 2, Math.round(y) - 2, p.size, p.size);
+          ctx.fillRect(Math.round(p.x) - 1, Math.round(p.y) - 1, p.size, p.size);
+
+          if (p.text) {
+            ctx.fillStyle = "rgba(129, 140, 248, 0.35)";
+            ctx.font = "bold 8px Courier New";
+            ctx.fillText(p.text, p.x + 4, p.y + 3);
+          }
+          ctx.restore();
         });
 
       } else if (slug === "ap-ush") {
-        // Red, White, Blue horizontal scanline-like backdrops
         ctx.fillStyle = "rgba(239, 68, 68, 0.02)"; // Red
         ctx.fillRect(0, 15, canvas.width, 25);
         ctx.fillStyle = "rgba(255, 255, 255, 0.01)"; // White
@@ -2245,7 +1340,6 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         ctx.fillStyle = "rgba(59, 130, 246, 0.02)"; // Blue
         ctx.fillRect(0, 65, canvas.width, 25);
 
-        // Waving timeline waves (waving historical records)
         ctx.strokeStyle = "rgba(251, 191, 36, 0.06)";
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -2256,21 +1350,26 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
         ctx.stroke();
 
-        // Floating historical pixel stars
         particles.forEach((p) => {
           p.x += p.speedX;
-          if (p.x < -10) {
-            p.x = canvas.width + 10;
+          if (p.x < -30) {
+            p.x = canvas.width + 30;
             p.y = Math.random() * canvas.height;
           }
-          ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
-          // Draw standard retro cross-star detail
-          ctx.fillRect(Math.round(p.x) - 1, Math.round(p.y) + 1, p.size + 2, 1);
+          if (p.text) {
+            ctx.save();
+            ctx.fillStyle = "rgba(251, 191, 36, 0.3)";
+            ctx.font = "bold 8px Courier New";
+            ctx.fillText(p.text, p.x, p.y);
+            ctx.restore();
+          } else {
+            ctx.fillStyle = p.color;
+            ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+          }
         });
 
       } else if (slug === "ap-psych") {
-        // Draw synaptic pathways
+        // Synaptic network
         ctx.strokeStyle = "rgba(168, 85, 247, 0.06)";
         ctx.lineWidth = 1.5;
         for (let i = 0; i < particles.length; i++) {
@@ -2287,21 +1386,45 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           }
         }
 
-        // Draw blocky nodes firing impulses
+        // EEG brainwaves
+        ctx.strokeStyle = "rgba(168, 85, 247, 0.04)";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 6) {
+          const y = 100 + Math.sin(x * 0.05 + frame * 0.1) * 15 * Math.cos(x * 0.01 + frame * 0.02);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
         particles.forEach((p) => {
+          p.x += (p.targetX - p.x) * p.speed;
+          p.y += (p.targetY - p.y) * p.speed;
+          if (Math.abs(p.x - p.targetX) < 2 && Math.abs(p.y - p.targetY) < 2) {
+            p.targetX = Math.random() * canvas.width;
+            p.targetY = Math.random() * canvas.height;
+          }
+
           ctx.fillStyle = p.color;
           ctx.fillRect(Math.round(p.x) - 2, Math.round(p.y) - 2, 4, 4);
 
-          // Impulse firing flashes
           const offset = p.pulseOffset || 0;
           if ((frame + offset) % 120 < 15) {
             ctx.fillStyle = "rgba(255, 255, 255, 0.25)";
             ctx.fillRect(Math.round(p.x) - 3, Math.round(p.y) - 3, 6, 6);
           }
+
+          if (p.text) {
+            ctx.save();
+            ctx.fillStyle = "rgba(168, 85, 247, 0.35)";
+            ctx.font = "bold 8px Courier New";
+            ctx.fillText(p.text, p.x + 6, p.y + 3);
+            ctx.restore();
+          }
         });
 
       } else if (slug === "ap-eng-lang") {
-        ctx.font = "bold 8px monospace";
+        ctx.font = "bold 8px Courier New";
         particles.forEach((p) => {
           p.y += p.speedY;
           if (p.y > canvas.height + 15) {
@@ -2309,12 +1432,18 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
             p.x = Math.random() * canvas.width;
           }
           ctx.fillStyle = p.color;
-          ctx.fillText(p.char, Math.round(p.x), Math.round(p.y));
+          if (p.isWord) {
+            ctx.save();
+            ctx.fillStyle = "rgba(251, 113, 133, 0.32)";
+            ctx.fillText(p.char, Math.round(p.x), Math.round(p.y));
+            ctx.restore();
+          } else {
+            ctx.fillText(p.char, Math.round(p.x), Math.round(p.y));
+          }
         });
 
       } else if (slug === "ap-calc-bc") {
-        // Cascading math symbols
-        ctx.font = "bold 8px monospace";
+        ctx.font = "bold 8px Courier New";
         particles.forEach((p) => {
           p.y += p.speedY;
           p.x += p.speedX;
@@ -2326,7 +1455,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           ctx.fillText(p.symbol, Math.round(p.x), Math.round(p.y));
         });
 
-        // Riemann rectangles and sine curve
+        // Riemann blocks
         ctx.fillStyle = "rgba(52, 211, 153, 0.04)";
         ctx.strokeStyle = "rgba(52, 211, 153, 0.12)";
         ctx.lineWidth = 1;
@@ -2352,7 +1481,6 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         ctx.stroke();
 
       } else if (slug === "ap-stats") {
-        // Moving normal bell curves
         ctx.strokeStyle = "rgba(56, 189, 248, 0.15)";
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -2364,7 +1492,6 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
         ctx.stroke();
 
-        // Regression slope line sweeping
         ctx.strokeStyle = "rgba(56, 189, 248, 0.08)";
         ctx.beginPath();
         const startY = 120 + Math.sin(frame * 0.01) * 12;
@@ -2373,10 +1500,22 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         ctx.lineTo(canvas.width - 10, endY);
         ctx.stroke();
 
-        // Drifting data points (pixels)
         particles.forEach((p) => {
-          ctx.fillStyle = p.color;
-          ctx.fillRect(p.x, p.y, p.size, p.size);
+          p.x += p.speedX;
+          p.y += p.speedY;
+          if (p.x < -10 || p.x > canvas.width + 10) p.speedX *= -1;
+          if (p.y < -10 || p.y > canvas.height + 10) p.speedY *= -1;
+
+          if (p.text) {
+            ctx.save();
+            ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
+            ctx.font = "bold 9px Courier New";
+            ctx.fillText(p.text, p.x, p.y);
+            ctx.restore();
+          } else {
+            ctx.fillStyle = p.color;
+            ctx.fillRect(p.x, p.y, p.size, p.size);
+          }
         });
 
       } else if (slug === "ap-csa") {
@@ -2387,11 +1526,18 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
             p.y = -10;
             p.x = Math.random() * canvas.width;
           }
-          if (frame % 30 === 0 && Math.random() > 0.7) {
+          if (!p.isWord && frame % 30 === 0 && Math.random() > 0.7) {
             p.val = p.val === "0" ? "1" : "0";
           }
           ctx.fillStyle = p.color;
-          ctx.fillText(p.val, Math.round(p.x), Math.round(p.y));
+          if (p.isWord) {
+            ctx.save();
+            ctx.fillStyle = "rgba(167, 139, 250, 0.32)";
+            ctx.fillText(p.val, Math.round(p.x), Math.round(p.y));
+            ctx.restore();
+          } else {
+            ctx.fillText(p.val, Math.round(p.x), Math.round(p.y));
+          }
         });
       } else {
         particles.forEach((p) => {
@@ -2421,8 +1567,6 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           }
         }
       }
-
-      drawPixelDiagram(ctx, 380, 80, slug, unitIdRef.current, frame, accentColor);
 
       animId = requestAnimationFrame(render);
     };
