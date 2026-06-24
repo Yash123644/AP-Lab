@@ -1945,6 +1945,11 @@ interface UnitBannerBackgroundProps {
 
 function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const unitIdRef = useRef(unitId);
+
+  useEffect(() => {
+    unitIdRef.current = unitId;
+  }, [unitId]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -1969,7 +1974,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
       };
     };
 
-    const rng = seedRandom(`${slug}-${unitId}`);
+    const rng = seedRandom(slug);
     const particles: any[] = [];
 
     if (slug === "ap-biology") {
@@ -1993,7 +1998,8 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           size: 3 + rng() * 5,
           speedY: -0.3 - rng() * 0.6,
           speedX: -0.1 + rng() * 0.2,
-          color: rng() > 0.4 ? "rgba(0, 242, 255, 0.2)" : "rgba(59, 130, 246, 0.15)"
+          color: rng() > 0.4 ? "rgba(0, 242, 255, 0.2)" : "rgba(59, 130, 246, 0.15)",
+          seed: rng() * 10
         });
       }
     } else if (slug === "ap-physics-c") {
@@ -2027,7 +2033,8 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           targetY: rng() * canvas.height,
           speed: 0.005 + rng() * 0.01,
           size: 1.5 + rng() * 2,
-          color: "rgba(168, 85, 247, 0.25)"
+          color: "rgba(168, 85, 247, 0.25)",
+          pulseOffset: Math.floor(rng() * 120)
         });
       }
     } else if (slug === "ap-eng-lang") {
@@ -2096,10 +2103,10 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
       frame++;
 
       if (slug === "ap-biology") {
-        ctx.fillStyle = "rgba(34, 197, 94, 0.05)";
-        ctx.strokeStyle = "rgba(34, 197, 94, 0.08)";
+        // DNA horizontal double-helix waves
+        ctx.strokeStyle = "rgba(34, 197, 94, 0.06)";
         ctx.lineWidth = 2;
-        const amplitude = 25;
+        const amplitude = 22;
         const wavelength = 120;
         
         ctx.beginPath();
@@ -2110,7 +2117,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
         ctx.stroke();
 
-        ctx.strokeStyle = "rgba(16, 185, 129, 0.08)";
+        ctx.strokeStyle = "rgba(16, 185, 129, 0.06)";
         ctx.beginPath();
         for (let x = 0; x < canvas.width; x += 4) {
           const y2 = canvas.height / 2 - Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
@@ -2119,7 +2126,8 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
         ctx.stroke();
 
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.03)";
+        // Connectors
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.02)";
         ctx.lineWidth = 1;
         for (let x = 20; x < canvas.width; x += 24) {
           const y1 = canvas.height / 2 + Math.sin((x + frame * 0.8) / wavelength * Math.PI * 2) * amplitude;
@@ -2130,6 +2138,7 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           ctx.stroke();
         }
 
+        // Floating pixel cells
         particles.forEach((p) => {
           p.y += p.speedY;
           p.x += Math.sin(frame * p.wiggleSpeed + p.seed) * 0.15;
@@ -2142,38 +2151,92 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
 
       } else if (slug === "ap-chemistry") {
+        // Draw molecular benzene-like hexagonal lattice pattern
+        ctx.strokeStyle = "rgba(0, 242, 255, 0.04)";
+        ctx.fillStyle = "rgba(0, 242, 255, 0.02)";
+        ctx.lineWidth = 2;
+        
+        const drawHex = (cx: number, cy: number, r: number) => {
+          ctx.beginPath();
+          for (let i = 0; i < 6; i++) {
+            const angle = (i * Math.PI) / 3 + frame * 0.003;
+            const x = cx + Math.cos(angle) * r;
+            const y = cy + Math.sin(angle) * r;
+            if (i === 0) ctx.moveTo(Math.round(x), Math.round(y));
+            else ctx.lineTo(Math.round(x), Math.round(y));
+          }
+          ctx.closePath();
+          ctx.stroke();
+        };
+
+        // Draw multiple hex nodes representing compounds
+        drawHex(80, 45, 18);
+        drawHex(180, 110, 24);
+        drawHex(320, 50, 20);
+
+        // Connection bonds between node centers
+        ctx.strokeStyle = "rgba(0, 242, 255, 0.03)";
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(80, 45); ctx.lineTo(180, 110);
+        ctx.lineTo(320, 50);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Rising blocky pixel bubbles
         particles.forEach((p) => {
           p.y += p.speedY;
-          p.x += p.speedX;
+          p.x += Math.sin(frame * 0.02 + (p.seed || 0)) * 0.25;
           if (p.y < -10) {
             p.y = canvas.height + 10;
             p.x = Math.random() * canvas.width;
           }
           ctx.fillStyle = p.color;
-          ctx.strokeStyle = p.color.replace("0.2", "0.4").replace("0.15", "0.3");
-          ctx.lineWidth = 1;
-          
-          ctx.beginPath();
-          ctx.arc(Math.round(p.x), Math.round(p.y), p.size, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.stroke();
+          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
         });
 
       } else if (slug === "ap-physics-c") {
+        ctx.strokeStyle = "rgba(129, 140, 248, 0.04)";
+        ctx.lineWidth = 1.5;
+        // Draw concentric orbital field lines with dash pattern to look retro/pixelated
+        ctx.setLineDash([3, 5]);
+        for (let r = 30; r <= 150; r += 40) {
+          ctx.beginPath();
+          ctx.arc(canvas.width / 2, canvas.height / 2, r, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+
+        // Orbiting blocky pixel particles
         particles.forEach((p) => {
           p.angle += p.speed;
-          const x = p.cx + Math.cos(p.angle) * p.radius;
-          const y = p.cy + Math.sin(p.angle) * p.radius;
+          const x = (canvas.width / 2) + Math.cos(p.angle) * p.radius;
+          const y = (canvas.height / 2) + Math.sin(p.angle) * p.radius;
           ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(x), Math.round(y), p.size, p.size);
-          
-          ctx.strokeStyle = "rgba(129, 140, 248, 0.03)";
-          ctx.beginPath();
-          ctx.arc(Math.round(p.cx), Math.round(p.cy), p.radius, 0, Math.PI * 2);
-          ctx.stroke();
+          ctx.fillRect(Math.round(x) - 2, Math.round(y) - 2, p.size, p.size);
         });
 
       } else if (slug === "ap-ush") {
+        // Red, White, Blue horizontal scanline-like backdrops
+        ctx.fillStyle = "rgba(239, 68, 68, 0.02)"; // Red
+        ctx.fillRect(0, 15, canvas.width, 25);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.01)"; // White
+        ctx.fillRect(0, 40, canvas.width, 25);
+        ctx.fillStyle = "rgba(59, 130, 246, 0.02)"; // Blue
+        ctx.fillRect(0, 65, canvas.width, 25);
+
+        // Waving timeline waves (waving historical records)
+        ctx.strokeStyle = "rgba(251, 191, 36, 0.06)";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 12) {
+          const y = 80 + Math.sin((x + frame * 0.5) / 80 + unitIdRef.current) * 15;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Floating historical pixel stars
         particles.forEach((p) => {
           p.x += p.speedX;
           if (p.x < -10) {
@@ -2182,38 +2245,20 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           }
           ctx.fillStyle = p.color;
           ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+          // Draw standard retro cross-star detail
+          ctx.fillRect(Math.round(p.x) - 1, Math.round(p.y) + 1, p.size + 2, 1);
         });
-
-        ctx.strokeStyle = "rgba(251, 191, 36, 0.03)";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        for (let x = 0; x < canvas.width; x += 10) {
-          const y = 80 + Math.sin(x / 80 + unitId) * 15 + Math.cos(x / 40) * 5;
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.stroke();
 
       } else if (slug === "ap-psych") {
-        particles.forEach((p) => {
-          p.x += (p.targetX - p.x) * p.speed;
-          p.y += (p.targetY - p.y) * p.speed;
-          if (Math.abs(p.x - p.targetX) < 2 && Math.abs(p.y - p.targetY) < 2) {
-            p.targetX = Math.random() * canvas.width;
-            p.targetY = Math.random() * canvas.height;
-          }
-          ctx.fillStyle = p.color;
-          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
-        });
-
-        ctx.strokeStyle = "rgba(168, 85, 247, 0.04)";
-        ctx.lineWidth = 0.5;
+        // Draw synaptic pathways
+        ctx.strokeStyle = "rgba(168, 85, 247, 0.06)";
+        ctx.lineWidth = 1.5;
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 60) {
+            if (dist < 70) {
               ctx.beginPath();
               ctx.moveTo(Math.round(particles[i].x), Math.round(particles[i].y));
               ctx.lineTo(Math.round(particles[j].x), Math.round(particles[j].y));
@@ -2222,8 +2267,21 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
           }
         }
 
+        // Draw blocky nodes firing impulses
+        particles.forEach((p) => {
+          ctx.fillStyle = p.color;
+          ctx.fillRect(Math.round(p.x) - 2, Math.round(p.y) - 2, 4, 4);
+
+          // Impulse firing flashes
+          const offset = p.pulseOffset || 0;
+          if ((frame + offset) % 120 < 15) {
+            ctx.fillStyle = "rgba(255, 255, 255, 0.25)";
+            ctx.fillRect(Math.round(p.x) - 3, Math.round(p.y) - 3, 6, 6);
+          }
+        });
+
       } else if (slug === "ap-eng-lang") {
-        ctx.font = "bold 9px monospace";
+        ctx.font = "bold 8px monospace";
         particles.forEach((p) => {
           p.y += p.speedY;
           if (p.y > canvas.height + 15) {
@@ -2235,63 +2293,68 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         });
 
       } else if (slug === "ap-calc-bc") {
-        ctx.fillStyle = "rgba(52, 211, 153, 0.06)";
+        ctx.fillStyle = "rgba(52, 211, 153, 0.04)";
         ctx.strokeStyle = "rgba(52, 211, 153, 0.12)";
         ctx.lineWidth = 1;
 
-        const rectWidth = 12;
-        const amplitude = 30;
-        const frequency = 0.02;
+        const rectWidth = 14;
+        const amplitude = 26;
+        const frequency = 0.015;
         for (let x = 10; x < canvas.width - 10; x += rectWidth + 4) {
-          const y = canvas.height / 2 + Math.sin(x * frequency + frame * 0.015) * amplitude;
+          const y = canvas.height / 2 + Math.sin(x * frequency + frame * 0.012) * amplitude;
           const rectHeight = (canvas.height / 2) - y;
           ctx.fillRect(x, y, rectWidth, rectHeight);
           ctx.strokeRect(x, y, rectWidth, rectHeight);
         }
 
-        ctx.strokeStyle = "rgba(52, 211, 153, 0.3)";
-        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "rgba(52, 211, 153, 0.25)";
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        for (let x = 0; x < canvas.width; x += 4) {
-          const y = canvas.height / 2 + Math.sin(x * frequency + frame * 0.015) * amplitude;
+        for (let x = 0; x < canvas.width; x += 5) {
+          const y = canvas.height / 2 + Math.sin(x * frequency + frame * 0.012) * amplitude;
           if (x === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
         ctx.stroke();
 
       } else if (slug === "ap-stats") {
-        particles.forEach((p) => {
-          ctx.fillStyle = p.color;
-          ctx.fillRect(p.x, p.y, p.size, p.size);
-        });
-
+        // Moving normal bell curves
         ctx.strokeStyle = "rgba(56, 189, 248, 0.15)";
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        const startY = 120 + Math.sin(frame * 0.01) * 15;
-        const endY = 40 + Math.cos(frame * 0.01) * 15;
-        ctx.moveTo(10, startY);
-        ctx.lineTo(canvas.width - 10, endY);
-        ctx.stroke();
-
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.05)";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        for (let x = 0; x < canvas.width; x += 2) {
-          const dx = (x - canvas.width / 2) / 80;
-          const y = canvas.height - 15 - Math.exp(-dx * dx) * 90;
+        for (let x = 0; x < canvas.width; x += 4) {
+          const dx = (x - canvas.width / 2) / 60;
+          const y = canvas.height - 20 - Math.exp(-dx * dx) * 80;
           if (x === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
         ctx.stroke();
 
+        // Regression slope line sweeping
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.08)";
+        ctx.beginPath();
+        const startY = 120 + Math.sin(frame * 0.01) * 12;
+        const endY = 40 + Math.cos(frame * 0.01) * 12;
+        ctx.moveTo(10, startY);
+        ctx.lineTo(canvas.width - 10, endY);
+        ctx.stroke();
+
+        // Drifting data points (pixels)
+        particles.forEach((p) => {
+          ctx.fillStyle = p.color;
+          ctx.fillRect(p.x, p.y, p.size, p.size);
+        });
+
       } else if (slug === "ap-csa") {
-        ctx.font = "7px monospace";
+        ctx.font = "8px monospace";
         particles.forEach((p) => {
           p.y += p.speedY;
           if (p.y > canvas.height + 10) {
             p.y = -10;
             p.x = Math.random() * canvas.width;
+          }
+          if (frame % 30 === 0 && Math.random() > 0.7) {
+            p.val = p.val === "0" ? "1" : "0";
           }
           ctx.fillStyle = p.color;
           ctx.fillText(p.val, Math.round(p.x), Math.round(p.y));
@@ -2325,14 +2388,14 @@ function UnitBannerBackground({ slug, unitId, accentColor }: UnitBannerBackgroun
         }
       }
 
-      drawPixelDiagram(ctx, 380, 80, slug, unitId, frame, accentColor);
+      drawPixelDiagram(ctx, 380, 80, slug, unitIdRef.current, frame, accentColor);
 
       animId = requestAnimationFrame(render);
     };
 
     render();
     return () => cancelAnimationFrame(animId);
-  }, [slug, unitId, accentColor]);
+  }, [slug, accentColor]);
 
   return (
     <canvas
