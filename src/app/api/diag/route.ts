@@ -1,20 +1,10 @@
 import { NextResponse } from "next/server";
-import { getAdminDb } from "@/lib/firebaseAdmin";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  let adminDbStatus = "not called";
-  try {
-    const db = getAdminDb();
-    adminDbStatus = "success";
-  } catch (dbError: any) {
-    adminDbStatus = `error: ${dbError.message}`;
-  }
-
   const diagInfo: any = {
     timestamp: new Date().toISOString(),
-    adminDbStatus,
     env: {
       FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || "not set",
       NEXT_PUBLIC_FIREBASE_PROJECT_ID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "not set",
@@ -38,12 +28,11 @@ export async function GET() {
     };
   }
 
-  // Try importing firebase-admin dynamically to check for runtime import errors
+  // Check firebase-admin/app
   try {
     const adminApp = await import("firebase-admin/app");
     diagInfo.firebaseAdminAppImport = "success";
     
-    // Try building a cert if credentials exist
     if (key && process.env.FIREBASE_CLIENT_EMAIL) {
       try {
         let cleanedKey = key.trim();
@@ -66,6 +55,22 @@ export async function GET() {
     }
   } catch (importError: any) {
     diagInfo.firebaseAdminAppImport = `error: ${importError.message}`;
+  }
+
+  // Check firebase-admin/auth
+  try {
+    await import("firebase-admin/auth");
+    diagInfo.firebaseAdminAuthImport = "success";
+  } catch (importError: any) {
+    diagInfo.firebaseAdminAuthImport = `error: ${importError.message}`;
+  }
+
+  // Check firebase-admin/firestore
+  try {
+    await import("firebase-admin/firestore");
+    diagInfo.firebaseAdminFirestoreImport = "success";
+  } catch (importError: any) {
+    diagInfo.firebaseAdminFirestoreImport = `error: ${importError.message}`;
   }
 
   return NextResponse.json(diagInfo);
