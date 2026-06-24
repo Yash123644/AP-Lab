@@ -60,6 +60,180 @@ const ProgressContext = createContext<ProgressContextType>({
 
 export const useProgress = () => useContext(ProgressContext);
 
+// Helper Cinematic Level Up Modal Component
+interface LevelUpModalProps {
+  oldLevel: number;
+  newLevel: number;
+  onClose: () => void;
+}
+
+function LevelUpModal({ oldLevel, newLevel, onClose }: LevelUpModalProps) {
+  const [isMorphed, setIsMorphed] = useState(false);
+
+  useEffect(() => {
+    // 1. Play the combined level up sound (riser + impact) on mount
+    playLevelUpSound();
+
+    // 2. Trigger morph at 1.8s
+    const morphTimer = setTimeout(() => {
+      setIsMorphed(true);
+      // Trigger a direct confetti burst at the morph instant
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.5 }
+      });
+    }, 1800);
+
+    // 3. Auto-hide modal at 4.2s (after new badge wiggles and text settles)
+    const closeTimer = setTimeout(() => {
+      onClose();
+    }, 4200);
+
+    return () => {
+      clearTimeout(morphTimer);
+      clearTimeout(closeTimer);
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/85 backdrop-blur-3xl px-4"
+    >
+      {/* Cinematic Flash Overlay */}
+      <AnimatePresence>
+        {isMorphed && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 0] }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.45, times: [0, 0.2, 1] }}
+            className="absolute inset-0 bg-white pointer-events-none z-50 mix-blend-overlay"
+          />
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        initial={{ scale: 0.85, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.85, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        className="w-full max-w-md bg-[#050508]/90 border border-yellow-500/20 rounded-[40px] p-10 text-center relative overflow-hidden shadow-[0_0_100px_rgba(234,179,8,0.15)] backdrop-blur-md"
+      >
+        {/* Decorative radial glows */}
+        <div className="absolute -top-32 -left-32 w-64 h-64 rounded-full blur-[100px] opacity-25 bg-amber-500 pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-64 h-64 rounded-full blur-[100px] opacity-25 bg-amber-500 pointer-events-none" />
+        
+        <div className="relative z-10 flex flex-col items-center justify-center space-y-8">
+          
+          {/* Header text with elegant fade-in after morph */}
+          <div className="space-y-1">
+            <motion.span 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-[10px] font-mono font-black text-amber-500 uppercase tracking-[0.3em] block"
+            >
+              Academic Advancement
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="font-instrument text-4xl text-white tracking-tight leading-none"
+            >
+              Level Up!
+            </motion.h2>
+          </div>
+
+          {/* Centered Morphing Badge Frame */}
+          <div className="relative w-48 h-48 flex items-center justify-center">
+            
+            {/* Spinning/Morphing Old Badge */}
+            {!isMorphed && (
+              <motion.div
+                key="old-badge"
+                initial={{ scale: 1, rotate: 0, opacity: 1 }}
+                animate={{ 
+                  scale: [1, 1.15, 0],
+                  rotate: [0, 180, 1080],
+                  opacity: [1, 1, 0]
+                }}
+                transition={{ 
+                  duration: 1.8,
+                  times: [0, 0.6, 1],
+                  ease: "easeInOut"
+                }}
+                className="absolute"
+              >
+                <LevelBadge level={oldLevel} size="lg" />
+              </motion.div>
+            )}
+
+            {/* Exploding/Glowing New Badge */}
+            {isMorphed && (
+              <motion.div
+                key="new-badge"
+                initial={{ scale: 0, rotate: -720, opacity: 0 }}
+                animate={{ 
+                  scale: [0, 1.5, 1.2],
+                  rotate: [-720, 360, 0],
+                  opacity: 1
+                }}
+                transition={{ 
+                  duration: 1.2,
+                  times: [0, 0.75, 1],
+                  type: "spring",
+                  stiffness: 160,
+                  damping: 14
+                }}
+                className="relative filter drop-shadow-[0_0_35px_rgba(251,191,36,0.55)]"
+              >
+                <LevelBadge level={newLevel} size="lg" />
+              </motion.div>
+            )}
+            
+            {/* Ambient gold halo during morph */}
+            <motion.div
+              animate={isMorphed 
+                ? { scale: [1, 1.4, 1.2], opacity: [0.1, 0.5, 0.2] } 
+                : { scale: [0.9, 1.1, 0.9], opacity: [0.05, 0.15, 0.05] }
+              }
+              transition={{ duration: 2.0, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute w-36 h-36 border border-amber-500/30 rounded-full blur-md -z-10 pointer-events-none"
+            />
+          </div>
+
+          {/* Sub-text revealing smoothly after new badge settles */}
+          <div className="h-12 flex flex-col items-center justify-center">
+            <AnimatePresence>
+              {isMorphed && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="space-y-1"
+                >
+                  <p className="text-white/60 text-sm font-manrope">
+                    You have ascended to level <span className="text-amber-400 font-bold font-mono">{newLevel}</span>
+                  </p>
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest font-mono">
+                    Keep up the exceptional performance
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export const ProgressProvider = ({ children }: { children: React.ReactNode }) => {
   const { currentUser } = useAuth();
   const [progress, setProgress] = useState<UserProgress>(defaultProgress);
@@ -343,12 +517,6 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
       if (isLevelUp) {
         setTimeout(() => {
-          playLevelUpSound();
-          confetti({
-            particleCount: 150,
-            spread: 80,
-            origin: { y: 0.6 }
-          });
           setLevelUpData({ oldLevel, newLevel });
         }, 500);
       }
@@ -408,15 +576,8 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       if (xpEarned > 0) {
         triggerXpToast(xpEarned, isCompleted ? "Practice Repeated (Halved XP)" : "Question Correct!", "question");
       }
-
       if (isLevelUp) {
         setTimeout(() => {
-          playLevelUpSound();
-          confetti({
-            particleCount: 150,
-            spread: 80,
-            origin: { y: 0.6 }
-          });
           setLevelUpData({ oldLevel, newLevel });
         }, 500);
       }
@@ -498,103 +659,11 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       {/* Level Up Modal */}
       <AnimatePresence>
         {levelUpData && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-xl px-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.9, y: 20, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="w-full max-w-md bg-[#07080e]/95 border border-yellow-500/30 rounded-[32px] p-8 text-center relative overflow-hidden shadow-[0_0_80px_rgba(234,179,8,0.2)] backdrop-blur-3xl"
-            >
-              {/* Decorative radial gold glow */}
-              <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full blur-[80px] opacity-20 bg-yellow-500 pointer-events-none" />
-              <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full blur-[80px] opacity-20 bg-yellow-500 pointer-events-none" />
-              
-              <div className="relative z-10 space-y-6">
-                <div className="space-y-2">
-                  <span className="text-[10px] font-manrope font-black text-yellow-500 uppercase tracking-[0.25em]">
-                    Congratulations
-                  </span>
-                  <h2 className="font-instrument text-4xl text-white tracking-tight leading-none">
-                    Level Up!
-                  </h2>
-                </div>
-
-                {/* Badge Morphing Animation Container */}
-                <div className="flex items-center justify-center space-x-6 py-6">
-                  {/* Old Badge */}
-                  <motion.div
-                    initial={{ scale: 1, opacity: 0.8 }}
-                    animate={{ 
-                      scale: [1, 0.8, 0.8, 0],
-                      opacity: [0.8, 0.8, 0, 0]
-                    }}
-                    transition={{ 
-                      duration: 2.2, 
-                      times: [0, 0.3, 0.45, 1],
-                      repeat: Infinity,
-                      repeatDelay: 1
-                    }}
-                  >
-                    <LevelBadge level={levelUpData.oldLevel} size="lg" />
-                  </motion.div>
-
-                  {/* Morphing Indicator/Arrow */}
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      opacity: [0.3, 1, 0.3]
-                    }}
-                    transition={{ 
-                      duration: 2.2, 
-                      repeat: Infinity,
-                      repeatDelay: 1
-                    }}
-                    className="text-yellow-500/60 text-2xl font-bold"
-                  >
-                    →
-                  </motion.div>
-
-                  {/* New Badge */}
-                  <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ 
-                      scale: [0, 0, 1.2, 1],
-                      opacity: [0, 0, 1, 1],
-                      rotate: [0, 0, 360, 360]
-                    }}
-                    transition={{ 
-                      duration: 2.2, 
-                      times: [0, 0.4, 0.65, 1],
-                      repeat: Infinity,
-                      repeatDelay: 1
-                    }}
-                  >
-                    <LevelBadge level={levelUpData.newLevel} size="lg" />
-                  </motion.div>
-                </div>
-
-                <div className="space-y-2">
-                  <p className="text-white/60 text-sm">
-                    You've reached level <span className="text-yellow-400 font-bold font-mono">{levelUpData.newLevel}</span>! Keep up the incredible work.
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setLevelUpData(null)}
-                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-manrope font-black uppercase tracking-widest text-xs py-4 rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(234,179,8,0.25)]"
-                >
-                  Continue Journey
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
+          <LevelUpModal
+            oldLevel={levelUpData.oldLevel}
+            newLevel={levelUpData.newLevel}
+            onClose={() => setLevelUpData(null)}
+          />
         )}
       </AnimatePresence>
 

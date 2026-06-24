@@ -59,7 +59,7 @@ export function playSuccessSound() {
   osc2.stop(now + 0.25);
 }
 
-export function playLevelUpSound() {
+export function playLevelUpRiser() {
   const ctx = getAudioContext();
   if (!ctx) return;
 
@@ -68,35 +68,96 @@ export function playLevelUpSound() {
   }
 
   const now = ctx.currentTime;
-  const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 arpeggio
+  const duration = 1.8;
+
+  // Primary rising oscillator
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  const filter = ctx.createBiquadFilter();
+
+  osc.type = "sawtooth";
+  osc.frequency.setValueAtTime(80, now);
+  osc.frequency.exponentialRampToValueAtTime(650, now + duration);
+
+  filter.type = "bandpass";
+  filter.frequency.setValueAtTime(100, now);
+  filter.frequency.exponentialRampToValueAtTime(1200, now + duration);
+  filter.Q.setValueAtTime(3.0, now);
+
+  gain.gain.setValueAtTime(0.001, now);
+  gain.gain.exponentialRampToValueAtTime(0.12, now + duration);
+
+  osc.connect(filter);
+  filter.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start(now);
+  osc.stop(now + duration);
+}
+
+export function playLevelUpImpact() {
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  if (ctx.state === "suspended") {
+    ctx.resume();
+  }
+
+  const now = ctx.currentTime;
+
+  // 1. Sub Bass Drop Impact
+  const subOsc = ctx.createOscillator();
+  const subGain = ctx.createGain();
   
-  notes.forEach((freq, index) => {
-    const time = now + index * 0.12;
+  subOsc.type = "sine";
+  subOsc.frequency.setValueAtTime(130, now);
+  subOsc.frequency.linearRampToValueAtTime(40, now + 0.8);
+  
+  subGain.gain.setValueAtTime(0.25, now);
+  subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+  
+  subOsc.connect(subGain);
+  subGain.connect(ctx.destination);
+  subOsc.start(now);
+  subOsc.stop(now + 0.8);
+
+  // 2. High Golden Chime Chord (C6, E6, G6, C7)
+  const freqs = [1046.50, 1318.51, 1567.98, 2093.00];
+  freqs.forEach((freq, i) => {
+    // Add micro-delays for strum/sparkle effect
+    const time = now + i * 0.03;
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     
     osc.type = "sine";
     osc.frequency.setValueAtTime(freq, time);
     
-    // Pitch modulation (vibrato) for a richer sound
+    // Add vibrato/sparkle
     const vibrato = ctx.createOscillator();
     const vibratoGain = ctx.createGain();
-    vibrato.frequency.value = 8; 
-    vibratoGain.gain.value = 4;
+    vibrato.frequency.value = 12; // 12Hz sparkle wail
+    vibratoGain.gain.value = 6;
     vibrato.connect(vibratoGain);
     vibratoGain.connect(osc.frequency);
-    vibrato.start(time);
-    vibrato.stop(time + 0.5);
     
-    gain.gain.setValueAtTime(0.1, time);
-    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.5);
+    gain.gain.setValueAtTime(0.08, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 2.5); // long decay
     
     osc.connect(gain);
     gain.connect(ctx.destination);
     
+    vibrato.start(time);
+    vibrato.stop(time + 2.5);
     osc.start(time);
-    osc.stop(time + 0.5);
+    osc.stop(time + 2.5);
   });
+}
+
+export function playLevelUpSound() {
+  playLevelUpRiser();
+  setTimeout(() => {
+    playLevelUpImpact();
+  }, 1800);
 }
 
 export function playFailureSound() {
