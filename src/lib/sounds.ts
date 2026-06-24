@@ -70,29 +70,42 @@ export function playLevelUpRiser() {
   const now = ctx.currentTime;
   const duration = 1.8;
 
-  // Primary rising oscillator
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
+  // Dual-oscillator for rich, cinematic swell
+  const osc1 = ctx.createOscillator();
+  const osc2 = ctx.createOscillator();
   const filter = ctx.createBiquadFilter();
+  const gain = ctx.createGain();
 
-  osc.type = "sawtooth";
-  osc.frequency.setValueAtTime(80, now);
-  osc.frequency.exponentialRampToValueAtTime(650, now + duration);
+  // Smooth triangle wave
+  osc1.type = "triangle";
+  osc1.frequency.setValueAtTime(65, now);
+  osc1.frequency.exponentialRampToValueAtTime(520, now + duration);
 
-  filter.type = "bandpass";
-  filter.frequency.setValueAtTime(100, now);
-  filter.frequency.exponentialRampToValueAtTime(1200, now + duration);
-  filter.Q.setValueAtTime(3.0, now);
+  // Sub sine wave slightly detuned for thickness
+  osc2.type = "sine";
+  osc2.frequency.setValueAtTime(67, now);
+  osc2.frequency.exponentialRampToValueAtTime(525, now + duration);
 
+  // Lowpass sweep from muffled deep rumble to bright open crescendo
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(90, now);
+  filter.frequency.exponentialRampToValueAtTime(1600, now + duration);
+  filter.Q.setValueAtTime(1.5, now);
+
+  // Smooth volume swell that dips slightly right before impact for tension
   gain.gain.setValueAtTime(0.001, now);
-  gain.gain.exponentialRampToValueAtTime(0.12, now + duration);
+  gain.gain.linearRampToValueAtTime(0.16, now + duration * 0.85);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
 
-  osc.connect(filter);
+  osc1.connect(filter);
+  osc2.connect(filter);
   filter.connect(gain);
   gain.connect(ctx.destination);
 
-  osc.start(now);
-  osc.stop(now + duration);
+  osc1.start(now);
+  osc2.start(now);
+  osc1.stop(now + duration);
+  osc2.stop(now + duration);
 }
 
 export function playLevelUpImpact() {
@@ -110,46 +123,45 @@ export function playLevelUpImpact() {
   const subGain = ctx.createGain();
   
   subOsc.type = "sine";
-  subOsc.frequency.setValueAtTime(130, now);
-  subOsc.frequency.linearRampToValueAtTime(40, now + 0.8);
+  subOsc.frequency.setValueAtTime(110, now);
+  subOsc.frequency.exponentialRampToValueAtTime(45, now + 1.2);
   
-  subGain.gain.setValueAtTime(0.25, now);
-  subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+  subGain.gain.setValueAtTime(0.24, now);
+  subGain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
   
   subOsc.connect(subGain);
   subGain.connect(ctx.destination);
   subOsc.start(now);
-  subOsc.stop(now + 0.8);
+  subOsc.stop(now + 1.2);
 
-  // 2. High Golden Chime Chord (C6, E6, G6, C7)
-  const freqs = [1046.50, 1318.51, 1567.98, 2093.00];
+  // 2. High Cinematic Glass Chime Strum (C6, E6, G6, B6, D7, G7 - Pentatonic / Major 9)
+  const freqs = [1046.50, 1318.51, 1567.98, 1975.53, 2349.32, 3135.96];
   freqs.forEach((freq, i) => {
-    // Add micro-delays for strum/sparkle effect
-    const time = now + i * 0.03;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
+    // Beautiful strum cascade
+    const time = now + i * 0.04;
+    const oscTriangle = ctx.createOscillator();
+    const oscSine = ctx.createOscillator();
+    const gainNode = ctx.createGain();
     
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(freq, time);
+    // Triangle wave for warm woody/metal resonance
+    oscTriangle.type = "triangle";
+    oscTriangle.frequency.setValueAtTime(freq, time);
     
-    // Add vibrato/sparkle
-    const vibrato = ctx.createOscillator();
-    const vibratoGain = ctx.createGain();
-    vibrato.frequency.value = 12; // 12Hz sparkle wail
-    vibratoGain.gain.value = 6;
-    vibrato.connect(vibratoGain);
-    vibratoGain.connect(osc.frequency);
+    // Sine wave at double frequency for pure crystal bell tone
+    oscSine.type = "sine";
+    oscSine.frequency.setValueAtTime(freq * 2.0, time);
     
-    gain.gain.setValueAtTime(0.08, time);
-    gain.gain.exponentialRampToValueAtTime(0.001, time + 2.5); // long decay
+    gainNode.gain.setValueAtTime(0.05, time);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, time + 2.2); // smooth long ring-out
     
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+    oscTriangle.connect(gainNode);
+    oscSine.connect(gainNode);
+    gainNode.connect(ctx.destination);
     
-    vibrato.start(time);
-    vibrato.stop(time + 2.5);
-    osc.start(time);
-    osc.stop(time + 2.5);
+    oscTriangle.start(time);
+    oscTriangle.stop(time + 2.2);
+    oscSine.start(time);
+    oscSine.stop(time + 2.2);
   });
 }
 

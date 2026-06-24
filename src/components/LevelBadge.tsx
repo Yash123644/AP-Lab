@@ -7,9 +7,10 @@ interface LevelBadgeProps {
   level: number;
   className?: string;
   size?: "sm" | "md" | "lg";
+  showLabel?: boolean;
 }
 
-export function LevelBadge({ level, className, size = "sm" }: LevelBadgeProps) {
+export function LevelBadge({ level, className, size = "sm", showLabel = true }: LevelBadgeProps) {
   // Clamp level between 1 and 100
   const displayLevel = Math.max(1, Math.min(100, level));
 
@@ -202,20 +203,22 @@ export function LevelBadge({ level, className, size = "sm" }: LevelBadgeProps) {
       </div>
 
       {/* Label and Badge Level text */}
-      <div className="flex flex-col items-start leading-none">
-        <span className="text-[8px] uppercase tracking-widest opacity-40 font-mono font-bold">
-          {tierName}
-        </span>
-        <span 
-          className="font-mono text-[11px] font-black tracking-wider"
-          style={{
-            color: primaryColor,
-            textShadow: `0 0 8px ${glowColor}`
-          }}
-        >
-          LVL {displayLevel}
-        </span>
-      </div>
+      {showLabel && (
+        <div className="flex flex-col items-start leading-none">
+          <span className="text-[8px] uppercase tracking-widest opacity-40 font-mono font-bold">
+            {tierName}
+          </span>
+          <span 
+            className="font-mono text-[11px] font-black tracking-wider"
+            style={{
+              color: primaryColor,
+              textShadow: `0 0 8px ${glowColor}`
+            }}
+          >
+            LVL {displayLevel}
+          </span>
+        </div>
+      )}
     </div>
   );
 }

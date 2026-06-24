@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, useRef } from "react";
 import { doc, onSnapshot, setDoc, arrayUnion, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "./AuthContext";
@@ -69,10 +69,14 @@ interface LevelUpModalProps {
 
 function LevelUpModal({ oldLevel, newLevel, onClose }: LevelUpModalProps) {
   const [isMorphed, setIsMorphed] = useState(false);
+  const playedSoundRef = useRef(false);
 
   useEffect(() => {
-    // 1. Play the combined level up sound (riser + impact) on mount
-    playLevelUpSound();
+    // 1. Play the combined level up sound (riser + impact) on mount once
+    if (!playedSoundRef.current) {
+      playedSoundRef.current = true;
+      playLevelUpSound();
+    }
 
     // 2. Trigger morph at 1.8s
     const morphTimer = setTimeout(() => {
@@ -158,39 +162,41 @@ function LevelUpModal({ oldLevel, newLevel, onClose }: LevelUpModalProps) {
                 key="old-badge"
                 initial={{ scale: 1, rotate: 0, opacity: 1 }}
                 animate={{ 
-                  scale: [1, 1.15, 0],
-                  rotate: [0, 180, 1080],
-                  opacity: [1, 1, 0]
+                  scale: [1, 1.15, 0.9, 0],
+                  rotate: [0, 90, 720, 1800],
+                  opacity: [1, 1, 1, 0]
                 }}
                 transition={{ 
                   duration: 1.8,
-                  times: [0, 0.6, 1],
+                  times: [0, 0.4, 0.8, 1],
                   ease: "easeInOut"
                 }}
-                className="absolute"
+                className="absolute flex items-center justify-center"
               >
                 <LevelBadge level={oldLevel} size="lg" />
+                {/* Glowing charged energy overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-white rounded-full mix-blend-screen blur-sm pointer-events-none"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: [0, 0.3, 0.8, 1], scale: [0.8, 1.0, 1.2, 1.3] }}
+                  transition={{ duration: 1.8, times: [0, 0.4, 0.8, 1], ease: "easeInOut" }}
+                />
               </motion.div>
             )}
-
+ 
             {/* Exploding/Glowing New Badge */}
             {isMorphed && (
               <motion.div
                 key="new-badge"
-                initial={{ scale: 0, rotate: -720, opacity: 0 }}
-                animate={{ 
-                  scale: [0, 1.5, 1.2],
-                  rotate: [-720, 360, 0],
-                  opacity: 1
-                }}
+                initial={{ scale: 0.2, rotate: -180, opacity: 0 }}
+                animate={{ scale: 1.2, rotate: 0, opacity: 1 }}
                 transition={{ 
-                  duration: 1.2,
-                  times: [0, 0.75, 1],
                   type: "spring",
-                  stiffness: 160,
-                  damping: 14
+                  stiffness: 140,
+                  damping: 10,
+                  mass: 0.8
                 }}
-                className="relative filter drop-shadow-[0_0_35px_rgba(251,191,36,0.55)]"
+                className="relative filter drop-shadow-[0_0_35px_rgba(251,191,36,0.6)]"
               >
                 <LevelBadge level={newLevel} size="lg" />
               </motion.div>

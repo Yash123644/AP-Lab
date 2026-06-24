@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
-  ChevronRight, Activity, Star, User, Mail, X, Sparkles
+  ChevronRight, Activity, Star, User, Mail, X
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
@@ -273,18 +273,16 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
                     href={`/dashboard/${subject.slug}`}
                     className={cn(
                       "flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group/item w-full relative overflow-hidden",
-                      isCompleted && "border-amber-400 bg-amber-500/[0.05] shadow-[0_0_20px_rgba(245,158,11,0.2)]"
+                      isCompleted && "border-amber-500/35 bg-amber-500/[0.02] shadow-[0_0_12px_rgba(245,158,11,0.08)]"
                     )}
                   >
                     {isCompleted && (
                       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl z-0">
                         {/* Beautiful golden animated shimmer overlay */}
                         <div className="absolute inset-0 animate-shimmer-gold" />
-                        <Sparkles className="absolute top-1 left-1.5 w-3.5 h-3.5 text-amber-300 animate-pulse" style={{ animationDuration: "1.5s" }} />
-                        <Sparkles className="absolute bottom-1 right-1.5 w-3.5 h-3.5 text-amber-300 animate-pulse" style={{ animationDuration: "2s" }} />
                       </div>
                     )}
-
+ 
                     <div className="flex items-center flex-1 mr-4 overflow-hidden relative z-10">
                       <subject.icon 
                         className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" 
@@ -318,7 +316,6 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
                         "text-[10px] font-mono font-medium text-white/40 group-hover/item:text-white/70 transition-colors flex items-center gap-1",
                         isCompleted && "text-yellow-400 font-bold group-hover/item:text-yellow-300"
                       )}>
-                        {isCompleted && <Sparkles className="w-3 h-3 text-yellow-400 animate-pulse" />}
                         {progressPercent}%
                       </span>
                       <ChevronRight className={cn(

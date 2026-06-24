@@ -1,5 +1,6 @@
 "use client";
 
+import { LevelBadge } from "@/components/LevelBadge";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
@@ -46,7 +47,7 @@ export function AppShowcase() {
         {/* Apple-Style 2x2 Bento Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto mt-16">
           
-          {/* Box 1 (Top Left) - STUDY GUIDES */}
+          {/* Box 1 (Top Left) - GAMIFICATION */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -56,19 +57,22 @@ export function AppShowcase() {
           >
             {/* Typography & Call to Action */}
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">STUDY GUIDES</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">High-Yield AP Chemistry Blueprints.</h3>
+              <span className="text-[10px] font-mono tracking-widest text-amber-500/80 font-bold uppercase mb-1">GAMIFICATION</span>
+              <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">Academic Progression & Badges.</h3>
               <p className="text-white/50 font-inter text-xs max-w-sm mt-2 leading-relaxed">
-                Complete coverage of all 8 College Board units with high-yield blueprints.
+                Earn XP across all courses to level up, morph your badges dynamically, and climb the live global leaderboard.
               </p>
             </div>
 
-            {/* Center Graphic: Formula in a glass frame */}
-            <div className="relative w-full h-[180px] flex items-center justify-center z-10">
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-8 py-5 shadow-2xl flex items-center justify-center">
-                <span className="font-serif text-xl md:text-2xl text-white tracking-widest select-none">
-                  K<sub>p</sub> = K<sub>c</sub>(RT)<sup>Δn</sup>
-                </span>
+            {/* Center Graphic: Grid of 6 interactive badges */}
+            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2">
+              <div className="grid grid-cols-3 gap-x-6 gap-y-4 bg-white/[0.02] border border-white/5 rounded-3xl p-5 shadow-inner w-full max-w-[340px]">
+                {[1, 15, 35, 55, 75, 100].map((lvl) => (
+                  <div key={lvl} className="flex flex-col items-center justify-center space-y-1 transition-all duration-300 hover:scale-110">
+                    <LevelBadge level={lvl} size="sm" showLabel={false} />
+                    <span className="text-[8px] font-mono font-black text-white/40 tracking-wider">LVL {lvl}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
