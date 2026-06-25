@@ -38,18 +38,70 @@ export const apBiologyData: APBioUnit[] = [
         article: `
 # Structure of Water and Hydrogen Bonding
 
-Water ($H_2O$) is the fundamental solvent of life. Its unique properties arise from its polar molecular geometry and the resulting hydrogen bonds it forms.
+Water ($H_2O$) is the **fundamental solvent of life**. Every chemical reaction in a living cell occurs in an aqueous environment, making water's unique properties essential to biology.
 
-## Molecular Polarity
-In a water molecule, the oxygen atom is highly <vocab term="Electronegativity" definition="A measure of the tendency of an atom to attract a bonding pair of electrons.">electronegative</vocab> compared to the hydrogen atoms. This difference pulls shared electrons closer to the oxygen, creating a partial negative charge ($\delta^-$) near the oxygen and partial positive charges ($\delta^+$) near the hydrogens. This unequal distribution establishes a polar covalent bond.
+## Molecular Geometry & Polarity
+
+The water molecule is **bent** (V-shaped) with a bond angle of approximately 104.5°. The oxygen atom is highly <vocab term="Electronegativity" definition="A measure of an atom's tendency to attract shared electrons toward itself in a covalent bond.">electronegative</vocab> compared to the two hydrogen atoms, pulling the shared electrons closer to oxygen.
+
+This unequal electron distribution creates a **polar covalent bond**: the oxygen end carries a partial negative charge ($\delta^-$) and each hydrogen end carries a partial positive charge ($\delta^+$). The molecule is an electric **dipole**.
+
+
+       δ-
+       O
+      / \
+   δ+ H   H δ+
+  (104.5° angle)
+
 
 ## Hydrogen Bonding
-A **hydrogen bond** is a weak electrostatic attraction between the $\delta^+$ hydrogen of one water molecule and the $\delta^-$ oxygen of another. Although individual hydrogen bonds are transient, their abundance grants water unique properties:
-- **Cohesion**: Water molecules stick to each other, creating a high <vocab term="Surface Tension" definition="The resistance of a liquid surface to stretch or break due to cohesive forces.">surface tension</vocab>.
-- **Adhesion**: Water molecules form hydrogen bonds with other polar substances, driving capillary action (e.g., pulling water up plant xylem).
-- **High Specific Heat**: Water absorbs a significant amount of heat energy before changing temperature because energy must first break hydrogen bonds. This buffers climates and maintains stable cellular temperatures.
-- **Evaporative Cooling**: High kinetic energy water molecules evaporate first, carrying heat away.
-- **Density Expansion**: Water is less dense as a solid (ice) than a liquid because hydrogen bonds lock molecules into a spacious crystalline lattice, allowing ice to float and insulate aquatic environments.
+
+A <vocab term="Hydrogen Bond" definition="A weak electrostatic attraction between a partially positive hydrogen atom on one molecule and a partially negative atom (usually N, O, or F) on another.">hydrogen bond</vocab> forms when the $\delta^+$ hydrogen of one water molecule is attracted to the $\delta^-$ oxygen of a neighboring molecule. Each water molecule can form up to **4 hydrogen bonds** simultaneously.
+
+
+  H—O· · ·H—O· · ·H—O
+  |         |         |
+  H         H         H
+  · · ·     · · ·
+  O—H       O—H
+  |           |
+  H           H
+  (· · · = hydrogen bond)
+
+
+## Emergent Properties of Water
+
+The collective strength of millions of simultaneous hydrogen bonds gives water its remarkable properties:
+
+| Property | Explanation | Biological Importance |
+|---|---|---|
+| <vocab term="Cohesion" definition="Attraction between molecules of the same substance due to hydrogen bonding.">Cohesion</vocab> | Water molecules stick to each other | Creates surface tension; pulls water up xylem in plants |
+| <vocab term="Adhesion" definition="Attraction between water molecules and other polar surfaces.">Adhesion</vocab> | Water molecules cling to polar surfaces | Capillary action in xylem vessels |
+| High <vocab term="Specific Heat Capacity" definition="The energy needed to raise 1 gram of a substance by 1°C.">Specific Heat</vocab> | Hydrogen bonds must break before temperature rises | Buffers aquatic temperatures; stabilizes body heat |
+| Evaporative Cooling | High-KE molecules evaporate, removing heat | Sweating and leaf transpiration cool organisms |
+| Ice Floats | Solid water is LESS dense than liquid water | Ice insulates aquatic environments in winter |
+
+## The Density Anomaly of Ice
+
+In liquid water, hydrogen bonds constantly break and reform. When water freezes, hydrogen bonds lock molecules into a **spacious hexagonal lattice** — holding molecules **farther apart** than in the liquid state.
+
+
+LIQUID WATER          ICE (crystalline lattice)
+                      
+  O   O   O           O · · · O · · · O
+ /|\ /|\ /|\          |         |         |
+  O   O   O           O · · · O · · · O
+ 
+(molecules closer,    (molecules locked in
+ bonds transient)      open hexagonal grid)
+
+
+This makes ice ~9% less dense than liquid water — which is why ice floats. Floating ice insulates the liquid water beneath, allowing aquatic life to survive winter.
+
+## Water as the Universal Solvent
+
+Water is an excellent <vocab term="Solvent" definition="The dissolving medium in a solution; water is the universal biological solvent.">solvent</vocab> because its polar molecules surround and separate ionic compounds and other polar solutes, forming <vocab term="Hydration Shell" definition="The sphere of water molecules surrounding a dissolved ion or polar molecule.">hydration shells</vocab>. Nonpolar substances (like oils) cannot form hydrogen bonds with water and are excluded — the basis of the **hydrophobic effect** that shapes biological membranes.
+
 `,
         questions: [
           {
@@ -123,20 +175,78 @@ A **hydrogen bond** is a weak electrostatic attraction between the $\delta^+$ hy
         id: "1.2",
         title: "Elements of Life",
         description: "Analyze the biological acquisition and use of carbon, nitrogen, phosphorus, and sulfur.",
-        youtubeId: "c7niqHFOa-A",
+        youtubeId: "J6JDITJqc7k",
         article: `
 # Elements of Life
 
-Organisms must exchange matter with the environment to grow, reproduce, and maintain organization. The molecular building blocks of life require specific elements:
+Living organisms are built from a select set of chemical elements. Although over 90 elements occur naturally, life uses roughly 25, with just four dominating biological molecules.
 
-## Core Biological Elements
-- **Carbon** ($C$): Used to build biological macromolecules (carbohydrates, proteins, lipids, nucleic acids). Carbon can form four covalent bonds, making it the backbone of all organic molecules.
-- **Nitrogen** ($N$): Required to build proteins and nucleic acids.
-- **Phosphorus** ($P$): Required to build nucleic acids and certain lipids (phospholipids).
-- **Sulfur** ($S$): Required to build proteins (specifically the amino acids methionine and cysteine).
+## The CHNOPS Elements
+
+The six most abundant elements in living matter form the acronym **CHNOPS**:
+
+| Element | Symbol | Role in Life |
+|---|---|---|
+| Carbon | C | Backbone of ALL organic molecules; forms 4 bonds |
+| Hydrogen | H | Found in all organic molecules; key in energy transfer (NADH, FADH2) |
+| Nitrogen | N | In amino groups of <vocab term="Amino Acid" definition="The monomer unit of proteins, containing an amino group (-NH2), carboxyl group (-COOH), and a variable R-group.">amino acids</vocab> and nitrogenous bases of DNA/RNA |
+| Oxygen | O | In most biological molecules; terminal electron acceptor in cellular respiration |
+| Phosphorus | P | In the sugar-phosphate backbone of DNA/RNA and in ATP |
+| Sulfur | S | In cysteine and methionine amino acids; forms disulfide bridges in proteins |
+
+
+Relative abundance in living matter:
+ C  ████████████████████ 65%
+ O  ████████████ 18%
+ H  ████████ 10%
+ N  ████ 3%
+ Ca ██ 1.5%
+ P  █ 1%
+ Other < 1%
+
+
+## Carbon: The Foundation of Organic Chemistry
+
+Carbon's unique ability to form **4 stable covalent bonds** allows it to create:
+- **Linear chains**: fatty acids, hydrocarbons
+- **Branched chains**: amino acid R-groups
+- **Ring structures**: glucose, nitrogenous bases
+- **Double and triple bonds**: variety in molecular shapes
+
+
+Carbon Bonding Patterns:
+   |         |         |
+ —C—       —C=       —C≡
+   |         |
+(4 single) (1 double) (1 triple)
+
+
+## Trace Elements
+
+Some elements are needed in very small quantities (<vocab term="Trace Element" definition="An element required by an organism in only minute quantities but still essential for proper physiological function.">trace elements</vocab>) but are still essential:
+
+- **Iron (Fe)**: core of hemoglobin (oxygen transport) and cytochromes (electron transport)
+- **Iodine (I)**: required for thyroid hormone synthesis
+- **Zinc (Zn)**: cofactor in many enzymes including carbonic anhydrase
+- **Magnesium (Mg)**: central atom of chlorophyll; cofactor for ATP-dependent enzymes
+- **Calcium (Ca)**: second messenger in signal transduction; bone/shell structure; muscle contraction
 
 ## Biogeochemical Cycles
-Plants and other autotrophs capture these inorganic elements from the environment (soil, air, water) and incorporate them into organic molecules. Heterotrophs then consume these organic molecules to obtain these essential nutrients.
+
+Elements cycle between living organisms and the abiotic environment. <vocab term="Biogeochemical Cycle" definition="The cycling of a chemical element through both biotic (living) and abiotic (nonliving) components of an ecosystem.">Biogeochemical cycles</vocab> ensure elements are recycled:
+
+
+NITROGEN CYCLE (simplified):
+                  N₂ (atmosphere)
+                 ↑        ↓
+         Denitrification   N₂ fixation
+                           (bacteria)
+     Organisms → Decomposers → Ammonium (NH₄⁺)
+                                    ↓ nitrification
+                             Nitrate (NO₃⁻)
+                             (plant uptake)
+
+
 `,
         questions: [
           {
@@ -210,20 +320,66 @@ Plants and other autotrophs capture these inorganic elements from the environmen
         id: "1.3",
         title: "Introduction to Biological Macromolecules",
         description: "Differentiate between monomer subunits and polymers formed by dehydration synthesis.",
-        youtubeId: "H8WJ2KL0g0o",
+        youtubeId: "Y7e5AUPJ7Ug",
         article: `
 # Introduction to Biological Macromolecules
 
-Biological macromolecules are large molecules built from smaller organic subunits.
+The four classes of biological macromolecules — **carbohydrates, lipids, proteins, and nucleic acids** — are the molecular building blocks of all life. Three of the four classes are true <vocab term="Polymer" definition="A large molecule consisting of many repeating monomer subunits linked by covalent bonds.">polymers</vocab> built from repeating <vocab term="Monomer" definition="The small, repeating subunit from which a polymer is built.">monomer</vocab> units.
 
-## Monomers and Polymers
-- **Monomer**: A single molecular subunit (e.g., monosaccharides, amino acids, nucleotides).
-- **Polymer**: A long chain of monomers linked by covalent bonds (e.g., polysaccharides, polypeptides, nucleic acids).
+## The Four Classes at a Glance
 
-## Chemical Reactions
-The synthesis and breakdown of polymers are mediated by two complementary reactions:
-1. **<vocab term="Dehydration Synthesis" definition="A chemical reaction in which two molecules are covalently bonded together with the removal of a water molecule.">Dehydration Synthesis</vocab>**: One monomer provides a hydroxyl group ($-OH$) and the other provides a hydrogen ($-H$), releasing a water molecule ($H_2O$) and forming a covalent bond. This reaction requires energy.
-2. **<vocab term="Hydrolysis" definition="A chemical reaction that breaks bonds between molecules by the addition of water.">Hydrolysis</vocab>**: A water molecule is added to cleave a covalent bond, separating a polymer into individual monomers. This reaction releases energy.
+
+CLASS          | MONOMER        | EXAMPLES
+Carbohydrates  | Monosaccharide | Starch, glycogen, cellulose
+Proteins       | Amino acid     | Enzymes, antibodies, keratin
+Nucleic Acids  | Nucleotide     | DNA, RNA, ATP
+Lipids         | (not polymers) | Fats, phospholipids, steroids
+
+
+## Dehydration Synthesis (Condensation)
+
+Polymers are built by linking monomers through **dehydration synthesis** (also called condensation). In this reaction:
+- One monomer donates a **hydroxyl group** (–OH)
+- The other donates a **hydrogen** (–H)
+- These combine to release a **water molecule** ($H_2O$)
+- A new **covalent bond** forms between the monomers
+
+
+Monomer-OH  +  H-Monomer  →  Monomer—Monomer  +  H₂O
+                              (new covalent bond)
+
+
+This process **requires energy** and is catalyzed by specific enzymes.
+
+## Hydrolysis: Breaking Polymers Apart
+
+<vocab term="Hydrolysis" definition="The chemical breakdown of a polymer by the addition of a water molecule, splitting covalent bonds between monomers.">Hydrolysis</vocab> is the reverse reaction — adding water to break a polymer apart:
+
+
+Monomer—Monomer  +  H₂O  →  Monomer-OH  +  H-Monomer
+
+
+Hydrolysis **releases energy** and is how your digestive system breaks down food. Digestive enzymes (amylase, protease, lipase) catalyze hydrolysis reactions.
+
+## Counting Bonds and Water Molecules
+
+| # of monomers | # of bonds formed | # of H₂O released (synthesis) | # of H₂O needed (hydrolysis) |
+|---|---|---|---|
+| 2 | 1 | 1 | 1 |
+| 10 | 9 | 9 | 9 |
+| 100 | 99 | 99 | 99 |
+| n | n-1 | n-1 | n-1 |
+
+> **Key Rule**: A polymer of **n monomers** contains **n-1 covalent bonds** and was built by releasing **n-1 water molecules**.
+
+## Why Are Macromolecules Large?
+
+Large size allows for:
+1. **Information storage** (DNA: sequence of billions of nucleotides)
+2. **Structural diversity** (proteins: ~20 amino acids in countless combinations)
+3. **Energy storage** (glycogen: thousands of glucose units)
+4. **Structural strength** (cellulose: beta-linked glucose polymer; hydrogen bonds between fibers)
+
 `,
         questions: [
           {
@@ -297,30 +453,97 @@ The synthesis and breakdown of polymers are mediated by two complementary reacti
         id: "1.4",
         title: "Properties of Biological Macromolecules",
         description: "Compare structural differences and functions of carbohydrates, lipids, proteins, and nucleic acids.",
-        youtubeId: "qdNAtRO2SkQ",
+        youtubeId: "QnQe0xW_JY4",
         article: `
 # Properties of Biological Macromolecules
 
-The structure of a macromolecule directly determines its function:
+Each class of macromolecule has a structure that directly determines its function — a fundamental principle of molecular biology.
 
 ## 1. Carbohydrates
-Consist of carbon, hydrogen, and oxygen in a $1:2:1$ ratio. Monomers are monosaccharides (e.g., glucose). Polymers like starch and glycogen store energy, while cellulose provides structural support in plant cell walls. The bonding configuration (alpha vs. beta linkages) determines digestibility.
+
+**Monomer**: <vocab term="Monosaccharide" definition="The simplest carbohydrate; a single sugar unit such as glucose, fructose, or galactose.">Monosaccharide</vocab> (e.g., glucose, C₆H₁₂O₆)
+
+Carbohydrates follow the formula $(CH_2O)_n$ — a 1:2:1 ratio of C:H:O.
+
+
+GLUCOSE (ring form)       GLYCOSIDIC BOND
+   CH₂OH                  
+    |                    Glucose—O—Glucose
+   HO  O                 (α-1,4 linkage in starch)
+    \  |
+     C-C
+    /    \
+  OH      OH
+
+
+| Carbohydrate | Linkage | Function |
+|---|---|---|
+| Starch | α-1,4 and α-1,6 | Energy storage in plants |
+| Glycogen | α-1,4 and α-1,6 (more branches) | Energy storage in animals |
+| Cellulose | β-1,4 | Structural support in plant cell walls |
+| Chitin | β-1,4 with N-acetyl | Exoskeleton in arthropods; fungal cell walls |
+
+The **alpha vs. beta** glycosidic bond is key: alpha bonds are digestible (starch/glycogen); beta bonds are NOT digestible by most animals (cellulose), because different enzymes are required.
 
 ## 2. Lipids
-Nonpolar, hydrophobic macromolecules. They do not form true polymers:
-- **Fats (Triglycerides)**: Glycerol bonded to three fatty acids. Fatty acids can be **saturated** (no double bonds, packed tightly, solid at room temperature) or **unsaturated** (contain double bonds creating kinks, liquid at room temperature).
-- **Phospholipids**: Glycerol bonded to a polar phosphate head and two nonpolar fatty acid tails. This amphipathic nature forms biological membranes.
-- **Steroids**: Four fused carbon rings (e.g., cholesterol, hormones).
+
+Lipids are **not true polymers**. They are characterized by being predominantly nonpolar and hydrophobic.
+
+
+TRIGLYCERIDE STRUCTURE:
+        Glycerol
+           |
+    Fatty acid 1 (saturated: C-C-C-C-C-C straight)
+           |
+    Fatty acid 2 (unsaturated: C-C=C-C-C has kink)
+           |
+    Fatty acid 3
+
+
+- **<vocab term="Saturated Fatty Acid" definition="A fatty acid with no carbon-carbon double bonds; all carbons are saturated with hydrogen atoms. Typically solid at room temperature.">Saturated fatty acids</vocab>**: no double bonds → straight chains → pack tightly → solid at room temperature (e.g., butter)
+- **<vocab term="Unsaturated Fatty Acid" definition="A fatty acid with one or more carbon-carbon double bonds, creating kinks. Typically liquid at room temperature.">Unsaturated fatty acids</vocab>**: 1+ double bonds → kinked chains → cannot pack tightly → liquid at room temperature (e.g., olive oil)
+
+**Phospholipids**: A glycerol backbone with a polar phosphate head and two nonpolar fatty acid tails. This <vocab term="Amphipathic" definition="Having both hydrophilic and hydrophobic regions; characteristic of phospholipids and the basis for membrane formation.">amphipathic</vocab> nature drives membrane formation.
 
 ## 3. Proteins
-Polymers of amino acids linked by peptide bonds. Every amino acid has an amino group, a carboxyl group, a hydrogen, and a variable **R-group** (side chain). R-groups can be polar, nonpolar, acidic, or basic, dictating protein folding.
-- **Primary**: Sequence of amino acids.
-- **Secondary**: Local folding ($\alpha$-helices, $\beta$-sheets) via backbone hydrogen bonds.
-- **Tertiary**: 3D shape driven by R-group interactions (hydrophobic effects, disulfide bridges, ionic bonds).
-- **Quaternary**: Multi-polypeptide complexes.
+
+**Monomer**: <vocab term="Amino Acid" definition="The building block of proteins, containing an amino group, carboxyl group, R-group, and hydrogen — all bonded to a central alpha carbon.">Amino acid</vocab> (20 types, differing only in R-group)
+
+
+AMINO ACID STRUCTURE:
+    H   R
+    |   |
+H₂N—C—COOH
+    |
+    H
+  (amino  (R-group: unique
+   group)  to each amino acid)
+
+
+**Four Levels of Protein Structure:**
+
+| Level | Description | Bonds |
+|---|---|---|
+| **Primary** | Sequence of amino acids | Peptide bonds |
+| **Secondary** | α-helices and β-sheets | Backbone H-bonds |
+| **Tertiary** | 3D shape of a single polypeptide | R-group interactions, disulfide bridges |
+| **Quaternary** | Multiple polypeptide subunits | Same as tertiary |
+
+
+PRIMARY → SECONDARY → TERTIARY → QUATERNARY
+A-G-C-V-L → [helix/sheet] → [3D fold] → [multi-subunit]
+
 
 ## 4. Nucleic Acids
-Store and transmit genetic information. Polymers of nucleotides.
+
+Store and transmit genetic information. Polymers of <vocab term="Nucleotide" definition="The monomer of nucleic acids, consisting of a 5-carbon sugar, a phosphate group, and a nitrogenous base.">nucleotides</vocab>.
+
+Each nucleotide = **phosphate group + pentose sugar + nitrogenous base**
+
+DNA vs RNA differences:
+- DNA: **deoxyribose** sugar, **thymine** base, double-stranded
+- RNA: **ribose** sugar, **uracil** base, single-stranded
+
 `,
         questions: [
           {
@@ -398,22 +621,86 @@ Store and transmit genetic information. Polymers of nucleotides.
         article: `
 # Structure of Nucleic Acids
 
-Nucleic acids (DNA and RNA) are polymers constructed from monomer subunits called **nucleotides**.
+Nucleic acids — DNA and RNA — are the information molecules of life, encoding the instructions for building and operating every living organism.
 
 ## Nucleotide Structure
-Each nucleotide contains three components:
-1. A **5-carbon sugar** (pentose).
-2. A **phosphate group**.
-3. A **nitrogenous base** (Adenine, Thymine, Cytosine, Guanine, or Uracil).
 
-## DNA vs. RNA
-The structural differences between DNA and RNA reflect their specialized functions:
-- **Sugar**: DNA contains deoxyribose (lacking an oxygen on the 2' carbon); RNA contains ribose.
-- **Bases**: DNA uses Thymine ($T$); RNA uses Uracil ($U$) instead. Both use Adenine ($A$), Cytosine ($C$), and Guanine ($G$).
-- **Strandedness**: DNA is typically double-stranded, forming an antiparallel double helix; RNA is usually single-stranded.
+Each <vocab term="Nucleotide" definition="The monomer of nucleic acids, consisting of a 5-carbon (pentose) sugar, a phosphate group, and a nitrogenous base.">nucleotide</vocab> is composed of three components:
 
-## Directionality
-Nucleic acids are synthesized and read with strict <vocab term="Directionality" definition="The structural asymmetry of a nucleic acid strand, running from the 5' phosphate end to the 3' hydroxyl end.">directionality</vocab>. One end has a free 5' phosphate group, and the other has a free 3' hydroxyl ($-OH$) group. During synthesis, new nucleotides are added exclusively to the 3' hydroxyl group of the growing strand. In double-stranded DNA, the two strands are **antiparallel**, meaning they run in opposite directions relative to their 5' and 3' ends.
+
+NUCLEOTIDE ANATOMY:
+         Base (adenine, guanine,
+          |    cytosine, thymine/uracil)
+          |
+    5'—Phosphate—Sugar—3'
+          |
+         (Pentose: deoxyribose or ribose)
+
+
+The **sugar-phosphate backbone** runs along the outside of the helix. The **nitrogenous bases** project inward and pair with complementary bases on the opposite strand.
+
+## DNA vs. RNA: Three Key Differences
+
+| Feature | DNA | RNA |
+|---|---|---|
+| Sugar | <vocab term="Deoxyribose" definition="The 5-carbon sugar in DNA; differs from ribose by lacking the -OH group at the 2' carbon.">Deoxyribose</vocab> (no –OH at 2') | Ribose (has –OH at 2') |
+| Bases | A, T, C, G | A, **U**, C, G |
+| Strand | Double-stranded helix | Usually single-stranded |
+
+
+DNA DOUBLE HELIX:        RNA (single strand):
+5'→  A—T  ←3'           5'→ A-U-G-C-A-U → 3'
+     G—C               (single strand folds
+     C—G                on itself)
+     T—A
+3'→  A—T  ←5'
+
+
+## Complementary Base Pairing (Chargaff's Rules)
+
+In double-stranded DNA, bases pair with strict specificity:
+- **Adenine (A)** pairs with **Thymine (T)** — connected by 2 hydrogen bonds
+- **Guanine (G)** pairs with **Cytosine (C)** — connected by 3 hydrogen bonds
+
+This is known as <vocab term="Complementary Base Pairing" definition="The specific pairing of nucleotide bases in double-stranded DNA (A-T and G-C) or in RNA (A-U and G-C), stabilized by hydrogen bonds.">complementary base pairing</vocab>.
+
+**Chargaff's Rule**: In any double-stranded DNA sample, [A] = [T] and [G] = [C].
+
+If a DNA molecule is 20% adenine, then: T = 20%, G = C = (100-40)/2 = 30%.
+
+## Directionality: 5' to 3'
+
+Nucleic acid strands have a **chemical polarity** — they are not the same at both ends:
+
+
+5' END               3' END
+|                    |
+Phosphate—Sugar—Base—Sugar—Base—Sugar—OH
+   ↑                              ↑
+(free phosphate               (free hydroxyl
+ at 5' carbon)                 at 3' carbon)
+
+
+- DNA polymerase can **only add nucleotides to the 3' end** (synthesis is 5'→3')
+- The two strands of a DNA double helix are **antiparallel** — one runs 5'→3' while the other runs 3'→5'
+
+
+5'—A-T-C-G-T-A—3'   (top strand: 5' to 3' left to right)
+   | | | | | |
+3'—T-A-G-C-A-T—5'   (bottom strand: 3' to 5' left to right)
+                      (= 5' to 3' right to left)
+
+
+## Roles of Nucleic Acids
+
+| Molecule | Function |
+|---|---|
+| **DNA** | Long-term storage of genetic information |
+| **mRNA** | Carries genetic code from nucleus to ribosome |
+| **tRNA** | Brings amino acids to ribosomes during translation |
+| **rRNA** | Structural/catalytic component of ribosomes |
+| **ATP** | Energy currency (nucleotide with 3 phosphates) |
+
 `,
         questions: [
           {
@@ -498,27 +785,97 @@ Nucleic acids are synthesized and read with strict <vocab term="Directionality" 
         article: `
 # Cell Structure: Subcellular Components
 
-Eukaryotic cells are compartmentalized into internal, membrane-bound organelles that partition diverse metabolic processes.
+Eukaryotic cells achieve complexity through <vocab term="Compartmentalization" definition="The organization of cells into membrane-bound compartments, allowing different chemical environments for simultaneous reactions.">compartmentalization</vocab> — dividing the cell into specialized organelles separated by membranes.
 
-## Ribosomes
-Ribosomes consist of ribosomal RNA (rRNA) and proteins. They translate mRNA sequences into polypeptide chains. Ribosomes are found free in the cytosol (synthesizing intracellular proteins) or bound to the **rough endoplasmic reticulum**.
+## Prokaryotes vs. Eukaryotes
 
-## Endoplasmic Reticulum (ER)
-- **Rough ER**: Studded with ribosomes; synthesizes and packages proteins for export or membrane insertion.
-- **Smooth ER**: Lacks ribosomes; functions in lipid synthesis, carbohydrate metabolism, and detoxification of poisons.
 
-## Golgi Complex
-A series of flattened membrane sacs (cisternae). The Golgi modifies, sorts, and packages proteins from the ER into transport vesicles destined for the cell membrane, lysosomes, or secretion.
+PROKARYOTE                    EUKARYOTE
+(bacteria, archaea)           (animals, plants, fungi)
+┌──────────────┐              ┌──────────────────────┐
+│  Nucleoid    │              │  Nucleus (membrane-  │
+│  (no membrane)│             │  bound)              │
+│  Ribosomes   │              │  Multiple organelles │
+│  Cell wall   │              │  80S ribosomes       │
+│  70S ribosomes│             │  Linear chromosomes  │
+└──────────────┘              └──────────────────────┘
+  ~1-10 μm                      ~10-100 μm
 
-## Mitochondria
-Mitochondria have a double-membrane structure. The outer membrane is smooth, while the inner membrane is highly folded into <vocab term="Cristae" definition="The folds of the inner mitochondrial membrane that house electron transport chain proteins.">cristae</vocab> to maximize surface area for ATP synthesis during cellular respiration. The fluid matrix contains mitochondrial DNA and ribosomes.
 
-## Lysosomes and Vacuoles
-- **Lysosomes**: Acidic membrane-bound sacs containing hydrolytic enzymes to digest macromolecules, old organelles, or foreign invaders.
-- **Vacuoles**: Membrane-bound sacs. In plants, a large central vacuole maintains turgor pressure and stores water/nutrients.
+## Key Eukaryotic Organelles
 
-## Chloroplasts
-Double-membrane organelles in photosynthetic eukaryotes. Inside, thylakoid membranes stack into grana, containing chlorophyll to capture light. The surrounding fluid is the stroma.
+### Nucleus
+The control center of the cell. Contains DNA organized into chromosomes. The <vocab term="Nuclear Envelope" definition="The double membrane surrounding the nucleus; contains nuclear pores that regulate transport between nucleus and cytoplasm.">nuclear envelope</vocab> has nuclear pores allowing selective transport of mRNA and proteins.
+
+### Ribosomes
+Synthesize proteins by translating mRNA. Found:
+- **Free in cytosol** → proteins used inside the cell
+- **Bound to rough ER** → proteins for secretion or membranes
+
+Two subunits (small + large). In eukaryotes: **80S** total (60S + 40S). In prokaryotes/mitochondria/chloroplasts: **70S** (50S + 30S).
+
+### Endomembrane System
+
+Rough ER → Transport vesicle → Golgi (cis→trans) → 
+  Secretory vesicle → Plasma Membrane (secretion)
+  OR → Lysosome (digestion)
+
+
+- **Rough ER**: ribosomes on surface; folds, modifies, and packages proteins
+- **Smooth ER**: no ribosomes; synthesizes lipids; detoxifies drugs; stores calcium
+- **Golgi Apparatus**: "post office" — modifies proteins with carbohydrate tags, sorts and packages them into vesicles
+
+### Mitochondria
+
+MITOCHONDRION:
+┌─────────────────────────────┐
+│ Outer membrane (smooth)     │
+│  ┌───────────────────────┐  │
+│  │ Inner membrane        │  │
+│  │ ════╗  ════╗  ════╗   │  │
+│  │     ║      ║      ║   │  │
+│  │  (cristae = folds)    │  │
+│  │                       │  │
+│  │  Matrix (Krebs cycle) │  │
+│  └───────────────────────┘  │
+└─────────────────────────────┘
+
+
+<vocab term="Cristae" definition="The folds of the inner mitochondrial membrane that dramatically increase the surface area available for oxidative phosphorylation.">Cristae</vocab> maximize surface area for the electron transport chain. The matrix contains mitochondrial DNA and ribosomes.
+
+### Chloroplasts (Plant Cells Only)
+
+CHLOROPLAST:
+┌──────────────────────────┐
+│ Outer membrane           │
+│  Stroma (Calvin cycle)   │
+│  ┌──────────────────┐    │
+│  │ Thylakoid stack  │    │
+│  │ (granum)         │    │
+│  │ ○○○ chlorophyll  │    │
+│  └──────────────────┘    │
+└──────────────────────────┘
+
+
+Light reactions occur in <vocab term="Thylakoid" definition="A flattened, membrane-bound sac inside a chloroplast where the light-dependent reactions of photosynthesis occur.">thylakoid</vocab> membranes (granum); Calvin cycle occurs in the **stroma**.
+
+### Lysosomes & Vacuoles
+- **Lysosomes**: membranous sacs containing hydrolytic enzymes (pH ~4.5). Digest macromolecules, old organelles (autophagy), and pathogens.
+- **Central Vacuole** (plants): stores water, nutrients, and pigments; maintains <vocab term="Turgor Pressure" definition="The pressure exerted by water against the plant cell wall, giving the plant structural rigidity.">turgor pressure</vocab>.
+
+## Organelle Summary Table
+
+| Organelle | Membrane | Key Function |
+|---|---|---|
+| Nucleus | Double | DNA storage, transcription |
+| Rough ER | Single | Protein synthesis & packaging |
+| Smooth ER | Single | Lipid synthesis, detox |
+| Golgi | Single | Protein modification & sorting |
+| Mitochondria | Double | ATP synthesis (cellular respiration) |
+| Chloroplast | Double | Photosynthesis |
+| Lysosome | Single | Intracellular digestion |
+| Vacuole | Single | Storage, turgor (plants) |
+
 `,
         questions: [
           {
@@ -773,15 +1130,80 @@ Cells that specialize in absorption (e.g., intestinal microvilli, root hairs) de
         article: `
 # Plasma Membranes
 
-Cell membranes are selectively permeable barriers described by the **Fluid Mosaic Model**.
+The plasma membrane is the selectively permeable barrier that separates the interior of a cell from its environment, controlling all traffic of materials in and out.
 
-## Membrane Structure
-- **Phospholipid Bilayer**: Hydrophilic (polar) phosphate heads face the aqueous external and internal environments, while hydrophobic (nonpolar) fatty acid tails face inward, avoiding water.
-- **Fluidity**: Cholesterol regulates fluidity, preventing packing at cold temperatures and stabilizing the membrane at high temperatures.
-- **Proteins**: 
-  - *Integral Proteins*: Span the bilayer; hydrophobic middle regions, hydrophilic ends.
-  - *Peripheral Proteins*: Loosely bound to the membrane surface.
-- **Carbohydrates**: Glycoproteins and glycolipids act as cell recognition markers.
+## The Fluid Mosaic Model
+
+The plasma membrane is described by the **Fluid Mosaic Model** (Singer & Nicolson, 1972):
+
+
+FLUID MOSAIC MODEL:
+                    (extracellular)
+═══[Glycoprotein]═══[Protein channel]══[Peripheral protein]═══
+║ ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  · ║
+║  Phospholipid     Cholesterol    Integral Protein           ║
+║  bilayer          (●)            (spans bilayer)            ║
+║ ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  · ║
+═════════════════════════════════════════════════════════════
+                    (cytoplasm)
+
+
+- **Fluid**: phospholipids and proteins move laterally within the membrane (2D fluid)
+- **Mosaic**: diverse proteins embedded throughout the phospholipid bilayer
+
+## Phospholipid Bilayer
+
+Each <vocab term="Phospholipid" definition="A lipid with a polar phosphate head group and two nonpolar fatty acid tails; the primary structural component of biological membranes.">phospholipid</vocab> has:
+- **Hydrophilic phosphate head** (faces aqueous environments — cytoplasm and extracellular fluid)
+- **Hydrophobic fatty acid tails** (face inward, away from water)
+
+
+        HYDROPHILIC HEAD (○)
+              |
+BILAYER:    ○ | ○ ○ | ○ ○ | ○ ○ | ○
+           |||||||||||||||||||||||||
+           |||||||||||||||||||||||||
+            ○ | ○ ○ | ○ ○ | ○ ○ | ○
+        HYDROPHILIC HEAD (○)
+
+
+## Membrane Proteins
+
+| Type | Location | Functions |
+|---|---|---|
+| <vocab term="Integral Protein" definition="A membrane protein that spans all or part of the lipid bilayer; includes transmembrane proteins.">Integral proteins</vocab> | Span the bilayer | Transport, receptor, enzyme |
+| Peripheral proteins | Attached to surface | Signal transduction, structural support |
+| Glycoproteins | Extracellular surface | Cell identity, recognition |
+| Glycolipids | Extracellular surface | Cell recognition (blood type) |
+
+## Selective Permeability
+
+Not everything can cross the membrane:
+
+
+EASY TO CROSS (simple diffusion):
+  ✓ Small nonpolar molecules: O₂, CO₂, N₂, steroid hormones
+  ✓ Small uncharged polar: H₂O (slowly), ethanol, glycerol
+
+NEED HELP (facilitated diffusion or active transport):
+  ✗ Large polar molecules: glucose, sucrose
+  ✗ Ions: Na⁺, K⁺, Ca²⁺, Cl⁻
+
+
+## Factors Affecting Membrane Fluidity
+
+
+INCREASES FLUIDITY:          DECREASES FLUIDITY:
+• Unsaturated fatty acids    • Saturated fatty acids
+  (kinked tails, gap          (straight tails, pack
+  between molecules)          tightly together)
+• Higher temperature         • Lower temperature
+• Less cholesterol           • More cholesterol
+  (at warm temps)              (at cold temps)
+
+
+<vocab term="Cholesterol" definition="A steroid lipid found in animal cell membranes; acts as a fluidity buffer by preventing both excessive rigidity at low temperatures and excessive fluidity at high temperatures.">Cholesterol</vocab> acts as a **fluidity buffer** — it inserts between phospholipid tails, preventing them from packing too tightly at low temperatures and from becoming too fluid at high temperatures.
+
 `,
         questions: [
           {
@@ -855,7 +1277,7 @@ Cell membranes are selectively permeable barriers described by the **Fluid Mosai
         id: "2.5",
         title: "Membrane Transport",
         description: "Analyze selective permeability, passive diffusion, active transport, and bulk vesicular movement.",
-        youtubeId: "dPKvHrD1eS4",
+        youtubeId: "Ptmlvtei8hw",
         article: `
 # Membrane Transport
 
@@ -952,7 +1374,7 @@ Large particles cross via packaging into membrane vesicles:
         id: "2.6",
         title: "Facilitated Diffusion",
         description: "Study how transport proteins facilitate passive movement of polar and charged molecules.",
-        youtubeId: "dPKvHrD1eS4",
+        youtubeId: "RA8t2JMaJiA",
         article: `
 # Facilitated Diffusion
 
@@ -1039,7 +1461,7 @@ Because the hydrophobic core of the membrane blocks hydrophilic substances, they
         id: "2.7",
         title: "Tonicity and Osmoregulation",
         description: "Analyze water movement across membranes using tonicity and water potential equations.",
-        youtubeId: "dPKvHrD1eS4",
+        youtubeId: "jH_5JgOBCPk",
         article: `
 # Tonicity and Osmoregulation
 
@@ -1133,7 +1555,7 @@ $$\Psi_s = -iCRT$$
         id: "2.8",
         title: "Mechanisms of Transport",
         description: "Examine active transport, cotransport, and bulk transport mechanisms.",
-        youtubeId: "dPKvHrD1eS4",
+        youtubeId: "k-bCiPNdHJU",
         article: `
 # Mechanisms of Transport
 
@@ -1756,26 +2178,91 @@ Living systems require constant inputs of energy to maintain order and power lif
         id: "3.5",
         title: "Photosynthesis",
         description: "Study light-dependent conversion of photons to ATP/NADPH, and light-independent carbon fixation.",
-        youtubeId: "sQK3Yr4Sc_k",
+        youtubeId: "00jbG_cfGuQ",
         article: `
-# Photosynthesis and the Calvin Cycle
+# Photosynthesis
 
-Photosynthesis converts solar energy into chemical energy stored in sugars:
-$$6\ CO_2 + 6\ H_2O + \text{light} \rightarrow C_6H_{12}O_6 + 6\ O_2$$
+Photosynthesis is the process by which photoautotrophs convert light energy into chemical energy stored in glucose. It occurs in the <vocab term="Chloroplast" definition="The double-membrane organelle in plant cells where photosynthesis takes place, containing thylakoids (light reactions) and stroma (Calvin cycle).">chloroplast</vocab>.
 
-## Light-Dependent Reactions
-These reactions occur in the **thylakoid membranes** of chloroplasts:
-- **Light Absorption**: Photosystems II and I absorb photons, exciting chlorophyll electrons.
-- **Photolysis**: Water is split ($H_2O \rightarrow 2\ H^+ + \frac{1}{2}\ O_2 + 2\ e^-$) to replace lost PSII electrons. This releases oxygen gas ($O_2$) as a byproduct.
-- **Electron Transport Chain (ETC)**: Excited electrons flow down an ETC, driving the pumping of protons ($H^+$) into the thylakoid lumen.
-- **Photophosphorylation**: The resulting proton gradient powers **ATP Synthase** as protons diffuse back into the stroma, creating ATP from ADP.
-- **NADPH Formation**: Electrons at the end of the ETC reduce $NADP^+$ to $NADPH$.
+## Overall Equation
 
-## The Calvin Cycle (Light-Independent)
-Occurs in the **stroma**, using ATP and NADPH from the light reactions to fix carbon:
-1. **Carbon Fixation**: The enzyme **RuBisCO** fixes $CO_2$ by attaching it to RuBP, forming 3-PGA.
-2. **Reduction**: ATP and NADPH reduce 3-PGA to form the 3-carbon sugar **G3P**.
-3. **Regeneration**: One G3P exits the cycle to build sugars, while the remaining G3P use ATP to regenerate RuBP.
+$$6CO_2 + 6H_2O + light\ energy \rightarrow C_6H_{12}O_6 + 6O_2$$
+
+## Two Stages of Photosynthesis
+
+
+┌────────────────────────────────────────────────────────┐
+│                    CHLOROPLAST                          │
+│                                                         │
+│   THYLAKOID MEMBRANE           STROMA                  │
+│   (Light Reactions)            (Calvin Cycle)          │
+│                                                         │
+│   Sunlight → ATP ────────────→ ATP  ┐                  │
+│   H₂O → O₂  → NADPH ─────────→ NADPH→  G3P → Glucose │
+│                                CO₂ ┘                   │
+└────────────────────────────────────────────────────────┘
+
+
+## Stage 1: Light-Dependent Reactions (Thylakoid Membranes)
+
+**Reactants**: Light energy, H₂O
+**Products**: ATP, NADPH, O₂
+
+
+PHOTOSYSTEM II → Electron Transport Chain → PHOTOSYSTEM I
+     ↓                    ↓                       ↓
+ H₂O splits           H⁺ gradient             NADP⁺ + H⁺
+ (photolysis)         → ATP synthesis           → NADPH
+ O₂ released          (chemiosmosis)
+
+
+1. **Photosystem II (P680)**: Absorbs light; drives <vocab term="Photolysis" definition="The light-driven splitting of water molecules in Photosystem II, releasing electrons, protons (H⁺), and oxygen gas as a byproduct.">photolysis</vocab> of water → releases O₂, electrons, and H⁺
+2. **Electron Transport Chain**: Electrons pass through protein complexes; H⁺ pumped across thylakoid membrane creating a **proton gradient**
+3. **ATP Synthase**: H⁺ flows back through ATP synthase → <vocab term="Chemiosmosis" definition="The synthesis of ATP driven by a proton (H⁺) concentration gradient across a membrane through ATP synthase.">chemiosmosis</vocab> produces ATP
+4. **Photosystem I (P700)**: Re-energized electrons reduce NADP⁺ → NADPH
+
+## Stage 2: Calvin Cycle (Stroma)
+
+**Reactants**: CO₂, ATP, NADPH
+**Products**: G3P (glyceraldehyde-3-phosphate) → glucose
+
+
+CALVIN CYCLE (simplified):
+         CO₂
+          ↓ RuBisCO
+        3-PGA (3C)
+          ↓ (ATP + NADPH)
+        G3P  ← exits → Glucose
+          ↓ (ATP)
+        RuBP (5C) ← regenerated
+
+
+**Three Phases of the Calvin Cycle:**
+1. **Carbon Fixation**: <vocab term="RuBisCO" definition="The enzyme ribulose-1,5-bisphosphate carboxylase/oxygenase; catalyzes the fixation of CO₂ onto RuBP in the first step of the Calvin cycle.">RuBisCO</vocab> attaches CO₂ to RuBP (5C) → two 3-PGA molecules (3C each)
+2. **Reduction**: ATP and NADPH reduce 3-PGA → G3P
+3. **Regeneration**: Most G3P is used to regenerate RuBP (requires ATP)
+
+**Cost of making 1 glucose** (requires 3 turns for each C, so 6 turns total):
+- 18 ATP
+- 12 NADPH
+- 6 CO₂
+
+## Chlorophyll and Light Absorption
+
+<vocab term="Chlorophyll" definition="The primary photosynthetic pigment in plants; absorbs red and blue light most strongly and reflects green light (which is why plants appear green).">Chlorophyll</vocab> absorbs primarily **red (~680 nm) and blue (~430 nm)** light but reflects **green light** — which is why plants look green.
+
+
+ABSORPTION SPECTRUM:
+High │████        ████
+     │  ██      ██
+     │    ██████
+ Low └───────────────→
+     Violet Blue Green Yellow Orange Red
+     400        500        600        700 nm
+
+
+Other <vocab term="Accessory Pigments" definition="Pigments other than chlorophyll a that expand the range of light wavelengths usable for photosynthesis (e.g., carotenoids, chlorophyll b).">accessory pigments</vocab> (carotenoids, chlorophyll b) capture additional wavelengths and transfer energy to chlorophyll a.
+
 `,
         questions: [
           {
@@ -1849,23 +2336,102 @@ Occurs in the **stroma**, using ATP and NADPH from the light reactions to fix ca
         id: "3.6",
         title: "Cellular Respiration",
         description: "Harvest energy from glucose via glycolysis, the Krebs cycle, and oxidative phosphorylation.",
-        youtubeId: "00jbG_cfGuQ",
+        youtubeId: "2f7YwCtHcgk",
         article: `
-# Cellular Respiration and the ETC
+# Cellular Respiration
 
-Cellular respiration extracts chemical energy from sugars to synthesize ATP:
-$$C_6H_{12}O_6 + 6\ O_2 \rightarrow 6\ CO_2 + 6\ H_2O + \text{ATP}$$
+Cellular respiration extracts chemical energy stored in glucose and converts it into ATP — the universal energy currency of cells.
 
-## Key Stages
-1. **Glycolysis** (Cytosol): Anaerobic pathway that cleaves glucose into two pyruvate molecules, producing a net of $2\ \text{ATP}$ and $2\ \text{NADH}$.
-2. **Pyruvate Oxidation & Krebs Cycle** (Mitochondrial Matrix): Converts pyruvate to acetyl-CoA, producing $CO_2$ waste, $2\ \text{ATP}$, $6\ \text{NADH}$, and $2\ \text{FADH}_2$.
-3. **Electron Transport Chain (ETC)** (Inner Mitochondrial Membrane):
-   - $NADH$ and $FADH_2$ donate electrons to membrane complexes.
-   - Electron flow powers the pumping of protons ($H^+$) from the matrix into the **intermembrane space**.
-   - Oxygen ($O_2$) acts as the **final electron acceptor**, combining with protons and spent electrons to form water ($H_2O$).
+## Overview
 
-## Chemiosmosis
-The accumulated proton gradient represents a proton-motive force. Protons flow back into the matrix through **ATP Synthase**. This flow drives the rotation of the synthase catalytic domain, coupling mechanical energy with the phosphorylation of ADP to generate 26-28 ATP.
+$$C_6H_{12}O_6 + 6O_2 \rightarrow 6CO_2 + 6H_2O + \sim38\ ATP$$
+
+
+CELLULAR RESPIRATION — THREE STAGES:
+                                            
+  Glucose         Pyruvate      Acetyl-CoA       CO₂ + H₂O
+     ↓                ↓              ↓               ↓
+ GLYCOLYSIS    PYRUVATE         KREBS          OXIDATIVE
+  (cytosol)   OXIDATION        CYCLE          PHOSPHORYLATION
+  2 ATP net   (mitochondrial   2 ATP          ~34 ATP
+              matrix)          (per glucose)  (ETC + ATP synthase)
+
+
+## Stage 1: Glycolysis (Cytosol)
+
+Glucose (6C) is split into 2 **pyruvate** (3C) molecules.
+
+
+Glucose (6C) → 2 Pyruvate (3C)
+   Investment: 2 ATP
+   Return: 4 ATP + 2 NADH
+   NET GAIN: 2 ATP, 2 NADH
+
+
+Glycolysis requires NO oxygen — it's **anaerobic**.
+
+## Stage 2: Pyruvate Oxidation (Mitochondrial Matrix)
+
+Each pyruvate enters the mitochondria and is converted to **Acetyl-CoA**:
+
+$$Pyruvate\ (3C) \rightarrow Acetyl\text{-}CoA\ (2C) + CO_2 + NADH$$
+
+## Stage 3a: Krebs Cycle / Citric Acid Cycle (Matrix)
+
+
+KREBS CYCLE (per turn):
+Acetyl-CoA (2C) + Oxaloacetate (4C) → Citrate (6C)
+     ↓
+  2 CO₂ released
+  3 NADH produced
+  1 FADH₂ produced  
+  1 ATP produced
+  Oxaloacetate regenerated
+
+
+Per glucose: **2 turns** of the cycle → 4 CO₂, 6 NADH, 2 FADH₂, 2 ATP
+
+## Stage 3b: Oxidative Phosphorylation (Inner Mitochondrial Membrane)
+
+
+ELECTRON TRANSPORT CHAIN + CHEMIOSMOSIS:
+
+  NADH → Complex I  →→→→→→→→→→→→→→→ H⁺ pumped out
+  FADH₂ → Complex II  ↓
+                    Complex III →→→→ H⁺ pumped out
+                          ↓
+                    Cytochrome c
+                          ↓
+                    Complex IV →→→→→ H⁺ pumped out
+                          ↓
+                    O₂ → H₂O (final electron acceptor)
+  
+  H⁺ gradient → ATP Synthase → ~34 ATP (chemiosmosis)
+
+
+<vocab term="Chemiosmosis" definition="ATP synthesis driven by protons (H⁺) flowing down their concentration gradient through ATP synthase embedded in the inner mitochondrial membrane.">Chemiosmosis</vocab>: the flow of H⁺ ions through ATP synthase powers the synthesis of ATP.
+
+## ATP Yield Summary
+
+| Stage | Location | ATP Produced |
+|---|---|---|
+| Glycolysis | Cytosol | 2 net |
+| Pyruvate Oxidation | Mitochondrial Matrix | 0 (NADH only) |
+| Krebs Cycle | Mitochondrial Matrix | 2 |
+| Oxidative Phosphorylation | Inner Mitochondrial Membrane | ~34 |
+| **Total** | | **~38 ATP** |
+
+## Anaerobic Respiration: Fermentation
+
+When O₂ is absent, cells use **fermentation** to regenerate <vocab term="NAD+" definition="Nicotinamide adenine dinucleotide (oxidized form); an electron carrier that accepts electrons during glycolysis and the Krebs cycle, becoming NADH.">NAD⁺</vocab> so glycolysis can continue:
+
+
+Lactic acid fermentation:  Pyruvate + NADH → Lactate + NAD⁺
+Alcoholic fermentation:    Pyruvate + NADH → Ethanol + CO₂ + NAD⁺
+
+
+Fermentation produces NO additional ATP — it only regenerates NAD⁺.
+
 `,
         questions: [
           {
@@ -1939,7 +2505,7 @@ The accumulated proton gradient represents a proton-motive force. Protons flow b
         id: "3.7",
         title: "Fitness",
         description: "Analyze how molecular variation within cells provides a selective advantage.",
-        youtubeId: "00jbG_cfGuQ",
+        youtubeId: "E75oIBxcbX0",
         article: `
 # Fitness
 
@@ -2030,7 +2596,7 @@ Organisms with molecular diversity are better suited to survive shifting environ
         id: "4.1",
         title: "Cell Communication",
         description: "Study mechanisms of cellular signal reception, transduction cascades, and cellular responses.",
-        youtubeId: "5M22VCEmJd0",
+        youtubeId: "nMEyeKQClqI",
         article: `
 # Cell Communication
 
@@ -2120,7 +2686,7 @@ Cells communicate with one another using chemical signaling molecules (ligands).
         id: "4.2",
         title: "Introduction to Signal Transduction",
         description: "Learn how extracellular signals are recognized and converted into intracellular messages.",
-        youtubeId: "5M22VCEmJd0",
+        youtubeId: "i-0rSv6oxSY",
         article: `
 # Introduction to Signal Transduction
 
@@ -2206,7 +2772,7 @@ A ligand acts as an allosteric regulator. Upon binding to the extracellular side
         id: "4.3",
         title: "Signal Transduction",
         description: "Analyze details of signaling cascades, amplification, and second messengers.",
-        youtubeId: "5M22VCEmJd0",
+        youtubeId: "WsofKzY_K50",
         article: `
 # Signal Transduction
 
@@ -2292,7 +2858,7 @@ Second messengers are small, non-protein, water-soluble molecules or ions that s
         id: "4.4",
         title: "Changes in Signal Transduction Pathways",
         description: "Evaluate how mutations or chemical inhibitors block or hyperactivate signaling.",
-        youtubeId: "5M22VCEmJd0",
+        youtubeId: "TfYf_rPWUdY",
         article: `
 # Changes in Signal Transduction Pathways
 
@@ -2379,7 +2945,7 @@ Toxins and drugs can block or trigger pathways:
         id: "4.5",
         title: "Feedback",
         description: "Differentiate between positive and negative feedback loops in biological regulation.",
-        youtubeId: "5M22VCEmJd0",
+        youtubeId: "2OmkDvFZpHI",
         article: `
 # Feedback Loops
 
@@ -2475,22 +3041,85 @@ Organisms use feedback mechanisms to maintain homeostasis or amplify physiologic
         article: `
 # Cell Cycle
 
-The cell cycle is an ordered series of events that coordinates cell growth and division.
+The cell cycle is the ordered sequence of events by which a cell grows and divides, producing two genetically identical daughter cells.
 
-## Stages of the Cell Cycle
-- **Interphase**: The growth phase, comprising 90% of the cycle:
-  - **$G_1$ (Gap 1)**: Cell grows and prepares for DNA synthesis.
-  - **S (Synthesis)**: DNA replication occurs, producing identical sister chromatids.
-  - **$G_2$ (Gap 2)**: Final growth and preparation for division.
-- **M-Phase**: Cell division:
-  - **Mitosis**: Nuclear division (Prophase, Metaphase, Anaphase, Telophase).
-  - **Cytokinesis**: Cytoplasmic division.
+## Phases of the Cell Cycle
 
-## Mitosis Phases
-1. **Prophase**: Chromosomes condense, spindle fibers form, nuclear envelope breaks down.
-2. **Metaphase**: Chromosomes line up along the metaphase plate.
-3. **Anaphase**: Sister chromatids are pulled apart by spindle fibers to opposite poles.
-4. **Telophase**: Nuclear envelopes reform around the two new nuclei, and chromosomes decondense.
+
+           ┌─── G₁ (growth, organelle synthesis)
+           │
+INTERPHASE │─── S  (DNA replication: genome doubles)
+           │
+           └─── G₂ (continued growth, pre-mitotic prep)
+           
+MITOTIC PHASE (M):
+  Mitosis (PMAT) + Cytokinesis
+
+
+
+                 G₁
+                ╱    ╲
+           M phase    S phase
+                ╲    ╱
+                 G₂
+         (cell cycle is continuous)
+
+
+## Interphase (90% of the cycle)
+
+| Phase | Duration | Key Events |
+|---|---|---|
+| **G₁** | 8-10 hrs | Cell grows; proteins synthesized; organelles duplicated |
+| **S** | 6-8 hrs | **DNA replication** — genome duplicated; centrosome duplicated |
+| **G₂** | 3-5 hrs | Further growth; mitotic spindle assembly begins |
+
+After S phase: each chromosome consists of **2 identical sister chromatids** joined at the **centromere**.
+
+## Mitosis (PMAT)
+
+
+PROPHASE:                  METAPHASE:
+Chromosomes condense       Chromosomes align at
+Spindle forms              metaphase plate (midline)
+Nuclear envelope breaks    Spindle fibers attach to
+                           kinetochores
+
+ANAPHASE:                  TELOPHASE + CYTOKINESIS:
+Sister chromatids          Nuclear envelopes reform
+separate to poles          Chromosomes decondense
+(2n → 2 sets of n)         Cell divides → 2 daughter cells
+
+
+
+PARENT CELL (2n=4)
+|  ||
+|  ||   (chromosomes condensed in pairs)
+  ↓
+METAPHASE
+ |  ||  ||  |
+ ─────────────  (aligned at plate)
+  ↓
+ANAPHASE
+ ↑  ↑  ↑  ↑
+ ↓  ↓  ↓  ↓  (chromatids pulling apart)
+  ↓
+2 DAUGHTER CELLS (2n=4 each)
+
+
+## Cytokinesis
+
+Division of the cytoplasm:
+- **Animal cells**: <vocab term="Cleavage Furrow" definition="The pinching inward of the plasma membrane during cytokinesis in animal cells.">Cleavage furrow</vocab> — actin ring pinches the cell in two
+- **Plant cells**: <vocab term="Cell Plate" definition="A membrane partition formed between two daughter nuclei in plant cells during cytokinesis; develops into the new cell wall.">Cell plate</vocab> — vesicles from the Golgi fuse to form a new cell wall partition
+
+## Ploidy and Chromosome Numbers
+
+| Stage | Ploidy | Chromosomes | DNA copies |
+|---|---|---|---|
+| G₁ | 2n | 46 | 46 |
+| After S | 2n | 46 | 92 (each = 2 chromatids) |
+| After mitosis | 2n | 46 | 46 (per daughter cell) |
+
 `,
         questions: [
           {
@@ -2564,7 +3193,7 @@ The cell cycle is an ordered series of events that coordinates cell growth and d
         id: "4.7",
         title: "Regulation of Cell Cycle",
         description: "Analyze checkpoints, cyclins, CDKs, and the molecular basis of cancer.",
-        youtubeId: "QVCjdNxJreE",
+        youtubeId: "xPkOWGSGYyc",
         article: `
 # Regulation of Cell Cycle
 
@@ -2664,24 +3293,103 @@ Cancer results from uncontrolled cell division caused by mutations in checkpoint
         id: "5.1",
         title: "Meiosis",
         description: "Analyze the process of meiosis and the reduction of ploidy.",
-        youtubeId: "nMEyeKQClqI",
+        youtubeId: "L0k-enzoeAs",
         article: `
 # Meiosis
 
-Meiosis is a specialized form of cell division that reduces the chromosome number by half, producing haploid gametes ($n$) from a diploid cell ($2n$).
+Meiosis is a specialized cell division that produces **haploid gametes** (sex cells) with half the normal chromosome number. It is essential for sexual reproduction.
 
-## Diploid vs. Haploid
-- **Diploid ($2n$)**: Cells containing two full sets of chromosomes (one maternal, one paternal). Somatic cells are diploid.
-- **Haploid ($n$)**: Cells containing a single set of chromosomes. Gametes (sperm and egg) are haploid.
+## Meiosis vs. Mitosis
 
-## The Divisions of Meiosis
-Meiosis consists of one DNA replication cycle followed by two successive nuclear divisions:
-1. **Meiosis I (Reduction Division)**:
-   - **Prophase I**: Homologous chromosomes pair up to form tetrads.
-   - **Metaphase I**: Homologous pairs line up double-file on the metaphase plate.
-   - **Anaphase I**: Homologous chromosomes separate to opposite poles (sister chromatids remain attached).
-2. **Meiosis II (Equational Division)**:
-   - Sister chromatids separate, analogous to mitosis, yielding four genetically unique haploid cells.
+
+MITOSIS:                    MEIOSIS:
+1 division                  2 divisions
+2 daughter cells            4 daughter cells
+Same ploidy (2n→2n)         Halved ploidy (2n→4n)
+Somatic cells               Gametes (sperm, eggs)
+No crossing over            Crossing over in prophase I
+Identical daughters         Genetically unique daughters
+
+
+## Two Rounds of Division
+
+### Meiosis I (Reductional Division)
+Homologous chromosomes are separated.
+
+
+PROPHASE I:
+Homologous chromosomes PAIR UP (synapsis)
+Crossing over occurs at CHIASMATA
+↓
+METAPHASE I:
+Homolog pairs align at metaphase plate
+(independent assortment of pairs)
+↓
+ANAPHASE I:
+HOMOLOGS separate (not sister chromatids)
+↓
+TELOPHASE I + CYTOKINESIS I:
+2 haploid cells (each still has 2 sister chromatids)
+
+
+### Meiosis II (Equatorial Division)
+Sister chromatids are separated (like mitosis).
+
+
+2 cells (n = 23, each chromosome = 2 chromatids)
+           ↓
+4 haploid cells (n = 23, each chromosome = 1 chromatid)
+
+
+## Crossing Over: A Major Source of Genetic Diversity
+
+During <vocab term="Prophase I" definition="The first phase of meiosis I, during which homologous chromosomes synapse and crossing over occurs, creating new combinations of alleles.">Prophase I</vocab>, homologous chromosomes pair up in a process called **synapsis**. Non-sister chromatids exchange segments at points called <vocab term="Chiasma" definition="The point of contact where crossing over occurs between non-sister chromatids of homologous chromosomes during prophase I of meiosis.">chiasmata</vocab>:
+
+
+CROSSING OVER:
+
+Before:                         After:
+Chromosome 1: ─A─B─C─          ─A─B─c─  (recombinant)
+                     ╳ 
+Chromosome 2: ─a─b─c─          ─a─b─C─  (recombinant)
+
+(uppercase = one allele, lowercase = alternate allele)
+
+
+## Sources of Genetic Variation in Meiosis
+
+1. **Crossing over** in Prophase I → new allele combinations
+2. **Independent assortment** in Metaphase I → random orientation of homolog pairs
+   - For human cells (n=23): **2²³ = 8,388,608** possible gamete types from independent assortment alone!
+3. **Random fertilization** → further increases variation
+
+
+INDEPENDENT ASSORTMENT (n=2 example):
+    Metaphase I can orient pairs as:
+    
+    Option A:       Option B:
+    |A| |B|         |A| |b|
+    ─────────       ─────────
+    |a| |b|         |a| |B|
+    
+    → gametes:      → gametes:
+      AB, AB, ab,ab   Ab, Ab, aB, aB
+
+
+## Nondisjunction: When Meiosis Goes Wrong
+
+<vocab term="Nondisjunction" definition="The failure of chromosomes or chromatids to separate properly during meiosis, resulting in gametes with the wrong chromosome number.">Nondisjunction</vocab> can occur in Meiosis I (homologs fail to separate) or Meiosis II (sister chromatids fail to separate):
+
+
+NORMAL vs. NONDISJUNCTION:
+
+Normal Meiosis I:          Nondisjunction (Meiosis I):
+n=1 cells                  n+1 and n-1 cells
+→ normal gametes           → trisomy or monosomy offspring
+
+
+Examples: Down syndrome (trisomy 21), Turner syndrome (45,X), Klinefelter syndrome (47,XXY)
+
 `,
         questions: [
           {
@@ -2755,7 +3463,7 @@ Meiosis consists of one DNA replication cycle followed by two successive nuclear
         id: "5.2",
         title: "Meiosis and Genetic Diversity",
         description: "Trace homologous chromosome segregation and mechanisms driving eukaryotic genetic variation.",
-        youtubeId: "nMEyeKQClqI",
+        youtubeId: "qCLmR9-YY7o",
         article: `
 # Meiosis and Genetic Diversity
 
@@ -2840,7 +3548,7 @@ Meiosis generates genetic variation, which drives evolution by natural selection
         id: "5.3",
         title: "Mendelian Genetics",
         description: "Apply laws of segregation and independent assortment to predict inheritance probabilities.",
-        youtubeId: "i-0rSv6oxSY",
+        youtubeId: "eEUvRrhmcxM",
         article: `
 # Mendelian Genetics
 
@@ -2932,7 +3640,7 @@ Gregor Mendel derived the fundamental laws of inheritance through breeding exper
         id: "5.4",
         title: "Non-Mendelian Genetics",
         description: "Analyze inheritance patterns that deviate from Mendelian ratios, including linkage and sex-linkage.",
-        youtubeId: "i-0rSv6oxSY",
+        youtubeId: "t6wvnMbQPOA",
         article: `
 # Non-Mendelian Genetics
 
@@ -3018,7 +3726,7 @@ Many traits deviate from simple dominant-recessive Mendelian inheritance:
         id: "5.5",
         title: "Environmental Effects on Phenotype",
         description: "Understand how environmental factors interact with genotypes to determine phenotype.",
-        youtubeId: "i-0rSv6oxSY",
+        youtubeId: "MBPFYTlx_S0",
         article: `
 # Environmental Effects on Phenotype
 
@@ -3100,7 +3808,7 @@ An organism's phenotype is not determined solely by its genotype. The environmen
         id: "5.6",
         title: "Chromosomal Inheritance",
         description: "Examine nondisjunction, chromosomal abnormalities, and non-nuclear organelle inheritance.",
-        youtubeId: "i-0rSv6oxSY",
+        youtubeId: "WSR3sTsQA_I",
         article: `
 # Chromosomal Inheritance
 
@@ -3194,7 +3902,7 @@ Chromosomes carry genetic material, and anomalies in chromosome division lead to
         id: "6.1",
         title: "DNA and RNA Structure",
         description: "Differentiate between DNA and RNA nucleotide structures and nitrogenous bases.",
-        youtubeId: "WsofKzY_K50",
+        youtubeId: "BkDdGjTLtKQ",
         article: `
 # DNA and RNA Structure
 
@@ -3285,22 +3993,76 @@ In double-stranded DNA, bases pair via hydrogen bonds:
         id: "6.2",
         title: "Replication",
         description: "Analyze the semi-conservative replication process and enzymology at the replication fork.",
-        youtubeId: "WsofKzY_K50",
+        youtubeId: "TNKWgcXSWhE",
         article: `
 # DNA Replication
 
-DNA replication is a **semi-conservative** process: each parent strand serves as a template for a new complementary strand.
+Before a cell can divide, it must faithfully copy its entire genome. DNA replication is the process of duplicating the double helix with extremely high accuracy.
 
-## Enzymology of Replication
-- **Helicase**: Unwinds the DNA double helix at the origin of replication.
-- **Topoisomerase**: Relieves supercoiling strain ahead of the replication fork.
-- **Primase**: Lays down an RNA primer to provide a free 3'-OH group.
-- **DNA Polymerase III**: Synthesizes DNA in the **5' to 3'** direction by adding complementary nucleotides.
-- **Leading vs. Lagging Strand**:
-  - *Leading Strand*: Synthesized continuously toward the replication fork.
-  - *Lagging Strand*: Synthesized discontinuously away from the fork, forming **Okazaki fragments**.
-- **DNA Polymerase I**: Replaces RNA primers with DNA.
-- **DNA Ligase**: Joins Okazaki fragments together.
+## Semi-Conservative Replication
+
+Each new DNA double helix consists of **one parental strand** and **one new strand** — this is the <vocab term="Semi-Conservative Replication" definition="The mode of DNA replication in which each daughter double helix has one original (parental) strand and one newly synthesized strand.">semi-conservative model</vocab>, confirmed by the Meselson-Stahl experiment (1958).
+
+
+PARENTAL DNA:              AFTER REPLICATION:
+    A ───────── B               A ───── B'  +  A' ───── B
+(original)               (parental + new)   (new + parental)
+
+
+## Key Enzymes of Replication
+
+| Enzyme | Function |
+|---|---|
+| <vocab term="Helicase" definition="An enzyme that unwinds and separates the two strands of the DNA double helix during replication.">Helicase</vocab> | Unwinds and separates the parental strands at the replication fork |
+| Primase | Synthesizes a short RNA primer (~10 nucleotides) to provide a 3'-OH starting point |
+| <vocab term="DNA Polymerase" definition="The enzyme that synthesizes new DNA strands by adding nucleotides to the 3' end of an existing strand, using the parental strand as a template.">DNA Polymerase III</vocab> | Adds dNTPs to the 3' end of the growing strand (5'→3' synthesis only) |
+| DNA Polymerase I | Removes RNA primers and replaces them with DNA |
+| <vocab term="DNA Ligase" definition="An enzyme that covalently joins the sugar-phosphate backbones of DNA fragments, including Okazaki fragments on the lagging strand.">DNA Ligase</vocab> | Seals nicks between DNA fragments on the lagging strand |
+| Topoisomerase | Relieves tension (supercoiling) ahead of the replication fork |
+
+## Bidirectional Replication
+
+Replication begins at multiple <vocab term="Origin of Replication" definition="A specific DNA sequence where DNA replication begins; there are thousands in eukaryotes.">origins of replication</vocab> simultaneously in eukaryotes (humans have ~10,000-100,000 origins), allowing replication of the entire genome within hours.
+
+
+Multiple origins on eukaryotic chromosome:
+────[ORI]──────[ORI]──────[ORI]────
+     ↓              ↓           ↓
+←── ──→         ←── ──→      ←── ──→
+(replication bubbles expanding in both directions)
+
+
+## Leading vs. Lagging Strand
+
+DNA polymerase can **only synthesize 5'→3'**. Since the two template strands run antiparallel, only one can be copied continuously:
+
+
+REPLICATION FORK:
+
+Template:    3' ←──────────────────── 5'
+Leading strand:  →→→→→→→→ (continuous synthesis)
+                          ↑
+                       New 5'→3'
+Template:    5' ──────────────────────→ 3'
+Lagging strand:  ←←←←── ←←←←── ←←←── (discontinuous)
+                (Okazaki fragments: 100-2000 nt)
+
+
+<vocab term="Okazaki Fragment" definition="Short DNA fragments synthesized discontinuously on the lagging strand template during replication; joined by DNA ligase.">Okazaki fragments</vocab> are synthesized in the 5'→3' direction on the lagging strand, then joined by DNA ligase.
+
+## Proofreading and Fidelity
+
+DNA polymerase has a **3'→5' exonuclease proofreading activity**: if a mismatched nucleotide is incorporated, the enzyme recognizes the error, excises the wrong nucleotide, and re-synthesizes correctly. Error rate: ~1 mistake per 10 billion nucleotides.
+
+
+PROOFREADING:
+  ...A-T-C-G-T-[X]  ← wrong nucleotide detected
+         ↓
+  ...A-T-C-G-T        ← excised by 3'→5' exonuclease
+         ↓
+  ...A-T-C-G-T-A   ← correct nucleotide added
+
+
 `,
         questions: [
           {
@@ -3374,22 +4136,81 @@ DNA replication is a **semi-conservative** process: each parent strand serves as
         id: "6.3",
         title: "Transcription and RNA Processing",
         description: "Analyze the synthesis of pre-mRNA and subsequent modifications in eukaryotic cells.",
-        youtubeId: "WsofKzY_K50",
+        youtubeId: "sPCPf3H3LKg",
         article: `
 # Transcription and RNA Processing
 
-Transcription is the process of synthesizing RNA from a DNA template.
+Transcription is the synthesis of RNA using a DNA template. In eukaryotes, this occurs in the nucleus and produces a pre-mRNA that is extensively processed before translation.
 
-## Transcription Mechanisms
-- **Initiation**: **RNA Polymerase** binds to DNA at a promoter sequence (TATA box), catalyzed by transcription factors. It does not require a primer.
-- **Elongation**: RNA polymerase transcribes the template strand in the 3' to 5' direction, synthesizing RNA in the **5' to 3'** direction.
-- **Termination**: The polymerase transcribes a termination sequence, releasing pre-mRNA.
+## Overview of Transcription
 
-## Eukaryotic RNA Processing
-Eukaryotic pre-mRNA undergoes three modifications before leaving the nucleus:
-1. **5' Cap**: A modified guanine nucleotide protects the transcript from degradation and guides ribosome binding.
-2. **3' Poly-A Tail**: A string of Adenines facilitates nuclear export and stabilizes mRNA.
-3. **<vocab term="Alternative Splicing" definition="A process where different combinations of exons are joined, allowing a single gene to code for multiple proteins.">Alternative Splicing</vocab>**: Non-coding regions called **introns** are cut out by **spliceosomes**, and coding regions called **exons** are joined together.
+
+DNA template strand (3'→5'):
+3'—T-A-C-G-A-T-C-G-T—5'
+        ↓ RNA polymerase
+mRNA (5'→3'):
+5'—A-U-G-C-U-A-G-C-A—3'
+
+
+**Key rule**: RNA is complementary and antiparallel to the **template strand** (also called the antisense or noncoding strand). The **coding strand** (sense strand) has the same sequence as the mRNA, but with T instead of U.
+
+## Three Phases of Transcription
+
+1. **Initiation**: <vocab term="RNA Polymerase" definition="The enzyme that catalyzes the synthesis of RNA from a DNA template, reading 3'→5' and synthesizing 5'→3'.">RNA polymerase</vocab> binds to the **promoter** sequence (e.g., TATA box) with help from **transcription factors**. The DNA unwinds.
+
+2. **Elongation**: RNA polymerase moves along the template strand (3'→5'), synthesizing RNA in the 5'→3' direction. No primer needed.
+
+3. **Termination**: RNA polymerase reaches a **terminator** sequence and releases the RNA transcript.
+
+## RNA Processing in Eukaryotes
+
+The primary transcript (pre-mRNA) is extensively modified before export from the nucleus:
+
+
+PRE-mRNA PROCESSING:
+
+Pre-mRNA: 5'─[Exon1]─[Intron1]─[Exon2]─[Intron2]─[Exon3]─3'
+                ↓
+1. 5' CAP added (7-methylguanosine) → protects from degradation, helps ribosome binding
+                ↓
+2. 3' POLY-A TAIL added (~200 A's) → stability, nuclear export
+                ↓
+3. SPLICING: Introns removed by the SPLICEOSOME
+   Exons joined together
+                ↓
+Mature mRNA: 5'CAP─[Exon1]─[Exon2]─[Exon3]─AAAA...3'
+
+
+| Modification | Details | Purpose |
+|---|---|---|
+| 5' cap | 7-methylguanosine | Protects from degradation; signals ribosome |
+| 3' poly-A tail | ~200 adenines | Stability; aids nuclear export |
+| Splicing | <vocab term="Spliceosome" definition="A large ribonucleoprotein complex that removes introns from pre-mRNA and joins exons during RNA processing.">Spliceosome</vocab> removes introns | Joins exons; allows alternative splicing |
+
+## Alternative Splicing: One Gene, Many Proteins
+
+<vocab term="Alternative Splicing" definition="The process by which different combinations of exons from the same pre-mRNA are joined, producing multiple different proteins from a single gene.">Alternative splicing</vocab> allows a single gene to produce multiple different proteins by including or excluding specific exons:
+
+
+Pre-mRNA: [E1]─[I1]─[E2]─[I2]─[E3]─[I3]─[E4]
+
+Splice variant A: [E1]─[E2]─[E3]─[E4]  → Protein A
+Splice variant B: [E1]─[E3]─[E4]        → Protein B
+Splice variant C: [E1]─[E2]─[E4]        → Protein C
+
+
+This dramatically increases proteome diversity: ~20,000 human genes can produce > 100,000 different proteins.
+
+## Types of RNA
+
+| RNA type | Function |
+|---|---|
+| mRNA (messenger) | Carries genetic code from DNA to ribosome |
+| tRNA (transfer) | Brings amino acids to ribosome; anticodon matches codon |
+| rRNA (ribosomal) | Structural and catalytic component of ribosomes |
+| snRNA | Component of the spliceosome |
+| miRNA | Regulates gene expression post-transcriptionally |
+
 `,
         questions: [
           {
@@ -3463,24 +4284,98 @@ Eukaryotic pre-mRNA undergoes three modifications before leaving the nucleus:
         id: "6.4",
         title: "Translation",
         description: "Study codon translation, ribosome machinery, and translation steps.",
-        youtubeId: "TfYf_rPWUdY",
+        youtubeId: "2zAGAmTkZNY",
         article: `
 # Translation
 
-Translation is the synthesis of a polypeptide chain from an mRNA transcript, occurring at ribosomes in the cytoplasm.
+Translation is the synthesis of a polypeptide chain using the genetic information encoded in mRNA. It occurs at ribosomes in the cytoplasm.
 
-## Molecular Machinery
-- **mRNA**: Carries genetic codons (triplet bases).
-- **Ribosomes**: Eukaryotic ribosomes consist of a small subunit (which reads mRNA) and a large subunit (which contains tRNA binding sites: **A, P, and E**).
-- **tRNA**: Transfer RNA molecules transport specific amino acids to the ribosome. Each tRNA features an **anticodon** loop complementary to an mRNA codon.
+## The Genetic Code
 
-## Translation Stages
-1. **Initiation**: The small ribosomal subunit binds near the 5' end of mRNA and locates the start codon (**AUG**). An initiator tRNA carrying Methionine binds, and the large ribosomal subunit attaches.
-2. **Elongation**:
-   - *A-site (Aminoacyl)*: Incoming tRNA carrying the next amino acid binds.
-   - *P-site (Peptidyl)*: A peptide bond is catalyzed between the polypeptide and the new amino acid.
-   - *E-site (Exit)*: Uncharged tRNA shifts to the E-site and exits.
-3. **Termination**: The ribosome encounters a stop codon ($UAA, UAG, UGA$). A release factor binds to the A-site, releasing the completed polypeptide.
+The genetic code uses **codons** (3-nucleotide sequences in mRNA) to specify amino acids.
+
+
+CODON TABLE EXCERPT:
+UUU = Phe    CUU = Leu    AUU = Ile    GUU = Val
+UUC = Phe    CUC = Leu    AUC = Ile    GUC = Val
+UAA = STOP   CAA = Gln    AAA = Lys    GAA = Glu
+AUG = Met    UGG = Trp    UAG = STOP   UGA = STOP
+(START codon)              (3 stop codons)
+
+
+Properties of the genetic code:
+- **Universal**: same in nearly all organisms (strong evidence for common ancestry)
+- **Degenerate**: multiple codons can code for the same amino acid (64 codons, 20 amino acids)
+- **Non-overlapping**: each nucleotide belongs to only one codon
+- **Unambiguous**: each codon codes for only one amino acid
+
+## tRNA: The Adapter Molecule
+
+<vocab term="tRNA" definition="Transfer RNA; an RNA molecule that brings specific amino acids to the ribosome during translation; has an anticodon complementary to an mRNA codon.">tRNA</vocab> has:
+- **Anticodon loop**: 3-nucleotide sequence complementary to the mRNA codon
+- **Amino acid attachment site** (3' CCA end): amino acid is covalently attached by aminoacyl-tRNA synthetase
+
+
+tRNA STRUCTURE:
+          Amino acid
+              |
+         3'—CCA
+         ↑
+    acceptor stem
+         
+    [cloverleaf structure]
+         
+         anticodon loop
+         ↑
+         AGC  (anticodon)
+          ↕   (base pairing)
+         UCG  (codon on mRNA) → Serine
+
+
+## Three Stages of Translation
+
+### Initiation
+1. Small ribosomal subunit binds to 5' cap of mRNA
+2. Scans to find **AUG start codon**
+3. Initiator tRNA (Met-tRNA) binds to **P site** with anticodon complementary to AUG
+4. Large ribosomal subunit joins → complete ribosome
+
+### Elongation (PMAT cycle of each codon)
+
+RIBOSOME SITES:
+  E site     P site      A site
+(exit tRNA) (peptidyl  (aminoacyl
+             tRNA)       tRNA enters)
+
+Step 1: New aminoacyl-tRNA enters A site
+Step 2: Peptide bond forms (peptidyl transferase = rRNA)
+Step 3: Translocation — ribosome moves 3 nt toward 3' end
+        tRNA in P → E (exits); A → P; new tRNA enters A
+
+
+### Termination
+When a **stop codon** (UAA, UAG, UGA) enters the A site, no tRNA matches → release factors bind → polypeptide released → ribosome disassembles.
+
+## Polyribosomes
+
+Multiple ribosomes can translate a single mRNA simultaneously, forming a **polyribosome (polysome)**:
+
+
+mRNA: 5'─────────────────────────────3'
+       [Ribo1] [Ribo2] [Ribo3] [Ribo4]
+        short                    long
+        chain                   chain
+              (all making same protein)
+
+
+## Post-Translational Modifications
+
+After translation, proteins may be:
+- **Folded** (with chaperone help)
+- **Phosphorylated** or **glycosylated**
+- **Cleaved** (e.g., insulin: proinsulin → insulin)
+- **Targeted** to specific locations (signal peptides direct to ER, mitochondria, nucleus)
+
 `,
         questions: [
           {
@@ -3554,7 +4449,7 @@ Translation is the synthesis of a polypeptide chain from an mRNA transcript, occ
         id: "6.5",
         title: "Regulation of Gene Expression",
         description: "Examine prokaryotic operons and eukaryotic epigenetic/transcription factor controls.",
-        youtubeId: "TfYf_rPWUdY",
+        youtubeId: "mzVWiKRc-74",
         article: `
 # Regulation of Gene Expression
 
@@ -3643,7 +4538,7 @@ An **operon** is a cluster of genes controlled by a single promoter:
         id: "6.6",
         title: "Gene Expression and Specialization",
         description: "Study how differential gene expression drives cell differentiation and specialization.",
-        youtubeId: "TfYf_rPWUdY",
+        youtubeId: "MBbRe-A31GI",
         article: `
 # Gene Expression and Specialization
 
@@ -3727,7 +4622,7 @@ A cell's identity is determined by the specific genes that are transcribed:
         id: "6.7",
         title: "Mutations",
         description: "Classify nucleotide mutations and analyze their impact on polypeptide folding.",
-        youtubeId: "WsofKzY_K50",
+        youtubeId: "eTujJ3AMLKU",
         article: `
 # Mutations
 
@@ -3814,7 +4709,7 @@ The **insertion** or **deletion** of nucleotides (not in multiples of 3) shifts 
         id: "6.8",
         title: "Biotechnology",
         description: "Analyze PCR, gel electrophoresis, bacterial transformation, and DNA sequencing.",
-        youtubeId: "WsofKzY_K50",
+        youtubeId: "jAhjPd4MD98",
         article: `
 # Biotechnology
 
@@ -3907,7 +4802,7 @@ Biotechnology uses natural cellular mechanisms to manipulate DNA for research, a
         id: "7.1",
         title: "Introduction to Natural Selection",
         description: "Analyze Darwinian premises and how environmental pressures shift populations.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "oBt40eFYYtQ",
         article: `
 # Introduction to Natural Selection
 
@@ -3992,7 +4887,7 @@ Natural selection operates under specific ecological conditions:
         id: "7.2",
         title: "Natural Selection",
         description: "Examine selective pressures, adaptation, and evolutionary fitness.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "LrDCYPW2vts",
         article: `
 # Natural Selection
 
@@ -4080,7 +4975,7 @@ An individual can be physically strong, but if it fails to pass its genes to the
         id: "7.3",
         title: "Artificial Selection",
         description: "Compare artificial selection and domestic breeding with natural selection.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "m24KS_lQD0s",
         article: `
 # Artificial Selection
 
@@ -4167,7 +5062,7 @@ Unlike natural selection, where the environment dictates which traits are favore
         id: "7.4",
         title: "Population Genetics",
         description: "Study genetic drift, mutations, gene flow, and population bottlenecks.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "4Kbruik_LOo",
         article: `
 # Population Genetics
 
@@ -4253,28 +5148,90 @@ Aside from natural selection, three forces drive evolution:
         id: "7.5",
         title: "Hardy-Weinberg Equilibrium",
         description: "Solve population genetics problems using the Hardy-Weinberg mathematical equations.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "fIv3gM8w2Fw",
         article: `
 # Hardy-Weinberg Equilibrium
 
-Hardy-Weinberg equilibrium is a mathematical model that describes a non-evolving population where allele frequencies remain constant over generations.
+The Hardy-Weinberg principle states that allele and genotype frequencies in a population remain constant from generation to generation **in the absence of evolutionary forces**. It provides a mathematical null hypothesis for detecting evolution.
 
-## Conditions for Equilibrium
-For a population to remain in Hardy-Weinberg equilibrium, five conditions must be met:
-1. **No Mutations**: No new alleles can be introduced.
-2. **Random Mating**: No sexual selection.
-3. **No Natural Selection**: All phenotypes must have equal reproductive success.
-4. **Extremely Large Population**: Minimizes genetic drift.
-5. **No Gene Flow**: No migration in or out.
+## The Hardy-Weinberg Equations
 
-## Mathematical Equations
-If these conditions are satisfied, allele and genotype frequencies can be calculated using two equations:
-- **Allele Frequencies**:
-  $$p + q = 1$$
-  where $p$ is the frequency of the dominant allele, and $q$ is the frequency of the recessive allele.
-- **Genotype Frequencies**:
-  $$p^2 + 2pq + q^2 = 1$$
-  where $p^2$ is the frequency of homozygous dominant individuals, $2pq$ is the frequency of heterozygous individuals, and $q^2$ is the frequency of homozygous recessive individuals.
+For a gene with two alleles (A and a):
+- Let **p** = frequency of allele A
+- Let **q** = frequency of allele a
+- p + q = 1 (all alleles must add to 100%)
+
+
+GENOTYPE FREQUENCIES:
+  p² = frequency of AA (homozygous dominant)
+  2pq = frequency of Aa (heterozygous)
+  q² = frequency of aa (homozygous recessive)
+  
+  p² + 2pq + q² = 1
+  
+This is the binomial expansion of (p + q)² = 1
+
+
+## Five Conditions Required for H-W Equilibrium
+
+
+IF ALL FIVE ARE MET → NO EVOLUTION OCCURRING
+┌──────────────────────────────────────────────┐
+│ 1. Very large population (no genetic drift)  │
+│ 2. No mutations                              │
+│ 3. No gene flow (no immigration/emigration)  │
+│ 4. Random mating                             │
+│ 5. No natural selection (all genotypes equal │
+│    fitness)                                  │
+└──────────────────────────────────────────────┘
+If ANY condition is violated → evolution occurring
+
+
+## Solving H-W Problems
+
+**Given**: Frequency of recessive phenotype (aa) = 0.09
+
+
+Step 1: Find q² = 0.09
+Step 2: q = √0.09 = 0.3
+Step 3: p = 1 - q = 1 - 0.3 = 0.7
+Step 4: 
+  AA = p² = 0.49 (49%)
+  Aa = 2pq = 2(0.7)(0.3) = 0.42 (42%)
+  aa = q² = 0.09 (9%)
+  Check: 0.49 + 0.42 + 0.09 = 1.00 ✓
+
+
+## Why H-W Is Important
+
+The H-W principle allows biologists to:
+1. **Detect if evolution is occurring**: if observed genotype frequencies differ from H-W predictions, one of the 5 conditions is violated
+2. **Calculate allele frequencies** from phenotypic data
+3. **Identify carrier frequencies** (useful in medicine — e.g., cystic fibrosis)
+
+## Example: Cystic Fibrosis
+
+CF is caused by a recessive allele (a). In the US, ~1 in 2500 Caucasians has CF.
+
+
+q² = 1/2500 = 0.0004
+q = √0.0004 = 0.02
+p = 1 - 0.02 = 0.98
+Carrier frequency = 2pq = 2(0.98)(0.02) ≈ 0.039 ≈ 1 in 25 carriers!
+
+
+This means carriers (Aa) are far more common than the disease itself — about 1 in 25 people carries one copy.
+
+## Violations of H-W and Their Effects
+
+| Violated Condition | Mechanism | Example Effect |
+|---|---|---|
+| Small population | Genetic drift | Allele fixation or loss by chance |
+| Mutations | New alleles added | Slow change in allele frequencies |
+| Gene flow | Immigration/emigration | New alleles introduced or removed |
+| Non-random mating | Assortative mating | Changes genotype but not allele frequency |
+| Natural selection | Some genotypes more fit | Directional allele frequency change |
+
 `,
         questions: [
           {
@@ -4348,7 +5305,7 @@ If these conditions are satisfied, allele and genotype frequencies can be calcul
         id: "7.6",
         title: "Evidence of Evolution",
         description: "Analyze homologous, analogous, molecular, and fossil evidence of common descent.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "5NdMnlt2keE",
         article: `
 # Evidence of Evolution
 
@@ -4435,7 +5392,7 @@ Evolutionary theory is supported by extensive evidence across scientific discipl
         id: "7.7",
         title: "Common Ancestry",
         description: "Examine shared molecular and cellular features that link all life to a common ancestor.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "GhHOjC4oxh8",
         article: `
 # Common Ancestry
 
@@ -4522,7 +5479,7 @@ All eukaryotic and prokaryotic organisms share core characteristics that point t
         id: "7.8",
         title: "Continuing Evolution",
         description: "Analyze observed examples of modern evolution in real time.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "oehWNFGBCCg",
         article: `
 # Continuing Evolution
 
@@ -4605,7 +5562,7 @@ Evolution is not just a historical event; populations continue to evolve in resp
         id: "7.9",
         title: "Phylogeny",
         description: "Reconstruct evolutionary relationships using cladograms and molecular phylogenetic trees.",
-        youtubeId: "fIv3gM8w2Fw",
+        youtubeId: "utF7G9Rl1Os",
         article: `
 # Phylogeny
 
@@ -4694,7 +5651,7 @@ Modern trees are constructed using morphological features, fossil records, and m
         id: "7.10",
         title: "Speciation",
         description: "Differentiate between allopatric and sympatric speciation and reproductive isolation.",
-        youtubeId: "fIv3gM8w2Fw",
+        youtubeId: "2oiron3PTOU",
         article: `
 # Speciation
 
@@ -4783,7 +5740,7 @@ Speciation is the evolutionary process by which a single ancestral species split
         id: "7.11",
         title: "Extinction",
         description: "Analyze mass extinctions and subsequent adaptive radiation events.",
-        youtubeId: "fIv3gM8w2Fw",
+        youtubeId: "ACiMZcJefVs",
         article: `
 # Extinction
 
@@ -4869,7 +5826,7 @@ Following a mass extinction, the surviving lineages diversify rapidly to fill th
         id: "7.12",
         title: "Variations in Populations",
         description: "Analyze how genetic diversity protects populations from environmental catastrophes.",
-        youtubeId: "fIv3gM8w2Fw",
+        youtubeId: "IrGPUH0DKQY",
         article: `
 # Variations in Populations
 
@@ -4955,7 +5912,7 @@ Monocultures (populations with near-zero genetic diversity, like cloned agricult
         id: "7.13",
         title: "Origin of Life on Earth",
         description: "Analyze prebiotic chemical evolution and the RNA World hypothesis.",
-        youtubeId: "xPkOWGSGYyc",
+        youtubeId: "rybHKBIDcXM",
         article: `
 # Origin of Life on Earth
 
@@ -5051,7 +6008,7 @@ Hypothesizes that **RNA** was the first genetic material. Unlike DNA, RNA can:
         id: "8.1",
         title: "Responses to the Environment",
         description: "Analyze behavioral and physiological responses of organisms to environmental changes.",
-        youtubeId: "h-P8_O2C8Hw",
+        youtubeId: "Js0yVCLKKFE",
         article: `
 # Responses to the Environment
 
@@ -5142,21 +6099,92 @@ Organisms respond to environmental cues to maintain homeostasis and maximize sur
         article: `
 # Energy Flow Through Ecosystems
 
-Ecosystems require a continuous input of energy, which flows unidirectionally through trophic levels.
+Energy flows through ecosystems in one direction — from producers to consumers — following the laws of thermodynamics.
 
 ## Trophic Levels
-- **Primary Producers (Autotrophs)**: Capture solar energy (via photosynthesis) or chemical energy (via chemosynthesis) to synthesize organic compounds.
-- **Consumers (Heterotrophs)**: Obtain energy by consuming other organisms:
-  - *Primary Consumers (Herbivores)*: Feed directly on producers.
-  - *Secondary Consumers*: Feed on primary consumers.
-  - *Tertiary Consumers*: Apex predators.
-- **Decomposers (Detritivores)**: Break down non-living organic matter, recycling chemical nutrients back to the environment.
 
-## The 10% Rule of Energy Transfer
-Energy transfer between trophic levels is highly inefficient due to the laws of thermodynamics:
-- **10% Rule**: On average, only **10%** of the energy stored at one trophic level is transferred to the next level.
-- **Thermodynamic Loss**: The remaining 90% of energy is lost as metabolic heat, utilized for respiration, or remains undigested as waste.
-- **Ecological Pyramids**: Because of this loss, ecosystems rarely support more than four or five trophic levels, and the biomass of producers is vastly larger than that of top predators.
+
+FOOD CHAIN (energy flow):
+
+  Sun
+   ↓ (photosynthesis ~1% efficiency)
+  PRODUCERS (plants, algae, cyanobacteria)
+   ↓ (~10% energy transfer)
+  PRIMARY CONSUMERS (herbivores)
+   ↓ (~10% energy transfer)
+  SECONDARY CONSUMERS (carnivores)
+   ↓ (~10% energy transfer)
+  TERTIARY CONSUMERS (apex predators)
+   ↓
+  DECOMPOSERS (fungi, bacteria)
+
+
+## The 10% Rule (Ecological Efficiency)
+
+At each trophic level, approximately **10% of energy** is passed to the next level. The other 90% is lost as:
+- Heat from cellular respiration (~60%)
+- Excretion in waste
+- Undigested material
+- Structural material not consumed
+
+
+ENERGY PYRAMID:
+                 ▲
+           10 kcal    (tertiary consumers)
+         ──────────
+        100 kcal       (secondary consumers)  
+      ────────────
+     1,000 kcal         (primary consumers)
+   ──────────────
+  10,000 kcal            (producers/plants)
+
+
+This explains why:
+- **Fewer organisms** can be sustained at higher trophic levels
+- **Vegetarian diets** are more energy-efficient than meat-based diets
+- **Food chains are short** (usually 3-5 levels) — very little energy reaches upper levels
+
+## Gross vs. Net Primary Production
+
+- **Gross Primary Production (GPP)**: total rate of photosynthesis (total energy fixed)
+- **Net Primary Production (NPP)**: energy available to consumers
+
+$$NPP = GPP - R_{autotrophs}$$
+
+where $R_{autotrophs}$ = energy used by producers in their own respiration
+
+## Biogeochemical Cycles vs. Energy Flow
+
+
+KEY DISTINCTION:
+  ENERGY: flows through ecosystems (enters as light, exits as heat)
+           → NOT recycled, must constantly be input
+           
+  MATTER/NUTRIENTS: cycle through ecosystems (carbon, nitrogen, phosphorus)
+           → ARE recycled, same atoms reused again and again
+
+
+## Carbon Cycle
+
+
+              CO₂ (atmosphere)
+             ↗          ↘
+    Photosynthesis      Combustion/
+    (producers)         Respiration
+         ↓                  ↑
+    Organic carbon  ← Decomposers
+    (food chains)
+              ↓
+    Fossil fuels (long-term storage)
+
+
+## Food Webs vs. Food Chains
+
+Real ecosystems have complex **food webs** (multiple interconnected food chains). <vocab term="Trophic Cascade" definition="Ecological changes triggered when an apex predator population changes, causing cascading effects through the food web to the primary producer level.">Trophic cascades</vocab> occur when changes in one trophic level ripple through the web.
+
+**Example**: Sea otters (predator) → urchins (prey) → kelp (producer)
+- Without otters: urchin populations explode → kelp forests disappear → coastal ecosystem collapses
+
 `,
         questions: [
           {
@@ -5230,7 +6258,7 @@ Energy transfer between trophic levels is highly inefficient due to the laws of 
         id: "8.3",
         title: "Population Ecology",
         description: "Understand population growth curves, carrying capacity, and density-dependent pressures.",
-        youtubeId: "mN2-67-m22s",
+        youtubeId: "RpOLRQfXWH0",
         article: `
 # Population Ecology
 
@@ -5406,7 +6434,7 @@ Populations are regulated by factors that limit their growth. These factors are 
         id: "8.5",
         title: "Community Ecology",
         description: "Analyze species interactions, niche partitioning, and trophic cascades.",
-        youtubeId: "h-P8_O2C8Hw",
+        youtubeId: "qSE4AgBhybg",
         article: `
 # Community Ecology
 
@@ -5496,7 +6524,7 @@ A **trophic cascade** occurs when the removal or addition of a top predator ripp
         id: "8.6",
         title: "Biodiversity",
         description: "Analyze species richness, Simpson's index, and the value of keystone species.",
-        youtubeId: "h-P8_O2C8Hw",
+        youtubeId: "GlZiHDpq3ms",
         article: `
 # Biodiversity
 
@@ -5585,7 +6613,7 @@ A **keystone species** is a species that has an exceptionally large impact on it
         id: "8.7",
         title: "Disruptions to Ecosystems",
         description: "Examine the ecological impact of invasive species and human-driven disruptions.",
-        youtubeId: "h-P8_O2C8Hw",
+        youtubeId: "cYmKkCZbHW8",
         article: `
 # Disruptions to Ecosystems
 
