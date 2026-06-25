@@ -953,17 +953,55 @@ Light reactions occur in <vocab term="Thylakoid" definition="A flattened, membra
         article: `
 # Cell Structure and Function
 
-The structural components of a cell work cooperatively to perform metabolic functions:
+![Endomembrane system showing protein secretory pathway from nucleus to plasma membrane](/images/biology/endomembrane_system.png)
 
-## The Endomembrane System
-This system coordinates protein synthesis, processing, and export:
-1. **Ribosomes** assemble a polypeptide chain using genetic code from mRNA.
-2. The **Rough ER** folds the polypeptide into its native 3D shape and packages it into a transport vesicle.
-3. The **Golgi Complex** receives the vesicle, modifies the carbohydrate tags on the protein, and packages it into a secretory vesicle.
-4. The secretory vesicle fuses with the **Plasma Membrane** to release the protein outside the cell via exocytosis.
+The <vocab term="Endomembrane System" definition="A network of membrane-bound organelles in eukaryotic cells including the ER, Golgi, and vesicles that coordinate protein synthesis, modification, and secretion.">endomembrane system</vocab> and energy organelles work cooperatively to sustain all cellular activities.
 
-## Energy Organelles
-Mitochondria and chloroplasts function independently of the endomembrane system. They contain their own ribosomes and DNA, dividing autonomously inside the cell.
+## The Protein Secretory Pathway
+
+Proteins destined for secretion, the plasma membrane, or lysosomes travel through the endomembrane system:
+
+1. **Nucleus** - DNA transcribed to mRNA; exits through nuclear pores
+2. **Ribosomes on Rough ER** - mRNA translated; polypeptide threaded into ER lumen and folded with <vocab term="Chaperone Proteins" definition="Proteins that assist correct folding of newly synthesized polypeptides and prevent misfolding aggregation.">chaperones</vocab>
+3. **Transport vesicles** - bud from ER and travel to Golgi cis face
+4. **Golgi apparatus** - modifies carbohydrate chains, sorts and packages cargo; material flows cis to trans
+5. **Secretory or lysosomal vesicles** - delivered to plasma membrane or lysosomes
+6. **Exocytosis** - secretory vesicles fuse with plasma membrane; contents released
+
+| Compartment | Function | Receives From | Sends To |
+|---|---|---|---|
+| Rough ER | Protein folding, packaging | Cytoplasm (ribosomes) | Golgi via transport vesicle |
+| Smooth ER | Lipid synthesis, detoxification | - | Golgi, plasma membrane |
+| Golgi (cis to trans) | Glycosylation, sorting | ER vesicles | Lysosomes, PM, secretion |
+| Lysosomes | Hydrolytic digestion | Golgi | Cytoplasm (products) |
+
+## Golgi Apparatus: The Molecular Post Office
+
+The Golgi cisternae receive, modify, and redistribute cargo. <vocab term="Glycosylation" definition="The addition and modification of carbohydrate chains to proteins and lipids; occurs in the ER and Golgi apparatus.">Glycosylation</vocab> (adding sugar chains) identifies proteins for their destination. Signal sequences in proteins determine routing.
+
+## Energy Organelles: Autonomous Systems
+
+<vocab term="Endosymbiotic Theory" definition="The theory that mitochondria and chloroplasts evolved from free-living prokaryotes that were engulfed by a host cell; supported by their double membranes, own DNA, and 70S ribosomes.">Endosymbiotic theory</vocab> explains why mitochondria and chloroplasts:
+- Have **double membranes** (outer from host, inner from original prokaryote)
+- Contain **circular DNA** (like prokaryotes)
+- Have **70S ribosomes** (prokaryotic type, not 80S eukaryotic)
+- Divide by **binary fission** independently of the cell cycle
+
+## Cytoskeleton: Internal Scaffolding
+
+| Component | Size | Material | Functions |
+|---|---|---|---|
+| Microfilaments | 7 nm | Actin | Cell shape, cytokinesis, amoeboid movement |
+| Intermediate filaments | 8-12 nm | Keratin/vimentin | Mechanical stability, nuclear lamina |
+| Microtubules | 25 nm | Tubulin | Spindle fibers, cilia/flagella, vesicle tracks |
+
+<vocab term="Motor Proteins" definition="Proteins such as kinesin and dynein that use ATP hydrolysis to move vesicles and organelles along cytoskeletal tracks.">Motor proteins</vocab> (kinesin, dynein) use ATP to transport vesicles along microtubule tracks.
+
+## AP Exam Focus
+
+- Trace secreted protein: ribosome on rough ER -> transport vesicle -> Golgi -> secretory vesicle -> exocytosis
+- Mitochondria and chloroplasts have their own DNA and 70S ribosomes (endosymbiotic evidence)
+- Cytoskeletal components: microfilaments (actin), microtubules (tubulin), intermediate filaments
 `,
         questions: [
           {
@@ -1041,19 +1079,72 @@ Mitochondria and chloroplasts function independently of the endomembrane system.
         article: `
 # Cell Size
 
-Cells must remain small to maintain a high efficiency of nutrient exchange and waste elimination.
+![Cell size comparison diagram showing prokaryotic and eukaryotic cells at different scales](/images/biology/cell_size_comparison.png)
 
-## The Surface Area-to-Volume Ratio
-The rate of transport across the membrane depends on **Surface Area** ($SA$), while the metabolic demands of the cell depend on its **Volume** ($V$).
-- For a sphere:
-  $$SA = 4\pi r^2 \quad \text{and} \quad V = \frac{4}{3}\pi r^3$$
-- As a cell increases in size, its volume increases much faster than its surface area:
-  $$\frac{SA}{V} \propto \frac{1}{r}$$
-- A smaller cell has a **higher** $SA/V$ ratio, which increases the rate of diffusion.
+Cell size is fundamentally constrained by the <vocab term="Surface Area-to-Volume Ratio" definition="The ratio of a cell's surface area to its volume; as cells grow, volume increases faster than surface area, reducing exchange efficiency.">surface area-to-volume (SA:V) ratio</vocab>. This mathematical relationship determines whether diffusion can adequately supply nutrients and remove wastes from the cell interior.
 
-## Evolutionary Adaptations
-Cells that specialize in absorption (e.g., intestinal microvilli, root hairs) develop highly folded membranes or elongated shapes to maximize surface area without increasing volume.
-`,
+## The Mathematics of SA:V Ratio
+
+For a sphere of radius r: $SA = 4\pi r^2$ and $V = rac{4}{3}\pi r^3$
+
+$$rac{SA}{V} = rac{3}{r}$$
+
+As cell radius doubles, volume increases 8-fold but surface area only 4-fold:
+
+| Sphere Radius | Surface Area | Volume | SA:V Ratio |
+|---|---|---|---|
+| 1 unit | 12.6 sq units | 4.2 cu units | 3.0 |
+| 2 units | 50.3 sq units | 33.5 cu units | 1.5 |
+| 4 units | 201 sq units | 268 cu units | 0.75 |
+| 8 units | 804 sq units | 2144 cu units | 0.375 |
+
+## Why SA:V Ratio Matters
+
+<vocab term="Diffusion" definition="The passive movement of molecules from regions of high concentration to low; the primary means of intracellular transport, with time proportional to distance squared.">Diffusion</vocab> time scales with the square of distance:
+
+$$t \propto d^2$$
+
+Doubling cell radius quadruples the time for nutrients to reach the center. Cells larger than ~100 micrometers cannot supply interior regions fast enough by diffusion alone. This is why multicellular organisms evolved circulatory systems to deliver nutrients to cells that cannot afford larger SA:V ratio.
+
+## Structural Adaptations to Maximize SA:V
+
+| Adaptation | Location | Effect |
+|---|---|---|
+| Microvilli | Intestinal epithelium | Increases absorptive area ~20-fold |
+| Cristae (inner membrane folds) | Mitochondria | Maximizes ETC surface area |
+| Root hair extensions | Plant root cells | Increases water and mineral absorption |
+| Alveolar surface area | Lung | Maximizes O2/CO2 exchange |
+| Thylakoid membrane folds | Chloroplasts | Maximizes light capture area |
+
+## Cell Size Reference Ranges
+
+| Cell Type | Size | Notes |
+|---|---|---|
+| Mycoplasma (smallest bacterium) | 0.1-0.3 micrometer | No cell wall |
+| Typical bacterium (E. coli) | 1-2 micrometers | Similar size to mitochondria |
+| Typical eukaryotic cell | 10-100 micrometers | Visible with light microscope |
+| Human egg (oocyte) | ~100 micrometers | Barely visible to naked eye |
+| Nerve cell axon | Up to 1 meter long! | Thin diameter maintains SA:V |
+
+## Microscopy: Visualizing Cells
+
+<vocab term="Resolution" definition="The minimum distance between two points that can be distinguished as separate; electron microscopes achieve approximately 1 nm vs 200 nm for light microscopes.">Resolution</vocab> determines what structures are visible:
+
+| Microscope Type | Resolution | Key Use |
+|---|---|---|
+| Human eye | 0.2 mm | Gross anatomy |
+| Light (compound) | ~200 nm | Live cells, cell-level structures |
+| Scanning Electron (SEM) | 1-20 nm | 3D surface topography |
+| Transmission Electron (TEM) | less than 1 nm | Internal organelle ultrastructure |
+
+<vocab term="Electron Microscope" definition="A microscope using electron beams instead of light, achieving resolution of less than 1 nm; specimens must be fixed (dead) and placed in a vacuum.">Electron microscopes</vocab> cannot image living cells because the specimen must be fixed and placed in a vacuum.
+
+## AP Exam Focus
+
+- Calculate SA:V ratios for cubes or spheres in FRQs
+- Smaller cells have higher SA:V = more efficient exchange per unit volume
+- Microvilli and cristae are adaptations that increase functional SA:V
+- Light microscopy: live cells, ~200 nm resolution; TEM: dead/fixed, less than 1 nm resolution
         questions: [
           {
             id: "2.3.1",
@@ -1281,27 +1372,74 @@ INCREASES FLUIDITY:          DECREASES FLUIDITY:
         article: `
 # Membrane Transport
 
-Cell membranes are **selectively permeable**, dictating which substances can cross and regulating internal concentrations.
+![Membrane transport mechanisms diagram showing simple diffusion, facilitated diffusion with channels and carriers, and active transport](/images/biology/membrane_transport.png)
 
-## Selective Permeability
-The phospholipid bilayer features a hydrophobic core. Small, nonpolar molecules (such as $O_2, CO_2, N_2$) dissolve in the lipid bilayer and cross easily. Large, polar molecules (like glucose) and charged ions (like $Na^+, K^+$) cannot cross the hydrophobic core without assist proteins.
+The <vocab term="Selective Permeability" definition="The property of cell membranes allowing certain substances to cross while restricting others; maintains distinct intracellular chemical environments.">selectively permeable</vocab> plasma membrane governs all traffic into and out of the cell. Transport is categorized as passive (no ATP) or active (requires ATP).
 
-## Passive Transport
-Passive transport is the net movement of molecules down their concentration gradient without cellular energy (ATP):
-- **Simple Diffusion**: Solutes migrate directly through the lipid bilayer.
-- **Facilitated Diffusion**: Polar or charged substances traverse the membrane via transport proteins:
-  - *Channel Proteins*: Hydrophilic corridors (e.g., **Aquaporins** for water).
-  - *Carrier Proteins*: Undergo shape changes to move solutes across.
+## The Barrier: Phospholipid Bilayer Permeability
 
-## Active Transport
-Active transport requires energy (usually from ATP hydrolysis) to pump molecules **against** their concentration gradient:
-- **Sodium-Potassium Pump**: Pumps $3\ Na^+$ out and $2\ K^+$ in, establishing electrochemical gradients across the membrane.
+**Cross freely (simple diffusion):** O2, CO2, N2, small nonpolar molecules, steroid hormones
+
+**Require transport proteins:** Ions (Na+, K+, Cl-, Ca2+), large polar molecules (glucose), water (aquaporins speed up 10 million-fold)
+
+## Passive Transport: Moving With the Gradient
+
+### Simple Diffusion
+Small nonpolar molecules dissolve in and cross the lipid bilayer. No proteins required. Rate governed by Fick's law: proportional to concentration gradient, inversely proportional to molecule size.
+
+### Osmosis
+<vocab term="Osmosis" definition="The diffusion of water across a selectively permeable membrane from lower solute concentration (higher water concentration) to higher solute concentration (lower water concentration).">Osmosis</vocab> is water movement through <vocab term="Aquaporins" definition="Specialized water channel proteins that dramatically increase membrane permeability to water; found in kidney tubules, plant guard cells, and red blood cells.">aquaporins</vocab>. Water moves from hypotonic (more water) to hypertonic (less water) side.
+
+$$\Psi = \Psi_s + \Psi_p 	ext{ (water potential drives osmosis)}$$
+
+### Facilitated Diffusion
+Polar/charged molecules cross via integral membrane proteins:
+- **Channel proteins** - gated or open pores for ions and water (still passive)
+- **Carrier proteins** - bind solute, change shape, release on other side (still passive)
+
+## Active Transport: Against the Gradient
+
+<vocab term="Active Transport" definition="Energy-requiring movement of substances against their concentration gradient; uses ATP directly or indirectly via ion gradients.">Active transport</vocab> requires ATP to pump molecules from low to high concentration.
+
+### Na+/K+ ATPase (Primary Active Transport)
+The most important pump in animal cells:
+- Pumps **3 Na+ OUT** and **2 K+ IN** per ATP hydrolyzed
+- Creates electrochemical gradients essential for nerve impulse transmission
+- Accounts for ~30% of ATP consumption in human body
+
+### Secondary Active Transport (Cotransport)
+Uses Na+ gradient (made by Na+/K+ ATPase) to drive other molecules against their gradient:
+- **Symport** - Na+ and cargo move same direction (Na+/glucose in intestinal cells)
+- **Antiport** - Na+ and cargo move opposite directions (Na+/H+ exchanger)
+
+| Transport Type | ATP Used? | Direction | Example |
+|---|---|---|---|
+| Simple diffusion | No | High to low | O2, CO2, N2 |
+| Osmosis | No | High to low water potential | Water |
+| Facilitated diffusion | No | High to low | Glucose (GLUT), ions |
+| Primary active transport | Yes (directly) | Low to high | Na+/K+ pump, Ca2+ pump |
+| Secondary active transport | Yes (indirectly via Na+) | Low to high | Na+/glucose cotransport |
 
 ## Bulk Transport
-Large particles cross via packaging into membrane vesicles:
-- **Endocytosis**: The cell takes in macromolecules by forming new vesicles from the plasma membrane.
-- **Exocytosis**: Secretory vesicles fuse with the membrane to release waste or products.
-`,
+
+### Endocytosis
+<vocab term="Endocytosis" definition="Bulk transport into the cell; the plasma membrane folds inward to form an intracellular vesicle enclosing extracellular material.">Endocytosis</vocab> types:
+- **Phagocytosis** - "cell eating" of solid particles (macrophages engulf bacteria)
+- **Pinocytosis** - "cell drinking" of extracellular fluid
+- **Receptor-mediated endocytosis** - specific receptor binds ligand; highly selective (LDL uptake)
+
+### Exocytosis
+Vesicles fuse with plasma membrane; contents released outside cell:
+- Neurotransmitter release at synapses (Ca2+-triggered)
+- Insulin secretion from pancreatic beta cells (glucose-triggered)
+- Digestive enzyme secretion from pancreatic acinar cells
+
+## AP Exam Focus
+
+- Passive transport: no ATP, moves with gradient (simple diffusion, osmosis, facilitated diffusion)
+- Active transport: requires ATP, moves against gradient
+- Na+/K+ pump: 3 Na+ out, 2 K+ in per ATP - memorize this!
+- Receptor-mediated endocytosis is highly specific; relevant to LDL/cholesterol pathology
         questions: [
           {
             id: "2.5.1",
@@ -1378,17 +1516,80 @@ Large particles cross via packaging into membrane vesicles:
         article: `
 # Facilitated Diffusion
 
-Facilitated diffusion is a form of passive transport that uses membrane proteins to transport polar or charged substances down their concentration gradients.
+![Membrane transport diagram highlighting channel and carrier protein mechanisms for passive facilitated diffusion](/images/biology/membrane_transport.png)
 
-## Transport Proteins
-Because the hydrophobic core of the membrane blocks hydrophilic substances, they require assistance:
-- **Channel Proteins**: Act as open tunnels through the membrane. Many are gated (open or close in response to electrical or chemical signals). Examples include **aquaporins** and **ion channels**.
-- **Carrier Proteins**: Bind to specific molecules and change shape to carry them across. Example: the glucose transporter (GLUT).
+<vocab term="Facilitated Diffusion" definition="Passive transport using integral membrane proteins (channels or carriers) to move molecules down their concentration gradient across the membrane; requires no ATP.">Facilitated diffusion</vocab> is passive — no ATP required — but uses specialized membrane proteins for molecules that cannot cross the hydrophobic bilayer unassisted.
 
-## Features of Passive Facilitated Transport
-- **No Energy Required**: Solutes move from high concentration to low concentration.
-- **Saturation**: The rate of transport is limited by the number of transport proteins available in the membrane.
-`,
+## Why Molecules Need Protein Assistance
+
+The phospholipid bilayer blocks:
+- **Ions**: Na+, K+, Ca2+, Cl- (electrically charged, repelled by hydrophobic core)
+- **Large polar molecules**: glucose, amino acids, nucleotides
+- **Water**: can cross slowly; aquaporins increase rate by 10-100 million-fold
+
+## Channel Proteins: Rapid Passive Pores
+
+<vocab term="Ion Channels" definition="Membrane proteins forming water-filled pores that allow specific ions to diffuse rapidly when open; can be voltage-gated, ligand-gated, mechanically-gated, or always open (leak channels).">Ion channels</vocab> create hydrophilic tunnels through the bilayer. Highly selective by pore diameter and charge.
+
+**Gating types:**
+- **Leak channels** - always open; K+ leak channels maintain resting membrane potential
+- **Voltage-gated** - open in response to changes in membrane potential; essential for action potentials
+- **Ligand-gated** - open when specific molecule binds (neurotransmitter receptors at synapses)
+- **Mechanically-gated** - respond to physical deformation (hearing, touch)
+
+**Aquaporins (water channels):**
+- Discovered by Peter Agre (Nobel Prize 2003)
+- Allow ~10^9 water molecules/second per channel
+- Critical in kidney tubules (water reabsorption), plant guard cells (stomatal regulation)
+- AQP2 mutations cause nephrogenic diabetes insipidus
+
+## Carrier Proteins: Shape-Changing Transporters
+
+<vocab term="Carrier Proteins" definition="Transport proteins that bind a specific solute and undergo conformational change to move it across the membrane down its gradient; exhibit saturation kinetics similar to enzymes.">Carrier proteins</vocab> alternate conformations:
+1. Binding site exposed to high-concentration side
+2. Substrate binds, inducing conformational change
+3. Substrate now faces low-concentration side and is released
+4. Carrier resets to original conformation
+
+| Property | Channel Proteins | Carrier Proteins |
+|---|---|---|
+| Transport rate | 10^6-10^8 molecules/sec | 10^2-10^4 molecules/sec |
+| Mechanism | Open pore (no shape change) | Conformational change |
+| Selectivity | High (size + charge) | Very high (specific binding) |
+| Saturation | No | Yes (Vmax reached) |
+| Competitive inhibition | Rare | Yes (similar molecules compete) |
+
+## GLUT Glucose Transporters: Clinical Importance
+
+| GLUT Type | Tissue | Affinity | Key Role |
+|---|---|---|---|
+| GLUT1 | Most tissues, RBCs, brain | High | Basal glucose uptake |
+| GLUT2 | Liver, pancreatic beta cells | Low | "Glucose sensor" - high capacity |
+| GLUT3 | Neurons | Very high | Ensures brain glucose supply |
+| GLUT4 | Muscle, adipose | Moderate | Insulin-stimulated uptake |
+| GLUT5 | Small intestine | Fructose | Fructose absorption |
+
+**Type 2 Diabetes connection**: Insulin normally triggers GLUT4 vesicles to fuse with plasma membrane, enabling glucose uptake. Insulin resistance prevents GLUT4 insertion -> cells cannot take up glucose -> blood glucose remains high (hyperglycemia).
+
+## Distinguishing Facilitated Diffusion from Active Transport
+
+A common AP exam challenge:
+
+| Feature | Facilitated Diffusion | Active Transport |
+|---|---|---|
+| Energy required | No (passive) | Yes (ATP) |
+| Direction | High to low concentration | Low to high concentration |
+| Reaches equilibrium | Yes (when concentrations equalize) | No (maintains gradient) |
+| Examples | GLUT transporters, ion channels | Na+/K+ pump, Ca2+ pump |
+
+**Key insight**: GLUT transporters use protein carriers but are still facilitated diffusion because glucose moves WITH its gradient (from blood where it is high into cells where it is lower, especially after meals).
+
+## AP Exam Focus
+
+- Facilitated diffusion: passive, uses transport proteins, moves with concentration gradient
+- Channel proteins: faster, no saturation; carrier proteins: slower, show Vmax saturation
+- GLUT4 is insulin-stimulated; impaired in Type 2 diabetes
+- Aquaporins greatly increase water permeability; still passive osmosis
         questions: [
           {
             id: "2.6.1",
@@ -1465,25 +1666,68 @@ Because the hydrophobic core of the membrane blocks hydrophilic substances, they
         article: `
 # Tonicity and Osmoregulation
 
-**Osmosis** is the diffusion of free water molecules across a selectively permeable membrane from regions of low solute concentration to high solute concentration.
+![Tonicity diagram showing animal and plant cell responses to hypotonic, isotonic, and hypertonic solutions](/images/biology/tonicity_osmosis.png)
 
-## Tonicity
-Tonicity describes the ability of an extracellular solution to cause a cell to gain or lose water:
-- **Hypertonic**: Extracellular solute concentration is higher than inside the cell. Water exits the cell. Animal cells shrivel; plant cells undergo **plasmolysis**.
-- **Hypotonic**: Extracellular solute concentration is lower than inside the cell. Water enters the cell. Animal cells swell and burst (lyse); plant cells gain turgor pressure (turgid), which is their normal state.
-- **Isotonic**: Concentrations are equal. No net water movement.
+<vocab term="Tonicity" definition="The ability of an extracellular solution to cause osmotic water movement across a cell membrane relative to the cell's internal solute concentration.">Tonicity</vocab> describes how a surrounding solution affects cell volume via osmosis. Three conditions exist: hypertonic, isotonic, and hypotonic.
 
-## Water Potential ($\Psi$)
-Water moves from areas of high water potential to low water potential. The equation is:
-$$\Psi = \Psi_p + \Psi_s$$
-where $\Psi_p$ is pressure potential and $\Psi_s$ is solute potential:
-$$\Psi_s = -iCRT$$
-- $i$: Ionization constant (e.g., 1 for sucrose, 2 for NaCl).
-- $C$: Molar concentration.
-- $R$: Pressure constant ($0.0831 \text{ L bar/mol K}$).
-- $T$: Temperature in Kelvin ($^\circ\text{C} + 273$).
-`,
-        questions: [
+## Three Tonicity Conditions
+
+### Hypotonic (Fewer Solutes Outside Than Inside)
+Water moves INTO the cell (lower solute concentration outside = higher water concentration outside):
+- **Animal cells** - swell and may undergo <vocab term="Cytolysis" definition="The bursting of an animal cell in a hypotonic environment due to osmotic water intake; also called lysis.">cytolysis</vocab> (lysis/bursting) - no cell wall to resist
+- **Plant cells** - become <vocab term="Turgid" definition="The firm, swollen state of a plant cell in a hypotonic solution when the vacuole is full of water and turgor pressure presses outward against the cell wall.">turgid</vocab>; cell wall resists, creating turgor pressure; this is the normal, healthy state for plants
+
+### Isotonic (Equal Solutes Inside and Outside)
+No net water movement; cells remain normal size:
+- **Animal cells** - normal biconcave shape (0.9% NaCl is isotonic to human blood cells)
+- **Plant cells** - become <vocab term="Flaccid" definition="The limp state of a plant cell in isotonic conditions when turgor pressure is lost; can lead to wilting.">flaccid</vocab> (limp); no turgor pressure = wilting
+
+### Hypertonic (More Solutes Outside Than Inside)
+Water moves OUT of the cell:
+- **Animal cells** - undergo <vocab term="Crenation" definition="The shriveling of an animal cell in a hypertonic solution as water leaves by osmosis, creating a scalloped membrane surface.">crenation</vocab> (shrivel, scalloped shape)
+- **Plant cells** - undergo <vocab term="Plasmolysis" definition="The shrinking of a plant cell's cytoplasm away from the cell wall in a hypertonic solution; can be lethal if prolonged.">plasmolysis</vocab> (cytoplasm pulls away from cell wall); occurs when plants are severely dehydrated
+
+## Comparison Table
+
+| Solution | Solute Conc. | Net H2O Movement | Animal Cell | Plant Cell |
+|---|---|---|---|---|
+| Hypotonic | Lower outside | Into cell | Swells / lyses | Turgid (firm) - healthy |
+| Isotonic | Equal | None (equilibrium) | Normal | Flaccid (limp) |
+| Hypertonic | Higher outside | Out of cell | Crenates (shrivels) | Plasmolyzed |
+
+## Water Potential in Plants
+
+Water moves from high to low water potential ($\Psi$):
+
+$$\Psi = \Psi_s + \Psi_p$$
+
+- $\Psi_s$ = solute potential = $-iCRT$ (always negative; more solutes = more negative = lower $\Psi$)
+- $\Psi_p$ = pressure potential = turgor pressure in plant cells (positive in turgid cells)
+- Pure water: $\Psi = 0$ (reference)
+
+Water moves toward more negative (lower) water potential.
+
+## Osmoregulation Strategies
+
+Organisms maintain internal osmolarity against environmental gradients:
+
+| Organism Group | Strategy | Mechanism |
+|---|---|---|
+| Freshwater fish | Osmoregulator (body hypertonic to water) | Drink little water; produce large volumes dilute urine; gills actively absorb salts |
+| Marine bony fish | Osmoregulator (body hypotonic to seawater) | Drink lots of seawater; excrete salt via gills; produce small amounts concentrated urine |
+| Marine invertebrates | Osmoconformer | Internal osmolarity matches seawater; no regulation needed |
+| Freshwater protists | Active pumping | Contractile vacuoles use ATP to pump out excess water |
+| Desert mammals | Osmoregulator | Kidneys with long loops of Henle produce highly concentrated urine |
+
+<vocab term="Osmoregulation" definition="The physiological control of water and solute balance to maintain internal osmolarity against environmental osmotic gradients; requires energy expenditure.">Osmoregulation</vocab> requires energy because it works against osmotic gradients.
+
+## AP Exam Focus
+
+- Plant cells: hypotonic = turgid (healthy); hypertonic = plasmolyzed; isotonic = flaccid (wilting)
+- Animal cells: hypotonic = lysis; isotonic = normal; hypertonic = crenation
+- Calculate water potential: $\Psi = \Psi_s + \Psi_p$; water moves from high to low $\Psi$
+- Contractile vacuoles (freshwater protists) use ATP to prevent lysis in hypotonic freshwater
+`,        questions: [
           {
             id: "2.7.1",
             text: "A red blood cell is placed in a beaker containing a 10% NaCl solution, which is hypertonic to the cell's cytoplasm. What will happen to the cell?",
@@ -1559,21 +1803,85 @@ $$\Psi_s = -iCRT$$
         article: `
 # Mechanisms of Transport
 
-Cells utilize active processes to import or export large molecules, or to establish concentration gradients.
+![Membrane transport mechanisms including bulk transport, endocytosis and exocytosis](/images/biology/membrane_transport.png)
 
-## Primary and Secondary Active Transport
-- **Primary Active Transport**: Uses energy from ATP hydrolysis to pump solutes against their gradient. The **Sodium-Potassium Pump** ($Na^+/K^+$ ATPase) is a classic example.
-- **Secondary Active Transport (Cotransport)**: A pump uses ATP to establish an electrochemical gradient of an ion (e.g., $H^+$). The diffusion of this ion back down its gradient is coupled with the transport of another substance (e.g., glucose) against its gradient.
+Transport across the plasma membrane encompasses passive diffusion, protein-mediated transport, and bulk membrane-enclosed movement. Understanding which mechanism is used depends on the molecule's size, polarity, and whether it moves with or against its gradient.
 
-## Bulk Transport
-Large polar molecules or whole cells cross via vesicular transport:
-- **Exocytosis**: Internal vesicles fuse with the plasma membrane to release cargo.
-- **Endocytosis**: Cell takes in matter:
-  - *Phagocytosis*: Engulfing large particles ('cell eating').
-  - *Pinocytosis*: Non-specific fluid intake ('cell drinking').
-  - *Receptor-Mediated Endocytosis*: Specific binding to receptor proteins triggers vesicle formation.
-`,
-        questions: [
+## Electrochemical Gradients
+
+Charged ions do not simply follow concentration gradients - they respond to both concentration AND electrical charge. The combined driving force is the <vocab term="Electrochemical Gradient" definition="The combined influence of concentration gradient and electrical charge gradient that determines the net direction of ion movement across a membrane.">electrochemical gradient</vocab>.
+
+For each ion:
+$$\Delta G = RT\lnrac{[C]_{in}}{[C]_{out}} + zF\Delta V$$
+
+Where z = ion charge, F = Faraday's constant, V = membrane voltage.
+
+The **resting membrane potential** (~-70 mV in neurons) is maintained by:
+1. Na+/K+ ATPase pump (3 Na+ out, 2 K+ in per ATP)
+2. K+ leak channels (K+ flows out, leaving cell more negative)
+3. Negatively charged proteins trapped inside cell
+
+## Cotransport Mechanisms
+
+<vocab term="Cotransport" definition="A form of secondary active transport in which the movement of one molecule (typically Na+) down its gradient drives the active transport of another molecule against its gradient.">Cotransport</vocab> links two transport events:
+
+### Symporters (Same Direction)
+Both molecules move in the same direction:
+- **Na+/glucose symporter** in intestinal cells - Na+ flowing in pulls glucose in against its gradient
+- **Na+/amino acid symporter** - absorbs amino acids from intestinal lumen
+- Net effect: glucose and amino acids absorbed even when cellular concentration is higher
+
+### Antiporters (Opposite Directions)
+Molecules move in opposite directions:
+- **Na+/H+ antiporter** - exchanges Na+ in for H+ out; regulates intracellular pH
+- **Na+/Ca2+ antiporter** - removes Ca2+ from cells in exchange for Na+
+
+## Endocytosis: Bringing Material In
+
+Three types of <vocab term="Endocytosis" definition="Bulk transport INTO the cell; the plasma membrane folds inward to form a vesicle enclosing extracellular material.">endocytosis</vocab>:
+
+| Type | Mechanism | Selectivity | Example |
+|---|---|---|---|
+| Phagocytosis | Large pseudopods engulf solid particles | Low | Macrophages eating bacteria |
+| Pinocytosis | Small vesicles take up fluid | Very low (nonspecific) | Nutrient sampling |
+| Receptor-mediated | Receptors bind specific ligands, form coated pits | Very high | LDL uptake, iron uptake |
+
+### Receptor-Mediated Endocytosis (Detailed)
+1. Extracellular ligand binds specific receptor protein in plasma membrane
+2. Ligand-receptor complexes cluster into <vocab term="Clathrin-Coated Pits" definition="Specialized regions of the plasma membrane coated with the protein clathrin that pinch off as vesicles during receptor-mediated endocytosis.">clathrin-coated pits</vocab>
+3. Clathrin pit pinches off as coated vesicle
+4. Clathrin coat removed; vesicle fuses with endosome, then lysosome
+5. Ligand digested or repurposed; receptor recycled to membrane
+
+**AP Biology example**: Familial hypercholesterolemia - defective LDL receptor prevents cellular uptake of cholesterol from blood; LDL accumulates, causing cardiovascular disease.
+
+## Exocytosis: Releasing Material Out
+
+<vocab term="Exocytosis" definition="Bulk transport OUT of the cell; secretory vesicles fuse with the plasma membrane to release contents extracellularly.">Exocytosis</vocab> occurs via fusion of secretory vesicles with the plasma membrane. Examples:
+- Neurotransmitter release from synaptic vesicles (triggered by Ca2+ influx)
+- Insulin secretion from pancreatic beta cells (triggered by glucose)
+- Digestive enzyme secretion from pancreatic acinar cells
+- Collagen secretion from fibroblasts
+
+## Comparing All Transport Mechanisms
+
+| Mechanism | Energy | Protein? | Cargo Size | Example |
+|---|---|---|---|---|
+| Simple diffusion | None | No | Small nonpolar | O2, CO2 |
+| Osmosis | None | Aquaporin | Water | Water across membranes |
+| Facilitated diffusion | None | Yes | Polar, ions | Glucose, Na+ |
+| Primary active transport | ATP (direct) | Yes (pump) | Ions, small molecules | Na+/K+ pump |
+| Secondary active transport | ATP (indirect) | Yes (cotransporter) | Polar molecules | Na+/glucose |
+| Endocytosis | ATP | No (membrane) | Large particles/molecules | Phagocytosis |
+| Exocytosis | ATP | No (membrane) | Large particles/molecules | Secretion |
+
+## AP Exam Focus
+
+- Electrochemical gradient drives ion movement (both concentration AND charge matter)
+- Cotransporters use Na+ gradient (made by Na+/K+ ATPase) to drive secondary active transport
+- Receptor-mediated endocytosis is highly specific; familial hypercholesterolemia results from defective LDL receptors
+- Exocytosis is triggered by Ca2+ for neurotransmitters; glucose for insulin
+`,        questions: [
           {
             id: "2.8.1",
             text: "Which transport mechanism uses the energy stored in an electrochemical gradient, established by a primary active transport pump, to drive the uptake of another solute?",
@@ -1649,18 +1957,83 @@ Large polar molecules or whole cells cross via vesicular transport:
         article: `
 # Cell Compartmentalization
 
-Internal membrane-bound organelles partition eukaryotic cells into distinct compartments.
+![Endomembrane system showing compartmentalization of cellular processes](/images/biology/endomembrane_system.png)
 
-## Benefits of Compartmentalization
-1. **Reaction Efficiency**: Substrates and enzymes are concentrated within a small volume (e.g., hydrolytic enzymes in the lysosome).
-2. **Protection**: Toxic metabolic byproducts are isolated (e.g., hydrogen peroxide is broken down inside peroxisomes).
-3. **Optimized Environments**: Different organelles maintain specific chemical conditions (e.g., low pH in lysosomes).
-4. **Simultaneous Processes**: Conflicting metabolic pathways (like fatty acid synthesis and breakdown) can run simultaneously in different compartments.
+<vocab term="Compartmentalization" definition="The organization of eukaryotic cells into membrane-bound compartments (organelles), each with a distinct chemical environment that allows specialized biochemical reactions to occur simultaneously without interference.">Compartmentalization</vocab> is one of the defining features of eukaryotic cells. By dividing the cell into membrane-enclosed compartments, different chemical conditions (pH, ion concentrations, enzyme activities) can be maintained simultaneously in the same cell.
 
-## Prokaryotes vs. Eukaryotes
-Prokaryotes lack membrane-bound organelles and internal compartmentalization. Their metabolic reactions occur in the cytoplasm or along specialized foldings of the cell membrane.
-`,
-        questions: [
+## Why Compartmentalization Matters
+
+Without compartmentalization:
+- Digestive enzymes (in lysosomes, pH ~4.5) would destroy cellular components
+- DNA transcription and protein translation would be unseparated
+- Incompatible biochemical reactions would interfere with each other
+- Metabolites would dilute into the entire cytoplasm
+
+With compartmentalization:
+- Enzymes are concentrated with their substrates in the same compartment
+- Reaction products are concentrated for efficient processing
+- Toxic byproducts are isolated from sensitive cellular machinery
+- Opposing reactions can occur simultaneously in different compartments
+
+## Key Compartments and Their Specialized Environments
+
+| Organelle | pH | Key Contents | Primary Function |
+|---|---|---|---|
+| Nucleus | ~7.2 | DNA, RNA polymerase, histones | Genetic information storage and expression |
+| Cytosol | ~7.2 | Ribosomes, glycolytic enzymes | Protein synthesis, glycolysis |
+| Mitochondrial matrix | ~8.0 | TCA cycle enzymes, mitochondrial DNA | Aerobic respiration |
+| Intermembrane space | ~7.0 | H+ ions (proton gradient) | ATP synthesis via proton gradient |
+| Lysosome | ~4.5 | Acid hydrolases | Intracellular digestion |
+| Vacuole (plant) | ~5.5 | Water, pigments, toxins | Storage, turgor, waste isolation |
+| ER lumen | ~7.0 | Chaperones, disulfide isomerase | Protein folding and modification |
+
+## The Lysosome: Isolated Digestion
+
+<vocab term="Lysosomes" definition="Membrane-bound organelles containing acid hydrolases (digestive enzymes) that function at pH ~4.5 to break down macromolecules, old organelles, and pathogens.">Lysosomes</vocab> exemplify compartmentalization's importance. Their pH ~4.5 environment:
+- Activates acid hydrolases (proteases, lipases, nucleases, carbohydrases)
+- Denatures and inactivates most cytosolic proteins (safety mechanism)
+- If lysosomal membrane breaks, enzymes are inactivated at cytosolic pH ~7.2
+
+Lysosomal functions:
+- **Autophagy** - digesting worn-out organelles; components recycled
+- **Phagocytosis digestion** - breaking down bacteria and debris in immune cells
+- **Cellular senescence** - lysosomal pathway in apoptosis (programmed cell death)
+
+## Mitochondrial Compartmentalization for ATP Synthesis
+
+The mitochondrion has two compartments created by the double membrane:
+
+**Intermembrane space** (between outer and inner membranes):
+- Accumulates H+ ions pumped out by electron transport chain
+- High H+ concentration = low pH (~7.0 vs. matrix ~8.0)
+- Creates the <vocab term="Proton Motive Force" definition="The electrochemical gradient of protons (H+) across the inner mitochondrial membrane, consisting of both a pH gradient and a charge gradient, that drives ATP synthesis through ATP synthase.">proton motive force</vocab> that drives ATP synthase
+
+**Matrix** (inside inner membrane):
+- Contains TCA (Krebs) cycle enzymes
+- Contains mitochondrial DNA and ribosomes
+- Site of pyruvate oxidation
+
+## Endoplasmic Reticulum: The Folding Compartment
+
+The ER lumen is a distinct compartment optimized for protein folding:
+- High concentration of <vocab term="Molecular Chaperones" definition="Proteins that assist in the correct folding of newly synthesized or stress-denatured proteins, preventing inappropriate aggregation.">molecular chaperones</vocab> (BiP/GRP78, calnexin, calreticulin)
+- Oxidizing environment promotes disulfide bond formation (unlike reducing cytosol)
+- Quality control: misfolded proteins are retained and eventually degraded
+
+## Nucleus: Genetic Information Isolated
+
+The nuclear envelope creates a crucial compartment separating transcription (in nucleus) from translation (in cytoplasm). This separation allows:
+- Pre-mRNA processing (5' capping, intron splicing, 3' poly-A tail) before export
+- Regulation of gene expression at nuclear pore level
+- Protection of DNA from cytoplasmic enzymes
+
+## AP Exam Focus
+
+- Compartmentalization allows incompatible reactions to occur simultaneously in one cell
+- Lysosomes maintain pH ~4.5; if membrane ruptures, acid hydrolases are inactivated in cytosol (safety mechanism)
+- Mitochondrial inner and outer membrane create two compartments: intermembrane space (high H+) and matrix
+- ER lumen is oxidizing (promotes disulfide bonds); cytosol is reducing
+`,        questions: [
           {
             id: "2.9.1",
             text: "How does compartmentalization protect a cell from its own digestive enzymes?",
@@ -1736,19 +2109,75 @@ Prokaryotes lack membrane-bound organelles and internal compartmentalization. Th
         article: `
 # Origins of Cell Compartmentalization
 
-The **Endosymbiotic Theory** explains how eukaryotic cells acquired membrane-bound organelles, specifically mitochondria and chloroplasts.
+![Cell structure diagram showing mitochondria and chloroplasts with prokaryotic features](/images/biology/cell_size_comparison.png)
 
-## The Theory
-An ancestral prokaryote folded its outer membrane to create the endomembrane system (nucleus, ER). Later, it engulfed an aerobic, nonphotosynthetic prokaryote (which became the **mitochondrion**) and a photosynthetic prokaryote (which became the **chloroplast**). Instead of digesting them, a mutualistic relationship was established.
+The <vocab term="Endosymbiotic Theory" definition="The scientific theory proposing that mitochondria and chloroplasts arose from free-living prokaryotes that were engulfed by a larger host cell and evolved into permanent intracellular organelles through mutual benefit.">endosymbiotic theory</vocab>, developed and championed by Lynn Margulis in 1967, explains how eukaryotic cells acquired their membrane-bound organelles. It proposes that mitochondria and chloroplasts were once free-living prokaryotes that were engulfed by larger host cells.
 
-## Evidence for Endosymbiosis
-Mitochondria and chloroplasts share several traits with modern free-living prokaryotes:
-- **Double Membrane**: The inner membrane belongs to the original prokaryote; the outer membrane formed during engulfment.
-- **Circular DNA**: Both organelles have their own circular DNA genomes, separate from the nuclear genome.
-- **Prokaryotic Ribosomes**: Their internal ribosomes are $70S$, matching bacterial size and composition rather than eukaryotic $80S$ ribosomes.
-- **Binary Fission**: They divide independently within the cell using a process similar to bacterial binary fission.
-`,
-        questions: [
+## Evidence Supporting Endosymbiotic Theory
+
+Multiple independent lines of evidence support this theory:
+
+| Evidence | Details | Implication |
+|---|---|---|
+| Double membrane | Both organelles have inner and outer membranes | Outer from host cell membrane; inner is original prokaryote membrane |
+| Own circular DNA | Mitochondria and chloroplasts have circular chromosomes | Like prokaryotic chromosomes (not linear like eukaryotic) |
+| 70S ribosomes | Both have prokaryotic-type (70S) ribosomes | Distinct from eukaryotic 80S ribosomes |
+| Binary fission | Both divide by binary fission | Not by mitosis like eukaryotic organelles |
+| Sensitivity to antibiotics | Mitochondrial/chloroplast ribosomes inhibited by bacterial antibiotics | Not eukaryotic ribosomes |
+| Phylogenetic similarity | Mitochondria related to Alphaproteobacteria; chloroplasts to Cyanobacteria | Matches modern prokaryotic groups |
+
+## The Proposed Sequence of Events
+
+1. An ancestral prokaryote evolved the ability to engulf other cells (<vocab term="Phagocytosis" definition="The engulfment of large particles or other cells by a cell, forming an intracellular vesicle; the mechanism by which endosymbiosis likely began.">phagocytosis</vocab>)
+2. An aerobic bacterium was engulfed but not digested - became the **proto-mitochondrion**
+3. This partnership was advantageous: host provided protection and carbon compounds; endosymbiont provided ATP via aerobic respiration
+4. Later, a cyanobacterium was similarly engulfed - became the **proto-chloroplast** in the plant/algae lineage
+5. Over millions of years, genes transferred from organellar DNA to the nuclear genome (most organellar proteins are now nuclear-encoded)
+
+## Gene Transfer from Organelles to Nucleus
+
+The primary evidence for endosymbiotic evolution is the gradual transfer of genes:
+- Original free-living bacterium had ~3,000 genes
+- Modern mitochondria retain only 13-37 genes (depending on species)
+- Remaining ~99% of mitochondrial proteins are encoded by nuclear DNA and imported
+
+<vocab term="Protein Import" definition="The process by which nuclear-encoded mitochondrial and chloroplast proteins are synthesized in the cytosol and transported into the organelle via translocon complexes.">Protein import</vocab> into mitochondria uses translocon complexes (TOM/TIM complexes) that recognize signal sequences on imported proteins.
+
+## Origins of Other Membranes
+
+The endomembrane system (ER, Golgi, nuclear envelope) likely arose differently - by **infolding** of the plasma membrane:
+
+1. Ancestral prokaryote's plasma membrane began to invaginate inward
+2. Pockets of membrane formed internal compartments
+3. Nuclear envelope evolved to protect DNA from cytoplasm
+4. ER, Golgi, and vesicle systems evolved from further membrane specialization
+
+This explains why the endomembrane system is interconnected, while mitochondria and chloroplasts are separate.
+
+## Prokaryotic vs. Eukaryotic Origins: Two Pathways
+
+| Organelle | Origin | Evidence |
+|---|---|---|
+| Nucleus | Membrane infolding | Connected to ER; no own ribosomes or DNA |
+| Endoplasmic Reticulum | Membrane infolding | Continuous with nuclear envelope |
+| Golgi Apparatus | Membrane infolding | Derived from ER membranes |
+| Mitochondria | Endosymbiosis (alpha-proteobacterium) | Own circular DNA, 70S ribosomes, double membrane |
+| Chloroplasts | Endosymbiosis (cyanobacterium) | Own circular DNA, 70S ribosomes, double membrane, thylakoids |
+
+## Significance for Biology
+
+Understanding endosymbiosis explains:
+- Why antibiotics that target bacterial ribosomes (streptomycin, chloramphenicol) also affect mitochondria
+- Why mitochondria and chloroplasts cannot be created de novo - they must divide from pre-existing organelles
+- The tree of life: eukaryotes are a chimeric combination of archaeal host cell and bacterial endosymbionts
+
+## AP Exam Focus
+
+- Endosymbiotic theory: mitochondria from alpha-proteobacteria; chloroplasts from cyanobacteria
+- Key evidence: own circular DNA, 70S ribosomes, double membranes, binary fission division
+- Bacterial antibiotics affect mitochondrial ribosomes (70S) but not cytoplasmic ribosomes (80S)
+- Most mitochondrial proteins are now encoded by nuclear DNA and imported
+`,        questions: [
           {
             id: "2.10.1",
             text: "Which of the following features of mitochondria provides the strongest evidence for the endosymbiotic theory?",
@@ -1831,13 +2260,77 @@ Mitochondria and chloroplasts share several traits with modern free-living proka
         article: `
 # Enzyme Structure
 
-Enzymes are biological catalysts, typically proteins, that speed up biochemical reactions.
+![Enzyme catalysis diagram showing lock-and-key and induced-fit models with energy diagram](/images/biology/enzyme_catalysis.png)
 
-## The Active Site
-An enzyme's function is determined by its three-dimensional conformation. The **active site** is a specific cleft or pocket on the enzyme where the **substrate** binds.
-- **Specificity**: The shape and chemical properties of the active site match only specific substrates. This is determined by the local arrangement of amino acid R-groups (side chains).
-- **Induced Fit**: When a substrate binds, the enzyme undergoes a slight conformational change to clamp down on the substrate, aligning catalytic groups and stabilizing the transition state.
-`,
+<vocab term="Enzymes" definition="Biological catalysts (mostly proteins) that lower the activation energy of chemical reactions without being consumed; highly specific for their substrates due to the complementary shape of their active site.">Enzymes</vocab> are biological catalysts that accelerate chemical reactions by lowering the activation energy. Understanding enzyme structure explains their remarkable specificity and catalytic power.
+
+## Protein Structure and Enzyme Function
+
+Enzymes are proteins, and their function depends critically on their 3D shape:
+
+- **Primary structure** - amino acid sequence (encoded by gene)
+- **Secondary structure** - alpha helices and beta sheets formed by hydrogen bonds
+- **Tertiary structure** - overall 3D folding; creates the **active site**
+- **Quaternary structure** - multiple polypeptide subunits (e.g., hemoglobin, rubisco)
+
+The <vocab term="Active Site" definition="The specific region of an enzyme where substrates bind and the catalytic reaction occurs; its shape is complementary to the substrate, providing high specificity.">active site</vocab> is a precisely shaped pocket in the enzyme, usually representing only ~1-2% of the total enzyme volume.
+
+## Two Models of Enzyme-Substrate Interaction
+
+### Lock-and-Key Model (Fischer, 1894)
+- Active site has a rigid, fixed shape
+- Substrate fits perfectly (like key in lock)
+- Explains specificity but oversimplifies the mechanism
+
+### Induced-Fit Model (Koshland, 1958) - More Accurate
+<vocab term="Induced Fit" definition="The dynamic model of enzyme action in which the active site changes shape upon substrate binding, improving the fit and facilitating catalysis.">Induced fit</vocab>: the active site subtly changes shape when the substrate binds, creating a tighter interaction and positioning catalytic amino acid residues optimally.
+
+Evidence: X-ray crystallography shows active sites have slightly different conformations when substrate-bound vs. empty.
+
+## How Enzymes Lower Activation Energy
+
+Enzymes use several mechanisms:
+
+| Mechanism | How It Works | Example |
+|---|---|---|
+| Substrate proximity and orientation | Holds reactants in optimal position for reaction | All enzymes |
+| Transition state stabilization | Active site binds and stabilizes the transition state | Lysozyme |
+| Acid-base catalysis | Active site residues donate/accept protons | Chymotrypsin (His57) |
+| Covalent catalysis | Transient covalent bond with substrate | Serine proteases |
+| Metal ion catalysis | Metal cofactor positions substrates or stabilizes charges | Carbonic anhydrase (Zn2+) |
+
+## Cofactors and Coenzymes
+
+Many enzymes require non-protein helpers:
+
+<vocab term="Cofactors" definition="Non-protein molecules or ions required for enzyme activity; inorganic cofactors include metal ions like Zn2+, Mg2+, and Fe2+.">Cofactors</vocab> - inorganic: metal ions (Zn2+, Fe2+, Mg2+, Ca2+)
+
+<vocab term="Coenzymes" definition="Organic non-protein molecules required for enzyme activity, often derived from vitamins; they transfer chemical groups between reactions (e.g., NAD+, FAD, Coenzyme A).">Coenzymes</vocab> - organic: NAD+, FAD, CoA (derived from vitamins B3, B2, B5)
+
+| Type | Chemical Nature | Example | Function |
+|---|---|---|---|
+| Cofactor | Metal ion | Zn2+ in carbonic anhydrase | Catalytic or structural role |
+| Cofactor | Metal ion | Fe2+ in hemoglobin | Oxygen binding |
+| Coenzyme | Organic molecule | NAD+ (from niacin/B3) | Electron carrier in redox reactions |
+| Coenzyme | Organic molecule | FAD (from riboflavin/B2) | Electron carrier in redox reactions |
+| Coenzyme | Organic molecule | Coenzyme A (from pantothenate/B5) | Acyl group transfer |
+
+An enzyme without its required cofactor/coenzyme is an <vocab term="Apoenzyme" definition="The protein portion of an enzyme without its cofactor; inactive without the cofactor. The complete enzyme with cofactor is called a holoenzyme.">apoenzyme</vocab> (inactive); with cofactor it is a **holoenzyme** (active).
+
+## Enzyme Specificity
+
+Enzymes exhibit different levels of substrate specificity:
+- **Absolute specificity** - only one substrate (urease: only urea)
+- **Group specificity** - act on similar chemical groups (hexokinase: any hexose sugar)
+- **Bond specificity** - act on a particular chemical bond type (lipases: ester bonds)
+- **Stereochemical specificity** - act on only one stereoisomer (L-amino acid oxidase)
+
+## AP Exam Focus
+
+- Enzymes lower activation energy but do not change Delta-G (free energy change) of the reaction
+- Induced-fit model is more accurate than lock-and-key: active site changes shape upon substrate binding
+- Cofactors (inorganic) and coenzymes (organic) are required by many enzymes; often from vitamins
+- Active site shape complementarity to substrate explains enzyme specificity
         questions: [
           {
             id: "3.1.1",
@@ -1914,22 +2407,107 @@ An enzyme's function is determined by its three-dimensional conformation. The **
         article: `
 # Enzyme Catalysis
 
-Enzymes accelerate chemical reactions by lowering the activation energy barrier.
+![Enzyme catalysis energy diagram and mechanism showing activation energy reduction](/images/biology/enzyme_catalysis.png)
 
-## Activation Energy ($E_a$)
-The **activation energy** ($E_a$) is the initial input of energy required to destabilize reactant bonds and start a reaction.
-- Enzymes **lower** $E_a$ by orienting substrates, bending bonds to facilitate breakage, or providing a microenvironment with a favorable pH or charge.
-- Enzymes **do not** alter the overall free energy change ($\Delta G$) of the reaction.
+<vocab term="Enzyme Catalysis" definition="The acceleration of a chemical reaction by an enzyme through lowering the activation energy; enzymes are not consumed and can catalyze the same reaction millions of times.">Enzyme catalysis</vocab> dramatically increases reaction rates - enzymes typically increase reaction rates by 10^6 to 10^12 fold compared to uncatalyzed reactions. This is essential because biological reactions must occur at mild temperatures and physiological pH.
 
-## Factors Affecting Reaction Rates
-1. **Temperature**: Elevating temperature increases kinetic energy and molecular collisions, increasing activity. However, temperatures above the optimum cause thermal vibrations that break intramolecular bonds, **denaturing** the enzyme (disrupting secondary/tertiary structures and destroying active site configuration).
-2. **pH**: Shifts outside the optimum pH alter the ionization states of amino acid side chains, disrupting ionic bonds and denaturing the enzyme.
-3. **Concentration**: Increasing substrate or enzyme concentration increases reaction velocity until it reaches saturation ($V_{max}$), where all active sites are occupied.
+## The Activation Energy Concept
 
-## Inhibition
-- **Competitive Inhibitor**: Competes for the active site. Can be overcome by increasing substrate concentration.
-- **Noncompetitive (Allosteric) Inhibitor**: Binds elsewhere, rendering the active site inactive. Increasing substrate has no effect.
-`,
+Every chemical reaction has an energy barrier called the <vocab term="Activation Energy" definition="The minimum energy required for a chemical reaction to proceed; enzymes function by lowering this barrier, enabling reactions to occur at physiological temperatures.">activation energy (Ea)</vocab>:
+
+- Without enzyme: high Ea, reaction proceeds very slowly
+- With enzyme: lower Ea, same reaction proceeds much faster
+- Delta-G (free energy change) is **unchanged** by the enzyme
+- Enzymes do NOT shift the equilibrium - they help both forward and reverse reactions equally
+
+### Energy Diagram
+
+```
+              High Ea (uncatalyzed)
+Energy         |        /               |       /                 |      / Ea                |     /      \     Low Ea (with enzyme)
+               |    /        \ _ /\____
+Reactants  ____|   /           \/      \_____ Products
+               |                                    Time
+```
+
+Both curves start at same reactant energy and end at same product energy. Enzyme only lowers the peak.
+
+## The Enzyme Kinetics: Michaelis-Menten Model
+
+Rate of enzyme-catalyzed reactions follows the **Michaelis-Menten** equation:
+
+$$v = rac{V_{max}[S]}{K_m + [S]}$$
+
+Where:
+- $v$ = reaction velocity
+- $V_{max}$ = maximum velocity (all enzyme active sites occupied)
+- $[S]$ = substrate concentration
+- $K_m$ = Michaelis constant = substrate concentration at half-Vmax
+
+| Parameter | Meaning | Significance |
+|---|---|---|
+| Vmax | Maximum reaction rate | Proportional to enzyme concentration |
+| Km | Substrate concentration for half-Vmax | Inverse of enzyme-substrate affinity (low Km = high affinity) |
+| Kcat | Catalytic rate constant (turnover number) | Reactions per enzyme per second |
+| Kcat/Km | Catalytic efficiency | Approaches diffusion limit for fastest enzymes |
+
+### Saturation
+At high substrate concentrations, all active sites are occupied - increasing [S] further does not increase rate. The enzyme is **saturated**.
+
+## Types of Inhibition
+
+<vocab term="Enzyme Inhibition" definition="The reduction of enzyme activity by specific molecules that bind to the enzyme and reduce or prevent substrate binding or catalysis.">Enzyme inhibitors</vocab> regulate metabolic pathways:
+
+### Competitive Inhibition
+- Inhibitor structurally similar to substrate
+- Competes for the active site
+- Can be overcome by increasing [S]
+- Effect on kinetics: Vmax unchanged, Km increased
+
+### Noncompetitive Inhibition
+- Inhibitor binds **allosteric site** (different from active site)
+- Changes enzyme shape; reduces catalytic efficiency
+- Cannot be overcome by adding more substrate
+- Effect on kinetics: Vmax decreased, Km unchanged
+
+### Irreversible Inhibition
+- Inhibitor covalently bonds to active site
+- Permanently inactivates enzyme
+- Examples: nerve agents (sarin inhibits acetylcholinesterase), aspirin (acetylates COX enzymes), penicillin (inhibits transpeptidase)
+
+| Inhibition Type | Binding Site | Effect on Vmax | Effect on Km | Reversible? |
+|---|---|---|---|---|
+| Competitive | Active site | None | Increased | Yes |
+| Noncompetitive | Allosteric site | Decreased | None | Yes |
+| Uncompetitive | ES complex only | Decreased | Decreased | Yes |
+| Irreversible | Active site (covalent) | Decreased | N/A | No |
+
+## Allosteric Regulation
+
+<vocab term="Allosteric Regulation" definition="The regulation of enzyme activity by binding of molecules at sites other than the active site; these conformational changes either activate or inhibit the enzyme.">Allosteric regulation</vocab> is a key mechanism for metabolic control:
+
+- **Allosteric activators** - bind and stabilize active conformation
+- **Allosteric inhibitors** - bind and stabilize inactive conformation
+- **Feedback inhibition** - end product of a pathway inhibits an early enzyme in the pathway (prevents overproduction; highly efficient regulation)
+
+Example: Threonine deaminase (first enzyme in isoleucine synthesis) is inhibited by isoleucine (the final product). When isoleucine is abundant, it binds allosterically to threonine deaminase, shutting down its own synthesis pathway.
+
+## Enzymes in Medicine
+
+| Disease/Application | Enzyme Involved | Clinical Significance |
+|---|---|---|
+| Heart attack diagnosis | Troponin, CK-MB released into blood | Detected in blood tests to confirm MI |
+| Statins (cholesterol drugs) | Competitively inhibit HMG-CoA reductase | Reduce cholesterol synthesis |
+| HIV treatment | Inhibit viral protease and reverse transcriptase | Block viral replication |
+| PKU (phenylketonuria) | Deficient phenylalanine hydroxylase | Amino acid metabolism disorder |
+| Lactose intolerance | Insufficient lactase | Cannot digest lactose |
+
+## AP Exam Focus
+
+- Enzymes lower Ea but do not change Delta-G or shift equilibrium
+- Competitive inhibitors increase Km, do not affect Vmax; overcome by more substrate
+- Noncompetitive inhibitors decrease Vmax; cannot be overcome by more substrate
+- Feedback inhibition: product of pathway allosterically inhibits early enzyme
         questions: [
           {
             id: "3.2.1",
@@ -2006,18 +2584,104 @@ The **activation energy** ($E_a$) is the initial input of energy required to des
         article: `
 # Environmental Impacts on Enzyme Function
 
-The environment surrounding an enzyme determines its conformation and rate of activity.
+![Enzyme activity graphs showing effects of temperature and pH on enzyme activity](/images/biology/enzyme_catalysis.png)
 
-## Denaturation
-When an enzyme loses its native 3D shape, it is **denatured**. The active site is altered, rendering it unable to bind substrate. Denaturation is usually irreversible.
-- **High Temperature**: Adds kinetic energy, breaking weak hydrogen and ionic bonds.
-- **pH Extremes**: Shifts in hydrogen ion ($H^+$) or hydroxide ion ($OH^-$) concentrations alter the charge of R-groups, disrupting ionic attractions.
-- **Low Temperature**: Does **not** denature enzymes. Instead, it decreases kinetic energy, slowing molecular movement and reducing collision rates.
+Enzyme function is exquisitely sensitive to environmental conditions because <vocab term="Enzyme Denaturation" definition="The unfolding and loss of enzyme structure (and thus activity) caused by extremes of temperature, pH, or other denaturing agents; disrupts hydrogen bonds, ionic bonds, and hydrophobic interactions that maintain 3D shape.">denaturation</vocab> disrupts the precise 3D structure that enzymes require to function. Any environmental factor that alters protein shape affects enzyme activity.
 
-## Inhibitors and Rates
-- **Competitive Inhibitor**: Binds to the active site. Adding more substrate outcompetes the inhibitor, restoring the normal $V_{max}$.
-- **Noncompetitive Inhibitor**: Binds to an allosteric site. The shape change is permanent, lowering the maximum rate of the reaction ($V_{max}$) regardless of substrate concentration.
-`,
+## Temperature Effects on Enzyme Activity
+
+Temperature has a **biphasic effect** on enzyme activity:
+
+**Below optimal temperature:**
+- Lower kinetic energy -> fewer effective collisions between enzyme and substrate
+- Slower reaction rate
+- Very low temperatures (near freezing) - enzyme-substrate binding still occurs, just slowly
+
+**At optimal temperature:**
+- Maximum reaction rate
+- Most enzymes of organisms functioning optimally
+- Human enzymes: optimum ~37 degrees C (body temperature)
+- Thermophilic bacteria: optimum ~70-90 degrees C
+
+**Above optimal temperature:**
+- Thermal energy disrupts hydrogen bonds, ionic interactions, and hydrophobic interactions holding enzyme in shape
+- Denaturation: active site loses its precise geometry -> substrate cannot bind
+- Most human enzymes denature significantly above 40-45 degrees C
+
+**Q10 rule**: For every 10 degrees C increase (below denaturation threshold), reaction rate approximately doubles (Q10 ~2).
+
+| Temperature Condition | Molecular Basis | Effect on Rate |
+|---|---|---|
+| Too cold | Low kinetic energy, fewer collisions | Rate decreases |
+| Optimal | Maximum effective collisions + proper enzyme shape | Maximum rate |
+| Too hot | Disruption of weak bonds -> denaturation | Rate drops sharply |
+
+## pH Effects on Enzyme Activity
+
+Each enzyme has an optimal pH range based on the ionization state of critical amino acid residues in the active site:
+
+| Enzyme | Location | Optimal pH | Reason |
+|---|---|---|---|
+| Pepsin | Stomach | ~2.0 | Functions in acidic gastric environment |
+| Salivary amylase | Mouth | ~7.0 | Functions at neutral oral pH |
+| Trypsin/chymotrypsin | Small intestine | ~8.0 | Functions in alkaline intestinal environment |
+| Catalase | Cells (liver) | ~7.0 | Functions at physiological pH |
+| Arginase | Liver | ~9.5-10 | Unusual alkaline optimum |
+
+**pH extremes cause denaturation:**
+- H+ and OH- ions disrupt ionic bonds and hydrogen bonds in the enzyme
+- Protonation/deprotonation of active site residues changes their charge and shape
+- Histidine (pKa ~6) and cysteine (pKa ~8) are common catalytic residues sensitive to pH
+
+<vocab term="pH Optimum" definition="The specific pH at which an enzyme shows maximum catalytic activity; reflects the ionization state of active site amino acid residues needed for substrate binding and catalysis.">pH optimum</vocab> varies dramatically between enzymes due to their different locations and catalytic mechanisms.
+
+## Substrate Concentration Effects
+
+As substrate concentration increases:
+1. At low [S]: rate is proportional to [S] (linear region)
+2. At medium [S]: rate begins to plateau as more active sites become occupied
+3. At high [S]: enzyme is saturated; maximum rate (Vmax) reached; no increase with more substrate
+
+This saturation curve (rectangular hyperbola) is described by the Michaelis-Menten equation: $v = rac{V_{max}[S]}{K_m + [S]}$
+
+## Salinity and Ionic Environment
+
+High salt concentrations disrupt ionic bonds in enzyme structure:
+- Ionic bonds maintain tertiary structure
+- High [NaCl] can interfere with these bonds -> denaturation
+- Halophilic (salt-loving) archaea have evolved enzymes stabilized by high salt
+
+## Enzyme Concentration Effects
+
+When substrate is in excess:
+- Rate is proportional to enzyme concentration (more enzyme = faster overall rate)
+- This is why enzyme concentration determines overall metabolic capacity
+
+## Reversibility of Denaturation
+
+- **Mild denaturation** - often reversible when conditions are restored (renaturation)
+- **Severe denaturation** (cooked egg white, boiled enzyme) - irreversible aggregation
+- Classic example: Anfinsen's ribonuclease A experiment showed that protein refolding from primary structure is possible (Nobel Prize 1972)
+
+## Evolutionary Adaptation of Enzyme Optima
+
+Natural selection has optimized enzyme characteristics for each organism's environment:
+
+<vocab term="Thermophiles" definition="Organisms that thrive at extremely high temperatures (typically 60-80 degrees C or more); their enzymes have extra disulfide bonds, increased ionic interactions, and rigid structures resistant to thermal denaturation.">Thermophiles</vocab> (hot spring bacteria like Thermus aquaticus) - Taq polymerase:
+- Stable at 72 degrees C (PCR reaction temperature)
+- Worth billions of dollars annually due to PCR applications
+
+**Psychrophiles** (cold-loving organisms) - enzymes:
+- Active at near-freezing temperatures
+- More flexible structures to maintain activity at low temperatures
+
+## AP Exam Focus
+
+- Temperature: below optimum = slower rate; above optimum = denaturation (irreversible)
+- pH: each enzyme has a specific optimum; extremes cause denaturation
+- Know: pepsin (pH 2, stomach), salivary amylase (pH 7, mouth), trypsin (pH 8, intestine)
+- Denaturation disrupts weak bonds (H-bonds, ionic, hydrophobic) but NOT peptide bonds
+- Substrate saturation: above Vmax, more substrate does not increase reaction rate
         questions: [
           {
             id: "3.3.1",
@@ -2094,18 +2758,100 @@ When an enzyme loses its native 3D shape, it is **denatured**. The active site i
         article: `
 # Cellular Energy
 
-Living systems require constant inputs of energy to maintain order and power life processes.
+![Energy flow diagram showing ATP structure and energy coupling in metabolic reactions](/images/biology/ecology_energy_flow.png)
 
-## Thermodynamics
-- **First Law**: Energy cannot be created or destroyed, only transformed.
-- **Second Law**: Every energy transfer increases the entropy (disorder) of the universe. Cells must use energy to offset this natural drive toward entropy.
+All living cells require energy to perform work. The primary energy currency of life is <vocab term="ATP" definition="Adenosine triphosphate; the universal energy currency of cells, consisting of adenosine attached to three phosphate groups; hydrolysis of the terminal phosphate releases ~7.3 kcal/mol of free energy.">ATP (adenosine triphosphate)</vocab>, which couples energy-releasing reactions (catabolism) to energy-requiring reactions (anabolism).
 
-## ATP: The Energy Currency
-**Adenosine Triphosphate** ($ATP$) stores energy in its unstable phosphate bonds.
-- **ATP Hydrolysis**: Breaking the terminal phosphate bond is highly exergonic ($\Delta G = -30.5 \text{ kJ/mol}$):
-  $$\text{ATP} + H_2O \rightarrow \text{ADP} + P_i + \text{energy}$$
-- **Energy Coupling**: Cells power endergonic reactions (e.g., active transport, muscle contraction) by coupling them with the exergonic hydrolysis of ATP.
-`,
+## ATP: The Universal Energy Currency
+
+ATP consists of:
+- Adenosine (adenine base + ribose sugar)
+- Three phosphate groups (alpha, beta, gamma)
+
+The key energy-releasing step:
+$$ATP + H_2O 
+ightarrow ADP + P_i \quad \Delta G = -7.3 	ext{ kcal/mol}$$
+
+This hydrolysis is coupled to cellular work:
+- **Mechanical work** - muscle contraction, ciliary movement
+- **Chemical work** - biosynthesis of macromolecules
+- **Transport work** - active transport against gradients
+
+<vocab term="Energy Coupling" definition="The linking of exergonic (energy-releasing) reactions to endergonic (energy-requiring) reactions through shared intermediates like ATP.">Energy coupling</vocab> links ATP hydrolysis to otherwise unfavorable reactions.
+
+## Free Energy and Thermodynamics
+
+<vocab term="Free Energy (Delta G)" definition="The amount of energy available to do work; reactions with negative Delta G (exergonic) release usable energy; positive Delta G (endergonic) require energy input.">Gibbs free energy (Delta-G)</vocab> determines reaction spontaneity:
+
+$$\Delta G = \Delta H - T\Delta S$$
+
+- **Delta-G negative** (exergonic): spontaneous, releases free energy (e.g., cellular respiration)
+- **Delta-G positive** (endergonic): non-spontaneous, requires energy input (e.g., protein synthesis, active transport)
+- **Delta-G = 0**: equilibrium; no net reaction
+
+### ATP as Energy Currency
+
+ATP has a high phosphate-transfer potential because:
+- Phosphate groups are negatively charged -> electrostatic repulsion
+- Hydrolysis relieves this strain
+- ADP and Pi have lower energy states (more stable)
+
+## Catabolism vs. Anabolism
+
+| Process | Type | Delta-G | Example | ATP Result |
+|---|---|---|---|---|
+| Glycolysis | Catabolic | Negative | Glucose -> pyruvate | 2 ATP net produced |
+| TCA cycle | Catabolic | Negative | Acetyl-CoA -> CO2 | 2 ATP + NADH/FADH2 |
+| Oxidative phosphorylation | Catabolic | Negative | O2 -> H2O | ~32 ATP |
+| Protein synthesis | Anabolic | Positive | Amino acids -> protein | ATP consumed |
+| Active transport | Anabolic | Positive | Ion pumping against gradient | ATP consumed |
+
+## Redox Reactions: Electron Transfer
+
+Cellular respiration and photosynthesis involve <vocab term="Redox Reactions" definition="Chemical reactions involving the transfer of electrons; oxidation loses electrons, reduction gains electrons (OIL RIG: Oxidation Is Loss, Reduction Is Gain).">redox reactions</vocab>:
+
+- **Oxidation** = loss of electrons (and often H atoms); releases energy
+- **Reduction** = gain of electrons; stores energy
+- "OIL RIG" - Oxidation Is Loss, Reduction Is Gain
+
+Electron carriers in cells:
+
+| Carrier | Oxidized Form | Reduced Form | Function |
+|---|---|---|---|
+| Nicotinamide dinucleotide | NAD+ | NADH | Carries electrons in respiration |
+| Flavin adenine dinucleotide | FAD | FADH2 | Carries electrons in respiration |
+| Nicotinamide phosphate | NADP+ | NADPH | Carries electrons in photosynthesis |
+
+## Enzymes and Energy
+
+All metabolic reactions are catalyzed by enzymes. Enzymes:
+- Lower activation energy (Ea) without changing Delta-G
+- Cannot make a thermodynamically unfavorable reaction favorable
+- Are regulated to balance energy supply and demand
+
+### ATP Synthase: The Most Important Enzyme
+
+<vocab term="ATP Synthase" definition="The enzyme that synthesizes ATP from ADP and inorganic phosphate using the proton motive force generated by the electron transport chain; found in inner mitochondrial membrane and thylakoid membrane.">ATP synthase</vocab> (Complex V) in mitochondria couples proton flow to ATP synthesis:
+- Protons flow through the F0 domain (proton channel) driven by proton motive force
+- This drives rotation of the F1 domain, which catalyzes ATP synthesis
+- Every 3 protons -> 1 ATP synthesized
+
+## Energy Storage: Beyond ATP
+
+Cells store energy in various forms:
+- **ATP** - immediate use (seconds)
+- **Creatine phosphate** - rapid ATP regeneration in muscles (seconds)
+- **Glycogen** - glucose polymer; liver and muscle short-term storage (hours)
+- **Triglycerides** - long-term energy storage in adipose tissue (days-weeks)
+
+Energy density comparison: glucose = 4 kcal/g; fat = 9 kcal/g (fats store >2x the energy per gram)
+
+## AP Exam Focus
+
+- ATP hydrolysis: ATP -> ADP + Pi releases ~7.3 kcal/mol of free energy
+- Exergonic reactions: Delta-G negative, spontaneous; endergonic: Delta-G positive, requires energy input
+- Redox: OIL RIG; NAD+/NADH and FAD/FADH2 are electron carriers
+- ATP synthase uses proton gradient (proton motive force) to synthesize ATP
         questions: [
           {
             id: "3.4.1",
@@ -2509,14 +3255,107 @@ Fermentation produces NO additional ATP — it only regenerates NAD⁺.
         article: `
 # Fitness
 
-At the organismal level, fitness is the ability to survive and reproduce. At the cellular and molecular levels, **fitness** is supported by variation in molecular structures.
+![Natural selection diagram showing fitness as reproductive success in a population](/images/biology/natural_selection.png)
 
-## Molecular Variation
-Organisms with molecular diversity are better suited to survive shifting environmental conditions:
-- **Chlorophyll**: Different types of chlorophyll molecules ($\text{chlorophyll } a$ and $b$) absorb different wavelengths of light, allowing plants to maximize light capture.
-- **Phospholipids**: Adjusting saturated vs. unsaturated fatty acid ratios in membrane phospholipids prevents membranes from freezing or melting in extreme climates.
-- **Hemoglobin**: Fetal hemoglobin has a higher affinity for oxygen than adult hemoglobin, allowing the fetus to extract oxygen from maternal blood.
-`,
+In evolutionary biology, <vocab term="Fitness" definition="The relative reproductive success of an organism; a measure of how well an organism is adapted to its environment, quantified by the number of viable, fertile offspring it produces relative to others in the population.">fitness</vocab> is not about physical strength - it is about reproductive success. An organism is fit if it survives and reproduces successfully in its environment, passing its alleles to the next generation.
+
+## Biological vs. Colloquial Fitness
+
+| Common Meaning | Biological Meaning |
+|---|---|
+| Physical strength or endurance | Reproductive success relative to others |
+| Cardiovascular health | Number of surviving, fertile offspring |
+| Being "in shape" | How well adapted to current environment |
+
+**Key principle**: A trait that increases survival but reduces reproduction decreases biological fitness. Fitness = passing genes to future generations.
+
+## Relative Fitness
+
+Fitness is always **relative** to other individuals in the same population:
+
+$$w_i = rac{	ext{average offspring of genotype i}}{	ext{average offspring of most fit genotype}}$$
+
+- **w = 1** - most fit genotype (reference)
+- **w = 0.5** - produces half as many viable offspring as most fit
+- **w = 0** - lethal; no offspring survive
+
+## How Metabolism Relates to Fitness
+
+Cellular energetics directly impacts fitness:
+- Organisms that efficiently extract energy from food (efficient metabolism) have more energy for growth and reproduction
+- Efficient oxidative phosphorylation produces more ATP per glucose
+- Organisms with higher metabolic efficiency can:
+  - Grow faster (more competitive for resources)
+  - Reproduce more (more ATP for egg/sperm production and cell division)
+  - Better survive food shortages
+
+## Evolutionary Fitness and Natural Selection
+
+<vocab term="Natural Selection" definition="The differential survival and reproduction of individuals with advantageous heritable traits; the primary mechanism of evolutionary change.">Natural selection</vocab> acts on **phenotype** but changes **allele frequencies** in populations. Traits that increase fitness become more common in each generation.
+
+### Modes of Selection
+
+| Type | Description | Effect on Variation | Example |
+|---|---|---|---|
+| Directional | Favors one extreme phenotype | Decreases (shifts mean) | Antibiotic resistance |
+| Stabilizing | Favors intermediate phenotype | Decreases (reduces spread) | Human birth weight |
+| Disruptive | Favors both extremes | Increases (bimodal distribution) | Darwin's finch beak sizes |
+| Sexual | Based on mate choice | Can increase extravagant traits | Peacock tail feathers |
+
+### Components of Fitness
+
+Fitness can be broken into components:
+1. **Survival** - must live long enough to reproduce
+2. **Mating success** - ability to attract and secure mates
+3. **Fecundity** - number of offspring produced
+4. **Offspring viability** - proportion of offspring that survive to reproduce
+
+## Trade-offs in Fitness
+
+Many traits involve evolutionary trade-offs:
+
+<vocab term="Life History Trade-offs" definition="Evolutionary compromises where resources devoted to one fitness component (e.g., reproduction) reduce resources available for another (e.g., survival); exemplified by the trade-off between offspring number and offspring quality.">Life history trade-offs</vocab> include:
+- **Quantity vs. quality of offspring** - r-strategists (many small offspring) vs. K-strategists (few, well-cared-for offspring)
+- **Current vs. future reproduction** - reproducing now reduces survival; waiting preserves future opportunities
+- **Immune function vs. reproduction** - immune investment comes at metabolic cost
+- **Growth vs. reproduction** - energy cannot be allocated to both simultaneously
+
+## Inclusive Fitness and Altruism
+
+<vocab term="Inclusive Fitness" definition="An organism's total fitness, including its own reproductive success plus the reproductive success it helps close relatives achieve, weighted by their genetic relatedness.">Inclusive fitness</vocab> (Hamilton's rule) explains altruistic behavior:
+
+$$rB > C$$
+
+Where r = genetic relatedness, B = benefit to recipient, C = cost to altruist
+
+If the benefit to a related individual (weighted by relatedness) exceeds the cost, the altruistic behavior can evolve. This explains:
+- Worker bees sacrificing reproduction to help sisters
+- Ground squirrels warning relatives of predators (at risk to themselves)
+- Parental care and resource investment in offspring
+
+## Hardy-Weinberg Equilibrium: Measuring Fitness
+
+The Hardy-Weinberg principle provides a null model - what allele frequencies would look like WITHOUT selection:
+
+$$p^2 + 2pq + q^2 = 1 \quad 	ext{(genotype frequencies)}$$
+$$p + q = 1 \quad 	ext{(allele frequencies)}$$
+
+Conditions for Hardy-Weinberg equilibrium (no evolution):
+1. No natural selection (equal fitness)
+2. No mutations
+3. No gene flow (migration)
+4. No genetic drift (very large population)
+5. Random mating
+
+Departure from Hardy-Weinberg = evolution is occurring.
+
+## AP Exam Focus
+
+- Biological fitness = relative reproductive success, not physical strength
+- Natural selection acts on phenotype, changes allele frequencies
+- Three modes: directional (shifts mean), stabilizing (reduces variation), disruptive (creates bimodal)
+- Hardy-Weinberg: departure from equilibrium indicates evolution is occurring
+- Inclusive fitness explains altruism: rB > C (relatedness x benefit > cost)
         questions: [
           {
             id: "3.7.1",
@@ -2600,20 +3439,74 @@ Organisms with molecular diversity are better suited to survive shifting environ
         article: `
 # Cell Communication
 
-Cells communicate with one another using chemical signaling molecules (ligands).
+![Signal transduction diagram showing GPCR and RTK pathways from ligand binding to cellular response](/images/biology/signal_transduction.png)
 
-## Types of Signaling
-- **Direct Contact**: Gap junctions in animals or plasmodesmata in plants allow ions/molecules to pass directly between adjacent cells.
-- **Local (Paracrine/Synaptic)**: Ligands diffuse short distances (e.g., neurotransmitters across a synapse).
-- **Long-Distance (Endocrine)**: Hormones travel through the circulatory system to target distant cells.
+Cells must constantly communicate to coordinate development, metabolism, and response to environmental changes. <vocab term="Cell Communication" definition="The process by which cells receive, process, and respond to signals from other cells or the environment; involves signal molecules (ligands), receptors, and intracellular signaling cascades.">Cell communication</vocab> involves signal molecules (ligands) binding to receptors, triggering intracellular responses.
 
-## Three Stages of Signal Transduction
-1. **Reception**: A ligand binds to a specific membrane or intracellular receptor. This binding is highly specific and induces a conformational change in the receptor.
-2. **Transduction**: The signal is converted into a form that can trigger a cellular response. This typically involves:
-   - **Phosphorylation Cascades**: Enzymes called **kinases** transfer phosphate groups from ATP to proteins, amplifying the signal.
-   - **Second Messengers**: Small, non-protein molecules (like **cyclic AMP (cAMP)** or $Ca^{2+}$ ions) that distribute the signal inside the cytoplasm.
-3. **Response**: The final action triggered by the signaling pathway, such as activating target genes in the nucleus or opening ion channels.
-`,
+## Types of Cell Communication by Distance
+
+| Type | Distance | Mechanism | Examples |
+|---|---|---|---|
+| Direct contact | Same cell or adjacent | Gap junctions, cell-cell adhesion | Embryonic development, heart muscle coordination |
+| Paracrine | Short distance (local) | Diffuses through extracellular fluid | Histamine in inflammation, growth factors |
+| Endocrine (hormonal) | Long distance (blood) | Travels through circulatory system | Insulin, estrogen, testosterone |
+| Synaptic (nervous) | Short gap (synapse) | Neurotransmitter release | Acetylcholine, dopamine, serotonin |
+| Autocrine | Same cell | Cell signals itself | Some cancer cells, immune cells |
+
+## The Three Stages of Cell Signaling
+
+Signal transduction occurs in three stages:
+
+### 1. Reception
+<vocab term="Receptor" definition="A protein (usually membrane-bound or intracellular) that specifically binds a signal molecule (ligand) and initiates an intracellular response.">Receptors</vocab> are complementary in shape to their specific ligand. Binding changes the receptor's conformation, initiating signaling.
+
+**Types of receptors by location:**
+- **Cell-surface receptors** - for water-soluble signals (peptide hormones, neurotransmitters)
+- **Intracellular receptors** - for lipid-soluble signals (steroid hormones like estrogen, progesterone) that cross the plasma membrane
+
+### 2. Transduction
+The signal is converted and amplified through a cascade of molecular changes (see Topic 4.2-4.5 for details).
+
+### 3. Response
+The final cellular response: altered gene expression, enzyme activation, changes in metabolism, cell movement, cell division, or cell death.
+
+## Types of Cell-Surface Receptors
+
+| Receptor Type | Mechanism | First Messenger | Examples |
+|---|---|---|---|
+| G-protein coupled (GPCR) | Activates G-protein -> second messengers | Epinephrine, glucagon, many odorants | Beta-adrenergic receptor |
+| Receptor tyrosine kinase (RTK) | Phosphorylates tyrosines; activates kinase cascade | Growth factors, insulin | EGFR, insulin receptor |
+| Ligand-gated ion channels | Opens/closes ion channel | Neurotransmitters | Nicotinic ACh receptor, GABA receptor |
+
+## Intracellular Receptors: Steroid Hormones
+
+<vocab term="Steroid Hormones" definition="Lipid-soluble hormones (derived from cholesterol) that cross the plasma membrane and bind to intracellular receptors; hormone-receptor complexes act as transcription factors.">Steroid hormones</vocab> (estrogen, testosterone, cortisol, aldosterone) cross the lipid bilayer and bind receptors in the cytoplasm or nucleus. The hormone-receptor complex acts as a transcription factor, directly activating or repressing gene expression.
+
+This is why steroid hormones have **direct, long-lasting effects** on gene expression, while peptide hormones (cannot enter cell) have faster but often shorter effects via second messengers.
+
+## Signal Amplification
+
+Cell signaling systems amplify signals enormously:
+- 1 epinephrine molecule -> millions of glucose molecules released
+- A few surface receptors -> thousands of intracellular second messengers
+- Each step in the cascade can amplify the signal 10-1000 fold
+
+## Evolution of Cell Communication
+
+Cell signaling systems are highly conserved across evolution:
+- Yeast mating signals use the same GPCR pathway as human cell signaling
+- Growth factor receptors (RTKs) are found in all multicellular organisms
+- cAMP second messenger system is universal among eukaryotes
+
+This conservation suggests signaling machinery arose early in eukaryotic evolution and was maintained because of its fundamental importance.
+
+## AP Exam Focus
+
+- Three stages: reception -> transduction -> response
+- GPCRs: ligand binds -> G-protein activates -> second messenger (cAMP or IP3/DAG)
+- RTKs: ligand binds -> dimerization -> tyrosine autophosphorylation -> kinase cascade
+- Steroid hormones: lipid-soluble, cross membrane, bind intracellular receptors, directly alter gene expression
+- Signal amplification: each signaling step can multiply the signal many times
         questions: [
           {
             id: "4.1.1",
@@ -2690,16 +3583,93 @@ Cells communicate with one another using chemical signaling molecules (ligands).
         article: `
 # Introduction to Signal Transduction
 
-Signal transduction pathways link signal reception with cellular responses.
+![Signal transduction pathway diagram showing GPCR mechanism with cAMP second messenger](/images/biology/signal_transduction.png)
 
-## Receptors
-Receptors are classified by their cellular location:
-1. **Cell Membrane Receptors**: Transmembrane proteins that bind polar, hydrophilic ligands (e.g., G-Protein Coupled Receptors (GPCRs), Tyrosine Kinases, Ion Channels).
-2. **Intracellular Receptors**: Cytoplasmic or nuclear proteins that bind small, nonpolar, hydrophobic ligands (e.g., steroid hormones like estrogen or testosterone).
+<vocab term="Signal Transduction" definition="The process by which a cell converts an extracellular signal (ligand binding to receptor) into an intracellular response through a cascade of molecular changes involving second messengers and protein modifications.">Signal transduction</vocab> converts extracellular signals into intracellular responses. The signal is often amplified many times through molecular cascades, allowing minute concentrations of hormones to produce large cellular effects.
 
-## Conformational Change
-A ligand acts as an allosteric regulator. Upon binding to the extracellular side of a transmembrane receptor, the receptor changes shape on the cytoplasmic side, exposing a binding site or activating catalytic activity.
-`,
+## The Signal Transduction Cascade Concept
+
+A cascade works like a molecular relay race:
+
+1. **Ligand binds receptor** (reception) -> receptor changes shape
+2. **Receptor activates relay molecule** (often G-protein or kinase)
+3. **Second messenger formed** (cAMP, IP3, Ca2+)
+4. **Protein kinases activated** (phosphorylation relay)
+5. **Target proteins modified** -> cellular response
+
+### Amplification at Each Step
+
+If each step activates 10 molecules:
+- Step 1: 1 activated receptor
+- Step 2: 10 activated G-proteins
+- Step 3: 100 cAMP molecules
+- Step 4: 1,000 activated protein kinase A molecules
+- Step 5: 10,000 phosphorylated target proteins
+
+**Result**: 1 hormone molecule -> 10,000+ molecular responses!
+
+## G-Protein Coupled Receptors (GPCRs)
+
+GPCRs are the largest family of cell-surface receptors (~800 in humans). They share a 7-transmembrane-helix structure.
+
+### GPCR Mechanism (Step by Step)
+
+1. Ligand (first messenger) binds to GPCR -> receptor changes conformation
+2. Receptor activates <vocab term="G-Protein" definition="A GTP-binding protein that relays signals from GPCRs to downstream effectors; active when GTP-bound, inactive when GDP-bound.">G-protein</vocab> (G-alpha subunit exchanges GDP for GTP -> G-alpha dissociates)
+3. Activated G-alpha activates effector enzyme (e.g., adenylyl cyclase)
+4. Adenylyl cyclase converts ATP to cAMP (second messenger)
+5. cAMP activates <vocab term="Protein Kinase A (PKA)" definition="A serine/threonine kinase activated by cAMP; phosphorylates target proteins to modify their activity; a major downstream effector of GPCR/cAMP signaling.">Protein Kinase A (PKA)</vocab>
+6. PKA phosphorylates target proteins -> cellular response
+7. G-protein hydrolyzes GTP to GDP -> self-inactivates (built-in off switch)
+8. Phosphodiesterase degrades cAMP -> signal terminated
+
+### Example: Epinephrine and Glycogen Breakdown
+
+Epinephrine (adrenaline) triggers the "fight-or-flight" response:
+- Epinephrine -> beta-adrenergic receptor -> Gs protein -> adenylyl cyclase -> cAMP
+- cAMP -> PKA -> phosphorylates glycogen phosphorylase -> glycogen broken down to glucose-1-phosphate
+- Muscle and liver cells release glucose for energy
+- Net: ~10^8 glucose molecules released per epinephrine molecule!
+
+## Receptor Tyrosine Kinases (RTKs)
+
+RTKs have an extracellular ligand-binding domain and an intracellular kinase domain.
+
+### RTK Mechanism
+
+1. Ligand (growth factor) binds to receptor monomer
+2. Two monomers come together -> dimerization
+3. Dimerization activates the kinase domain -> cross-phosphorylation of tyrosine residues
+4. Phosphotyrosines act as docking sites for relay proteins (containing SH2 domains)
+5. Ras (a G-protein) activated -> MAP kinase cascade
+6. MAP kinase enters nucleus -> activates transcription factors -> gene expression changes
+
+### RTK Pathways and Cancer
+
+Mutations that constitutively activate RTKs (or downstream Ras) drive many cancers:
+- **Ras oncogene** - mutant Ras locked in GTP-bound (active) state; cannot hydrolyze GTP; found in ~30% of cancers
+- **EGFR amplification** - overexpression of epidermal growth factor receptor in many cancers
+- **HER2 amplification** - breast cancer; targeted by Herceptin (trastuzumab)
+
+## Second Messengers
+
+<vocab term="Second Messengers" definition="Small, rapidly diffusing intracellular signaling molecules produced in response to receptor activation; amplify and relay signals inside the cell (e.g., cAMP, IP3, DAG, Ca2+).">Second messengers</vocab> are small molecules that amplify and distribute signals inside the cell:
+
+| Second Messenger | Produced by | Activates | Example Pathway |
+|---|---|---|---|
+| cAMP | Adenylyl cyclase (from ATP) | PKA | Beta-adrenergic, glucagon |
+| IP3 | PLC (from PIP2) | Ca2+ release from ER | Angiotensin, thrombin |
+| DAG | PLC (from PIP2) | PKC | Same as IP3 |
+| Ca2+ | Released from ER or entered from outside | Calmodulin, PKC | Muscle contraction, secretion |
+| cGMP | Guanylyl cyclase (from GTP) | PKG | Nitric oxide signaling (blood vessel dilation) |
+
+## AP Exam Focus
+
+- GPCR mechanism: ligand -> GPCR -> G-protein (GDP->GTP) -> adenylyl cyclase -> cAMP -> PKA -> response
+- Signal amplification: each step multiplies the signal
+- RTKs: dimerization -> cross-phosphorylation -> Ras -> MAP kinase cascade -> gene expression
+- Mutant Ras (cannot hydrolyze GTP) causes constitutive signaling -> cancer
+- cAMP is degraded by phosphodiesterase; Ca2+ pumped back out to terminate signal
         questions: [
           {
             id: "4.2.1",
@@ -2774,18 +3744,98 @@ A ligand acts as an allosteric regulator. Upon binding to the extracellular side
         description: "Analyze details of signaling cascades, amplification, and second messengers.",
         youtubeId: "WsofKzY_K50",
         article: `
-# Signal Transduction
+# Signal Transduction Receptors
 
-Intracellular cascades relay signals from receptors to target proteins, amplifying the message along the way.
+![Signal transduction receptor types showing GPCR and RTK on cell membrane](/images/biology/signal_transduction.png)
 
-## Signal Amplification
-A single ligand binding to a receptor can activate multiple G-proteins, which activate multiple adenylyl cyclase enzymes, generating thousands of **cyclic AMP (cAMP)** molecules. Each cAMP activates a kinase, which phosphorylates many target proteins. This exponential cascade is called **signal amplification**.
+Cell-surface receptors are the gatekeepers of cell communication. Each receptor type has a distinct structure that determines which signals it can detect and how it initiates downstream signaling.
 
-## Second Messengers
-Second messengers are small, non-protein, water-soluble molecules or ions that spread rapidly throughout the cell by diffusion:
-- **cAMP**: Synthesized from ATP by adenylyl cyclase; activates Protein Kinase A (PKA).
-- **Calcium Ions ($Ca^{2+}$)**: Released from the ER into the cytosol to trigger muscle contraction, vesicle release, or transcription.
-`,
+## Classification of Cell-Surface Receptors
+
+Three major classes of cell-surface receptors in AP Biology:
+
+### 1. G-Protein Coupled Receptors (GPCRs)
+
+<vocab term="G-Protein Coupled Receptors" definition="The largest family of cell-surface receptors, characterized by 7 transmembrane alpha helices; upon ligand binding, activate heterotrimeric G-proteins that regulate effector enzymes or ion channels.">GPCRs</vocab> are 7-transmembrane proteins found in virtually all eukaryotes. They:
+- Respond to diverse ligands: hormones, neurotransmitters, odorants, light (rhodopsin)
+- Signal through G-proteins (Gs, Gi, Gq families)
+- Activate second messenger pathways (cAMP, IP3/DAG, Ca2+)
+
+**Examples:**
+- Epinephrine/beta-adrenergic receptor (fight-or-flight)
+- Glucagon receptor (blood glucose regulation)
+- Olfactory receptors (smell - ~400 types in humans)
+- Rhodopsin (light detection in retina)
+- Histamine receptors (allergic response)
+
+### 2. Receptor Tyrosine Kinases (RTKs)
+
+<vocab term="Receptor Tyrosine Kinases" definition="Cell-surface receptors with an intrinsic kinase domain; ligand binding causes dimerization and cross-phosphorylation of tyrosine residues, activating downstream signaling cascades.">RTKs</vocab> are enzyme-linked receptors that directly catalyze protein phosphorylation. They:
+- Respond to polypeptide growth factors and hormones
+- Signal through direct kinase activity, Ras, and MAP kinase cascades
+- Control cell growth, differentiation, and survival
+
+**Examples:**
+- EGF receptor (epidermal growth factor - cell proliferation)
+- Insulin receptor (glucose uptake, metabolism)
+- PDGF receptor (wound healing)
+- VEGF receptor (blood vessel growth)
+- FGF receptor (development, wound healing)
+
+### 3. Ligand-Gated Ion Channels
+
+<vocab term="Ligand-Gated Ion Channels" definition="Receptor proteins that open or close an ion channel pore in response to binding a specific ligand (neurotransmitter); allow rapid (millisecond) ion flow producing changes in membrane potential.">Ligand-gated ion channels</vocab> combine receptor and channel functions:
+- Ligand binding directly opens/closes the ion channel
+- Extremely fast response (milliseconds - vs. seconds/minutes for GPCR/RTK)
+- Critical in neurotransmission and sensory signaling
+
+**Examples:**
+- Nicotinic acetylcholine receptor (muscle contraction) - opens Na+ channel
+- GABA-A receptor (inhibitory synapse) - opens Cl- channel
+- Glycine receptor (inhibitory) - opens Cl- channel
+- Ionotropic glutamate receptors (AMPA, NMDA) - open cation channels
+
+## Comparison of Receptor Classes
+
+| Feature | GPCR | RTK | Ligand-Gated Ion Channel |
+|---|---|---|---|
+| Structure | 7 TM helices | Single TM helix, kinase domain | Multi-subunit pore |
+| Ligands | Many types (small molecules, peptides) | Growth factors, peptide hormones | Neurotransmitters |
+| Speed of response | Seconds | Minutes-hours | Milliseconds |
+| Primary effect | Second messenger production | Protein phosphorylation cascade | Ion flow, membrane potential change |
+| Duration | Minutes to hours | Hours (gene expression) | Milliseconds |
+
+## Intracellular Receptors
+
+Not all receptors are at the cell surface. <vocab term="Intracellular Receptors" definition="Receptors located in the cytoplasm or nucleus that bind lipid-soluble signaling molecules (steroid and thyroid hormones); the receptor-ligand complex acts as a transcription factor.">Intracellular receptors</vocab> bind lipid-soluble signals that cross the plasma membrane:
+
+**Ligands:** Steroid hormones (cortisol, estrogen, testosterone, aldosterone), thyroid hormones, vitamin D, retinoic acid (vitamin A derivative)
+
+**Mechanism:**
+1. Lipid-soluble hormone diffuses across plasma membrane
+2. Binds to receptor in cytoplasm or nucleus
+3. Hormone-receptor complex translocates to nucleus (or is already there)
+4. Complex binds specific DNA sequences (hormone response elements)
+5. Acts as transcription factor: activates or represses specific genes
+6. Changes in gene expression -> altered protein synthesis -> cellular response
+
+**Key difference**: Intracellular receptors directly alter gene transcription (slow, hours-days) vs. cell-surface receptors that activate pre-existing proteins (fast, seconds-minutes).
+
+## Receptor Specificity and Ligand Binding
+
+A receptor responds only to its specific ligand(s) because of complementary binding:
+- The receptor's binding site has a specific 3D shape and charge distribution
+- Only the correct ligand fits and causes the conformational change needed for signaling
+
+**Dose-response relationship**: As ligand concentration increases, more receptors are occupied, and the cellular response increases until all receptors are saturated. This produces the same sigmoidal curve as enzyme saturation.
+
+## AP Exam Focus
+
+- Three major cell-surface receptor types: GPCR, RTK, ligand-gated ion channels
+- GPCRs: largest family, 7 TM helices, use G-proteins and second messengers
+- RTKs: enzyme-linked, dimerize upon ligand binding, phosphorylate tyrosines
+- Ligand-gated ion channels: fastest response (milliseconds), directly open ion pores
+- Intracellular receptors: bind steroid/thyroid hormones, act as transcription factors in nucleus
         questions: [
           {
             id: "4.3.1",
@@ -2860,19 +3910,94 @@ Second messengers are small, non-protein, water-soluble molecules or ions that s
         description: "Evaluate how mutations or chemical inhibitors block or hyperactivate signaling.",
         youtubeId: "TfYf_rPWUdY",
         article: `
-# Changes in Signal Transduction Pathways
+# Signal Integration
 
-Alterations in any component of a signal transduction pathway can disrupt the entire downstream response.
+![Signal integration diagram showing how cells process multiple simultaneous signals](/images/biology/signal_transduction.png)
 
-## Mutations in Receptors or Relay Proteins
-- **Loss of Function**: A mutation that prevents a receptor from binding its ligand, or prevents a kinase from phosphorylating its target, blocks the downstream pathway (e.g., type I diabetes, where insulin receptors are nonfunctional).
-- **Gain of Function**: A mutation that locks a relay protein in the active state leads to continuous signaling even in the absence of a ligand (e.g., the *Ras* oncogene protein, which remains active and drives cancer cell division).
+Cells rarely receive just one signal at a time. <vocab term="Signal Integration" definition="The process by which cells process multiple simultaneous signals to produce a coordinated response; convergence and divergence of signaling pathways allows sophisticated decision-making at the cellular level.">Signal integration</vocab> allows cells to weigh multiple inputs and produce appropriate, nuanced responses rather than simple on/off reactions.
 
-## Chemical Disruptions
-Toxins and drugs can block or trigger pathways:
-- **Cholera Toxin**: Modifies G-proteins so they cannot hydrolyze GTP, keeping the pathway permanently active and causing severe diarrhea.
-- **Antihistamines**: Competitive inhibitors that block histamine receptors, preventing allergic inflammatory responses.
-`,
+## Why Integration Is Necessary
+
+A cell must respond appropriately to complex environmental situations:
+- Should a cell divide? Only if growth signals are present AND anti-growth signals are absent
+- Should a cell survive or die? Integration of survival and death signals determines fate
+- Should a neuron fire? Sum of excitatory and inhibitory signals determines threshold
+
+## Convergence and Divergence of Signals
+
+### Signal Convergence
+Multiple different extracellular signals activate the same intracellular pathway:
+- Different GPCRs all activate adenylyl cyclase -> cAMP
+- Multiple growth factors all activate Ras -> MAP kinase
+- Result: different stimuli can produce similar cellular responses
+
+### Signal Divergence  
+One extracellular signal activates multiple downstream pathways:
+- Insulin binds RTK -> simultaneously activates PI3K pathway (glucose uptake) AND MAP kinase pathway (gene expression)
+- Result: one signal can coordinate multiple cellular processes simultaneously
+
+## Cross-Talk Between Pathways
+
+Different signaling pathways interact:
+- PKA (activated by cAMP/GPCR) can phosphorylate and inhibit the Raf kinase (part of MAP kinase/RTK pathway) - competitive pathways
+- Ca2+/calmodulin can activate adenylyl cyclase (different isoforms) or inhibit it - context-dependent
+- cAMP pathway can enhance or inhibit PI3K pathway depending on cell type
+
+<vocab term="Signaling Crosstalk" definition="The interaction between different signaling pathways, where activation of one pathway modifies the activity of another; allows fine-tuned coordination of cellular responses.">Signaling crosstalk</vocab> creates a complex regulatory network rather than isolated linear pathways.
+
+## Scaffold Proteins: Organizing Signal Complexes
+
+<vocab term="Scaffold Proteins" definition="Proteins that simultaneously bind multiple components of a signaling cascade, increasing specificity and efficiency by holding pathway components in proximity.">Scaffold proteins</vocab> organize signaling complexes:
+- Hold multiple kinases of a cascade in physical proximity
+- Increase efficiency (no time for diffusion)
+- Increase specificity (prevents cross-activation of wrong kinases)
+- Example: KSR protein holds Raf, MEK, and ERK kinases together in MAP kinase cascade
+
+## Positive and Negative Feedback in Signaling
+
+**Positive feedback** amplifies a signal:
+- Once a threshold is crossed, the signal drives itself stronger
+- Creates switch-like "all-or-nothing" responses
+- Example: action potential - once threshold is reached, Na+ influx causes more depolarization which opens more channels
+
+**Negative feedback** limits signal duration and magnitude:
+- Signal activates its own inhibitor
+- Prevents overstimulation
+- Example: cAMP activates PKA which phosphorylates and desensitizes the GPCR; phosphodiesterase degrades cAMP
+
+## Receptor Desensitization and Down-Regulation
+
+With prolonged signaling, cells reduce their response:
+- **Receptor phosphorylation** - kinases phosphorylate active GPCRs, reducing their activity (desensitization)
+- **Beta-arrestin binding** - beta-arrestin binds phosphorylated GPCR -> uncouples from G-protein -> receptor internalization
+- **Receptor internalization** - receptor removed from surface by endocytosis (down-regulation)
+- **Transcriptional down-regulation** - cell reduces synthesis of receptor mRNA
+
+**Clinical relevance**: Chronic use of drugs (opioids, beta-agonists) causes receptor desensitization and tolerance, requiring higher doses for same effect.
+
+## Integration at the Level of Gene Expression
+
+Many signaling pathways ultimately regulate gene expression. The final integration occurs at the level of **transcription factor phosphorylation and activity**:
+- MAP kinase phosphorylates transcription factors (Elk-1, c-fos) in nucleus
+- PKA phosphorylates CREB (cAMP response element binding protein) in nucleus
+- Multiple phosphorylated transcription factors at a promoter determine whether gene is expressed
+
+This allows: Gene X expressed only when signal A AND signal B are both present (AND gate)
+Or: Gene Y expressed when signal A OR signal B is present (OR gate)
+
+| Logic Gate | Cellular Example | Molecular Basis |
+|---|---|---|
+| AND | Cell divides only with growth factor + ECM contact | Two transcription factors both needed at promoter |
+| OR | Cell survives if glucose OR amino acids are available | Alternative promoter elements |
+| NOT | Cell doesn't grow when tumor suppressor is active | Repressor transcription factor |
+
+## AP Exam Focus
+
+- Signal integration allows cells to make complex decisions based on multiple inputs
+- Convergence: multiple signals -> one pathway; divergence: one signal -> multiple pathways
+- Scaffold proteins increase specificity and efficiency of cascades
+- Receptor desensitization limits overstimulation (relevant to drug tolerance/addiction)
+- Final integration at transcription level: transcription factor combinations determine gene expression
         questions: [
           {
             id: "4.4.1",
@@ -2947,24 +4072,108 @@ Toxins and drugs can block or trigger pathways:
         description: "Differentiate between positive and negative feedback loops in biological regulation.",
         youtubeId: "2OmkDvFZpHI",
         article: `
-# Feedback Loops
+# Feedback Mechanisms
 
-Organisms use feedback mechanisms to maintain homeostasis or amplify physiological processes.
+![Cell cycle control diagram showing checkpoints and feedback regulation](/images/biology/signal_transduction.png)
 
-## Negative Feedback
-**Negative feedback** loops maintain dynamic homeostasis by returning a variable back to a target set point:
-- If a system deviates from the set point, the response works to **reverse** the direction of change.
-- Examples: 
-  - *Thermoregulation*: Sweating cools the body when hot; shivering warms the body when cold.
-  - *Blood Glucose*: Insulin lowers blood sugar when high; glucagon raises it when low.
+<vocab term="Feedback Mechanisms" definition="Regulatory processes in which the output of a system affects the input; negative feedback maintains homeostasis by reversing deviations, while positive feedback amplifies responses toward a new state.">Feedback mechanisms</vocab> are fundamental to biological regulation, allowing organisms to maintain homeostasis and coordinate complex processes like the cell cycle.
 
-## Positive Feedback
-**Positive feedback** loops amplify responses, driving a variable further away from the set point:
-- The output of the system increases the activity of the input, creating an amplification loop.
-- Examples:
-  - *Labor Contractions*: Oxytocin stimulates uterine contractions, which push the baby's head against the cervix, signaling the release of more oxytocin.
-  - *Fruit Ripening*: Ripe fruit releases ethylene gas, which triggers neighboring fruit to ripen and release even more ethylene.
-`,
+## Negative Feedback: Maintaining Homeostasis
+
+<vocab term="Negative Feedback" definition="A regulatory mechanism where the output of a process inhibits the process itself, maintaining a relatively constant set point; the most common homeostatic mechanism.">Negative feedback</vocab> is the predominant homeostatic mechanism in biology. The response reverses the original stimulus.
+
+### Classic Examples of Negative Feedback
+
+**Blood glucose regulation:**
+1. Blood glucose rises after a meal
+2. Pancreatic beta cells detect high glucose -> secrete insulin
+3. Insulin promotes glucose uptake by cells (GLUT4 insertion) and glycogen synthesis
+4. Blood glucose falls back toward set point (~90 mg/dL)
+5. Low glucose -> insulin secretion stops; glucagon secretion begins
+6. Glucagon promotes glycogen breakdown and gluconeogenesis -> glucose rises back to set point
+
+**Thyroid hormone regulation (HPT axis):**
+1. Hypothalamus secretes TRH (thyrotropin-releasing hormone)
+2. TRH -> pituitary secretes TSH (thyroid-stimulating hormone)
+3. TSH -> thyroid gland secretes T3/T4 (thyroid hormones)
+4. High T3/T4 -> **negative feedback** on hypothalamus and pituitary
+5. TRH and TSH secretion decrease -> T3/T4 falls back to set point
+
+**Key principle**: Negative feedback loops have three components:
+1. **Receptor/sensor** - detects deviation from set point
+2. **Control center** - processes information, determines response
+3. **Effector** - carries out the corrective response
+
+## Positive Feedback: Amplifying Responses
+
+<vocab term="Positive Feedback" definition="A regulatory mechanism where the output of a process amplifies the original stimulus, driving the system progressively further from the starting point; used for rapid, decisive responses.">Positive feedback</vocab> amplifies the original signal. Less common than negative feedback; used when a threshold must be crossed rapidly.
+
+### Examples of Positive Feedback
+
+**Childbirth (parturition):**
+1. Baby's head presses on cervix -> stretching stimulates oxytocin release
+2. Oxytocin -> uterine contractions
+3. Contractions push baby harder -> more stretching -> more oxytocin -> stronger contractions
+4. Positive feedback cycle continues until baby is born
+5. Once stimulus (cervical pressure) is removed, cycle stops automatically
+
+**Blood clotting:**
+1. Vessel injury -> platelet activation
+2. Activated platelets release chemicals that activate more platelets
+3. Clot forms rapidly (positive feedback ensures complete clot formation)
+4. Clot seals wound -> stimulus removed -> clotting terminates
+
+**Action potential:**
+1. Membrane depolarization opens a few voltage-gated Na+ channels
+2. Na+ influx depolarizes membrane further
+3. More Na+ channels open -> more depolarization (positive feedback)
+4. Rapid, all-or-nothing spike reaches ~+30 mV
+5. Na+ channels inactivate + K+ channels open -> repolarization (terminates the positive feedback)
+
+## Feedback in the Cell Cycle
+
+The <vocab term="Cell Cycle Checkpoints" definition="Quality control mechanisms in the cell cycle where specific conditions must be met before the cycle progresses; G1, G2, and M checkpoints ensure DNA integrity and proper development.">cell cycle checkpoints</vocab> use feedback loops:
+
+| Checkpoint | Location | What Is Checked | Key Proteins |
+|---|---|---|---|
+| G1 checkpoint | End of G1 | Cell size, DNA damage, growth signals | p53, Rb, Cyclin D/CDK4 |
+| G2 checkpoint | End of G2 | DNA replication complete, no damage | p53, Cyclin B/CDK1 |
+| Spindle Assembly Checkpoint | During M phase | All chromosomes attached to spindle | APC/C, securin, separase |
+
+**p53 - the guardian of the genome:**
+- p53 is a transcription factor activated by DNA damage
+- Activates p21 (CDK inhibitor) -> halts cell cycle at G1 checkpoint
+- If DNA repair fails, p53 activates apoptosis genes
+- p53 is mutated in ~50% of all human cancers (removing this feedback stops tumor suppression)
+
+## Hormone Feedback Systems
+
+Feedback is critical in endocrine regulation:
+
+| System | Hormone | Feedback Type | Disease When Disrupted |
+|---|---|---|---|
+| Blood glucose | Insulin/glucagon | Negative | Diabetes mellitus (Type 1 and 2) |
+| Thyroid hormones | T3/T4 -> TSH | Negative | Hypothyroidism, hyperthyroidism |
+| Cortisol (stress) | Cortisol -> ACTH | Negative | Cushing's disease, Addison's disease |
+| Reproductive cycle | Estrogen -> LH | Negative (mostly) + Positive (mid-cycle LH surge) | Polycystic ovary syndrome |
+| Water balance | ADH (vasopressin) | Negative | Diabetes insipidus |
+
+## Allosteric Feedback Inhibition
+
+At the biochemical level, <vocab term="Feedback Inhibition" definition="A form of negative feedback where the end product of a metabolic pathway allosterically inhibits an early enzyme in the pathway, preventing overproduction of the product.">feedback inhibition</vocab> of metabolic enzymes prevents overproduction:
+
+Pathway: A -> B -> C -> D -> E (final product)
+
+When E accumulates, E binds allosterically to the first enzyme (A -> B step) and inhibits it. This immediately shuts down the pathway. When E is consumed, the enzyme is no longer inhibited, and production resumes.
+
+Example: Isoleucine synthesis - isoleucine inhibits threonine deaminase (first enzyme of the pathway)
+
+## AP Exam Focus
+
+- Negative feedback: most common homeostatic mechanism; response reverses the stimulus
+- Positive feedback: amplifies response; used for decisive, threshold-crossing events (childbirth, action potentials, clotting)
+- Cell cycle checkpoints: G1, G2, M; p53 is tumor suppressor activated by DNA damage
+- Feedback inhibition (biochemical): end product inhibits allosterically an early pathway enzyme
         questions: [
           {
             id: "4.5.1",
@@ -3195,25 +4404,105 @@ Division of the cytoplasm:
         description: "Analyze checkpoints, cyclins, CDKs, and the molecular basis of cancer.",
         youtubeId: "xPkOWGSGYyc",
         article: `
-# Regulation of Cell Cycle
+# Apoptosis
 
-The eukaryotic cell cycle is regulated by internal and external checkpoints.
+![Cell cycle diagram showing apoptosis vs cell cycle progression](/images/biology/dna_replication.png)
 
-## Checkpoints
-- **$G_1$ Checkpoint**: The primary 'go-ahead' checkpoint. If approved, the cell divides. If denied, it exits the cycle into a non-dividing state ($G_0$).
-- **$G_2$ Checkpoint**: Verifies that DNA has replicated completely and accurately without damage.
-- **M Checkpoint**: Occurs during metaphase; checks that spindle fibers are correctly attached to kinetochores.
+<vocab term="Apoptosis" definition="Programmed cell death; an active, genetically regulated process by which a cell destroys itself in an orderly manner without triggering inflammation; essential for development, tissue homeostasis, and immune function.">Apoptosis</vocab> is the cell's built-in suicide program. Unlike necrosis (accidental, chaotic cell death), apoptosis is a controlled, energy-requiring process that benefits the organism.
 
-## Regulatory Proteins
-Progress is driven by two proteins:
-- **Cyclins**: Proteins whose concentrations fluctuate.
-- **CDKs (Cyclin-Dependent Kinases)**: Kinases that must bind to cyclins to be activated. Once active, CDKs phosphorylate target proteins to push the cell to the next phase.
+## Why Cells Commit Apoptosis
 
-## Cancer
-Cancer results from uncontrolled cell division caused by mutations in checkpoint genes:
-- **Proto-oncogenes**: Normally stimulate division; mutations turn them into hyperactive **oncogenes**.
-- **Tumor Suppressor Genes**: Normally inhibit division; mutations deactivate them (e.g., mutated *p53*).
-`,
+Apoptosis serves critical biological functions:
+
+| Function | Example |
+|---|---|
+| Development and morphogenesis | Removal of interdigital webbing (fingers separate) |
+| Removing excess neurons | ~50% of neurons die during brain development; only those that make proper connections survive |
+| Eliminating auto-reactive immune cells | T cells that react to self-antigens are deleted in thymus |
+| Removing virus-infected cells | Infected cells undergo apoptosis before virus replicates |
+| Removing pre-cancerous cells | DNA damage triggers p53 -> apoptosis |
+| Removing cells after immune response | Effector T and B cells die after infection is cleared |
+
+## The Two Pathways of Apoptosis
+
+### Intrinsic Pathway (Mitochondrial)
+Triggered by internal signals: DNA damage, oxidative stress, growth factor withdrawal:
+1. Pro-apoptotic proteins (BAX, BAK) in mitochondrial outer membrane form pores
+2. Cytochrome c released from mitochondria into cytoplasm
+3. Cytochrome c + Apaf-1 form the **apoptosome**
+4. Apoptosome activates procaspase-9 -> caspase-9
+5. Caspase-9 activates executioner caspases (caspase-3, -7)
+6. Caspase-3 cleaves hundreds of cellular proteins -> cell dismantled
+
+**Anti-apoptotic proteins** (BCL-2, BCL-XL) prevent cytochrome c release by blocking BAX/BAK:
+- BCL-2 is overexpressed in many cancers (prevents apoptosis of cancer cells)
+- BCL-2 inhibitors (venetoclax) are cancer drugs that restore apoptosis in cancer cells
+
+### Extrinsic Pathway (Death Receptor)
+Triggered by external death signals:
+1. Death ligand (FasL, TRAIL, TNF) binds death receptor (Fas, DR5, TNFR)
+2. Receptor trimerizes -> recruits adapter proteins (FADD)
+3. Adapter proteins activate procaspase-8 -> caspase-8
+4. Caspase-8 activates executioner caspases (caspase-3, -7)
+5. Caspase-3 -> cell death
+
+Both pathways converge on **executioner caspases** (primarily caspase-3).
+
+## The Caspase Cascade
+
+<vocab term="Caspases" definition="Cysteine-aspartic proteases that execute apoptosis; initiator caspases (8, 9) activate executioner caspases (3, 7), which cleave hundreds of cellular proteins to dismantle the cell.">Caspases</vocab> (cysteine-aspartate proteases) are the molecular executioners:
+
+| Caspase Type | Caspases | Function |
+|---|---|---|
+| Initiator | Caspase 8, 9 | Activated by death pathways; activate executioner caspases |
+| Executioner | Caspase 3, 6, 7 | Directly cleave cellular proteins; cause cell death |
+
+Executioner caspase-3 cleaves:
+- **ICAD** (inhibitor of caspase-activated DNase) -> DNA fragmentation (180 bp "ladder")
+- **Cytoskeletal proteins** -> cell shrinkage and blebbing
+- **Nuclear lamins** -> nuclear condensation
+- **Other caspases** -> amplification
+
+## Morphological Features of Apoptosis
+
+Apoptotic cells show characteristic changes:
+- Cell shrinkage and blebbing (membrane bubbles)
+- Nuclear condensation and fragmentation
+- DNA fragmentation into 180 bp multiples ("DNA ladder" on gel)
+- Phosphatidylserine flipped to outer membrane (eat-me signal)
+- Phagocytes engulf apoptotic bodies before contents are released
+
+No inflammation occurs because the cell is packaged into apoptotic bodies before they rupture.
+
+## Necrosis vs. Apoptosis
+
+| Feature | Apoptosis | Necrosis |
+|---|---|---|
+| Cause | Programmed (internal or external signal) | Accidental (toxin, ischemia, trauma) |
+| Energy | Requires ATP | Passive |
+| Cell volume | Decreases (shrinks) | Increases (swells and bursts) |
+| Inflammation | No (anti-inflammatory signals sent) | Yes (cellular contents released) |
+| DNA | Fragmented in 180 bp ladder | Random degradation |
+| Outcome | Apoptotic bodies phagocytosed cleanly | Cell lysis, inflammation |
+
+## Apoptosis and Disease
+
+| Disease | Apoptosis Connection |
+|---|---|
+| Cancer | Too little apoptosis; cancer cells avoid programmed death (BCL-2 overexpression, p53 mutation) |
+| Neurodegenerative diseases | Too much apoptosis; neurons die inappropriately (Alzheimer, Parkinson) |
+| Autoimmune disease | Failure of apoptosis in self-reactive T cells |
+| HIV/AIDS | Virus induces apoptosis of CD4+ T helper cells |
+| Ischemia-reperfusion injury | Oxygen deprivation triggers inappropriate apoptosis |
+
+## AP Exam Focus
+
+- Apoptosis is programmed, orderly cell death requiring ATP (not same as necrosis)
+- Two pathways: intrinsic (mitochondria, cytochrome c, BAX) and extrinsic (death receptors, FasL)
+- Both converge on caspase-3 (executioner caspase)
+- BCL-2 family: pro-apoptotic (BAX) vs. anti-apoptotic (BCL-2, BCL-XL)
+- p53 activates apoptosis in response to DNA damage; mutated in ~50% of cancers
+- Development: apoptosis is essential (webbing removal, neuron pruning, T cell selection)
         questions: [
           {
             id: "4.7.1",
@@ -3467,15 +4756,101 @@ Examples: Down syndrome (trisomy 21), Turner syndrome (45,X), Klinefelter syndro
         article: `
 # Meiosis and Genetic Diversity
 
-Meiosis generates genetic variation, which drives evolution by natural selection.
+![Meiosis diagram comparing mitosis and meiosis showing crossing over and independent assortment](/images/biology/meiosis_diagram.png)
 
-## Three Mechanisms of Variation
-1. **Crossing Over** (Prophase I): Homologous chromosomes align in synapsis. Non-sister chromatids exchange segments at the **chiasmata**, producing **recombinant chromosomes** with new combinations of maternal and paternal alleles.
-2. **Independent Assortment** (Metaphase I): Homologous chromosome pairs align randomly at the metaphase plate. The sorting of maternal and paternal chromosomes into gametes is independent:
-   $$\text{Possible combinations} = 2^n$$
-   where $n$ is the haploid number.
-3. **Random Fertilization**: Any sperm can fertilize any egg, creating a unique zygote.
-`,
+<vocab term="Meiosis" definition="A specialized form of cell division producing four haploid (n) daughter cells from a single diploid (2n) parent cell; occurs in reproductive organs; enables sexual reproduction.">Meiosis</vocab> is the specialized cell division that produces haploid gametes (sperm and eggs) from diploid germ cells. It generates remarkable genetic diversity through three key mechanisms.
+
+## Overview: Meiosis vs. Mitosis
+
+| Feature | Mitosis | Meiosis |
+|---|---|---|
+| Purpose | Growth, repair, asexual reproduction | Gamete production |
+| Starting cell | Diploid (2n) | Diploid (2n) |
+| Rounds of division | 1 | 2 (meiosis I and II) |
+| Daughter cells | 2 diploid (2n) | 4 haploid (n) |
+| Genetic identity | Identical to parent | Genetically unique |
+| Crossing over | Rare | Yes, in prophase I |
+| Chromosome alignment | Individual chromosomes | Homologous pairs (bivalents) |
+
+## Meiosis I: The Reductional Division
+
+Meiosis I separates **homologous chromosomes** (reducing chromosome number by half):
+
+**Prophase I** (most complex phase):
+- Homologous chromosomes pair up (synapsis) to form **bivalents** (tetrads)
+- <vocab term="Crossing Over" definition="The exchange of DNA segments between non-sister chromatids of homologous chromosomes during prophase I of meiosis; creates new combinations of alleles (recombinant chromosomes).">Crossing over (recombination)</vocab> occurs at **chiasmata**
+- Synaptonemal complex holds homologs together during crossover
+
+**Metaphase I:**
+- Bivalents line up at metaphase plate
+- <vocab term="Independent Assortment" definition="The random orientation of homologous chromosome pairs at metaphase I of meiosis; each pair orients independently, generating 2n possible chromosome combinations in gametes.">Independent assortment</vocab>: each bivalent orients randomly (paternal or maternal to each pole)
+- With 23 chromosome pairs: 2^23 = ~8.4 million possible gamete combinations from this alone!
+
+**Anaphase I:** Homologous chromosomes separate (sister chromatids stay together)
+**Telophase I/Cytokinesis I:** Two haploid cells formed (each chromosome still consists of 2 sister chromatids)
+
+## Meiosis II: The Equational Division
+
+Meiosis II separates **sister chromatids** (like mitosis but from haploid cells):
+
+**Prophase II - Metaphase II:** No new DNA replication; chromosomes condense again
+**Anaphase II:** Sister chromatids separate -> pulled to opposite poles
+**Telophase II/Cytokinesis II:** Four haploid daughter cells
+
+## Three Sources of Genetic Variation
+
+### 1. Crossing Over (Recombination)
+Creates new combinations of alleles on a chromosome:
+- Occurs at ~25-50 crossovers per human meiosis
+- Alleles on the same chromosome are reshuffled
+- Creates chromosomes with novel combinations not found in either parent
+
+### 2. Independent Assortment of Homologs
+Random orientation of each bivalent at metaphase I:
+- 23 chromosome pairs -> 2^23 = 8,388,608 possible gamete chromosome combinations
+- Each gamete gets a unique mix of maternal and paternal chromosomes
+
+### 3. Random Fertilization
+When two gametes unite:
+- 8.4 million possible maternal gametes X 8.4 million possible paternal gametes = 70 trillion possible combinations!
+- Each individual is genetically unique (except identical twins)
+
+## Gametogenesis: Meiosis in Practice
+
+| Process | Location | Result | Key Features |
+|---|---|---|---|
+| Spermatogenesis | Testes | 4 sperm per meiosis | All 4 cells functional |
+| Oogenesis | Ovaries | 1 egg + 2-3 polar bodies | Unequal cytoplasm division; polar bodies discarded |
+
+**Oogenesis notes:**
+- Primary oocyte is arrested in prophase I from fetal development until puberty
+- Meiosis I completes just before ovulation
+- Meiosis II completes only if fertilization occurs
+- One large egg retains most cytoplasm; polar bodies (with little cytoplasm) eventually degenerate
+
+## Errors in Meiosis: Nondisjunction
+
+<vocab term="Nondisjunction" definition="The failure of chromosomes or chromatids to separate properly during cell division; results in gametes with extra or missing chromosomes, leading to aneuploidy in offspring.">Nondisjunction</vocab> during meiosis I or II produces gametes with incorrect chromosome numbers:
+
+| Error | Result | Example |
+|---|---|---|
+| Nondisjunction in meiosis I | Gametes with 2 copies of a chromosome or 0 copies | Most Down syndrome cases |
+| Nondisjunction in meiosis II | Gametes with 2 identical chromatids or 0 | Some cases of trisomy |
+
+**Common aneuploidies:**
+- **Trisomy 21 (Down syndrome)** - 3 copies of chromosome 21; most common live-born aneuploidy
+- **Klinefelter syndrome (XXY)** - extra X chromosome in males
+- **Turner syndrome (X0)** - missing X chromosome in females
+- **Trisomy 18 (Edwards syndrome)** - usually fatal in infancy
+- **Trisomy 13 (Patau syndrome)** - usually fatal in infancy
+
+## AP Exam Focus
+
+- Meiosis produces 4 haploid cells (gametes) from 1 diploid cell; mitosis produces 2 diploid cells
+- Three sources of variation: crossing over, independent assortment, random fertilization
+- Independent assortment: 2^23 = ~8.4 million gamete types from chromosome sorting alone
+- Nondisjunction: failure to separate chromosomes -> aneuploidy (e.g., trisomy 21)
+- Crossing over in prophase I shuffles alleles within chromosomes
         questions: [
           {
             id: "5.2.1",
@@ -3550,24 +4925,108 @@ Meiosis generates genetic variation, which drives evolution by natural selection
         description: "Apply laws of segregation and independent assortment to predict inheritance probabilities.",
         youtubeId: "eEUvRrhmcxM",
         article: `
-# Mendelian Genetics
+# Mitosis and the Cell Cycle
 
-Gregor Mendel derived the fundamental laws of inheritance through breeding experiments.
+![Cell cycle and mitosis diagram showing phases and checkpoints](/images/biology/meiosis_diagram.png)
 
-## Mendelian Laws
-1. **Law of Segregation**: An individual inherits two alleles for each gene. These alleles segregate during gamete formation, so each gamete carries only one allele.
-2. **Law of Independent Assortment**: Alleles for different genes assort independently of one another during gamete division, provided the genes are on different chromosomes or located far apart.
+The <vocab term="Cell Cycle" definition="The ordered sequence of events by which a cell grows and divides into two daughter cells; consists of interphase (G1, S, G2) and mitotic phase (mitosis and cytokinesis).">cell cycle</vocab> is the life cycle of a dividing cell, encompassing growth, DNA replication, and division into two genetically identical daughter cells.
 
-## Genetic Crosses
-- **Monohybrid Cross** ($Aa \times Aa$): Yields a **3:1** phenotypic ratio and a **1:2:1** genotypic ratio.
-- **Dihybrid Cross** ($AaBb \times AaBb$): Yields a **9:3:3:1** phenotypic ratio, confirming independent assortment.
+## Phases of the Cell Cycle
 
-## Probability Rules
-- **Multiplication Rule** ("AND"): Probability of independent events occurring together is the product of their individual probabilities:
-  $$P(A \text{ and } B) = P(A) \times P(B)$$
-- **Addition Rule** ("OR"): Probability of mutually exclusive events is the sum of their individual probabilities:
-  $$P(A \text{ or } B) = P(A) + P(B)$$
-`,
+### Interphase (~90% of cell cycle time)
+
+**G1 phase (First Gap):**
+- Cell grows in size
+- Synthesizes proteins and organelles
+- G1 checkpoint: Is the cell ready to replicate? Adequate size, nutrients, growth factors?
+- Rb protein blocks progression until growth signals override it
+
+**S phase (Synthesis):**
+- DNA replication: entire genome duplicated
+- Each chromosome now consists of two identical sister chromatids joined at the centromere
+- Histone synthesis occurs simultaneously
+- Duration: ~6-8 hours in human cells
+
+**G2 phase (Second Gap):**
+- Cell continues to grow
+- Synthesizes proteins needed for mitosis (tubulin for spindle, condensins)
+- G2 checkpoint: Is DNA fully replicated? Are there any errors?
+- DNA repair machinery corrects replication errors
+
+**G0 phase:**
+- Cells that exit the cycle permanently (neurons, heart muscle cells) or temporarily
+- Can be re-entered from G1 under appropriate signals
+
+### Mitotic Phase (M phase)
+
+Mitosis (nuclear division) + cytokinesis (cytoplasmic division):
+
+| Phase | Key Events |
+|---|---|
+| Prophase | Chromatin condenses into visible chromosomes; mitotic spindle begins forming; nuclear envelope breaks down |
+| Prometaphase | Spindle fibers attach to kinetochores; chromosomes begin moving |
+| Metaphase | Chromosomes aligned at metaphase plate; spindle assembly checkpoint ensures all kinetochores attached |
+| Anaphase | Sister chromatids separated; pulled to opposite poles |
+| Telophase | Nuclear envelopes reform; chromosomes decondense |
+| Cytokinesis | Cytoplasm divided; two daughter cells formed |
+
+## Cell Cycle Regulation
+
+<vocab term="Cyclins" definition="Regulatory proteins whose concentration oscillates throughout the cell cycle; bind to and activate CDKs (cyclin-dependent kinases) to drive cell cycle progression.">Cyclins</vocab> and <vocab term="Cyclin-Dependent Kinases (CDKs)" definition="Kinases that are activated by binding to specific cyclins; phosphorylate target proteins to drive cell cycle transitions; their activity depends on cyclin concentration.">CDKs (cyclin-dependent kinases)</vocab> form the molecular engine of the cell cycle:
+
+| Cyclin-CDK Complex | Phase | Key Target | Function |
+|---|---|---|---|
+| Cyclin D/CDK4, CDK6 | G1 | Rb (retinoblastoma protein) | Phosphorylates Rb -> releases E2F -> promotes S phase entry |
+| Cyclin E/CDK2 | G1/S transition | DNA replication machinery | Initiates DNA replication |
+| Cyclin A/CDK2 | S phase | Replication factors | Ensures one-time replication |
+| Cyclin B/CDK1 | G2/M | Lamin, condensin, nuclear envelope | Triggers mitosis entry (MPF) |
+
+**MPF (Maturation Promoting Factor)** = Cyclin B/CDK1: the master switch for entering mitosis.
+
+## Cell Cycle Checkpoints
+
+Checkpoints are surveillance mechanisms that halt cell cycle progression if conditions are not met:
+
+**G1 Checkpoint (Restriction Point):**
+- Checks: sufficient size, nutrients, growth factors, no DNA damage
+- Regulator: Rb protein (tumor suppressor); phosphorylation by CDKs releases it
+
+**G2 Checkpoint:**
+- Checks: DNA fully replicated, no DNA damage
+- Regulator: p53 activates p21 (CDK inhibitor) -> halts cycle
+
+**Spindle Assembly Checkpoint (M phase):**
+- Checks: all chromosomes properly attached to spindle
+- Regulator: Mad2 protein monitors unattached kinetochores; inhibits APC/C until all attached
+- APC/C (anaphase-promoting complex): triggers anaphase by degrading securin (releasing separase to cleave cohesin)
+
+## Proto-oncogenes, Oncogenes, and Tumor Suppressors
+
+**Proto-oncogenes** (normal cell cycle accelerators) become **oncogenes** when mutated:
+- Ras (GTPase signaling), Myc (transcription factor), cyclin D - overactive -> uncontrolled division
+- Gain-of-function mutations: even one mutant allele can cause cancer (dominant)
+
+**Tumor suppressor genes** (cell cycle brakes) lose function in cancer:
+- Rb (retinoblastoma): blocks G1 progression; mutated in retinoblastoma, many cancers
+- p53: activates DNA repair and apoptosis when DNA is damaged; mutated in ~50% of cancers
+- APC: regulates beta-catenin in Wnt pathway; mutated in colorectal cancer
+- Loss-of-function mutations: both alleles must be lost for cancer (recessive, "two-hit" hypothesis)
+
+## Cytokinesis: Animal vs. Plant Cells
+
+| Feature | Animal Cells | Plant Cells |
+|---|---|---|
+| Mechanism | Cleavage furrow (actin/myosin ring contracts) | Cell plate forms from inside out (vesicles from Golgi) |
+| Structure | Ring of actin pinches cell in two | New cell wall and membranes built inward |
+| Outcome | Two identical daughter cells | Two identical daughter cells with new cell wall |
+
+## AP Exam Focus
+
+- Cell cycle phases: G1 (growth), S (DNA replication), G2 (growth + prep), M (mitosis + cytokinesis)
+- Cyclins oscillate; CDKs are always present but need cyclin partner to be active
+- Checkpoints: G1 (Rb, CDK), G2 (p53), M (spindle assembly checkpoint, APC/C)
+- Proto-oncogenes -> oncogenes: dominant gain of function; Tumor suppressors: recessive loss of function
+- Cytokinesis: cleavage furrow (animal), cell plate (plant)
         questions: [
           {
             id: "5.3.1",
@@ -3642,18 +5101,118 @@ Gregor Mendel derived the fundamental laws of inheritance through breeding exper
         description: "Analyze inheritance patterns that deviate from Mendelian ratios, including linkage and sex-linkage.",
         youtubeId: "t6wvnMbQPOA",
         article: `
-# Non-Mendelian Genetics
+# Mendelian Genetics
 
-Many traits deviate from simple dominant-recessive Mendelian inheritance:
+![Mendelian genetics diagram showing monohybrid and dihybrid crosses with Punnett squares](/images/biology/mendelian_genetics.png)
 
-## Non-Mendelian Patterns
-- **Incomplete Dominance**: The F1 hybrid has a phenotype intermediate between the parents (e.g., pink flowers).
-- **Codominance**: Both alleles are expressed simultaneously in the heterozygote (e.g., AB blood type).
-- **Multiple Alleles**: Genes exist in more than two allelic forms (e.g., ABO blood type).
-- **Sex-Linked Genes**: Located on sex chromosomes ($X$ chromosome). Males ($XY$) are hemizygous and express X-linked recessive traits far more often than females ($XX$).
-- **Gene Linkage**: Genes located close together on the same chromosome tend to be inherited together. Crossing over occasionally breaks this linkage:
-  $$\text{Recombination Frequency} = \frac{\text{Recombinant Offspring}}{\text{Total Offspring}} \times 100\%$$
-`,
+<vocab term="Gregor Mendel" definition="19th century Austrian monk who conducted hybridization experiments with pea plants, discovering the fundamental principles of heredity now known as Mendel's Laws.">Gregor Mendel</vocab> discovered the basic rules of inheritance by carefully tracking pea plant traits through multiple generations. His laws remain the foundation of genetics.
+
+## Mendel's Experimental Approach
+
+Mendel used Pisum sativum (garden pea) because:
+- Short generation time
+- Easy to cross-pollinate (or self-pollinate)
+- Many easily distinguishable traits
+- Large numbers of offspring possible (statistical significance)
+
+He studied 7 traits, each controlled by a single gene with two variants (alleles):
+
+| Trait | Dominant | Recessive |
+|---|---|---|
+| Seed shape | Round (R) | Wrinkled (r) |
+| Seed color | Yellow (Y) | Green (y) |
+| Pod shape | Inflated (I) | Constricted (i) |
+| Pod color | Green (G) | Yellow (g) |
+| Flower color | Purple (P) | White (p) |
+| Flower position | Axial (A) | Terminal (a) |
+| Plant height | Tall (T) | Dwarf (t) |
+
+## Mendel's Laws
+
+### Law of Dominance
+When two different alleles are present, one allele (dominant) masks the expression of the other (recessive). The dominant allele produces the dominant phenotype in both homozygous dominant (AA) and heterozygous (Aa) individuals.
+
+### Law of Segregation
+<vocab term="Law of Segregation" definition="Mendel's first law: the two alleles of a gene separate during gamete formation so that each gamete receives only one allele; alleles are reunited at fertilization.">Law of Segregation</vocab>: Each organism has two alleles for each gene, and these alleles separate during gamete formation. Each gamete receives only one allele.
+
+**Monohybrid Cross (Aa x Aa):**
+- Parent genotypes: Aa x Aa
+- Gametes: 1/2 A and 1/2 a from each parent
+- Offspring genotype ratio: 1 AA : 2 Aa : 1 aa (1:2:1)
+- Offspring phenotype ratio: 3 dominant : 1 recessive (3:1)
+
+Punnett square:
+- AA: homozygous dominant -> dominant phenotype
+- Aa: heterozygous -> dominant phenotype
+- aa: homozygous recessive -> recessive phenotype
+
+### Law of Independent Assortment
+<vocab term="Law of Independent Assortment" definition="Mendel's second law: alleles of different genes sort independently into gametes (when genes are on different chromosomes); produces a 9:3:3:1 phenotype ratio in dihybrid crosses.">Law of Independent Assortment</vocab>: Alleles of different genes (on different chromosomes) are inherited independently.
+
+**Dihybrid Cross (AaBb x AaBb):**
+- Gametes: AB, Ab, aB, ab (each 1/4 frequency)
+- Offspring phenotype ratio: 9 A_B_ : 3 A_bb : 3 aaB_ : 1 aabb (9:3:3:1)
+
+Note: Independent assortment only applies to genes on **different chromosomes** (or very far apart on same chromosome). Linked genes do NOT assort independently.
+
+## Modern Extensions of Mendelian Genetics
+
+### Incomplete Dominance
+Heterozygote shows intermediate phenotype:
+- Example: Red (RR) x White (WW) -> Pink (RW)
+- No single dominant allele; both alleles are partially expressed
+
+### Codominance
+Heterozygote shows BOTH phenotypes simultaneously:
+- Example: Human blood type (A and B alleles both expressed in AB type)
+- Both allele products are present and detectable
+
+### Multiple Alleles
+More than two alleles exist in the population (though each individual still has only two):
+- Blood type: three alleles (I^A, I^B, i)
+- I^A = codominant with I^B; both dominant to i
+
+| Genotype | Phenotype | Blood Type |
+|---|---|---|
+| I^A I^A or I^A i | A antigens on RBCs | Type A |
+| I^B I^B or I^B i | B antigens on RBCs | Type B |
+| I^A I^B | Both A and B antigens | Type AB |
+| ii | No ABO antigens | Type O |
+
+### Polygenic Inheritance
+Multiple genes contribute to a single trait:
+- Human height, skin color, intelligence, weight
+- Produces continuous bell-curve distribution in population
+
+### Epistasis
+One gene masks the expression of another:
+- Gene A affects gene B (or vice versa)
+- Produces non-standard phenotype ratios (e.g., 12:3:1 or 9:7 instead of 9:3:3:1)
+
+## Probability Rules in Genetics
+
+**Product rule** (AND - both events occur): multiply probabilities
+- P(A and B) = P(A) x P(B)
+- What is probability of an AaBb offspring? = P(Aa) x P(Bb) from cross
+
+**Sum rule** (OR - either event occurs): add probabilities
+- P(A or B) = P(A) + P(B) [if mutually exclusive]
+
+## Pedigree Analysis
+
+Pedigrees show inheritance patterns across generations:
+- Autosomal dominant: affects every generation; both sexes equally; affected x unaffected -> 50% affected
+- Autosomal recessive: can skip generations; carriers exist; two unaffected parents can have affected child
+- X-linked recessive: mainly affects males; females are often carriers; affected father cannot pass to sons
+- X-linked dominant: affected father passes to ALL daughters; sons not affected by father's X
+
+## AP Exam Focus
+
+- Law of Segregation: alleles separate during meiosis; each gamete gets one allele
+- Law of Independent Assortment: only applies to genes on different chromosomes
+- Monohybrid cross: 3:1 phenotype ratio; 1:2:1 genotype ratio
+- Dihybrid cross: 9:3:3:1 phenotype ratio
+- Blood type is codominance (AB) + dominance (A/B over O)
         questions: [
           {
             id: "5.4.1",
@@ -3728,14 +5287,101 @@ Many traits deviate from simple dominant-recessive Mendelian inheritance:
         description: "Understand how environmental factors interact with genotypes to determine phenotype.",
         youtubeId: "MBPFYTlx_S0",
         article: `
-# Environmental Effects on Phenotype
+# Chromosomal Inheritance
 
-An organism's phenotype is not determined solely by its genotype. The environment interacts with the genome to shape traits.
+![Meiosis and chromosomal inheritance diagram showing sex-linked traits and chromosomal abnormalities](/images/biology/meiosis_diagram.png)
 
-## Examples of Environmental Influence
-- **Soil pH and Hydrangeas**: Hydrangea plants produce blue flowers in acidic soils (pH $< 5.5$) because aluminum is soluble and absorbed. They produce pink flowers in alkaline soils where aluminum is insoluble.
-- **Temperature and Fur Color**: Himalayan rabbits carry a temperature-sensitive allele for melanin production. Melanin is only active in cooler body extremities, resulting in dark fur on ears, paws, and tail.
-`,
+Chromosomal inheritance extends Mendelian genetics to explain traits that do not follow simple patterns, including sex-linked traits, linked genes, and chromosomal abnormalities.
+
+## Chromosomal Theory of Inheritance
+
+The chromosomal theory (Sutton and Boveri, ~1902) proposed that genes are carried on chromosomes. This explained:
+- Why Mendel's independent assortment law works for some genes (different chromosomes) but not all
+- Why inheritance patterns differ between sexes (sex chromosomes)
+- Why some traits are inherited together (linkage)
+
+Evidence came from Thomas Hunt Morgan's fruit fly (Drosophila) experiments showing that specific genes are carried on specific chromosomes.
+
+## Sex Determination and Sex Chromosomes
+
+In humans (and most mammals):
+- Females: XX (two X chromosomes)
+- Males: XY (one X, one Y chromosome)
+- Father's sperm determines sex: X-bearing sperm -> daughter; Y-bearing sperm -> son
+
+The Y chromosome carries few genes (mostly involved in male determination), so males are **hemizygous** for X-linked genes (only one copy).
+
+## X-Linked Inheritance
+
+<vocab term="X-Linked Traits" definition="Traits encoded by genes on the X chromosome; males (XY) are hemizygous and show X-linked recessive traits more often than females, who need two copies of the recessive allele.">X-linked traits</vocab> follow distinctive patterns:
+
+**X-linked recessive (e.g., color blindness, hemophilia A, Duchenne muscular dystrophy):**
+- Males affected much more often than females (no second X to mask recessive allele)
+- Carrier females (X^A X^a) appear unaffected but pass trait to sons
+- Affected fathers CANNOT pass X-linked traits to sons (give Y to sons)
+- Affected fathers pass X to ALL daughters (daughters are carriers if mother is normal)
+
+**X-linked dominant (e.g., hypophosphatemia, Rett syndrome):**
+- Affected fathers pass trait to ALL daughters (give X to daughters)
+- Affected fathers pass to NO sons (give Y to sons)
+
+## Gene Linkage and Recombination
+
+Genes on the same chromosome are <vocab term="Linked Genes" definition="Genes located on the same chromosome that tend to be inherited together; the closer they are, the more tightly linked they are and the lower the recombination frequency.">linked</vocab> and tend to be inherited together rather than independently.
+
+**Recombination frequency** (map distance) measures how often crossing over separates two genes:
+- Closely linked genes: low recombination frequency (<10 cM)
+- Distantly linked genes: approach 50% recombination (behave like unlinked genes)
+
+$$	ext{Map distance (cM)} = rac{	ext{Number of recombinant offspring}}{	ext{Total offspring}} 	imes 100$$
+
+1 centimorgan (cM) = 1% recombination frequency
+
+## Chromosomal Abnormalities
+
+### Structural Abnormalities
+
+| Type | Description | Example |
+|---|---|---|
+| Deletion | Loss of chromosome segment | Cri-du-chat syndrome (5p deletion) |
+| Duplication | Extra copy of chromosome segment | Some cancers |
+| Inversion | Segment reversed within chromosome | Balanced; may disrupt gene function |
+| Translocation | Segment moved to different chromosome | Philadelphia chromosome (BCR-ABL fusion) -> CML |
+
+### Numerical Abnormalities (Aneuploidy)
+
+Caused by nondisjunction during meiosis:
+
+| Condition | Chromosome | Phenotype | Frequency |
+|---|---|---|---|
+| Down syndrome | Trisomy 21 | Intellectual disability, characteristic features | 1/700 births |
+| Edwards syndrome | Trisomy 18 | Severe abnormalities; usually fatal | 1/5,000 |
+| Patau syndrome | Trisomy 13 | Severe abnormalities; usually fatal | 1/12,000 |
+| Turner syndrome | 45, X0 | Female, short stature, infertile | 1/2,500 females |
+| Klinefelter syndrome | 47, XXY | Male, tall, often infertile | 1/500-1,000 males |
+| Triple X syndrome | 47, XXX | Female, usually fertile, normal lifespan | 1/1,000 females |
+
+### Polyploidy
+Having extra complete chromosome sets:
+- Rare in animals (usually lethal), but common in plants
+- Many crop plants are polyploid: bread wheat (hexaploid, 6n=42), cotton (tetraploid)
+- Polyploidization (especially allopolyploidy) drives plant speciation
+
+## Genomic Imprinting
+
+Some genes are expressed only from one parental chromosome (the other is silenced):
+- <vocab term="Genomic Imprinting" definition="The epigenetic silencing of one parental allele based on which parent it was inherited from; affected genes show parent-of-origin-specific expression.">Genomic imprinting</vocab> is established by methylation patterns during gamete formation
+- Deletions in same region cause different diseases depending on parental origin
+- Prader-Willi syndrome: deletion of paternal chromosome 15 region
+- Angelman syndrome: deletion of maternal chromosome 15 region (same region - different parent!)
+
+## AP Exam Focus
+
+- X-linked recessive: males affected more; carrier females; affected father gives X to all daughters
+- Linked genes violate independent assortment; recombination frequency measures chromosomal distance
+- Down syndrome: trisomy 21 from nondisjunction; Turner (45,X), Klinefelter (XXY)
+- Polyploidy: multiple chromosome sets; common in plants, rare in animals
+- Philadelphia chromosome (translocation 9;22): BCR-ABL fusion oncogene -> CML
         questions: [
           {
             id: "5.5.1",
@@ -3810,19 +5456,99 @@ An organism's phenotype is not determined solely by its genotype. The environmen
         description: "Examine nondisjunction, chromosomal abnormalities, and non-nuclear organelle inheritance.",
         youtubeId: "WSR3sTsQA_I",
         article: `
-# Chromosomal Inheritance
+# Gene Expression
 
-Chromosomes carry genetic material, and anomalies in chromosome division lead to genetic disorders.
+![Gene expression diagram showing transcription in nucleus and translation at ribosomes](/images/biology/gene_expression.png)
 
-## Nondisjunction
-**Nondisjunction** occurs when homologous chromosomes fail to separate in Meiosis I, or sister chromatids fail to separate in Meiosis II.
-- This results in gametes with abnormal numbers of chromosomes (**aneuploidy**).
-- If fertilized, the zygote may have a missing chromosome (**monosomy**) or an extra chromosome (**trisomy**). Example: Down Syndrome (Trisomy 21).
+<vocab term="Gene Expression" definition="The process by which information encoded in a gene is used to synthesize a functional gene product (usually a protein); involves transcription (DNA to RNA) and translation (RNA to protein).">Gene expression</vocab> converts genetic information into functional proteins through the two-step process of transcription and translation. This is captured in the Central Dogma of Molecular Biology.
 
-## Non-Nuclear Inheritance
-- **Mitochondria and Chloroplasts**: Contain circular genomes.
-- **Maternal Inheritance**: In animals, mitochondria are transmitted entirely via the egg cytoplasm. Mitochondrial traits are inherited exclusively from the **mother**.
-`,
+## The Central Dogma
+
+$$	ext{DNA} \xrightarrow{	ext{Transcription}} 	ext{RNA} \xrightarrow{	ext{Translation}} 	ext{Protein}$$
+
+Originally proposed by Francis Crick (1958), the central dogma states that information flows from DNA to RNA to protein. Reverse transcription (RNA to DNA, done by retroviruses) is the notable exception.
+
+## Transcription: DNA to RNA
+
+<vocab term="Transcription" definition="The synthesis of RNA from a DNA template by RNA polymerase; produces pre-mRNA in eukaryotes, which is processed before being exported from the nucleus.">Transcription</vocab> occurs in the nucleus and has three stages:
+
+**Initiation:**
+- Transcription factors and RNA polymerase II bind to the promoter (TATA box)
+- RNA polymerase II opens double helix, beginning at +1 start site
+- Template strand (3' to 5') read; RNA is synthesized 5' to 3'
+
+**Elongation:**
+- RNA polymerase moves along template strand 3' -> 5'
+- Synthesizes complementary RNA strand 5' -> 3'
+- Uracil (U) instead of Thymine (T) in RNA
+
+**Termination:**
+- RNA polymerase reaches termination signal
+- RNA transcript released; polymerase dissociates
+
+## RNA Processing (Pre-mRNA to mRNA)
+
+In eukaryotes, the primary transcript (pre-mRNA) must be processed before export:
+
+1. **5' Capping** - Modified guanosine nucleotide added to 5' end
+   - Protects from degradation
+   - Helps ribosome recognize and bind mRNA
+
+2. **3' Poly-A Tail** - 100-200 adenine nucleotides added to 3' end
+   - Protects from degradation
+   - Helps export from nucleus
+   - Prolongs mRNA half-life
+
+3. **RNA Splicing** - Introns removed; exons joined
+   - <vocab term="Introns" definition="Non-coding sequences in eukaryotic pre-mRNA that are removed by the spliceosome during RNA processing; their function is largely regulatory and evolutionary.">Introns</vocab>: non-coding sequences removed by spliceosome (snRNPs)
+   - <vocab term="Exons" definition="Coding sequences in eukaryotic pre-mRNA that are retained and joined together to form mature mRNA; translated into protein.">Exons</vocab>: expressed sequences that are joined together
+
+**Alternative splicing**: The same pre-mRNA can be spliced differently to produce different proteins:
+- Explains how ~20,000 human genes produce >100,000 different proteins
+- Example: Fibronectin gene - different combinations of exons produce tissue-specific isoforms
+
+## Translation: mRNA to Protein
+
+<vocab term="Translation" definition="The synthesis of protein from an mRNA template at ribosomes; involves tRNA bringing amino acids corresponding to codons in the mRNA.">Translation</vocab> occurs at ribosomes (free in cytoplasm or bound to rough ER):
+
+**The Genetic Code:**
+- 64 codons (4^3 combinations of 3 nucleotides)
+- 61 sense codons (encode 20 amino acids) + 3 stop codons (UAA, UAG, UGA)
+- Redundant: most amino acids encoded by multiple codons (e.g., leucine: 6 codons)
+- AUG = start codon (Met); also the initiation signal
+- Code is nearly universal (same in bacteria and humans - evidence for common ancestry)
+
+**Three stages of translation:**
+
+**Initiation:** Small ribosome subunit binds 5' cap; scans for AUG start codon; large subunit joins
+
+**Elongation (repeated for each codon):**
+1. Aminoacyl-tRNA with correct anticodon enters A site
+2. Peptide bond forms (peptidyl transferase activity of large subunit rRNA)
+3. Ribosome translocates 3 nucleotides (one codon); growing chain moves from A to P site
+4. Empty tRNA exits E site
+
+**Termination:** Stop codon (UAA, UAG, UGA) enters A site; release factor binds; polypeptide released
+
+## Gene Regulation
+
+Gene expression is regulated at multiple levels:
+
+| Level | Mechanism | Example |
+|---|---|---|
+| Chromatin | Histone modification, DNA methylation | Heterochromatin = silenced; euchromatin = active |
+| Transcriptional | Transcription factor binding to enhancers/silencers | Steroid hormone-receptor complexes |
+| Post-transcriptional | Alternative splicing, mRNA stability | miRNA degrades target mRNAs |
+| Translational | Regulation of ribosome assembly/access | Iron regulatory protein controls ferritin |
+| Post-translational | Protein modification, degradation | Ubiquitin-proteasome degradation |
+
+## AP Exam Focus
+
+- Central dogma: DNA -> RNA -> Protein (transcription, then translation)
+- RNA processing: 5' cap, 3' poly-A tail, splicing (introns out, exons joined)
+- Genetic code: 64 codons, redundant, nearly universal
+- AUG = start codon (Met); UAA/UAG/UGA = stop codons
+- Alternative splicing: one gene -> multiple protein variants
         questions: [
           {
             id: "5.6.1",
@@ -3904,23 +5630,93 @@ Chromosomes carry genetic material, and anomalies in chromosome division lead to
         description: "Differentiate between DNA and RNA nucleotide structures and nitrogenous bases.",
         youtubeId: "BkDdGjTLtKQ",
         article: `
-# DNA and RNA Structure
+# DNA Structure and Replication
 
-DNA and RNA are polymers of nucleotides specialized in storing and transmitting genetic information.
+![DNA replication fork diagram showing leading strand, lagging strand, Okazaki fragments, and enzymes](/images/biology/dna_replication.png)
 
-## Nucleotide Structure
-Every nucleotide consists of:
-1. A **5-carbon sugar**: deoxyribose in DNA; ribose in RNA.
-2. A **phosphate group**.
-3. A **nitrogenous base**:
-   - **Purines** (double-ring): Adenine ($A$) and Guanine ($G$).
-   - **Pyrimidines** (single-ring): Cytosine ($C$), Thymine ($T$, DNA only), and Uracil ($U$, RNA only).
+<vocab term="DNA Replication" definition="The process by which a cell copies its DNA prior to cell division; uses each strand as a template for synthesizing a new complementary strand, producing two identical double-stranded DNA molecules.">DNA replication</vocab> is the fundamental mechanism by which genetic information is duplicated before cell division. Understanding its molecular machinery is essential for AP Biology.
 
-## Base Pairing
-In double-stranded DNA, bases pair via hydrogen bonds:
-- **A-T**: 2 hydrogen bonds.
-- **G-C**: 3 hydrogen bonds (requires more energy to melt).
-`,
+## DNA Double Helix Structure (Review)
+
+Watson and Crick proposed the double helix structure in 1953:
+- Two antiparallel strands (one 5'->3', other 3'->5')
+- Complementary base pairing: A-T (2 hydrogen bonds), G-C (3 hydrogen bonds)
+- Sugar-phosphate backbone on outside; bases pointing inward
+- Right-handed helix; 10 base pairs per turn
+
+## Semiconservative Replication
+
+<vocab term="Semiconservative Replication" definition="The mode of DNA replication in which each daughter molecule consists of one original (parental) strand and one newly synthesized strand; demonstrated by the Meselson-Stahl experiment.">Semiconservative replication</vocab> (demonstrated by Meselson-Stahl, 1958):
+- Each daughter DNA molecule contains one original strand (template) + one new strand
+- Three possible models were considered: semiconservative, conservative, dispersive
+- Heavy N-15 / light N-14 density gradient experiment confirmed semiconservative model
+
+## The Replication Fork: Enzymes and Mechanism
+
+DNA replication begins at specific sequences called **origins of replication** (ori):
+- Bacteria: 1 origin; replication proceeds bidirectionally
+- Human genome: ~30,000 origins; multiple forks proceed simultaneously (essential for 2-3 hour S phase!)
+
+### Key Enzymes at the Replication Fork
+
+| Enzyme | Function |
+|---|---|
+| Helicase | Unwinds double helix by breaking hydrogen bonds between base pairs |
+| Primase | Synthesizes short RNA primers (provides 3'-OH for DNA polymerase) |
+| DNA Polymerase III (prokaryotes) / Pol delta, epsilon (eukaryotes) | Extends new strand in 5' to 3' direction only |
+| DNA Polymerase I (prokaryotes) | Removes RNA primers; replaces with DNA |
+| DNA Ligase | Joins Okazaki fragments; seals nicks in DNA backbone |
+| Topoisomerase | Relieves tension (supercoiling) ahead of replication fork |
+| SSB proteins / RPA | Single-stranded binding proteins; prevent reannealing of separated strands |
+
+## Leading vs. Lagging Strand
+
+Since DNA polymerase can only add nucleotides in the 5' to 3' direction:
+
+**Leading strand** (towards replication fork):
+- Synthesized continuously in 5' to 3' direction
+- Only one RNA primer needed
+- Polymerase follows helicase directly
+
+**Lagging strand** (away from replication fork):
+- Synthesized in short fragments (<vocab term="Okazaki Fragments" definition="Short DNA fragments (1,000-2,000 nucleotides in prokaryotes, 100-200 in eukaryotes) synthesized on the lagging strand; later joined by DNA ligase.">Okazaki fragments</vocab>, each starting with an RNA primer)
+- Polymerase works in discontinuous, backwards manner relative to fork movement
+- RNA primers replaced with DNA by DNA Pol I; fragments joined by ligase
+- Results in a "back-stitching" synthesis pattern
+
+## DNA Proofreading and Repair
+
+DNA polymerase has a **3' to 5' exonuclease** (proofreading) activity:
+- If wrong nucleotide is added, polymerase detects the mismatched base
+- Removes the incorrect nucleotide (3' to 5' direction)
+- Inserts the correct nucleotide
+- Error rate: ~1 mistake per 10 billion nucleotides after proofreading
+
+**DNA repair systems:**
+- **Mismatch repair** - corrects remaining post-replication errors (MSH2/MLH1 proteins)
+- **Nucleotide excision repair** - removes UV-damaged thymine dimers (XPC proteins; mutated in xeroderma pigmentosum)
+- **Base excision repair** - removes damaged/modified bases (glycosylases)
+- **Double-strand break repair** - homologous recombination or NHEJ (error-prone)
+
+## Telomeres and Telomerase
+
+**Problem**: DNA polymerase cannot replicate chromosome ends (no primer placement possible at very 3' end)
+
+**Solution**: <vocab term="Telomeres" definition="Repetitive DNA sequences (TTAGGG in humans) at chromosome ends that protect genes from shortening during replication; gradually shorten with each cell division in somatic cells.">Telomeres</vocab> - repetitive sequences (TTAGGG in humans) cap chromosome ends
+
+**Telomerase**: enzyme in stem cells, cancer cells, and germ cells that extends telomeres:
+- Contains an RNA template (AAUCCC) that serves as template for adding TTAGGG repeats
+- Active in embryonic stem cells, cancer cells, and gametes
+- Inactive in most somatic cells -> telomere shortening with each division -> cellular aging (Hayflick limit)
+- Reactivated in ~85-90% of cancers (immortalization)
+
+## AP Exam Focus
+
+- Semiconservative replication: each daughter molecule has 1 old + 1 new strand
+- DNA polymerase: only extends existing primer 5' to 3'; cannot start new strand alone
+- Leading strand: continuous; lagging strand: Okazaki fragments (RNA primer needed for each)
+- Helicase (unwinds), primase (makes primers), ligase (joins fragments), topoisomerase (relieves supercoils)
+- Telomerase adds TTAGGG repeats to prevent chromosome shortening; active in cancer cells
         questions: [
           {
             id: "6.1.1",
@@ -4451,21 +6247,105 @@ After translation, proteins may be:
         description: "Examine prokaryotic operons and eukaryotic epigenetic/transcription factor controls.",
         youtubeId: "mzVWiKRc-74",
         article: `
-# Regulation of Gene Expression
+# Gene Expression Regulation
 
-Cells regulate gene expression to respond to environmental shifts and drive cell specialization.
+![Signal transduction showing how signals regulate gene expression through transcription factors](/images/biology/signal_transduction.png)
 
-## Eukaryotic Gene Regulation
-1. **Epigenetics (Chromatin Structure)**:
-   - **Histone Acetylation**: Adds acetyl groups, loosening chromatin and **increasing** transcription.
-   - **DNA Methylation**: Adds methyl groups to DNA bases, tightening chromatin and **blocking** transcription.
-2. **Transcription Factors**: Proteins that bind to enhancers (distal) or promoters (proximal) to help or block RNA polymerase assembly.
+<vocab term="Gene Regulation" definition="The mechanisms controlling when, where, and how much a gene is expressed; allows cells with identical DNA to have different structures and functions depending on which genes are active.">Gene regulation</vocab> is how cells control which genes are expressed at any given time. Every cell in your body has the same DNA, yet liver cells differ from neurons because different genes are active in each cell type.
 
-## Prokaryotic Operons
-An **operon** is a cluster of genes controlled by a single promoter:
-- **Repressible Operon (e.g., *trp* operon)**: Normally active. High levels of the product (tryptophan) bind to the repressor, activating it to block transcription (feedback inhibition).
-- **Inducible Operon (e.g., *lac* operon)**: Normally inactive. The presence of an inducer (allolactose) deactivates the repressor, allowing transcription to digest lactose when glucose is low.
-`,
+## Levels of Gene Regulation
+
+Gene expression is controlled at multiple levels:
+
+| Level | Mechanism | Example |
+|---|---|---|
+| Chromatin structure | Histone modification, DNA methylation | Heterochromatin = gene silencing |
+| Transcriptional | Transcription factors, enhancers/promoters | lac operon, steroid hormones |
+| Post-transcriptional | RNA processing, stability, alternative splicing | miRNA, siRNA |
+| Translational | Ribosome access, initiation factors | Iron-regulatory protein |
+| Post-translational | Protein modification, localization, degradation | Ubiquitin-proteasome system |
+
+## Chromatin Remodeling: Epigenetic Regulation
+
+<vocab term="Epigenetics" definition="Changes in gene expression that do not involve changes to the DNA sequence itself; mediated by chemical modifications to DNA or histones that affect chromatin structure and gene accessibility.">Epigenetics</vocab> regulates gene expression through chromatin modifications:
+
+**Histone modification:**
+- Histone acetylation (by HAT enzymes): adds acetyl group to lysine residues, loosens chromatin -> gene activation (euchromatin)
+- Histone deacetylation (by HDAC enzymes): removes acetyl groups, compacts chromatin -> gene repression (heterochromatin)
+- Histone methylation: can activate or repress depending on which residue is methylated
+
+**DNA methylation:**
+- Addition of methyl group to cytosine (usually at CpG dinucleotides)
+- Generally associated with gene silencing
+- Heritable through cell division (epigenetic inheritance)
+- Important in genomic imprinting, X-chromosome inactivation, and cancer
+
+**X-chromosome inactivation:**
+- In female mammals, one X chromosome is randomly inactivated per cell (early development)
+- Inactive X becomes highly condensed Barr body (heterochromatin)
+- Different cells inactivate different X chromosomes -> mosaic expression
+- Example: calico cats (orange and black patches from different X chromosomes)
+
+## Transcriptional Regulation
+
+### Transcription Factor Binding
+
+<vocab term="Transcription Factors" definition="Proteins that bind specific DNA sequences (promoters, enhancers, silencers) to activate or repress transcription; the primary mechanism for differential gene expression.">Transcription factors</vocab> control RNA polymerase II activity:
+
+- **General transcription factors**: bind TATA box and recruit RNA Pol II (required for all genes)
+- **Specific transcription factors (activators)**: bind enhancers -> increase transcription rate
+- **Repressors**: bind silencers or prevent activator binding -> decrease transcription
+
+### Enhancers and Silencers
+
+**Enhancers:**
+- DNA sequences that increase transcription rate when bound by activator proteins
+- Can be thousands of base pairs away from the gene (loops bring them to promoter)
+- Tissue-specific: Hemoglobin enhancers only active in red blood cell precursors
+
+**Silencers:**
+- DNA sequences that decrease transcription when bound by repressor proteins
+- Can also be far from the gene
+
+### The lac Operon (Prokaryotic Model)
+
+A classic example of gene regulation (not directly on AP exam but illustrative):
+- lac genes encode enzymes for lactose metabolism
+- Repressor (lacI product) normally binds operator -> blocks transcription
+- When lactose present: allolactose (lactose derivative) binds repressor -> repressor releases operator -> transcription occurs
+- CAP activator: cAMP (high when glucose absent) binds CAP protein -> CAP binds promoter -> enhances transcription
+- Dual control: genes active only when lactose is present AND glucose is absent
+
+## Post-Transcriptional Regulation
+
+### MicroRNAs (miRNA) and Small Interfering RNAs (siRNA)
+
+<vocab term="miRNA" definition="Small (21-23 nt) non-coding RNA molecules that bind to complementary sequences in target mRNAs and inhibit translation or promote mRNA degradation; regulate hundreds of genes.">miRNAs</vocab> are short RNA molecules that regulate gene expression:
+- Encoded in genome; processed from longer hairpin precursors
+- Bind to complementary sequences in 3' UTR of target mRNAs
+- Either block translation or promote mRNA degradation
+- One miRNA can regulate hundreds of target genes
+- Critical in development, differentiation, and cancer
+
+**RNAi (RNA interference):**
+- Introduced double-stranded RNA triggers RISC (RNA-induced silencing complex)
+- RISC cleaves target mRNA with complementary sequence
+- Used as research tool (siRNA) and potential therapeutic (gene silencing)
+
+### mRNA Stability
+
+mRNA half-lives vary from minutes to days, affecting protein levels:
+- AU-rich elements (AREs) in 3' UTR signal rapid degradation
+- Deadenylation (poly-A tail removal) followed by decapping -> degradation
+- Iron-regulatory protein: when iron is low, binds mRNA -> protects from degradation; when iron is high -> mRNA degraded
+
+## AP Exam Focus
+
+- Gene regulation allows cells with identical DNA to have different phenotypes (differential gene expression)
+- Histone acetylation = gene activation; DNA methylation = gene silencing
+- Enhancers activate transcription over large distances through DNA looping
+- miRNA: blocks translation or promotes mRNA degradation of target genes
+- Epigenetics: heritable changes in gene expression WITHOUT changes to DNA sequence
         questions: [
           {
             id: "6.5.1",
@@ -4540,16 +6420,99 @@ An **operon** is a cluster of genes controlled by a single promoter:
         description: "Study how differential gene expression drives cell differentiation and specialization.",
         youtubeId: "MBbRe-A31GI",
         article: `
-# Gene Expression and Specialization
+# Mutation
 
-Multicellular organisms contain cells with identical genomes, yet these cells exhibit vastly different structures and functions. This is achieved through **differential gene expression**.
+![DNA structure and mutation diagram showing how mutations alter gene sequences](/images/biology/dna_replication.png)
 
-## Differential Expression Mechanisms
-A cell's identity is determined by the specific genes that are transcribed:
-- **Transcription Factor Combinations**: Different cell types express unique combinations of activator proteins. A gene will only be transcribed if the specific set of transcription factors it requires is active.
-- **Cytoplasmic Determinants**: Maternal substances distributed unevenly in the unfertilized egg guide early embryonic cell differentiation as the zygote divides.
-- **Inductive Signals**: Surrounding cells release signal ligands that trigger transduction cascades, inducing neighboring cells to specialize.
-`,
+<vocab term="Mutation" definition="A permanent change in the nucleotide sequence of DNA; mutations can affect single nucleotides (point mutations) or larger chromosomal regions; the ultimate source of all genetic variation.">Mutations</vocab> are changes in the DNA sequence. While often deleterious, they are the raw material for evolution and the ultimate source of genetic diversity.
+
+## Types of Point Mutations (Single Nucleotide)
+
+### Substitutions
+
+| Substitution Type | Definition | Effect on Protein | Example |
+|---|---|---|---|
+| Silent (synonymous) | Base change; same amino acid coded | No change to protein | GAA -> GAG (both = Glu) |
+| Missense (conservative) | Base change; similar amino acid | Minor or no functional change | GAA -> GUA (Glu -> Val, but similar polarity) |
+| Missense (non-conservative) | Base change; different amino acid | Often altered function | GAA -> GCA (Glu -> Ala, loss of charge) |
+| Nonsense | Creates premature stop codon | Truncated, nonfunctional protein | GAA -> UAA (Glu -> Stop!) |
+
+**Sickle cell disease example:**
+- Single A -> T substitution in 6th codon of beta-globin gene
+- GAG (Glu) -> GTG (Val): change from charged to nonpolar amino acid
+- Valine causes hemoglobin to polymerize at low oxygen -> red cells deform into sickle shape
+- One nucleotide change = life-threatening genetic disease
+
+### Insertions and Deletions (Indels)
+
+<vocab term="Frameshift Mutation" definition="A mutation caused by insertion or deletion of nucleotides that shifts the reading frame of codons, potentially changing all downstream amino acids and usually creating a premature stop codon.">Frameshift mutations</vocab> are particularly damaging:
+
+- Insertions or deletions of non-multiples of 3 shift the reading frame
+- All codons downstream are read incorrectly
+- Usually generates a premature stop codon shortly after the mutation
+
+Example (one nucleotide deletion):
+- Normal: ATG-CAT-GGA-TAG (Met-His-Gly-Stop)
+- After deletion of 2nd nucleotide: ATG-ATG-GAT-AG... (Met-Met-Asp-...completely different!)
+
+Insertions/deletions of 3 nucleotides (or multiples of 3): add or remove amino acids but maintain reading frame (less damaging).
+
+## Causes of Mutations
+
+### Spontaneous Mutations
+- Replication errors: wrong base inserted by DNA polymerase (~1 per 10^7 bp before proofreading)
+- Tautomeric shifts: transient alternate forms of bases that form incorrect base pairs
+- Depurination: spontaneous loss of purine base leaves abasic site (~10,000 per cell per day)
+- Deamination: conversion of cytosine to uracil (~100-500 per cell per day)
+
+### Induced Mutations (Mutagens)
+
+| Mutagen Type | Examples | Mechanism |
+|---|---|---|
+| Radiation - UV | Sunlight | Thymine dimers (adjacent T's covalently linked); repaired by nucleotide excision repair |
+| Radiation - ionizing | X-rays, gamma rays | Double-strand breaks; free radical damage |
+| Chemical - base analogs | 5-bromouracil | Incorporated like T; base-pairs with G -> AT to GC transitions |
+| Chemical - intercalating agents | Ethidium bromide | Insert between base pairs -> frameshift mutations |
+| Chemical - alkylating agents | Nitrogen mustard, nitrosoguanidine | Add alkyl groups to bases -> mispairing |
+| Chemical - deaminating agents | Nitrous acid | Converts C to U -> G:C to A:T transitions |
+
+## Chromosomal Mutations
+
+Large-scale DNA rearrangements:
+
+| Type | Description | Example/Consequence |
+|---|---|---|
+| Deletion | Loss of chromosomal segment | Cri-du-chat syndrome (5p-) |
+| Duplication | Repeated segment | Can lead to gene family evolution |
+| Inversion | Segment flipped | May disrupt gene expression if in gene |
+| Translocation | Segment moved to different chromosome | Philadelphia chromosome (BCR-ABL) -> CML |
+| Amplification | Many extra gene copies | HER2 amplification in breast cancer |
+
+## Mutations and Cancer
+
+Cancer is fundamentally a disease of accumulated mutations in somatic cells:
+
+- **Driver mutations**: mutations that directly contribute to cancer development (affect oncogenes or tumor suppressors)
+- **Passenger mutations**: mutations that don't contribute to cancer but occur in same cell
+- Average cancer: 2-6 driver mutations required before cancer develops
+- Cancer results from: oncogene activation + tumor suppressor inactivation
+
+<vocab term="Oncogene" definition="A mutated or overexpressed proto-oncogene that promotes excessive cell proliferation; acts in a gain-of-function, dominant manner (one mutant allele is sufficient to contribute to cancer).">Oncogenes</vocab> are accelerators stuck in the ON position; <vocab term="Tumor Suppressor Genes" definition="Genes whose normal function is to restrain cell growth; loss of both alleles (recessive) contributes to cancer development; examples include p53, Rb, and BRCA1.">tumor suppressors</vocab> are broken brakes.
+
+## Hereditary vs. Somatic Mutations
+
+| Mutation Type | Location | Inherited? | Effect |
+|---|---|---|---|
+| Germline (hereditary) | Gametes (sperm/egg) | Yes, passed to offspring | Genetic disease in offspring |
+| Somatic | Body cells | No | Disease only in affected individual (e.g., cancer) |
+
+## AP Exam Focus
+
+- Point mutations: silent, missense, nonsense; frameshift from insertions/deletions
+- Sickle cell: single nucleotide substitution (A->T in codon 6); missense mutation
+- Nonsense mutations create premature stop codons -> truncated protein
+- Frameshift mutations: most damaging because they scramble all downstream codons
+- UV light causes thymine dimers; repaired by nucleotide excision repair (XP disease if defective)
         questions: [
           {
             id: "6.6.1",
@@ -4624,19 +6587,99 @@ A cell's identity is determined by the specific genes that are transcribed:
         description: "Classify nucleotide mutations and analyze their impact on polypeptide folding.",
         youtubeId: "eTujJ3AMLKU",
         article: `
-# Mutations
+# Biotechnology
 
-A mutation is a change in the nucleotide sequence of an organism's genome.
+![DNA replication diagram showing enzymes used in biotechnology applications](/images/biology/dna_replication.png)
 
-## Types of Point Mutations
-Point mutations alter a single nucleotide base pair:
-1. **Silent Mutation**: Alters a codon but codes for the **same** amino acid (due to genetic code redundancy). No phenotypic impact.
-2. **Missense Mutation**: Changes a codon, substituting a **different** amino acid. Can alter protein folding depending on R-group properties.
-3. **Nonsense Mutation**: Changes an amino acid codon into a **stop** codon, causing premature translation termination and resulting in a truncated, nonfunctional protein.
+<vocab term="Biotechnology" definition="The use of biological systems, organisms, or processes to develop and manufacture products; in molecular biology, refers to DNA technology tools used to manipulate genetic information.">Biotechnology</vocab> uses molecular biology techniques to analyze, manipulate, and apply biological systems. Key techniques are testable on the AP Biology exam.
 
-## Frameshift Mutations
-The **insertion** or **deletion** of nucleotides (not in multiples of 3) shifts the reading frame. This changes every codon downstream of the mutation, leading to massive missense and premature stop codons.
-`,
+## Polymerase Chain Reaction (PCR)
+
+<vocab term="PCR" definition="Polymerase chain reaction; a technique for exponentially amplifying a specific DNA sequence using repeated cycles of denaturation, annealing, and extension; can produce billions of copies from a single molecule.">PCR</vocab> amplifies specific DNA sequences exponentially in vitro:
+
+**Three-Step Cycle (repeated 25-35 times):**
+1. **Denaturation**: Heat to ~94-96 degrees C -> double helix separates into single strands
+2. **Annealing**: Cool to ~50-65 degrees C -> primers bind to complementary sequences flanking target region
+3. **Extension**: Heat to ~72 degrees C -> Taq polymerase extends from primers in 5' to 3' direction
+
+**Key components:**
+- Template DNA (the DNA to be amplified)
+- Two primers (short, specific DNA sequences flanking the target)
+- Taq polymerase (heat-stable polymerase from Thermus aquaticus)
+- dNTPs (deoxynucleotide triphosphates: dATP, dGTP, dCTP, dTTP)
+- MgCl2 and buffer
+
+**Result**: After n cycles -> 2^n copies of the target sequence (theoretically)
+After 30 cycles -> ~10^9 copies from a single molecule!
+
+**Applications:** Forensic DNA analysis, COVID-19 testing (RT-PCR), prenatal diagnosis, evolutionary studies, cloning
+
+## Gel Electrophoresis
+
+Separates DNA (or RNA, proteins) by size using an electric field through gel matrix:
+
+**Procedure:**
+1. DNA samples loaded into wells at negative electrode end of agarose gel
+2. Electric current applied; DNA (negatively charged) migrates toward positive electrode
+3. Smaller fragments move faster (less resistance in gel matrix)
+4. DNA visualized with ethidium bromide (intercalates and fluoresces under UV)
+
+**Results:**
+- Molecular weight standards (ladder) run alongside to determine fragment sizes
+- Each band = a specific size of DNA fragment
+- Applications: sizing PCR products, RFLP analysis, identifying mutations
+
+## Restriction Enzymes and Cloning
+
+<vocab term="Restriction Enzymes" definition="Bacterial endonucleases that cut double-stranded DNA at specific recognition sequences (usually 4-8 bp palindromes); used in recombinant DNA technology to cut DNA for cloning.">Restriction enzymes</vocab> (endonucleases) cut DNA at specific recognition sequences:
+
+- Most recognize palindromic sequences (read the same on both strands, 5' to 3')
+- EcoRI recognizes: 5'-GAATTC-3' and cuts between G and A on both strands
+- Produces either **sticky ends** (staggered cuts, single-stranded overhangs) or **blunt ends**
+- Sticky ends can hybridize with complementary sticky ends -> facilitate ligation
+
+**Cloning a gene:**
+1. Cut gene of interest and vector (plasmid or viral) with same restriction enzyme
+2. Mix insert and vector -> complementary sticky ends hybridize
+3. DNA ligase seals the nicks -> recombinant DNA molecule formed
+4. Transform bacteria with recombinant plasmid (heat shock or electroporation)
+5. Select colonies with antibiotic resistance (if vector has resistance gene)
+6. Screen colonies for insert (blue-white screening, PCR, restriction digest)
+
+## Gene Editing: CRISPR-Cas9
+
+<vocab term="CRISPR-Cas9" definition="A bacterial immune-derived genome editing system; a guide RNA directs Cas9 nuclease to a specific DNA sequence, creating a double-strand break that can be repaired to create targeted mutations or insertions.">CRISPR-Cas9</vocab> (Clustered Regularly Interspaced Short Palindromic Repeats):
+- Uses guide RNA (gRNA) to direct Cas9 nuclease to specific genomic location
+- Cas9 creates a double-strand break
+- Cell repairs the break by NHEJ (error-prone -> knockout) or HDR (precise editing if template provided)
+- More specific, efficient, and easier than previous genome editing methods (ZFN, TALEN)
+- Applications: creating knockout organisms, correcting disease mutations, agricultural improvements
+
+## DNA Fingerprinting (Forensic Analysis)
+
+Uses PCR to amplify STRs (short tandem repeats) - sequences that vary in length between individuals:
+- Every person has a unique pattern of STR lengths (except identical twins)
+- STR profiles from crime scene compared to suspects or national database (CODIS)
+- Statistical probability of a match occurring by chance: 1 in trillions
+
+## Applications Summary
+
+| Technique | Principle | Applications |
+|---|---|---|
+| PCR | Exponential amplification | Diagnostics, forensics, cloning |
+| Gel electrophoresis | Size-based DNA separation | Fragment analysis, genotyping |
+| Restriction enzymes | Specific DNA cutting | Cloning, RFLP analysis |
+| DNA cloning | Recombinant DNA in vectors | Protein production, research |
+| CRISPR-Cas9 | Guided genome editing | Disease research, therapeutics |
+| DNA sequencing | Reading nucleotide sequence | Genomics, personalized medicine |
+
+## AP Exam Focus
+
+- PCR: denaturation (heat), annealing (primers bind), extension (Taq polymerase) - three steps per cycle
+- Gel electrophoresis: smaller fragments migrate further toward positive electrode
+- Restriction enzymes: cut at specific palindromic sequences; sticky ends facilitate cloning
+- CRISPR: guide RNA directs Cas9 to specific sequence; creates targeted double-strand break
+- Recombinant DNA: insert gene into vector; transform bacteria; produces recombinant protein (e.g., insulin)
         questions: [
           {
             id: "6.7.1",
@@ -4711,18 +6754,103 @@ The **insertion** or **deletion** of nucleotides (not in multiples of 3) shifts 
         description: "Analyze PCR, gel electrophoresis, bacterial transformation, and DNA sequencing.",
         youtubeId: "jAhjPd4MD98",
         article: `
-# Biotechnology
+# Viral Replication
 
-Biotechnology uses natural cellular mechanisms to manipulate DNA for research, agriculture, and medicine.
+![Gene expression diagram showing how viruses hijack cellular machinery for replication](/images/biology/gene_expression.png)
 
-## Key Techniques
-- **Polymerase Chain Reaction (PCR)**: Amplifies specific DNA sequences in vitro. Uses three thermal steps:
-  1. *Denaturation*: High heat ($95^\circ\text{C}$) breaks hydrogen bonds to separate strands.
-  2. *Annealing*: Cool temperature ($55^\circ\text{C}$) allows DNA primers to bind to templates.
-  3. *Extension*: Warm temperature ($72^\circ\text{C}$) activates heat-stable **Taq Polymerase** to synthesize new strands.
-- **Gel Electrophoresis**: Separates DNA fragments by size. DNA has a negative charge (from phosphate groups) and migrates toward the positive anode. **Smaller** fragments move faster through the porous agarose gel matrix, traveling further than larger fragments.
-- **Bacterial Transformation**: Introduces a foreign plasmid into competent bacteria (often using heat shock). Selecting for transformed bacteria relies on **antibiotic resistance genes** inside the plasmid.
-`,
+<vocab term="Viruses" definition="Non-cellular, obligate intracellular parasites consisting of a nucleic acid genome (DNA or RNA) enclosed in a protein coat (capsid); use the host cell's machinery to replicate.">Viruses</vocab> are infectious particles that hijack host cellular machinery to replicate. They are not considered living organisms because they lack the ability to reproduce independently or perform metabolism on their own.
+
+## Viral Structure
+
+Basic viral components:
+- **Genetic material**: DNA or RNA (single- or double-stranded; linear or circular)
+- **Capsid**: protein coat surrounding the genome; highly specific shape
+- **Envelope** (some viruses): lipid bilayer derived from host membrane; contains viral glycoproteins
+- **Attachment proteins**: bind specific host cell receptors (determines host range)
+
+| Virus Type | Genome | Examples |
+|---|---|---|
+| dsDNA | Double-stranded DNA | Herpes, smallpox, adenovirus |
+| ssDNA | Single-stranded DNA | Parvovirus |
+| dsRNA | Double-stranded RNA | Rotavirus |
+| +ssRNA | Positive-sense ssRNA | Poliovirus, Coronavirus (SARS-CoV-2) |
+| -ssRNA | Negative-sense ssRNA | Influenza, Ebola, measles |
+| Retrovirus | ssRNA (uses reverse transcriptase) | HIV, HTLV |
+
+## Bacteriophage Replication: Lytic vs. Lysogenic Cycles
+
+### Lytic Cycle
+Virulent phages immediately destroy the host:
+1. **Attachment**: phage tail fibers bind specific receptors on bacterial cell wall
+2. **Injection**: phage injects DNA into bacterium
+3. **Takeover**: phage DNA directs synthesis of phage proteins and DNA using host machinery
+4. **Assembly**: new phage particles assembled inside bacterium
+5. **Lysis**: lysozyme enzyme degrades cell wall; ~100-300 new phages released
+
+### Lysogenic Cycle
+Temperate phages can integrate into host genome:
+1. **Attachment and injection**: same as lytic cycle
+2. **Integration**: phage DNA (prophage) inserts into bacterial chromosome
+3. **Replication**: prophage replicates with host genome every time the bacterium divides
+4. **Induction**: stress signals (UV light, chemicals) -> excision of prophage from chromosome
+5. **Lytic cycle**: excised phage DNA enters lytic cycle -> host cell lysed
+
+**Lysogenic conversion**: When prophage genes alter host cell phenotype:
+- Cholera bacterium only produces toxin when infected with specific phage (CTX phage)
+- Diphtheria toxin encoded by phage genome
+
+## Animal Virus Replication
+
+### General Steps for Enveloped Animal Virus (e.g., HIV, Influenza):
+
+1. **Attachment**: Viral surface proteins bind specific host cell receptors
+   - Specificity determines host range (HIV: binds CD4 on T helper cells)
+2. **Entry/Penetration**: Virus enters cell
+   - Enveloped viruses: membrane fusion with plasma membrane or endosomal membrane
+   - Non-enveloped: endocytosis, then capsid disruption
+3. **Uncoating**: Capsid removed; viral genome released into cytoplasm (or nucleus)
+4. **Replication and transcription**: Viral genome replicates; viral mRNAs transcribed
+5. **Translation**: Host ribosomes translate viral mRNAs -> viral proteins
+6. **Assembly**: New viral particles assembled
+7. **Release**: New virions released by budding (enveloped) or lysis
+
+### HIV (Retrovirus) - Special Replication
+
+HIV has a unique replication strategy using reverse transcriptase:
+
+1. HIV binds CD4 receptor (with CCR5 coreceptor) on T helper cells
+2. HIV RNA injected into cell
+3. <vocab term="Reverse Transcriptase" definition="An RNA-dependent DNA polymerase found in retroviruses like HIV; synthesizes DNA from an RNA template, the reverse of the typical DNA to RNA flow of information.">Reverse transcriptase</vocab> makes DNA from RNA genome (RNA -> DNA)
+4. Integrase inserts viral DNA (provirus) into host chromosome
+5. Host RNA polymerase transcribes proviral DNA -> viral RNA and mRNA
+6. Viral proteins made; assembled
+7. New HIV particles bud from cell membrane
+
+**Why HIV is hard to cure:**
+- Proviral DNA persists in long-lived T cells (latent reservoir)
+- HIV mutates rapidly (reverse transcriptase lacks proofreading)
+- Antiretroviral therapy (HAART) controls but cannot eliminate virus
+
+## Influenza and Antigenic Variation
+
+Influenza A mutates its surface proteins (hemagglutinin - HA, neuraminidase - NA) rapidly:
+- **Antigenic drift**: small mutations in HA/NA genes -> slightly new variants (requires annual flu vaccines)
+- **Antigenic shift**: two different flu strains infect same cell -> genetic reassortment -> completely new HA/NA combination -> pandemic risk (e.g., 1918 Spanish flu, 2009 H1N1)
+
+## COVID-19 (SARS-CoV-2): Coronavirus Structure
+
+<vocab term="Coronavirus" definition="A positive-sense ssRNA virus with characteristic spike proteins; SARS-CoV-2 causes COVID-19 and spreads via respiratory droplets; its spike protein binds ACE2 receptor on respiratory cells.">Coronaviruses</vocab> have spike proteins (S protein) that bind ACE2 receptors:
+- RNA genome (~30 kb - largest known RNA virus genome)
+- Spike protein mutates rapidly -> variants (Alpha, Delta, Omicron)
+- mRNA vaccines target spike protein -> immune system makes anti-spike antibodies
+
+## AP Exam Focus
+
+- Bacteriophage: lytic cycle (immediate lysis) vs. lysogenic cycle (DNA integrates as prophage)
+- HIV: RNA -> reverse transcriptase -> DNA -> integrase inserts into genome -> provirus
+- Reverse transcriptase lacks proofreading -> rapid HIV mutation -> drug resistance
+- Viral host range determined by specificity of attachment proteins for host receptors
+- Antigenic shift in influenza: reassortment of two strains -> potential pandemic virus
         questions: [
           {
             id: "6.8.1",
@@ -4804,17 +6932,105 @@ Biotechnology uses natural cellular mechanisms to manipulate DNA for research, a
         description: "Analyze Darwinian premises and how environmental pressures shift populations.",
         youtubeId: "oBt40eFYYtQ",
         article: `
-# Introduction to Natural Selection
+# Natural Selection
 
-Natural selection is the primary mechanism of evolution, proposed by Charles Darwin.
+![Natural selection diagram showing directional, stabilizing, and disruptive selection with Hardy-Weinberg equation](/images/biology/natural_selection.png)
 
-## Core Premises
-Natural selection operates under specific ecological conditions:
-1. **Overproduction of Offspring**: Populations produce more offspring than the environment can support, creating competition.
-2. **Inherited Variation**: Individuals display phenotypic variations that are genetically heritable.
-3. **Differential Survival**: Environmental pressures selectively favor individuals with traits that increase their chance of survival and reproduction.
-4. **Adaptation**: Over time, these advantageous alleles become more common in the population, increasing the population's fitness.
-`,
+<vocab term="Natural Selection" definition="The differential survival and reproduction of individuals with heritable traits that confer an advantage in a given environment; the primary mechanism of evolutionary change.">Natural selection</vocab> is the primary driving force of evolution. Darwin observed that populations have heritable variation, and individuals with advantageous traits survive and reproduce at higher rates, passing those traits to offspring.
+
+## Darwin's Key Observations and Inferences
+
+**Observations:**
+1. All populations have the potential for exponential growth
+2. Population sizes generally remain stable over time (limited resources)
+3. Individuals in a population show heritable variation in traits
+
+**Inferences:**
+1. There is a struggle for existence (competition for limited resources)
+2. Individuals with favorable heritable traits survive and reproduce better
+3. Over generations, favorable traits become more common -> populations evolve
+
+## Prerequisites for Natural Selection
+
+Four conditions must be met:
+1. **Variation**: Individuals must differ in their traits
+2. **Heritability**: The variation must be heritable (passed from parent to offspring)
+3. **Differential fitness**: Some variants must reproduce more successfully than others
+4. **Selective pressure**: Environmental conditions favor certain variants
+
+If all four conditions are met, evolution by natural selection is guaranteed to occur.
+
+## Modes of Natural Selection
+
+| Mode | Favors | Effect on Population | Example |
+|---|---|---|---|
+| Directional | One extreme phenotype | Shifts mean; decreases variation in direction of selection | Antibiotic resistance in bacteria |
+| Stabilizing | Intermediate phenotype | Reduces variation; maintains mean | Human birth weight (~7.5 lbs optimal) |
+| Disruptive | Both extreme phenotypes | Increases variation; bimodal distribution | African seedcracker finch beak sizes |
+| Sexual | Attractive or competitive mates | Can cause exaggerated traits | Peacock tail feathers, deer antlers |
+
+## Adaptations: The Products of Natural Selection
+
+<vocab term="Adaptation" definition="A heritable trait that increases an organism's fitness (reproductive success) in its current environment; the result of natural selection acting over many generations.">Adaptations</vocab> are the result of selection acting over many generations:
+
+**Structural adaptations**: physical features
+- Polar bear white fur (camouflage on ice)
+- Cacti thick stems for water storage
+- Antifreeze proteins in Antarctic fish
+
+**Physiological adaptations**: metabolic/functional
+- High-altitude adaptation: increased hemoglobin affinity for O2 (Tibetans)
+- Lactase persistence in pastoral populations
+
+**Behavioral adaptations**: behaviors that increase fitness
+- Migration (avoid seasonal resource scarcity)
+- Mate-calling (attract mates)
+- Cooperative hunting (wolves, lions)
+
+## Natural Selection Does NOT:
+
+- Act on genotype directly (only visible phenotype is selected)
+- Create variation (selection acts on pre-existing variation)
+- Produce "perfect" organisms (only "good enough" for current environment)
+- Have foresight or goals (it is not teleological)
+- Guarantee extinction is avoided (can lag behind environmental change)
+
+## Evidence for Natural Selection
+
+**Direct observation:**
+- Peppered moth (Biston betularia): industrial melanism - dark moths became more common in polluted England
+- HIV evolution during drug treatment: resistant strains selected within patient
+- Bacterial resistance evolution in response to antibiotics
+
+**Structural evidence:**
+- Antibiotic resistance evolution in bacteria (observed in laboratories in weeks)
+- Galapagos finch beak size changes tracked across drought years
+
+**The Hardy-Weinberg Principle:**
+
+A population NOT evolving (in H-W equilibrium) must have:
+$$p^2 + 2pq + q^2 = 1 \quad (p + q = 1)$$
+
+Where p = frequency of dominant allele, q = frequency of recessive allele.
+
+Deviation from H-W = evolution is occurring. H-W requires: no selection, no mutation, no migration, random mating, large population.
+
+## Artificial Selection: Human-Directed Evolution
+
+Artificial selection (selective breeding) demonstrates the power of selection:
+- Dogs: ~15,000 years of selection from wolves -> 340+ breeds with enormous diversity
+- Corn (maize): ~9,000 years from wild teosinte plant -> modern corn
+- Chickens, cattle, wheat: dramatically changed by selective breeding
+
+This shows evolution by selection can produce major changes relatively rapidly.
+
+## AP Exam Focus
+
+- Natural selection: variation + heritability + differential fitness = evolution
+- Three modes: directional (shifts mean), stabilizing (reduces variation), disruptive (bimodal)
+- Selection acts on phenotype, but changes allele frequencies in the population
+- H-W equilibrium: no evolution; deviations indicate selection, drift, mutation, or migration
+- Adaptations are heritable traits that increase fitness in the current environment
         questions: [
           {
             id: "7.1.1",
@@ -4889,20 +7105,111 @@ Natural selection operates under specific ecological conditions:
         description: "Examine selective pressures, adaptation, and evolutionary fitness.",
         youtubeId: "LrDCYPW2vts",
         article: `
-# Natural Selection
+# Population Genetics and Hardy-Weinberg
 
-Natural selection alters allele frequencies by favoring adaptations that match environmental demands.
+![Natural selection population genetics diagram with allele frequencies](/images/biology/natural_selection.png)
 
-## Selective Pressures
-Biotic and abiotic factors act as **selective pressures**:
-- **Abiotic**: Climate, temperature, salinity, soil nutrients.
-- **Biotic**: Predators, pathogens, food availability, mates.
+<vocab term="Population Genetics" definition="The study of genetic variation within and between populations; examines allele frequencies and how they change over time due to natural selection, genetic drift, mutation, and gene flow.">Population genetics</vocab> applies mathematical models to understand how allele frequencies change in populations over time. The Hardy-Weinberg principle provides the foundational null model.
 
-## Evolutionary Fitness
-Fitness is measured by **reproductive success**:
-$$\text{Fitness} \propto \text{Number of surviving, fertile offspring}$$
-An individual can be physically strong, but if it fails to pass its genes to the next generation, its evolutionary fitness is zero.
-`,
+## Key Definitions
+
+- **Population**: a group of individuals of the same species living in the same area that interbreed
+- **Gene pool**: the collection of all alleles in a population at a given time
+- **Allele frequency**: the proportion of a particular allele among all alleles at that locus in the population
+- **Genotype frequency**: the proportion of individuals with a particular genotype
+
+## The Hardy-Weinberg Principle
+
+<vocab term="Hardy-Weinberg Equilibrium" definition="The state in which allele and genotype frequencies in a population remain constant from generation to generation in the absence of evolutionary influences; provides a null model for detecting evolution.">Hardy-Weinberg equilibrium</vocab> predicts genotype frequencies from allele frequencies when no evolution occurs:
+
+For a two-allele system with allele frequencies p (dominant) and q (recessive):
+
+$$p + q = 1 \quad 	ext{(allele frequencies sum to 1)}$$
+$$p^2 + 2pq + q^2 = 1 \quad 	ext{(genotype frequencies)}$$
+
+Where:
+- $p^2$ = frequency of homozygous dominant (AA)
+- $2pq$ = frequency of heterozygotes (Aa)
+- $q^2$ = frequency of homozygous recessive (aa)
+
+## Using Hardy-Weinberg to Calculate Allele Frequencies
+
+**Example**: In a population of 1,000 people, 10 have cystic fibrosis (autosomal recessive, aa).
+
+Step 1: Find q^2 (homozygous recessive frequency)
+$$q^2 = rac{10}{1000} = 0.01$$
+
+Step 2: Find q (recessive allele frequency)
+$$q = \sqrt{0.01} = 0.1$$
+
+Step 3: Find p (dominant allele frequency)
+$$p = 1 - q = 1 - 0.1 = 0.9$$
+
+Step 4: Find carrier frequency (2pq)
+$$2pq = 2 	imes 0.9 	imes 0.1 = 0.18$$
+
+So 18% of the population are carriers - 18 times more than those actually affected!
+
+## Conditions for Hardy-Weinberg Equilibrium
+
+Five conditions (if any are violated, evolution is occurring):
+
+| Condition | Violation Causes |
+|---|---|
+| 1. No natural selection | Differential survival/reproduction |
+| 2. No mutations | New alleles entering gene pool |
+| 3. No gene flow | Immigration or emigration of alleles |
+| 4. Random mating (panmixia) | Assortative mating, inbreeding |
+| 5. Very large population | Genetic drift (random allele frequency changes) |
+
+## Forces That Change Allele Frequencies (Causes of Evolution)
+
+### 1. Natural Selection
+Differential survival and reproduction based on heritable phenotypic differences. The only mechanism that consistently produces adaptations.
+
+### 2. Genetic Drift
+<vocab term="Genetic Drift" definition="Random changes in allele frequencies due to chance events; has greater effect in small populations; can cause loss of alleles or fixation of neutral or even slightly harmful alleles.">Genetic drift</vocab> is random change in allele frequency:
+
+**Founder effect**: A small group colonizes a new area -> limited allele diversity
+- Example: Old Order Amish of Pennsylvania: Ellis-van Creveld syndrome (extra fingers, dwarfism) is 1 in 60 - extremely high rate due to small founding population
+
+**Bottleneck effect**: Population dramatically reduced by catastrophe -> random allele loss
+- Example: Northern elephant seals: populations crashed to ~20 in 1890s -> almost no genetic diversity; all descended from few survivors
+- Cheetahs: so genetically uniform that skin grafts between unrelated individuals are not rejected
+
+### 3. Gene Flow (Migration)
+Movement of alleles between populations:
+- Immigration: alleles brought in; decreases genetic differences between populations
+- Emigration: alleles leave; decreases local allele frequency
+- Overall: gene flow prevents speciation; keeps populations genetically similar
+
+### 4. Mutation
+Creates new alleles - the ultimate source of all genetic variation:
+- Usually deleterious or neutral; rarely beneficial
+- Mutation rate: ~70-100 new mutations per human genome per generation
+- Alone, mutation changes allele frequencies very slowly (mutation rates are too low)
+
+### 5. Non-Random Mating
+- **Assortative mating**: individuals prefer mates similar to themselves -> increases homozygosity
+- **Inbreeding**: mating between relatives -> increases homozygosity, exposes recessive alleles
+
+## Comparing Drift vs. Selection
+
+| Feature | Genetic Drift | Natural Selection |
+|---|---|---|
+| Mechanism | Random chance | Differential fitness |
+| Direction | Random | Directional (toward higher fitness) |
+| Population size effect | Strong in small populations | Same in all populations |
+| Adaptive? | No | Yes |
+| Time scale | Rapid in small populations | Depends on selection intensity |
+
+## AP Exam Focus
+
+- Hardy-Weinberg: p + q = 1 and p^2 + 2pq + q^2 = 1; memorize this equation
+- Five conditions: no selection, no mutation, no migration, random mating, large population
+- To find carrier frequency when given phenotype frequency: q^2 -> q -> p -> 2pq
+- Genetic drift effects: founder effect (small colonizing group) and bottleneck (population crash)
+- Gene flow homogenizes populations; prevents speciation
         questions: [
           {
             id: "7.2.1",
@@ -4977,19 +7284,93 @@ An individual can be physically strong, but if it fails to pass its genes to the
         description: "Compare artificial selection and domestic breeding with natural selection.",
         youtubeId: "m24KS_lQD0s",
         article: `
-# Artificial Selection
+# Evidence for Evolution
 
-**Artificial Selection** is a human-directed form of selection.
+![Natural selection diagram showing evidence from different species and populations](/images/biology/natural_selection.png)
 
-## Mechanism
-Unlike natural selection, where the environment dictates which traits are favored, humans act as the selective agent:
-- Humans choose individuals with desirable traits (e.g., higher crop yield, docility, aesthetic appeal) and breed them.
-- Repeated over generations, this alters allele frequencies and phenotypes.
+Evolution is one of the most well-supported theories in all of science, supported by converging lines of evidence from geology, comparative anatomy, molecular biology, and direct observation. Understanding these evidence lines is essential for AP Biology.
 
-## Examples
-- **Crop Domestication**: Modern corn (maize) was bred from the wild grass *teosinte*.
-- **Animal Husbandry**: All modern dog breeds evolved from a common wolf ancestor via human selection.
-`,
+## 1. Fossil Record
+
+<vocab term="Fossil Record" definition="The collection of all known fossils, providing a historical record of past life; shows transitional forms, documents extinctions, and reveals the sequence in which major groups of organisms appeared.">Fossil evidence</vocab>:
+- Shows progression of life forms over billions of years
+- Documents evolutionary transitions (e.g., fish -> amphibians -> reptiles)
+- Transitional forms: Tiktaalik (fish-tetrapod transition), Archaeopteryx (dinosaur-bird)
+- Patterns: mass extinctions followed by adaptive radiations
+- Dating using radiometric methods (uranium-lead, potassium-argon, carbon-14)
+
+**Limitation**: Fossilization is rare; many organisms were soft-bodied and left no fossil record.
+
+## 2. Biogeography
+
+Geographic distribution of organisms provides evidence for common descent:
+- **Oceanic island species**: closely related to nearest mainland species, not to similar islands far away
+- **Marsupials in Australia**: diverse marsupials evolved there after continental separation (75 mya)
+- **Darwin's finches**: 14 finch species in Galapagos, all descendants of one South American ancestor; adaptive radiation
+- **Camelids**: originated in North America, spread to South America (llamas) and Asia (camels) before extinction in North America
+
+## 3. Comparative Anatomy
+
+<vocab term="Homologous Structures" definition="Anatomical structures in different species that share the same evolutionary origin but may have different functions; evidence of common ancestry.">Homologous structures</vocab> - same evolutionary origin, different function:
+- Human arm, bat wing, whale flipper, cat forelimb - same bone structure (humerus, radius, ulna, carpals, phalanges)
+- All descended from same tetrapod ancestor ~360 million years ago
+
+<vocab term="Analogous Structures" definition="Anatomical structures in different species that have similar functions but different evolutionary origins; the result of convergent evolution rather than common ancestry.">Analogous structures</vocab> (convergent evolution) - similar function, different origin:
+- Bat wing and butterfly wing - both for flight, completely different structure
+- Eye of octopus and vertebrate eye - similar function, independently evolved
+- Dolphin dorsal fin and shark dorsal fin - same shape for same hydrodynamic function, different origin
+
+<vocab term="Vestigial Structures" definition="Reduced or non-functional structures that were functional in ancestors; evidence that organisms descended from ancestors with different lifestyles.">Vestigial structures</vocab> - reduced, non-functional remnants:
+- Human: coccyx (tailbone), plantaris muscle, wisdom teeth, goosebumps (arrector pili), vomeronasal organ
+- Whales: hindlimb bones embedded in body wall (ancestors walked on land)
+- Blind cave fish: still have eye development genes but eyes degenerate during development
+
+## 4. Molecular Homology
+
+DNA and protein sequences are most direct evidence of evolutionary relatedness:
+
+- **Cytochrome c protein**: highly conserved; humans and chimps differ by 0 amino acids; humans and yeast differ by 40
+- **Phylogenetic trees from DNA sequences**: match morphology-based trees remarkably well
+- **Universal genetic code**: same 64 codons in bacteria and humans - evidence for single origin of life
+- **Conserved gene sequences** (Hox genes, Pax6 eye development gene) across very different organisms
+
+**Molecular clock**: rate of DNA sequence change is roughly constant -> can estimate divergence times:
+- Human-chimpanzee split: ~6-7 million years ago (from sequence comparison)
+
+## 5. Direct Observation of Evolution
+
+Evolution can be observed in real time:
+- **E. coli long-term evolution experiment** (Lenski, 1988-present): 50,000+ generations; documented de novo evolution of citrate metabolism in oxygen
+- **HIV evolution**: within a patient during treatment, resistant variants emerge and are selected
+- **Darwin's finches beak sizes**: tracked across drought years in Galapagos; directional selection documented
+- **Peppered moth**: frequency of dark melanic form tracked across industrial pollution levels
+
+## 6. Comparative Embryology
+
+Embryos of different vertebrates are remarkably similar early in development:
+- Fish, frog, chicken, pig, human embryos all have pharyngeal pouches and tails at early stages
+- Suggests conservation of developmental programs from common ancestor
+
+**Note**: "Ontogeny recapitulates phylogeny" (Haeckel's biogenetic law) is an oversimplification - embryos do NOT pass through adult ancestral stages; they share early developmental features due to shared ancestry.
+
+## Summary of Evidence Types
+
+| Evidence Type | Examples | What It Shows |
+|---|---|---|
+| Fossil record | Tiktaalik, Archaeopteryx, horse evolution | Progression of forms over time; transitional species |
+| Biogeography | Darwin's finches, marsupials, camelids | Geographic isolation and adaptation |
+| Homologous structures | Vertebrate forelimbs | Common ancestry despite different functions |
+| Vestigial structures | Whale hindlimbs, human coccyx | Evolution from ancestors with different anatomy |
+| Molecular homology | Cytochrome c, DNA sequences | Quantify relatedness; build phylogenetic trees |
+| Direct observation | Peppered moth, E. coli experiment | Evolution actually happening |
+
+## AP Exam Focus
+
+- Homologous structures = common ancestry; analogous = convergent evolution (NOT related)
+- Vestigial structures: retain genes but reduced/non-functional; evidence of ancestral function
+- Molecular evidence: DNA sequence similarity strongly correlates with phylogenetic relatedness
+- All evidence lines converge on the same conclusion: life evolved from common ancestors
+- Transitional fossils: Tiktaalik (fish-tetrapod), Archaeopteryx (dinosaur-bird)
         questions: [
           {
             id: "7.3.1",
@@ -5064,18 +7445,97 @@ Unlike natural selection, where the environment dictates which traits are favore
         description: "Study genetic drift, mutations, gene flow, and population bottlenecks.",
         youtubeId: "4Kbruik_LOo",
         article: `
-# Population Genetics
+# Common Ancestry
 
-Population genetics studies allele frequencies and genetic changes inside populations.
+![Evolutionary tree diagram showing common ancestry relationships](/images/biology/natural_selection.png)
 
-## Evolutionary Forces
-Aside from natural selection, three forces drive evolution:
-1. **Mutations**: Random changes in DNA that introduce new alleles.
-2. **Gene Flow**: Migration of individuals between populations, exchanging alleles.
-3. **Genetic Drift**: Random fluctuations in allele frequencies due to chance events. Drift has a massive impact on **small populations**:
-   - **Bottleneck Effect**: A disaster decimates a population, leaving a tiny surviving cohort whose gene pool does not represent the original population.
-   - **Founder Effect**: A few individuals colonize a new area, establishing a gene pool with low genetic diversity.
-`,
+<vocab term="Common Ancestry" definition="The concept that all organisms share ancestors; more closely related species share more recent common ancestors; supported by fossil, molecular, and anatomical evidence.">Common ancestry</vocab> is a core principle of evolutionary biology: all life on Earth descended from a common ancestor. Phylogenetics reconstructs these evolutionary relationships using various types of data.
+
+## Universal Common Ancestry
+
+Evidence that all life shares a single origin:
+- Universal genetic code: same codons encode same amino acids in bacteria, plants, and animals
+- Universal cellular machinery: ribosomes, ATP synthase, DNA replication enzymes
+- Same biochemistry: all cells use ATP, NADH/NADPH, phospholipid membranes
+- Conservation of core genes: genes for ribosomal RNA, metabolic enzymes exist in all organisms
+
+**The Tree of Life** organized into three domains:
+- **Bacteria**: prokaryotes; no membrane-bound nucleus
+- **Archaea**: prokaryotes; different membrane lipids, live in extreme environments
+- **Eukarya**: membrane-bound nucleus; includes protists, fungi, plants, animals
+
+Archaea and Eukarya share more recent common ancestors (more similar molecular features) than either shares with Bacteria.
+
+## Phylogenetics: Reconstructing Evolutionary History
+
+<vocab term="Phylogeny" definition="The evolutionary history and relationships among organisms or groups; depicted as a phylogenetic tree (cladogram) showing branching patterns of descent from common ancestors.">Phylogeny</vocab> is reconstructed from:
+
+**Molecular data** (most powerful):
+- DNA or RNA sequence comparisons
+- Protein sequence comparisons
+- Whole-genome comparisons
+- Greater sequence similarity = more closely related (more recent common ancestor)
+
+**Morphological data**:
+- Homologous anatomical features
+- Shared derived characters (synapomorphies)
+
+**Fossil data**:
+- When groups appeared
+- Transitional forms
+- Calibrate molecular clocks
+
+## Phylogenetic Trees: Interpreting Cladograms
+
+Key features of phylogenetic trees:
+
+- **Nodes**: represent common ancestors (hypothetical)
+- **Branches**: represent lineages over time
+- **Tips (taxa)**: living or extinct species being compared
+- **Sister groups**: two groups that share the most recent common ancestor
+
+**Reading a cladogram:**
+- Two species share a more recent common ancestor if they share a more recent node
+- The number of branches between taxa = relative relatedness
+- Trees can be rotated at any node without changing the relationships depicted!
+
+### Shared Derived Characters (Synapomorphies)
+
+<vocab term="Synapomorphies" definition="Shared derived characters (features evolved in a common ancestor and inherited by its descendants); used to identify monophyletic groups (clades) in phylogenetic analysis.">Synapomorphies</vocab> are features shared by members of a clade:
+- Tetrapod limbs: shared by all four-limbed vertebrates (amphibians, reptiles, mammals, birds)
+- Amniotic egg: shared by reptiles and mammals
+- Feathers: shared by all birds
+
+**Convergent features** (analogous structures) should NOT be used in phylogenetics:
+- Wings of bats, birds, and insects - independent evolution of flight, NOT shared ancestry
+
+## Monophyletic Groups (Clades)
+
+A <vocab term="Clade" definition="A monophyletic group consisting of an ancestor and all of its descendants; the fundamental unit of cladistic classification.">clade</vocab> includes an ancestor and ALL its descendants:
+- **Monophyletic**: all descendants of one ancestor -> a valid evolutionary unit (clade)
+- **Paraphyletic**: ancestor + some but not all descendants -> not a valid evolutionary unit (e.g., "reptiles" excluding birds)
+- **Polyphyletic**: includes organisms from different ancestral lineages -> invalid (e.g., "warm-blooded" animals grouping birds + mammals)
+
+**Example:** Reptilia traditionally excluded birds, but birds are descended from dinosaurs which are reptiles. Modern classification places birds within Reptilia, making it monophyletic.
+
+## Molecular Clocks
+
+The molecular clock hypothesis: DNA changes accumulate at roughly constant rates -> divergence time can be estimated:
+
+$$	ext{Divergence time} = rac{	ext{Number of sequence differences}}{2 	imes 	ext{mutation rate}}$$
+
+Calibrated using fossil record dates. Estimates when species separated:
+- Human-chimpanzee: ~6-7 million years ago
+- Human-gorilla: ~9 million years ago
+- Human-orangutan: ~15 million years ago
+
+## AP Exam Focus
+
+- All life shares common ancestry (universal genetic code is key evidence)
+- Phylogenetic trees: nodes = common ancestors, tips = taxa, sister groups = closest relatives
+- Synapomorphies (shared derived characters) define clades; convergent features do not
+- Clade = monophyletic = ancestor + ALL descendants
+- Molecular clocks: sequence divergence estimates time since common ancestor
         questions: [
           {
             id: "7.4.1",
@@ -5307,19 +7767,105 @@ This means carriers (Aa) are far more common than the disease itself — about 1
         description: "Analyze homologous, analogous, molecular, and fossil evidence of common descent.",
         youtubeId: "5NdMnlt2keE",
         article: `
-# Evidence of Evolution
+# Speciation
 
-Evolutionary theory is supported by extensive evidence across scientific disciplines.
+![Natural selection and speciation diagram showing allopatric and sympatric speciation](/images/biology/natural_selection.png)
 
-## Forms of Evidence
-1. **The Fossil Record**: Illustrates transitions over geological time, showing the appearance of new traits and lineages.
-2. **Homology**: 
-   - **Homologous Structures**: Anatomical features in different species that share a common layout due to shared ancestry (e.g., human arm and bat wing bones).
-   - **Vestigial Structures**: Remnants of features that served functions in ancestors but are now nonfunctional (e.g., whale pelvis).
-3. **Analogy (Convergent Evolution)**: Similar structures that evolved independently in unrelated lineages due to similar environmental pressures (e.g., bird wing and butterfly wing).
-4. **Biogeography**: Geographic distribution of species reflecting continental drift (Pangea).
-5. **Molecular Homology**: DNA, RNA, and protein sequence alignments.
-`,
+<vocab term="Speciation" definition="The evolutionary process by which new species form from an ancestral population; requires evolution of reproductive isolation between diverging populations.">Speciation</vocab> is the origin of new species. It requires populations to diverge genetically until they become reproductively isolated - unable to interbreed and produce fertile offspring.
+
+## The Biological Species Concept
+
+<vocab term="Biological Species Concept" definition="Ernst Mayr's definition of a species as a group of populations whose members can interbreed with each other and produce fertile offspring, but are reproductively isolated from other such groups.">Biological Species Concept (Mayr, 1942)</vocab>: A species is a group of populations whose members can interbreed and produce fertile offspring but are reproductively isolated from other groups.
+
+**Limitations:**
+- Cannot apply to asexual organisms (bacteria reproduce without sex)
+- Cannot apply to extinct organisms (fossil record)
+- "Ring species" create ambiguities (A breeds with B, B with C, but A and C don't)
+- Hybridization still occurs between some distinct species
+
+**Other species concepts:**
+- **Morphological** (typological): defined by physical characteristics - works for fossils and asexual organisms
+- **Ecological**: defined by ecological niche
+- **Phylogenetic**: smallest clade sharing derived character
+
+## Reproductive Isolation Mechanisms
+
+### Prezygotic Barriers (Prevent mating or fertilization)
+
+| Mechanism | Description | Example |
+|---|---|---|
+| Habitat isolation | Occupy different habitats in same area | Two oak species: one in dry habitat, one in moist |
+| Temporal isolation | Breed at different times (seasons, times of day) | Two leopard frog species: breed different months |
+| Behavioral (ethological) | Different courtship rituals; mate recognition signals | Firefly flashing patterns; bird songs |
+| Mechanical | Incompatible reproductive structures | Flower shape and pollinator specificity |
+| Gametic | Sperm-egg incompatibility | Sea urchin species: different gamete surface proteins |
+
+### Postzygotic Barriers (After fertilization)
+
+| Mechanism | Description | Example |
+|---|---|---|
+| Hybrid inviability | Hybrid embryos abort or die young | Some frog hybrids die early in development |
+| Hybrid sterility | Hybrid survives but is sterile | Mule (horse x donkey): sterile due to chromosome mismatch |
+| Hybrid breakdown | First generation fertile, but later generations are infertile or inviable | Some cotton species hybrids |
+
+## Modes of Speciation
+
+### Allopatric Speciation (Geographic Isolation)
+
+<vocab term="Allopatric Speciation" definition="Speciation that occurs when populations are geographically separated, preventing gene flow; populations diverge independently, eventually becoming reproductively isolated.">Allopatric speciation</vocab> (most common mode):
+1. Geographic barrier (mountain range, river, ocean) splits a population
+2. Isolated populations evolve independently (different selection pressures, drift)
+3. After sufficient divergence, populations are reproductively isolated even if they come back together
+
+**Examples:**
+- Galapagos finches: colonized from South America; each island population diversified independently
+- Grand Canyon squirrels: Kaibab squirrel (north rim) and Abert squirrel (south rim) now distinct species
+
+### Sympatric Speciation (Same Geographic Area)
+
+<vocab term="Sympatric Speciation" definition="Speciation within the same geographic area without physical barriers; common in plants via polyploidy; less common in animals.">Sympatric speciation</vocab> occurs within the same geographic area:
+
+**Polyploidy (most common in plants):**
+- A tetraploid (4n) plant arises by error in meiosis or fertilization
+- Tetraploid can only successfully breed with other tetraploids (not diploid parent)
+- Instant speciation in one generation!
+- Examples: wheat (6n), cotton (4n), many agricultural crops
+- Allopolyploidy: polyploid from two different species; often sterile until chromosome doubling
+
+**Habitat differentiation:**
+- Insects specializing on different host plants in same area (apple maggot fly speciation from hawthorn to apple trees)
+- Disruptive selection can drive divergence without geographic barriers
+
+## Adaptive Radiation
+
+<vocab term="Adaptive Radiation" definition="The rapid evolution of many ecologically diverse species from a common ancestor, typically after entering a new environment with many unfilled niches.">Adaptive radiation</vocab>: Rapid diversification from a common ancestor into many ecologically diverse species:
+- Hawaiian honeycreepers: >50 species from one finch ancestor, filling many niche roles
+- Darwin's finches: 14 species from 1 ancestor in Galapagos
+- Cichlid fish: 300+ species in Lake Victoria diverged in ~15,000 years
+- Placental mammals: rapid radiation after dinosaur extinction 66 mya
+
+Conditions that promote adaptive radiation:
+- Geographic colonization of new environments
+- Mass extinctions opening ecological niches
+- Key evolutionary innovations (e.g., jaws in fish)
+
+## Pace of Evolution
+
+**Gradualism**: evolution occurs slowly and continuously through accumulation of many small changes
+
+**Punctuated Equilibrium** (Gould and Eldredge, 1972): evolution occurs in bursts of rapid change (speciation events) separated by long periods of stasis (little change)
+
+The fossil record often shows punctuated patterns:
+- Long periods of morphological stability
+- Rapid appearance of new forms (in geological time, thousands-tens of thousands of years)
+
+## AP Exam Focus
+
+- Allopatric speciation: geographic isolation -> independent evolution -> reproductive isolation
+- Sympatric speciation: polyploidy (plants, instant speciation) or ecological divergence
+- Reproductive isolation: prezygotic (before fertilization) vs. postzygotic (after fertilization)
+- Adaptive radiation: rapid diversification into available niches (Darwin's finches, Hawaiian birds)
+- Mule (horse x donkey hybrid) = example of hybrid sterility (postzygotic isolation)
         questions: [
           {
             id: "7.6.1",
@@ -5394,19 +7940,91 @@ Evolutionary theory is supported by extensive evidence across scientific discipl
         description: "Examine shared molecular and cellular features that link all life to a common ancestor.",
         youtubeId: "GhHOjC4oxh8",
         article: `
-# Common Ancestry
+# Phylogeny and the Tree of Life
 
-All eukaryotic and prokaryotic organisms share core characteristics that point to a single common ancestor.
+![Tree of life phylogeny diagram showing three domains of life](/images/biology/natural_selection.png)
 
-## Shared Cellular and Molecular Homologies
-- **The Genetic Code**: All organisms share the same universal triplet codon system (DNA and RNA) and synthesize proteins using the same 20 amino acids.
-- **Metabolic Pathways**: Core chemical reactions, like glycolysis, are conserved across all domains of life (Bacteria, Archaea, Eukarya).
-- **Ribosomes**: Every cell utilizes ribosomes to translate mRNA into proteins.
-- **Eukaryotic Conservation**: Eukaryotes share additional complex features:
-  - Membrane-bound organelles.
-  - Linear chromosomes wrapped around histone proteins.
-  - Cytoskeletons and endomembrane systems.
-`,
+<vocab term="Phylogeny" definition="The evolutionary history of a species or group of species; depicted in phylogenetic trees that show the branching pattern of descent from common ancestors.">Phylogeny</vocab> is the study of evolutionary relationships. Building and interpreting phylogenetic trees is a core AP Biology skill.
+
+## The Three Domains of Life
+
+Modern classification recognizes three domains based on molecular evidence:
+
+| Domain | Cell Type | Unique Features | Examples |
+|---|---|---|---|
+| Bacteria | Prokaryotic | Peptidoglycan cell walls; most common bacteria | E. coli, Streptococcus, cyanobacteria |
+| Archaea | Prokaryotic | Unique membrane lipids (ether linkages); different RNA polymerases; extremophiles | Methanogens, halophiles, thermophiles |
+| Eukarya | Eukaryotic | Membrane-bound nucleus; organelles | Plants, animals, fungi, protists |
+
+Key finding: Archaea are more closely related to Eukarya than to Bacteria (rRNA sequences). This three-domain system replaced the older five-kingdom system.
+
+## Taxonomy and Classification
+
+<vocab term="Taxonomy" definition="The science of naming, describing, and classifying organisms; uses a hierarchical system of categories (taxa) from species up through domain.">Taxonomy</vocab> hierarchical system (from specific to general):
+
+**Domain - Kingdom - Phylum - Class - Order - Family - Genus - Species**
+
+Mnemonic: "**D**umb **K**ings **P**lay **C**hess **O**n **F**unny **G**reen **S**quares"
+
+Species are named using binomial nomenclature (Genus species):
+- Homo sapiens (humans), Canis lupus (wolf), Felis catus (domestic cat)
+- Genus is capitalized; species is lowercase; entire name is italicized
+
+## Building Phylogenetic Trees
+
+### Parsimony Principle (Occam's Razor)
+The most likely phylogenetic tree requires the fewest evolutionary changes (most parsimonious):
+- Avoids invoking unnecessary independent evolutions of the same feature
+- Shared features are more likely to be homologous (inherited from common ancestor) than to have evolved independently multiple times
+
+### Maximum Likelihood
+Uses statistical models of sequence evolution to find the tree most likely to produce the observed data.
+
+### Bootstrap Values
+Measure of statistical support for each branch:
+- High bootstrap values (>70-80%) = well-supported node
+- Low bootstrap values = uncertain relationship
+
+## Reading Phylogenetic Trees: Common Mistakes
+
+**Mistake 1: Reading trees from left to right as "most primitive" to "most advanced"**
+All tip taxa are equally derived; there is no "most primitive" living species.
+
+**Mistake 2: Thinking branches can't be rotated**
+Any node can be rotated without changing the tree's meaning. Only the branching pattern matters.
+
+**Mistake 3: Counting nodes wrong**
+To find how many nodes (common ancestors) separate two species, count the nodes on the path between them.
+
+**Correct interpretation:**
+- Closer = more nodes shared = more recent common ancestor = more closely related
+
+## Major Eukaryotic Groups
+
+| Group | Key Features | Examples |
+|---|---|---|
+| Animals (Animalia) | Multicellular, heterotrophic, no cell wall | Humans, insects, fish |
+| Plants (Plantae) | Multicellular, autotrophic, cellulose cell wall | Trees, grasses, mosses |
+| Fungi (Fungi) | Multicellular mostly, heterotrophic, chitin cell wall, absorptive nutrition | Mushrooms, molds, yeasts |
+| Protists | Diverse; mostly unicellular eukaryotes; paraphyletic group | Amoeba, algae, slime molds |
+
+Note: "Protista" is not a valid monophyletic group - it's a wastebasket for diverse eukaryotes that don't fit other groups.
+
+## Convergent Evolution and Phylogenetic Pitfalls
+
+Convergent evolution creates analogous features that can mislead phylogenetics:
+- Eyes of vertebrates and cephalopods (octopus): independently evolved, structurally different
+- Streamlined body shape in dolphins, sharks, and ichthyosaurs: convergent adaptation to aquatic locomotion
+
+**Key principle**: Only shared derived characters (synapomorphies) should be used to infer relationships, NOT analogous (convergently evolved) features.
+
+## AP Exam Focus
+
+- Three domains: Bacteria, Archaea, Eukarya; Archaea more closely related to Eukarya
+- Reading cladograms: sister groups share most recent common ancestor at shared node
+- Parsimony: phylogeny requiring fewest evolutionary changes is most likely
+- Convergent evolution creates analogous structures (not evidence of relationship)
+- Taxonomic hierarchy: Domain-Kingdom-Phylum-Class-Order-Family-Genus-Species
         questions: [
           {
             id: "7.7.1",
@@ -5481,15 +8099,97 @@ All eukaryotic and prokaryotic organisms share core characteristics that point t
         description: "Analyze observed examples of modern evolution in real time.",
         youtubeId: "oehWNFGBCCg",
         article: `
-# Continuing Evolution
+# Evolution of Populations
 
-Evolution is not just a historical event; populations continue to evolve in response to changing environments in real time.
+![Population genetics diagram showing allele frequency changes through natural selection](/images/biology/natural_selection.png)
 
-## Observed Real-Time Evolution
-- **Antibiotic Resistance**: The overuse of antibiotics acts as a strong selective pressure on bacterial populations. Random mutations that grant resistance allow those bacteria to survive and multiply, creating resistant strains (e.g., MRSA).
-- **Pesticide Resistance**: Insect populations exposed to chemical pesticides quickly evolve resistance as sensitive insects die off, leaving only resistant individuals to breed.
-- **Viral Evolution**: Emergent viral strains (like Influenza or SARS-CoV-2) mutate their surface proteins to evade host immune memory.
-`,
+Evolution occurs at the level of populations, not individuals. <vocab term="Microevolution" definition="Changes in allele frequencies within a population over time; the smallest scale of evolution; includes natural selection, genetic drift, gene flow, and mutation.">Microevolution</vocab> refers to changes in allele frequencies within a population over generations. Understanding the mechanisms and quantification of these changes is central to population genetics.
+
+## Measuring Evolution: Allele Frequencies
+
+Evolution = change in allele frequency over time.
+
+To measure evolution:
+1. Determine initial allele frequencies
+2. Measure the same allele frequencies one or more generations later
+3. Calculate the change
+
+If allele frequencies have changed, evolution has occurred.
+
+## The Four Mechanisms of Microevolution
+
+### 1. Natural Selection
+Direction and intensity depend on:
+- Selection coefficient (s): how much fitness advantage/disadvantage a genotype has
+- Dominance relationships between alleles
+- Environmental conditions
+
+**Selection against recessive alleles** is slow because recessives are hidden in heterozygotes (carriers):
+- Sickle cell allele (HbS): s = high in malaria-free environments, but selection cannot eliminate it easily because of carriers
+- This is why recessive diseases persist in populations
+
+**Balancing selection** maintains multiple alleles in populations:
+- <vocab term="Heterozygote Advantage (Overdominance)" definition="A form of balancing selection in which heterozygotes have higher fitness than either homozygote; maintains genetic variation in populations (e.g., sickle-cell trait provides malaria resistance).">Heterozygote advantage</vocab>: Aa has higher fitness than AA or aa
+- Sickle cell anemia: HbA/HbS heterozygotes are resistant to malaria; HbA/HbA susceptible to malaria; HbS/HbS severely anemic
+- Result: both alleles maintained in populations where malaria is endemic
+
+### 2. Genetic Drift
+
+Effects increase in small populations:
+- Smaller populations -> greater random fluctuations in allele frequency
+- Eventually leads to fixation (frequency = 100%) or loss (frequency = 0%) of alleles
+- Reduces genetic diversity
+
+**Effective population size (Ne)**: the number of individuals that contribute to the next generation; often much smaller than census size:
+$$N_e = rac{4N_mN_f}{N_m + N_f}$$
+Where Nm and Nf are numbers of breeding males and females.
+
+### 3. Gene Flow
+
+Movement of alleles between populations:
+- Prevents local populations from becoming too genetically distinct
+- Introduces new alleles from other populations
+- Opposes divergence that would otherwise lead to speciation
+- High gene flow = populations remain genetically similar
+- Low gene flow = populations can diverge (potentially speciate)
+
+### 4. Mutation
+
+Creates new alleles:
+- Mutation rate per gene per generation: ~10^-6 to 10^-5
+- Very slow change by itself, but provides variation for selection to act on
+- Most new mutations are neutral or slightly deleterious
+
+## Sexual Selection
+
+<vocab term="Sexual Selection" definition="A component of natural selection in which certain traits increase success in mating; includes intrasexual competition (male-male combat) and intersexual selection (female mate choice).">Sexual selection</vocab> can drive rapid evolution of traits that seem costly:
+
+**Intrasexual selection (same-sex competition):**
+- Males compete for access to females
+- Selected traits: large body size, horns, antlers, aggressive behavior
+- Examples: elk antlers, elephant seal size dimorphism, male-male combat
+
+**Intersexual selection (mate choice):**
+- Usually females choose males (females invest more in offspring)
+- Selected traits: bright colors, elaborate displays, complex songs
+- Examples: peacock tail feathers, bird-of-paradise plumage, frog calls
+- **Runaway selection**: if females prefer extreme traits, selection can drive traits to exaggerated extremes (handicap principle - only healthy males can afford costly ornaments)
+
+## Population Size and Evolutionary Change
+
+| Population Size | Effect of Genetic Drift | Effectiveness of Selection | Molecular Evolution Rate |
+|---|---|---|---|
+| Very small (<100) | Very strong; alleles fixed or lost rapidly | Reduced (drift can fix slightly harmful alleles) | High (drift dominates) |
+| Medium (100-10,000) | Moderate | Selection more effective | Moderate |
+| Very large (>10,000) | Negligible | Very effective | Low (selection removes bad mutations efficiently) |
+
+## AP Exam Focus
+
+- Evolution = change in allele frequency over time (not change in individual's traits!)
+- Natural selection, genetic drift, gene flow, mutation are four mechanisms
+- Heterozygote advantage maintains variation: sickle cell HbA/HbS has malaria resistance
+- Sexual selection: intrasexual (competition) vs. intersexual (mate choice)
+- Small populations: drift is stronger; may fix slightly deleterious alleles
         questions: [
           {
             id: "7.8.1",
@@ -5564,21 +8264,100 @@ Evolution is not just a historical event; populations continue to evolve in resp
         description: "Reconstruct evolutionary relationships using cladograms and molecular phylogenetic trees.",
         youtubeId: "utF7G9Rl1Os",
         article: `
-# Phylogeny
+# Mechanisms of Evolution
 
-Phylogeny is the study of evolutionary relationships among species.
+![Natural selection modes showing how populations change over generations](/images/biology/natural_selection.png)
 
-## Cladograms and Phylogenetic Trees
-These diagrams illustrate hypothesized evolutionary histories:
-- **Nodes**: Branching points that represent a shared common ancestor from which lineages diverged.
-- **Sister Taxa**: Organisms that share an immediate common ancestor not shared by other groups.
-- **Outgroup**: A reference taxon that diverged earlier than the other groups, serving as a basis of comparison.
+The mechanisms of evolution operate simultaneously and interact to shape the genetic composition of populations. A thorough understanding requires knowing how each mechanism works independently and how they interact.
 
-## Construction and Evidence
-Modern trees are constructed using morphological features, fossil records, and molecular data:
-- **Derived Characters**: Novel traits that evolved in a lineage and are shared by its descendants.
-- **Molecular Data**: Comparing DNA or protein sequences provides the most accurate measure of evolutionary relationships. Fewer sequence differences indicate a more recent common ancestor.
-`,
+## Review: The Five Mechanisms
+
+1. **Natural selection** - differential reproductive success based on heritable phenotypic differences
+2. **Genetic drift** - random changes in allele frequencies (more pronounced in small populations)
+3. **Gene flow** - movement of alleles between populations via migrating individuals
+4. **Mutation** - changes in DNA sequence creating new alleles
+5. **Non-random mating** - mate choice or inbreeding affects genotype frequencies
+
+## Mechanisms and Their Evolutionary Consequences
+
+### Genetic Drift in Detail
+
+<vocab term="Genetic Drift" definition="Random fluctuations in allele frequencies due to chance events in reproduction; particularly influential in small populations; can fix alleles regardless of fitness effects.">Genetic drift</vocab> has several important properties:
+
+**Random with respect to fitness**: drift can fix harmful alleles or eliminate beneficial ones
+**Decreases genetic variation**: alleles are lost or fixed
+**Stronger in smaller populations**: the smaller the population, the more pronounced the random fluctuations
+**Long-term consequence**: most alleles eventually fix or go extinct due to drift
+
+**Neutral theory of molecular evolution** (Kimura): Most evolutionary change at the molecular level is neutral (neither advantageous nor harmful) and driven by drift, not selection.
+- Evidence: rate of molecular evolution is relatively constant (molecular clock)
+- Synonymous mutations (don't change amino acid) accumulate faster than non-synonymous ones (not under selection)
+
+### Gene Flow and Population Structure
+
+<vocab term="Gene Flow" definition="The transfer of alleles from one population to another through migration of individuals or dispersal of gametes; tends to homogenize gene pools and prevent speciation.">Gene flow</vocab> is a powerful homogenizing force:
+
+**FST statistic**: measures genetic differentiation between populations
+$$F_{ST} = rac{H_T - H_S}{H_T}$$
+Where HT = expected heterozygosity in total population, HS = average expected heterozygosity within subpopulations.
+- FST = 0: no differentiation (complete gene flow)
+- FST = 1: complete differentiation (no gene flow)
+- Human populations: FST ~0.1-0.15 (we are not very differentiated; recent out-of-Africa bottleneck)
+
+### Mutation-Selection Balance
+
+Some deleterious alleles are maintained at low frequencies:
+- Mutation creates new copies of harmful alleles at rate mu
+- Selection removes them at rate proportional to s (selection coefficient) and q^2 (for recessive)
+- Equilibrium frequency of recessive lethal: $q_{eq} = \sqrt{\mu/s}$
+
+Example: cystic fibrosis (autosomal recessive lethal, s~0.5 in untreated)
+- Mutation rate ~1/500,000
+- Equilibrium q = sqrt(2/1,000,000 / 0.5) = ~0.002, or carrier frequency 2pq ~0.004 = 0.4%
+- Actual carrier frequency in Europeans ~4% -- much higher than expected from mutation-selection balance alone, suggesting heterozygote advantage or founder effect
+
+### Modes of Natural Selection (Expanded)
+
+**Purifying (negative) selection**: removes harmful alleles
+- Most common form of selection
+- Maintains protein function by eliminating damaging mutations
+- Results in sequence conservation at functionally important sites
+
+**Positive (directional) selection**: favors a new beneficial allele
+- Drives beneficial allele from low to high frequency
+- Creates "selective sweep": genetic variation near selected gene reduced as it increases
+- Examples: lactase persistence, sickle cell (in malaria regions), drug resistance
+
+**Balancing selection**: maintains variation (multiple alleles at intermediate frequencies)
+- Heterozygote advantage (overdominance)
+- Frequency-dependent selection: rare alleles are favored (e.g., immune system MHC)
+- Seasonal or spatial variation in selection
+
+## Linkage Disequilibrium
+
+When two alleles at different loci are found together more often than expected by chance:
+- Result of: recent mutation (hasn't had time to recombine), selection (two alleles together have high fitness), founder effect
+- As recombination breaks up combinations, linkage disequilibrium decreases over generations
+
+## Interaction of Mechanisms: An Example
+
+Consider a small island population of birds:
+1. Founding population has limited alleles (founder effect/drift reduces variation)
+2. Natural selection favors darker plumage (camouflage from predators)
+3. Mutation slowly introduces new allele variants
+4. Occasionally, birds from mainland bring new alleles (gene flow)
+5. Females prefer larger males (sexual selection)
+6. Over time, island population may diverge enough from mainland for speciation
+
+All mechanisms operate simultaneously, each influencing the others.
+
+## AP Exam Focus
+
+- Distinguish mechanisms: selection (adaptive), drift (random), gene flow (homogenizing), mutation (creates variation)
+- Neutral theory: most molecular variation is neutral, maintained by drift
+- Genetic drift stronger in small populations; can fix alleles regardless of fitness
+- Gene flow prevents speciation; high FST indicates little gene flow
+- Balancing selection maintains variation (heterozygote advantage is key example)
         questions: [
           {
             id: "7.9.1",
@@ -5653,21 +8432,105 @@ Modern trees are constructed using morphological features, fossil records, and m
         description: "Differentiate between allopatric and sympatric speciation and reproductive isolation.",
         youtubeId: "2oiron3PTOU",
         article: `
-# Speciation
+# Origin of Life
 
-Speciation is the evolutionary process by which a single ancestral species splits into two or more distinct species. This requires **reproductive isolation**.
+![Cell structure diagram showing evolution from simple chemical systems to first cells](/images/biology/cell_size_comparison.png)
 
-## Allopatric vs. Sympatric Speciation
-- **Allopatric Speciation**: Occurs when a population is split by a physical **geographic barrier** (e.g., river, mountain range). The isolated populations diverge due to selection, drift, and mutations until they can no longer interbreed.
-- **Sympatric Speciation**: Occurs without geographic isolation, within the same habitat. Often driven by:
-  - *Polyploidy* (accidental extra chromosome sets, common in plants).
-  - *Habitat Differentiation* (specializing in different niches).
-  - *Sexual Selection*.
+The origin of life (~3.5-4 billion years ago) is one of the most profound questions in science. While no direct fossil evidence exists from the very first cells, chemical, phylogenetic, and experimental evidence provides a coherent picture of how life could have emerged from non-living chemistry.
 
-## Reproductive Isolating Mechanisms
-- **Prezygotic Barriers** (prevent fertilization): Habitat, temporal (breed at different times), behavioral (different courtship calls), mechanical (incompatible genitalia), gametic isolation.
-- **Postzygotic Barriers** (prevent fertile offspring): Reduced hybrid viability (hybrid dies early), reduced hybrid fertility (hybrid is sterile, e.g., mule).
-`,
+## Timeline of Life on Earth
+
+| Event | Approximate Time |
+|---|---|
+| Earth forms | 4.5 billion years ago |
+| Chemical evolution (prebiotic chemistry) | 4.0-3.8 billion years ago |
+| First cells (prokaryotes) | ~3.5-3.8 billion years ago (stromatolite fossils) |
+| Photosynthetic cyanobacteria | ~2.7 billion years ago |
+| Great Oxygenation Event | ~2.4 billion years ago |
+| First eukaryotes | ~1.5-2 billion years ago |
+| First multicellular organisms | ~600-700 million years ago |
+| Cambrian explosion | ~541 million years ago |
+
+## Chemical Evolution: The Miller-Urey Experiment
+
+<vocab term="Miller-Urey Experiment" definition="A 1953 experiment by Stanley Miller and Harold Urey demonstrating that organic molecules (amino acids) can form spontaneously from inorganic compounds under simulated early Earth conditions.">Miller-Urey experiment (1953)</vocab>:
+- Setup: Water vapor, methane (CH4), ammonia (NH3), hydrogen (H2) - simulated early Earth atmosphere
+- Energy: Electric sparks simulated lightning
+- Result: After a week, amino acids, sugars, and other organic molecules had formed spontaneously
+
+Significance: Organic molecules can arise by abiotic (non-biological) chemical processes. This is known as **abiogenesis** (life from non-life).
+
+Note: The exact composition of early Earth's atmosphere is still debated (now thought to have been CO2 and N2 dominated), but organic chemistry occurs in many environments:
+- Hydrothermal vents: deep sea vents produce organic molecules even today
+- Meteorites: amino acids and other organic molecules found in carbonaceous chondrites
+
+## The RNA World Hypothesis
+
+A central chicken-and-egg problem: DNA stores information but cannot catalyze reactions; proteins catalyze reactions but cannot store information. Which came first?
+
+<vocab term="RNA World Hypothesis" definition="The hypothesis that early life was based on RNA, which can both store genetic information and catalyze chemical reactions; ribozymes are modern evidence that RNA once performed both functions.">RNA World Hypothesis</vocab>:
+- RNA can both store information (like DNA) and catalyze reactions (ribozymes)
+- Evidence: ribosomes use rRNA (not protein) to catalyze peptide bond formation
+- Early cells may have used RNA as both genome and enzyme
+- DNA (more stable) later took over information storage
+- Proteins (more diverse catalysts) later took over enzymatic functions
+
+**Ribozymes** - RNA molecules with catalytic activity:
+- Group I and II self-splicing introns
+- RNase P (RNA component cleaves pre-tRNA)
+- Ribosomal peptidyl transferase activity (23S rRNA)
+
+## Protobionts: Pre-Cellular Systems
+
+Before true cells, simple aggregates of molecules may have formed:
+
+**Coacervates**: droplets of protein-polysaccharide mixtures that can grow and divide
+
+**Liposomes (fatty acid vesicles)**: lipids spontaneously form bilayers in water:
+- Fatty acids form vesicles that can grow, pinch off (divide), and concentrate molecules inside
+- Key step: molecules inside protected from outside environment
+- RNA or DNA inside could begin replication
+
+Properties of protocells:
+- Semipermeable membrane (lipid bilayer)
+- Metabolism (simple chemical reactions)
+- Reproduction by fission
+- Some form of heredity (RNA or DNA template)
+
+## The First Cells: LUCA
+
+LUCA (Last Universal Common Ancestor):
+- All life shares this single ancestor (supported by universal features)
+- Likely had: DNA genome, RNA transcription, ribosomal translation, cell membrane, ATP energy currency
+- Modern bacteria and archaea diverged from LUCA shortly after
+
+Features shared by ALL life:
+- Lipid bilayer membranes
+- DNA as genetic material
+- RNA as intermediary
+- Ribosomal protein synthesis
+- ATP as energy currency
+- Genetic code (same codons)
+
+These shared features are most parsimoniously explained by descent from one common ancestor.
+
+## Great Oxygenation Event
+
+Before ~2.4 billion years ago, Earth's atmosphere had little free O2:
+- Early life was anaerobic
+- Cyanobacteria evolved oxygenic photosynthesis (~2.7 bya): 6CO2 + 6H2O -> C6H12O6 + 6O2
+- O2 accumulated, first reacting with iron in oceans (banded iron formations)
+- Then O2 entered atmosphere -> **Great Oxygenation Event** (~2.4 bya)
+- O2 was toxic to anaerobic organisms (mass extinction of anaerobes)
+- Some survivors adapted to use O2 -> aerobic respiration evolved (much more efficient: 38 ATP vs. 2 ATP per glucose)
+
+## AP Exam Focus
+
+- Miller-Urey experiment: organic molecules (amino acids) form from inorganic precursors
+- RNA World: RNA can both store information and catalyze reactions (ribozymes)
+- Ribosomes are ancient; rRNA (not protein) catalyzes peptide bond formation
+- Lipid vesicles (liposomes) could have been protocell membranes
+- Great Oxygenation Event: cyanobacteria produced O2; enabled evolution of aerobic respiration
         questions: [
           {
             id: "7.10.1",
@@ -5742,18 +8605,115 @@ Speciation is the evolutionary process by which a single ancestral species split
         description: "Analyze mass extinctions and subsequent adaptive radiation events.",
         youtubeId: "ACiMZcJefVs",
         article: `
-# Extinction
+# Prokaryotes
 
-Extinction occurs when a species is completely eliminated from the biosphere, often driven by rapid environmental changes.
+![Cell size comparison showing prokaryotic bacteria structure and features](/images/biology/cell_size_comparison.png)
 
-## Mass Extinctions
-Earth has experienced five major mass extinction events (e.g., the Permian and Cretaceous extinctions):
-- These events are caused by catastrophic environmental disruptions (asteroid impacts, massive volcanism, climate shifts).
-- Mass extinctions decimate dominant lineages, opening up ecological niches.
+<vocab term="Prokaryotes" definition="Single-celled organisms lacking a membrane-bound nucleus and other membrane-bound organelles; divided into two domains: Bacteria and Archaea.">Prokaryotes</vocab> (domains Bacteria and Archaea) are the most abundant and metabolically diverse organisms on Earth. Despite their small size and simple structure, they drive major biogeochemical cycles that maintain life on Earth.
 
-## Adaptive Radiation
-Following a mass extinction, the surviving lineages diversify rapidly to fill the vacant niches. This burst of diversification is called **adaptive radiation** (e.g., mammals diversifying rapidly after the extinction of non-avian dinosaurs).
-`,
+## Prokaryotic Cell Structure
+
+| Feature | Prokaryote | Eukaryote |
+|---|---|---|
+| Nucleus | No (nucleoid region) | Yes (membrane-bound) |
+| Chromosome | Circular; one main chromosome | Multiple linear chromosomes |
+| Membrane-bound organelles | No | Yes |
+| Ribosomes | 70S (50S + 30S) | 80S (60S + 40S) |
+| Cell wall | Usually (peptidoglycan in bacteria; different in archaea) | Only plants/fungi (different composition) |
+| Cytoskeleton | Simple (FtsZ, MreB proteins) | Complex (actin, tubulin, IF) |
+| DNA packaging | Nucleoid-associated proteins | Histones around DNA |
+| Size | 0.1-10 micrometers | 10-100 micrometers |
+
+## Unique Prokaryotic Structures
+
+**Plasmids**: small circular DNA molecules separate from the main chromosome
+- Not essential for survival in normal conditions
+- Carry genes for antibiotic resistance, toxin production, etc.
+- Can be transferred between bacteria by conjugation
+
+**Pili**: protein appendages on cell surface
+- Sex pili: used in conjugation (DNA transfer)
+- Fimbriae: help attach to surfaces and to host cells
+
+**Flagella**: rotating protein filaments for movement
+- Powered by proton gradient (not ATP directly)
+- Chemotaxis: bacteria swim toward nutrients or away from toxins
+
+**Capsule**: sticky polysaccharide layer outside cell wall
+- Protects from phagocytosis by immune cells
+- Aids in biofilm formation
+- Example: Streptococcus pneumoniae capsule required for virulence
+
+**Endospores**: dormant, resistant structures formed by some gram-positive bacteria
+- Extremely resistant to heat, radiation, desiccation, chemicals
+- Example: Bacillus anthracis (anthrax) spores can survive decades
+
+## Gram Staining: A Fundamental Classification
+
+<vocab term="Gram Staining" definition="A differential staining technique that divides bacteria into two groups based on cell wall composition: gram-positive (thick peptidoglycan, stain purple) and gram-negative (thin peptidoglycan, outer membrane, stain pink).">Gram staining</vocab> reveals cell wall structure:
+
+| Feature | Gram-Positive | Gram-Negative |
+|---|---|---|
+| Peptidoglycan layer | Thick (20-80 nm) | Thin (2-7 nm) |
+| Outer membrane | No | Yes (LPS - lipopolysaccharide) |
+| Stain color | Purple (crystal violet retained) | Pink/red (counterstain) |
+| Antibiotic sensitivity | Sensitive to penicillin (targets peptidoglycan) | Less sensitive to many antibiotics |
+| Toxins | Gram-positive exotoxins secreted | LPS is endotoxin (released on cell death) |
+| Examples | Staphylococcus, Streptococcus, Bacillus | E. coli, Salmonella, Helicobacter pylori |
+
+## Bacterial Reproduction and Genetics
+
+**Binary fission**: bacteria divide by splitting in two
+- No mitosis; nucleoid regions separate as cell elongates
+- Under optimal conditions: E. coli divides every 20 minutes (2^72 cells in 24 hours!)
+
+**Genetic variation in bacteria (without sexual reproduction):**
+
+1. **Transformation**: uptake of naked DNA from environment
+   - Griffith's experiment (1928): demonstrated genetic transformation
+   - Competent bacteria actively take up DNA; natural in some bacteria (Streptococcus, Bacillus)
+
+2. **Transduction**: virus (bacteriophage) transfers bacterial DNA to new host
+   - Generalized: random bacterial genes packaged in phage
+   - Specialized: specific genes near phage integration site
+   
+3. **Conjugation**: "bacterial sex" - direct DNA transfer via sex pilus
+   - F+ (male) bacteria contain F plasmid; form pilus to F- (female) bacteria
+   - F plasmid or chromosomal DNA can be transferred
+   - Primary mechanism of antibiotic resistance gene spread
+
+## Metabolic Diversity
+
+Prokaryotes exhibit unparalleled metabolic diversity:
+
+| Metabolic Type | Energy Source | Carbon Source | Examples |
+|---|---|---|---|
+| Photoautotroph | Light | CO2 | Cyanobacteria, purple bacteria |
+| Chemoautotroph | Inorganic chemicals | CO2 | Nitrifying bacteria, sulfur bacteria |
+| Photoheterotroph | Light | Organic compounds | Purple nonsulfur bacteria |
+| Chemoheterotroph | Organic chemicals | Organic compounds | E. coli, most pathogens, humans |
+
+## Ecological Roles of Prokaryotes
+
+**Nitrogen cycle** (critical for all life):
+- <vocab term="Nitrogen Fixation" definition="The conversion of atmospheric N2 gas to ammonia (NH3) by nitrogen-fixing bacteria; the only way organisms can access atmospheric nitrogen.">Nitrogen fixation</vocab>: N2 -> NH3 (Rhizobium in root nodules with legumes; free-living Azotobacter)
+- Nitrification: NH3 -> NO2- -> NO3- (Nitrosomonas, Nitrobacter)
+- Denitrification: NO3- -> N2 (returns nitrogen to atmosphere; anaerobic)
+
+**Carbon cycle**: decomposition of organic matter; methane production (methanogens)
+
+**Extreme environments** (archaea):
+- Thermophiles: hot springs (Sulfolobus)
+- Halophiles: salt lakes (Halobacterium)
+- Methanogens: produce methane in swamps, cow stomachs, wetlands
+
+## AP Exam Focus
+
+- Prokaryotic features: no nucleus, circular DNA, 70S ribosomes, usually have cell wall
+- Gram-positive: thick peptidoglycan, no outer membrane; gram-negative: thin peptidoglycan + outer membrane
+- Three mechanisms of gene transfer: transformation, transduction, conjugation
+- Nitrogen fixation: N2 to NH3; only done by prokaryotes (Rhizobium in legume nodules)
+- Archaea: extreme environments; more closely related to Eukarya than Bacteria
         questions: [
           {
             id: "7.11.1",
@@ -5828,18 +8788,88 @@ Following a mass extinction, the surviving lineages diversify rapidly to fill th
         description: "Analyze how genetic diversity protects populations from environmental catastrophes.",
         youtubeId: "IrGPUH0DKQY",
         article: `
-# Variations in Populations
+# Eukaryotes
 
-Genetic diversity within a population is essential for its long-term survival and resilience.
+![Cell structure diagram showing eukaryotic organelles and their functions](/images/biology/endomembrane_system.png)
 
-## Importance of Diversity
-A population with high genetic variation contains a broad array of alleles:
-- If the environment shifts (e.g., a new disease emerges, or temperatures drop), it is highly likely that some individuals will possess alleles that grant tolerance or resistance.
-- These individuals survive, reproduce, and prevent population extinction.
+<vocab term="Eukaryotes" definition="Organisms with cells containing a membrane-bound nucleus and other membrane-bound organelles; includes protists, fungi, plants, and animals; arose ~1.5-2 billion years ago from prokaryotic ancestors.">Eukaryotes</vocab> (domain Eukarya) include the most structurally complex organisms on Earth. Their defining feature - compartmentalization - enables the metabolic sophistication necessary for multicellular complexity.
 
-## Risks of Low Diversity
-Monocultures (populations with near-zero genetic diversity, like cloned agricultural crops) are highly vulnerable. A single pathogen can wipe out the entire population since no individuals possess alleles for resistance (e.g., the Irish Potato Famine).
-`,
+## Major Eukaryotic Groups
+
+### Protists (paraphyletic group)
+- Most ancient eukaryotes; diverse and largely unicellular
+- Include photosynthetic algae, heterotrophic amoeba, and parasitic apicomplexans
+- Many of extreme biological importance:
+  - Plasmodium: causes malaria (via Anopheles mosquitoes); kills ~600,000 people/year
+  - Trypanosoma: causes sleeping sickness and Chagas disease
+  - Phytoplankton (diatoms, dinoflagellates): produce ~50% of Earth's oxygen
+  - Kelp (brown algae): foundation of marine kelp forest ecosystems
+
+### Fungi
+- Heterotrophic, absorptive nutrition (secrete digestive enzymes externally, absorb products)
+- Cell walls made of chitin (also in arthropod exoskeletons)
+- Mostly multicellular (hyphae -> mycelium), except yeasts (unicellular)
+- Ecological role: primary decomposers; recycle nutrients
+- Economic importance: bread yeast (Saccharomyces cerevisiae), antibiotics (Penicillium), edible mushrooms
+
+**Fungal life cycle features:**
+- Dikaryotic phase: two haploid nuclei in cell but not fused (unique to fungi)
+- Sexual reproduction: spore formation
+- Asexual reproduction: spores from conidiophores or sporangia
+
+### Plants
+- Multicellular, autotrophic (photosynthesis)
+- Cell walls (cellulose); chloroplasts; large central vacuoles
+- Adapted to terrestrial life: cuticle (waxy coating), stomata (gas exchange), vascular tissue (xylem/phloem)
+- Alternation of generations (sporophyte and gametophyte stages)
+
+**Plant evolution: Adaptations to land**
+
+| Group | Key Innovation | Examples |
+|---|---|---|
+| Bryophytes (mosses) | Land colonization (no vascular tissue) | Mosses, liverworts, hornworts |
+| Lycophytes | Vascular tissue | Club mosses |
+| Pteridophytes (ferns) | Vascular tissue + leaves | Ferns, horsetails |
+| Gymnosperms | Seeds (no fruit) | Conifers, cycads, ginkgo |
+| Angiosperms | Seeds + flowers + fruits | All flowering plants; ~90% of plant species |
+
+**Key land plant innovations:**
+- <vocab term="Vascular Tissue" definition="Specialized conducting tissue in plants (xylem and phloem) that transports water, minerals, and organic compounds throughout the plant body.">Vascular tissue</vocab> (xylem: water/minerals; phloem: sugars)
+- Seeds: protect embryo, enable dispersal without water
+- Flowers and fruits: facilitate animal-aided pollination and seed dispersal
+
+### Animals (Animalia)
+- Multicellular, heterotrophic, no cell wall
+- Most have nervous system and muscle tissue
+- Sexual reproduction predominates
+- Bilateral symmetry in most; radial symmetry in cnidarians and echinoderms
+
+**Major animal phyla and key features:**
+
+| Phylum | Key Features | Examples |
+|---|---|---|
+| Porifera (sponges) | No true tissues; filter feeders | Sea sponges |
+| Cnidaria | Radial symmetry; nematocysts | Jellyfish, sea anemones, coral |
+| Platyhelminthes | Flatworms; acoelomate | Planaria, tapeworms, flukes |
+| Nematoda | Roundworms; pseudocoelomate | C. elegans, hookworm, Ascaris |
+| Mollusca | Soft body; mantle; often shell | Snails, clams, octopus, squid |
+| Annelida | Segmented worms; coelomate | Earthworms, leeches, polychaetes |
+| Arthropoda | Exoskeleton; jointed appendages | Insects, spiders, crabs, lobsters |
+| Echinodermata | Water vascular system; spiny; radial | Sea stars, sea urchins, sea cucumbers |
+| Chordata | Notochord; dorsal nerve cord; pharyngeal slits; post-anal tail | Vertebrates + tunicates + lancelets |
+
+**Animal key innovations:**
+- Bilateral symmetry (most animals): allows directed movement; head/tail organization
+- Coelom: true body cavity lined with mesoderm; allows organ development
+- Segmentation: repetitive body units enable specialization (arthropods, annelids, vertebrates)
+
+## AP Exam Focus
+
+- Fungi: chitin cell walls, heterotrophic, absorptive nutrition, decomposers
+- Plants: cellulose cell walls, autotrophic, adapted to land (vascular tissue, seeds, flowers)
+- Animal phylogeny: key innovations include bilateral symmetry, coelom, segmentation
+- Protists include malaria-causing Plasmodium; also key primary producers (phytoplankton)
+- Alternation of generations in plants: sporophyte (2n) and gametophyte (n) stages
         questions: [
           {
             id: "7.12.1",
@@ -5914,21 +8944,114 @@ Monocultures (populations with near-zero genetic diversity, like cloned agricult
         description: "Analyze prebiotic chemical evolution and the RNA World hypothesis.",
         youtubeId: "rybHKBIDcXM",
         article: `
-# Origin of Life on Earth
+# Biological Diversity
 
-Scientific hypotheses suggest that life on Earth arose through chemical evolution over billions of years.
+![Ecology and energy flow diagram showing diverse organisms in ecosystem](/images/biology/ecology_energy_flow.png)
 
-## Steps of Prebiotic Evolution
-1. **Synthesis of Organic Monomers**: Inorganic gases reacted under reducing conditions to form organic monomers (amino acids, nucleotides). This was demonstrated by the **Miller-Urey Experiment**.
-2. **Polymerization**: Monomers joined on hot clay or sand surfaces to form complex polymers (proteins, nucleic acids).
-3. **Protocells**: Polymers were encapsulated in lipid membranes, creating isolated internal environments.
-4. **Self-Replication**: The emergence of inheritance molecules.
+<vocab term="Biodiversity" definition="The variety of life at all levels of organization - from genetic variation within species through species diversity in communities to ecosystem diversity; the result of evolution over 3.8 billion years.">Biodiversity</vocab> encompasses genetic variation within species, the variety of species in communities, and the diversity of ecosystems. The estimated ~8.7 million species on Earth (most undescribed) are the result of billions of years of evolution.
 
-## The RNA World Hypothesis
-Hypothesizes that **RNA** was the first genetic material. Unlike DNA, RNA can:
-- Store genetic information.
-- Catalyze chemical reactions (acting as enzymes called **ribozymes**). This dual function allowed prebiotic systems to replicate before the evolution of DNA and proteins.
-`,
+## Levels of Biodiversity
+
+**Genetic diversity**: Variation in DNA sequences within a species
+- Enables populations to adapt to environmental change
+- Reduced in bottlenecked or inbred populations (cheetahs, island species)
+
+**Species diversity**: Number and relative abundance of species in a community
+- Measured by **species richness** (number of species) and **evenness** (relative abundances)
+- High species diversity often associated with ecosystem stability
+
+**Ecosystem diversity**: Variety of different ecosystem types on Earth
+- Tropical rainforests, coral reefs, temperate forests, grasslands, tundra, etc.
+- Each provides different services (habitat, carbon storage, water purification)
+
+## Macroevolution: Large-Scale Evolutionary Patterns
+
+<vocab term="Macroevolution" definition="Large-scale evolutionary changes above the species level, including the origin of major groups (orders, classes, phyla), adaptive radiations, and mass extinctions.">Macroevolution</vocab> refers to evolutionary patterns above the species level:
+
+### Adaptive Radiation
+Rapid diversification into many ecologically diverse species:
+- Hawaiian honeycreepers: 50+ species from one finch ancestor
+- Cichlid fish: 300+ species in Lake Victoria in 15,000 years
+- Mammals: explosive radiation after dinosaur extinction 66 mya
+
+### Mass Extinctions
+Catastrophic loss of species (>75% in geological short time):
+
+| Mass Extinction | Time | Cause | % Species Lost |
+|---|---|---|---|
+| End-Ordovician | 443 mya | Glaciation, sea level drop | ~85% |
+| Late Devonian | 375 mya | Multiple causes | ~75% |
+| End-Permian (Great Dying) | 252 mya | Volcanism, warming, ocean acidification | ~95% |
+| End-Triassic | 201 mya | Volcanism | ~80% |
+| End-Cretaceous (K-Pg) | 66 mya | Asteroid impact + volcanism | ~76% |
+
+After each extinction: surviving lineages radiate into vacated ecological roles.
+
+**The 6th Mass Extinction**: Currently underway due to human activities
+- Species extinction rate: 100-1,000x background rate
+- Caused by: habitat destruction, climate change, invasive species, pollution, overharvesting
+
+## Major Patterns in Biological Diversity
+
+### Latitudinal Diversity Gradient
+Species diversity generally increases from poles to equator:
+- Tropical rainforests: highest diversity (~50% of species in <10% of land area)
+- Tundra: very low diversity
+- Explanations: greater energy input at tropics, greater area, greater age (less disturbed by glaciation)
+
+### Island Biogeography Theory (MacArthur and Wilson)
+Equilibrium species richness on an island is determined by:
+- Immigration rate (decreases as island becomes more species-rich; fewer new species to come)
+- Extinction rate (increases as island becomes more species-rich; more competition)
+
+Equilibrium = where immigration rate = extinction rate
+
+Predictions:
+- **Larger islands**: higher equilibrium richness (lower extinction rates)
+- **Closer to mainland**: higher equilibrium richness (higher immigration rates)
+
+This predicts that habitat fragmentation (creating "islands" of habitat) reduces species richness.
+
+## Coevolution: Reciprocal Evolution Between Species
+
+<vocab term="Coevolution" definition="The process by which two or more species exert reciprocal selective pressures on each other, each driving evolutionary changes in the other.">Coevolution</vocab> occurs when two species exert selection pressure on each other:
+
+**Arms races:**
+- Plant toxins and herbivore detoxification mechanisms evolve in parallel
+- Predator speed and prey speed coevolve
+- Host immune system and pathogen evasion mechanisms
+
+**Mutualistic coevolution:**
+- Flower shape and pollinator body shape match precisely
+- Fig trees and fig wasps: obligate mutualism; neither can reproduce without the other
+- Legumes and Rhizobium bacteria: nitrogen fixation
+
+**Parasitic coevolution:**
+- Red Queen hypothesis: parasites drive rapid evolution of host immune systems
+- Example: MHC diversity in humans (high variation in immune recognition genes driven by parasite pressure)
+
+## Conservation Biology: Applying Evolutionary Principles
+
+Conservation biology uses evolutionary and ecological principles to protect biodiversity:
+
+Key strategies:
+- **Protect large areas**: supports larger populations, reduces drift effects, maintains species diversity
+- **Maintain connectivity**: corridors between habitat fragments maintain gene flow
+- **Captive breeding**: preserve genetic diversity for reintroduction (genetic management required)
+- **Protect keystone species**: species with disproportionate ecological impact
+
+<vocab term="Keystone Species" definition="A species that has a disproportionately large impact on its ecosystem relative to its biomass; their removal causes dramatic changes in community structure (e.g., sea otters maintaining kelp forests).">Keystone species</vocab> examples:
+- Sea otters: eat sea urchins; without them, urchin populations explode and destroy kelp forests
+- Wolves in Yellowstone: "trophic cascade" - wolves control elk, which allows riparian vegetation to recover
+- African elephants: create water holes and paths used by many other species
+
+## AP Exam Focus
+
+- Three levels of biodiversity: genetic, species, ecosystem
+- Mass extinctions: five major events; the K-Pg event killed non-avian dinosaurs (asteroid impact)
+- Island biogeography: larger, closer islands have more species (higher immigration, lower extinction)
+- Coevolution: reciprocal selection between species (arms races, mutualism, parasitism)
+- Keystone species: disproportionate ecological effect; sea otters, wolves are classic examples
         questions: [
           {
             id: "7.13.1",
@@ -6010,19 +9133,103 @@ Hypothesizes that **RNA** was the first genetic material. Unlike DNA, RNA can:
         description: "Analyze behavioral and physiological responses of organisms to environmental changes.",
         youtubeId: "Js0yVCLKKFE",
         article: `
-# Responses to the Environment
+# Ecology: Studying the Interactions of Life
 
-Organisms respond to environmental cues to maintain homeostasis and maximize survival.
+![Ecology energy flow diagram showing trophic levels, producers, consumers, and decomposers](/images/biology/ecology_energy_flow.png)
 
-## Behavioral Responses
-- **Taxis**: Directed movement toward (positive) or away from (negative) a stimulus (e.g., phototaxis in insects toward light).
-- **Kinesis**: Undirected, random movement in response to a stimulus (e.g., sowbugs speeding up in dry environments to find moisture).
-- **Communication**: Organisms exchange signals to alter behavior (e.g., honeybee waggle dance, pheromones, warning calls).
+<vocab term="Ecology" definition="The scientific study of the interactions between organisms and their environments, including the biotic (living) and abiotic (nonliving) components; operates at the level of organisms, populations, communities, and ecosystems.">Ecology</vocab> is the study of how organisms interact with each other and with their physical environment. It operates at multiple levels of organization, each with distinct emergent properties.
 
-## Physiological Responses
-- **Photoperiodism**: Changes in growth, flowering, or behavior in response to day length (e.g., plants flowering only when night length exceeds a threshold).
-- **Thermoregulation**: Conserving or dissipating heat (e.g., vasodilation in rabbits, hibernation).
-`,
+## Levels of Ecological Organization
+
+| Level | Description | Example |
+|---|---|---|
+| Organism | Individual living organism | A single sea otter |
+| Population | Group of same species in same area | Sea otters in Monterey Bay |
+| Community | All species in same area | All organisms in Monterey Bay kelp forest |
+| Ecosystem | Community + abiotic factors (water, climate, nutrients) | Monterey Bay including water chemistry, temperature |
+| Biome | Large geographic regions with similar climate and dominant vegetation | Temperate rainforest biome |
+| Biosphere | All of Earth's ecosystems together | All life on Earth |
+
+## Abiotic and Biotic Factors
+
+**Abiotic factors** (nonliving):
+- Temperature (shapes enzyme function, metabolic rates)
+- Water availability (limits most life)
+- Sunlight intensity and photoperiod
+- pH (affects enzyme activity, solubility of nutrients)
+- Salinity
+- Substrate/soil composition
+- Wind and currents
+
+**Biotic factors** (living):
+- Predators and prey
+- Competitors (same or different species)
+- Mutualists and parasites
+- Pathogens
+- Decomposers
+
+## Climate: The Physical Template for Life
+
+<vocab term="Climate" definition="The long-term pattern of temperature and precipitation in a region; determined by latitude, altitude, proximity to oceans, and atmospheric circulation patterns; shapes biome distribution.">Climate</vocab> vs. **weather**: climate is long-term patterns; weather is day-to-day conditions.
+
+**Key drivers of climate:**
+- **Latitude**: tropical regions receive most intense sunlight; polar regions receive least
+- **Hadley cells**: rising warm air at equator creates tropical rain forests; descending dry air at ~30 degrees creates deserts
+- **Coriolis effect**: Earth's rotation deflects air currents; creates trade winds and westerlies
+- **Ocean currents**: moderate coastal climates (warm California Current vs. cold Humboldt Current)
+- **Altitude**: temperature decreases ~6 degrees C per 1,000 m elevation
+
+**Rain shadow effect**: mountains cause precipitation on windward side; deserts on leeward side
+- Example: Sierra Nevada Mountains create wet western slope and dry Great Basin desert on eastern side
+
+## Major Biomes
+
+<vocab term="Biome" definition="A major terrestrial or aquatic zone characterized by distinct climate and dominant vegetation types; boundaries determined primarily by temperature and precipitation.">Biomes</vocab> are major regions defined by climate and dominant vegetation:
+
+| Biome | Climate | Key Features | Examples |
+|---|---|---|---|
+| Tropical rainforest | Hot, wet year-round | Highest biodiversity; layered canopy | Amazon, Congo basin |
+| Tropical savanna | Warm; seasonal rainfall | Grassland with scattered trees; large herbivores | African savanna |
+| Desert | Very dry (< 25 cm/year) | Sparse vegetation; extreme temperature swings | Sahara, Mojave |
+| Temperate grassland | Moderate; seasonal drought | Grasses, few trees; fertile soils | Great Plains, Pampas |
+| Temperate deciduous forest | Moderate; distinct seasons | Deciduous trees; moderate diversity | Eastern US, Europe |
+| Temperate rainforest | Wet, mild | Coniferous trees; moss-covered | Pacific Northwest |
+| Boreal forest (taiga) | Cold, moderate precipitation | Coniferous trees; low diversity | Canada, Russia, Siberia |
+| Tundra | Very cold; permafrost | No trees; mosses, lichens, sedges | Arctic, high altitude |
+
+## Aquatic Biomes
+
+Cover ~75% of Earth's surface:
+
+**Freshwater** (less than 1% salinity):
+- Lakes and ponds: stratified by temperature; littoral (shallow), limnetic (open water), benthic (bottom) zones
+- Rivers and streams: flowing water; high oxygen; nutrients from surrounding land
+- Wetlands: swamps, marshes, bogs; extremely high productivity; important carbon sinks
+
+**Marine** (more than 3% salinity):
+- Open ocean (pelagic): ~90% of ocean; low nutrients; phytoplankton base
+- Coastal (neritic): shallow, high nutrients; high productivity
+- Coral reefs: most biodiverse marine ecosystems; built by cnidarians
+- Intertidal zone: alternately submerged and exposed; harsh conditions
+- Estuaries: where rivers meet ocean; brackish water; extremely productive nurseries
+
+## Energy Flow in Ecosystems
+
+All ecosystems require an energy source. <vocab term="Primary Producers" definition="Autotrophs (plants, algae, cyanobacteria) that capture energy from sunlight or chemical bonds to produce organic compounds; the foundation of all food webs.">Primary producers</vocab> convert energy to organic compounds:
+- **Photosynthetic producers**: use sunlight (plants, algae, cyanobacteria)
+- **Chemosynthetic producers**: use inorganic chemical energy (deep-sea vent communities: sulfur bacteria)
+
+**The 10% Rule**: Only ~10% of energy is transferred between trophic levels:
+- 90% is lost as heat (respiration), undigested material, or unavailable portions
+- This limits food chain length (usually 3-4 levels)
+
+## AP Exam Focus
+
+- Levels of ecological organization: organism, population, community, ecosystem, biome, biosphere
+- Climate: determined by latitude, altitude, ocean currents; Hadley cells create tropical rain/30-degree deserts
+- Biome distribution: primarily determined by temperature and precipitation patterns
+- 10% rule: only 10% of energy transferred between trophic levels
+- Abiotic vs. biotic factors: nonliving vs. living components of environment
         questions: [
           {
             id: "8.1.1",
@@ -6262,18 +9469,139 @@ Real ecosystems have complex **food webs** (multiple interconnected food chains)
         article: `
 # Population Ecology
 
-Population ecology studies how biotic and abiotic factors influence population size, density, and growth.
+![Ecology diagram showing population growth and energy flow through ecosystems](/images/biology/ecology_energy_flow.png)
+
+<vocab term="Population Ecology" definition="The study of factors that affect the size, density, dispersion, and age structure of populations, and how these change over time; applies principles of birth, death, immigration, and emigration.">Population ecology</vocab> examines how populations grow, change, and are regulated by biotic and abiotic factors.
+
+## Describing Populations
+
+**Population density**: number of individuals per unit area or volume
+- Measured by: direct counting, mark-recapture, transect sampling, quadrat sampling
+
+**Dispersion patterns** - how individuals are distributed in space:
+
+| Pattern | Cause | Example |
+|---|---|---|
+| Clumped (most common) | Resource patchy distribution; social grouping; reproduction near parent | Schools of fish; herds of wildebeest; trees clustered near streams |
+| Uniform | Competition causes even spacing; territorial behavior | Territorial birds; desert plants (allelopathy) |
+| Random (rarest) | Resources evenly distributed; no social attraction or repulsion | Dandelions in a lawn (approximately random) |
+
+**Age structure**: proportion of population in each age class
+- Pre-reproductive (young), reproductive (adults), post-reproductive (old)
+- Young-heavy age structure -> rapid future growth
+- Old-heavy age structure -> declining population
+- Age structure diagrams (pyramids) show current structure and predict future trends
 
 ## Population Growth Models
-- **Exponential Growth**: Occurs under idealized conditions with unlimited resources. The growth rate accelerates, producing a J-shaped curve:
-  $$\frac{dN}{dt} = rN$$
-  where $N$ is population size, $t$ is time, and $r$ is the intrinsic per capita growth rate.
-- **Logistic Growth**: Occurs when resources become limiting. The growth rate slows as the population approaches its carrying capacity ($K$), producing an S-shaped curve:
-  $$\frac{dN}{dt} = rN \left(\frac{K - N}{K}\right)$$
 
-## Carrying Capacity ($K$)
-Carrying capacity is the maximum population size that a specific environment can sustainably support.
-`,
+### Exponential Growth
+
+When resources are unlimited, populations grow exponentially:
+
+$$rac{dN}{dt} = rN$$
+
+Solution: $N_t = N_0 e^{rt}$
+
+Where:
+- N = population size
+- r = intrinsic rate of natural increase (r = birth rate - death rate)
+- t = time
+
+**J-shaped curve**: exponential growth produces a J-shaped curve
+- Only possible temporarily (resource limitation eventually occurs)
+- Example: bacteria in new culture, invasive species entering new habitat
+
+### Logistic Growth
+
+With limited resources, growth slows as population approaches carrying capacity:
+
+$$rac{dN}{dt} = rN \left(rac{K-N}{K}ight)$$
+
+Where K = carrying capacity (maximum sustainable population size)
+
+**S-shaped (sigmoidal) curve**: population grows rapidly when N is small, slows as N approaches K
+
+- At N << K: growth approaches exponential (resource limitation negligible)
+- At N = K/2: maximum growth rate (inflection point)
+- At N = K: growth stops (birth rate = death rate)
+
+**Carrying capacity** is set by limiting resources:
+- Food, water, shelter, nesting sites, sunlight (plants)
+- Changes with environmental conditions (drought reduces K; restoration increases K)
+
+## Life History Strategies
+
+<vocab term="Life History" definition="The pattern of survival and reproduction over an organism's lifetime; includes timing of first reproduction, number of offspring per reproductive event, total number of offspring, and lifespan.">Life history</vocab> represents trade-offs in allocation of limited resources:
+
+### r-selection vs. K-selection
+
+| Feature | r-selected species | K-selected species |
+|---|---|---|
+| Environment | Variable, unpredictable | Stable, predictable |
+| Offspring number | Many (high fecundity) | Few |
+| Offspring size | Small | Large |
+| Parental care | Little or none | Extensive |
+| Maturation | Early | Late |
+| Lifespan | Short | Long |
+| Population | Often far below K; rapid growth when opportunity | Near K; limited by competition |
+| Examples | Bacteria, insects, weeds, mice | Elephants, whales, humans, oak trees |
+
+Note: r and K selection represents a continuum, not discrete categories.
+
+### Semelparity vs. Iteroparity
+
+- **Semelparity** (big-bang reproduction): one massive reproductive event, then death
+  - Examples: Pacific salmon, annual plants, mayflies
+  - Evolutionarily favored when adult survival prospects are poor and offspring survival is high
+
+- **Iteroparity** (repeated reproduction): multiple reproductive events over lifetime
+  - Examples: Most vertebrates, perennial plants
+  - Favored when adult survival is high (adults are valuable)
+
+## Survivorship Curves
+
+Three idealized types:
+
+| Type | Pattern | Examples |
+|---|---|---|
+| Type I | High survival until old age, then rapid decline | Humans, elephants, large K-selected mammals |
+| Type II | Constant probability of death at any age | Birds, many lizards, some rodents |
+| Type III | High mortality early in life; survivors live long | Most fish, oysters, plants, r-selected species |
+
+## Regulating Population Size
+
+### Density-Dependent Regulation
+
+Effects that intensify as population density increases:
+
+<vocab term="Density-Dependent Factors" definition="Limiting factors whose intensity increases with population density; include competition, predation, disease, and intraspecific resource depletion; cause negative feedback that regulates populations.">Density-dependent factors</vocab>:
+- **Competition**: intraspecific competition for food, water, space intensifies at high density
+- **Predation**: predators more easily find prey at high density; prey switching
+- **Disease**: pathogens spread more efficiently in dense populations
+- **Territoriality**: competition for territories limits reproduction
+
+### Density-Independent Regulation
+
+Effects the same regardless of population density:
+- Floods, droughts, frost, earthquakes, human disturbance
+- Can reduce population far below K regardless of density
+- Important in r-selected species with variable environments
+
+## Population Dynamics: Real-World Patterns
+
+**Boom-and-bust cycles**: r-selected species in seasonal environments overshoot K, then crash
+- Algae blooms; insect population cycles
+
+**Predator-prey cycles**: Lynx and snowshoe hare oscillate with ~10-year periodicity
+- Hare population rises -> lynx population rises (more food) -> hare population crashes (overhunting + starvation) -> lynx population crashes -> hare recovers
+
+## AP Exam Focus
+
+- Exponential growth: J-curve; unlimited resources; dN/dt = rN
+- Logistic growth: S-curve; limited by K; growth slows as N approaches K
+- r-selected: many small offspring, little care; K-selected: few large offspring, much care
+- Density-dependent: intensifies with density (competition, predation, disease); negative feedback
+- Type I survivorship: large K-selected species; Type III: many offspring, most die young
         questions: [
           {
             id: "8.3.1",
@@ -6348,20 +9676,123 @@ Carrying capacity is the maximum population size that a specific environment can
         description: "Differentiate between density-dependent and density-independent factors that regulate populations.",
         youtubeId: "mN2-67-m22s",
         article: `
-# Effect of Density of Populations
+# Community Ecology
 
-Populations are regulated by factors that limit their growth. These factors are classified based on their relationship to population density.
+![Ecology energy flow diagram showing species interactions in an ecosystem community](/images/biology/ecology_energy_flow.png)
 
-## Limiting Factors
-- **Density-Dependent Factors**: Factors whose impact scales with population density (having a stronger limiting effect as density increases):
-  - *Competition*: Limited food, space, or nesting sites.
-  - *Disease*: Pathogens transmit faster in crowded conditions.
-  - *Predation*: Predators focus on species that are abundant.
-  - *Waste Accumulation*: Toxic waste products build up in high density.
-- **Density-Independent Factors**: Factors that limit population size regardless of how crowded it is:
-  - *Weather/Climate*: Severe freezes, droughts, heatwaves.
-  - *Natural Disasters*: Volcanic eruptions, forest fires, floods.
-`,
+<vocab term="Community" definition="All the populations of different species living and interacting in a defined area; characterized by species diversity, species interactions, and physical structure.">Communities</vocab> are assemblages of interacting species. The interactions among species shape community structure, energy flow, and the relative abundance of different organisms.
+
+## Species Interactions
+
+Six major types of interspecific interactions:
+
+| Interaction | Effect on Species 1 | Effect on Species 2 | Example |
+|---|---|---|---|
+| Predation | + | - | Wolf kills deer |
+| Herbivory | + | - | Caterpillar eats leaf |
+| Parasitism | + | - | Tapeworm in human gut |
+| Competition | - | - | Two bird species competing for same nest sites |
+| Mutualism | + | + | Rhizobium bacteria fix nitrogen for legumes; plant provides carbon |
+| Commensalism | + | 0 | Cattle egret follows cattle, eats disturbed insects |
+
+## Predation and Coevolution
+
+Predator-prey relationships drive coevolution:
+
+**Prey adaptations against predation:**
+- Camouflage (cryptic coloration): stick insects, ptarmigan (seasonal color change)
+- <vocab term="Aposematic Coloration" definition="Warning coloration; bright colors that signal to predators that the prey is toxic, venomous, or unpalatable; reduces predation on defended species.">Aposematic (warning) coloration</vocab>: monarch butterfly (toxic), poison dart frogs, wasps
+- <vocab term="Batesian Mimicry" definition="A form of mimicry in which a harmless species resembles a harmful or toxic species, gaining protection without the cost of producing defenses.">Batesian mimicry</vocab>: harmless species resembles toxic species (viceroy butterfly mimics monarch)
+- <vocab term="Mullerian Mimicry" definition="A form of mimicry in which two or more unpalatable species resemble each other; predators learn to avoid all members of the mimicry ring more quickly.">Mullerian mimicry</vocab>: two toxic species look alike (heliconid butterflies in tropics)
+- Mechanical defense: spines (cacti, porcupines), shells (turtles, mollusks)
+- Chemical defense: toxic secretions (bombardier beetles, poison dart frogs)
+
+**Predator adaptations:**
+- Speed and agility (cheetah, peregrine falcon)
+- Cooperative hunting (wolves, orcas, lions)
+- Cryptic coloration for ambush (tigers, leopards)
+- Specialized sensory organs (rattlesnake infrared pits, shark ampullae of Lorenzini)
+
+## Competition
+
+<vocab term="Competitive Exclusion Principle" definition="Gause's Law: two species competing for exactly the same limiting resource cannot coexist indefinitely; the superior competitor will eventually exclude the other.">Competitive exclusion principle</vocab> (Gause's Law, 1934):
+- Two species with identical niches cannot coexist - one will eventually outcompete the other
+- Demonstrated in laboratory with Paramecium species
+
+**Niche partitioning**: Species coexist by using resources differently:
+- Character displacement: competing species evolve to use different resources or become more different where they overlap
+- Example: Darwin's finches have different beak sizes on islands where they compete vs. where they occur alone
+
+**Resource partitioning**: different species use the same general resource at different times, places, or ways
+- Anole lizards on Carribean islands: different species occupy different parts of trees (arboreally partitioned)
+- MacArthur's warblers: 5 species of warbler in same spruce trees occupy different height zones and forage at different times
+
+## Mutualism
+
+<vocab term="Mutualism" definition="A symbiotic interaction in which both participating species benefit; includes obligate mutualism (both species completely dependent) and facultative mutualism.">Mutualism</vocab> can be obligate or facultative:
+
+**Examples of obligate mutualism:**
+- Mycorrhizal fungi + plant roots: fungi absorb minerals (P, N), provide to plant; plant provides carbohydrates
+- Nitrogen-fixing bacteria (Rhizobium) + legumes: bacteria fix N2; plant provides carbon and protected nodule environment
+- Lichen = fungus + cyanobacterium/algae: fungus provides shelter; photosynthetic partner provides sugars
+- Fig tree + fig wasp: fig provides gall for wasps to lay eggs; wasps are sole pollinators of figs
+
+**Cleaning mutualism:**
+- Cleaner wrasse fish eat parasites from larger fish at "cleaning stations"
+- Oxpeckers eat ticks from large mammals
+
+## Community Structure and Disturbance
+
+### Trophic Cascades
+
+<vocab term="Trophic Cascade" definition="Indirect effects that ripple through the food web when one trophic level is dramatically changed; top-down effects when predators are removed; can restructure entire communities.">Trophic cascades</vocab>: top-down control of communities:
+
+**Sea otter example:**
+- Sea otters eat sea urchins
+- Remove sea otters -> sea urchins explode in number -> overgraze kelp -> kelp forest disappears -> habitat for all kelp-associated species lost
+
+**Wolf reintroduction in Yellowstone:**
+- Wolves reintroduced 1995 -> reduced elk numbers and changed their behavior (avoided grazing in valleys) -> streamside vegetation recovered -> stream banks stabilized -> beaver populations increased -> improved aquatic habitats
+
+**Keystone species**: those with disproportionately large effects relative to their biomass
+
+### Ecological Succession
+
+<vocab term="Ecological Succession" definition="The change in species composition of a community over time following a disturbance; pioneer species establish first, followed by progressively more complex communities until a stable climax community is reached.">Ecological succession</vocab>: directional change in community composition over time:
+
+**Primary succession**: begins on bare substrate with no soil
+- Example: lava flows, glacial retreat
+- Pioneer species: lichens (break rock into soil), then mosses, then grasses, then shrubs, then trees
+- Timeline: hundreds to thousands of years
+
+**Secondary succession**: begins after disturbance; soil already present
+- Example: abandoned farmland, burned forest
+- Much faster than primary succession (decades)
+- Pioneer species: annual plants; followed by perennial grasses, shrubs, tree saplings, mature forest
+
+**Intermediate Disturbance Hypothesis**: Communities with moderate disturbance frequency have highest species diversity
+- Rare disturbance: dominant species outcompete all others (low diversity)
+- Frequent disturbance: only early-succession species survive (low diversity)
+- Intermediate disturbance: mix of early and late successional species (highest diversity)
+
+## Species Diversity and Stability
+
+Two components of diversity:
+- **Species richness**: number of species present
+- **Evenness**: how similar the abundances of different species are
+
+Higher diversity generally associated with:
+- Greater ecosystem stability (more redundancy)
+- Greater primary productivity
+- Greater resilience to disturbance
+
+## AP Exam Focus
+
+- Competitive exclusion: two species with identical niches cannot coexist; niche partitioning enables coexistence
+- Aposematic coloration: warning colors; Batesian mimicry: harmless mimic; Mullerian: two harmful species similar
+- Trophic cascade: removal of top predator has cascading effects down food chain
+- Primary vs. secondary succession: primary starts from bare rock; secondary starts from disturbed soil
+- Intermediate disturbance hypothesis: moderate disturbance maximizes species diversity
         questions: [
           {
             id: "8.4.1",
@@ -6436,22 +9867,121 @@ Populations are regulated by factors that limit their growth. These factors are 
         description: "Analyze species interactions, niche partitioning, and trophic cascades.",
         youtubeId: "qSE4AgBhybg",
         article: `
-# Community Ecology
+# Energy and Matter in Ecosystems
 
-An ecological community consists of all the interacting populations of different species in a shared habitat.
+![Energy flow diagram showing trophic levels, 10 percent rule, and nutrient cycling in ecosystems](/images/biology/ecology_energy_flow.png)
 
-## Species Interactions
-Interactions shape community structures and can be positive ($+$), negative ($-$), or neutral ($0$):
-- **Competition** ($-/-$): Organisms fight for a shared, limiting resource. To survive, species undergo **niche partitioning** (sharing different parts of a resource).
-- **Predation and Herbivory** ($+/-$): One organism consumes another.
-- **Symbiosis**: Close long-term physical associations:
-  - *Mutualism* ($+/+$): Both benefit (e.g., bees and flowers).
-  - *Parasitism* ($+/-$): Parasite benefits at the expense of host.
-  - *Commensalism* ($+/0$): One benefits, the other is unaffected.
+<vocab term="Ecosystem" definition="The living community (biotic) together with the physical environment (abiotic) in a defined area; characterized by energy flow through trophic levels and nutrient cycling.">Ecosystems</vocab> are open systems for energy (flows through) but nearly closed systems for matter (cycles). Understanding energy flow and nutrient cycling is essential for explaining why ecosystems function the way they do.
 
-## Trophic Cascades
-A **trophic cascade** occurs when the removal or addition of a top predator ripples down to affect multiple lower trophic levels (e.g., wolves in Yellowstone limiting deer, which allows vegetation to regrow).
-`,
+## Energy Flow Through Ecosystems
+
+### Primary Production
+
+<vocab term="Primary Productivity" definition="The rate at which producers (autotrophs) convert energy to organic compounds; gross primary productivity (GPP) is total; net primary productivity (NPP) = GPP minus cellular respiration by producers.">Primary productivity</vocab> is the foundation of all ecosystems:
+
+- **Gross Primary Productivity (GPP)**: Total rate of photosynthesis or chemosynthesis
+- **Net Primary Productivity (NPP)**: Energy available to consumers = GPP - Respiration by producers
+- NPP is typically 40-80% of GPP
+
+Highest NPP ecosystems:
+1. Tropical rainforests (~2,000 g/m2/year)
+2. Estuaries and wetlands (~1,500 g/m2/year)
+3. Agricultural fields (~600 g/m2/year)
+4. Open ocean (~125 g/m2/year - low but covers vast area!)
+
+### The 10% Rule
+
+<vocab term="10% Rule" definition="On average, only about 10% of the energy stored in one trophic level is transferred to and stored in the next higher trophic level; the rest is lost as heat, feces, or unused biomass.">The 10% rule</vocab> describes energy transfer efficiency between trophic levels:
+
+Energy lost at each trophic level:
+- Heat from cellular respiration (~60%)
+- Undigested food in feces (~20-30%)
+- Unused biomass (not consumed) (~10%)
+
+Only ~10% becomes biomass of the next trophic level.
+
+**Food chain example:**
+- 10,000 J of plant energy -> 1,000 J of caterpillar biomass -> 100 J of sparrow biomass -> 10 J of hawk biomass
+- This is why food chains are limited to 3-4 levels!
+- And why eating lower on the food chain is more efficient for humans (vegetarian diet supports more people than meat-based diet from same amount of primary production)
+
+**Ecological pyramid**: shows energy, biomass, or number of organisms at each trophic level
+- Usually broad at bottom (producers) and narrow at top (tertiary consumers)
+- Occasionally inverted biomass pyramid: open ocean (phytoplankton support more zooplankton biomass despite lower phytoplankton biomass at any given time - rapid turnover)
+
+## Biogeochemical Cycles: Matter Cycling
+
+Unlike energy (which flows through), matter **cycles** within ecosystems.
+
+### The Carbon Cycle
+
+Carbon pools and fluxes:
+- **Atmosphere**: CO2 (~420 ppm currently, rising 2-3 ppm/year)
+- **Biosphere**: organic carbon in living things and dead organic matter
+- **Lithosphere**: fossil fuels, calcium carbonate rocks
+- **Hydrosphere**: dissolved CO2 and carbonate in oceans
+
+**Key processes:**
+- Photosynthesis: CO2 + H2O -> C6H12O6 + O2 (carbon fixed from atmosphere)
+- Cellular respiration: C6H12O6 + O2 -> CO2 + H2O (carbon released to atmosphere)
+- Decomposition: dead organic matter broken down by bacteria and fungi -> CO2 released
+- Combustion: fossil fuel burning releases ancient stored carbon
+- Ocean uptake: oceans absorb ~25-30% of human CO2 emissions
+
+**Human impact:**
+- Burning fossil fuels: 8-10 billion tons CO2/year
+- Deforestation: additional 1-2 billion tons/year
+- Result: rising atmospheric CO2 -> enhanced greenhouse effect -> climate change
+
+### The Nitrogen Cycle
+
+<vocab term="Nitrogen Cycle" definition="The biogeochemical cycle by which nitrogen moves through the atmosphere, soil, water, and living organisms; includes nitrogen fixation, nitrification, denitrification, and decomposition.">The nitrogen cycle</vocab> is essential for protein and nucleic acid synthesis:
+
+| Process | Organisms | Transformation | Location |
+|---|---|---|---|
+| Nitrogen fixation | Rhizobium (symbiotic), Azotobacter (free-living), lightning | N2 -> NH3 | Root nodules, soil, atmosphere |
+| Nitrification | Nitrosomonas: NH3 -> NO2-; Nitrobacter: NO2- -> NO3- | NH3 -> NO3- | Soil |
+| Assimilation | Plants, algae | NO3- + NH4+ -> organic N (amino acids) | Plants |
+| Ammonification | Decomposers (bacteria, fungi) | Organic N -> NH4+ | Soil |
+| Denitrification | Pseudomonas, other anaerobes | NO3- -> N2O -> N2 | Anaerobic soil, water |
+
+**Nitrogen as a limiting nutrient:**
+- N often limits plant growth (why agricultural fertilizers are N-rich)
+- Eutrophication: excess nitrogen (from fertilizer runoff) -> algae blooms -> O2 depletion -> dead zones
+
+### The Phosphorus Cycle
+
+Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
+- Cycles between rock (lithosphere), soil/water, and living things
+- Released by weathering of rocks (very slow) or applied as fertilizer
+- Taken up by plants, passed through food web
+- Returned to soil by decomposition
+- Major limiting nutrient in freshwater ecosystems (Liebig's Law of the Minimum)
+
+### The Water Cycle
+
+- Evaporation from oceans and land (evapotranspiration from plants)
+- Condensation into clouds and precipitation
+- Runoff and groundwater flow to streams, rivers, and back to ocean
+- Global freshwater: ~2.5% of all water; most frozen in ice or deep underground
+- Watersheds: land areas draining to a common body of water
+
+## Human Impacts on Biogeochemical Cycles
+
+| Cycle | Human Impact | Consequence |
+|---|---|---|
+| Carbon | Fossil fuel combustion, deforestation | Climate change, ocean acidification |
+| Nitrogen | Agricultural fertilizers, combustion (NOx) | Eutrophication, dead zones, acid rain |
+| Phosphorus | Agricultural fertilizers | Eutrophication (especially freshwater) |
+| Sulfur | Combustion (SO2) | Acid rain, respiratory disease |
+
+## AP Exam Focus
+
+- 10% rule: only ~10% of energy transferred between trophic levels; explains food chain length limits
+- NPP = GPP - plant respiration; highest in tropical rainforests and estuaries
+- Carbon cycle: photosynthesis fixes CO2; respiration and decomposition return it; combustion adds ancient carbon
+- Nitrogen cycle: fixation (N2->NH3) by bacteria; nitrification; denitrification; N is often limiting nutrient
+- Phosphorus: no atmospheric pool; limiting nutrient in freshwater; phosphorus fertilizers cause eutrophication
         questions: [
           {
             id: "8.5.1",
@@ -6526,21 +10056,124 @@ A **trophic cascade** occurs when the removal or addition of a top predator ripp
         description: "Analyze species richness, Simpson's index, and the value of keystone species.",
         youtubeId: "GlZiHDpq3ms",
         article: `
-# Biodiversity
+# Ecosystem Interactions and Disturbances
 
-Biodiversity describes the variety of life in an area, measured at the genetic, species, and ecosystem levels.
+![Ecology energy flow diagram showing how disturbances affect ecosystems](/images/biology/ecology_energy_flow.png)
 
-## Species Diversity
-Consists of two components:
-1. **Species Richness**: The number of different species in the community.
-2. **Relative Abundance**: The proportion each species represents of all individuals.
-- **Simpson's Diversity Index**: Used to quantify biodiversity:
-  $$\text{Simpson's Index} = 1 - \sum \left(\frac{n}{N}\right)^2$$
-  where $n$ is the number of individuals of a specific species, and $N$ is the total number of all individuals.
+<vocab term="Ecosystem Stability" definition="The ability of an ecosystem to resist change (resistance) or return to its original state after disturbance (resilience); related to diversity and complexity of species interactions.">Ecosystem stability</vocab> reflects the ability to maintain structure and function despite perturbations. Understanding how ecosystems respond to natural and human-caused disturbances is critical for conservation.
 
-## Keystone Species
-A **keystone species** is a species that has an exceptionally large impact on its community structure relative to its abundance (e.g., sea otters, which control urchin populations to preserve kelp forests). If removed, the community collapses.
-`,
+## Disturbance Ecology
+
+<vocab term="Disturbance" definition="An event that removes organisms or changes resource availability in an ecosystem; includes fire, hurricanes, floods, logging, and disease outbreaks; can be natural or human-caused.">Disturbances</vocab> alter ecosystems by:
+- Killing organisms (removing biomass)
+- Changing physical environment (temperature, nutrient availability)
+- Opening space for colonization
+- Releasing stored nutrients
+
+**Natural disturbances:**
+- Fire (lightning-caused): common in grasslands, chaparral, boreal forests
+- Hurricanes and windstorms: treefall creates gap dynamics in forests
+- Flooding: alters riparian vegetation, deposits sediment
+- Volcanic eruptions: can create entirely new land (Krakatoa, Hawaiian islands)
+- Disease outbreaks: Dutch elm disease, chestnut blight
+
+**Human disturbances:**
+- Logging and deforestation
+- Agriculture (conversion of ecosystems to monocultures)
+- Urban development
+- Pollution (nutrient enrichment, toxins, light, noise)
+- Invasive species introductions
+- Climate change (changing temperature, precipitation patterns)
+
+## Fire Ecology
+
+Fire is a natural disturbance with major ecological roles:
+
+**Adaptations to fire (fire-adapted ecosystems):**
+- Serotinous pine cones (lodgepole, jack pine): sealed shut with resin; fire melts resin, releasing seeds
+- Thick bark (ponderosa pine, giant sequoia): insulates against heat
+- Resprouting after fire: chaparral shrubs regrow from root crowns
+- Fire-stimulated germination: some seeds require fire (smoke or heat) to germinate
+
+**Effects of fire:**
+- Returns nutrients to soil (ash)
+- Removes accumulated fuel and shrub layer
+- Opens canopy for light-requiring plants
+- Creates habitat heterogeneity
+
+**Fire suppression paradox**: Suppressing natural fires allows fuel accumulation -> more intense, unnatural wildfires when fire eventually occurs.
+
+## Resilience and Resistance
+
+Two components of stability:
+
+**Resistance**: the degree to which an ecosystem avoids disturbance
+- Maintained by species diversity (more redundancy means less impact if one species is lost)
+- Structural complexity (complex physical habitat buffers environmental fluctuations)
+
+**Resilience**: the speed with which an ecosystem recovers after disturbance
+- Faster recovery from disturbance
+- Related to: disturbance history, pool of colonist species, intact soil
+
+Some ecosystems are highly resistant but slowly resilient (old-growth forests);
+Others are quickly resilient but less resistant (grasslands).
+
+## Invasive Species
+
+<vocab term="Invasive Species" definition="Non-native species introduced into a new environment where they lack natural predators, parasites, or competitors; can dramatically alter ecosystems, reduce native biodiversity, and cause billions in economic damage.">Invasive species</vocab> are among the greatest threats to native biodiversity:
+
+Why invasives succeed:
+- No natural enemies (predators, parasites, pathogens) in new environment
+- May have advantages over native species (faster growth, different diet)
+- Humans facilitate long-distance transport (ballast water, cargo, horticulture)
+
+**Classic examples:**
+- Kudzu vine in southeastern US: covers and shades out native vegetation
+- Cane toad in Australia: toxic; decimated native predator populations
+- Zebra mussels in Great Lakes: filter feeders, reduce food for native species; clog water intake pipes
+- Brown tree snake on Guam: wiped out most native bird species after WWII introduction
+- Chestnut blight (fungus): eliminated American chestnut as dominant eastern US forest tree
+
+## Island Biogeography and Habitat Fragmentation
+
+MacArthur and Wilson's theory predicts that habitat fragmentation mimics island isolation:
+- Habitat fragments = "islands" of habitat in a "sea" of unsuitable land
+- Smaller fragments: higher extinction rates (smaller populations more vulnerable to drift and stochastic events)
+- More isolated fragments: lower immigration rates (less gene flow, fewer recolonizers after local extinction)
+
+**Conservation implication**: large, connected preserves support higher diversity than small, isolated fragments of equal total area.
+
+**Edge effects**: habitat edges have different conditions (more light, higher temperature, different species composition) than habitat interior
+- Fragmentation creates more edge: harms interior species (many forest birds avoid edge)
+- Nest parasitism by brown-headed cowbird increases near edges
+
+## Human-Caused Ecosystem Changes
+
+**Eutrophication**: nutrient enrichment of aquatic systems
+1. Excess nutrients (N, P) from agricultural runoff or sewage
+2. Algal bloom (explosive algae growth)
+3. Algae die and are decomposed by bacteria
+4. Bacterial decomposition consumes O2 -> hypoxia/anoxia
+5. Fish and other aerobic organisms die -> "dead zone"
+6. Example: Gulf of Mexico dead zone (~20,000 km2) from Mississippi River runoff
+
+**Acid rain**:
+- SO2 and NOx from combustion react with water in atmosphere -> H2SO4 and HNO3
+- Acidifies lakes and soils -> kills fish, damages trees, reduces biodiversity
+- Regulated since Clean Air Act; acid rain problem decreasing in US but still serious in Asia
+
+**Ozone depletion**:
+- Chlorofluorocarbons (CFCs) break down stratospheric ozone (UV shield)
+- Increased UV causes skin cancer, eye damage, disrupts marine food web
+- Montreal Protocol (1987): CFCs phased out; ozone hole slowly recovering
+
+## AP Exam Focus
+
+- Fire ecology: adaptations include serotinous cones, thick bark, resprouting; fire suppression paradox
+- Invasive species: lack natural enemies; disrupt food webs; reduce native biodiversity
+- Eutrophication: nutrient enrichment -> algal bloom -> O2 depletion -> dead zone
+- Resistance (avoids disturbance) vs. resilience (recovers after disturbance)
+- Habitat fragmentation: island biogeography principles apply; smaller, isolated fragments have less diversity
         questions: [
           {
             id: "8.6.1",
@@ -6615,19 +10248,129 @@ A **keystone species** is a species that has an exceptionally large impact on it
         description: "Examine the ecological impact of invasive species and human-driven disruptions.",
         youtubeId: "cYmKkCZbHW8",
         article: `
-# Disruptions to Ecosystems
+# Climate Change and Human Impact on Ecosystems
 
-Ecosystems are dynamically balanced systems that can be severely altered by natural or human disruptions.
+![Ecology energy flow diagram showing how climate change disrupts ecosystem energy and nutrient flow](/images/biology/ecology_energy_flow.png)
 
-## Invasive Species
-An **invasive species** is a non-native species introduced to a new environment, where it lacks natural predators or pathogens:
-- Without limiting factors, its population grows exponentially.
-- It outcompetes native species for food or space, disrupting food webs and reducing native biodiversity.
+<vocab term="Climate Change" definition="Long-term shifts in global temperatures and weather patterns; primarily driven by human activities since the Industrial Revolution, especially burning of fossil fuels which releases CO2 and other greenhouse gases.">Climate change</vocab> represents the greatest current threat to global biodiversity and ecosystem function. Understanding the mechanisms and biological consequences is critical for AP Biology.
 
-## Human-Driven Disruptions
-- **Eutrophication**: Runoff of agricultural fertilizers (nitrogen/phosphorus) into waterways causes massive algae blooms. When the algae dies, decomposers consume all oxygen during respiration, creating hypoxic **dead zones** that suffocate aquatic life.
-- **Habitat Fragmentation**: Splitting habitats into smaller, isolated patches, reducing gene flow.
-`,
+## The Greenhouse Effect
+
+The greenhouse effect maintains Earth's habitable temperature:
+
+**Natural greenhouse effect** (essential for life):
+1. Sun emits mostly visible light and UV; Earth absorbs this energy
+2. Earth radiates heat (infrared) back toward space
+3. Greenhouse gases (CO2, H2O vapor, CH4, N2O) in atmosphere absorb and re-emit infrared radiation
+4. Atmosphere acts as an insulating blanket; Earth is ~33 degrees C warmer than without atmosphere
+
+**Enhanced greenhouse effect** (problem):
+- Human activities increase greenhouse gas concentrations
+- More energy trapped -> global temperatures rise
+- Current CO2: ~420 ppm (up from ~280 ppm pre-industrial, 1750)
+- Rate of increase: ~2-3 ppm/year; fastest in 800,000 years of ice core record
+
+| Greenhouse Gas | Source | Global Warming Potential (100-year) |
+|---|---|---|
+| CO2 | Fossil fuels, deforestation | 1 (reference) |
+| Methane (CH4) | Livestock, rice paddies, landfills, natural gas | 25x CO2 |
+| Nitrous oxide (N2O) | Agriculture (fertilizers), combustion | 298x CO2 |
+| HFCs/SF6 | Industrial processes, refrigerants | 1,000-10,000x CO2 |
+
+## Observed Climate Changes
+
+Documented changes (IPCC reports):
+- Global mean surface temperature: +1.1 degrees C since pre-industrial (above 1.5 degrees C reached temporarily now)
+- Sea level rise: ~20 cm since 1900; accelerating (ice sheet melting + thermal expansion)
+- Arctic sea ice: summer extent decreased ~40% since 1980
+- Ocean acidification: pH decreased from 8.2 to 8.1 (0.1 unit = 26% more acidic in H+ terms)
+- Extreme weather: more frequent and intense heat waves, droughts, heavy precipitation events
+
+## Ocean Acidification
+
+CO2 absorbed by oceans reacts with water:
+$$CO_2 + H_2O ightleftharpoons H_2CO_3 ightleftharpoons HCO_3^- + H^+ ightleftharpoons CO_3^{2-} + 2H^+$$
+
+Increased CO2 -> increased H+ -> decreased pH -> decreased carbonate ion availability
+
+**Effects on marine organisms:**
+- <vocab term="Ocean Acidification" definition="The ongoing decrease in ocean pH caused by absorption of CO2; reduces carbonate ion availability, threatening shell-forming organisms including corals, mollusks, and echinoderms.">Ocean acidification</vocab> threatens shell-forming organisms:
+  - Corals: calcification rates decrease with lower pH; coral bleaching also worsened by warming
+  - Oysters, clams, sea urchins: shells weaken or fail to form
+  - Pteropods (sea butterflies): shells dissolve in Arctic waters already below aragonite saturation
+- Disrupts behavior (fish sensing, orientation) in some species
+
+## Biological Consequences of Climate Change
+
+### Range Shifts
+Species moving their geographic ranges toward poles and to higher altitudes as temperatures warm:
+- Butterflies in UK: ranges shifting ~35 km northward per decade
+- Mountain pine beetle in western Canada: now able to survive winters at higher elevations -> devastating forests
+- Tropical diseases (malaria, dengue): expanding to previously unsuitable higher latitude/altitude areas
+
+### Phenological Shifts
+<vocab term="Phenology" definition="The study of cyclic and seasonal natural phenomena; climate change causes phenological shifts where biological events (migration, breeding, flowering) occur at different times, causing mismatches between species.">Phenology</vocab> - timing of biological events:
+- Spring flowers blooming earlier; birds nesting earlier
+- Mismatch problem: caterpillar peak may no longer coincide with bird nesting, reducing food for chicks
+- Monarch butterfly migration timing shifting relative to milkweed availability
+
+### Coral Bleaching
+<vocab term="Coral Bleaching" definition="The loss of photosynthetic zooxanthellae algae from coral tissues due to thermal stress; the bleached coral is white and vulnerable to disease and death; mass bleaching events are increasing with climate change.">Coral bleaching</vocab>: temperature stress causes corals to expel their symbiotic algae (zooxanthellae):
+- Without zooxanthellae, corals are white ("bleached") and lose their primary energy source
+- Short exposure: corals can recover if temperature returns to normal
+- Prolonged or repeated bleaching: coral dies; reef structure collapses
+- Great Barrier Reef: >50% of coral died in 2016-2017 bleaching events
+- Caribbean reefs: 80% of coral cover lost since 1970
+
+### Biodiversity Loss
+Climate change threatens extinction:
+- Current extinction rate: ~1,000x background rate (ongoing 6th mass extinction)
+- By 2100: potentially 20-30% of species committed to extinction if warming exceeds 2 degrees C
+- Polar species (polar bear, Arctic fox, penguins) at extreme risk
+- Amphibians: temperature and moisture changes kill off fungus-sensitive species
+
+## Human Population and Environmental Impact
+
+The IPAT equation describes human environmental impact:
+$$I = P 	imes A 	imes T$$
+
+Where:
+- I = Environmental Impact
+- P = Population size
+- A = Affluence (per capita consumption)
+- T = Technology impact factor
+
+Reducing impact requires:
+- Stabilizing and reducing population growth (P)
+- Reducing consumption (A) - particularly in high-income countries
+- Developing cleaner technologies (T) - renewable energy, efficient manufacturing
+
+## Solutions and Conservation Strategies
+
+**Mitigation** (reducing climate change causes):
+- Transition to renewable energy (solar, wind, hydro, geothermal)
+- Energy efficiency improvements
+- Carbon capture and storage
+- Reforestation and afforestation (carbon sinks)
+- Reducing methane from livestock and landfills
+
+**Adaptation** (adjusting to changes already happening):
+- Climate-resilient agriculture (drought-resistant crops)
+- Infrastructure adaptation (sea walls, elevated buildings)
+- Wildlife corridors to enable species range shifts
+- Assisted migration of vulnerable species
+
+**Protecting carbon sinks:**
+- Old-growth forests: store large amounts of carbon; protecting them prevents release
+- Peatlands: store >30% of world's soil carbon; must be protected
+
+## AP Exam Focus
+
+- Enhanced greenhouse effect: increased CO2 and other GHGs trap more heat -> rising temperatures
+- Ocean acidification: CO2 + H2O -> H2CO3 -> more H+ -> lower pH -> threatens shell-forming organisms
+- Coral bleaching: temperature stress -> zooxanthellae expelled -> coral dies if prolonged
+- Phenological mismatches: timing of species' life events shifts out of sync with each other
+- IPAT: Environmental impact = Population x Affluence x Technology
         questions: [
           {
             id: "8.7.1",
