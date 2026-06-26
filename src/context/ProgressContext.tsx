@@ -32,6 +32,7 @@ interface ProgressContextType {
   completeTopic: (topicId: string, score: number) => Promise<void>;
   recordQuestionAttempt: (isCorrect: boolean, masteryKey?: string) => Promise<void>;
   recordTutorMessage: () => Promise<void>;
+  recordMockExamAttempt: (correctCount: number, totalQuestions: number) => Promise<void>;
 }
 
 const defaultProgress: UserProgress = {
@@ -56,6 +57,7 @@ const ProgressContext = createContext<ProgressContextType>({
   completeTopic: async () => {},
   recordQuestionAttempt: async (isCorrect: boolean, masteryKey?: string) => {},
   recordTutorMessage: async () => {},
+  recordMockExamAttempt: async () => {},
 });
 
 export const useProgress = () => useContext(ProgressContext);
@@ -658,8 +660,65 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  const recordMockExamAttempt = async (correctCount: number, totalQuestions: number) => {
+    const localKey = currentUser ? `ap-lab-progress-${currentUser.uid}` : "ap-lab-progress-guest";
+    const docRef = currentUser ? doc(db, "userProgress", currentUser.uid) : null;
+
+    try {
+      const xpEarned = correctCount * 15; // 15 XP per correct answer
+      
+      const updatedAnswered = (progress.totalQuestionsAnswered || 0) + totalQuestions;
+      const updatedCorrect = (progress.totalQuestionsCorrect || 0) + correctCount;
+      const currentXp = progress.xp || 0;
+      const newXp = currentXp + xpEarned;
+      const oldLevel = progress.level || 1;
+      const newLevel = getLevelForXp(newXp);
+      const isLevelUp = newLevel > oldLevel;
+
+      const updatedProgress: UserProgress = {
+        ...progress,
+        totalQuestionsAnswered: updatedAnswered,
+        totalQuestionsCorrect: updatedCorrect,
+        xp: newXp,
+        level: newLevel,
+        lastAccessed: new Date()
+      };
+
+      if (xpEarned > 0) {
+        triggerXpToast(xpEarned, `Mock Exam Finished!`, "section");
+      }
+      if (isLevelUp) {
+        setTimeout(() => {
+          setLevelUpData({ oldLevel, newLevel });
+        }, 500);
+      }
+
+      setProgress(updatedProgress);
+
+      try {
+        localStorage.setItem(localKey, JSON.stringify(updatedProgress));
+      } catch (e) {
+        console.error("Error writing progress to localStorage:", e);
+      }
+
+      if (docRef) {
+        setDoc(docRef, {
+          totalQuestionsAnswered: updatedAnswered,
+          totalQuestionsCorrect: updatedCorrect,
+          xp: newXp,
+          level: newLevel,
+          lastAccessed: serverTimestamp()
+        }, { merge: true }).catch((err) => {
+          console.error("Error syncing mock exam to Firestore:", err);
+        });
+      }
+    } catch (error) {
+      console.error("Error setting up mock exam update:", error);
+    }
+  };
+
   return (
-    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage }}>
+    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage, recordMockExamAttempt }}>
       {children}
       
       {/* Level Up Modal */}

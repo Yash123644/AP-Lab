@@ -133,6 +133,14 @@ Elements cycle through the biosphere via biogeochemical cycles:
           },
           {
             id: "1.1.2",
+            text: "Why does ice float on top of liquid water?",
+            options: ["Covalent bonds become longer when water freezes.","Stable hydrogen bonds lock molecules in a spacious crystalline lattice that is less dense than liquid water.","Molecules move faster in ice, pushing each other apart.","Air pockets trapped inside ice lower its atomic mass."],
+            correctIndex: 1,
+            explanation: "As liquid water freezes, hydrogen bonds stabilize and position the molecules further apart in a crystalline lattice, making solid ice less dense than liquid water.",
+            unitId: 1
+          },
+          {
+            id: "1.1.3",
             text: "Which property explains why water has a much higher boiling point than H2S (similar size)?",
             options: ["H2S has more electrons","Water forms extensive H-bonds requiring more energy to vaporize","Water has stronger covalent O-H bonds","H2S is denser"],
             correctIndex: 1,
@@ -140,7 +148,15 @@ Elements cycle through the biosphere via biogeochemical cycles:
             unitId: 1
           },
           {
-            id: "1.1.3",
+            id: "1.1.4",
+            text: "Oil and water do not mix. This is BEST explained by water being:",
+            options: ["unable to form covalent bonds","polar, excluding nonpolar oil via the hydrophobic effect","denser than oil","a gas at room temperature"],
+            correctIndex: 1,
+            explanation: "Water is polar; oil is nonpolar. Polar H2O excludes nonpolar molecules via the hydrophobic effect.",
+            unitId: 1
+          },
+          {
+            id: "1.1.5",
             text: "What ecological benefit does water's high specific heat provide?",
             options: ["Aquatic environments fluctuate rapidly","Water resists temperature change, buffering aquatic habitats","Water cools organisms by evaporating instantly","Aquatic organisms need no thermoregulation"],
             correctIndex: 1,
@@ -148,7 +164,15 @@ Elements cycle through the biosphere via biogeochemical cycles:
             unitId: 1
           },
           {
-            id: "1.1.4",
+            id: "1.1.6",
+            text: "A researcher analyzes a biological macromolecule and finds it contains carbon, hydrogen, oxygen, nitrogen, and phosphorus. Which of the following is the molecule most likely to be?",
+            options: ["A triglyceride","A polypeptide","A nucleic acid","A starch molecule"],
+            correctIndex: 2,
+            explanation: "Nucleic acids (DNA/RNA) contain carbon, hydrogen, oxygen, nitrogen, and phosphorus. Proteins contain S, but rarely P. Carbohydrates and lipids contain C, H, O (and sometimes P in phospholipids, but not nitrogen).",
+            unitId: 1
+          },
+          {
+            id: "1.1.7",
             text: "Which element acts as the primary structural backbone for all biological macromolecules due to its ability to form four stable covalent bonds?",
             options: ["Nitrogen","Oxygen","Carbon","Phosphorus"],
             correctIndex: 2,
@@ -156,11 +180,27 @@ Elements cycle through the biosphere via biogeochemical cycles:
             unitId: 1
           },
           {
-            id: "1.1.5",
+            id: "1.1.8",
+            text: "Which element is found in proteins/nucleic acids but NOT in glucose?",
+            options: ["Oxygen","Carbon","Nitrogen","Hydrogen"],
+            correctIndex: 2,
+            explanation: "Nitrogen is in amino groups of amino acids and nitrogenous bases. Glucose (C6H12O6) contains only C, H, and O.",
+            unitId: 1
+          },
+          {
+            id: "1.1.9",
             text: "Phosphorus is essential mainly because it is a structural component of:",
             options: ["amino acids and triglycerides","nucleic acids and phospholipids","monosaccharides and polysaccharides","fatty acids and steroids"],
             correctIndex: 1,
             explanation: "Phosphate groups form the sugar-phosphate backbone of DNA/RNA and the hydrophilic head of phospholipids.",
+            unitId: 1
+          },
+          {
+            id: "1.1.10",
+            text: "What structural function does sulfur serve in proteins via cysteine residues?",
+            options: ["Forms disulfide bridges stabilizing tertiary structure","Provides negative charge that binds DNA","Forms peptide bonds between amino acids","Makes proteins water-soluble"],
+            correctIndex: 0,
+            explanation: "Cysteine residues form covalent disulfide (-S-S-) bonds between R-groups, stabilizing the 3D folded protein.",
             unitId: 1
           }
         ]
@@ -271,6 +311,14 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
           },
           {
             id: "1.2.2",
+            text: "If a starch polymer consisting of 100 glucose monomers is completely broken down into individual glucose molecules, how many water molecules are consumed in the process?",
+            options: ["99","100","101","50"],
+            correctIndex: 0,
+            explanation: "Breaking down a polymer of 100 monomers requires cleaving 99 covalent bonds. Each cleavage consumes one water molecule during hydrolysis.",
+            unitId: 1
+          },
+          {
+            id: "1.2.3",
             text: "A polypeptide of 150 amino acids is fully hydrolyzed. How many water molecules are consumed?",
             options: ["148","149","150","151"],
             correctIndex: 1,
@@ -278,7 +326,15 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
             unitId: 1
           },
           {
-            id: "1.2.3",
+            id: "1.2.4",
+            text: "Which of the following is NOT a monomer-polymer pair?",
+            options: ["Glucose-Starch","Amino acid-Polypeptide","Nucleotide-DNA","Glycerol-Triglyceride"],
+            correctIndex: 3,
+            explanation: "Triglycerides form from glycerol + 3 fatty acids via ester bonds, but are NOT polymers (no repeating monomer chain).",
+            unitId: 1
+          },
+          {
+            id: "1.2.5",
             text: "A cell forms 200 peptide bonds synthesizing a protein. How many water molecules are released?",
             options: ["199","200","201","400"],
             correctIndex: 1,
@@ -286,7 +342,15 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
             unitId: 1
           },
           {
-            id: "1.2.4",
+            id: "1.2.6",
+            text: "What makes saturated fatty acids solid at room temperature compared to unsaturated fatty acids?",
+            options: ["They contain ionic bonds that strengthen their structures.","They lack carbon-carbon double bonds, allowing their straight hydrocarbon chains to pack tightly together.","They contain hydrophilic phosphate groups that bind water.","They form extensive disulfide bridges between R-groups."],
+            correctIndex: 1,
+            explanation: "Saturated fatty acids have straight tails because they contain no double bonds, enabling them to pack tightly and remain solid at room temperature. Unsaturated fatty acids have kinks due to double bonds.",
+            unitId: 1
+          },
+          {
+            id: "1.2.7",
             text: "Which level of protein structure is characterized by alpha helices and beta pleated sheets formed by hydrogen bonds along the polypeptide backbone?",
             options: ["Primary structure","Secondary structure","Tertiary structure","Quaternary structure"],
             correctIndex: 1,
@@ -294,11 +358,27 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
             unitId: 1
           },
           {
-            id: "1.2.5",
+            id: "1.2.8",
+            text: "Heat denatures a protein by disrupting H-bonds and hydrophobic interactions. Which structural levels are lost?",
+            options: ["Primary only","Primary and secondary","Secondary and tertiary","Secondary, tertiary, and quaternary"],
+            correctIndex: 3,
+            explanation: "Denaturation disrupts secondary (helices/sheets), tertiary (3D shape), and quaternary (multi-subunit) structure. Primary sequence is unaffected.",
+            unitId: 1
+          },
+          {
+            id: "1.2.9",
             text: "What property makes phospholipids capable of forming biological membrane bilayers?",
             options: ["Entirely hydrophobic","Entirely hydrophilic","Amphipathic: hydrophilic phosphate head and hydrophobic fatty acid tails","Covalent bonding with water"],
             correctIndex: 2,
             explanation: "Amphipathic phospholipids self-assemble: hydrophilic heads face water; hydrophobic tails face inward away from water.",
+            unitId: 1
+          },
+          {
+            id: "1.2.10",
+            text: "Both plant starch and animal glycogen are composed of which monomer?",
+            options: ["Fructose","Ribose","Glucose","Galactose"],
+            correctIndex: 2,
+            explanation: "Starch (plants) and glycogen (animals) are both storage polysaccharides made of glucose monomers linked by alpha-glycosidic bonds.",
             unitId: 1
           }
         ]
@@ -307,7 +387,7 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
         id: "1.3",
         title: "Nucleic Acids: Structure, Chemistry, and Information",
         description: "Examine DNA and RNA structural differences, directionality, and coding differences.",
-        youtubeId: "MA-Ez_pT81E",
+        youtubeId: "QfQDgQ84Z4E",
         article: `
 # Nucleic Acids: Structure, Chemistry, and Information
 
@@ -398,6 +478,46 @@ DNA consists of two strands wrapped in a double helix:
             options: ["TAGC","CGAT","ATCG","GCTA"],
             correctIndex: 1,
             explanation: "Complementary strand (antiparallel) is 3'-TAGC-5'. Read 5' to 3', this is CGAT.",
+            unitId: 1
+          },
+          {
+            id: "1.3.6",
+            text: "Which of the following best describes the structural differences between DNA and RNA?",
+            options: ["DNA contains uracil and ribose, whereas RNA contains thymine and deoxyribose.","DNA contains thymine and deoxyribose, whereas RNA contains uracil and ribose.","DNA is single-stranded and contains adenine, whereas RNA is double-stranded and contains guanine.","DNA contains a phosphate group, whereas RNA lacks a phosphate group."],
+            correctIndex: 1,
+            explanation: "DNA features deoxyribose sugar and thymine nitrogenous base, while RNA features ribose sugar and uracil nitrogenous base.",
+            unitId: 1
+          },
+          {
+            id: "1.3.7",
+            text: "During DNA replication, which enzyme is responsible for unwinding the double helix at the replication fork?",
+            options: ["DNA Polymerase","RNA Primase","DNA Ligase","DNA Helicase"],
+            correctIndex: 3,
+            explanation: "DNA Helicase breaks the hydrogen bonds between the complementary base pairs to unwind and separate the two strands of DNA.",
+            unitId: 1
+          },
+          {
+            id: "1.3.8",
+            text: "What type of chemical bond holds the complementary nitrogenous bases together across the double helix of a DNA molecule?",
+            options: ["Covalent peptide bonds","Nonpolar covalent bonds","Hydrogen bonds","Ionic phosphodiester bonds"],
+            correctIndex: 2,
+            explanation: "Hydrogen bonds form between complementary nitrogenous bases (adenine to thymine, guanine to cytosine) to stabilize the double-stranded structure of DNA.",
+            unitId: 1
+          },
+          {
+            id: "1.3.9",
+            text: "If a double-stranded DNA sample is found to consist of 30% adenine, what is the expected percentage of cytosine in this sample?",
+            options: ["20%","30%","40%","70%"],
+            correctIndex: 0,
+            explanation: "Under Chargaff's rules, Adenine = Thymine (30% each = 60% total). The remaining 40% is split equally between Guanine and Cytosine (20% each).",
+            unitId: 1
+          },
+          {
+            id: "1.3.10",
+            text: "Which of the following describes the directionality and orientation of the two complementary strands of DNA?",
+            options: ["They are parallel, both running in the 5' to 3' direction.","They are parallel, both running in the 3' to 5' direction.","They are antiparallel, with one strand running 5' to 3' and the other 3' to 5'.","They are perpendicular, forming a cross-braced structure."],
+            correctIndex: 2,
+            explanation: "DNA strands are antiparallel, meaning they run in opposite directions relative to one another (one 5'-to-3', the other 3'-to-5').",
             unitId: 1
           }
         ]
@@ -592,6 +712,14 @@ Doubling cell radius quadruples the time for nutrients to reach the center. Cell
           },
           {
             id: "2.1.2",
+            text: "How does the structural folding of the inner mitochondrial membrane support its physiological function?",
+            options: ["It isolates genetic information in the matrix.","It increases surface area for housing electron transport chain proteins and ATP synthase complexes.","It allows the mitochondria to swell and store excess water.","It blocks transport of oxygen to keep respiration anaerobic."],
+            correctIndex: 1,
+            explanation: "The folding of the inner membrane (cristae) increases the surface area available for oxidative phosphorylation, permitting higher ATP output.",
+            unitId: 2
+          },
+          {
+            id: "2.1.3",
             text: "A cell secreting large amounts of digestive enzymes would have an abundance of:",
             options: ["Chloroplasts and vacuoles","Rough ER and Golgi apparatus","Smooth ER and peroxisomes","Central vacuoles"],
             correctIndex: 1,
@@ -599,7 +727,15 @@ Doubling cell radius quadruples the time for nutrients to reach the center. Cell
             unitId: 2
           },
           {
-            id: "2.1.3",
+            id: "2.1.4",
+            text: "Which combination of structures is UNIQUE to plant cells?",
+            options: ["Ribosomes and mitochondria","Cell wall, large central vacuole, and chloroplasts","Nucleus and endoplasmic reticulum","Golgi apparatus and lysosomes"],
+            correctIndex: 1,
+            explanation: "Plant cells have a cellulose cell wall, large central vacuole, and chloroplasts - none found in typical animal cells.",
+            unitId: 2
+          },
+          {
+            id: "2.1.5",
             text: "Which cellular component is structurally responsible for the degradation of worn-out organelles and cellular debris?",
             options: ["The Smooth ER, because it detoxifies substances.","The Golgi Complex, because it sorts cellular products.","The Lysosome, because it contains acidic hydrolytic enzymes.","The Mitochondrion, because it burns waste to release energy."],
             correctIndex: 2,
@@ -607,7 +743,15 @@ Doubling cell radius quadruples the time for nutrients to reach the center. Cell
             unitId: 2
           },
           {
-            id: "2.1.4",
+            id: "2.1.6",
+            text: "A toxin blocks ER transport vesicles. Which process is MOST directly disrupted?",
+            options: ["DNA replication","ATP synthesis","Secretion of proteins to the extracellular environment","Lipid synthesis in smooth ER"],
+            correctIndex: 2,
+            explanation: "Proteins for secretion must travel in vesicles from rough ER to Golgi to plasma membrane. Blocking ER exit halts secretion.",
+            unitId: 2
+          },
+          {
+            id: "2.1.7",
             text: "During autophagy, which organelle provides hydrolytic enzymes to digest old organelles?",
             options: ["Golgi apparatus","Smooth ER","Lysosome","Peroxisome"],
             correctIndex: 2,
@@ -615,11 +759,27 @@ Doubling cell radius quadruples the time for nutrients to reach the center. Cell
             unitId: 2
           },
           {
-            id: "2.1.5",
+            id: "2.1.8",
+            text: "Why is a high surface area-to-volume ratio advantageous for a cell?",
+            options: ["It increases the distance molecules must travel to reach the nucleus.","It maximizes the membrane surface available for diffusion relative to the metabolic volume being serviced.","It decreases the rate of heat loss to the environment.","It allows the cell to store more waste products."],
+            correctIndex: 1,
+            explanation: "A high SA/V ratio means there is a large amount of membrane area to import nutrients and export wastes quickly relative to the cell's metabolic volume.",
+            unitId: 2
+          },
+          {
+            id: "2.1.9",
             text: "A cube-shaped cell has side length 3 um. What is its surface area-to-volume ratio?",
             options: ["2","3","6","9"],
             correctIndex: 0,
             explanation: "SA = 6x(3^2) = 54 um^2. V = 3^3 = 27 um^3. SA/V = 54/27 = 2.",
+            unitId: 2
+          },
+          {
+            id: "2.1.10",
+            text: "Which adaptation BEST solves the low SA/V ratio in large metabolically active cells?",
+            options: ["Spherical shape to maximize volume","Highly folded internal membranes increasing functional surface area","Dormancy to reduce metabolic needs","Larger nucleus"],
+            correctIndex: 1,
+            explanation: "Cristae in mitochondria, microvilli in intestinal cells, and thylakoids in chloroplasts all increase surface area without proportionally increasing volume.",
             unitId: 2
           }
         ]
@@ -924,6 +1084,14 @@ Three types of <vocab term="Endocytosis" definition="Bulk transport INTO the cel
           },
           {
             id: "2.2.2",
+            text: "A protein spanning the entire bilayer with hydrophobic transmembrane segments is classified as:",
+            options: ["A peripheral membrane protein","An integral (transmembrane) protein","A glycolipid","A soluble receptor"],
+            correctIndex: 1,
+            explanation: "Integral proteins span the lipid bilayer. Hydrophobic regions interact with fatty acid tails; hydrophilic ends face aqueous environments.",
+            unitId: 2
+          },
+          {
+            id: "2.2.3",
             text: "Glycoproteins on the extracellular membrane surface primarily function as:",
             options: ["energy storage molecules","barriers blocking protein transport","cell-identity markers and receptor sites","structures replacing membrane proteins"],
             correctIndex: 2,
@@ -931,7 +1099,15 @@ Three types of <vocab term="Endocytosis" definition="Bulk transport INTO the cel
             unitId: 2
           },
           {
-            id: "2.2.3",
+            id: "2.2.4",
+            text: "What is the primary function of aquaporins in cell membranes?",
+            options: ["To pump water molecules against their concentration gradient using ATP","To facilitate the rapid passive diffusion of polar water molecules across the hydrophobic membrane core","To act as gated channels that open only during active transport","To bind ions and prevent them from entering hydration shells"],
+            correctIndex: 1,
+            explanation: "Aquaporins are specialized channel proteins that allow polar water molecules to pass rapidly through the cell membrane down their concentration gradient (osmosis).",
+            unitId: 2
+          },
+          {
+            id: "2.2.5",
             text: "A cell in hypertonic solution loses water by which mechanism?",
             options: ["Active transport requiring ATP","Endocytosis","Osmosis through aquaporins","Exocytosis"],
             correctIndex: 2,
@@ -939,7 +1115,15 @@ Three types of <vocab term="Endocytosis" definition="Bulk transport INTO the cel
             unitId: 2
           },
           {
-            id: "2.2.4",
+            id: "2.2.6",
+            text: "Which of the following is a characteristic of facilitated diffusion?",
+            options: ["It requires the hydrolysis of ATP.","It transports molecules against their concentration gradient.","It uses membrane proteins to transport polar molecules down their concentration gradient.","It occurs only in prokaryotic cells."],
+            correctIndex: 2,
+            explanation: "Facilitated diffusion is passive (no ATP, down gradient) and utilizes channel or carrier proteins to help hydrophilic/polar molecules cross the hydrophobic lipid bilayer.",
+            unitId: 2
+          },
+          {
+            id: "2.2.7",
             text: "GLUT2 transport rate plateaus despite rising blood glucose. This is because:",
             options: ["The cell no longer needs glucose","All GLUT2 transporters are saturated with substrate","Glucose concentration inside exceeds outside","ATP is depleted"],
             correctIndex: 1,
@@ -947,11 +1131,27 @@ Three types of <vocab term="Endocytosis" definition="Bulk transport INTO the cel
             unitId: 2
           },
           {
-            id: "2.2.5",
+            id: "2.2.8",
+            text: "Why do cells need facilitated diffusion proteins for glucose even though it moves down its gradient?",
+            options: ["Glucose has a negative charge","Glucose is large and polar, unable to cross the hydrophobic bilayer alone","Glucose requires phosphorylation first","High internal glucose pushes it out"],
+            correctIndex: 1,
+            explanation: "Glucose (MW 180) is a large polar molecule. The hydrophobic bilayer core blocks polar molecules; GLUT proteins provide a hydrophilic channel.",
+            unitId: 2
+          },
+          {
+            id: "2.2.9",
             text: "Which process is utilized by a cell to import highly specific macromolecules by binding them to extracellular membrane proteins before engulfing them?",
             options: ["Pinocytosis","Phagocytosis","Receptor-mediated endocytosis","Exocytosis"],
             correctIndex: 2,
             explanation: "Receptor-mediated endocytosis relies on specific cell-surface receptor proteins binding target ligands before pinching off into a coated vesicle.",
+            unitId: 2
+          },
+          {
+            id: "2.2.10",
+            text: "During receptor-mediated endocytosis, a cell internalizes specific molecules by:",
+            options: ["diffusion through gated ion channels","forming a membrane vesicle after receptor-ligand binding","using ATP to pump molecules across","excreting enzymes to digest molecules"],
+            correctIndex: 1,
+            explanation: "Ligands bind receptors in coated pits. The pit invaginates and pinches off, forming an endocytic vesicle inside the cell.",
             unitId: 2
           }
         ]
@@ -1189,6 +1389,14 @@ Understanding endosymbiosis explains:
           },
           {
             id: "2.3.2",
+            text: "Which of the following represents the solute potential (Psi_s) of a 0.5 M sucrose solution at 27 degrees Celsius (300 K) open to the atmosphere (ionization constant i = 1)?",
+            options: ["-12.46 bars","-24.93 bars","0 bars","-1.25 bars"],
+            correctIndex: 0,
+            explanation: "Using the formula Psi_s = -iCRT: Psi_s = -(1) * (0.5 mol/L) * (0.0831 L bar/mol K) * (300 K) = -12.465 bars, which rounds to -12.46 bars.",
+            unitId: 2
+          },
+          {
+            id: "2.3.3",
             text: "What prevents a plant cell in hypotonic solution from lysing unlike an animal cell?",
             options: ["Membrane becomes thicker","The rigid cell wall resists expansion, generating wall pressure","Chloroplasts absorb excess water","The vacuole exports water"],
             correctIndex: 1,
@@ -1196,7 +1404,15 @@ Understanding endosymbiosis explains:
             unitId: 2
           },
           {
-            id: "2.3.3",
+            id: "2.3.4",
+            text: "Which solution causes NO net water movement in animal cells?",
+            options: ["Hypertonic (higher solute than cell)","Hypotonic (lower solute than cell)","Isotonic (same solute concentration as cell)","Distilled water"],
+            correctIndex: 2,
+            explanation: "In isotonic solution, solute concentrations are equal inside and outside. Water potential is equal so there is no net osmosis.",
+            unitId: 2
+          },
+          {
+            id: "2.3.5",
             text: "Which of the following is true regarding cellular compartmentalization?",
             options: ["Prokaryotes contain extensive membrane-bound compartments to run photosynthesis.","Eukaryotes utilize internal membranes to separate conflicting chemical reactions.","Compartmentalization reduces the surface area of internal membranes.","All eukaryotic organelles share identical pH levels."],
             correctIndex: 1,
@@ -1204,7 +1420,15 @@ Understanding endosymbiosis explains:
             unitId: 2
           },
           {
-            id: "2.3.4",
+            id: "2.3.6",
+            text: "Why does compartmentalization by internal membranes benefit eukaryotic cells?",
+            options: ["It prevents all chemical reactions","Incompatible reactions can occur simultaneously in separate compartments","It removes the need for DNA in the nucleus","It reduces metabolic rate"],
+            correctIndex: 1,
+            explanation: "Without compartmentalization, incompatible reactions (e.g., protein synthesis and degradation) would interfere. Membranes allow simultaneous, efficient parallel processing.",
+            unitId: 2
+          },
+          {
+            id: "2.3.7",
             text: "A drug dissolves all inner mitochondrial membranes. Which process is MOST immediately disrupted?",
             options: ["DNA replication","Calvin cycle","Oxidative phosphorylation and ATP synthesis","Protein synthesis on ribosomes"],
             correctIndex: 2,
@@ -1212,11 +1436,27 @@ Understanding endosymbiosis explains:
             unitId: 2
           },
           {
-            id: "2.3.5",
+            id: "2.3.8",
+            text: "Which of the following features of mitochondria provides the strongest evidence for the endosymbiotic theory?",
+            options: ["They contain their own circular DNA molecule and prokaryotic-like ribosomes.","They are the primary site of ATP synthesis.","They can fuse with lysosomes to recycle nutrients.","They rely on nuclear genes for all of their structural proteins."],
+            correctIndex: 0,
+            explanation: "Mitochondria contain circular DNA genomes and 70S ribosomes, both of which are hallmark characteristics of prokaryotic cells, supporting their origin as engulfed bacteria.",
+            unitId: 2
+          },
+          {
+            id: "2.3.9",
             text: "Which observation provides STRONGEST evidence for endosymbiotic theory?",
             options: ["Mitochondria are found in all eukaryotes","Mitochondria have circular DNA and 70S ribosomes similar to bacteria","Mitochondria have a double membrane","Mitochondria produce ATP"],
             correctIndex: 1,
             explanation: "Circular DNA, 70S ribosomes (prokaryotic type), and binary fission are all bacterial characteristics - the strongest evidence.",
+            unitId: 2
+          },
+          {
+            id: "2.3.10",
+            text: "Chloroplasts most likely originated from which type of organism?",
+            options: ["Heterotrophic archaean","Free-living photosynthetic cyanobacterium","Thermophilic bacterium","Non-photosynthetic purple bacterium"],
+            correctIndex: 1,
+            explanation: "Chloroplasts resemble cyanobacteria in photosynthetic machinery, thylakoid membranes, circular DNA, and 70S ribosomes.",
             unitId: 2
           }
         ]
@@ -1232,7 +1472,7 @@ Understanding endosymbiosis explains:
         id: "3.1",
         title: "Enzyme Structure, Catalysis, and Regulation",
         description: "Understand the structural properties of enzymes and substrate specificity. Analyze factors affecting enzyme function, denaturation, and mechanisms of inhibition. Study how temperature, pH, and inhibitors impact enzyme conformation and rates.",
-        youtubeId: "qgVYGpH_gFQ",
+        youtubeId: "yk14dMjaa9w",
         article: `
 # Enzyme Structure, Catalysis, and Regulation
 
@@ -1526,6 +1766,14 @@ Natural selection has optimized enzyme characteristics for each organism's envir
           },
           {
             id: "3.1.2",
+            text: "What occurs during an 'induced fit' when a substrate binds to an enzyme?",
+            options: ["The substrate changes its chemical identity before binding.","The active site undergoes a slight shape change to bind the substrate more securely.","The enzyme permanently denatures.","Covalent peptide bonds in the primary sequence are cleaved."],
+            correctIndex: 1,
+            explanation: "Induced fit describes how an enzyme adjusts its conformation slightly upon substrate binding to establish a tighter, more active catalytic fit.",
+            unitId: 3
+          },
+          {
+            id: "3.1.3",
             text: "A mutation changes one amino acid IN the active site. The most likely effect is:",
             options: ["Unchanged enzyme function","Ability to bind any substrate","Reduced or eliminated substrate specificity","Increased optimum temperature"],
             correctIndex: 2,
@@ -1533,7 +1781,15 @@ Natural selection has optimized enzyme characteristics for each organism's envir
             unitId: 3
           },
           {
-            id: "3.1.3",
+            id: "3.1.4",
+            text: "Enzymes speed up reactions by:",
+            options: ["providing energy to break the activation energy barrier","being consumed in the reaction","lowering the activation energy by stabilizing the transition state","changing the reaction equilibrium"],
+            correctIndex: 2,
+            explanation: "Enzymes lower activation energy (Ea) by stabilizing the transition state. They are neither consumed nor do they shift equilibrium.",
+            unitId: 3
+          },
+          {
+            id: "3.1.5",
             text: "What happens when an enzyme is exposed to a pH far outside its native range?",
             options: ["The primary structure of the polypeptide chain is hydrolyzed.","The change in H+ concentration disrupts ionic bonds, denaturing the tertiary structure and active site.","Competitive inhibitors bind to the active site to block protons.","Activation energy is lowered even further, causing extreme reaction speeds."],
             correctIndex: 1,
@@ -1541,7 +1797,15 @@ Natural selection has optimized enzyme characteristics for each organism's envir
             unitId: 3
           },
           {
-            id: "3.1.4",
+            id: "3.1.6",
+            text: "The induced-fit model proposes that:",
+            options: ["The enzyme has a rigid active site","The enzyme changes shape slightly when substrate binds","The substrate changes shape to fit the enzyme","No enzyme-substrate complex forms"],
+            correctIndex: 1,
+            explanation: "In induced fit, substrate binding induces a conformational change in the active site, creating a snugger, more precise complementary fit.",
+            unitId: 3
+          },
+          {
+            id: "3.1.7",
             text: "Adding excess substrate to a reaction with a competitive inhibitor will:",
             options: ["have no effect","decrease reaction rate further","increase reaction rate back toward normal","permanently denature the inhibitor"],
             correctIndex: 2,
@@ -1549,11 +1813,27 @@ Natural selection has optimized enzyme characteristics for each organism's envir
             unitId: 3
           },
           {
-            id: "3.1.5",
+            id: "3.1.8",
+            text: "How does a cold environment (e.g., 4 degrees Celsius) affect the rate of an enzyme-catalyzed reaction?",
+            options: ["It denatures the enzyme's active site.","It slows the reaction by reducing the kinetic energy and collision rates of enzymes and substrates.","It increases the activation energy of the reaction.","It acts as a noncompetitive inhibitor."],
+            correctIndex: 1,
+            explanation: "Cold temperatures do not denature enzymes. Instead, they reduce molecular speed, meaning enzymes and substrates collide less frequently, slowing the reaction rate.",
+            unitId: 3
+          },
+          {
+            id: "3.1.9",
             text: "Pepsin has maximum activity at pH 2. At pH 8 activity falls sharply because:",
             options: ["Substrate is destroyed at high pH","pH change alters ionization of active site amino acids, disrupting its 3D shape","Water concentration increases, diluting the enzyme","Substrate becomes more polar at high pH"],
             correctIndex: 1,
             explanation: "pH affects ionic charges on R-groups in the active site. Deviation from optimum alters these charges, disrupting the active site shape and substrate binding.",
+            unitId: 3
+          },
+          {
+            id: "3.1.10",
+            text: "A noncompetitive inhibitor binds an allosteric site. Unlike competitive inhibition, this:",
+            options: ["can be reversed by adding excess substrate","cannot be overcome by adding excess substrate","is always permanent","only affects substrate binding affinity"],
+            correctIndex: 1,
+            explanation: "Noncompetitive inhibitors change enzyme shape allosterically. Since they do not block the active site directly, adding more substrate does not help.",
             unitId: 3
           }
         ]
@@ -1719,6 +1999,14 @@ The Calvin cycle uses ATP and NADPH from the light reactions to convert $CO_2$ i
           },
           {
             id: "3.2.2",
+            text: "Why is the hydrolysis of ATP an exergonic reaction?",
+            options: ["It requires a large input of heat energy to break the ribose ring.","The products (ADP and inorganic phosphate) are more stable and have less free energy than the reactant (ATP).","It decreases the entropy of the surroundings.","It converts carbon dioxide into glucose."],
+            correctIndex: 1,
+            explanation: "ATP hydrolysis releases free energy (exergonic) because the repulsion of the three adjacent negative phosphate groups in ATP is relieved, resulting in more stable ADP and Pi products.",
+            unitId: 3
+          },
+          {
+            id: "3.2.3",
             text: "ATP hydrolysis coupled to active transport is an example of:",
             options: ["Feedback inhibition","Energy coupling: exergonic ATP hydrolysis drives endergonic work","Competitive inhibition of ATPase","Allosteric regulation"],
             correctIndex: 1,
@@ -1726,7 +2014,15 @@ The Calvin cycle uses ATP and NADPH from the light reactions to convert $CO_2$ i
             unitId: 3
           },
           {
-            id: "3.2.3",
+            id: "3.2.4",
+            text: "In pathway A->B->C->D, product D inhibits the A->B enzyme. This is:",
+            options: ["Substrate activation","Competitive inhibition","Feedback (end-product) inhibition","Allosteric activation"],
+            correctIndex: 2,
+            explanation: "Feedback inhibition: end product inhibits an early enzyme, preventing overproduction. A common metabolic regulatory mechanism.",
+            unitId: 3
+          },
+          {
+            id: "3.2.5",
             text: "Which is an ANABOLIC reaction?",
             options: ["Breaking glycogen into glucose during exercise","Oxidizing glucose to produce ATP","Synthesizing a polypeptide from amino acids","Hydrolyzing triglycerides into glycerol and fatty acids"],
             correctIndex: 2,
@@ -1734,7 +2030,15 @@ The Calvin cycle uses ATP and NADPH from the light reactions to convert $CO_2$ i
             unitId: 3
           },
           {
-            id: "3.2.4",
+            id: "3.2.6",
+            text: "What is the direct purpose of the photolysis of water in the light-dependent reactions of photosynthesis?",
+            options: ["To generate carbon dioxide for the Calvin Cycle","To provide replacement electrons for Photosystem II","To synthesize glucose directly in the thylakoid space","To act as the final electron acceptor of the ETC"],
+            correctIndex: 1,
+            explanation: "Photolysis splits water to yield protons, oxygen gas, and electrons. These electrons replace those excited and lost by the reaction center of Photosystem II.",
+            unitId: 3
+          },
+          {
+            id: "3.2.7",
             text: "Where is the electrochemical proton gradient established in the chloroplast during the light reactions?",
             options: ["Across the outer membrane into the cytoplasm","Inside the stroma of the chloroplast","In the thylakoid lumen (space) across the thylakoid membrane","Within the mitochondrial matrix"],
             correctIndex: 2,
@@ -1742,11 +2046,27 @@ The Calvin cycle uses ATP and NADPH from the light reactions to convert $CO_2$ i
             unitId: 3
           },
           {
-            id: "3.2.5",
+            id: "3.2.8",
+            text: "What is the PRIMARY role of splitting water (photolysis) in light-dependent reactions?",
+            options: ["Produce CO2 for Calvin cycle","Provide electrons to replace those lost by oxidized chlorophyll","Create proton gradient via substrate-level phosphorylation","Provide NADPH directly to Calvin cycle"],
+            correctIndex: 1,
+            explanation: "Photolysis (2H2O -> 4H+ + 4e- + O2) provides electrons to replace those lost by photoexcited chlorophyll.",
+            unitId: 3
+          },
+          {
+            id: "3.2.9",
             text: "During the Calvin cycle, CO2 is fixed by RuBisCO onto:",
             options: ["G3P","RuBP (ribulose-1,5-bisphosphate)","Oxaloacetate","Pyruvate"],
             correctIndex: 1,
             explanation: "RuBisCO catalyzes CO2 addition to RuBP (5C), producing an unstable 6C compound that splits into two 3-PGA molecules.",
+            unitId: 3
+          },
+          {
+            id: "3.2.10",
+            text: "A plant is exposed to light with H2-18O (heavy oxygen water). The 18O would appear in:",
+            options: ["CO2 released from the plant","O2 released from the plant","Glucose from the Calvin cycle","ATP made in the stroma"],
+            correctIndex: 1,
+            explanation: "O2 released during photosynthesis comes directly from photolysis of water. Heavy 18O in water leads to 18O2 gas.",
             unitId: 3
           }
         ]
@@ -1938,6 +2258,14 @@ Departure from Hardy-Weinberg = evolution is occurring.
           },
           {
             id: "3.3.2",
+            text: "In which region of the mitochondrion do electron transport chain proteins pump protons to establish the gradient?",
+            options: ["The mitochondrial matrix","The outer membrane pores","The intermembrane space","The cytoplasm"],
+            correctIndex: 2,
+            explanation: "ETC proteins pump protons from the matrix into the intermembrane space, creating a high concentration of protons relative to the matrix.",
+            unitId: 3
+          },
+          {
+            id: "3.3.3",
             text: "What is the FINAL electron acceptor in the electron transport chain?",
             options: ["NAD+","CO2","Pyruvate","O2"],
             correctIndex: 3,
@@ -1945,7 +2273,15 @@ Departure from Hardy-Weinberg = evolution is occurring.
             unitId: 3
           },
           {
-            id: "3.3.3",
+            id: "3.3.4",
+            text: "ATP synthase using the proton gradient to make ATP is called:",
+            options: ["Substrate-level phosphorylation","Chemiosmosis","Dehydration synthesis","Oxidative deamination"],
+            correctIndex: 1,
+            explanation: "Chemiosmosis: protons flow down their gradient through ATP synthase, driving ADP + Pi -> ATP. Produces the majority of aerobic ATP.",
+            unitId: 3
+          },
+          {
+            id: "3.3.5",
             text: "Cyanide blocks complex IV of the ETC. The MOST immediate consequence is:",
             options: ["Glycolysis immediately stops","Proton gradient collapses, halting ATP synthesis","Krebs cycle accelerates","Fermentation is permanently inhibited"],
             correctIndex: 1,
@@ -1953,7 +2289,15 @@ Departure from Hardy-Weinberg = evolution is occurring.
             unitId: 3
           },
           {
-            id: "3.3.4",
+            id: "3.3.6",
+            text: "Why is having multiple types of chlorophyll pigments advantageous for a photosynthetic plant?",
+            options: ["It allows the plant to synthesize different types of glucose molecules.","It increases the range of light wavelengths the plant can absorb to power the light reactions.","It prevents the plant from losing water via transpiration.","It allows the plant to run the Calvin Cycle without ATP."],
+            correctIndex: 1,
+            explanation: "Different pigments absorb different light wavelengths. Diverse pigments (chlorophyll a, chlorophyll b, carotenoids) expand the light absorption spectrum, increasing photosynthetic efficiency.",
+            unitId: 3
+          },
+          {
+            id: "3.3.7",
             text: "How does the higher oxygen affinity of fetal hemoglobin support the survival of a developing mammalian fetus?",
             options: ["It allows the fetus to survive in an entirely anaerobic environment.","It enables the fetal blood to extract oxygen across the placenta from the mother's lower-affinity hemoglobin.","It speeds up the rate of cellular respiration in fetal muscle tissues.","It prevents carbon dioxide from dissolving in fetal plasma."],
             correctIndex: 1,
@@ -1961,11 +2305,27 @@ Departure from Hardy-Weinberg = evolution is occurring.
             unitId: 3
           },
           {
-            id: "3.3.5",
+            id: "3.3.8",
+            text: "During fermentation, pyruvate is converted to lactate. The PRIMARY purpose is to:",
+            options: ["Produce more ATP beyond glycolysis","Regenerate NAD+ so glycolysis can continue","Convert glucose to amino acids","Generate CO2"],
+            correctIndex: 1,
+            explanation: "Fermentation regenerates NAD+ from NADH. Without NAD+, glycolysis (requiring NAD+ as electron acceptor) cannot continue producing ATP anaerobically.",
+            unitId: 3
+          },
+          {
+            id: "3.3.9",
             text: "Chemosynthetic organisms obtain energy from:",
             options: ["Sunlight via chlorophyll","Chemical oxidation of inorganic compounds (H2S, NH3, Fe2+)","Consuming organic molecules","Radioactive decay"],
             correctIndex: 1,
             explanation: "Chemoautotrophs oxidize inorganic compounds as their energy source to fix CO2 into organic matter, without using light.",
+            unitId: 3
+          },
+          {
+            id: "3.3.10",
+            text: "During one Krebs cycle turn, where do the 2 carbons from acetyl-CoA end up?",
+            options: ["Converted to ethanol","Released as 2 CO2 molecules during oxidation steps","Left as part of oxaloacetate","Stored as glycogen"],
+            correctIndex: 1,
+            explanation: "The 2 carbons from acetyl-CoA are released as CO2 at the isocitrate dehydrogenase and alpha-ketoglutarate dehydrogenase steps.",
             unitId: 3
           }
         ]
@@ -1981,7 +2341,7 @@ Departure from Hardy-Weinberg = evolution is occurring.
         id: "4.1",
         title: "Cell Communication and Signal Transduction Pathways",
         description: "Study mechanisms of cellular signal reception, transduction cascades, and cellular responses. Learn how extracellular signals are recognized and converted into intracellular messages. Analyze details of signaling cascades, amplification, and second messengers. Evaluate how mutations or chemical inhibitors block or hyperactivate signaling.",
-        youtubeId: "5M2K918UR74",
+        youtubeId: "V4b_Vd93hIY",
         article: `
 # Cell Communication and Signal Transduction Pathways
 
@@ -2339,6 +2699,14 @@ Or: Gene Y expressed when signal A OR signal B is present (OR gate)
           },
           {
             id: "4.1.2",
+            text: "Steroid hormones cross the plasma membrane but peptide hormones cannot because steroids are:",
+            options: ["larger, requiring active transport","lipid-soluble (nonpolar), dissolving through the hydrophobic membrane","charged molecules using ion channels","too large for receptors"],
+            correctIndex: 1,
+            explanation: "Being lipid-derived, steroid hormones are hydrophobic and dissolve in the phospholipid bilayer. Peptide hormones are polar/charged and cannot cross.",
+            unitId: 4
+          },
+          {
+            id: "4.1.3",
             text: "Neurotransmitters signal only the adjacent postsynaptic cell. This is:",
             options: ["Endocrine (long-distance) signaling","Autocrine signaling","Paracrine signaling over a short distance","Direct contact via gap junctions"],
             correctIndex: 2,
@@ -2346,7 +2714,15 @@ Or: Gene Y expressed when signal A OR signal B is present (OR gate)
             unitId: 4
           },
           {
-            id: "4.1.3",
+            id: "4.1.4",
+            text: "What is the immediate molecular event that occurs after a ligand binds to a G-protein coupled receptor (GPCR)?",
+            options: ["The receptor is degraded by lysosomes.","The receptor undergoes a conformational change, allowing it to bind and activate an inactive G-protein.","The ligand enters the cell to act as a transcription factor.","The cell membrane immediately depolarizes."],
+            correctIndex: 1,
+            explanation: "Ligand binding induces a shape change in the GPCR, enabling it to interact with and activate a G-protein by causing it to swap GDP for GTP.",
+            unitId: 4
+          },
+          {
+            id: "4.1.5",
             text: "A drug permanently activates the G-protein alpha subunit (blocking GTP hydrolysis). The result is:",
             options: ["All signal transduction ceases","The signaling pathway is constitutively (continuously) active","cAMP is continuously degraded","Receptor is immediately internalized"],
             correctIndex: 1,
@@ -2354,7 +2730,15 @@ Or: Gene Y expressed when signal A OR signal B is present (OR gate)
             unitId: 4
           },
           {
-            id: "4.1.4",
+            id: "4.1.6",
+            text: "What is the evolutionary advantage of having a multi-step signal transduction cascade?",
+            options: ["It decreases the rate of mutation in the target genes.","It allows for signal amplification and multiple points of pathway regulation.","It bypasses the need for membrane receptors.","It guarantees that the cell will undergo apoptosis."],
+            correctIndex: 1,
+            explanation: "Multi-step pathways allow a tiny extracellular signal to be amplified into a massive cellular response, and offer multiple checkpoints where the pathway can be controlled or turned off.",
+            unitId: 4
+          },
+          {
+            id: "4.1.7",
             text: "Protein kinases in signaling cascades function by:",
             options: ["Hydrolyzing cAMP to terminate signaling","Adding phosphate groups to proteins, activating or deactivating them","Removing phosphate groups from RTKs","Synthesizing second messengers like IP3"],
             correctIndex: 1,
@@ -2362,11 +2746,27 @@ Or: Gene Y expressed when signal A OR signal B is present (OR gate)
             unitId: 4
           },
           {
-            id: "4.1.5",
+            id: "4.1.8",
+            text: "Receptor tyrosine kinases (RTKs) are activated by:",
+            options: ["Binding lipid-soluble hormones inside the cell","Ligand binding causing dimerization and autophosphorylation of tyrosine residues","Opening an ion channel","Activation by a G-protein alpha subunit"],
+            correctIndex: 1,
+            explanation: "When growth factors bind RTKs, two receptor monomers dimerize and phosphorylate each other's tyrosines (autophosphorylation), activating downstream signaling.",
+            unitId: 4
+          },
+          {
+            id: "4.1.9",
             text: "Which of the following best describes the effect of a competitive antagonist drug that binds to and blocks a cell-surface hormone receptor?",
             options: ["It increases the concentration of hormones in the blood.","It prevents the hormone from binding, thereby blocking signal transduction and the cellular response.","It triggers a phosphorylation cascade without a ligand.","It causes the cell to secrete more hormones."],
             correctIndex: 1,
             explanation: "A receptor antagonist binds to the receptor without activating it, physically preventing the actual hormone from binding and halting the signal transduction pathway.",
+            unitId: 4
+          },
+          {
+            id: "4.1.10",
+            text: "Receptor downregulation after prolonged hormone exposure reduces:",
+            options: ["Number of hormone molecules in the bloodstream","Cell sensitivity to the hormone (desensitization)","Rate of hormone synthesis","Intracellular second messenger levels"],
+            correctIndex: 1,
+            explanation: "Fewer surface receptors mean the cell becomes less responsive to the hormone. This prevents overstimulation during prolonged exposure.",
             unitId: 4
           }
         ]
@@ -2522,6 +2922,46 @@ Example: Isoleucine synthesis - isoleucine inhibits threonine deaminase (first e
             correctIndex: 1,
             explanation: "Feedback inhibition: when D accumulates, it inhibits early enzyme activity, slowing D production. When D is consumed, inhibition is relieved - preventing overproduction.",
             unitId: 4
+          },
+          {
+            id: "4.2.6",
+            text: "Which of the following physiological processes is governed by a positive feedback loop?",
+            options: ["Thermoregulation via sweating and vasodilation","Blood glucose regulation via insulin release","Oxytocin release leading to uterine contractions during childbirth","Osmoregulation via antidiuretic hormone (ADH) secretion"],
+            correctIndex: 2,
+            explanation: "Uterine contractions trigger the release of oxytocin, which stimulates further contractions in an amplifying loop until childbirth is complete.",
+            unitId: 4
+          },
+          {
+            id: "4.2.7",
+            text: "How does the body maintain homeostasis in response to a drop in external temperature via negative feedback?",
+            options: ["It initiates sweating and vasodilation to dump heat.","It triggers shivering and vasoconstriction to conserve and generate heat.","It slows down metabolic rate to conserve cellular energy.","It releases glucagon to break down fat reserves."],
+            correctIndex: 1,
+            explanation: "Shivering generates metabolic heat and vasoconstriction reduces blood flow to the skin, buffering body temperature back to the set point.",
+            unitId: 4
+          },
+          {
+            id: "4.2.8",
+            text: "In blood glucose regulation, what is the action of insulin released by beta cells in response to high blood sugar?",
+            options: ["It signals liver cells to release stored glycogen into the bloodstream.","It signals body cells and the liver to take up glucose, lowering blood glucose levels.","It stimulates glucagon production in the liver.","It triggers adrenaline release to speed up respiration."],
+            correctIndex: 1,
+            explanation: "Insulin promotes the uptake of glucose by somatic cells and the conversion of glucose into glycogen in the liver, bringing blood sugar down.",
+            unitId: 4
+          },
+          {
+            id: "4.2.9",
+            text: "What is the primary characteristic of a negative feedback mechanism in biological systems?",
+            options: ["It amplifies deviations from a set point, driving the system to an extreme.","It shuts down the system entirely when a set point is reached.","It counters deviations from a set point, bringing the variable back toward the normal range.","It operates only under highly stressful environmental conditions."],
+            correctIndex: 2,
+            explanation: "Negative feedback acts to reverse or dampen a stimulus, returning the variable (like body temperature or pH) back to its set point.",
+            unitId: 4
+          },
+          {
+            id: "4.2.10",
+            text: "Which hormone is secreted by the pancreas when blood glucose levels fall below the homeostatic set point?",
+            options: ["Insulin","Thyroxine","Glucagon","Epinephrine"],
+            correctIndex: 2,
+            explanation: "Alpha cells of the pancreas secrete glucagon, which signals the liver to break down glycogen into glucose and release it into the blood.",
+            unitId: 4
           }
         ]
       },
@@ -2529,7 +2969,7 @@ Example: Isoleucine synthesis - isoleucine inhibits threonine deaminase (first e
         id: "4.3",
         title: "Cell Cycle, Mitosis, and Regulation",
         description: "Explore the eukaryotic cell cycle, mitosis, and cyclin-dependent cell cycle regulation. Analyze checkpoints, cyclins, CDKs, and the molecular basis of cancer.",
-        youtubeId: "g7iAVCLZ9fY",
+        youtubeId: "L0k-enzoeOM",
         article: `
 # Cell Cycle, Mitosis, and Regulation
 
@@ -2685,6 +3125,14 @@ No inflammation occurs because the cell is packaged into apoptotic bodies before
           },
           {
             id: "4.3.2",
+            text: "What is the biological consequence if a cell fails to satisfy the spindle checkpoint during mitosis?",
+            options: ["DNA will duplicate a second time.","Sister chromatids will separate unevenly, leading to aneuploid daughter cells.","The cell will immediately enter the G0 state.","Cytokinesis will proceed before mitosis is finished."],
+            correctIndex: 1,
+            explanation: "The spindle checkpoint ensures chromosomes are aligned on the metaphase plate and attached to spindles. Failure leads to unequal chromosome distribution (nondisjunction).",
+            unitId: 4
+          },
+          {
+            id: "4.3.3",
             text: "DNA replication occurs during which specific phase of the cell cycle?",
             options: ["G1 phase","S (Synthesis) phase of interphase","G2 phase","M (Mitotic) phase"],
             correctIndex: 1,
@@ -2692,7 +3140,15 @@ No inflammation occurs because the cell is packaged into apoptotic bodies before
             unitId: 4
           },
           {
-            id: "4.3.3",
+            id: "4.3.4",
+            text: "A diploid human cell (2n=46) has completed S phase. How many total DNA molecules does it contain?",
+            options: ["23","46","92","184"],
+            correctIndex: 2,
+            explanation: "Before S phase: 46 chromosomes, each = 1 DNA molecule. After S phase: each chromosome = 2 sister chromatids. So 46 x 2 = 92 DNA molecules.",
+            unitId: 4
+          },
+          {
+            id: "4.3.5",
             text: "Which event marks the transition from G2 phase to mitosis?",
             options: ["Completion of DNA replication","Activation of the cyclin B-CDK1 complex (MPF)","Chromosome decondensation","Formation of the spindle checkpoint"],
             correctIndex: 1,
@@ -2700,7 +3156,15 @@ No inflammation occurs because the cell is packaged into apoptotic bodies before
             unitId: 4
           },
           {
-            id: "4.3.4",
+            id: "4.3.6",
+            text: "Which of the following best describes the relationship between cyclins and CDKs?",
+            options: ["CDK concentrations fluctuate, while cyclin levels remain constant.","Cyclins bind to and activate CDKs, which then phosphorylate target proteins to advance the cell cycle.","CDKs degrade cyclins to prevent the cell from entering interphase.","Cyclins are lipids that block CDK activity."],
+            correctIndex: 1,
+            explanation: "CDK concentrations are stable, but they must bind to fluctuating cyclin proteins to form an active complex that phosphorylates target proteins to advance the cell cycle.",
+            unitId: 4
+          },
+          {
+            id: "4.3.7",
             text: "What type of gene codes for proteins that normally act to prevent cell division if DNA damage is detected?",
             options: ["Oncogenes","Proto-oncogenes","Tumor suppressor genes","Ribosomal genes"],
             correctIndex: 2,
@@ -2708,11 +3172,27 @@ No inflammation occurs because the cell is packaged into apoptotic bodies before
             unitId: 4
           },
           {
-            id: "4.3.5",
+            id: "4.3.8",
+            text: "The p53 tumor suppressor protein (guardian of the genome) responds to DNA damage by:",
+            options: ["Stimulating cell division by activating cyclins","Halting the cell cycle at G1 and initiating DNA repair or apoptosis","Producing growth factors for tissue repair","Activating telomerase"],
+            correctIndex: 1,
+            explanation: "p53 is activated by DNA damage. It halts the cell cycle at G1 checkpoint (via p21/CDK inhibitor), allowing DNA repair. If repair fails, p53 triggers apoptosis.",
+            unitId: 4
+          },
+          {
+            id: "4.3.9",
             text: "Cancer cells often lack contact inhibition. This means they:",
             options: ["lose the ability to form gap junctions","continue to divide even when touching neighboring cells","cannot migrate to other tissues","have reduced DNA replication rates"],
             correctIndex: 1,
             explanation: "Normal cells stop dividing when contacting neighbors (contact inhibition), preventing overgrowth. Cancer cells lose this mechanism and form tumors.",
+            unitId: 4
+          },
+          {
+            id: "4.3.10",
+            text: "CDK enzymes require cyclin binding to become active. This requirement ensures:",
+            options: ["CDKs function only during interphase","CDKs are activated only when cyclin levels rise at the appropriate cell cycle stage","CDKs are degraded after each stage","CDKs function independently without growth signals"],
+            correctIndex: 1,
+            explanation: "Cyclin levels fluctuate cyclically. CDKs are only active when bound to their partner cyclin, ensuring checkpoints are passed only when conditions are correct.",
             unitId: 4
           }
         ]
@@ -2904,6 +3384,14 @@ When two gametes unite:
           },
           {
             id: "5.1.2",
+            text: "If an animal's muscle cells contain 40 chromosomes, how many chromosomes will be present in its sperm cells after meiosis?",
+            options: ["40","80","20","10"],
+            correctIndex: 2,
+            explanation: "Muscle cells are somatic (diploid, 2n = 40). Sperm cells are gametes (haploid, n), which contain half the somatic number: 40 / 2 = 20.",
+            unitId: 5
+          },
+          {
+            id: "5.1.3",
             text: "A cell with 2n=8 completes meiosis I. Each daughter cell contains:",
             options: ["8 chromosomes (4 pairs of sister chromatids)","4 chromosomes, each consisting of 2 sister chromatids","2 chromosomes","16 unpaired chromatids"],
             correctIndex: 1,
@@ -2911,7 +3399,15 @@ When two gametes unite:
             unitId: 5
           },
           {
-            id: "5.1.3",
+            id: "5.1.4",
+            text: "Crossing over during prophase I increases genetic diversity by:",
+            options: ["Increasing chromosome number","Exchanging segments between non-sister chromatids of homologous chromosomes","Randomly sorting chromosomes into gametes","Mutating the DNA sequence of individual genes"],
+            correctIndex: 1,
+            explanation: "During prophase I, non-sister chromatids of homologous chromosomes exchange segments at chiasmata, reshuffling alleles and producing new genetic combinations.",
+            unitId: 5
+          },
+          {
+            id: "5.1.5",
             text: "Why is meiosis necessary for sexually reproducing organisms?",
             options: ["It repairs damaged DNA before fertilization","It reduces chromosome number by half so fertilization restores the diploid number","It ensures all gametes receive identical genetic information","It prevents crossing over in somatic cells"],
             correctIndex: 1,
@@ -2919,7 +3415,15 @@ When two gametes unite:
             unitId: 5
           },
           {
-            id: "5.1.4",
+            id: "5.1.6",
+            text: "At what specific stage of meiosis does crossing over occur?",
+            options: ["Metaphase I","Prophase I","Anaphase II","Prophase II"],
+            correctIndex: 1,
+            explanation: "Crossing over occurs during Prophase I, when homologous chromosomes align closely (synapsis) to exchange genetic material.",
+            unitId: 5
+          },
+          {
+            id: "5.1.7",
             text: "If an organism's diploid number is 8 (2n = 8), how many unique maternal/paternal chromosome combinations can result from independent assortment alone?",
             options: ["4","8","16","64"],
             correctIndex: 2,
@@ -2927,11 +3431,27 @@ When two gametes unite:
             unitId: 5
           },
           {
-            id: "5.1.5",
+            id: "5.1.8",
+            text: "Independent assortment during meiosis I means that:",
+            options: ["All chromosomes assort into the same cell","The orientation of one homologous pair does not affect the orientation of any other pair","Crossing over cannot occur","Sister chromatids are separated during independent assortment"],
+            correctIndex: 1,
+            explanation: "Independent assortment (Mendel's Law) states different gene pairs segregate independently during gamete formation, contributing to genetic diversity.",
+            unitId: 5
+          },
+          {
+            id: "5.1.9",
             text: "A species with 3 chromosome pairs (n=3). How many different gametes can be produced by independent assortment alone?",
             options: ["3","6","8","9"],
             correctIndex: 2,
             explanation: "Number of possible gametes = 2^n. With n=3: 2^3 = 8 different gamete types from independent assortment alone.",
+            unitId: 5
+          },
+          {
+            id: "5.1.10",
+            text: "A child has 47 chromosomes with extra chromosome 21 (trisomy 21). This most likely arose from:",
+            options: ["A point mutation in a single gene","Nondisjunction during meiosis where chromosome 21 failed to separate","Crossing over between non-homologous chromosomes","Deletion of a chromosome in early embryo"],
+            correctIndex: 1,
+            explanation: "Nondisjunction produces gametes with an extra chromosome (n+1). If fertilized by a normal gamete, the result is trisomy 21 (Down syndrome).",
             unitId: 5
           }
         ]
@@ -2940,7 +3460,7 @@ When two gametes unite:
         id: "5.2",
         title: "Mendelian, Non-Mendelian, and Environmental Genetics",
         description: "Apply laws of segregation and independent assortment to predict inheritance probabilities. Analyze inheritance patterns that deviate from Mendelian ratios, including linkage and sex-linkage. Understand how environmental factors interact with genotypes to determine phenotype.",
-        youtubeId: "cWt1RFn5cEE",
+        youtubeId: "NWqgZ26GsO4",
         article: `
 # Mendelian, Non-Mendelian, and Environmental Genetics
 
@@ -3267,6 +3787,14 @@ Some genes are expressed only from one parental chromosome (the other is silence
           },
           {
             id: "5.2.2",
+            text: "What is the probability of obtaining an offspring with the genotype aabbcc from parents with genotypes AaBbCc x AaBbCc?",
+            options: ["1/8","1/16","1/64","1/256"],
+            correctIndex: 2,
+            explanation: "For each gene, the probability of getting homozygous recessive is 1/4. Since the genes assort independently, P(aabbcc) = 1/4 * 1/4 * 1/4 = 1/64.",
+            unitId: 5
+          },
+          {
+            id: "5.2.3",
             text: "A tall pea plant (Tt) crossed with a short plant (tt). The expected phenotypic ratio is:",
             options: ["3 tall : 1 short","1 tall : 1 short","All tall","All short"],
             correctIndex: 1,
@@ -3274,7 +3802,15 @@ Some genes are expressed only from one parental chromosome (the other is silence
             unitId: 5
           },
           {
-            id: "5.2.3",
+            id: "5.2.4",
+            text: "A man with blood type A (IAi) and a woman with blood type B (IBi) have children. Which blood types are possible?",
+            options: ["A and B only","A, B, AB, and O","AB only","B and O only"],
+            correctIndex: 1,
+            explanation: "Cross IAi x IBi produces: IAIB (AB), IAi (A), IBi (B), and ii (O). All four blood types are possible.",
+            unitId: 5
+          },
+          {
+            id: "5.2.5",
             text: "A carrier female for an X-linked recessive disorder (X^A X^a) has children with a normal male (X^A Y). What percentage of their sons are expected to have the disorder?",
             options: ["0%","25%","50%","100%"],
             correctIndex: 2,
@@ -3282,7 +3818,15 @@ Some genes are expressed only from one parental chromosome (the other is silence
             unitId: 5
           },
           {
-            id: "5.2.4",
+            id: "5.2.6",
+            text: "A red (CRCR) crossed with white (CWCW) produces offspring with red AND white patches. What genotype is this?",
+            options: ["CRCR","CWCW","CRCW","CRcw"],
+            correctIndex: 2,
+            explanation: "In codominance, both alleles are expressed. The CRCW offspring display both red and white patches simultaneously.",
+            unitId: 5
+          },
+          {
+            id: "5.2.7",
             text: "Which describes a polygenic trait?",
             options: ["Controlled by a single gene with two alleles","Controlled by multiple genes, each contributing to a continuous range of phenotypes","Where one allele is completely dominant","Determined exclusively by the environment"],
             correctIndex: 1,
@@ -3290,11 +3834,27 @@ Some genes are expressed only from one parental chromosome (the other is silence
             unitId: 5
           },
           {
-            id: "5.2.5",
+            id: "5.2.8",
+            text: "Identical twin plants are grown in different soils: one in soil with a pH of 5.5 and the other in soil with a pH of 7.0. The first plant produces blue flowers, while the second produces pink. What does this demonstrate?",
+            options: ["High rates of somatic mutation","Phenotypic plasticity due to environmental interaction with the genotype","Nondisjunction during meiosis","Incomplete dominance of the flower color alleles"],
+            correctIndex: 1,
+            explanation: "Phenotypic plasticity is the ability of an organism to alter its phenotype in response to environmental conditions (like soil pH) without changing its genotype.",
+            unitId: 5
+          },
+          {
+            id: "5.2.9",
             text: "A gene for height is expressed differently in nutrient-rich vs. nutrient-poor soil. This demonstrates that:",
             options: ["The genotype is determined by the environment","The environment can influence how genotype is expressed, producing different phenotypes","Height genes are only expressed in favorable conditions","Natural selection acts on genotype, not phenotype"],
             correctIndex: 1,
             explanation: "Phenotype = genotype x environment. Even with the same genetic potential, environmental conditions can dramatically alter the expressed phenotype.",
+            unitId: 5
+          },
+          {
+            id: "5.2.10",
+            text: "Identical twins with identical genotypes raised in different environments show different health outcomes. This is best explained by:",
+            options: ["Different mutation rates in each twin","Epigenetic modifications and environmental influences on gene expression","Random DNA replication errors after twin separation","Immune system differences from birth"],
+            correctIndex: 1,
+            explanation: "Epigenetics: heritable changes in gene expression without DNA sequence changes (e.g., DNA methylation, histone modification) from environmental experiences.",
             unitId: 5
           }
         ]
@@ -3303,7 +3863,7 @@ Some genes are expressed only from one parental chromosome (the other is silence
         id: "5.3",
         title: "Chromosomal Inheritance, Linkage, and Recombination",
         description: "Examine nondisjunction, chromosomal abnormalities, and non-nuclear organelle inheritance.",
-        youtubeId: "gdGyKKHafyk",
+        youtubeId: "rIe7mWsHKmA",
         article: `
 # Chromosomal Inheritance, Linkage, and Recombination
 
@@ -3441,6 +4001,46 @@ Gene expression is regulated at multiple levels:
             correctIndex: 1,
             explanation: "The t(9;22) translocation fuses BCR (chr 22) with ABL1 (chr 9), creating the BCR-ABL1 fusion oncogene that drives uncontrolled proliferation in CML.",
             unitId: 5
+          },
+          {
+            id: "5.3.6",
+            text: "What does a recombination frequency of 50% between two genes on a chromosome indicate?",
+            options: ["The two genes are extremely close together and always inherit together.","The two genes behave as if they are unlinked, either on different chromosomes or very far apart on the same chromosome.","A lethal mutation has occurred during crossing over.","The genes are sex-linked and located on the X chromosome."],
+            correctIndex: 1,
+            explanation: "A recombination frequency of 50% is the maximum possible, indicating that independent assortment occurs and the genes are physically unlinked.",
+            unitId: 5
+          },
+          {
+            id: "5.3.7",
+            text: "A cross between a red-eyed female fruit fly and a white-eyed male results in all red-eyed offspring. What does this suggest about the red-eye allele?",
+            options: ["The red-eye allele is recessive and sex-linked.","The red-eye allele is dominant and autosomal or sex-linked.","The white-eye allele is codominant.","Both alleles are autosomal codominant."],
+            correctIndex: 1,
+            explanation: "Because all offspring are red-eyed, the red-eye phenotype is dominant over white-eyes.",
+            unitId: 5
+          },
+          {
+            id: "5.3.8",
+            text: "Why are sex-linked recessive genetic disorders (like hemophilia) significantly more common in human males than females?",
+            options: ["Males have two X chromosomes, increasing their chance of expressing the trait.","Males have only one X chromosome, so they express whichever allele is present on it.","The Y chromosome contains a dominant inhibitor gene.","Spermatogenesis is more susceptible to genetic mutations."],
+            correctIndex: 1,
+            explanation: "Males are hemizygous (XY). Since they only inherit one X chromosome, they do not have a backup allele to mask a recessive trait on it.",
+            unitId: 5
+          },
+          {
+            id: "5.3.9",
+            text: "What molecular event during meiosis I is responsible for the recombination of alleles between linked genes?",
+            options: ["Independent assortment during Metaphase I","Sister chromatid segregation during Anaphase II","Crossing over between homologous chromosomes during Prophase I","Centromere cleavage by enzyme separase"],
+            correctIndex: 2,
+            explanation: "Crossing over (synapses) in Prophase I allows homologous chromatids to break and swap corresponding segments, separating alleles of linked genes.",
+            unitId: 5
+          },
+          {
+            id: "5.3.10",
+            text: "If two genes A and B show a recombination frequency of 12% in testcross offspring, how many map units (centimorgans) apart are they on the chromosome?",
+            options: ["6 map units","12 map units","24 map units","50 map units"],
+            correctIndex: 1,
+            explanation: "Recombination frequency is directly proportional to map units; 1% recombination frequency equals 1 map unit (cM). Hence, 12% equals 12 map units.",
+            unitId: 5
           }
         ]
       }
@@ -3455,7 +4055,7 @@ Gene expression is regulated at multiple levels:
         id: "6.1",
         title: "DNA/RNA Structure and Replication Mechanisms",
         description: "Differentiate between DNA and RNA nucleotide structures and nitrogenous bases. Analyze the semi-conservative replication process and enzymology at the replication fork.",
-        youtubeId: "5qS5zybx9Lg",
+        youtubeId: "8kK2zwjRV0M",
         article: `
 # DNA/RNA Structure and Replication Mechanisms
 
@@ -3600,6 +4200,14 @@ Linear chromosomes face a structural challenge during replication:
           },
           {
             id: "6.1.2",
+            text: "A double-stranded DNA sample is found to consist of 30% Guanine. According to Chargaff's rules, what percentage of the sample is Thymine?",
+            options: ["30%","20%","40%","70%"],
+            correctIndex: 1,
+            explanation: "If G = 30%, then C = 30% (total G-C = 60%). The remaining 40% must be split equally between A and T, meaning T = 20%.",
+            unitId: 6
+          },
+          {
+            id: "6.1.3",
             text: "The central dogma of molecular biology states information flows as:",
             options: ["Protein -> RNA -> DNA","DNA -> RNA -> Protein","RNA -> Protein -> DNA","Protein -> DNA -> RNA"],
             correctIndex: 1,
@@ -3607,7 +4215,15 @@ Linear chromosomes face a structural challenge during replication:
             unitId: 6
           },
           {
-            id: "6.1.3",
+            id: "6.1.4",
+            text: "Which correctly describes the antiparallel nature of double-stranded DNA?",
+            options: ["Both strands have identical sequences","One strand runs 5'->3' while the complementary strand runs 3'->5'","Both strands run in the same direction","The strands wrap in parallel"],
+            correctIndex: 1,
+            explanation: "In double-stranded DNA, the two strands are antiparallel: one runs 5'->3' while the complementary strand runs 3'->5'.",
+            unitId: 6
+          },
+          {
+            id: "6.1.5",
             text: "Which correctly identifies all three structural differences of RNA from DNA?",
             options: ["RNA is double-stranded; RNA uses uracil; RNA has deoxyribose","RNA is single-stranded; RNA uses uracil instead of thymine; RNA contains ribose","RNA is circular; RNA uses thymine; RNA has no phosphate backbone","RNA contains adenine; RNA is always shorter; RNA has ribose"],
             correctIndex: 1,
@@ -3615,7 +4231,15 @@ Linear chromosomes face a structural challenge during replication:
             unitId: 6
           },
           {
-            id: "6.1.4",
+            id: "6.1.6",
+            text: "Which enzyme is responsible for linking Okazaki fragments together on the lagging strand during replication?",
+            options: ["Helicase","DNA Ligase","Topoisomerase","DNA Polymerase I"],
+            correctIndex: 1,
+            explanation: "DNA Ligase catalyzes the formation of covalent phosphodiester bonds to join the sugar-phosphate backbones of adjacent Okazaki fragments.",
+            unitId: 6
+          },
+          {
+            id: "6.1.7",
             text: "Why is replication of the lagging strand discontinuous, occurring in short Okazaki fragments?",
             options: ["The lagging strand template runs 5' to 3', and DNA polymerase can only synthesize in the 5' to 3' direction.","Helicase only unwinds one strand at a time.","RNA primers cannot attach to the leading strand.","DNA ligase degrades the DNA template during replication."],
             correctIndex: 0,
@@ -3623,11 +4247,27 @@ Linear chromosomes face a structural challenge during replication:
             unitId: 6
           },
           {
-            id: "6.1.5",
+            id: "6.1.8",
+            text: "DNA replication is semi-conservative. This means:",
+            options: ["Half the DNA strands are destroyed and rebuilt","Each new double helix has one original strand and one newly synthesized strand","Both strands of original DNA are fully replicated as new strands","Each replication produces two completely new double helices"],
+            correctIndex: 1,
+            explanation: "Semi-conservative replication: each parental strand serves as template. Result: two daughter double helices, each with one parental and one new strand.",
+            unitId: 6
+          },
+          {
+            id: "6.1.9",
             text: "Okazaki fragments are necessary because:",
             options: ["DNA polymerase can only add nucleotides to a free 3'-OH end, requiring lagging strand synthesis in short fragments","RNA primers need to be replaced with short DNA sequences","Replication can only proceed linearly","Okazaki fragments prevent replication errors"],
             correctIndex: 0,
             explanation: "DNA polymerase synthesizes only 5'->3'. On the lagging strand template (3'->5'), synthesis must proceed away from the fork in short discontinuous fragments.",
+            unitId: 6
+          },
+          {
+            id: "6.1.10",
+            text: "DNA is labeled with 15N. After one replication in 14N medium, what will the molecules look like?",
+            options: ["All heavy (15N/15N)","All hybrid (15N/14N)","Half heavy, half light","All light (14N/14N)"],
+            correctIndex: 1,
+            explanation: "Meselson-Stahl result: after one replication in 14N, each new double helix has one 15N parental strand and one new 14N strand - all molecules are hybrid.",
             unitId: 6
           }
         ]
@@ -3747,6 +4387,14 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
           },
           {
             id: "6.2.2",
+            text: "Which mechanism allows a single eukaryotic gene to encode several distinct polypeptide structures?",
+            options: ["Alternative RNA splicing","Polycistronic translation","Frame-shift mutagenesis","Reverse transcription"],
+            correctIndex: 0,
+            explanation: "Alternative splicing joins different combinations of exons from a single pre-mRNA, allowing one gene to yield multiple protein structures.",
+            unitId: 6
+          },
+          {
+            id: "6.2.3",
             text: "Which is NOT a eukaryotic pre-mRNA processing step?",
             options: ["Addition of 5' methyl-guanosine cap","Addition of poly-A tail at 3' end","Splicing out introns by the spliceosome","Addition of a start codon at the 5' end"],
             correctIndex: 3,
@@ -3754,7 +4402,15 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
             unitId: 6
           },
           {
-            id: "6.2.3",
+            id: "6.2.4",
+            text: "After splicing removes introns and joins exons, the result is:",
+            options: ["The leader sequence of the ribosome","Mature mRNA ready for translation","A complementary DNA (cDNA) strand","Ribosomal RNA (rRNA)"],
+            correctIndex: 1,
+            explanation: "After splicing, the joined exons form a mature mRNA that is exported to the cytoplasm for translation.",
+            unitId: 6
+          },
+          {
+            id: "6.2.5",
             text: "Which RNA polymerase transcribes protein-coding genes in eukaryotes?",
             options: ["RNA polymerase I","RNA polymerase II","RNA polymerase III","DNA polymerase I"],
             correctIndex: 1,
@@ -3762,7 +4418,15 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
             unitId: 6
           },
           {
-            id: "6.2.4",
+            id: "6.2.6",
+            text: "What is the codon sequence that initiates the translation of almost all eukaryotic mRNA transcripts?",
+            options: ["UAA","AUG","UGA","UAG"],
+            correctIndex: 1,
+            explanation: "AUG is the universal start codon, coding for the amino acid Methionine.",
+            unitId: 6
+          },
+          {
+            id: "6.2.7",
             text: "Which site on the ribosome accepts the incoming tRNA carrying a new amino acid during elongation?",
             options: ["A-site","P-site","E-site","T-site"],
             correctIndex: 0,
@@ -3770,11 +4434,27 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
             unitId: 6
           },
           {
-            id: "6.2.5",
+            id: "6.2.8",
+            text: "The genetic code is degenerate (redundant). This means:",
+            options: ["The same amino acid can be encoded by multiple different codons","The same codon can encode multiple amino acids","The genetic code varies between species","Each codon encodes exactly one amino acid with no redundancy"],
+            correctIndex: 0,
+            explanation: "Multiple codons can specify the same amino acid (e.g., six codons for leucine). With 64 codons and only 20 amino acids, redundancy is necessary.",
+            unitId: 6
+          },
+          {
+            id: "6.2.9",
             text: "During elongation, a new aminoacyl-tRNA enters the ribosome's:",
             options: ["E site","P site","A site","Either P or A site"],
             correctIndex: 2,
             explanation: "A new aminoacyl-tRNA (carrying the next amino acid) enters the A (aminoacyl) site. P site holds the growing chain; E site is where deacylated tRNA exits.",
+            unitId: 6
+          },
+          {
+            id: "6.2.10",
+            text: "A missense mutation changes codon AAA (Lys) to AGA (Arg). The likely effect on protein function is:",
+            options: ["No effect since only DNA changed","Possible function change depending on the amino acid role in the protein","Complete loss of function in all cases","Destruction of mRNA by nonsense-mediated decay"],
+            correctIndex: 1,
+            explanation: "Missense mutations change one amino acid. Effect depends on location and chemical properties. Active site change may destroy function; peripheral change may have little effect.",
             unitId: 6
           }
         ]
@@ -3783,7 +4463,7 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
         id: "6.3",
         title: "Regulation of Gene Expression, Mutations, and Biotechnology",
         description: "Examine prokaryotic operons and eukaryotic epigenetic/transcription factor controls. Study how differential gene expression drives cell differentiation and specialization. Classify nucleotide mutations and analyze their impact on polypeptide folding. Analyze PCR, gel electrophoresis, bacterial transformation, and DNA sequencing.",
-        youtubeId: "h_1QLtCqKd4",
+        youtubeId: "3S3Z51OyBY4",
         article: `
 # Regulation of Gene Expression, Mutations, and Biotechnology
 
@@ -4184,6 +4864,14 @@ Influenza A mutates its surface proteins (hemagglutinin - HA, neuraminidase - NA
           },
           {
             id: "6.3.2",
+            text: "In E. coli lac operon, transcription is repressed without lactose because:",
+            options: ["RNA polymerase is absent","The lac repressor binds the operator, blocking RNA polymerase from transcribing structural genes","The promoter is destroyed","Lactose acts as an activator"],
+            correctIndex: 1,
+            explanation: "Without lactose, the lac repressor (encoded by lacI) binds to the operator between the promoter and structural genes, physically blocking RNA polymerase.",
+            unitId: 6
+          },
+          {
+            id: "6.3.3",
             text: "Which describes post-translational regulation of gene expression?",
             options: ["Regulation of mRNA transcription rates by transcription factors","Regulation of mRNA stability by microRNAs","Protein modification after translation, such as phosphorylation or ubiquitination","Alternative splicing of pre-mRNA"],
             correctIndex: 2,
@@ -4191,7 +4879,15 @@ Influenza A mutates its surface proteins (hemagglutinin - HA, neuraminidase - NA
             unitId: 6
           },
           {
-            id: "6.3.3",
+            id: "6.3.4",
+            text: "What term describes the maternal substances (proteins and RNAs) placed in the egg cell that influence early embryonic development by directing cell specialization?",
+            options: ["Operons","Cytoplasmic determinants","Okazaki fragments","Promoter sequences"],
+            correctIndex: 1,
+            explanation: "Cytoplasmic determinants are maternal components distributed unevenly in the egg cell. After division, different embryonic cells inherit different determinants, initiating differentiation.",
+            unitId: 6
+          },
+          {
+            id: "6.3.5",
             text: "Transcription factors in cell differentiation function by:",
             options: ["Directly converting one cell type to another by rewriting DNA","Binding regulatory regions to activate or repress transcription of specific genes in specific cell types","Modifying translation efficiency of all mRNAs equally","Signaling neighboring cells to differentiate"],
             correctIndex: 1,
@@ -4199,7 +4895,15 @@ Influenza A mutates its surface proteins (hemagglutinin - HA, neuraminidase - NA
             unitId: 6
           },
           {
-            id: "6.3.4",
+            id: "6.3.6",
+            text: "Which of the following point mutations is most likely to result in a completely nonfunctional, truncated protein?",
+            options: ["A silent mutation near the 5' end","A nonsense mutation introducing an early stop codon","A missense mutation replacing a nonpolar R-group with another nonpolar R-group","An alternative splicing event"],
+            correctIndex: 1,
+            explanation: "A nonsense mutation converts a codon into a premature stop codon, terminating translation early and deleting the remaining protein structure.",
+            unitId: 6
+          },
+          {
+            id: "6.3.7",
             text: "A frameshift mutation results from:",
             options: ["Substituting one base pair for another","Inserting or deleting base pairs not divisible by three, altering the reading frame","Duplicating a large chromosomal segment","Replacing a codon with a stop codon"],
             correctIndex: 1,
@@ -4207,11 +4911,27 @@ Influenza A mutates its surface proteins (hemagglutinin - HA, neuraminidase - NA
             unitId: 6
           },
           {
-            id: "6.3.5",
+            id: "6.3.8",
+            text: "UV radiation causes thymine dimers. If unrepaired during replication:",
+            options: ["Thymine is replaced with uracil","Errors are introduced or replication stalls, potentially causing mutations or cell death","DNA is immediately destroyed by restriction enzymes","Extra chromosomes are produced"],
+            correctIndex: 1,
+            explanation: "Thymine dimers distort the DNA helix, blocking DNA polymerase. Unrepaired errors can lead to mutations in genes like p53, contributing to skin cancer.",
+            unitId: 6
+          },
+          {
+            id: "6.3.9",
             text: "What is the significance of using Taq polymerase, isolated from Thermus aquaticus, in PCR?",
             options: ["It does not require an RNA primer to initiate synthesis.","It is heat-stable and remains functional after the high-temperature denaturation step.","It actively excises introns from eukaryotic DNA templates.","It seals Okazaki fragments together without ATP."],
             correctIndex: 1,
             explanation: "PCR requires heating samples to 95 degrees C to separate DNA strands. Standard enzymes would denature, but Taq Polymerase evolved in hot springs and remains stable at high temperatures.",
+            unitId: 6
+          },
+          {
+            id: "6.3.10",
+            text: "Each PCR cycle begins with which condition?",
+            options: ["High temperature (94-98 degrees C) to denature double-stranded DNA into single strands","Low temperature (4 degrees C) to preserve DNA","Addition of restriction enzymes","The presence of reverse transcriptase"],
+            correctIndex: 0,
+            explanation: "PCR cycles: denaturation (~95 degrees C separates strands), annealing (primers bind template), and extension (DNA polymerase synthesizes new strands).",
             unitId: 6
           }
         ]
@@ -4628,6 +5348,14 @@ Calibrated using fossil record dates. Estimates when species separated:
           },
           {
             id: "7.1.2",
+            text: "Which is a prerequisite for natural selection?",
+            options: ["All individuals have identical phenotypes","Heritable phenotypic variation exists in the population","The environment must remain constant","Mutations occur at a fixed rate"],
+            correctIndex: 1,
+            explanation: "Natural selection requires: heritable variation in phenotype, some variants have greater reproductive success, and those variants pass traits to offspring.",
+            unitId: 7
+          },
+          {
+            id: "7.1.3",
             text: "Which of the following would NOT cause evolution (change in allele frequency)?",
             options: ["Natural selection","Mutation","Genetic drift","An individual adapting its traits through use and disuse during its lifetime"],
             correctIndex: 3,
@@ -4635,7 +5363,15 @@ Calibrated using fossil record dates. Estimates when species separated:
             unitId: 7
           },
           {
-            id: "7.1.3",
+            id: "7.1.4",
+            text: "A population of peppered moths shifted from mostly light-colored to dark-colored following the Industrial Revolution due to coal soot darkening tree trunks. What was the selective pressure?",
+            options: ["The cold temperature of the soot","Visual predation by birds","A decrease in the atmospheric oxygen concentration","Mutagenic chemicals in the coal dust"],
+            correctIndex: 1,
+            explanation: "The soot darkened trees, making light moths visible to predatory birds. Visual predation was the selective pressure that favored dark moths.",
+            unitId: 7
+          },
+          {
+            id: "7.1.5",
             text: "Stabilizing selection acts to:",
             options: ["Increase the most extreme phenotype's frequency","Reduce phenotypic variance by favoring intermediate phenotypes over extremes","Produce two distinct phenotypic peaks","Favor sexual selection regardless of survival value"],
             correctIndex: 1,
@@ -4643,7 +5379,15 @@ Calibrated using fossil record dates. Estimates when species separated:
             unitId: 7
           },
           {
-            id: "7.1.4",
+            id: "7.1.6",
+            text: "What is the primary difference between natural selection and artificial selection?",
+            options: ["Artificial selection occurs much more slowly than natural selection.","In artificial selection, humans act as the selective agent, whereas in natural selection, the environment determines which traits are favored.","Artificial selection does not require genetic variation.","Only natural selection changes the allele frequencies of a population."],
+            correctIndex: 1,
+            explanation: "In artificial selection, humans choose which traits are propagated. In natural selection, environmental factors (biotic/abiotic pressures) dictate differential reproductive success.",
+            unitId: 7
+          },
+          {
+            id: "7.1.7",
             text: "Artificial selection differs from natural selection in that:",
             options: ["Artificial selection only slows evolution","Humans (not environmental pressures) choose which individuals reproduce based on desired traits","Artificial selection does not involve heritable variation","Artificial selection results in random allele frequency changes"],
             correctIndex: 1,
@@ -4651,11 +5395,27 @@ Calibrated using fossil record dates. Estimates when species separated:
             unitId: 7
           },
           {
-            id: "7.1.5",
+            id: "7.1.8",
+            text: "Artificial selection in crops can have unintended negative consequences because:",
+            options: ["Crops evolve to require less human care","Selecting for yield may inadvertently eliminate genetic diversity and natural pest resistance","Artificial selection creates new genetic material de novo","Crop plants cannot undergo heritable changes"],
+            correctIndex: 1,
+            explanation: "Focusing on a single desired trait can reduce overall genetic diversity and eliminate other useful alleles (like disease resistance), making crops vulnerable.",
+            unitId: 7
+          },
+          {
+            id: "7.1.9",
             text: "In which of the following populations will genetic drift have the most significant evolutionary impact?",
             options: ["A population of 50 endangered island iguanas","A population of 500,000 wildflowers in a meadow","A population of 10,000 migratory geese","A population in Hardy-Weinberg equilibrium"],
             correctIndex: 0,
             explanation: "Genetic drift is driven by random sampling error. Its effects are much stronger in small populations, where chance events can easily eliminate or fix alleles.",
+            unitId: 7
+          },
+          {
+            id: "7.1.10",
+            text: "The founder effect occurs when:",
+            options: ["A large population suddenly lacks food","A small subset of individuals establishes a new population, limiting genetic diversity","A dominant allele reaches fixation due to natural selection","A population decreases catastrophically from a natural disaster"],
+            correctIndex: 1,
+            explanation: "Founder effect: a new population established by few founders carries only a subset of original genetic variation, making certain alleles very common or absent.",
             unitId: 7
           }
         ]
@@ -4764,6 +5524,46 @@ Let's solve a typical genetic problem: Cystic Fibrosis is an autosomal recessive
             correctIndex: 2,
             explanation: "Frequency of heterozygotes = 2pq = 2 x 0.7 x 0.3 = 0.42.",
             unitId: 7
+          },
+          {
+            id: "7.2.6",
+            text: "Which of the following is NOT one of the five conditions required for a population to remain in Hardy-Weinberg equilibrium?",
+            options: ["No mutation","Random mating","Small population size","No natural selection"],
+            correctIndex: 2,
+            explanation: "An extremely LARGE population size is required to minimize the effects of genetic drift (random sampling changes).",
+            unitId: 7
+          },
+          {
+            id: "7.2.7",
+            text: "In a population in Hardy-Weinberg equilibrium, the frequency of the recessive allele (q) is 0.4. What is the expected frequency of heterozygous individuals (2pq)?",
+            options: ["0.16","0.36","0.48","0.60"],
+            correctIndex: 2,
+            explanation: "Since p + q = 1, p = 0.6. The frequency of heterozygotes is 2pq = 2(0.6)(0.4) = 0.48.",
+            unitId: 7
+          },
+          {
+            id: "7.2.8",
+            text: "If the frequency of the dominant phenotype in a Hardy-Weinberg population is 84%, what is the frequency of the recessive allele (q)?",
+            options: ["0.16","0.40","0.60","0.84"],
+            correctIndex: 1,
+            explanation: "The frequency of the recessive phenotype (q^2) is 100% - 84% = 16% (0.16). Taking the square root gives the recessive allele frequency q = 0.4.",
+            unitId: 7
+          },
+          {
+            id: "7.2.9",
+            text: "If a researcher monitors a wild population and finds that allele frequencies shift significantly over three generations, what can be concluded?",
+            options: ["The population is in genetic equilibrium.","The population is undergoing evolutionary changes.","Mutations have ceased completely.","Natural selection is selecting for heterozygous individuals exclusively."],
+            correctIndex: 1,
+            explanation: "Hardy-Weinberg equilibrium means allele frequencies stay constant. A change in frequencies over generations is the literal definition of evolution.",
+            unitId: 7
+          },
+          {
+            id: "7.2.10",
+            text: "Which evolutionary mechanism describes a sudden, drastic reduction in population size due to a natural disaster, leading to randomized allele frequency changes?",
+            options: ["Founder effect","Bottleneck effect","Gene flow","Directional selection"],
+            correctIndex: 1,
+            explanation: "A bottleneck effect occurs when a population size is severely reduced by an event, leaving a small sample of survivors that is unrepresentative of original allele frequencies.",
+            unitId: 7
           }
         ]
       },
@@ -4771,7 +5571,7 @@ Let's solve a typical genetic problem: Cystic Fibrosis is an autosomal recessive
         id: "7.3",
         title: "Evidence of Evolution, Common Ancestry, and Phylogeny",
         description: "Analyze homologous, analogous, molecular, and fossil evidence of common descent. Examine shared molecular and cellular features that link all life to a common ancestor. Analyze observed examples of modern evolution in real time. Reconstruct evolutionary relationships using cladograms and molecular phylogenetic trees.",
-        youtubeId: "iyAOkNzObwU",
+        youtubeId: "cc8vASG56oc",
         article: `
 # Evidence of Evolution, Common Ancestry, and Phylogeny
 
@@ -5159,6 +5959,14 @@ All mechanisms operate simultaneously, each influencing the others.
           },
           {
             id: "7.3.2",
+            text: "Homologous structures (like forelimbs of whales, bats, and humans) suggest:",
+            options: ["Independent evolution to solve the same problems (convergent evolution)","These organisms share a common ancestor who had the basic limb structure","These organisms have identical DNA sequences","These organisms live in the same ecological niche"],
+            correctIndex: 1,
+            explanation: "Homologous structures share anatomy from a common ancestor (divergent evolution). They may have different functions but share the same underlying bone arrangement.",
+            unitId: 7
+          },
+          {
+            id: "7.3.3",
             text: "Humans and chimpanzees share ~98% of their DNA sequence. The MOST direct conclusion is:",
             options: ["Humans and chimpanzees are the same species","Humans and chimpanzees diverged from a recent common ancestor relatively recently","DNA similarities are coincidental","They share the same ecological niche"],
             correctIndex: 1,
@@ -5166,7 +5974,15 @@ All mechanisms operate simultaneously, each influencing the others.
             unitId: 7
           },
           {
-            id: "7.3.3",
+            id: "7.3.4",
+            text: "What molecular feature is shared by all known organisms, supporting the hypothesis of a single universal common ancestor?",
+            options: ["The presence of a double membrane around the nucleus","The use of DNA/RNA as genetic material and the universal genetic code","The use of oxygen as the final electron acceptor in respiration","The possession of cellulose cell walls"],
+            correctIndex: 1,
+            explanation: "The universal genetic code—where the same mRNA codons specify the exact same amino acids in bacteria, plants, and animals—provides strong evidence of a common ancestry.",
+            unitId: 7
+          },
+          {
+            id: "7.3.5",
             text: "On a phylogenetic tree, an outgroup is a taxon that:",
             options: ["Is most recently derived in the clade","Diverged BEFORE the lineage under investigation, providing reference for ancestral character states","Has the most derived traits","Is placed at the longest branch tip"],
             correctIndex: 1,
@@ -5174,7 +5990,15 @@ All mechanisms operate simultaneously, each influencing the others.
             unitId: 7
           },
           {
-            id: "7.3.4",
+            id: "7.3.6",
+            text: "Which of the following explains why bacterial populations can evolve antibiotic resistance so rapidly?",
+            options: ["Antibiotics directly trigger mutations in the bacterial genome to protect them.","Bacteria have rapid reproductive rates, and antibiotics select for pre-existing resistant mutants by killing susceptible competitors.","Bacteria reproduce sexually, generating vast recombinant genomes.","Bacteria incorporate the antibiotic molecules into their cell walls."],
+            correctIndex: 1,
+            explanation: "Antibiotics do not cause resistance mutations. Rather, random mutations occur naturally; when antibiotics are applied, they kill susceptible bacteria, leaving the pre-existing resistant mutants to multiply rapidly.",
+            unitId: 7
+          },
+          {
+            id: "7.3.7",
             text: "Allopatric speciation occurs when:",
             options: ["Two populations in the same area evolve reproductive isolation","A geographic barrier separates a population, leading to independent evolution and eventual reproductive isolation","One phenotype becomes more common over time","One species splits into two without geographic separation"],
             correctIndex: 1,
@@ -5182,11 +6006,27 @@ All mechanisms operate simultaneously, each influencing the others.
             unitId: 7
           },
           {
-            id: "7.3.5",
+            id: "7.3.8",
+            text: "Coevolution between predator and prey (both evolving faster running speed) is an example of:",
+            options: ["Convergent evolution","Parallel evolution","Reciprocal evolutionary arms race","Allopatric speciation"],
+            correctIndex: 2,
+            explanation: "The predator-prey arms race is classic coevolution: as prey evolve better defenses (speed, camouflage), predators evolve better hunting traits, driving reciprocal adaptation.",
+            unitId: 7
+          },
+          {
+            id: "7.3.9",
             text: "Which source of evidence is considered the most reliable for constructing accurate phylogenetic trees today?",
             options: ["Comparing anatomical similarities in fossil records","Analyzing similarities in behaviors","Comparing homologous DNA or protein sequence alignments","Geographic distributions of modern species"],
             correctIndex: 2,
             explanation: "Molecular sequence comparison provides quantitative data on genomic mutations, yielding highly precise evolutionary relationships.",
+            unitId: 7
+          },
+          {
+            id: "7.3.10",
+            text: "On a phylogenetic tree, the node (branching point) represents:",
+            options: ["An extant (living) species","A hypothetical common ancestor of all lineages diverging from that point","A geographic barrier causing speciation","A mass extinction event"],
+            correctIndex: 1,
+            explanation: "Each node (branching point) on a phylogenetic tree represents a hypothetical common ancestor from which two or more lineages diverged.",
             unitId: 7
           }
         ]
@@ -5195,7 +6035,7 @@ All mechanisms operate simultaneously, each influencing the others.
         id: "7.4",
         title: "Speciation, Extinction, and the Origin of Life",
         description: "Differentiate between allopatric and sympatric speciation and reproductive isolation. Analyze mass extinctions and subsequent adaptive radiation events. Analyze how genetic diversity protects populations from environmental catastrophes. Analyze prebiotic chemical evolution and the RNA World hypothesis.",
-        youtubeId: "2oKlKmDRLOg",
+        youtubeId: "yJe3Cws_2iI",
         article: `
 # Speciation, Extinction, and the Origin of Life
 
@@ -5612,6 +6452,14 @@ Key strategies:
           },
           {
             id: "7.4.2",
+            text: "Sympatric speciation occurs when:",
+            options: ["A geographic barrier separates two populations","Two populations in the SAME geographic area evolve reproductive isolation","A small founder group establishes a new population","A catastrophic event reduces population size"],
+            correctIndex: 1,
+            explanation: "Sympatric speciation: new species form within the same geographic area without physical separation. Polyploidy in plants is a common mechanism.",
+            unitId: 7
+          },
+          {
+            id: "7.4.3",
             text: "Polyploidy (having multiple sets of chromosomes) most often leads to immediate speciation in:",
             options: ["Animals (most common in vertebrates)","Plants (where polyploids can self-fertilize and establish new populations)","Fungi (asexual reproducers)","Bacteria (through binary fission)"],
             correctIndex: 1,
@@ -5619,7 +6467,15 @@ Key strategies:
             unitId: 7
           },
           {
-            id: "7.4.3",
+            id: "7.4.4",
+            text: "Which Cretaceous event is hypothesized to have triggered the mass extinction of non-avian dinosaurs approximately 66 million years ago?",
+            options: ["The collision of a massive asteroid with Earth, causing global dust clouds that blocked sunlight","The sudden accumulation of oxygen in the atmosphere","A worldwide plague caused by eukaryotic viruses","The splitting of Pangea into separate continents"],
+            correctIndex: 0,
+            explanation: "An asteroid impact in the Yucatan Peninsula kicked up immense soot and dust, blocking solar radiation, halting photosynthesis, and collapsing food webs globally.",
+            unitId: 7
+          },
+          {
+            id: "7.4.5",
             text: "Following a mass extinction, surviving lineages often diversify rapidly into many new ecological niches. This is called:",
             options: ["Convergent evolution","Coevolution","Adaptive radiation","Stabilizing selection"],
             correctIndex: 2,
@@ -5627,7 +6483,15 @@ Key strategies:
             unitId: 7
           },
           {
-            id: "7.4.4",
+            id: "7.4.6",
+            text: "Why are genetically uniform agricultural crops (monocultures) highly vulnerable to ecological collapse?",
+            options: ["They undergo rapid genetic drift.","They lack genetic variation, meaning a single disease or pest can kill all individuals since none possess resistance alleles.","They accumulate mutations at a higher rate.","They are unable to run the light-dependent reactions."],
+            correctIndex: 1,
+            explanation: "Because there is no genetic diversity, every individual is equally susceptible to a pathogen. If one dies, they can all die, leading to crop collapse.",
+            unitId: 7
+          },
+          {
+            id: "7.4.7",
             text: "A population with HIGH genetic diversity is more resilient to environmental change because:",
             options: ["High diversity means more individuals reproduce per generation","Some individuals are likely to have alleles conferring resistance to new environmental challenges","Genetic diversity prevents mutations from occurring","High diversity reduces competition between individuals"],
             correctIndex: 1,
@@ -5635,11 +6499,27 @@ Key strategies:
             unitId: 7
           },
           {
-            id: "7.4.5",
+            id: "7.4.8",
+            text: "Which of the following human activities MOST directly reduces genetic variation in crop plants?",
+            options: ["Crop rotation between different plant species","Monoculture farming and selective breeding for uniform traits","Application of pesticides","Irrigation of farmland"],
+            correctIndex: 1,
+            explanation: "Monoculture farming and artificial selection for uniform traits reduces genetic diversity, making crops vulnerable to new diseases or pests because all individuals have the same genotype.",
+            unitId: 7
+          },
+          {
+            id: "7.4.9",
             text: "Which of the following support the 'RNA World' hypothesis?",
             options: ["RNA contains deoxyribose sugar which is highly stable.","RNA can store genetic information and catalyze biochemical reactions (as ribozymes), unlike DNA which requires protein enzymes to replicate.","All viruses carry double-stranded RNA genomes.","RNA is only found in eukaryotic nuclei."],
             correctIndex: 1,
             explanation: "RNA has both informational (genetic) and catalytic (enzymatic) properties, meaning it could have run prebiotic metabolism and self-replication prior to the evolution of DNA and proteins.",
+            unitId: 7
+          },
+          {
+            id: "7.4.10",
+            text: "Stanley Miller and Harold Urey's experiment (1953) demonstrated that:",
+            options: ["Living cells could spontaneously generate from nonliving matter","Organic molecules (amino acids) can form abiotically from inorganic gases under early Earth conditions","DNA was the first genetic molecule on Earth","Proteins evolved before nucleic acids"],
+            correctIndex: 1,
+            explanation: "The Miller-Urey experiment simulated early Earth's atmosphere (CH4, NH3, H2O, H2) with electrical sparks and produced amino acids - showing organic molecules can arise abiotically.",
             unitId: 7
           }
         ]
@@ -5655,7 +6535,7 @@ Key strategies:
         id: "8.1",
         title: "Responses to the Environment and Ecosystem Energy Flow",
         description: "Analyze behavioral and physiological responses of organisms to environmental changes. Analyze photosynthetic efficiency, trophic levels, and the 10% rule of thermodynamic transfer.",
-        youtubeId: "T-O_rRyoU5A",
+        youtubeId: "09_sWP2WuOU",
         article: `
 # Responses to the Environment and Ecosystem Energy Flow
 
@@ -5817,6 +6697,14 @@ Productivity varies significantly across biomes and is limited by specific facto
           },
           {
             id: "8.1.2",
+            text: "How do short-day plants determine when to flower in seasonal climates?",
+            options: ["They measure the intensity of solar radiation.","They measure the duration of continuous darkness (night length) using phytochrome photoreceptors.","They sense the water potential of the soil.","They respond to the accumulation of ethylene gas."],
+            correctIndex: 1,
+            explanation: "Short-day (long-night) plants require a continuous critical period of darkness to flower. If this dark period is interrupted by a flash of light, they will not flower.",
+            unitId: 8
+          },
+          {
+            id: "8.1.3",
             text: "Behavioral responses (migration) and physiological responses (thicker fur in winter) both serve to:",
             options: ["Permanently change the organism's genotype","Maintain homeostasis and increase survival fitness in changing conditions","Reduce genetic diversity","Increase competition between individuals"],
             correctIndex: 1,
@@ -5824,7 +6712,15 @@ Productivity varies significantly across biomes and is limited by specific facto
             unitId: 8
           },
           {
-            id: "8.1.3",
+            id: "8.1.4",
+            text: "A plant closing stomata during the hottest part of the day is responding to:",
+            options: ["Low CO2 triggering stomatal closure","High temperature and potential water loss, conserving water by reducing transpiration","Increased oxygen levels inhibiting photosynthesis","Lack of sunlight due to cloud cover"],
+            correctIndex: 1,
+            explanation: "Plants close stomata in response to drought stress and high temperatures. Guard cells lose turgor pressure and the stomatal pore closes to reduce transpiration.",
+            unitId: 8
+          },
+          {
+            id: "8.1.5",
             text: "A bacterium swimming toward a glucose gradient is displaying:",
             options: ["Kinesis (undirected change in speed)","Positive chemotaxis toward an attractant","Negative phototaxis away from light","Homeostatic regulation of internal glucose"],
             correctIndex: 1,
@@ -5832,7 +6728,15 @@ Productivity varies significantly across biomes and is limited by specific facto
             unitId: 8
           },
           {
-            id: "8.1.4",
+            id: "8.1.6",
+            text: "If the primary producers in an ecosystem store 10,000 Joules of energy, approximately how much energy is available to secondary consumers?",
+            options: ["10,000 J","1,000 J","100 J","10 J"],
+            correctIndex: 2,
+            explanation: "Applying the 10% rule: Primary producers (10,000 J) -> Primary consumers (1,000 J) -> Secondary consumers (100 J).",
+            unitId: 8
+          },
+          {
+            id: "8.1.7",
             text: "Why are food chains in natural ecosystems rarely longer than four or five trophic levels?",
             options: ["Top predators are hunted by humans.","Thermodynamic energy loss at each transfer leaves insufficient energy to support viable populations at higher levels.","Organisms at higher levels have smaller metabolic needs.","Decomposers consume all top level species before they can reproduce."],
             correctIndex: 1,
@@ -5840,11 +6744,27 @@ Productivity varies significantly across biomes and is limited by specific facto
             unitId: 8
           },
           {
-            id: "8.1.5",
+            id: "8.1.8",
+            text: "Approximately what percentage of energy transfers from one trophic level to the next?",
+            options: ["1%","10%","50%","90%"],
+            correctIndex: 1,
+            explanation: "The 10% rule (ecological efficiency): ~10% of energy in one trophic level transfers to the next. The remaining 90% is lost as heat, respiration, and waste.",
+            unitId: 8
+          },
+          {
+            id: "8.1.9",
             text: "Primary production in an ecosystem refers to:",
             options: ["Total energy consumed by primary consumers","Rate at which producers convert inorganic energy into organic matter (biomass)","Total biomass of all organisms","Energy flow from detritivores to decomposers"],
             correctIndex: 1,
             explanation: "Primary production is the rate at which producers (photosynthesizers/chemoautotrophs) capture energy and store it as organic compounds.",
+            unitId: 8
+          },
+          {
+            id: "8.1.10",
+            text: "Decomposers are critical to ecosystem energy flow because they:",
+            options: ["Serve as a top trophic level receiving the most energy","Break down dead organic matter, releasing nutrients back to producers and channeling energy through detritus food chains","Synthesize organic matter from inorganic sources using sunlight","Transfer energy with 100% efficiency between trophic levels"],
+            correctIndex: 1,
+            explanation: "Decomposers (bacteria, fungi) break down dead organisms and waste, releasing stored nutrients (N, P, C) back for reuse by producers and channeling energy through the detritus web.",
             unitId: 8
           }
         ]
@@ -5853,7 +6773,7 @@ Productivity varies significantly across biomes and is limited by specific facto
         id: "8.2",
         title: "Population and Community Ecology",
         description: "Understand population growth curves, carrying capacity, and density-dependent pressures. Differentiate between density-dependent and density-independent factors that regulate populations. Analyze species interactions, niche partitioning, and trophic cascades.",
-        youtubeId: "PQ-y9J1q83g",
+        youtubeId: "h9o78g47t8s",
         article: `
 # Population and Community Ecology
 
@@ -6239,6 +7159,14 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
           },
           {
             id: "8.2.2",
+            text: "What happens to the growth rate of a population as the population size (N) exactly equals its carrying capacity (K)?",
+            options: ["The growth rate accelerates exponentially.","The growth rate drops to zero.","The population immediately goes extinct.","The per capita birth rate increases."],
+            correctIndex: 1,
+            explanation: "When N = K, the term (K - N)/K becomes (K - K)/K = 0. Multiplying by 0 gives a growth rate (dN/dt) of zero.",
+            unitId: 8
+          },
+          {
+            id: "8.2.3",
             text: "In logistic growth, as population approaches carrying capacity (K), the growth rate:",
             options: ["Continues to accelerate","Approaches zero as population nears maximum the environment can support","Becomes negative causing decline below K","Remains constant throughout"],
             correctIndex: 1,
@@ -6246,7 +7174,15 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
             unitId: 8
           },
           {
-            id: "8.2.3",
+            id: "8.2.4",
+            text: "Which is a density-INDEPENDENT factor regulating population size?",
+            options: ["Competition for limited food resources","Disease transmission increasing with crowding","A catastrophic blizzard killing a fixed fraction regardless of population density","Predation increasing as prey becomes more abundant"],
+            correctIndex: 2,
+            explanation: "Density-independent factors affect the same proportion of the population regardless of density. Natural disasters (blizzards, floods) kill individuals regardless of crowding.",
+            unitId: 8
+          },
+          {
+            id: "8.2.5",
             text: "Why does disease act as a density-dependent regulator of population size?",
             options: ["Pathogens mutate faster when a population is small.","Close physical proximity in crowded populations facilitates rapid transmission of pathogens.","Diseases only infect organisms that are in starvation.","Pathogens are density-independent factors."],
             correctIndex: 1,
@@ -6254,7 +7190,15 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
             unitId: 8
           },
           {
-            id: "8.2.4",
+            id: "8.2.6",
+            text: "Which is a density-DEPENDENT limiting factor?",
+            options: ["A volcanic eruption destroying all organisms in its path","A drought reducing food for all organisms equally","Intraspecific competition for territories intensifying as population density rises","A random cold snap killing temperature-sensitive individuals"],
+            correctIndex: 2,
+            explanation: "Density-dependent factors have greater limiting effects as density increases. Intraspecific competition for territories intensifies as more individuals crowd an area.",
+            unitId: 8
+          },
+          {
+            id: "8.2.7",
             text: "The Allee effect states that populations below a certain minimum size may have reduced fitness because:",
             options: ["Predation pressure decreases, reducing natural selection","Inbreeding and difficulty finding mates reduce reproductive success in small populations","Resource availability increases disproportionately","Genetic drift accelerates evolution"],
             correctIndex: 1,
@@ -6262,11 +7206,27 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
             unitId: 8
           },
           {
-            id: "8.2.5",
+            id: "8.2.8",
+            text: "What ecological interaction is characterized as mutualism?",
+            options: ["A tick sucking blood from a dog (+/-)","A shark swimming alongside a pilot fish (+/0)","A pollinating bee gathering nectar from a flower (+/+)","Two species of beetles feeding on the same tree bark (-/-)"],
+            correctIndex: 2,
+            explanation: "Mutualism is a (+/+) relationship. Both the bee (gets food) and the flower (gets pollinated) benefit from the interaction.",
+            unitId: 8
+          },
+          {
+            id: "8.2.9",
             text: "In a predator-prey cycle, when hare populations crash, lynx populations:",
             options: ["Crash simultaneously with hares","Crash with a time delay after the hare crash, due to starvation","Increase as competition among lynx decreases","Switch to alternative prey and maintain population"],
             correctIndex: 1,
             explanation: "Predator-prey cycles show time-delayed oscillations. When prey (hare) crash from overhunting, predator (lynx) subsequently crashes from starvation, allowing hare to recover.",
+            unitId: 8
+          },
+          {
+            id: "8.2.10",
+            text: "Two bird species foraging in different tree zones when co-occurring (but foraging throughout when alone) demonstrates:",
+            options: ["Predator-prey coevolution","Character displacement reducing interspecific competition","Commensalism between species","Sympatric speciation"],
+            correctIndex: 1,
+            explanation: "Character displacement: competing species evolve different phenotypes when co-occurring, reducing interspecific competition by partitioning resources (niche partitioning).",
             unitId: 8
           }
         ]
@@ -6275,7 +7235,7 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
         id: "8.3",
         title: "Biodiversity, Resilience, and Ecosystem Disruptions",
         description: "Analyze species richness, Simpson's index, and the value of keystone species. Examine the ecological impact of invasive species and human-driven disruptions.",
-        youtubeId: "sKJoI6xZ4-E",
+        youtubeId: "vOHQL6V4tU8",
         article: `
 # Biodiversity, Resilience, and Ecosystem Disruptions
 
@@ -6536,6 +7496,14 @@ Reducing impact requires:
           },
           {
             id: "8.3.2",
+            text: "Ecosystems with high biodiversity are characteristically:",
+            options: ["More vulnerable to diseases and climatic shifts.","More resilient and stable when environmental changes occur.","Lacking in primary producer trophic levels.","Dominated entirely by a single generalist species."],
+            correctIndex: 1,
+            explanation: "Higher biodiversity provides functional redundancy. If one species declines, others can perform similar ecological roles, making the community stable and resilient.",
+            unitId: 8
+          },
+          {
+            id: "8.3.3",
             text: "According to island biogeography, which island has the HIGHEST species richness?",
             options: ["Small island far from mainland","Large island close to the mainland","Small island close to the mainland","Large island far from the mainland"],
             correctIndex: 1,
@@ -6543,7 +7511,15 @@ Reducing impact requires:
             unitId: 8
           },
           {
-            id: "8.3.3",
+            id: "8.3.4",
+            text: "A Simpson's Diversity Index value close to 1 indicates:",
+            options: ["Very low diversity with one dominant species","High diversity with many species of roughly equal abundance","Complete loss of all species","Dominance by a single keystone species"],
+            correctIndex: 1,
+            explanation: "Simpson's Index: close to 1 = high diversity (many species, similar abundance); close to 0 = low diversity (dominated by few species).",
+            unitId: 8
+          },
+          {
+            id: "8.3.5",
             text: "Which would have the GREATEST negative impact on global biodiversity?",
             options: ["A single hurricane destroying one coral reef","Widespread deforestation of tropical rainforests containing highest biodiversity concentrations","Introduction of one invasive species to a lake","Overhunting one large mammal species"],
             correctIndex: 1,
@@ -6551,7 +7527,15 @@ Reducing impact requires:
             unitId: 8
           },
           {
-            id: "8.3.4",
+            id: "8.3.6",
+            text: "Why are invasive species often able to expand their populations exponentially in a new environment?",
+            options: ["They mutate at higher rates than native species.","They lack natural predators, competitors, or pathogens in the new habitat to limit their growth.","They reproduce only via binary fission.","They increase the carrying capacity of their hosts."],
+            correctIndex: 1,
+            explanation: "In their native habitats, predators and disease keep invasive species checked. When introduced to a new area without these checks, they outcompete native species and grow unchecked.",
+            unitId: 8
+          },
+          {
+            id: "8.3.7",
             text: "What occurs during the process of eutrophication in an aquatic ecosystem?",
             options: ["Acid rain lowers the pH of lakes, dissolving the shells of mollusks.","Nutrient runoff triggers algae blooms; subsequent decomposition of dead algae consumes oxygen, suffocating fish.","Ozone depletion warms water temperatures, lowering oxygen solubility.","Invasive predators consume all primary consumers."],
             correctIndex: 1,
@@ -6559,11 +7543,27 @@ Reducing impact requires:
             unitId: 8
           },
           {
-            id: "8.3.5",
+            id: "8.3.8",
+            text: "Which sequence correctly describes eutrophication leading to dead zones?",
+            options: ["Algae die -> Nutrients increase -> Algae bloom -> Oxygen decreases","Nutrient runoff -> Algae bloom -> Algae die -> Decomposers consume O2 -> Dead zone","Predators increase -> Algae decrease -> Nutrients increase -> Oxygen increases","Oxygen decreases -> Algae bloom -> Nutrients increase -> Fish increase"],
+            correctIndex: 1,
+            explanation: "Eutrophication: agricultural runoff increases N and P -> massive algae bloom -> algae die -> aerobic decomposers consume all dissolved O2 -> hypoxic dead zones form.",
+            unitId: 8
+          },
+          {
+            id: "8.3.9",
             text: "Habitat fragmentation is harmful to biodiversity primarily because:",
             options: ["Fragmented habitats have higher temperatures","Small, isolated patches support smaller populations with higher extinction risk and prevent migration","Fragmentation allows easier invasive species control","Fragmentation increases species richness by creating more microhabitats"],
             correctIndex: 1,
             explanation: "Fragmentation divides habitats into small, isolated patches. This reduces population size (increasing extinction risk), prevents gene flow, and blocks migration routes.",
+            unitId: 8
+          },
+          {
+            id: "8.3.10",
+            text: "A flower blooms two weeks earlier due to warming, but its specific pollinator has not shifted its emergence date. This is an example of:",
+            options: ["Adaptation to climate change","A phenological mismatch that disrupts a mutualistic relationship","Convergent evolution between plant and pollinator","Disruptive selection acting on flowering time"],
+            correctIndex: 1,
+            explanation: "A phenological mismatch: interdependent species respond differently to climate change, disrupting their synchronized timing and potentially reducing reproductive success for both.",
             unitId: 8
           }
         ]

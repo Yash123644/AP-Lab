@@ -1532,6 +1532,7 @@ export default function APDynamicCoursePage() {
   const [activeTopic, setActiveTopic] = useState<CourseTopic | null>(null);
   const [activeTab, setActiveTab] = useState<"video" | "article" | "practice">("video");
   const [expandedUnits, setExpandedUnits] = useState<number[]>([1]);
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
   const [showExam, setShowExam] = useState(false);
   const [showAccountPopup, setShowAccountPopup] = useState(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -1590,6 +1591,33 @@ export default function APDynamicCoursePage() {
           onClose={() => setShowExam(false)} 
         />
       )}
+
+      <AnimatePresence>
+        {expandedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[999999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 cursor-zoom-out"
+            onClick={() => setExpandedImage(null)}
+          >
+            <button 
+              className="absolute top-6 right-6 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+              onClick={() => setExpandedImage(null)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <motion.img 
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.95 }}
+              src={expandedImage} 
+              alt="Expanded view" 
+              className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {showAccountPopup && (
@@ -1943,8 +1971,9 @@ export default function APDynamicCoursePage() {
                                   img: ({ node, ...props }: any) => (
                                     <img 
                                       {...props} 
-                                      className="border-0 border-none outline-none shadow-none mx-auto my-6 rounded-2xl max-h-[350px] object-contain block bg-transparent" 
+                                      className="border-0 border-none outline-none shadow-none mx-auto my-6 rounded-2xl max-h-[350px] object-contain block bg-transparent cursor-zoom-in hover:scale-[1.02] transition-transform duration-300" 
                                       style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                                      onClick={() => setExpandedImage(props.src || null)}
                                     />
                                   )
                                 } as any}
@@ -1981,7 +2010,7 @@ export default function APDynamicCoursePage() {
                       <PracticeSystem 
                         topicId={activeTopic.id}
                         masteryKey={masteryKey}
-                        questions={activeTopic.questions} 
+                        questions={activeTopic.questions.slice(0, 5)} 
                         accentColor={course.accentColor}
                         onComplete={(score) => completeTopic(masteryKey, score)}
                       />

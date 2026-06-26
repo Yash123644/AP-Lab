@@ -7,6 +7,7 @@ import { CourseUnit, CourseQuestion } from "@/lib/courses/course-registry";
 import { cn } from "@/lib/utils";
 import confetti from "canvas-confetti";
 import { InlineMath } from "react-katex";
+import { useProgress } from "@/context/ProgressContext";
 
 interface Props {
   units: CourseUnit[];
@@ -16,6 +17,7 @@ interface Props {
 }
 
 export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
+  const { recordMockExamAttempt } = useProgress();
   const [gameState, setGameState] = useState<"lobby" | "exam" | "results">("lobby");
   const [questions, setQuestions] = useState<CourseQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +27,9 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
 
   // Initialize Exam
   const startExam = useCallback(() => {
-    const allQuestions: CourseQuestion[] = units.flatMap(u => u.topics.flatMap(t => t.questions));
+    const allQuestions: CourseQuestion[] = units.flatMap(u => u.topics.flatMap(t => {
+      return t.questions.length >= 10 ? t.questions.slice(5, 10) : t.questions;
+    }));
     // Shuffle and pick up to 60 questions
     const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
     setQuestions(shuffled.slice(0, 60));
@@ -67,22 +71,27 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
       origin: { y: 0.6 },
       colors: [accentColor, "#ffffff"]
     });
+    recordMockExamAttempt(correctCount, questions.length);
   };
 
   const calculateUnitPerformance = () => {
     const perf: Record<number, { correct: number, total: number, title: string }> = {};
     
+    // Initialize all course units in order
+    units.forEach(u => {
+      perf[u.id] = {
+        correct: 0,
+        total: 0,
+        title: u.title
+      };
+    });
+
     questions.forEach((q, idx) => {
-      if (!perf[q.unitId]) {
-        perf[q.unitId] = { 
-          correct: 0, 
-          total: 0, 
-          title: units.find(u => u.id === q.unitId)?.title || `Unit ${q.unitId}` 
-        };
-      }
-      perf[q.unitId].total++;
-      if (userAnswers[idx] === q.correctIndex) {
-        perf[q.unitId].correct++;
+      if (perf[q.unitId]) {
+        perf[q.unitId].total++;
+        if (userAnswers[idx] === q.correctIndex) {
+          perf[q.unitId].correct++;
+        }
       }
     });
 
@@ -265,7 +274,7 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
               <div className="lg:col-span-4 hidden lg:block">
                 <div className="liquid-glass-strong h-full rounded-[40px] border border-white/10 p-8 flex flex-col">
                   <h3 className="font-instrument text-2xl text-white mb-6">Question Map</h3>
-                  <div className="grid grid-cols-5 gap-3 overflow-y-auto max-h-[400px] pr-1 scrollbar-hide">
+                  <div className="grid grid-cols-6 gap-2 no-scrollbar">
                     {questions.map((_, idx) => (
                       <button
                         key={idx}
@@ -298,7 +307,7 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
             key="results"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="w-full max-w-5xl liquid-glass-strong rounded-[48px] border border-white/10 p-12 overflow-y-auto max-h-[90vh] scrollbar-hide"
+            className="w-full max-w-5xl liquid-glass-strong rounded-[48px] border border-white/10 p-12 pb-24 overflow-y-auto max-h-[90vh] no-scrollbar"
           >
             <div className="text-center space-y-4 mb-16">
               <div className="inline-flex items-center space-x-2 exam-accent-bg-glow px-4 py-2 rounded-full border exam-accent-border exam-accent-text text-sm font-bold mb-4">
