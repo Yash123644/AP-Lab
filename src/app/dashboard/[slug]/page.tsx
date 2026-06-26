@@ -33,6 +33,7 @@ import { InlineMath } from "react-katex";
 import confetti from "canvas-confetti";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import { MockExam } from "@/components/MockExam";
@@ -1920,7 +1921,7 @@ export default function APDynamicCoursePage() {
                           >
                             <div className="prose prose-invert max-w-none prose-headings:font-instrument prose-headings:font-normal prose-h1:text-4xl prose-h2:text-2xl prose-p:font-inter prose-p:text-white/70 prose-p:leading-relaxed">
                               <ReactMarkdown 
-                                remarkPlugins={[remarkMath]} 
+                                remarkPlugins={[remarkMath, remarkGfm]} 
                                 rehypePlugins={[rehypeKatex, rehypeRaw]}
                                 components={{
                                   // Custom vocab component handler in react-markdown
@@ -1938,7 +1939,14 @@ export default function APDynamicCoursePage() {
                                         {children}
                                       </VocabularyPopover>
                                     );
-                                  }
+                                  },
+                                  img: ({ node, ...props }: any) => (
+                                    <img 
+                                      {...props} 
+                                      className="border-0 border-none outline-none shadow-none mx-auto my-6 rounded-2xl max-h-[350px] object-contain block bg-transparent" 
+                                      style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                                    />
+                                  )
                                 } as any}
                               >
                                 {fullSection}

@@ -749,7 +749,98 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-
-
-
-
+/* Custom typography styles to supplement missing @tailwindcss/typography */
+.prose {
+  color: rgba(255, 255, 255, 0.85);
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #ffffff;
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: -0.02em;
+}
+.prose h1 { 
+  font-size: 2.25rem; 
+  font-weight: 700; 
+  margin-top: 2rem; 
+  margin-bottom: 1rem; 
+}
+.prose h2 { 
+  font-size: 1.5rem; 
+  font-weight: 600; 
+  margin-top: 1.75rem; 
+  margin-bottom: 0.875rem; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  padding-bottom: 0.5rem; 
+}
+.prose h3 { 
+  font-size: 1.25rem; 
+  font-weight: 600; 
+  margin-top: 1.5rem; 
+  margin-bottom: 0.75rem; 
+}
+.prose p { 
+  margin-bottom: 1.25rem; 
+  line-height: 1.75; 
+  font-family: var(--font-inter), sans-serif;
+}
+.prose ul { 
+  list-style-type: disc; 
+  padding-left: 1.5rem; 
+  margin-bottom: 1.25rem; 
+}
+.prose ol { 
+  list-style-type: decimal; 
+  padding-left: 1.5rem; 
+  margin-bottom: 1.25rem; 
+}
+.prose li { 
+  margin-bottom: 0.5rem; 
+}
+.prose table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin: 1.5rem 0; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 0.5rem; 
+  overflow: hidden; 
+}
+.prose th { 
+  background-color: rgba(255, 255, 255, 0.05); 
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
+  padding: 0.75rem 1rem; 
+  font-weight: 600; 
+  text-align: left; 
+  color: #ffffff; 
+}
+.prose td { 
+  padding: 0.75rem 1rem; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+  color: rgba(255, 255, 255, 0.8); 
+}
+.prose tr:hover { 
+  background-color: rgba(255, 255, 255, 0.02); 
+}
+.prose img { 
+  border: none !important; 
+  outline: none !important; 
+  box-shadow: none !important; 
+  margin: 1.5rem auto; 
+  border-radius: 0.5rem; 
+  display: block; 
+  background-color: transparent !important;
+}
+.prose blockquote {
+  border-left: 4px solid #22c55e;
+  padding-left: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 1.5rem 0;
+}
+.prose code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #22c55e;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
