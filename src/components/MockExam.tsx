@@ -238,19 +238,18 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
                   >
                     <ChevronRight className="w-6 h-6 rotate-180" />
                   </button>
-                  <div className="flex space-x-2">
-                    {questions.slice(0, 10).map((_, idx) => (
-                      <div 
-                        key={idx}
-                        className={cn(
-                          "w-2 h-2 rounded-full transition-all",
-                          idx === currentIndex 
-                            ? "exam-accent-bg w-6" 
-                            : (userAnswers[idx] !== undefined ? "bg-white/40" : "bg-white/10")
-                        )}
+                  <div className="flex flex-col items-center space-y-1.5 min-w-[240px]">
+                    <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                      <motion.div 
+                        className="h-full exam-accent-bg"
+                        initial={{ width: 0 }}
+                        animate={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
+                        transition={{ duration: 0.2 }}
                       />
-                    ))}
-                    {questions.length > 10 && <span className="text-white/20 text-xs font-bold self-center">...</span>}
+                    </div>
+                    <span className="text-[10px] font-mono text-white/40 tracking-wider">
+                      Question {currentIndex + 1} of {questions.length}
+                    </span>
                   </div>
                   {currentIndex === questions.length - 1 ? (
                     <button 
@@ -334,17 +333,19 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
                   <BarChart3 className="w-6 h-6 exam-accent-text" />
                   <span>Unit Mastery</span>
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 max-h-[380px] overflow-y-auto pr-2 custom-scrollbar">
                   {calculateUnitPerformance().map((p, idx) => (
-                    <div key={idx} className="space-y-2 p-4 bg-white/5 rounded-2xl border border-white/5">
+                    <div key={idx} className="space-y-2 p-3 bg-white/5 rounded-xl border border-white/5">
                       <div className="flex justify-between items-end">
-                        <span className="text-sm font-medium text-white/70">{p.title}</span>
-                        <span className="text-sm font-bold text-white">{Math.round((p.correct / p.total) * 100)}%</span>
+                        <span className="text-xs font-medium text-white/70">{p.title}</span>
+                        <span className="text-xs font-bold text-white">
+                          {p.total > 0 ? Math.round((p.correct / p.total) * 100) : 0}%
+                        </span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
                         <motion.div 
                           initial={{ width: 0 }}
-                          animate={{ width: `${(p.correct / p.total) * 100}%` }}
+                          animate={{ width: `${p.total > 0 ? (p.correct / p.total) * 100 : 0}%` }}
                           className="h-full exam-accent-bg"
                         />
                       </div>

@@ -387,7 +387,7 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
         id: "1.3",
         title: "Nucleic Acids: Structure, Chemistry, and Information",
         description: "Examine DNA and RNA structural differences, directionality, and coding differences.",
-        youtubeId: "QfQDgQ84Z4E",
+        youtubeId: "NNASRkIU5Fw",
         article: `
 # Nucleic Acids: Structure, Chemistry, and Information
 
@@ -1472,7 +1472,7 @@ Understanding endosymbiosis explains:
         id: "3.1",
         title: "Enzyme Structure, Catalysis, and Regulation",
         description: "Understand the structural properties of enzymes and substrate specificity. Analyze factors affecting enzyme function, denaturation, and mechanisms of inhibition. Study how temperature, pH, and inhibitors impact enzyme conformation and rates.",
-        youtubeId: "yk14dMjaa9w",
+        youtubeId: "OK5SqJ5yY8g",
         article: `
 # Enzyme Structure, Catalysis, and Regulation
 
@@ -2341,7 +2341,7 @@ Departure from Hardy-Weinberg = evolution is occurring.
         id: "4.1",
         title: "Cell Communication and Signal Transduction Pathways",
         description: "Study mechanisms of cellular signal reception, transduction cascades, and cellular responses. Learn how extracellular signals are recognized and converted into intracellular messages. Analyze details of signaling cascades, amplification, and second messengers. Evaluate how mutations or chemical inhibitors block or hyperactivate signaling.",
-        youtubeId: "V4b_Vd93hIY",
+        youtubeId: "qYVPZl8-92c",
         article: `
 # Cell Communication and Signal Transduction Pathways
 
@@ -3460,7 +3460,7 @@ When two gametes unite:
         id: "5.2",
         title: "Mendelian, Non-Mendelian, and Environmental Genetics",
         description: "Apply laws of segregation and independent assortment to predict inheritance probabilities. Analyze inheritance patterns that deviate from Mendelian ratios, including linkage and sex-linkage. Understand how environmental factors interact with genotypes to determine phenotype.",
-        youtubeId: "NWqgZ26GsO4",
+        youtubeId: "q6qtSeWp0Yw",
         article: `
 # Mendelian, Non-Mendelian, and Environmental Genetics
 
@@ -3863,7 +3863,7 @@ Some genes are expressed only from one parental chromosome (the other is silence
         id: "5.3",
         title: "Chromosomal Inheritance, Linkage, and Recombination",
         description: "Examine nondisjunction, chromosomal abnormalities, and non-nuclear organelle inheritance.",
-        youtubeId: "rIe7mWsHKmA",
+        youtubeId: "KaxSDryqB6M",
         article: `
 # Chromosomal Inheritance, Linkage, and Recombination
 
@@ -4463,7 +4463,7 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
         id: "6.3",
         title: "Regulation of Gene Expression, Mutations, and Biotechnology",
         description: "Examine prokaryotic operons and eukaryotic epigenetic/transcription factor controls. Study how differential gene expression drives cell differentiation and specialization. Classify nucleotide mutations and analyze their impact on polypeptide folding. Analyze PCR, gel electrophoresis, bacterial transformation, and DNA sequencing.",
-        youtubeId: "3S3Z51OyBY4",
+        youtubeId: "hD1-9e7G4Wk",
         article: `
 # Regulation of Gene Expression, Mutations, and Biotechnology
 
@@ -5571,7 +5571,7 @@ Let's solve a typical genetic problem: Cystic Fibrosis is an autosomal recessive
         id: "7.3",
         title: "Evidence of Evolution, Common Ancestry, and Phylogeny",
         description: "Analyze homologous, analogous, molecular, and fossil evidence of common descent. Examine shared molecular and cellular features that link all life to a common ancestor. Analyze observed examples of modern evolution in real time. Reconstruct evolutionary relationships using cladograms and molecular phylogenetic trees.",
-        youtubeId: "cc8vASG56oc",
+        youtubeId: "iT1J9_2_L_s",
         article: `
 # Evidence of Evolution, Common Ancestry, and Phylogeny
 
@@ -6035,7 +6035,7 @@ All mechanisms operate simultaneously, each influencing the others.
         id: "7.4",
         title: "Speciation, Extinction, and the Origin of Life",
         description: "Differentiate between allopatric and sympatric speciation and reproductive isolation. Analyze mass extinctions and subsequent adaptive radiation events. Analyze how genetic diversity protects populations from environmental catastrophes. Analyze prebiotic chemical evolution and the RNA World hypothesis.",
-        youtubeId: "yJe3Cws_2iI",
+        youtubeId: "rlfe-ID_GxY",
         article: `
 # Speciation, Extinction, and the Origin of Life
 
@@ -6535,7 +6535,7 @@ Key strategies:
         id: "8.1",
         title: "Responses to the Environment and Ecosystem Energy Flow",
         description: "Analyze behavioral and physiological responses of organisms to environmental changes. Analyze photosynthetic efficiency, trophic levels, and the 10% rule of thermodynamic transfer.",
-        youtubeId: "09_sWP2WuOU",
+        youtubeId: "swYvnMXi58I",
         article: `
 # Responses to the Environment and Ecosystem Energy Flow
 
@@ -6773,7 +6773,7 @@ Productivity varies significantly across biomes and is limited by specific facto
         id: "8.2",
         title: "Population and Community Ecology",
         description: "Understand population growth curves, carrying capacity, and density-dependent pressures. Differentiate between density-dependent and density-independent factors that regulate populations. Analyze species interactions, niche partitioning, and trophic cascades.",
-        youtubeId: "h9o78g47t8s",
+        youtubeId: "rXlyYFXyfIM",
         article: `
 # Population and Community Ecology
 
@@ -7235,7 +7235,7 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
         id: "8.3",
         title: "Biodiversity, Resilience, and Ecosystem Disruptions",
         description: "Analyze species richness, Simpson's index, and the value of keystone species. Examine the ecological impact of invasive species and human-driven disruptions.",
-        youtubeId: "vOHQL6V4tU8",
+        youtubeId: "GxE1SSqbSn4",
         article: `
 # Biodiversity, Resilience, and Ecosystem Disruptions
 
