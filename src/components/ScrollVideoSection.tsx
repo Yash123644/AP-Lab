@@ -36,11 +36,11 @@ export function ScrollVideoSection() {
     offset: ["start end", "center start"]
   });
 
-  // Perspective animation: start tilted back, animate to flat later in the scroll
-  const rotateX = useTransform(scrollYProgress, [0, 0.75, 1], [20, 10, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+  // Perspective animation: locks completely flat (0 deg) when in center view
+  const rotateX = useTransform(scrollYProgress, [0, 0.45, 1], [20, 0, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.45, 1], [100, 0, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.45, 1], [0.85, 1, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.45, 1], [0.3, 1, 1]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -145,7 +145,8 @@ export function ScrollVideoSection() {
                muted
                loop
                playsInline
-               className="w-full h-full object-cover absolute inset-0 z-10"
+               // scale-[1.02] prevents subpixel rendering sliver gaps at borders under 3D transforms
+               className="w-full h-full object-cover absolute inset-0 z-10 scale-[1.02]"
              />
              
              <div className="absolute inset-0 bg-[#0A0A0A] z-0" />
