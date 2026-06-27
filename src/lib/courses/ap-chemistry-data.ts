@@ -69,39 +69,32 @@ $$n = \\frac{m}{M}$$
 | Particles to Moles | $n = \\text{Particles} / N_A$ |
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="120" viewBox="0 0 450 120" class="max-w-full">
-    <!-- Grams box -->
-    <rect x="10" y="35" width="100" height="50" rx="8" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="2" />
-    <text x="60" y="65" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Mass (grams)</text>
-    
-    <!-- Arrows -->
-    <line x1="120" y1="45" x2="200" y2="45" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
-    <text x="160" y="38" fill="#a1a1aa" font-size="9" text-anchor="middle">/ Molar Mass</text>
-    
-    <line x1="200" y1="75" x2="120" y2="75" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
-    <text x="160" y="90" fill="#a1a1aa" font-size="9" text-anchor="middle">* Molar Mass</text>
-    
-    <!-- Moles box -->
-    <rect x="210" y="35" width="80" height="50" rx="8" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
-    <text x="250" y="65" fill="#00f2ff" font-size="14" font-weight="bold" text-anchor="middle">Moles (n)</text>
-    
-    <!-- Arrows -->
-    <line x1="300" y1="45" x2="380" y2="45" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
-    <text x="340" y="38" fill="#a1a1aa" font-size="9" text-anchor="middle">* Na</text>
-    
-    <line x1="380" y1="75" x2="300" y2="75" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
-    <text x="340" y="90" fill="#a1a1aa" font-size="9" text-anchor="middle">/ Na</text>
-    
-    <!-- Particles box -->
-    <rect x="390" y="35" width="100" height="50" rx="8" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="2" />
-    <text x="440" y="65" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Particles</text>
-    
-    <defs>
-      <marker id="arrow-chem" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="120" viewBox="0 0 450 120" class="max-w-full">
+<!-- Grams box -->
+<rect x="10" y="35" width="100" height="50" rx="8" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="2" />
+<text x="60" y="65" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Mass (grams)</text>
+<!-- Arrows -->
+<line x1="120" y1="45" x2="200" y2="45" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
+<text x="160" y="38" fill="#a1a1aa" font-size="9" text-anchor="middle">/ Molar Mass</text>
+<line x1="200" y1="75" x2="120" y2="75" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
+<text x="160" y="90" fill="#a1a1aa" font-size="9" text-anchor="middle">* Molar Mass</text>
+<!-- Moles box -->
+<rect x="210" y="35" width="80" height="50" rx="8" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
+<text x="250" y="65" fill="#00f2ff" font-size="14" font-weight="bold" text-anchor="middle">Moles (n)</text>
+<!-- Arrows -->
+<line x1="300" y1="45" x2="380" y2="45" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
+<text x="340" y="38" fill="#a1a1aa" font-size="9" text-anchor="middle">* Na</text>
+<line x1="380" y1="75" x2="300" y2="75" stroke="#a1a1aa" stroke-width="2" marker-end="url(#arrow-chem)" />
+<text x="340" y="90" fill="#a1a1aa" font-size="9" text-anchor="middle">/ Na</text>
+<!-- Particles box -->
+<rect x="390" y="35" width="100" height="50" rx="8" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="2" />
+<text x="440" y="65" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Particles</text>
+<defs>
+<marker id="arrow-chem" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa" />
+</marker>
+</defs>
+</svg>
 </div>
 
 ## Percent Composition by Mass
@@ -245,41 +238,35 @@ $$E_{\\text{photon}} = \\text{Binding Energy} + KE_{\\text{electron}}$$
 Below is a typical Photoelectron Spectrum (PES) showing binding energy vs. relative number of electrons:
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Grid lines -->
-    <line x1="50" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <line x1="50" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <line x1="50" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <line x1="50" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    
-    <!-- Y-axis -->
-    <line x1="50" y1="30" x2="50" y2="220" stroke="#a1a1aa" stroke-width="2" />
-    <!-- X-axis -->
-    <line x1="50" y1="220" x2="420" y2="220" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="220" y="260" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Binding Energy (MJ/mol) — (Reverse Scale)</text>
-    <text x="15" y="125" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 125)">Relative Number of Electrons</text>
-    
-    <!-- X-axis Ticks (Reverse Scale) -->
-    <text x="80" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">100</text>
-    <text x="170" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">10</text>
-    <text x="260" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">1.0</text>
-    <text x="350" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">0.1</text>
-    
-    <!-- Peaks (Nitrogen Example: 1s2, 2s2, 2p3) -->
-    <!-- 1s2 at ~52.6 MJ/mol (height 2) -->
-    <path d="M 90 220 L 105 220 L 110 100 L 115 100 L 120 220 L 135 220" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
-    <text x="112" y="90" fill="#00f2ff" font-size="10" font-weight="bold" text-anchor="middle">1s²</text>
-    
-    <!-- 2s2 at ~2.45 MJ/mol (height 2) -->
-    <path d="M 215 220 L 230 220 L 235 100 L 240 100 L 245 220 L 260 220" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
-    <text x="237" y="90" fill="#00f2ff" font-size="10" font-weight="bold" text-anchor="middle">2s²</text>
-    
-    <!-- 2p3 at ~1.40 MJ/mol (height 3) -->
-    <path d="M 290 220 L 305 220 L 310 40 L 315 40 L 320 220 L 335 220" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
-    <text x="312" y="30" fill="#00f2ff" font-size="10" font-weight="bold" text-anchor="middle">2p³</text>
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Grid lines -->
+<line x1="50" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<line x1="50" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<line x1="50" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<line x1="50" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<!-- Y-axis -->
+<line x1="50" y1="30" x2="50" y2="220" stroke="#a1a1aa" stroke-width="2" />
+<!-- X-axis -->
+<line x1="50" y1="220" x2="420" y2="220" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="220" y="260" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Binding Energy (MJ/mol) — (Reverse Scale)</text>
+<text x="15" y="125" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 125)">Relative Number of Electrons</text>
+<!-- X-axis Ticks (Reverse Scale) -->
+<text x="80" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">100</text>
+<text x="170" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">10</text>
+<text x="260" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">1.0</text>
+<text x="350" y="235" fill="#a1a1aa" font-size="10" text-anchor="middle">0.1</text>
+<!-- Peaks (Nitrogen Example: 1s2, 2s2, 2p3) -->
+<!-- 1s2 at ~52.6 MJ/mol (height 2) -->
+<path d="M 90 220 L 105 220 L 110 100 L 115 100 L 120 220 L 135 220" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
+<text x="112" y="90" fill="#00f2ff" font-size="10" font-weight="bold" text-anchor="middle">1s²</text>
+<!-- 2s2 at ~2.45 MJ/mol (height 2) -->
+<path d="M 215 220 L 230 220 L 235 100 L 240 100 L 245 220 L 260 220" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
+<text x="237" y="90" fill="#00f2ff" font-size="10" font-weight="bold" text-anchor="middle">2s²</text>
+<!-- 2p3 at ~1.40 MJ/mol (height 3) -->
+<path d="M 290 220 L 305 220 L 310 40 L 315 40 L 320 220 L 335 220" fill="rgba(0, 242, 255, 0.15)" stroke="#00f2ff" stroke-width="2.5" />
+<text x="312" y="30" fill="#00f2ff" font-size="10" font-weight="bold" text-anchor="middle">2p³</text>
+</svg>
 </div>
 `,
         questions: [
@@ -390,43 +377,37 @@ Where $Z$ is the atomic number (number of protons) and $S$ is the shielding cons
 The following vector diagram maps the primary periodic trends across the periodic table structure:
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Periodic Table Outline -->
-    <rect x="50" y="70" width="40" height="120" fill="none" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
-    <rect x="90" y="110" width="120" height="80" fill="none" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
-    <rect x="210" y="70" width="140" height="120" fill="none" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
-    
-    <!-- Table Labels -->
-    <text x="70" y="130" fill="#ffffff" font-size="10" opacity="0.5" text-anchor="middle">s-block</text>
-    <text x="150" y="150" fill="#ffffff" font-size="10" opacity="0.5" text-anchor="middle">d-block</text>
-    <text x="280" y="130" fill="#ffffff" font-size="10" opacity="0.5" text-anchor="middle">p-block</text>
-    
-    <!-- Atomic Radius Trend Arrow (Left & Down) -->
-    <!-- Horizontal Left arrow -->
-    <line x1="350" y1="215" x2="70" y2="215" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrow-blue)" />
-    <text x="210" y="232" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Atomic Radius Increases</text>
-    
-    <!-- Vertical Down arrow -->
-    <line x1="30" y1="70" x2="30" y2="180" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrow-blue)" />
-    
-    <!-- Ionization Energy & Electronegativity (Right & Up) -->
-    <!-- Horizontal Right arrow -->
-    <line x1="50" y1="45" x2="340" y2="45" stroke="#34d399" stroke-width="3" marker-end="url(#arrow-green)" />
-    <text x="195" y="35" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">Ionization Energy & Electronegativity Increase</text>
-    
-    <!-- Vertical Up arrow -->
-    <line x1="375" y1="190" x2="375" y2="80" stroke="#34d399" stroke-width="3" marker-end="url(#arrow-green)" />
-    
-    <!-- Arrow Markers -->
-    <defs>
-      <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
-      </marker>
-      <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Periodic Table Outline -->
+<rect x="50" y="70" width="40" height="120" fill="none" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
+<rect x="90" y="110" width="120" height="80" fill="none" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
+<rect x="210" y="70" width="140" height="120" fill="none" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
+<!-- Table Labels -->
+<text x="70" y="130" fill="#ffffff" font-size="10" opacity="0.5" text-anchor="middle">s-block</text>
+<text x="150" y="150" fill="#ffffff" font-size="10" opacity="0.5" text-anchor="middle">d-block</text>
+<text x="280" y="130" fill="#ffffff" font-size="10" opacity="0.5" text-anchor="middle">p-block</text>
+<!-- Atomic Radius Trend Arrow (Left & Down) -->
+<!-- Horizontal Left arrow -->
+<line x1="350" y1="215" x2="70" y2="215" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrow-blue)" />
+<text x="210" y="232" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Atomic Radius Increases</text>
+<!-- Vertical Down arrow -->
+<line x1="30" y1="70" x2="30" y2="180" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrow-blue)" />
+<!-- Ionization Energy & Electronegativity (Right & Up) -->
+<!-- Horizontal Right arrow -->
+<line x1="50" y1="45" x2="340" y2="45" stroke="#34d399" stroke-width="3" marker-end="url(#arrow-green)" />
+<text x="195" y="35" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">Ionization Energy & Electronegativity Increase</text>
+<!-- Vertical Up arrow -->
+<line x1="375" y1="190" x2="375" y2="80" stroke="#34d399" stroke-width="3" marker-end="url(#arrow-green)" />
+<!-- Arrow Markers -->
+<defs>
+<marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
+</marker>
+<marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" />
+</marker>
+</defs>
+</svg>
 </div>
 
 ## Summary of Periodic Trends
@@ -547,36 +528,30 @@ For a covalent bond, the potential energy of the system varies as a function of 
 Below is the Potential Energy Curve for a covalent bond as a function of internuclear distance:
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Y-axis line -->
-    <line x1="80" y1="20" x2="80" y2="260" stroke="#a1a1aa" stroke-width="2" />
-    <!-- X-axis line (PE = 0) -->
-    <line x1="80" y1="100" x2="420" y2="100" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
-    
-    <!-- Potential Energy Curve -->
-    <!-- Curve starts high at x=90, dips down to minimum at x=200, y=240, and approaches y=100 at x=400 -->
-    <path d="M 95 25 C 100 240, 110 240, 200 240 C 270 240, 320 105, 410 100" fill="none" stroke="#ff5555" stroke-width="3" />
-    
-    <!-- Well Minimum Indicators -->
-    <line x1="200" y1="100" x2="200" y2="240" stroke="#60a5fa" stroke-dasharray="2,2" stroke-width="1.5" />
-    <line x1="80" y1="240" x2="200" y2="240" stroke="#60a5fa" stroke-dasharray="2,2" stroke-width="1.5" />
-    
-    <!-- Dots at key points -->
-    <circle cx="200" cy="240" r="5" fill="#60a5fa" />
-    
-    <!-- Labels -->
-    <text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold">Potential Energy vs. Distance</text>
-    <text x="50" y="150" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 50 150)">Potential Energy (kJ/mol)</text>
-    <text x="250" y="120" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Internuclear Distance (pm)</text>
-    
-    <text x="70" y="95" fill="#a1a1aa" font-size="10" text-anchor="end">E = 0</text>
-    <text x="70" y="245" fill="#60a5fa" font-size="10" text-anchor="end">-Bond Energy</text>
-    <text x="200" y="85" fill="#60a5fa" font-size="10" text-anchor="middle">Bond Length</text>
-    
-    <!-- Annotations -->
-    <text x="130" y="50" fill="#ff5555" font-size="9" text-anchor="start">Nuclear Repulsion</text>
-    <text x="320" y="180" fill="#34d399" font-size="9" text-anchor="start">Attraction Dominates</text>
-  </svg>
+<svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Y-axis line -->
+<line x1="80" y1="20" x2="80" y2="260" stroke="#a1a1aa" stroke-width="2" />
+<!-- X-axis line (PE = 0) -->
+<line x1="80" y1="100" x2="420" y2="100" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1.5" />
+<!-- Potential Energy Curve -->
+<!-- Curve starts high at x=90, dips down to minimum at x=200, y=240, and approaches y=100 at x=400 -->
+<path d="M 95 25 C 100 240, 110 240, 200 240 C 270 240, 320 105, 410 100" fill="none" stroke="#ff5555" stroke-width="3" />
+<!-- Well Minimum Indicators -->
+<line x1="200" y1="100" x2="200" y2="240" stroke="#60a5fa" stroke-dasharray="2,2" stroke-width="1.5" />
+<line x1="80" y1="240" x2="200" y2="240" stroke="#60a5fa" stroke-dasharray="2,2" stroke-width="1.5" />
+<!-- Dots at key points -->
+<circle cx="200" cy="240" r="5" fill="#60a5fa" />
+<!-- Labels -->
+<text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold">Potential Energy vs. Distance</text>
+<text x="50" y="150" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 50 150)">Potential Energy (kJ/mol)</text>
+<text x="250" y="120" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Internuclear Distance (pm)</text>
+<text x="70" y="95" fill="#a1a1aa" font-size="10" text-anchor="end">E = 0</text>
+<text x="70" y="245" fill="#60a5fa" font-size="10" text-anchor="end">-Bond Energy</text>
+<text x="200" y="85" fill="#60a5fa" font-size="10" text-anchor="middle">Bond Length</text>
+<!-- Annotations -->
+<text x="130" y="50" fill="#ff5555" font-size="9" text-anchor="start">Nuclear Repulsion</text>
+<text x="320" y="180" fill="#34d399" font-size="9" text-anchor="start">Attraction Dominates</text>
+</svg>
 </div>
 
 ### Influence of Atomic Radii on Potential Energy
@@ -692,61 +667,58 @@ An <vocab term="Alloy" definition="A mixture of two or more elements, where at l
 - **Interstitial Alloys**: Formed when the solute atoms are **significantly smaller** than the solvent metal atoms, fitting into the spaces (interstices) between the metal atoms (e.g., **Steel**, where small carbon atoms fit between large iron atoms). This restricts the movement of metal layers, making the alloy **harder and less malleable**.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
-    <!-- Pure Metal -->
-    <g transform="translate(10, 0)">
-      <text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Pure Metal</text>
-      <!-- Lattice of same sized atoms -->
-      <circle cx="30" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="60" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="90" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="30" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="60" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="90" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="30" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="60" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="90" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <text x="60" y="140" fill="#a1a1aa" font-size="9" text-anchor="middle">Uniform, malleable</text>
-    </g>
-    
-    <!-- Substitutional Alloy -->
-    <g transform="translate(150, 0)">
-      <text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Substitutional Alloy</text>
-      <!-- Lattice with some atoms replaced by similar size zinc atoms -->
-      <circle cx="30" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="60" cy="50" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
-      <circle cx="90" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="30" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="60" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="90" cy="80" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
-      <circle cx="30" cy="110" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
-      <circle cx="60" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="90" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <text x="60" y="140" fill="#a1a1aa" font-size="9" text-anchor="middle">Similar sized atoms</text>
-    </g>
-    
-    <!-- Interstitial Alloy -->
-    <g transform="translate(290, 0)">
-      <text x="70" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Interstitial Alloy</text>
-      <!-- Lattice with small carbon atoms in interstices -->
-      <circle cx="35" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="65" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="95" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="35" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="65" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="95" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="35" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="65" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      <circle cx="95" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
-      
-      <!-- small carbon atoms in gaps -->
-      <circle cx="50" cy="65" r="5" fill="#f43f5e" />
-      <circle cx="80" cy="65" r="5" fill="#f43f5e" />
-      <circle cx="50" cy="95" r="5" fill="#f43f5e" />
-      <circle cx="80" cy="95" r="5" fill="#f43f5e" />
-      <text x="70" y="140" fill="#a1a1aa" font-size="9" text-anchor="middle">Small atoms lock lattice</text>
-    </g>
-  </svg>
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+<!-- Pure Metal -->
+<g transform="translate(10, 0)">
+<text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Pure Metal</text>
+<!-- Lattice of same sized atoms -->
+<circle cx="30" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="60" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="90" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="30" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="60" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="90" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="30" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="60" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="90" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<text x="60" y="140" fill="#a1a1aa" font-size="9" text-anchor="middle">Uniform, malleable</text>
+</g>
+<!-- Substitutional Alloy -->
+<g transform="translate(150, 0)">
+<text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Substitutional Alloy</text>
+<!-- Lattice with some atoms replaced by similar size zinc atoms -->
+<circle cx="30" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="60" cy="50" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
+<circle cx="90" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="30" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="60" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="90" cy="80" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
+<circle cx="30" cy="110" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
+<circle cx="60" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="90" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<text x="60" y="140" fill="#a1a1aa" font-size="9" text-anchor="middle">Similar sized atoms</text>
+</g>
+<!-- Interstitial Alloy -->
+<g transform="translate(290, 0)">
+<text x="70" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Interstitial Alloy</text>
+<!-- Lattice with small carbon atoms in interstices -->
+<circle cx="35" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="65" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="95" cy="50" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="35" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="65" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="95" cy="80" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="35" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="65" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<circle cx="95" cy="110" r="14" fill="rgba(96, 165, 250, 0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<!-- small carbon atoms in gaps -->
+<circle cx="50" cy="65" r="5" fill="#f43f5e" />
+<circle cx="80" cy="65" r="5" fill="#f43f5e" />
+<circle cx="50" cy="95" r="5" fill="#f43f5e" />
+<circle cx="80" cy="95" r="5" fill="#f43f5e" />
+<text x="70" y="140" fill="#a1a1aa" font-size="9" text-anchor="middle">Small atoms lock lattice</text>
+</g>
+</svg>
 </div>
 `,
         questions: [
@@ -870,51 +842,49 @@ The Valence Shell Electron Pair Repulsion (<vocab term="VSEPR Theory" definition
 | 6 | $sp^3d^2$ | Octahedral | 2 | Square Planar | $90^\\circ$ |
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
-    <!-- Linear Shape -->
-    <g transform="translate(10, 0)">
-      <text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Linear (sp)</text>
-      <circle cx="60" cy="75" r="10" fill="#00f2ff" />
-      <line x1="30" y1="75" x2="50" y2="75" stroke="#ffffff" stroke-width="2" />
-      <circle cx="20" cy="75" r="8" fill="#a1a1aa" />
-      <line x1="70" y1="75" x2="90" y2="75" stroke="#ffffff" stroke-width="2" />
-      <circle cx="100" cy="75" r="8" fill="#a1a1aa" />
-      <text x="60" y="125" fill="#a1a1aa" font-size="10" text-anchor="middle">180° (e.g., CO₂)</text>
-    </g>
-    
-    <!-- Trigonal Planar -->
-    <g transform="translate(150, 0)">
-      <text x="65" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Trigonal Planar (sp²)</text>
-      <circle cx="65" cy="75" r="10" fill="#00f2ff" />
-      <line x1="65" y1="75" x2="65" y2="45" stroke="#ffffff" stroke-width="2" />
-      <circle cx="65" cy="35" r="8" fill="#a1a1aa" />
-      <!-- bottom left -->
-      <line x1="65" y1="75" x2="40" y2="90" stroke="#ffffff" stroke-width="2" />
-      <circle cx="35" cy="95" r="8" fill="#a1a1aa" />
-      <!-- bottom right -->
-      <line x1="65" y1="75" x2="90" y2="90" stroke="#ffffff" stroke-width="2" />
-      <circle cx="95" cy="95" r="8" fill="#a1a1aa" />
-      <text x="65" y="125" fill="#a1a1aa" font-size="10" text-anchor="middle">120° (e.g., BF₃)</text>
-    </g>
-    
-    <!-- Tetrahedral -->
-    <g transform="translate(290, 0)">
-      <text x="70" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Tetrahedral (sp³)</text>
-      <circle cx="70" cy="75" r="10" fill="#00f2ff" />
-      <line x1="70" y1="75" x2="70" y2="45" stroke="#ffffff" stroke-width="2" />
-      <circle cx="70" cy="35" r="8" fill="#a1a1aa" />
-      <!-- bottom left -->
-      <line x1="70" y1="75" x2="45" y2="95" stroke="#ffffff" stroke-width="2" />
-      <circle cx="40" cy="100" r="8" fill="#a1a1aa" />
-      <!-- bottom right back -->
-      <line x1="70" y1="75" x2="90" y2="90" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2" />
-      <circle cx="95" cy="95" r="8" fill="#a1a1aa" opacity="0.6" />
-      <!-- bottom front -->
-      <line x1="70" y1="75" x2="85" y2="105" stroke="#ffffff" stroke-width="3" />
-      <circle cx="90" cy="110" r="8" fill="#a1a1aa" />
-      <text x="70" y="135" fill="#a1a1aa" font-size="10" text-anchor="middle">109.5° (e.g., CH₄)</text>
-    </g>
-  </svg>
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+<!-- Linear Shape -->
+<g transform="translate(10, 0)">
+<text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Linear (sp)</text>
+<circle cx="60" cy="75" r="10" fill="#00f2ff" />
+<line x1="30" y1="75" x2="50" y2="75" stroke="#ffffff" stroke-width="2" />
+<circle cx="20" cy="75" r="8" fill="#a1a1aa" />
+<line x1="70" y1="75" x2="90" y2="75" stroke="#ffffff" stroke-width="2" />
+<circle cx="100" cy="75" r="8" fill="#a1a1aa" />
+<text x="60" y="125" fill="#a1a1aa" font-size="10" text-anchor="middle">180° (e.g., CO₂)</text>
+</g>
+<!-- Trigonal Planar -->
+<g transform="translate(150, 0)">
+<text x="65" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Trigonal Planar (sp²)</text>
+<circle cx="65" cy="75" r="10" fill="#00f2ff" />
+<line x1="65" y1="75" x2="65" y2="45" stroke="#ffffff" stroke-width="2" />
+<circle cx="65" cy="35" r="8" fill="#a1a1aa" />
+<!-- bottom left -->
+<line x1="65" y1="75" x2="40" y2="90" stroke="#ffffff" stroke-width="2" />
+<circle cx="35" cy="95" r="8" fill="#a1a1aa" />
+<!-- bottom right -->
+<line x1="65" y1="75" x2="90" y2="90" stroke="#ffffff" stroke-width="2" />
+<circle cx="95" cy="95" r="8" fill="#a1a1aa" />
+<text x="65" y="125" fill="#a1a1aa" font-size="10" text-anchor="middle">120° (e.g., BF₃)</text>
+</g>
+<!-- Tetrahedral -->
+<g transform="translate(290, 0)">
+<text x="70" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Tetrahedral (sp³)</text>
+<circle cx="70" cy="75" r="10" fill="#00f2ff" />
+<line x1="70" y1="75" x2="70" y2="45" stroke="#ffffff" stroke-width="2" />
+<circle cx="70" cy="35" r="8" fill="#a1a1aa" />
+<!-- bottom left -->
+<line x1="70" y1="75" x2="45" y2="95" stroke="#ffffff" stroke-width="2" />
+<circle cx="40" cy="100" r="8" fill="#a1a1aa" />
+<!-- bottom right back -->
+<line x1="70" y1="75" x2="90" y2="90" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2" />
+<circle cx="95" cy="95" r="8" fill="#a1a1aa" opacity="0.6" />
+<!-- bottom front -->
+<line x1="70" y1="75" x2="85" y2="105" stroke="#ffffff" stroke-width="3" />
+<circle cx="90" cy="110" r="8" fill="#a1a1aa" />
+<text x="70" y="135" fill="#a1a1aa" font-size="10" text-anchor="middle">109.5° (e.g., CH₄)</text>
+</g>
+</svg>
 </div>
 `,
         questions: [
@@ -1039,43 +1009,37 @@ During a phase change, the temperature remains constant. The heat energy added i
 Below is the Heating Curve for water, showing phase transitions at 0°C and 100°C:
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Y-axis (Temperature) -->
-    <line x1="60" y1="30" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2" />
-    <!-- X-axis (Heat Added) -->
-    <line x1="60" y1="250" x2="420" y2="250" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Y-axis labels -->
-    <text x="50" y="225" fill="#a1a1aa" font-size="10" text-anchor="end">-20°C</text>
-    <text x="50" y="195" fill="#a1a1aa" font-size="10" text-anchor="end">0°C</text>
-    <text x="50" y="105" fill="#a1a1aa" font-size="10" text-anchor="end">100°C</text>
-    
-    <!-- Dashed Temperature lines -->
-    <line x1="60" y1="195" x2="400" y2="195" stroke="rgba(255,255,255,0.1)" stroke-dasharray="3,3" />
-    <line x1="60" y1="105" x2="400" y2="105" stroke="rgba(255,255,255,0.1)" stroke-dasharray="3,3" />
-    
-    <!-- Heating Curve Path -->
-    <!-- Solid (slanted) -> Melting (flat) -> Liquid (slanted) -> Boiling (flat) -> Gas (slanted) -->
-    <path d="M 65 225 L 110 195 L 170 195 L 240 105 L 350 105 L 390 50" fill="none" stroke="#ff9900" stroke-width="3" />
-    
-    <!-- Key Points Dots -->
-    <circle cx="110" cy="195" r="4" fill="#ff9900" />
-    <circle cx="170" cy="195" r="4" fill="#ff9900" />
-    <circle cx="240" cy="105" r="4" fill="#ff9900" />
-    <circle cx="350" cy="105" r="4" fill="#ff9900" />
-    
-    <!-- Labels -->
-    <text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Heating Curve of Water</text>
-    <text x="15" y="140" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 140)">Temperature (°C)</text>
-    <text x="240" y="280" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Heat Added (kJ)</text>
-    
-    <!-- Phase Labels -->
-    <text x="80" y="215" fill="#ffffff" font-size="9" text-anchor="middle">Solid</text>
-    <text x="140" y="185" fill="#ff9900" font-size="9" font-weight="bold" text-anchor="middle">Melting</text>
-    <text x="200" y="145" fill="#ffffff" font-size="9" text-anchor="middle">Liquid</text>
-    <text x="295" y="95" fill="#ff9900" font-size="9" font-weight="bold" text-anchor="middle">Vaporization</text>
-    <text x="380" y="75" fill="#ffffff" font-size="9" text-anchor="middle">Gas</text>
-  </svg>
+<svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Y-axis (Temperature) -->
+<line x1="60" y1="30" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2" />
+<!-- X-axis (Heat Added) -->
+<line x1="60" y1="250" x2="420" y2="250" stroke="#a1a1aa" stroke-width="2" />
+<!-- Y-axis labels -->
+<text x="50" y="225" fill="#a1a1aa" font-size="10" text-anchor="end">-20°C</text>
+<text x="50" y="195" fill="#a1a1aa" font-size="10" text-anchor="end">0°C</text>
+<text x="50" y="105" fill="#a1a1aa" font-size="10" text-anchor="end">100°C</text>
+<!-- Dashed Temperature lines -->
+<line x1="60" y1="195" x2="400" y2="195" stroke="rgba(255,255,255,0.1)" stroke-dasharray="3,3" />
+<line x1="60" y1="105" x2="400" y2="105" stroke="rgba(255,255,255,0.1)" stroke-dasharray="3,3" />
+<!-- Heating Curve Path -->
+<!-- Solid (slanted) -> Melting (flat) -> Liquid (slanted) -> Boiling (flat) -> Gas (slanted) -->
+<path d="M 65 225 L 110 195 L 170 195 L 240 105 L 350 105 L 390 50" fill="none" stroke="#ff9900" stroke-width="3" />
+<!-- Key Points Dots -->
+<circle cx="110" cy="195" r="4" fill="#ff9900" />
+<circle cx="170" cy="195" r="4" fill="#ff9900" />
+<circle cx="240" cy="105" r="4" fill="#ff9900" />
+<circle cx="350" cy="105" r="4" fill="#ff9900" />
+<!-- Labels -->
+<text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Heating Curve of Water</text>
+<text x="15" y="140" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 140)">Temperature (°C)</text>
+<text x="240" y="280" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Heat Added (kJ)</text>
+<!-- Phase Labels -->
+<text x="80" y="215" fill="#ffffff" font-size="9" text-anchor="middle">Solid</text>
+<text x="140" y="185" fill="#ff9900" font-size="9" font-weight="bold" text-anchor="middle">Melting</text>
+<text x="200" y="145" fill="#ffffff" font-size="9" text-anchor="middle">Liquid</text>
+<text x="295" y="95" fill="#ff9900" font-size="9" font-weight="bold" text-anchor="middle">Vaporization</text>
+<text x="380" y="75" fill="#ffffff" font-size="9" text-anchor="middle">Gas</text>
+</svg>
 </div>
 
 - **Heat of Fusion** ($\\Delta H_{\\text{fus}}$): Energy to melt 1 mole of solid.
@@ -1203,28 +1167,24 @@ Where $M$ is the molar mass in kg/mol.
 - **Temperature Effect**: As temperature increases, the distribution of speeds spreads out, and the peak of the curve shifts to the right (higher average speed).
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
-    <!-- Grid/Axes -->
-    <line x1="60" y1="30" x2="60" y2="230" stroke="#a1a1aa" stroke-width="2" />
-    <line x1="60" y1="230" x2="420" y2="230" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="240" y="260" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Molecular Speed (v)</text>
-    <text x="20" y="130" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 130)">Relative Number of Molecules</text>
-    
-    <!-- T1 (Cold) Curve: Tall, narrow peak at x=130, y=50 -->
-    <path d="M 60 230 C 80 180, 100 50, 130 50 C 160 50, 180 180, 220 220 C 230 225, 260 230, 300 230" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="2.5" />
-    <text x="130" y="38" fill="#3b82f6" font-size="11" font-weight="bold" text-anchor="middle">Cold Gas (T₁)</text>
-    
-    <!-- T2 (Hot) Curve: Lower, wider peak at x=200, y=110 -->
-    <path d="M 60 230 C 90 210, 130 110, 200 110 C 270 110, 310 180, 350 210 C 370 220, 390 230, 410 230" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2.5" />
-    <text x="240" y="98" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="middle">Hot Gas (T₂)</text>
-    
-    <!-- Annotations -->
-    <text x="320" y="160" fill="#a1a1aa" font-size="9" text-anchor="start">T₂ > T₁</text>
-    <text x="320" y="175" fill="#a1a1aa" font-size="9" text-anchor="start">Higher average speed,</text>
-    <text x="320" y="190" fill="#a1a1aa" font-size="9" text-anchor="start">wider distribution.</text>
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
+<!-- Grid/Axes -->
+<line x1="60" y1="30" x2="60" y2="230" stroke="#a1a1aa" stroke-width="2" />
+<line x1="60" y1="230" x2="420" y2="230" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="240" y="260" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Molecular Speed (v)</text>
+<text x="20" y="130" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 130)">Relative Number of Molecules</text>
+<!-- T1 (Cold) Curve: Tall, narrow peak at x=130, y=50 -->
+<path d="M 60 230 C 80 180, 100 50, 130 50 C 160 50, 180 180, 220 220 C 230 225, 260 230, 300 230" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="2.5" />
+<text x="130" y="38" fill="#3b82f6" font-size="11" font-weight="bold" text-anchor="middle">Cold Gas (T₁)</text>
+<!-- T2 (Hot) Curve: Lower, wider peak at x=200, y=110 -->
+<path d="M 60 230 C 90 210, 130 110, 200 110 C 270 110, 310 180, 350 210 C 370 220, 390 230, 410 230" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2.5" />
+<text x="240" y="98" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="middle">Hot Gas (T₂)</text>
+<!-- Annotations -->
+<text x="320" y="160" fill="#a1a1aa" font-size="9" text-anchor="start">T₂ > T₁</text>
+<text x="320" y="175" fill="#a1a1aa" font-size="9" text-anchor="start">Higher average speed,</text>
+<text x="320" y="190" fill="#a1a1aa" font-size="9" text-anchor="start">wider distribution.</text>
+</svg>
 </div>
 
 ## Deviations from Ideal Behavior
@@ -1348,37 +1308,31 @@ The <vocab term="Beer-Lambert Law" definition="A law stating that the absorbance
 $$A = \\epsilon b c$$
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
-    <!-- Grid/Axes -->
-    <line x1="60" y1="30" x2="60" y2="230" stroke="#a1a1aa" stroke-width="2" />
-    <line x1="60" y1="230" x2="420" y2="230" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="240" y="260" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Concentration (M)</text>
-    <text x="20" y="130" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 130)">Absorbance (A)</text>
-    
-    <!-- Linear Calibration Line -->
-    <line x1="60" y1="230" x2="380" y2="50" stroke="#10b981" stroke-width="3" />
-    
-    <!-- Data Points (dots) -->
-    <circle cx="124" cy="194" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
-    <circle cx="188" cy="158" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
-    <circle cx="252" cy="122" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
-    <circle cx="316" cy="86" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
-    <circle cx="380" cy="50" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
-    
-    <!-- Equation Label -->
-    <text x="200" y="80" fill="#10b981" font-size="14" font-weight="bold">A = ε b C</text>
-    <text x="200" y="100" fill="#a1a1aa" font-size="10">Linear Fit (R² = 0.999)</text>
-    
-    <!-- Unknown Concentration Interpolation Example -->
-    <line x1="60" y1="122" x2="252" y2="122" stroke="#ef4444" stroke-dasharray="3,3" stroke-width="1.5" />
-    <line x1="252" y1="122" x2="252" y2="230" stroke="#ef4444" stroke-dasharray="3,3" stroke-width="1.5" />
-    <circle cx="252" cy="122" r="4" fill="#ef4444" />
-    
-    <text x="70" y="115" fill="#ef4444" font-size="9">Measured Absorbance</text>
-    <text x="262" y="215" fill="#ef4444" font-size="9" text-anchor="start">Interpolated Concentration</text>
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
+<!-- Grid/Axes -->
+<line x1="60" y1="30" x2="60" y2="230" stroke="#a1a1aa" stroke-width="2" />
+<line x1="60" y1="230" x2="420" y2="230" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="240" y="260" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Concentration (M)</text>
+<text x="20" y="130" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 130)">Absorbance (A)</text>
+<!-- Linear Calibration Line -->
+<line x1="60" y1="230" x2="380" y2="50" stroke="#10b981" stroke-width="3" />
+<!-- Data Points (dots) -->
+<circle cx="124" cy="194" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+<circle cx="188" cy="158" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+<circle cx="252" cy="122" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+<circle cx="316" cy="86" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+<circle cx="380" cy="50" r="5" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+<!-- Equation Label -->
+<text x="200" y="80" fill="#10b981" font-size="14" font-weight="bold">A = ε b C</text>
+<text x="200" y="100" fill="#a1a1aa" font-size="10">Linear Fit (R² = 0.999)</text>
+<!-- Unknown Concentration Interpolation Example -->
+<line x1="60" y1="122" x2="252" y2="122" stroke="#ef4444" stroke-dasharray="3,3" stroke-width="1.5" />
+<line x1="252" y1="122" x2="252" y2="230" stroke="#ef4444" stroke-dasharray="3,3" stroke-width="1.5" />
+<circle cx="252" cy="122" r="4" fill="#ef4444" />
+<text x="70" y="115" fill="#ef4444" font-size="9">Measured Absorbance</text>
+<text x="262" y="215" fill="#ef4444" font-size="9" text-anchor="start">Interpolated Concentration</text>
+</svg>
 </div>
 
 Where:
@@ -1508,43 +1462,37 @@ When soluble ionic compounds are mixed, they may form an insoluble solid, called
    $$Ag^+(aq) + Cl^-(aq) \\rightarrow AgCl(s)$$
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-    <!-- Beaker -->
-    <path d="M 150 30 L 150 170 C 150 185, 300 185, 300 170 L 300 30" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="2.5" />
-    <line x1="140" y1="30" x2="160" y2="30" stroke="#ffffff" stroke-width="2" />
-    <line x1="290" y1="30" x2="310" y2="30" stroke="#ffffff" stroke-width="2" />
-    
-    <!-- Liquid Level -->
-    <path d="M 152 70 C 220 65, 230 75, 298 70 L 298 170 C 298 178, 152 178, 152 170 Z" fill="rgba(0, 242, 255, 0.08)" stroke="rgba(0, 242, 255, 0.2)" stroke-width="1" />
-    
-    <!-- Spectator Ions (Na+, NO3-) dispersed -->
-    <!-- Na+ -->
-    <circle cx="180" cy="100" r="10" fill="#3b82f6" opacity="0.3" />
-    <text x="180" y="103" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Na⁺</text>
-    <circle cx="270" cy="110" r="10" fill="#3b82f6" opacity="0.3" />
-    <text x="270" y="113" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Na⁺</text>
-    
-    <!-- NO3- -->
-    <circle cx="210" cy="120" r="12" fill="#a78bfa" opacity="0.3" />
-    <text x="210" y="123" fill="#ffffff" font-size="7" font-weight="bold" text-anchor="middle">NO₃⁻</text>
-    <circle cx="250" cy="90" r="12" fill="#a78bfa" opacity="0.3" />
-    <text x="250" y="93" fill="#ffffff" font-size="7" font-weight="bold" text-anchor="middle">NO₃⁻</text>
-    
-    <!-- Precipitate at the bottom (AgCl solid crystals) -->
-    <rect x="170" y="155" width="110" height="20" rx="3" fill="#f5f5f5" opacity="0.9" stroke="#d4d4d4" />
-    <text x="225" y="168" fill="#171717" font-size="9" font-weight="bold" text-anchor="middle">AgCl (s) Precipitate</text>
-    
-    <!-- Net Ionic Process arrow pointing to precipitate -->
-    <path d="M 80 80 Q 120 120, 160 160" fill="none" stroke="#00f2ff" stroke-width="2" marker-end="url(#arrow-chem)" />
-    <text x="50" y="70" fill="#00f2ff" font-size="9" font-weight="bold">Ag⁺(aq) + Cl⁻(aq)</text>
-    <text x="50" y="82" fill="#a1a1aa" font-size="8">react to form solid</text>
-    
-    <defs>
-      <marker id="arrow-chem" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#00f2ff" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+<!-- Beaker -->
+<path d="M 150 30 L 150 170 C 150 185, 300 185, 300 170 L 300 30" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="2.5" />
+<line x1="140" y1="30" x2="160" y2="30" stroke="#ffffff" stroke-width="2" />
+<line x1="290" y1="30" x2="310" y2="30" stroke="#ffffff" stroke-width="2" />
+<!-- Liquid Level -->
+<path d="M 152 70 C 220 65, 230 75, 298 70 L 298 170 C 298 178, 152 178, 152 170 Z" fill="rgba(0, 242, 255, 0.08)" stroke="rgba(0, 242, 255, 0.2)" stroke-width="1" />
+<!-- Spectator Ions (Na+, NO3-) dispersed -->
+<!-- Na+ -->
+<circle cx="180" cy="100" r="10" fill="#3b82f6" opacity="0.3" />
+<text x="180" y="103" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Na⁺</text>
+<circle cx="270" cy="110" r="10" fill="#3b82f6" opacity="0.3" />
+<text x="270" y="113" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Na⁺</text>
+<!-- NO3- -->
+<circle cx="210" cy="120" r="12" fill="#a78bfa" opacity="0.3" />
+<text x="210" y="123" fill="#ffffff" font-size="7" font-weight="bold" text-anchor="middle">NO₃⁻</text>
+<circle cx="250" cy="90" r="12" fill="#a78bfa" opacity="0.3" />
+<text x="250" y="93" fill="#ffffff" font-size="7" font-weight="bold" text-anchor="middle">NO₃⁻</text>
+<!-- Precipitate at the bottom (AgCl solid crystals) -->
+<rect x="170" y="155" width="110" height="20" rx="3" fill="#f5f5f5" opacity="0.9" stroke="#d4d4d4" />
+<text x="225" y="168" fill="#171717" font-size="9" font-weight="bold" text-anchor="middle">AgCl (s) Precipitate</text>
+<!-- Net Ionic Process arrow pointing to precipitate -->
+<path d="M 80 80 Q 120 120, 160 160" fill="none" stroke="#00f2ff" stroke-width="2" marker-end="url(#arrow-chem)" />
+<text x="50" y="70" fill="#00f2ff" font-size="9" font-weight="bold">Ag⁺(aq) + Cl⁻(aq)</text>
+<text x="50" y="82" fill="#a1a1aa" font-size="8">react to form solid</text>
+<defs>
+<marker id="arrow-chem" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#00f2ff" />
+</marker>
+</defs>
+</svg>
 </div>
 `,
         questions: [
@@ -1663,40 +1611,34 @@ A <vocab term="Titration" definition="A laboratory method where a solution of kn
 - **Endpoint**: The point at which the indicator changes color. A good indicator has its color change (endpoint) as close as possible to the equivalence point.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
-    <!-- Stand -->
-    <rect x="180" y="240" width="120" height="10" fill="#4b5563" />
-    <line x1="200" y1="30" x2="200" y2="240" stroke="#4b5563" stroke-width="4" />
-    
-    <!-- Buret clamp -->
-    <rect x="200" y="90" width="40" height="8" fill="#9ca3af" />
-    
-    <!-- Buret -->
-    <rect x="235" y="20" width="10" height="150" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1.5" />
-    <!-- Tick marks on buret -->
-    <line x1="235" y1="40" x2="239" y2="40" stroke="#ffffff" stroke-width="1" />
-    <line x1="235" y1="60" x2="239" y2="60" stroke="#ffffff" stroke-width="1" />
-    <line x1="235" y1="80" x2="239" y2="80" stroke="#ffffff" stroke-width="1" />
-    <line x1="235" y1="100" x2="239" y2="100" stroke="#ffffff" stroke-width="1" />
-    <line x1="235" y1="120" x2="239" y2="120" stroke="#ffffff" stroke-width="1" />
-    <line x1="235" y1="140" x2="239" y2="140" stroke="#ffffff" stroke-width="1" />
-    
-    <!-- Liquid in Buret (Titrant) -->
-    <rect x="236" y="55" width="8" height="115" fill="rgba(59, 130, 246, 0.4)" />
-    <text x="260" y="80" fill="#60a5fa" font-size="9" font-weight="bold">Buret (Titrant)</text>
-    
-    <!-- Stopcock -->
-    <circle cx="240" cy="180" r="5" fill="#ef4444" />
-    <line x1="235" y1="180" x2="245" y2="180" stroke="#ef4444" stroke-width="2.5" />
-    
-    <!-- Erlenmeyer Flask -->
-    <path d="M 233 195 L 233 210 L 210 240 L 270 240 L 247 210 L 247 195 Z" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="1.5" />
-    <path d="M 213 235 L 267 235 L 244 212 L 236 212 Z" fill="rgba(244, 63, 94, 0.15)" stroke="rgba(244, 63, 94, 0.3)" stroke-width="1" />
-    <text x="285" y="225" fill="#fb7185" font-size="9" font-weight="bold">Flask (Analyte + Indicator)</text>
-    
-    <!-- Drop falling -->
-    <circle cx="240" cy="190" r="1.5" fill="#60a5fa" />
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
+<!-- Stand -->
+<rect x="180" y="240" width="120" height="10" fill="#4b5563" />
+<line x1="200" y1="30" x2="200" y2="240" stroke="#4b5563" stroke-width="4" />
+<!-- Buret clamp -->
+<rect x="200" y="90" width="40" height="8" fill="#9ca3af" />
+<!-- Buret -->
+<rect x="235" y="20" width="10" height="150" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1.5" />
+<!-- Tick marks on buret -->
+<line x1="235" y1="40" x2="239" y2="40" stroke="#ffffff" stroke-width="1" />
+<line x1="235" y1="60" x2="239" y2="60" stroke="#ffffff" stroke-width="1" />
+<line x1="235" y1="80" x2="239" y2="80" stroke="#ffffff" stroke-width="1" />
+<line x1="235" y1="100" x2="239" y2="100" stroke="#ffffff" stroke-width="1" />
+<line x1="235" y1="120" x2="239" y2="120" stroke="#ffffff" stroke-width="1" />
+<line x1="235" y1="140" x2="239" y2="140" stroke="#ffffff" stroke-width="1" />
+<!-- Liquid in Buret (Titrant) -->
+<rect x="236" y="55" width="8" height="115" fill="rgba(59, 130, 246, 0.4)" />
+<text x="260" y="80" fill="#60a5fa" font-size="9" font-weight="bold">Buret (Titrant)</text>
+<!-- Stopcock -->
+<circle cx="240" cy="180" r="5" fill="#ef4444" />
+<line x1="235" y1="180" x2="245" y2="180" stroke="#ef4444" stroke-width="2.5" />
+<!-- Erlenmeyer Flask -->
+<path d="M 233 195 L 233 210 L 210 240 L 270 240 L 247 210 L 247 195 Z" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="1.5" />
+<path d="M 213 235 L 267 235 L 244 212 L 236 212 Z" fill="rgba(244, 63, 94, 0.15)" stroke="rgba(244, 63, 94, 0.3)" stroke-width="1" />
+<text x="285" y="225" fill="#fb7185" font-size="9" font-weight="bold">Flask (Analyte + Indicator)</text>
+<!-- Drop falling -->
+<circle cx="240" cy="190" r="1.5" fill="#60a5fa" />
+</svg>
 </div>
 
 ### Common Titration Errors:
@@ -1798,44 +1740,39 @@ $$NH_3(aq) + H_2O(l) \\rightleftharpoons NH_4^+(aq) + OH^-(aq)$$
 - $H_2O$ (acid) donates a proton to become $OH^-$ (conjugate base).
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
-    <!-- Reactant HCl -->
-    <g transform="translate(40, 20)">
-      <rect x="0" y="10" width="80" height="50" rx="8" fill="rgba(239, 68, 68, 0.05)" stroke="#ef4444" stroke-width="1.5" />
-      <text x="40" y="32" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">HCl</text>
-      <text x="40" y="48" fill="#ef4444" font-size="8" text-anchor="middle">Acid (Proton Donor)</text>
-    </g>
-    
-    <!-- Proton transfer arrow -->
-    <path d="M 130 45 Q 200 15, 270 45" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="3,3" marker-end="url(#arrow-chem)" />
-    <text x="200" y="25" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">H⁺ (Proton) Transfer</text>
-    
-    <!-- Reactant H2O -->
-    <g transform="translate(280, 20)">
-      <rect x="0" y="10" width="80" height="50" rx="8" fill="rgba(59, 130, 246, 0.05)" stroke="#3b82f6" stroke-width="1.5" />
-      <text x="40" y="32" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">H₂O</text>
-      <text x="40" y="48" fill="#3b82f6" font-size="8" text-anchor="middle">Base (Proton Acceptor)</text>
-    </g>
-    
-    <!-- Reaction Arrow -->
-    <text x="200" y="80" fill="#a1a1aa" font-size="16" text-anchor="middle">⇌</text>
-    
-    <!-- Products: Cl- and H3O+ -->
-    <g transform="translate(40, 90)">
-      <text x="40" y="20" fill="#ef4444" font-size="12" font-weight="bold" text-anchor="middle">Cl⁻</text>
-      <text x="40" y="35" fill="#a1a1aa" font-size="8" text-anchor="middle">Conjugate Base</text>
-    </g>
-    <g transform="translate(280, 90)">
-      <text x="40" y="20" fill="#3b82f6" font-size="12" font-weight="bold" text-anchor="middle">H₃O⁺</text>
-      <text x="40" y="35" fill="#a1a1aa" font-size="8" text-anchor="middle">Conjugate Acid</text>
-    </g>
-    
-    <defs>
-      <marker id="arrow-chem" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+<!-- Reactant HCl -->
+<g transform="translate(40, 20)">
+<rect x="0" y="10" width="80" height="50" rx="8" fill="rgba(239, 68, 68, 0.05)" stroke="#ef4444" stroke-width="1.5" />
+<text x="40" y="32" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">HCl</text>
+<text x="40" y="48" fill="#ef4444" font-size="8" text-anchor="middle">Acid (Proton Donor)</text>
+</g>
+<!-- Proton transfer arrow -->
+<path d="M 130 45 Q 200 15, 270 45" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="3,3" marker-end="url(#arrow-chem)" />
+<text x="200" y="25" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">H⁺ (Proton) Transfer</text>
+<!-- Reactant H2O -->
+<g transform="translate(280, 20)">
+<rect x="0" y="10" width="80" height="50" rx="8" fill="rgba(59, 130, 246, 0.05)" stroke="#3b82f6" stroke-width="1.5" />
+<text x="40" y="32" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">H₂O</text>
+<text x="40" y="48" fill="#3b82f6" font-size="8" text-anchor="middle">Base (Proton Acceptor)</text>
+</g>
+<!-- Reaction Arrow -->
+<text x="200" y="80" fill="#a1a1aa" font-size="16" text-anchor="middle">⇌</text>
+<!-- Products: Cl- and H3O+ -->
+<g transform="translate(40, 90)">
+<text x="40" y="20" fill="#ef4444" font-size="12" font-weight="bold" text-anchor="middle">Cl⁻</text>
+<text x="40" y="35" fill="#a1a1aa" font-size="8" text-anchor="middle">Conjugate Base</text>
+</g>
+<g transform="translate(280, 90)">
+<text x="40" y="20" fill="#3b82f6" font-size="12" font-weight="bold" text-anchor="middle">H₃O⁺</text>
+<text x="40" y="35" fill="#a1a1aa" font-size="8" text-anchor="middle">Conjugate Acid</text>
+</g>
+<defs>
+<marker id="arrow-chem" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+</marker>
+</defs>
+</svg>
 </div>
 
 ## Oxidation-Reduction (Redox) Reactions
@@ -1971,33 +1908,28 @@ To determine a rate law, run experiments varying one reactant concentration whil
 - **Rate quadruples**: Order is **2** ($\\text{Rate} \\propto [A]^2$).
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
-    <!-- Grid Lines -->
-    <line x1="60" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <line x1="60" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <line x1="60" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    
-    <!-- Axes -->
-    <line x1="60" y1="30" x2="60" y2="200" stroke="#a1a1aa" stroke-width="2" />
-    <line x1="60" y1="200" x2="420" y2="200" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="240" y="230" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Time (t)</text>
-    <text x="20" y="115" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 115)">Concentration (M)</text>
-    
-    <!-- Reactant [A] Curve (decreasing exponentially) -->
-    <path d="M 60 50 C 120 120, 200 180, 400 195" fill="none" stroke="#ef4444" stroke-width="3" />
-    <text x="280" y="150" fill="#ef4444" font-size="11" font-weight="bold">Reactant [A]</text>
-    
-    <!-- Product [B] Curve (increasing exponentially, starting at 0) -->
-    <path d="M 60 200 C 120 130, 200 70, 400 55" fill="none" stroke="#3b82f6" stroke-width="3" />
-    <text x="280" y="80" fill="#3b82f6" font-size="11" font-weight="bold">Product [B]</text>
-    
-    <!-- Tangent lines indicating rate -->
-    <line x1="60" y1="50" x2="150" y2="140" stroke="#a1a1aa" stroke-dasharray="2,2" stroke-width="1.5" />
-    <circle cx="60" cy="50" r="4" fill="#a1a1aa" />
-    <text x="80" y="35" fill="#a1a1aa" font-size="9">Initial Rate (slope)</text>
-  </svg>
+<svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
+<!-- Grid Lines -->
+<line x1="60" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<line x1="60" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<line x1="60" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+<!-- Axes -->
+<line x1="60" y1="30" x2="60" y2="200" stroke="#a1a1aa" stroke-width="2" />
+<line x1="60" y1="200" x2="420" y2="200" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="240" y="230" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Time (t)</text>
+<text x="20" y="115" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 115)">Concentration (M)</text>
+<!-- Reactant [A] Curve (decreasing exponentially) -->
+<path d="M 60 50 C 120 120, 200 180, 400 195" fill="none" stroke="#ef4444" stroke-width="3" />
+<text x="280" y="150" fill="#ef4444" font-size="11" font-weight="bold">Reactant [A]</text>
+<!-- Product [B] Curve (increasing exponentially, starting at 0) -->
+<path d="M 60 200 C 120 130, 200 70, 400 55" fill="none" stroke="#3b82f6" stroke-width="3" />
+<text x="280" y="80" fill="#3b82f6" font-size="11" font-weight="bold">Product [B]</text>
+<!-- Tangent lines indicating rate -->
+<line x1="60" y1="50" x2="150" y2="140" stroke="#a1a1aa" stroke-dasharray="2,2" stroke-width="1.5" />
+<circle cx="60" cy="50" r="4" fill="#a1a1aa" />
+<text x="80" y="35" fill="#a1a1aa" font-size="9">Initial Rate (slope)</text>
+</svg>
 </div>
 
 ## Integrated Rate Laws and Half-life
@@ -2114,53 +2046,47 @@ An energy profile plots the potential energy change as reactants transform into 
 Below is the Potential Energy Profile for an exothermic reaction:
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Y-axis -->
-    <line x1="60" y1="30" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2" />
-    <!-- X-axis -->
-    <line x1="60" y1="250" x2="420" y2="250" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Energy Profile Curve (Reactants at 160 -> Transition state at 60 -> Products at 210) -->
-    <path d="M 60 160 L 120 160 C 170 160, 200 40, 230 40 C 260 40, 290 210, 350 210 L 410 210" fill="none" stroke="#ff5555" stroke-width="3" />
-    
-    <!-- Reference lines -->
-    <line x1="120" y1="160" x2="230" y2="160" stroke="rgba(255,255,255,0.15)" stroke-dasharray="3,3" />
-    <line x1="230" y1="40" x2="230" y2="160" stroke="#60a5fa" stroke-width="1.5" />
-    <!-- Double head arrow for Ea -->
-    <line x1="230" y1="45" x2="230" y2="155" stroke="#60a5fa" stroke-width="2" marker-start="url(#arrow-up)" marker-end="url(#arrow-down)" />
-    
-    <line x1="350" y1="210" x2="350" y2="160" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2" />
-    <line x1="120" y1="160" x2="350" y2="160" stroke="rgba(255,255,255,0.15)" stroke-dasharray="3,3" />
-    <!-- Double head arrow for dH -->
-    <line x1="330" y1="165" x2="330" y2="205" stroke="#34d399" stroke-width="2" marker-start="url(#arrow-green-up)" marker-end="url(#arrow-green-down)" />
-    
-    <!-- Labels -->
-    <text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Reaction Energy Profile (Exothermic)</text>
-    <text x="15" y="140" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 140)">Potential Energy</text>
-    <text x="240" y="280" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Progress</text>
-    
-    <text x="100" y="150" fill="#ffffff" font-size="9" text-anchor="middle">Reactants</text>
-    <text x="380" y="200" fill="#ffffff" font-size="9" text-anchor="middle">Products</text>
-    <text x="230" y="30" fill="#ff5555" font-size="9" font-weight="bold" text-anchor="middle">Transition State</text>
-    <text x="242" y="105" fill="#60a5fa" font-size="9" font-weight="bold">Ea (forward)</text>
-    <text x="290" y="185" fill="#34d399" font-size="9" font-weight="bold">ΔH < 0</text>
-    
-    <!-- Markers definitions -->
-    <defs>
-      <marker id="arrow-up" viewBox="0 0 10 10" refX="5" refY="2" markerWidth="5" markerHeight="5" orient="auto">
-        <path d="M 5 0 L 10 10 L 0 10 z" fill="#60a5fa" />
-      </marker>
-      <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="5" markerHeight="5" orient="auto">
-        <path d="M 5 10 L 10 0 L 0 0 z" fill="#60a5fa" />
-      </marker>
-      <marker id="arrow-green-up" viewBox="0 0 10 10" refX="5" refY="2" markerWidth="5" markerHeight="5" orient="auto">
-        <path d="M 5 0 L 10 10 L 0 10 z" fill="#34d399" />
-      </marker>
-      <marker id="arrow-green-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="5" markerHeight="5" orient="auto">
-        <path d="M 5 10 L 10 0 L 0 0 z" fill="#34d399" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Y-axis -->
+<line x1="60" y1="30" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2" />
+<!-- X-axis -->
+<line x1="60" y1="250" x2="420" y2="250" stroke="#a1a1aa" stroke-width="2" />
+<!-- Energy Profile Curve (Reactants at 160 -> Transition state at 60 -> Products at 210) -->
+<path d="M 60 160 L 120 160 C 170 160, 200 40, 230 40 C 260 40, 290 210, 350 210 L 410 210" fill="none" stroke="#ff5555" stroke-width="3" />
+<!-- Reference lines -->
+<line x1="120" y1="160" x2="230" y2="160" stroke="rgba(255,255,255,0.15)" stroke-dasharray="3,3" />
+<line x1="230" y1="40" x2="230" y2="160" stroke="#60a5fa" stroke-width="1.5" />
+<!-- Double head arrow for Ea -->
+<line x1="230" y1="45" x2="230" y2="155" stroke="#60a5fa" stroke-width="2" marker-start="url(#arrow-up)" marker-end="url(#arrow-down)" />
+<line x1="350" y1="210" x2="350" y2="160" stroke="#34d399" stroke-width="1.5" stroke-dasharray="2,2" />
+<line x1="120" y1="160" x2="350" y2="160" stroke="rgba(255,255,255,0.15)" stroke-dasharray="3,3" />
+<!-- Double head arrow for dH -->
+<line x1="330" y1="165" x2="330" y2="205" stroke="#34d399" stroke-width="2" marker-start="url(#arrow-green-up)" marker-end="url(#arrow-green-down)" />
+<!-- Labels -->
+<text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Reaction Energy Profile (Exothermic)</text>
+<text x="15" y="140" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 140)">Potential Energy</text>
+<text x="240" y="280" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Progress</text>
+<text x="100" y="150" fill="#ffffff" font-size="9" text-anchor="middle">Reactants</text>
+<text x="380" y="200" fill="#ffffff" font-size="9" text-anchor="middle">Products</text>
+<text x="230" y="30" fill="#ff5555" font-size="9" font-weight="bold" text-anchor="middle">Transition State</text>
+<text x="242" y="105" fill="#60a5fa" font-size="9" font-weight="bold">Ea (forward)</text>
+<text x="290" y="185" fill="#34d399" font-size="9" font-weight="bold">ΔH < 0</text>
+<!-- Markers definitions -->
+<defs>
+<marker id="arrow-up" viewBox="0 0 10 10" refX="5" refY="2" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M 5 0 L 10 10 L 0 10 z" fill="#60a5fa" />
+</marker>
+<marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M 5 10 L 10 0 L 0 0 z" fill="#60a5fa" />
+</marker>
+<marker id="arrow-green-up" viewBox="0 0 10 10" refX="5" refY="2" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M 5 0 L 10 10 L 0 10 z" fill="#34d399" />
+</marker>
+<marker id="arrow-green-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M 5 10 L 10 0 L 0 0 z" fill="#34d399" />
+</marker>
+</defs>
+</svg>
 </div>
 
 - **Enthalpy of Reaction** ($\\Delta H$): The net heat change ($P_E$ of products minus $P_E$ of reactants).
@@ -2278,35 +2204,30 @@ If the slow step is preceded by a fast, reversible step, the reactants of the sl
   - Substitute into slow step: $\\text{Rate} = k [NO]^2 [Cl_2]$.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
-    <!-- Axes -->
-    <line x1="60" y1="30" x2="60" y2="240" stroke="#a1a1aa" stroke-width="2" />
-    <line x1="60" y1="240" x2="420" y2="240" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="240" y="265" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Progress</text>
-    <text x="20" y="135" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 135)">Potential Energy</text>
-    
-    <!-- 2-Step Curve: Reactants at y=180 -> TS1 at y=60 -> Intermediate at y=130 -> TS2 at y=90 -> Products at y=210 -->
-    <path d="M 60 180 L 110 180 C 130 180, 150 60, 170 60 C 190 60, 205 130, 225 130 C 245 130, 260 90, 280 90 C 300 90, 320 210, 360 210 L 410 210" fill="none" stroke="#ef4444" stroke-width="3" />
-    
-    <!-- Points labels -->
-    <text x="85" y="170" fill="#ffffff" font-size="10" text-anchor="middle">Reactants</text>
-    <text x="170" y="45" fill="#ff8a8a" font-size="9" font-weight="bold" text-anchor="middle">TS₁ (Slow RDS)</text>
-    <text x="225" y="150" fill="#facc15" font-size="9" font-weight="bold" text-anchor="middle">Intermediate</text>
-    <text x="280" y="75" fill="#ff8a8a" font-size="9" font-weight="bold" text-anchor="middle">TS₂ (Fast)</text>
-    <text x="385" y="200" fill="#ffffff" font-size="10" text-anchor="middle">Products</text>
-    
-    <!-- Ea1 and Ea2 markers -->
-    <line x1="120" y1="180" x2="120" y2="60" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2,2" />
-    <line x1="120" y1="60" x2="170" y2="60" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,2" />
-    <line x1="210" y1="130" x2="210" y2="90" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2,2" />
-    <line x1="210" y1="90" x2="280" y2="90" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,2" />
-    
-    <!-- Labels for barriers -->
-    <text x="110" y="120" fill="#3b82f6" font-size="9" font-weight="bold" transform="rotate(-90 110 120)">Ea₁ (Step 1)</text>
-    <text x="202" y="115" fill="#10b981" font-size="8" font-weight="bold" transform="rotate(-90 202 115)">Ea₂</text>
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
+<!-- Axes -->
+<line x1="60" y1="30" x2="60" y2="240" stroke="#a1a1aa" stroke-width="2" />
+<line x1="60" y1="240" x2="420" y2="240" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="240" y="265" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Progress</text>
+<text x="20" y="135" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 135)">Potential Energy</text>
+<!-- 2-Step Curve: Reactants at y=180 -> TS1 at y=60 -> Intermediate at y=130 -> TS2 at y=90 -> Products at y=210 -->
+<path d="M 60 180 L 110 180 C 130 180, 150 60, 170 60 C 190 60, 205 130, 225 130 C 245 130, 260 90, 280 90 C 300 90, 320 210, 360 210 L 410 210" fill="none" stroke="#ef4444" stroke-width="3" />
+<!-- Points labels -->
+<text x="85" y="170" fill="#ffffff" font-size="10" text-anchor="middle">Reactants</text>
+<text x="170" y="45" fill="#ff8a8a" font-size="9" font-weight="bold" text-anchor="middle">TS₁ (Slow RDS)</text>
+<text x="225" y="150" fill="#facc15" font-size="9" font-weight="bold" text-anchor="middle">Intermediate</text>
+<text x="280" y="75" fill="#ff8a8a" font-size="9" font-weight="bold" text-anchor="middle">TS₂ (Fast)</text>
+<text x="385" y="200" fill="#ffffff" font-size="10" text-anchor="middle">Products</text>
+<!-- Ea1 and Ea2 markers -->
+<line x1="120" y1="180" x2="120" y2="60" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2,2" />
+<line x1="120" y1="60" x2="170" y2="60" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,2" />
+<line x1="210" y1="130" x2="210" y2="90" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2,2" />
+<line x1="210" y1="90" x2="280" y2="90" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,2" />
+<!-- Labels for barriers -->
+<text x="110" y="120" fill="#3b82f6" font-size="9" font-weight="bold" transform="rotate(-90 110 120)">Ea₁ (Step 1)</text>
+<text x="202" y="115" fill="#10b981" font-size="8" font-weight="bold" transform="rotate(-90 202 115)">Ea₂</text>
+</svg>
 </div>
 
 ## Catalysis
@@ -2433,32 +2354,28 @@ $$\\Delta E = q + w$$
 | | By System | $-$ | System expands against surroundings |
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-    <!-- Surroundings boundary box -->
-    <rect x="10" y="10" width="430" height="180" rx="10" fill="rgba(255, 255, 255, 0.01)" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1.5" />
-    <text x="25" y="30" fill="#a1a1aa" font-size="10" font-weight="bold">Surroundings</text>
-    
-    <!-- System circular glass bubble -->
-    <circle cx="225" cy="100" r="50" fill="rgba(0, 242, 255, 0.03)" stroke="#00f2ff" stroke-width="2.5" />
-    <text x="225" y="104" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">SYSTEM</text>
-    
-    <!-- Endothermic heat arrow (entering system) -->
-    <path d="M 70 100 L 150 100" fill="none" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-chem-blue)" />
-    <text x="110" y="90" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">q > 0 (Endothermic)</text>
-    
-    <!-- Exothermic heat arrow (leaving system) -->
-    <path d="M 300 100 L 380 100" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrow-chem-red)" />
-    <text x="340" y="90" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">q < 0 (Exothermic)</text>
-    
-    <defs>
-      <marker id="arrow-chem-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
-      </marker>
-      <marker id="arrow-chem-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+<!-- Surroundings boundary box -->
+<rect x="10" y="10" width="430" height="180" rx="10" fill="rgba(255, 255, 255, 0.01)" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1.5" />
+<text x="25" y="30" fill="#a1a1aa" font-size="10" font-weight="bold">Surroundings</text>
+<!-- System circular glass bubble -->
+<circle cx="225" cy="100" r="50" fill="rgba(0, 242, 255, 0.03)" stroke="#00f2ff" stroke-width="2.5" />
+<text x="225" y="104" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">SYSTEM</text>
+<!-- Endothermic heat arrow (entering system) -->
+<path d="M 70 100 L 150 100" fill="none" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-chem-blue)" />
+<text x="110" y="90" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">q > 0 (Endothermic)</text>
+<!-- Exothermic heat arrow (leaving system) -->
+<path d="M 300 100 L 380 100" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrow-chem-red)" />
+<text x="340" y="90" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">q < 0 (Exothermic)</text>
+<defs>
+<marker id="arrow-chem-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
+</marker>
+<marker id="arrow-chem-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
+</marker>
+</defs>
+</svg>
 </div>
 
 ## Thermal Equilibrium
@@ -2577,34 +2494,28 @@ A heating curve tracks temperature as heat is added. It consists of two types of
 2. **Flat plateaus**: Phase changes are occurring. The temperature remains constant because the heat is used to break intermolecular attractions rather than increase molecular kinetic energy. Use $q = n \\Delta H$.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
-    <!-- Thermometer -->
-    <rect x="200" y="20" width="6" height="150" rx="3" fill="#a1a1aa" />
-    <rect x="201" y="25" width="4" height="140" fill="#ef4444" />
-    <circle cx="203" cy="170" r="8" fill="#ef4444" />
-    
-    <!-- Stirrer -->
-    <path d="M 240 30 L 240 160 L 255 160" fill="none" stroke="#d4d4d4" stroke-width="2" />
-    
-    <!-- Lid -->
-    <rect x="145" y="70" width="110" height="10" rx="2" fill="#52525b" />
-    
-    <!-- Outer Cup -->
-    <path d="M 150 80 L 160 210 C 160 215, 240 215, 240 210 L 250 80" fill="none" stroke="#71717a" stroke-width="2.5" />
-    
-    <!-- Inner Cup -->
-    <path d="M 155 80 L 163 200 C 163 205, 237 205, 237 200 L 245 80" fill="rgba(255,255,255,0.02)" stroke="#a1a1aa" stroke-width="1.5" />
-    
-    <!-- Water level -->
-    <path d="M 157 110 C 190 108, 210 112, 243 110 L 238 198 C 238 202, 164 202, 164 198 Z" fill="rgba(59, 130, 246, 0.1)" stroke="rgba(59, 130, 246, 0.2)" />
-    
-    <!-- Labels -->
-    <text x="270" y="105" fill="#a1a1aa" font-size="9" text-anchor="start">Thermometer</text>
-    <text x="270" y="125" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="start">Reaction Solution</text>
-    <text x="270" y="140" fill="#a1a1aa" font-size="9" text-anchor="start">q_rxn = -m c ΔT</text>
-    <text x="270" y="175" fill="#a1a1aa" font-size="9" text-anchor="start">Styrofoam Cups</text>
-    <text x="270" y="190" fill="#a1a1aa" font-size="8" text-anchor="start">(insulation prevents heat loss)</text>
-  </svg>
+<svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
+<!-- Thermometer -->
+<rect x="200" y="20" width="6" height="150" rx="3" fill="#a1a1aa" />
+<rect x="201" y="25" width="4" height="140" fill="#ef4444" />
+<circle cx="203" cy="170" r="8" fill="#ef4444" />
+<!-- Stirrer -->
+<path d="M 240 30 L 240 160 L 255 160" fill="none" stroke="#d4d4d4" stroke-width="2" />
+<!-- Lid -->
+<rect x="145" y="70" width="110" height="10" rx="2" fill="#52525b" />
+<!-- Outer Cup -->
+<path d="M 150 80 L 160 210 C 160 215, 240 215, 240 210 L 250 80" fill="none" stroke="#71717a" stroke-width="2.5" />
+<!-- Inner Cup -->
+<path d="M 155 80 L 163 200 C 163 205, 237 205, 237 200 L 245 80" fill="rgba(255,255,255,0.02)" stroke="#a1a1aa" stroke-width="1.5" />
+<!-- Water level -->
+<path d="M 157 110 C 190 108, 210 112, 243 110 L 238 198 C 238 202, 164 202, 164 198 Z" fill="rgba(59, 130, 246, 0.1)" stroke="rgba(59, 130, 246, 0.2)" />
+<!-- Labels -->
+<text x="270" y="105" fill="#a1a1aa" font-size="9" text-anchor="start">Thermometer</text>
+<text x="270" y="125" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="start">Reaction Solution</text>
+<text x="270" y="140" fill="#a1a1aa" font-size="9" text-anchor="start">q_rxn = -m c ΔT</text>
+<text x="270" y="175" fill="#a1a1aa" font-size="9" text-anchor="start">Styrofoam Cups</text>
+<text x="270" y="190" fill="#a1a1aa" font-size="8" text-anchor="start">(insulation prevents heat loss)</text>
+</svg>
 </div>
 
 ## Enthalpy of Reaction
@@ -2727,43 +2638,36 @@ Where $n$ and $m$ are the stoichiometric coefficients. This is Products minus Re
 2. If a reaction is multiplied by a coefficient, multiply $\\Delta H$ by that same coefficient.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-    <!-- State A: Reactants -->
-    <rect x="30" y="30" width="110" height="40" rx="5" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="1.5" />
-    <text x="85" y="55" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reactants (A)</text>
-    
-    <!-- State B: Products -->
-    <rect x="300" y="30" width="110" height="40" rx="5" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="1.5" />
-    <text x="355" y="55" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Products (B)</text>
-    
-    <!-- State C: Intermediates -->
-    <rect x="165" y="130" width="120" height="40" rx="5" fill="rgba(244, 63, 94, 0.05)" stroke="#f43f5e" stroke-width="1.5" />
-    <text x="225" y="155" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Intermediates (C)</text>
-    
-    <!-- Direct Path A -> B -->
-    <path d="M 140 50 L 300 50" fill="none" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow-chem-blue)" />
-    <text x="220" y="42" fill="#3b82f6" font-size="11" font-weight="bold" text-anchor="middle">ΔH_direct</text>
-    
-    <!-- Indirect Path A -> C -->
-    <path d="M 100 70 L 175 130" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-chem-green)" />
-    <text x="110" y="115" fill="#10b981" font-size="10" font-weight="bold">ΔH₁</text>
-    
-    <!-- Indirect Path C -> B -->
-    <path d="M 270 130 L 340 70" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-chem-green)" />
-    <text x="320" y="115" fill="#10b981" font-size="10" font-weight="bold">ΔH₂</text>
-    
-    <!-- Hess Law Equation -->
-    <text x="225" y="100" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">ΔH_direct = ΔH₁ + ΔH₂</text>
-    
-    <defs>
-      <marker id="arrow-chem-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
-      </marker>
-      <marker id="arrow-chem-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+<!-- State A: Reactants -->
+<rect x="30" y="30" width="110" height="40" rx="5" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="1.5" />
+<text x="85" y="55" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reactants (A)</text>
+<!-- State B: Products -->
+<rect x="300" y="30" width="110" height="40" rx="5" fill="rgba(0, 242, 255, 0.05)" stroke="#00f2ff" stroke-width="1.5" />
+<text x="355" y="55" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Products (B)</text>
+<!-- State C: Intermediates -->
+<rect x="165" y="130" width="120" height="40" rx="5" fill="rgba(244, 63, 94, 0.05)" stroke="#f43f5e" stroke-width="1.5" />
+<text x="225" y="155" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Intermediates (C)</text>
+<!-- Direct Path A -> B -->
+<path d="M 140 50 L 300 50" fill="none" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow-chem-blue)" />
+<text x="220" y="42" fill="#3b82f6" font-size="11" font-weight="bold" text-anchor="middle">ΔH_direct</text>
+<!-- Indirect Path A -> C -->
+<path d="M 100 70 L 175 130" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-chem-green)" />
+<text x="110" y="115" fill="#10b981" font-size="10" font-weight="bold">ΔH₁</text>
+<!-- Indirect Path C -> B -->
+<path d="M 270 130 L 340 70" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-chem-green)" />
+<text x="320" y="115" fill="#10b981" font-size="10" font-weight="bold">ΔH₂</text>
+<!-- Hess Law Equation -->
+<text x="225" y="100" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">ΔH_direct = ΔH₁ + ΔH₂</text>
+<defs>
+<marker id="arrow-chem-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+</marker>
+<marker id="arrow-chem-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+</marker>
+</defs>
+</svg>
 </div>
 `,
         questions: [
@@ -2875,30 +2779,25 @@ $$\\text{Rate of Forward Reaction} = \\text{Rate of Reverse Reaction}$$
 At equilibrium, the concentrations of reactants and products remain **constant over time**, but the chemical reactions **do not stop** (it is dynamic, occurring at equal rates).
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
-    <!-- Axes -->
-    <line x1="60" y1="30" x2="60" y2="200" stroke="#a1a1aa" stroke-width="2" />
-    <line x1="60" y1="200" x2="420" y2="200" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="240" y="230" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Time (t)</text>
-    <text x="20" y="115" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 115)">Reaction Rate</text>
-    
-    <!-- Forward Rate Curve (decreasing to y=110) -->
-    <path d="M 60 50 C 120 50, 180 110, 240 110 L 400 110" fill="none" stroke="#ef4444" stroke-width="3" />
-    <text x="140" y="70" fill="#ef4444" font-size="10" font-weight="bold">Forward Rate</text>
-    
-    <!-- Reverse Rate Curve (increasing from 0 to y=110) -->
-    <path d="M 60 200 C 120 200, 180 110, 240 110 L 400 110" fill="none" stroke="#3b82f6" stroke-width="3" />
-    <text x="140" y="160" fill="#3b82f6" font-size="10" font-weight="bold">Reverse Rate</text>
-    
-    <!-- Dashed line at equilibrium onset -->
-    <line x1="240" y1="30" x2="240" y2="200" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1" />
-    
-    <rect x="248" y="40" width="140" height="40" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1.5" />
-    <text x="318" y="55" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Equilibrium Achieved</text>
-    <text x="318" y="68" fill="#ffffff" font-size="8" text-anchor="middle">Forward Rate = Reverse Rate</text>
-  </svg>
+<svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
+<!-- Axes -->
+<line x1="60" y1="30" x2="60" y2="200" stroke="#a1a1aa" stroke-width="2" />
+<line x1="60" y1="200" x2="420" y2="200" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="240" y="230" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Time (t)</text>
+<text x="20" y="115" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 115)">Reaction Rate</text>
+<!-- Forward Rate Curve (decreasing to y=110) -->
+<path d="M 60 50 C 120 50, 180 110, 240 110 L 400 110" fill="none" stroke="#ef4444" stroke-width="3" />
+<text x="140" y="70" fill="#ef4444" font-size="10" font-weight="bold">Forward Rate</text>
+<!-- Reverse Rate Curve (increasing from 0 to y=110) -->
+<path d="M 60 200 C 120 200, 180 110, 240 110 L 400 110" fill="none" stroke="#3b82f6" stroke-width="3" />
+<text x="140" y="160" fill="#3b82f6" font-size="10" font-weight="bold">Reverse Rate</text>
+<!-- Dashed line at equilibrium onset -->
+<line x1="240" y1="30" x2="240" y2="200" stroke="#a1a1aa" stroke-dasharray="3,3" stroke-width="1" />
+<rect x="248" y="40" width="140" height="40" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1.5" />
+<text x="318" y="55" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Equilibrium Achieved</text>
+<text x="318" y="68" fill="#ffffff" font-size="8" text-anchor="middle">Forward Rate = Reverse Rate</text>
+</svg>
 </div>
 
 ## The Law of Mass Action and K
@@ -3053,36 +2952,29 @@ For equilibrium calculations, we set up an **ICE table** (Initial, Change, Equil
    - Adding an inert gas (like Helium) at constant volume increases total pressure but does NOT change partial pressures of reactants, so it has **no effect** on equilibrium.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
-    <!-- Axes -->
-    <line x1="60" y1="30" x2="60" y2="220" stroke="#a1a1aa" stroke-width="2" />
-    <line x1="60" y1="220" x2="420" y2="220" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Axis Labels -->
-    <text x="240" y="250" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Time</text>
-    <text x="20" y="125" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 125)">Concentration (M)</text>
-    
-    <!-- N2 (Blue) -->
-    <path d="M 60 125 L 150 125 L 150 65 C 150 65, 180 85, 250 85 L 400 85" fill="none" stroke="#60a5fa" stroke-width="2.5" />
-    
-    <!-- H2 (Yellow) -->
-    <path d="M 60 100 L 150 100 C 150 100, 180 120, 250 120 L 400 120" fill="none" stroke="#f59e0b" stroke-width="2.5" />
-    
-    <!-- NH3 (Green) -->
-    <path d="M 60 170 L 150 170 C 150 170, 180 150, 250 150 L 400 150" fill="none" stroke="#10b981" stroke-width="2.5" />
-    
-    <!-- Spike stress marker -->
-    <line x1="150" y1="30" x2="150" y2="220" stroke="#ef4444" stroke-dasharray="2,2" stroke-width="1.5" />
-    <text x="155" y="45" fill="#ef4444" font-size="9" font-weight="bold">Add N₂ (Stress)</text>
-    
-    <!-- Labels -->
-    <text x="350" y="80" fill="#60a5fa" font-size="9" font-weight="bold">[N₂]</text>
-    <text x="350" y="115" fill="#f59e0b" font-size="9" font-weight="bold">[H₂]</text>
-    <text x="350" y="145" fill="#10b981" font-size="9" font-weight="bold">[NH₃]</text>
-    
-    <text x="105" y="210" fill="#a1a1aa" font-size="9" text-anchor="middle">Equilibrium 1</text>
-    <text x="325" y="210" fill="#a1a1aa" font-size="9" text-anchor="middle">Equilibrium 2</text>
-  </svg>
+<svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
+<!-- Axes -->
+<line x1="60" y1="30" x2="60" y2="220" stroke="#a1a1aa" stroke-width="2" />
+<line x1="60" y1="220" x2="420" y2="220" stroke="#a1a1aa" stroke-width="2" />
+<!-- Axis Labels -->
+<text x="240" y="250" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Time</text>
+<text x="20" y="125" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 125)">Concentration (M)</text>
+<!-- N2 (Blue) -->
+<path d="M 60 125 L 150 125 L 150 65 C 150 65, 180 85, 250 85 L 400 85" fill="none" stroke="#60a5fa" stroke-width="2.5" />
+<!-- H2 (Yellow) -->
+<path d="M 60 100 L 150 100 C 150 100, 180 120, 250 120 L 400 120" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+<!-- NH3 (Green) -->
+<path d="M 60 170 L 150 170 C 150 170, 180 150, 250 150 L 400 150" fill="none" stroke="#10b981" stroke-width="2.5" />
+<!-- Spike stress marker -->
+<line x1="150" y1="30" x2="150" y2="220" stroke="#ef4444" stroke-dasharray="2,2" stroke-width="1.5" />
+<text x="155" y="45" fill="#ef4444" font-size="9" font-weight="bold">Add N₂ (Stress)</text>
+<!-- Labels -->
+<text x="350" y="80" fill="#60a5fa" font-size="9" font-weight="bold">[N₂]</text>
+<text x="350" y="115" fill="#f59e0b" font-size="9" font-weight="bold">[H₂]</text>
+<text x="350" y="145" fill="#10b981" font-size="9" font-weight="bold">[NH₃]</text>
+<text x="105" y="210" fill="#a1a1aa" font-size="9" text-anchor="middle">Equilibrium 1</text>
+<text x="325" y="210" fill="#a1a1aa" font-size="9" text-anchor="middle">Equilibrium 2</text>
+</svg>
 </div>
 `,
         questions: [
@@ -3192,51 +3084,45 @@ According to Le Chatelier's Principle, adding a dissolved ion that is already pr
 - *Example*: The solubility of $AgCl$ is significantly lower in a $0.10 \\text{ M } NaCl$ solution than in pure water, because the excess $Cl^-$ shifts $AgCl(s) \\rightleftharpoons Ag^+ + Cl^-$ to the left.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-    <!-- Beaker 1: Pure Water -->
-    <g transform="translate(40, 20)">
-      <text x="60" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">In Pure Water</text>
-      <path d="M 10 30 L 10 140 C 10 150, 110 150, 110 140 L 110 30" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="2" />
-      <path d="M 12 60 C 50 58, 70 62, 108 60 L 108 140 C 108 145, 12 145, 12 140 Z" fill="rgba(59, 130, 246, 0.1)" />
-      
-      <!-- Dissolved Ions (More) -->
-      <circle cx="35" cy="80" r="7" fill="#60a5fa" opacity="0.4" />
-      <text x="35" y="82" fill="#ffffff" font-size="6" text-anchor="middle">Ag⁺</text>
-      <circle cx="85" cy="85" r="7" fill="#10b981" opacity="0.4" />
-      <text x="85" y="87" fill="#ffffff" font-size="6" text-anchor="middle">Cl⁻</text>
-      <circle cx="50" cy="110" r="7" fill="#60a5fa" opacity="0.4" />
-      <text x="50" y="112" fill="#ffffff" font-size="6" text-anchor="middle">Ag⁺</text>
-      <circle cx="75" cy="115" r="7" fill="#10b981" opacity="0.4" />
-      <text x="75" y="117" fill="#ffffff" font-size="6" text-anchor="middle">Cl⁻</text>
-      
-      <!-- Small solid pile -->
-      <path d="M 40 140 Q 60 130, 80 140 Z" fill="#d4d4d4" stroke="#737373" />
-      <text x="60" y="165" fill="#a1a1aa" font-size="9" text-anchor="middle">High Solubility</text>
-    </g>
-    
-    <!-- Beaker 2: 0.1M NaCl (Common Ion) -->
-    <g transform="translate(250, 20)">
-      <text x="60" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">In 0.1 M NaCl</text>
-      <path d="M 10 30 L 10 140 C 10 150, 110 150, 110 140 L 110 30" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="2" />
-      <path d="M 12 60 C 50 58, 70 62, 108 60 L 108 140 C 108 145, 12 145, 12 140 Z" fill="rgba(59, 130, 246, 0.1)" />
-      
-      <!-- Dissolved Ions (Fewer Ag+, many Cl-) -->
-      <circle cx="35" cy="80" r="7" fill="#60a5fa" opacity="0.4" />
-      <text x="35" y="82" fill="#ffffff" font-size="6" text-anchor="middle">Ag⁺</text>
-      
-      <!-- Cl- from NaCl -->
-      <circle cx="55" cy="90" r="7" fill="#10b981" opacity="0.6" />
-      <text x="55" y="92" fill="#ffffff" font-size="6" font-weight="bold" text-anchor="middle">Cl⁻</text>
-      <circle cx="85" cy="85" r="7" fill="#10b981" opacity="0.6" />
-      <text x="85" y="87" fill="#ffffff" font-size="6" font-weight="bold" text-anchor="middle">Cl⁻</text>
-      <circle cx="75" cy="115" r="7" fill="#10b981" opacity="0.6" />
-      <text x="75" y="117" fill="#ffffff" font-size="6" font-weight="bold" text-anchor="middle">Cl⁻</text>
-      
-      <!-- Larger solid pile due to precipitation shift -->
-      <path d="M 30 140 Q 60 120, 90 140 Z" fill="#d4d4d4" stroke="#737373" />
-      <text x="60" y="165" fill="#a1a1aa" font-size="9" text-anchor="middle">Low Solubility (precipitates)</text>
-    </g>
-  </svg>
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+<!-- Beaker 1: Pure Water -->
+<g transform="translate(40, 20)">
+<text x="60" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">In Pure Water</text>
+<path d="M 10 30 L 10 140 C 10 150, 110 150, 110 140 L 110 30" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="2" />
+<path d="M 12 60 C 50 58, 70 62, 108 60 L 108 140 C 108 145, 12 145, 12 140 Z" fill="rgba(59, 130, 246, 0.1)" />
+<!-- Dissolved Ions (More) -->
+<circle cx="35" cy="80" r="7" fill="#60a5fa" opacity="0.4" />
+<text x="35" y="82" fill="#ffffff" font-size="6" text-anchor="middle">Ag⁺</text>
+<circle cx="85" cy="85" r="7" fill="#10b981" opacity="0.4" />
+<text x="85" y="87" fill="#ffffff" font-size="6" text-anchor="middle">Cl⁻</text>
+<circle cx="50" cy="110" r="7" fill="#60a5fa" opacity="0.4" />
+<text x="50" y="112" fill="#ffffff" font-size="6" text-anchor="middle">Ag⁺</text>
+<circle cx="75" cy="115" r="7" fill="#10b981" opacity="0.4" />
+<text x="75" y="117" fill="#ffffff" font-size="6" text-anchor="middle">Cl⁻</text>
+<!-- Small solid pile -->
+<path d="M 40 140 Q 60 130, 80 140 Z" fill="#d4d4d4" stroke="#737373" />
+<text x="60" y="165" fill="#a1a1aa" font-size="9" text-anchor="middle">High Solubility</text>
+</g>
+<!-- Beaker 2: 0.1M NaCl (Common Ion) -->
+<g transform="translate(250, 20)">
+<text x="60" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">In 0.1 M NaCl</text>
+<path d="M 10 30 L 10 140 C 10 150, 110 150, 110 140 L 110 30" fill="rgba(255,255,255,0.02)" stroke="#ffffff" stroke-width="2" />
+<path d="M 12 60 C 50 58, 70 62, 108 60 L 108 140 C 108 145, 12 145, 12 140 Z" fill="rgba(59, 130, 246, 0.1)" />
+<!-- Dissolved Ions (Fewer Ag+, many Cl-) -->
+<circle cx="35" cy="80" r="7" fill="#60a5fa" opacity="0.4" />
+<text x="35" y="82" fill="#ffffff" font-size="6" text-anchor="middle">Ag⁺</text>
+<!-- Cl- from NaCl -->
+<circle cx="55" cy="90" r="7" fill="#10b981" opacity="0.6" />
+<text x="55" y="92" fill="#ffffff" font-size="6" font-weight="bold" text-anchor="middle">Cl⁻</text>
+<circle cx="85" cy="85" r="7" fill="#10b981" opacity="0.6" />
+<text x="85" y="87" fill="#ffffff" font-size="6" font-weight="bold" text-anchor="middle">Cl⁻</text>
+<circle cx="75" cy="115" r="7" fill="#10b981" opacity="0.6" />
+<text x="75" y="117" fill="#ffffff" font-size="6" font-weight="bold" text-anchor="middle">Cl⁻</text>
+<!-- Larger solid pile due to precipitation shift -->
+<path d="M 30 140 Q 60 120, 90 140 Z" fill="#d4d4d4" stroke="#737373" />
+<text x="60" y="165" fill="#a1a1aa" font-size="9" text-anchor="middle">Low Solubility (precipitates)</text>
+</g>
+</svg>
 </div>
 
 ## The Effect of pH on Solubility
@@ -3352,33 +3238,29 @@ Because this is an endothermic process, $K_w$ increases with temperature.
 - **Relationship**: $\\text{pH} + \\text{pOH} = \\text{p}K_w = 14.0 \\quad (\\text{at } 25^\\circ\\text{C})$
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="100" viewBox="0 0 450 100" class="max-w-full">
-    <!-- Gradient spectrum background -->
-    <defs>
-      <linearGradient id="ph-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#ef4444" />
-        <stop offset="50%" stop-color="#22c55e" />
-        <stop offset="100%" stop-color="#3b82f6" />
-      </linearGradient>
-    </defs>
-    
-    <rect x="20" y="30" width="410" height="25" rx="5" fill="url(#ph-gradient)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-    
-    <!-- Ticks -->
-    <line x1="20" y1="55" x2="20" y2="62" stroke="#ffffff" stroke-width="1.5" />
-    <line x1="122.5" y1="55" x2="122.5" y2="60" stroke="#ffffff" stroke-width="1" />
-    <line x1="225" y1="55" x2="225" y2="65" stroke="#ffffff" stroke-width="2" />
-    <line x1="327.5" y1="55" x2="327.5" y2="60" stroke="#ffffff" stroke-width="1" />
-    <line x1="430" y1="55" x2="430" y2="62" stroke="#ffffff" stroke-width="1.5" />
-    
-    <!-- Tick Labels -->
-    <text x="20" y="75" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">pH 0 (Acidic)</text>
-    <text x="225" y="80" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">pH 7 (Neutral)</text>
-    <text x="430" y="75" fill="#3b82f6" font-size="10" font-weight="bold" text-anchor="middle">pH 14 (Basic)</text>
-    
-    <!-- Concept Label -->
-    <text x="225" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">The pH Scale ([H₃O⁺] concentration)</text>
-  </svg>
+<svg width="450" height="100" viewBox="0 0 450 100" class="max-w-full">
+<!-- Gradient spectrum background -->
+<defs>
+<linearGradient id="ph-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#ef4444" />
+<stop offset="50%" stop-color="#22c55e" />
+<stop offset="100%" stop-color="#3b82f6" />
+</linearGradient>
+</defs>
+<rect x="20" y="30" width="410" height="25" rx="5" fill="url(#ph-gradient)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+<!-- Ticks -->
+<line x1="20" y1="55" x2="20" y2="62" stroke="#ffffff" stroke-width="1.5" />
+<line x1="122.5" y1="55" x2="122.5" y2="60" stroke="#ffffff" stroke-width="1" />
+<line x1="225" y1="55" x2="225" y2="65" stroke="#ffffff" stroke-width="2" />
+<line x1="327.5" y1="55" x2="327.5" y2="60" stroke="#ffffff" stroke-width="1" />
+<line x1="430" y1="55" x2="430" y2="62" stroke="#ffffff" stroke-width="1.5" />
+<!-- Tick Labels -->
+<text x="20" y="75" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">pH 0 (Acidic)</text>
+<text x="225" y="80" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">pH 7 (Neutral)</text>
+<text x="430" y="75" fill="#3b82f6" font-size="10" font-weight="bold" text-anchor="middle">pH 14 (Basic)</text>
+<!-- Concept Label -->
+<text x="225" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">The pH Scale ([H₃O⁺] concentration)</text>
+</svg>
 </div>
 
 ## Strong Acids and Bases
@@ -3509,43 +3391,37 @@ A titration curve plots pH on the y-axis vs. volume of titrant added on the x-ax
 Below is the pH Titration Curve for a weak acid titrated with a strong base ($NaOH$):
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Y-axis (pH) -->
-    <line x1="60" y1="30" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2" />
-    <!-- X-axis (Vol NaOH) -->
-    <line x1="60" y1="250" x2="420" y2="250" stroke="#a1a1aa" stroke-width="2" />
-    
-    <!-- Y-axis scale markers -->
-    <text x="50" y="245" fill="#a1a1aa" font-size="9" text-anchor="end">pH 0</text>
-    <text x="50" y="190" fill="#a1a1aa" font-size="9" text-anchor="end">pH 4</text>
-    <text x="50" y="135" fill="#a1a1aa" font-size="9" text-anchor="end">pH 8</text>
-    <text x="50" y="80" fill="#a1a1aa" font-size="9" text-anchor="end">pH 12</text>
-    
-    <!-- Dashed pH lines -->
-    <line x1="60" y1="190" x2="400" y2="190" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3,3" />
-    <line x1="60" y1="135" x2="400" y2="135" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3,3" />
-    <line x1="60" y1="80" x2="400" y2="80" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3,3" />
-    
-    <!-- Titration Curve Path -->
-    <path d="M 60 205 Q 120 195, 170 190 T 230 170 Q 245 160, 250 125 T 255 90 Q 260 75, 320 70 L 410 70" fill="none" stroke="#e0f2fe" stroke-width="3" />
-    
-    <!-- Half Equivalence Point -->
-    <circle cx="155" cy="190" r="5" fill="#60a5fa" />
-    <line x1="155" y1="250" x2="155" y2="190" stroke="#60a5fa" stroke-dasharray="2,2" />
-    <text x="155" y="260" fill="#60a5fa" font-size="8" text-anchor="middle">12.5 mL</text>
-    <text x="165" y="180" fill="#60a5fa" font-size="8" font-weight="bold">pH = pKa</text>
-    
-    <!-- Equivalence Point -->
-    <circle cx="250" cy="125" r="5" fill="#ff5555" />
-    <line x1="250" y1="250" x2="250" y2="125" stroke="#ff5555" stroke-dasharray="2,2" />
-    <text x="250" y="260" fill="#ff5555" font-size="8" text-anchor="middle">25.0 mL</text>
-    <text x="260" y="120" fill="#ff5555" font-size="8" font-weight="bold">Equivalence Pt</text>
-    
-    <!-- Labels -->
-    <text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Weak Acid Titration Curve</text>
-    <text x="15" y="140" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 140)">pH</text>
-    <text x="240" y="285" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Volume of NaOH added (mL)</text>
-  </svg>
+<svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Y-axis (pH) -->
+<line x1="60" y1="30" x2="60" y2="250" stroke="#a1a1aa" stroke-width="2" />
+<!-- X-axis (Vol NaOH) -->
+<line x1="60" y1="250" x2="420" y2="250" stroke="#a1a1aa" stroke-width="2" />
+<!-- Y-axis scale markers -->
+<text x="50" y="245" fill="#a1a1aa" font-size="9" text-anchor="end">pH 0</text>
+<text x="50" y="190" fill="#a1a1aa" font-size="9" text-anchor="end">pH 4</text>
+<text x="50" y="135" fill="#a1a1aa" font-size="9" text-anchor="end">pH 8</text>
+<text x="50" y="80" fill="#a1a1aa" font-size="9" text-anchor="end">pH 12</text>
+<!-- Dashed pH lines -->
+<line x1="60" y1="190" x2="400" y2="190" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3,3" />
+<line x1="60" y1="135" x2="400" y2="135" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3,3" />
+<line x1="60" y1="80" x2="400" y2="80" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3,3" />
+<!-- Titration Curve Path -->
+<path d="M 60 205 Q 120 195, 170 190 T 230 170 Q 245 160, 250 125 T 255 90 Q 260 75, 320 70 L 410 70" fill="none" stroke="#e0f2fe" stroke-width="3" />
+<!-- Half Equivalence Point -->
+<circle cx="155" cy="190" r="5" fill="#60a5fa" />
+<line x1="155" y1="250" x2="155" y2="190" stroke="#60a5fa" stroke-dasharray="2,2" />
+<text x="155" y="260" fill="#60a5fa" font-size="8" text-anchor="middle">12.5 mL</text>
+<text x="165" y="180" fill="#60a5fa" font-size="8" font-weight="bold">pH = pKa</text>
+<!-- Equivalence Point -->
+<circle cx="250" cy="125" r="5" fill="#ff5555" />
+<line x1="250" y1="250" x2="250" y2="125" stroke="#ff5555" stroke-dasharray="2,2" />
+<text x="250" y="260" fill="#ff5555" font-size="8" text-anchor="middle">25.0 mL</text>
+<text x="260" y="120" fill="#ff5555" font-size="8" font-weight="bold">Equivalence Pt</text>
+<!-- Labels -->
+<text x="240" y="20" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Weak Acid Titration Curve</text>
+<text x="15" y="140" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 140)">pH</text>
+<text x="240" y="285" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Volume of NaOH added (mL)</text>
+</svg>
 </div>
 
 1. **Equivalence Point**: The inflection point of the curve where the slope is steepest. The moles of titrant are stoichiometrically equivalent to the moles of analyte.
@@ -3666,30 +3542,26 @@ $$\\text{pH} = \\text{p}K_a + \\log \\left( \\frac{[A^-]}{[HA]} \\right)$$
 A buffer is most effective when the ratio of conjugate base to weak acid is close to 1 ($[A^-]/[HA] \\approx 1$), which means $\\text{pH} \\approx \\text{p}K_a$. Therefore, to design a buffer of a specific target pH, select a weak acid with a **$\\text{p}K_a$ as close as possible to the target pH**.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-    <!-- Buffer solution box -->
-    <rect x="130" y="40" width="190" height="120" rx="8" fill="rgba(255, 255, 255, 0.02)" stroke="#a1a1aa" stroke-width="2" />
-    <text x="225" y="30" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Buffer Solution (HA / A⁻)</text>
-    
-    <text x="225" y="70" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle">Weak Acid: HA</text>
-    <text x="225" y="90" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">Conjugate Base: A⁻</text>
-    
-    <!-- Adding strong acid H+ -->
-    <path d="M 40 120 L 120 120" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-chem-buffer)" />
-    <text x="60" y="110" fill="#ef4444" font-size="9" font-weight="bold">Add H⁺</text>
-    <text x="225" y="125" fill="#ef4444" font-size="9" text-anchor="middle">Neutralization: A⁻ + H⁺ ➔ HA</text>
-    
-    <!-- Adding strong base OH- -->
-    <path d="M 410 120 L 330 120" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-chem-buffer)" />
-    <text x="390" y="110" fill="#3b82f6" font-size="9" font-weight="bold">Add OH⁻</text>
-    <text x="225" y="145" fill="#3b82f6" font-size="9" text-anchor="middle">Neutralization: HA + OH⁻ ➔ A⁻ + H₂O</text>
-    
-    <defs>
-      <marker id="arrow-chem-buffer" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+<!-- Buffer solution box -->
+<rect x="130" y="40" width="190" height="120" rx="8" fill="rgba(255, 255, 255, 0.02)" stroke="#a1a1aa" stroke-width="2" />
+<text x="225" y="30" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Buffer Solution (HA / A⁻)</text>
+<text x="225" y="70" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle">Weak Acid: HA</text>
+<text x="225" y="90" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">Conjugate Base: A⁻</text>
+<!-- Adding strong acid H+ -->
+<path d="M 40 120 L 120 120" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-chem-buffer)" />
+<text x="60" y="110" fill="#ef4444" font-size="9" font-weight="bold">Add H⁺</text>
+<text x="225" y="125" fill="#ef4444" font-size="9" text-anchor="middle">Neutralization: A⁻ + H⁺ ➔ HA</text>
+<!-- Adding strong base OH- -->
+<path d="M 410 120 L 330 120" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-chem-buffer)" />
+<text x="390" y="110" fill="#3b82f6" font-size="9" font-weight="bold">Add OH⁻</text>
+<text x="225" y="145" fill="#3b82f6" font-size="9" text-anchor="middle">Neutralization: HA + OH⁻ ➔ A⁻ + H₂O</text>
+<defs>
+<marker id="arrow-chem-buffer" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+</marker>
+</defs>
+</svg>
 </div>
 
 ## Buffer Capacity
@@ -3796,58 +3668,56 @@ Thermodynamic favorability determines whether a chemical or physical process can
   - **Gas Moles**: If a reaction increases the number of gas molecules ($\\Delta n_{\\text{gas}} > 0$), then $\\Delta S > 0$.
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
-    <!-- Solid -->
-    <g transform="translate(10, 0)">
-      <rect x="10" y="30" width="100" height="80" rx="5" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" />
-      <text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Solid (Low S)</text>
-      <!-- Packed grid of particles -->
-      <circle cx="45" cy="50" r="6" fill="#60a5fa" />
-      <circle cx="60" cy="50" r="6" fill="#60a5fa" />
-      <circle cx="75" cy="50" r="6" fill="#60a5fa" />
-      <circle cx="45" cy="65" r="6" fill="#60a5fa" />
-      <circle cx="60" cy="65" r="6" fill="#60a5fa" />
-      <circle cx="75" cy="65" r="6" fill="#60a5fa" />
-      <circle cx="45" cy="80" r="6" fill="#60a5fa" />
-      <circle cx="60" cy="80" r="6" fill="#60a5fa" />
-      <circle cx="75" cy="80" r="6" fill="#60a5fa" />
-      <circle cx="45" cy="95" r="6" fill="#60a5fa" />
-      <circle cx="60" cy="95" r="6" fill="#60a5fa" />
-      <circle cx="75" cy="95" r="6" fill="#60a5fa" />
-      <text x="60" y="125" fill="#a1a1aa" font-size="9" text-anchor="middle">Highly ordered</text>
-    </g>
-    
-    <!-- Liquid -->
-    <g transform="translate(150, 0)">
-      <rect x="10" y="30" width="100" height="80" rx="5" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" />
-      <text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Liquid (Medium S)</text>
-      <!-- Amorphous cluster at bottom -->
-      <circle cx="35" cy="75" r="6" fill="#f59e0b" />
-      <circle cx="48" cy="70" r="6" fill="#f59e0b" />
-      <circle cx="62" cy="74" r="6" fill="#f59e0b" />
-      <circle cx="75" cy="82" r="6" fill="#f59e0b" />
-      <circle cx="40" cy="88" r="6" fill="#f59e0b" />
-      <circle cx="54" cy="85" r="6" fill="#f59e0b" />
-      <circle cx="68" cy="90" r="6" fill="#f59e0b" />
-      <circle cx="48" cy="98" r="6" fill="#f59e0b" />
-      <circle cx="82" cy="93" r="6" fill="#f59e0b" />
-      <circle cx="62" cy="99" r="6" fill="#f59e0b" />
-      <text x="60" y="125" fill="#a1a1aa" font-size="9" text-anchor="middle">Disordered, mobile</text>
-    </g>
-    
-    <!-- Gas -->
-    <g transform="translate(290, 0)">
-      <rect x="10" y="30" width="100" height="80" rx="5" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" />
-      <text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Gas (High S)</text>
-      <!-- Sparsely dispersed particles with motion lines -->
-      <circle cx="30" cy="45" r="6" fill="#ef4444" />
-      <circle cx="85" cy="50" r="6" fill="#ef4444" />
-      <circle cx="45" cy="85" r="6" fill="#ef4444" />
-      <circle cx="80" cy="95" r="6" fill="#ef4444" />
-      <circle cx="60" cy="65" r="6" fill="#ef4444" />
-      <text x="60" y="125" fill="#a1a1aa" font-size="9" text-anchor="middle">Highly dispersed</text>
-    </g>
-  </svg>
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+<!-- Solid -->
+<g transform="translate(10, 0)">
+<rect x="10" y="30" width="100" height="80" rx="5" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" />
+<text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Solid (Low S)</text>
+<!-- Packed grid of particles -->
+<circle cx="45" cy="50" r="6" fill="#60a5fa" />
+<circle cx="60" cy="50" r="6" fill="#60a5fa" />
+<circle cx="75" cy="50" r="6" fill="#60a5fa" />
+<circle cx="45" cy="65" r="6" fill="#60a5fa" />
+<circle cx="60" cy="65" r="6" fill="#60a5fa" />
+<circle cx="75" cy="65" r="6" fill="#60a5fa" />
+<circle cx="45" cy="80" r="6" fill="#60a5fa" />
+<circle cx="60" cy="80" r="6" fill="#60a5fa" />
+<circle cx="75" cy="80" r="6" fill="#60a5fa" />
+<circle cx="45" cy="95" r="6" fill="#60a5fa" />
+<circle cx="60" cy="95" r="6" fill="#60a5fa" />
+<circle cx="75" cy="95" r="6" fill="#60a5fa" />
+<text x="60" y="125" fill="#a1a1aa" font-size="9" text-anchor="middle">Highly ordered</text>
+</g>
+<!-- Liquid -->
+<g transform="translate(150, 0)">
+<rect x="10" y="30" width="100" height="80" rx="5" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" />
+<text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Liquid (Medium S)</text>
+<!-- Amorphous cluster at bottom -->
+<circle cx="35" cy="75" r="6" fill="#f59e0b" />
+<circle cx="48" cy="70" r="6" fill="#f59e0b" />
+<circle cx="62" cy="74" r="6" fill="#f59e0b" />
+<circle cx="75" cy="82" r="6" fill="#f59e0b" />
+<circle cx="40" cy="88" r="6" fill="#f59e0b" />
+<circle cx="54" cy="85" r="6" fill="#f59e0b" />
+<circle cx="68" cy="90" r="6" fill="#f59e0b" />
+<circle cx="48" cy="98" r="6" fill="#f59e0b" />
+<circle cx="82" cy="93" r="6" fill="#f59e0b" />
+<circle cx="62" cy="99" r="6" fill="#f59e0b" />
+<text x="60" y="125" fill="#a1a1aa" font-size="9" text-anchor="middle">Disordered, mobile</text>
+</g>
+<!-- Gas -->
+<g transform="translate(290, 0)">
+<rect x="10" y="30" width="100" height="80" rx="5" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" />
+<text x="60" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Gas (High S)</text>
+<!-- Sparsely dispersed particles with motion lines -->
+<circle cx="30" cy="45" r="6" fill="#ef4444" />
+<circle cx="85" cy="50" r="6" fill="#ef4444" />
+<circle cx="45" cy="85" r="6" fill="#ef4444" />
+<circle cx="80" cy="95" r="6" fill="#ef4444" />
+<circle cx="60" cy="65" r="6" fill="#ef4444" />
+<text x="60" y="125" fill="#a1a1aa" font-size="9" text-anchor="middle">Highly dispersed</text>
+</g>
+</svg>
 </div>
 
 ## Gibbs Free Energy and Spontaneity
@@ -3987,33 +3857,29 @@ In biological and industrial systems, many essential reactions are thermodynamic
   $$\\Delta G^\\circ_{\\text{net}} = +14 + (-30.5) = -16.5 \\text{ kJ/mol}$$
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
-    <!-- Left Reaction: ATP Hydrolysis (Spontaneous) -->
-    <g transform="translate(10, 20)">
-      <rect x="0" y="10" width="180" height="50" rx="6" fill="rgba(16, 185, 129, 0.05)" stroke="#10b981" stroke-width="1.5" />
-      <text x="90" y="28" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">ATP + H₂O ➔ ADP + Pi</text>
-      <text x="90" y="45" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">ΔG° = -30.5 kJ/mol</text>
-      <text x="90" y="75" fill="#a1a1aa" font-size="9" text-anchor="middle">Highly Exergonic</text>
-    </g>
-    
-    <!-- Plus sign -->
-    <text x="210" y="55" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle">+</text>
-    
-    <!-- Right Reaction: Glucose Phosphorylation (Nonspontaneous) -->
-    <g transform="translate(240, 20)">
-      <rect x="0" y="10" width="180" height="50" rx="6" fill="rgba(239, 68, 68, 0.05)" stroke="#ef4444" stroke-width="1.5" />
-      <text x="90" y="28" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Glucose + Pi ➔ Glucose-6-P</text>
-      <text x="90" y="45" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">ΔG° = +13.8 kJ/mol</text>
-      <text x="90" y="75" fill="#a1a1aa" font-size="9" text-anchor="middle">Endergonic (Unfavored)</text>
-    </g>
-    
-    <!-- Horizontal division line -->
-    <line x1="20" y1="105" x2="430" y2="105" stroke="#a1a1aa" stroke-width="1.5" />
-    
-    <!-- Coupled Net Reaction -->
-    <text x="225" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Coupled Net Reaction: Glucose + ATP ➔ Glucose-6-P + ADP</text>
-    <text x="225" y="142" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">ΔG°_net = -16.7 kJ/mol (Thermodynamically Favored)</text>
-  </svg>
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+<!-- Left Reaction: ATP Hydrolysis (Spontaneous) -->
+<g transform="translate(10, 20)">
+<rect x="0" y="10" width="180" height="50" rx="6" fill="rgba(16, 185, 129, 0.05)" stroke="#10b981" stroke-width="1.5" />
+<text x="90" y="28" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">ATP + H₂O ➔ ADP + Pi</text>
+<text x="90" y="45" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">ΔG° = -30.5 kJ/mol</text>
+<text x="90" y="75" fill="#a1a1aa" font-size="9" text-anchor="middle">Highly Exergonic</text>
+</g>
+<!-- Plus sign -->
+<text x="210" y="55" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle">+</text>
+<!-- Right Reaction: Glucose Phosphorylation (Nonspontaneous) -->
+<g transform="translate(240, 20)">
+<rect x="0" y="10" width="180" height="50" rx="6" fill="rgba(239, 68, 68, 0.05)" stroke="#ef4444" stroke-width="1.5" />
+<text x="90" y="28" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Glucose + Pi ➔ Glucose-6-P</text>
+<text x="90" y="45" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">ΔG° = +13.8 kJ/mol</text>
+<text x="90" y="75" fill="#a1a1aa" font-size="9" text-anchor="middle">Endergonic (Unfavored)</text>
+</g>
+<!-- Horizontal division line -->
+<line x1="20" y1="105" x2="430" y2="105" stroke="#a1a1aa" stroke-width="1.5" />
+<!-- Coupled Net Reaction -->
+<text x="225" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Coupled Net Reaction: Glucose + ATP ➔ Glucose-6-P + ADP</text>
+<text x="225" y="142" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">ΔG°_net = -16.7 kJ/mol (Thermodynamically Favored)</text>
+</svg>
 </div>
 `,
         questions: [
@@ -4109,57 +3975,47 @@ Electrochemistry deals with the interconversion of chemical energy and electrica
 Below is the Vector Schematic of a Galvanic Cell ($Zn-Cu$ cell):
 
 <div class="flex justify-center my-8">
-  <svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
-    <!-- Beaker Left (Zn) -->
-    <rect x="50" y="140" width="100" height="100" fill="rgba(96,165,250,0.1)" stroke="#a1a1aa" stroke-width="2" rx="5" />
-    <text x="100" y="200" fill="#a1a1aa" font-size="10" font-weight="bold" text-anchor="middle">Zn²⁺ Solution</text>
-    
-    <!-- Beaker Right (Cu) -->
-    <rect x="280" y="140" width="100" height="100" fill="rgba(59,130,246,0.2)" stroke="#a1a1aa" stroke-width="2" rx="5" />
-    <text x="330" y="200" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Cu²⁺ Solution</text>
-    
-    <!-- Electrode Left (Zn, Anode) -->
-    <rect x="90" y="90" width="20" height="100" fill="#d1d5db" stroke="#a1a1aa" stroke-width="1" />
-    <text x="100" y="80" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Zn Anode (-)</text>
-    
-    <!-- Electrode Right (Cu, Cathode) -->
-    <rect x="320" y="90" width="20" height="100" fill="#ea580c" stroke="#c2410c" stroke-width="1" />
-    <text x="330" y="80" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Cu Cathode (+)</text>
-    
-    <!-- Wire & Voltmeter -->
-    <line x1="100" y1="90" x2="100" y2="60" stroke="#ffffff" stroke-width="2" />
-    <line x1="330" y1="90" x2="330" y2="60" stroke="#ffffff" stroke-width="2" />
-    <line x1="100" y1="60" x2="190" y2="60" stroke="#ffffff" stroke-width="2" />
-    <line x1="240" y1="60" x2="330" y2="60" stroke="#ffffff" stroke-width="2" />
-    
-    <!-- Voltmeter Circle -->
-    <circle cx="215" cy="60" r="20" fill="#1e293b" stroke="#a1a1aa" stroke-width="2" />
-    <text x="215" y="64" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">1.10 V</text>
-    
-    <!-- Electron flow arrow -->
-    <line x1="120" y1="45" x2="170" y2="45" stroke="#00f2ff" stroke-width="2" marker-end="url(#e-arrow)" />
-    <text x="145" y="38" fill="#00f2ff" font-size="8" font-weight="bold" text-anchor="middle">e⁻ flow</text>
-    
-    <!-- Salt Bridge -->
-    <path d="M 120 160 L 120 110 Q 120 100, 130 100 L 300 100 Q 310 100, 310 110 L 310 160" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity="0.9" />
-    <path d="M 120 160 L 120 110 Q 120 100, 130 100 L 300 100 Q 310 100, 310 110 L 310 160" fill="none" stroke="#e2e8f0" stroke-width="8" stroke-linecap="round" />
-    <text x="215" y="114" fill="#000000" font-size="8" font-weight="bold" text-anchor="middle">Salt Bridge (KNO₃)</text>
-    
-    <!-- Ions migration -->
-    <text x="135" y="145" fill="#ef4444" font-size="8" font-weight="bold">NO₃⁻ →</text>
-    <text x="275" y="145" fill="#3b82f6" font-size="8" font-weight="bold">← K⁺</text>
-    
-    <!-- Half reactions labels -->
-    <text x="100" y="260" fill="#a1a1aa" font-size="8" text-anchor="middle">Zn → Zn²⁺ + 2e⁻</text>
-    <text x="330" y="260" fill="#60a5fa" font-size="8" text-anchor="middle">Cu²⁺ + 2e⁻ → Cu</text>
-    
-    <!-- Arrow definitions -->
-    <defs>
-      <marker id="e-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="#00f2ff" />
-      </marker>
-    </defs>
-  </svg>
+<svg width="450" height="300" viewBox="0 0 450 300" class="max-w-full rounded-xl bg-black/40 border border-white/10 p-4">
+<!-- Beaker Left (Zn) -->
+<rect x="50" y="140" width="100" height="100" fill="rgba(96,165,250,0.1)" stroke="#a1a1aa" stroke-width="2" rx="5" />
+<text x="100" y="200" fill="#a1a1aa" font-size="10" font-weight="bold" text-anchor="middle">Zn²⁺ Solution</text>
+<!-- Beaker Right (Cu) -->
+<rect x="280" y="140" width="100" height="100" fill="rgba(59,130,246,0.2)" stroke="#a1a1aa" stroke-width="2" rx="5" />
+<text x="330" y="200" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Cu²⁺ Solution</text>
+<!-- Electrode Left (Zn, Anode) -->
+<rect x="90" y="90" width="20" height="100" fill="#d1d5db" stroke="#a1a1aa" stroke-width="1" />
+<text x="100" y="80" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Zn Anode (-)</text>
+<!-- Electrode Right (Cu, Cathode) -->
+<rect x="320" y="90" width="20" height="100" fill="#ea580c" stroke="#c2410c" stroke-width="1" />
+<text x="330" y="80" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Cu Cathode (+)</text>
+<!-- Wire & Voltmeter -->
+<line x1="100" y1="90" x2="100" y2="60" stroke="#ffffff" stroke-width="2" />
+<line x1="330" y1="90" x2="330" y2="60" stroke="#ffffff" stroke-width="2" />
+<line x1="100" y1="60" x2="190" y2="60" stroke="#ffffff" stroke-width="2" />
+<line x1="240" y1="60" x2="330" y2="60" stroke="#ffffff" stroke-width="2" />
+<!-- Voltmeter Circle -->
+<circle cx="215" cy="60" r="20" fill="#1e293b" stroke="#a1a1aa" stroke-width="2" />
+<text x="215" y="64" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">1.10 V</text>
+<!-- Electron flow arrow -->
+<line x1="120" y1="45" x2="170" y2="45" stroke="#00f2ff" stroke-width="2" marker-end="url(#e-arrow)" />
+<text x="145" y="38" fill="#00f2ff" font-size="8" font-weight="bold" text-anchor="middle">e⁻ flow</text>
+<!-- Salt Bridge -->
+<path d="M 120 160 L 120 110 Q 120 100, 130 100 L 300 100 Q 310 100, 310 110 L 310 160" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity="0.9" />
+<path d="M 120 160 L 120 110 Q 120 100, 130 100 L 300 100 Q 310 100, 310 110 L 310 160" fill="none" stroke="#e2e8f0" stroke-width="8" stroke-linecap="round" />
+<text x="215" y="114" fill="#000000" font-size="8" font-weight="bold" text-anchor="middle">Salt Bridge (KNO₃)</text>
+<!-- Ions migration -->
+<text x="135" y="145" fill="#ef4444" font-size="8" font-weight="bold">NO₃⁻ →</text>
+<text x="275" y="145" fill="#3b82f6" font-size="8" font-weight="bold">← K⁺</text>
+<!-- Half reactions labels -->
+<text x="100" y="260" fill="#a1a1aa" font-size="8" text-anchor="middle">Zn → Zn²⁺ + 2e⁻</text>
+<text x="330" y="260" fill="#60a5fa" font-size="8" text-anchor="middle">Cu²⁺ + 2e⁻ → Cu</text>
+<!-- Arrow definitions -->
+<defs>
+<marker id="e-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#00f2ff" />
+</marker>
+</defs>
+</svg>
 </div>
 
 ### Cell Anatomy:
