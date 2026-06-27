@@ -2335,15 +2335,30 @@ Natural selection has optimized enzyme characteristics for each organism's envir
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Adenosine box -->
+<rect x="30" y="60" width="90" height="40" rx="6" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="2" />
+<text x="75" y="85" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Adenosine</text>
+<!-- Ribbon / link -->
+<line x1="120" y1="80" x2="150" y2="80" stroke="#a1a1aa" stroke-width="2" />
+<!-- Phosphate 1 -->
+<circle cx="170" cy="80" r="16" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2" />
+<text x="170" y="84" fill="#22c55e" font-size="12" font-weight="bold" text-anchor="middle">P</text>
+<!-- link -->
+<line x1="186" y1="80" x2="206" y2="80" stroke="#a1a1aa" stroke-width="2" />
+<!-- Phosphate 2 -->
+<circle cx="222" cy="80" r="16" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="2" />
+<text x="222" y="84" fill="#22c55e" font-size="12" font-weight="bold" text-anchor="middle">P</text>
+<!-- High energy bond (wavy line) -->
+<path d="M 238 80 Q 243 73 248 80 T 258 80" fill="none" stroke="#ef4444" stroke-width="2.5" />
+<!-- Phosphate 3 (breaking away) -->
+<circle cx="295" cy="65" r="16" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2" />
+<text x="295" y="69" fill="#ef4444" font-size="12" font-weight="bold" text-anchor="middle">P</text>
+<!-- Energy burst starburst on the broken bond -->
+<path d="M 248 80 L 243 65 L 248 70 L 253 65 L 248 80 Z" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" />
+<path d="M 248 80 L 263 70 L 258 80 L 263 90 L 248 80 Z" fill="#fbbf24" stroke="#fbbf24" stroke-width="1" />
+<!-- Labels -->
+<text x="250" y="50" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">Energy Released!</text>
+<text x="200" y="145" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">ATP Hydrolysis: ATP → ADP + Pi</text>
 </svg>
 </div>
 
@@ -6469,6 +6484,42 @@ To maintain genetic equilibrium, a population must meet five strict conditions:
 4. **Extremely Large Population Size**: Prevents genetic drift (changes due to chance).
 5. **No Gene Flow**: No migration of individuals into or out of the population.
 
+<div class="flex justify-center my-8">
+<svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+<!-- Title -->
+<text x="200" y="20" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Hardy-Weinberg Gamete Fusion</text>
+<!-- Egg label (vertical) -->
+<text x="80" y="105" fill="#a1a1aa" font-size="9" font-weight="bold" text-anchor="middle" transform="rotate(-90 80 105)">Egg Gametes</text>
+<!-- Sperm label (horizontal) -->
+<text x="215" y="42" fill="#a1a1aa" font-size="9" font-weight="bold" text-anchor="middle">Sperm Gametes</text>
+<!-- Grid Headers -->
+<!-- Top Headers -->
+<text x="165" y="60" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">p (A)</text>
+<text x="255" y="60" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">q (a)</text>
+<!-- Left Headers -->
+<text x="110" y="100" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">p (A)</text>
+<text x="110" y="145" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">q (a)</text>
+<!-- Box Outline -->
+<rect x="125" y="70" width="180" height="90" fill="none" stroke="#ffffff" stroke-width="1.5" />
+<!-- Inner Lines -->
+<line x1="215" y1="70" x2="215" y2="160" stroke="#ffffff" stroke-width="1.5" />
+<line x1="125" y1="115" x2="305" y2="115" stroke="#ffffff" stroke-width="1.5" />
+<!-- Box Cells -->
+<!-- AA (p^2) -->
+<rect x="127" y="72" width="86" height="41" fill="rgba(96, 165, 250, 0.1)" />
+<text x="170" y="92" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">p² (AA)</text>
+<!-- Aa (pq) -->
+<rect x="217" y="72" width="86" height="41" fill="rgba(251, 191, 36, 0.1)" />
+<text x="260" y="92" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">pq (Aa)</text>
+<!-- aA (qp) -->
+<rect x="127" y="117" width="86" height="41" fill="rgba(251, 191, 36, 0.1)" />
+<text x="170" y="137" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">pq (Aa)</text>
+<!-- aa (q^2) -->
+<rect x="217" y="117" width="86" height="41" fill="rgba(52, 211, 153, 0.1)" />
+<text x="260" y="137" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">q² (aa)</text>
+</svg>
+</div>
+
 ### The Hardy-Weinberg Equations
 
 The equations use the frequencies of two alleles, $p$ (dominant allele) and $q$ (recessive allele):
@@ -6639,6 +6690,63 @@ Let's solve a typical genetic problem: Cystic Fibrosis is an autosomal recessive
 | Hybrid breakdown | First generation fertile, but later generations are infertile or inviable | Some cotton species hybrids |
 
 ### Modes of Speciation
+
+<div class="flex justify-center my-8">
+<svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+<!-- Title -->
+<text x="200" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Modes of Speciation</text>
+
+<!-- Left half: Allopatric -->
+<g transform="translate(10, 0)">
+<text x="90" y="35" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Allopatric Speciation</text>
+<!-- Initial population -->
+<circle cx="90" cy="65" r="18" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.2" />
+<circle cx="83" cy="62" r="2.5" fill="#22c55e" />
+<circle cx="92" cy="68" r="2.5" fill="#22c55e" />
+<circle cx="90" cy="59" r="2.5" fill="#22c55e" />
+<circle cx="96" cy="62" r="2.5" fill="#22c55e" />
+<!-- Arrow -->
+<line x1="90" y1="88" x2="90" y2="100" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow-speciation)" />
+<!-- Barrier splits -->
+<circle cx="65" cy="130" r="18" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.2" />
+<circle cx="60" cy="126" r="2.5" fill="#22c55e" />
+<circle cx="70" cy="132" r="2.5" fill="#22c55e" />
+<circle cx="115" cy="130" r="18" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="1.2" />
+<circle cx="110" cy="126" r="2.5" fill="#3b82f6" />
+<circle cx="120" cy="132" r="2.5" fill="#3b82f6" />
+<!-- Mountain barrier -->
+<path d="M 88 110 L 92 122 L 86 135 L 94 150" fill="none" stroke="#ef4444" stroke-width="2.5" />
+<text x="90" y="163" fill="#ef4444" font-size="7" text-anchor="middle">Geographic Barrier</text>
+</g>
+
+<!-- Right half: Sympatric -->
+<g transform="translate(210, 0)">
+<text x="90" y="35" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Sympatric Speciation</text>
+<!-- Initial population -->
+<circle cx="90" cy="65" r="18" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.2" />
+<circle cx="83" cy="62" r="2.5" fill="#22c55e" />
+<circle cx="92" cy="68" r="2.5" fill="#22c55e" />
+<circle cx="90" cy="59" r="2.5" fill="#22c55e" />
+<circle cx="96" cy="62" r="2.5" fill="#22c55e" />
+<!-- Arrow -->
+<line x1="90" y1="88" x2="90" y2="100" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow-speciation)" />
+<!-- Genetic polymorphism in same area -->
+<circle cx="90" cy="130" r="20" fill="rgba(255, 255, 255, 0.05)" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2" />
+<!-- Cations and mutant species -->
+<circle cx="82" cy="126" r="2.5" fill="#22c55e" />
+<circle cx="85" cy="135" r="2.5" fill="#22c55e" />
+<!-- Mutant in same area -->
+<circle cx="96" cy="126" r="2.5" fill="#3b82f6" />
+<circle cx="94" cy="134" r="2.5" fill="#3b82f6" />
+<text x="90" y="163" fill="#3b82f6" font-size="7" text-anchor="middle">Same Geography (Polyploidy)</text>
+</g>
+
+<!-- Arrow marker definition -->
+<defs>
+<marker id="arrow-speciation" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa" /></marker>
+</defs>
+</svg>
+</div>
 
 #### Allopatric Speciation (Geographic Isolation)
 
@@ -7082,6 +7190,52 @@ The origin of life (~3.5-4 billion years ago) is one of the most profound questi
 
 ### Chemical Evolution: The Miller-Urey Experiment
 
+<div class="flex justify-center my-8">
+<svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+<!-- Title -->
+<text x="200" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Miller-Urey Experiment Setup</text>
+
+<!-- "Ocean" Flask (Bottom-Left) -->
+<circle cx="80" cy="130" r="22" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="1.5" />
+<path d="M 58 130 L 102 130 C 102 145, 58 145, 58 130 Z" fill="rgba(59, 130, 246, 0.3)" />
+<text x="80" y="134" fill="#60a5fa" font-size="8" font-weight="bold" text-anchor="middle">Ocean</text>
+<text x="80" y="163" fill="#a1a1aa" font-size="7" text-anchor="middle">(Boiling Water)</text>
+
+<!-- Glass tubing rising up -->
+<path d="M 80 108 L 80 50 L 260 50 L 260 68" fill="none" stroke="#ffffff" stroke-width="2" />
+
+<!-- "Atmosphere" Flask (Top-Right) -->
+<circle cx="260" cy="90" r="25" fill="rgba(0, 242, 255, 0.1)" stroke="#00f2ff" stroke-width="1.5" />
+<text x="260" y="85" fill="#00f2ff" font-size="8" font-weight="bold" text-anchor="middle">Atmosphere</text>
+<text x="260" y="97" fill="#a1a1aa" font-size="7" text-anchor="middle">CH₄, NH₃, H₂O, H₂</text>
+
+<!-- Electrodes & Spark inside Atmosphere Flask -->
+<line x1="230" y1="80" x2="245" y2="85" stroke="#eab308" stroke-width="1.5" />
+<line x1="290" y1="80" x2="275" y2="85" stroke="#eab308" stroke-width="1.5" />
+<path d="M 245 85 L 253 80 L 250 90 L 260 85 L 265 92 L 275 85" fill="none" stroke="#eab308" stroke-width="1.5" />
+<text x="260" y="62" fill="#eab308" font-size="8" font-weight="bold" text-anchor="middle">Spark (Lightning)</text>
+
+<!-- Condenser jacket (on the right tube going down) -->
+<path d="M 260 115 L 260 145" fill="none" stroke="#ffffff" stroke-width="2" />
+<rect x="252" y="118" width="16" height="20" rx="2" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="1" />
+<text x="282" y="130" fill="#60a5fa" font-size="7" font-weight="bold">Condenser</text>
+
+<!-- Trap (Bottom-Right) -->
+<path d="M 260 145 L 260 160 L 150 160 L 150 135" fill="none" stroke="#ffffff" stroke-width="2" />
+<circle cx="150" cy="135" r="10" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="1" />
+<text x="150" y="118" fill="#ef4444" font-size="7" font-weight="bold" text-anchor="middle">Organic Trap</text>
+<text x="150" y="152" fill="#a1a1aa" font-size="7" text-anchor="middle">(Amino Acids)</text>
+
+<!-- Directions arrows -->
+<path d="M 120 50 L 130 50" stroke="#ffffff" stroke-width="1" marker-end="url(#arrow-mu)" />
+<path d="M 260 152 L 230 152" stroke="#ffffff" stroke-width="1" />
+<!-- Arrow marker -->
+<defs>
+<marker id="arrow-mu" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" /></marker>
+</defs>
+</svg>
+</div>
+
 <vocab term="Miller-Urey Experiment" definition="A 1953 experiment by Stanley Miller and Harold Urey demonstrating that organic molecules (amino acids) can form spontaneously from inorganic compounds under simulated early Earth conditions.">Miller-Urey experiment (1953)</vocab>:
 - Setup: Water vapor, methane (CH4), ammonia (NH3), hydrogen (H2) - simulated early Earth atmosphere
 - Energy: Electric sparks simulated lightning
@@ -7358,15 +7512,30 @@ Prokaryotes exhibit unparalleled metabolic diversity:
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Tree Lines -->
+<line x1="50" y1="150" x2="150" y2="150" stroke="#ffffff" stroke-width="2" />
+<!-- Branch 1 (to Taxon A) -->
+<line x1="150" y1="150" x2="280" y2="20" stroke="#ffffff" stroke-width="2" />
+<!-- Branch 2 (to Taxon B) -->
+<line x1="200" y1="100" x2="280" y2="100" stroke="#ffffff" stroke-width="2" />
+<!-- Branch 3 (to Taxon C) -->
+<line x1="240" y1="60" x2="280" y2="60" stroke="#ffffff" stroke-width="2" />
+<!-- Labels for Taxa -->
+<text x="290" y="24" fill="#ffffff" font-size="10" font-weight="bold">Taxon A</text>
+<text x="290" y="104" fill="#ffffff" font-size="10" font-weight="bold">Taxon B</text>
+<text x="290" y="64" fill="#ffffff" font-size="10" font-weight="bold">Taxon C</text>
+<!-- Nodes -->
+<circle cx="150" cy="150" r="3" fill="#fbbf24" />
+<text x="145" y="165" fill="#fbbf24" font-size="8" text-anchor="end">Common Ancestor</text>
+<circle cx="200" cy="100" r="3" fill="#fbbf24" />
+<circle cx="240" cy="60" r="3" fill="#fbbf24" />
+<!-- Shared derived characters (hash marks) -->
+<line x1="170" y1="130" x2="180" y2="120" stroke="#ef4444" stroke-width="3" />
+<text x="185" y="132" fill="#ef4444" font-size="8">Trait 1</text>
+<line x1="220" y1="80" x2="230" y2="70" stroke="#ef4444" stroke-width="3" />
+<text x="235" y="82" fill="#ef4444" font-size="8">Trait 2</text>
+<!-- Title -->
+<text x="200" y="15" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Phylogenetic Tree (Cladogram)</text>
 </svg>
 </div>
 
@@ -7577,15 +7746,33 @@ Key strategies:
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Axes -->
+<line x1="50" y1="140" x2="350" y2="140" stroke="#a1a1aa" stroke-width="1.5" />
+<line x1="50" y1="20" x2="50" y2="140" stroke="#a1a1aa" stroke-width="1.5" />
+<!-- Axis Labels -->
+<text x="200" y="158" fill="#ffffff" font-size="9" text-anchor="middle">Annual Mean Temperature (Cold → Hot)</text>
+<text x="15" y="80" fill="#ffffff" font-size="9" text-anchor="middle" transform="rotate(-90 15 80)">Annual Mean Precipitation (Dry → Wet)</text>
+<!-- Biome Shaded Regions -->
+<!-- Tundra: bottom left -->
+<polygon points="50,140 100,140 80,100 50,100" fill="rgba(147, 197, 253, 0.15)" stroke="#93c5fd" stroke-width="1" />
+<text x="68" y="125" fill="#93c5fd" font-size="8" text-anchor="middle">Tundra</text>
+<!-- Boreal Forest / Taiga -->
+<polygon points="100,140 170,140 150,80 80,100" fill="rgba(52, 211, 153, 0.15)" stroke="#34d399" stroke-width="1" />
+<text x="125" y="115" fill="#34d399" font-size="8" text-anchor="middle">Taiga</text>
+<!-- Desert: bottom right -->
+<polygon points="170,140 340,140 280,110 150,110" fill="rgba(251, 191, 36, 0.15)" stroke="#fbbf24" stroke-width="1" />
+<text x="240" y="130" fill="#fbbf24" font-size="8" text-anchor="middle">Desert</text>
+<!-- Grassland / Savanna -->
+<polygon points="150,110 280,110 260,70 150,80" fill="rgba(244, 63, 94, 0.15)" stroke="#f43f5e" stroke-width="1" />
+<text x="200" y="98" fill="#f43f5e" font-size="8" text-anchor="middle">Grassland</text>
+<!-- Temperate Forest -->
+<polygon points="150,80 260,70 240,40 120,60" fill="rgba(167, 139, 250, 0.15)" stroke="#a78bfa" stroke-width="1" />
+<text x="180" y="65" fill="#a78bfa" font-size="8" text-anchor="middle">Temperate Forest</text>
+<!-- Tropical Forest -->
+<polygon points="260,70 340,70 320,30 240,40" fill="rgba(16, 185, 129, 0.25)" stroke="#10b981" stroke-width="1.5" />
+<text x="290" y="55" fill="#10b981" font-size="8" font-weight="bold" text-anchor="middle">Tropical Forest</text>
+<!-- Title -->
+<text x="200" y="15" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Whittaker Biome Classification</text>
 </svg>
 </div>
 
@@ -7686,7 +7873,7 @@ All ecosystems require an energy source. <vocab term="Primary Producers" definit
 ## Energy Flow Through Ecosystems
 
 <div class="flex justify-center my-8">
-<svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+<svg width="450" height="180" viewBox="0 0 450 180" class="max-w-full">
 <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
 <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
 <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
@@ -7695,7 +7882,7 @@ All ecosystems require an energy source. <vocab term="Primary Producers" definit
 <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
 <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
 <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<text x="300" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
 </svg>
 </div>
 
@@ -7896,8 +8083,7 @@ Where:
 
 With limited resources, growth slows as population approaches carrying capacity:
 
-$$\\frac{dN}{dt} = rN \\left(\\frac{K-N}{K}
-ight)$$
+$$\\frac{dN}{dt} = rN \\left(\\frac{K-N}{K}\\right)$$
 
 Where K = carrying capacity (maximum sustainable population size)
 
@@ -7989,15 +8175,23 @@ Effects the same regardless of population density:
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Axes -->
+<line x1="50" y1="140" x2="350" y2="140" stroke="#a1a1aa" stroke-width="1.5" />
+<line x1="50" y1="20" x2="50" y2="140" stroke="#a1a1aa" stroke-width="1.5" />
+<!-- Axis Labels -->
+<text x="200" y="158" fill="#ffffff" font-size="9" text-anchor="middle">Percentage of Maximum Lifespan (0 → 100%)</text>
+<text x="15" y="80" fill="#ffffff" font-size="9" text-anchor="middle" transform="rotate(-90 15 80)">Number of Survivors (log scale)</text>
+<!-- Type I (Convex - Blue) -->
+<path d="M 50 30 C 180 30, 290 40, 340 135" fill="none" stroke="#3b82f6" stroke-width="2.5" />
+<text x="220" y="45" fill="#3b82f6" font-size="9" font-weight="bold">Type I (e.g., Humans)</text>
+<!-- Type II (Straight - Orange) -->
+<line x1="50" y1="30" x2="340" y2="135" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2" />
+<text x="170" y="90" fill="#f59e0b" font-size="9" font-weight="bold" transform="rotate(18 170 90)">Type II (e.g., Birds)</text>
+<!-- Type III (Concave - Green) -->
+<path d="M 50 30 C 70 120, 120 135, 340 135" fill="none" stroke="#22c55e" stroke-width="2.5" />
+<text x="90" y="125" fill="#22c55e" font-size="9" font-weight="bold">Type III (e.g., Trees)</text>
+<!-- Title -->
+<text x="200" y="15" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Survivorship Curves</text>
 </svg>
 </div>
 
@@ -8119,15 +8313,41 @@ Higher diversity generally associated with:
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Atmosphere Box -->
+<rect x="140" y="15" width="120" height="30" rx="4" fill="rgba(96, 165, 250, 0.1)" stroke="#60a5fa" stroke-width="1.5" />
+<text x="200" y="33" fill="#60a5fa" font-size="10" font-weight="bold" text-anchor="middle">Atmospheric CO₂</text>
+<!-- Plants Box -->
+<rect x="30" y="90" width="90" height="35" rx="4" fill="rgba(34, 197, 94, 0.1)" stroke="#22c55e" stroke-width="1.5" />
+<text x="75" y="107" fill="#22c55e" font-size="9" font-weight="bold" text-anchor="middle">Photosynthesis</text>
+<text x="75" y="118" fill="#a1a1aa" font-size="7" text-anchor="middle">(Producers)</text>
+<!-- Consumers Box -->
+<rect x="280" y="90" width="90" height="35" rx="4" fill="rgba(245, 158, 11, 0.1)" stroke="#f59e0b" stroke-width="1.5" />
+<text x="325" y="107" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">Consumers</text>
+<text x="325" y="118" fill="#a1a1aa" font-size="7" text-anchor="middle">(Respiration)</text>
+<!-- Decomposers Box -->
+<rect x="150" y="135" width="100" height="30" rx="4" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="1.5" />
+<text x="200" y="153" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Decomposers</text>
+<!-- Arrows -->
+<!-- Photosynthesis arrow: Atmos -> Plants -->
+<path d="M 140 25 C 90 25, 75 50, 75 82" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)" />
+<!-- Plant Respiration: Plants -> Atmos -->
+<path d="M 90 85 C 98 55, 115 40, 140 37" fill="none" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="2,2" marker-end="url(#arrow-red)" />
+<!-- Consumer Respiration: Consumers -> Atmos -->
+<path d="M 325 85 C 325 50, 300 25, 268 25" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+<!-- Consumption: Plants -> Consumers -->
+<line x1="125" y1="102" x2="272" y2="102" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)" />
+<!-- Death/Waste: Plants & Consumers -> Decomposers -->
+<path d="M 75 128 C 75 150, 110 150, 142 150" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow-gray)" />
+<path d="M 325 128 C 325 150, 290 150, 258 150" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow-gray)" />
+<!-- Decomposer Respiration: Decomposers -> Atmos -->
+<line x1="200" y1="130" x2="200" y2="53" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+<!-- Definitions -->
+<defs>
+<marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#22c55e" /></marker>
+<marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" /></marker>
+<marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" /></marker>
+<marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa" /></marker>
+</defs>
 </svg>
 </div>
 
@@ -8338,15 +8558,29 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Axes -->
+<line x1="50" y1="140" x2="350" y2="140" stroke="#a1a1aa" stroke-width="1.5" />
+<line x1="50" y1="30" x2="50" y2="140" stroke="#a1a1aa" stroke-width="1.5" />
+<!-- Axis Labels -->
+<text x="200" y="158" fill="#ffffff" font-size="9" text-anchor="middle">Number of Species on Island (S)</text>
+<text x="15" y="85" fill="#ffffff" font-size="9" text-anchor="middle" transform="rotate(-90 15 85)">Rate of Immigration/Extinction</text>
+<!-- Near Island Immigration (decreasing - green) -->
+<path d="M 50 40 C 130 40, 200 90, 300 140" fill="none" stroke="#22c55e" stroke-width="2" />
+<text x="80" y="38" fill="#22c55e" font-size="8" font-weight="bold">Immigration (Near)</text>
+<!-- Far Island Immigration (decreasing - green dashed) -->
+<path d="M 50 70 C 100 70, 150 110, 240 140" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3,2" />
+<text x="70" y="80" fill="#22c55e" font-size="8" opacity="0.8">Immigration (Far)</text>
+<!-- Small Island Extinction (increasing - red) -->
+<path d="M 50 140 C 150 110, 200 70, 300 40" fill="none" stroke="#ef4444" stroke-width="2" />
+<text x="290" y="35" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="end">Extinction (Small)</text>
+<!-- Large Island Extinction (increasing - red dashed) -->
+<path d="M 50 140 C 180 130, 230 100, 320 70" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,2" />
+<text x="310" y="85" fill="#ef4444" font-size="8" opacity="0.8" text-anchor="end">Extinction (Large)</text>
+<!-- Equilibrium dots and labels -->
+<circle cx="182" cy="82" r="3.5" fill="#ffffff" />
+<circle cx="175" cy="120" r="3.5" fill="#ffffff" />
+<!-- Title -->
+<text x="200" y="18" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Theory of Island Biogeography</text>
 </svg>
 </div>
 
@@ -8469,15 +8703,33 @@ MacArthur and Wilson's theory predicts that habitat fragmentation mimics island 
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<!-- Space -->
+<rect x="0" y="0" width="400" height="180" fill="none" />
+<!-- Sun -->
+<circle cx="40" cy="40" r="18" fill="rgba(251, 191, 36, 0.2)" stroke="#fbbf24" stroke-width="2" />
+<text x="40" y="44" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">Sun</text>
+<!-- Earth Surface -->
+<rect x="0" y="145" width="400" height="35" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="1.5" />
+<text x="200" y="165" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">Earth's Surface</text>
+<!-- Atmosphere Layer (dashed line at y=80) -->
+<line x1="0" y1="80" x2="400" y2="80" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,4" />
+<text x="390" y="73" fill="#3b82f6" font-size="8" font-weight="bold" text-anchor="end">Atmosphere & Greenhouse Gases</text>
+<!-- Solar Radiation Arrow: Sun -> Earth -->
+<path d="M 58 50 L 120 120" fill="none" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow-yellow)" />
+<text x="105" y="75" fill="#fbbf24" font-size="8" font-weight="bold" transform="rotate(48 105 75)">Solar Radiation</text>
+<!-- Infrared Radiation: Earth -> space (some escapes) -->
+<path d="M 220 145 C 220 120, 210 90, 200 45" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+<text x="190" y="55" fill="#ef4444" font-size="7" text-anchor="end">Heat Escapes</text>
+<!-- Infrared Radiation: Earth -> atmosphere -> bounces back -->
+<path d="M 280 145 C 280 110, 290 90, 310 82" fill="none" stroke="#ef4444" stroke-width="1.5" />
+<path d="M 310 82 C 320 82, 335 110, 335 142" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+<text x="345" y="115" fill="#ef4444" font-size="8" font-weight="bold">Trapped Heat</text>
+<text x="310" y="65" fill="#a1a1aa" font-size="7" text-anchor="middle">GHGs absorb/re-emit</text>
+<!-- Definitions -->
+<defs>
+<marker id="arrow-yellow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24" /></marker>
+<marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" /></marker>
+</defs>
 </svg>
 </div>
 
@@ -8518,10 +8770,7 @@ Documented changes (IPCC reports):
 ### Ocean Acidification
 
 CO2 absorbed by oceans reacts with water:
-$$CO_2 + H_2O 
-ightleftharpoons H_2CO_3 
-ightleftharpoons HCO_3^- + H^+ 
-ightleftharpoons CO_3^{2-} + 2H^+$$
+$$CO_2 + H_2O \\rightleftharpoons H_2CO_3 \\rightleftharpoons HCO_3^- + H^+ \\rightleftharpoons CO_3^{2-} + 2H^+$$
 
 Increased CO2 -> increased H+ -> decreased pH -> decreased carbonate ion availability
 
