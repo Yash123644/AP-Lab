@@ -7839,15 +7839,16 @@ Productivity varies significantly across biomes and is limited by specific facto
 
 <div class="flex justify-center my-8">
 <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
-<polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
-<text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
-<polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
-<text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
-<polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
-<text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
-<polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
-<text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
-<text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+<line x1="55" y1="145" x2="360" y2="145" stroke="#a1a1aa" stroke-width="2" />
+<line x1="55" y1="25" x2="55" y2="145" stroke="#a1a1aa" stroke-width="2" />
+<path d="M 60 140 C 112 137, 155 118, 190 85 C 225 52, 285 42, 355 42" fill="none" stroke="#22c55e" stroke-width="3" />
+<path d="M 60 140 C 100 135, 130 95, 155 45 C 188 105, 228 138, 355 140" fill="none" stroke="#60a5fa" stroke-width="3" stroke-dasharray="5,4" />
+<line x1="55" y1="42" x2="360" y2="42" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3" />
+<text x="368" y="45" fill="#22c55e" font-size="10" font-weight="bold">K</text>
+<text x="292" y="62" fill="#22c55e" font-size="10" font-weight="bold">logistic growth</text>
+<text x="158" y="39" fill="#60a5fa" font-size="10" font-weight="bold">overshoot and crash</text>
+<text x="205" y="170" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Population Growth and Carrying Capacity</text>
+<text x="20" y="88" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle" transform="rotate(-90 20 88)">Population Size</text>
 </svg>
 </div>
 
