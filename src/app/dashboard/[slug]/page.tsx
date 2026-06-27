@@ -2001,9 +2001,24 @@ export default function APDynamicCoursePage() {
                                     </div>
                                   ),
                                   svg: ({ node, children, className, ...props }: any) => {
+                                    // Bypass wrapping for KaTeX mathematical symbol SVGs (e.g. vector arrows/hats)
+                                    const isMathSvg = 
+                                      props["aria-hidden"] === "true" ||
+                                      !className ||
+                                      (!className.includes("max-w-") && !className.includes("w-") && !className.includes("bg-") && !className.includes("p-"));
+
+                                    if (isMathSvg) {
+                                      return (
+                                        <svg {...props} className={className}>
+                                          {children}
+                                        </svg>
+                                      );
+                                    }
+
                                     const cleanClassName = className
                                       ? className
                                           .replace(/\bbg-black\/40\b/g, '')
+                                          .replace(/\bbg-black\/30\b/g, '')
                                           .replace(/\bborder\b/g, '')
                                           .replace(/\bborder-white\/10\b/g, '')
                                           .replace(/\bp-4\b/g, '')
