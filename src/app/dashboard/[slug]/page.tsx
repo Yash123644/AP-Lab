@@ -2107,8 +2107,12 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   const [isFinished, setIsFinished] = useState(false);
   const [hasRewarded, setHasRewarded] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState<any[]>([]);
+  const lastTopicIdRef = useRef<string | number | null>(null);
 
   useEffect(() => {
+    if (lastTopicIdRef.current === topicId) return;
+    lastTopicIdRef.current = topicId;
+
     if (!questions || questions.length === 0) {
       setShuffledQuestions([]);
       return;
@@ -2146,7 +2150,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
     }
 
     setShuffledQuestions(shuffledQuestionsList);
-  }, [questions]);
+  }, [topicId, questions]);
 
   useEffect(() => {
     setCurrentIdx(0);
