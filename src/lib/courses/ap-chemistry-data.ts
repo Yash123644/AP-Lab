@@ -42,15 +42,15 @@ The mole is the fundamental unit in chemistry that bridges the microscopic world
 
 ## The Mole Concept and Avogadro's Number
 
-A <vocab term="Mole" definition="The SI unit for amount of substance, containing exactly 6.02214076 x 10^23 elementary entities.">mole</vocab> represents a specific quantity of matter. Just as a dozen means twelve, one mole of any substance contains exactly $6.02214 \times 10^{23}$ representative particles (atoms, molecules, formula units, or ions). This scaling factor is known as <vocab term="Avogadro's Number" definition="The number of representative particles in one mole of a substance, equal to 6.02214 x 10^23.">Avogadro's Number</vocab> ($N_A$):
+A <vocab term="Mole" definition="The SI unit for amount of substance, containing exactly 6.02214076 x 10^23 elementary entities.">mole</vocab> represents a specific quantity of matter. Just as a dozen means twelve, one mole of any substance contains exactly $6.02214 \\times 10^{23}$ representative particles (atoms, molecules, formula units, or ions). This scaling factor is known as <vocab term="Avogadro's Number" definition="The number of representative particles in one mole of a substance, equal to 6.02214 x 10^23.">Avogadro's Number</vocab> ($N_A$):
 
-$$N_A = 6.022 \times 10^{23} \text{ particles/mol}$$
+$$N_A = 6.022 \\times 10^{23} \\text{ particles/mol}$$
 
 ## Molar Mass
 
-The <vocab term="Molar Mass" definition="The mass in grams of one mole of a substance, expressed in units of g/mol.">molar mass</vocab> ($M$) is the mass in grams of one mole of a substance. For individual elements, the molar mass is equivalent to the average atomic mass found on the periodic table (e.g., Carbon is $12.011 \text{ g/mol}$). For compounds, it is the sum of the atomic masses of all constituent elements:
+The <vocab term="Molar Mass" definition="The mass in grams of one mole of a substance, expressed in units of g/mol.">molar mass</vocab> ($M$) is the mass in grams of one mole of a substance. For individual elements, the molar mass is equivalent to the average atomic mass found on the periodic table (e.g., Carbon is $12.011 \\text{ g/mol}$). For compounds, it is the sum of the atomic masses of all constituent elements:
 
-$$M = \\sum (n_i \times A_i)$$
+$$M = \\sum (n_i \\times A_i)$$
 
 Where:
 - $n_i$ is the number of atoms of element $i$ in the chemical formula.
@@ -59,14 +59,14 @@ Where:
 ### Mass-Mole Conversions
 The relationship between mass ($m$), moles ($n$), and molar mass ($M$) is given by:
 
-$$n = \frac{m}{M}$$
+$$n = \\frac{m}{M}$$
 
 | Calculation Type | Formula / Conversion Factor |
 |---|---|
 | Mass to Moles | $n = m / M$ |
-| Moles to Mass | $m = n \times M$ |
-| Moles to Particles | $\text{Particles} = n \times N_A$ |
-| Particles to Moles | $n = \text{Particles} / N_A$ |
+| Moles to Mass | $m = n \\times M$ |
+| Moles to Particles | $\\text{Particles} = n \\times N_A$ |
+| Particles to Moles | $n = \\text{Particles} / N_A$ |
 
 <div class="flex justify-center my-8">
 <svg width="450" height="120" viewBox="0 0 450 120" class="max-w-full">
@@ -101,14 +101,14 @@ $$n = \frac{m}{M}$$
 
 The <vocab term="Percent Composition" definition="The percentage by mass of each element in a compound.">percent composition</vocab> represents the relative mass of each element within a compound:
 
-$$\\% \text{ Element} = \\left( \frac{\text{Mass of Element in 1 mol of Compound}}{\text{Molar Mass of Compound}} \right) \times 100\\%$$
+$$\\% \\text{ Element} = \\left( \\frac{\\text{Mass of Element in 1 mol of Compound}}{\\text{Molar Mass of Compound}} \\right) \\times 100\\%$$
 
 ## Empirical and Molecular Formulas
 
 - **Empirical Formula**: The simplest whole-number ratio of atoms of each element in a compound.
 - **Molecular Formula**: The actual number of atoms of each element in a single molecule of the compound. It is a whole-number multiple ($x$) of the empirical formula:
 
-$$x = \frac{\text{Molar Mass of Compound}}{\text{Molar Mass of Empirical Formula}}$$
+$$x = \\frac{\\text{Molar Mass of Compound}}{\\text{Molar Mass of Empirical Formula}}$$
 
 ### Empirical Formula Calculation Steps:
 1. **Assume a 100.0 g sample** if given percentages, converting percent values directly to grams.
@@ -283,7 +283,7 @@ An atom consists of a dense, positively charged nucleus (containing protons and 
 
 <vocab term="Mass Spectrometry" definition="An analytical technique used to measure the mass-to-charge ratio of ions, determining isotopic composition.">Mass spectrometry</vocab> is a technique used to measure the mass-to-charge ratio ($m/z$) of ions, allowing us to determine the mass and relative abundance of isotopes. The average atomic mass of an element is a weighted average:
 
-$$\text{Average Atomic Mass} = \\sum (\text{Abundance}_i \times \text{Mass}_i)$$
+$$\\text{Average Atomic Mass} = \\sum (\\text{Abundance}_i \\times \\text{Mass}_i)$$
 
 <div class="flex justify-center my-8">
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
@@ -322,7 +322,7 @@ For transition metal cations, electrons are removed from the highest shell ($ns$
 
 <vocab term="Photoelectron Spectroscopy" definition="An experimental method that measures the ionization energy of core and valence electrons in an atom using high-energy photons.">Photoelectron Spectroscopy</vocab> (PES) uses high-energy photons (X-ray or UV) to eject electrons from atoms. By measuring the kinetic energy of ejected photoelectrons, the binding energy (ionization energy) of the electrons in different shells is calculated:
 
-$$E_{\text{photon}} = \text{Binding Energy} + KE_{\text{electron}}$$
+$$E_{\\text{photon}} = \\text{Binding Energy} + KE_{\\text{electron}}$$
 
 ### Interpreting a PES Spectrum:
 1. **The x-axis** represents Binding Energy (often plotted in reverse, decreasing left-to-right). Peaks further to the left (higher energy) correspond to inner-shell electrons (core electrons).
@@ -518,21 +518,21 @@ Periodic trends are systematic variations in physical and chemical properties of
 
 The primary physical model for periodic trends is **Coulomb's Law**:
 
-$$F = k \frac{q_1 q_2}{r^2}$$
+$$F = k \\frac{q_1 q_2}{r^2}$$
 
 Where:
 - $F$ is the electrostatic force of attraction between the nucleus and the valence electrons.
-- $q_1$ is the charge of the nucleus (effective nuclear charge, $Z_{\text{eff}}$).
+- $q_1$ is the charge of the nucleus (effective nuclear charge, $Z_{\\text{eff}}$).
 - $q_2$ is the charge of the electron.
 - $r$ is the average distance between the nucleus and the valence electron shell.
 
-<vocab term="Effective Nuclear Charge" definition="The net positive charge experienced by valence electrons, calculated as atomic number minus inner shielding electrons.">Effective nuclear charge</vocab> ($Z_{\text{eff}}$) is the net positive charge experienced by an electron in a multi-electron atom:
+<vocab term="Effective Nuclear Charge" definition="The net positive charge experienced by valence electrons, calculated as atomic number minus inner shielding electrons.">Effective nuclear charge</vocab> ($Z_{\\text{eff}}$) is the net positive charge experienced by an electron in a multi-electron atom:
 
-$$Z_{\text{eff}} = Z - S$$
+$$Z_{\\text{eff}} = Z - S$$
 
 Where $Z$ is the atomic number (number of protons) and $S$ is the shielding constant (approximated by the number of inner-shell core electrons).
 
-- **Across a Period**: $Z_{\text{eff}}$ increases because protons are added to the nucleus, while shielding ($S$) remains relatively constant because electrons are added to the same valence shell.
+- **Across a Period**: $Z_{\\text{eff}}$ increases because protons are added to the nucleus, while shielding ($S$) remains relatively constant because electrons are added to the same valence shell.
 - **Down a Group**: The principal quantum number ($n$) increases, adding new electron shells. This increases the distance $r$ from the nucleus.
 
 ## Periodic Trends Map
@@ -577,8 +577,8 @@ The following vector diagram maps the primary periodic trends across the periodi
 
 | Trend | Across a Period (Left to Right) | Down a Group (Top to Bottom) | Core Physical Explanation |
 |---|---|---|---|
-| **Atomic Radius** | Decreases | Increases | Across: Higher $Z_{\text{eff}}$ pulls valence electrons closer. Down: Adding electron shells increases distance. |
-| **First Ionization Energy** | Increases | Decreases | Across: Higher $Z_{\text{eff}}$ binds valence electrons more tightly. Down: Greater distance reduces electrostatic attraction. |
+| **Atomic Radius** | Decreases | Increases | Across: Higher $Z_{\\text{eff}}$ pulls valence electrons closer. Down: Adding electron shells increases distance. |
+| **First Ionization Energy** | Increases | Decreases | Across: Higher $Z_{\\text{eff}}$ binds valence electrons more tightly. Down: Greater distance reduces electrostatic attraction. |
 | **Electronegativity** | Increases | Decreases | Across: Smaller atomic size allows the nucleus to attract shared electrons more. Down: Greater distance weakens attraction. |
 | **Ionic Radius** | Cations are smaller; Anions are larger | Increases | Cations: Loss of outer shell or reduced repulsion. Anions: Added electrons increase repulsion. |
 `,
@@ -739,14 +739,14 @@ The following vector diagram maps the primary periodic trends across the periodi
         youtubeId: "Mo4Vfqt5v2A",
         article: `# Types of Chemical Bonds and Intramolecular Energy
 
-Chemical bonds form to minimize potential energy. The type of bond that forms between atoms is primarily determined by their differences in electronegativity ($\\Delta\text{EN}$).
+Chemical bonds form to minimize potential energy. The type of bond that forms between atoms is primarily determined by their differences in electronegativity ($\\Delta\\text{EN}$).
 
 ## Classifying Chemical Bonds
 
 - **Ionic Bonding**: Formed between metals (low electronegativity) and nonmetals (high electronegativity) through the transfer of electrons. The electrostatic attraction between cations and anions forms a lattice.
 - **Covalent Bonding**: Formed between nonmetals sharing one or more pairs of electrons.
-  - **Nonpolar Covalent**: Equal sharing of electrons (typically $\\Delta\text{EN} < 0.4$).
-  - **Polar Covalent**: Unequal sharing of electrons (typically $0.4 \\le \\Delta\text{EN} < 1.7$). The more electronegative atom acquires a partial negative charge ($\\delta^-$), creating a bond <vocab term="Dipole Moment" definition="A measure of the separation of positive and negative electrical charges in a bond or molecule.">dipole moment</vocab>.
+  - **Nonpolar Covalent**: Equal sharing of electrons (typically $\\Delta\\text{EN} < 0.4$).
+  - **Polar Covalent**: Unequal sharing of electrons (typically $0.4 \\le \\Delta\\text{EN} < 1.7$). The more electronegative atom acquires a partial negative charge ($\\delta^-$), creating a bond <vocab term="Dipole Moment" definition="A measure of the separation of positive and negative electrical charges in a bond or molecule.">dipole moment</vocab>.
 - **Metallic Bonding**: Formed between metals where electrons are delocalized in a shared pool (the "electron sea" model).
 
 ## Potential Energy Curves for Covalent Bonds
@@ -1238,7 +1238,7 @@ A <vocab term="Lewis Diagram" definition="A structural representation of a molec
 ### Formal Charge Optimization:
 When multiple valid Lewis structures can be drawn, we use <vocab term="Formal Charge" definition="The charge assigned to an atom in a molecule, calculated as valence electrons minus nonbonding electrons minus half of bonding electrons.">formal charge</vocab> to identify the most stable structure. The formal charge (FC) of an atom is calculated as:
 
-$$\text{FC} = \text{Valence } e^- - \\left( \text{Lone Pair } e^- + \frac{1}{2} \text{Bonding } e^- \right)$$
+$$\\text{FC} = \\text{Valence } e^- - \\left( \\text{Lone Pair } e^- + \\frac{1}{2} \\text{Bonding } e^- \\right)$$
 
 - **Rule 1**: The most stable structure is one where formal charges are closest to zero.
 - **Rule 2**: If negative formal charges must exist, they should reside on the **most electronegative** atoms.
@@ -1495,10 +1495,10 @@ The strength of IMFs determines a substance's physical properties:
 
 | Property | Definition | Relationship to IMF Strength |
 |---|---|---|
-| **Boiling / Melting Point** | Temperature at which phase change occurs | **Stronger IMFs** $\rightarrow$ **Higher BP/MP** (more energy needed to separate molecules). |
-| **Vapor Pressure** | Pressure exerted by gas in equilibrium with liquid | **Stronger IMFs** $\rightarrow$ **Lower Vapor Pressure** (fewer molecules escape into gas phase). |
-| **Surface Tension** | Resistance of a liquid to increase its surface area | **Stronger IMFs** $\rightarrow$ **Higher Surface Tension**. |
-| **Viscosity** | A liquid's resistance to flow | **Stronger IMFs** $\rightarrow$ **Higher Viscosity**. |
+| **Boiling / Melting Point** | Temperature at which phase change occurs | **Stronger IMFs** $\\rightarrow$ **Higher BP/MP** (more energy needed to separate molecules). |
+| **Vapor Pressure** | Pressure exerted by gas in equilibrium with liquid | **Stronger IMFs** $\\rightarrow$ **Lower Vapor Pressure** (fewer molecules escape into gas phase). |
+| **Surface Tension** | Resistance of a liquid to increase its surface area | **Stronger IMFs** $\\rightarrow$ **Higher Surface Tension**. |
+| **Viscosity** | A liquid's resistance to flow | **Stronger IMFs** $\\rightarrow$ **Higher Viscosity**. |
 
 ## Heating Curves and Phase Changes
 
@@ -1540,8 +1540,8 @@ Below is the Heating Curve for water, showing phase transitions at 0Â°C and 100Â
 </svg>
 </div>
 
-- **Heat of Fusion** ($\\Delta H_{\text{fus}}$): Energy to melt 1 mole of solid.
-- **Heat of Vaporization** ($\\Delta H_{\text{vap}}$): Energy to vaporize 1 mole of liquid. Always larger than $\\Delta H_{\text{fus}}$ because vaporizing requires completely breaking all IMFs, whereas melting only weakens them.
+- **Heat of Fusion** ($\\Delta H_{\\text{fus}}$): Energy to melt 1 mole of solid.
+- **Heat of Vaporization** ($\\Delta H_{\\text{vap}}$): Energy to vaporize 1 mole of liquid. Always larger than $\\Delta H_{\\text{fus}}$ because vaporizing requires completely breaking all IMFs, whereas melting only weakens them.
 `,
         questions: [
           {
@@ -1702,17 +1702,17 @@ The behavior of an ideal gas is described by the **Ideal Gas Law**:
 $$PV = nRT$$
 
 Where:
-- $R$ is the gas constant ($0.08206 \text{ L atm / mol K}$ or $8.314 \text{ J / mol K}$).
-- $T$ must always be in **Kelvin** ($T_{\text{K}} = T_{^\\circ\text{C}} + 273.15$).
+- $R$ is the gas constant ($0.08206 \\text{ L atm / mol K}$ or $8.314 \\text{ J / mol K}$).
+- $T$ must always be in **Kelvin** ($T_{\\text{K}} = T_{^\\circ\\text{C}} + 273.15$).
 
 ### Dalton's Law of Partial Pressures:
-In a mixture of non-reacting gases, the total pressure ($P_{\text{total}}$) is the sum of the partial pressures of the individual gases:
+In a mixture of non-reacting gases, the total pressure ($P_{\\text{total}}$) is the sum of the partial pressures of the individual gases:
 
-$$P_{\text{total}} = P_A + P_B + P_C + \\dots$$
+$$P_{\\text{total}} = P_A + P_B + P_C + \\dots$$
 
 The partial pressure of a gas is proportional to its mole fraction ($X_A$):
 
-$$P_A = X_A \times P_{\text{total}} \\quad \text{where} \\quad X_A = \frac{n_A}{n_{\text{total}}}$$
+$$P_A = X_A \\times P_{\\text{total}} \\quad \\text{where} \\quad X_A = \\frac{n_A}{n_{\\text{total}}}$$
 
 ## Kinetic Molecular Theory (KMT)
 
@@ -1723,12 +1723,12 @@ KMT is a microscopic model that explains macroscopic gas laws based on the follo
 4. Collisions between particles and with container walls are perfectly elastic.
 5. The average kinetic energy of gas particles is directly proportional to the absolute temperature:
 
-$$KE_{\text{avg}} = \frac{3}{2} RT$$
+$$KE_{\\text{avg}} = \\frac{3}{2} RT$$
 
 ### Molecular Speed and Maxwell-Boltzmann Distribution:
-Although all gas particles in a sample at a given temperature have the same *average* kinetic energy, they do not move at the same speed. The root-mean-square speed ($u_{\text{rms}}$) is given by:
+Although all gas particles in a sample at a given temperature have the same *average* kinetic energy, they do not move at the same speed. The root-mean-square speed ($u_{\\text{rms}}$) is given by:
 
-$$u_{\text{rms}} = \\sqrt{\frac{3RT}{M}}$$
+$$u_{\\text{rms}} = \\sqrt{\\frac{3RT}{M}}$$
 
 Where $M$ is the molar mass in kg/mol.
 - **Molar Mass Effect**: At a constant temperature, lighter gas particles move faster on average than heavier particles.
@@ -1759,8 +1759,8 @@ Where $M$ is the molar mass in kg/mol.
 
 Real gases deviate from ideal behavior under conditions of **high pressure (small volume)** and **low temperature**. Under these conditions, KMT postulates break down:
 
-1. **Low Temperature**: Particles move slowly, allowing **intermolecular attractions** to pull them together, which reduces collisions with the container walls, making $P_{\text{real}} < P_{\text{ideal}}$.
-2. **High Pressure / Small Volume**: Particles are packed tightly together, meaning the **volume of the gas particles themselves** is no longer negligible compared to the container volume, making $V_{\text{real}} > V_{\text{ideal}}$.
+1. **Low Temperature**: Particles move slowly, allowing **intermolecular attractions** to pull them together, which reduces collisions with the container walls, making $P_{\\text{real}} < P_{\\text{ideal}}$.
+2. **High Pressure / Small Volume**: Particles are packed tightly together, meaning the **volume of the gas particles themselves** is no longer negligible compared to the container volume, making $V_{\\text{real}} > V_{\\text{ideal}}$.
 
 Real gases behave **most ideally** at **high temperature and low pressure**, and when the gas has **weak IMFs** (nonpolar, small size, e.g., Helium).
 `,
@@ -1920,7 +1920,7 @@ Solutions are homogeneous mixtures. The components include a solvent (doing the 
 
 The primary unit of concentration in AP Chemistry is <vocab term="Molarity" definition="The concentration of a solution expressed as moles of solute per liter of solution.">Molarity</vocab> ($M$):
 
-$$M = \frac{\text{moles of solute}}{\text{Liters of solution}}$$
+$$M = \\frac{\\text{moles of solute}}{\\text{Liters of solution}}$$
 
 ## The Dissolution Process and Solubility
 
@@ -1937,7 +1937,7 @@ Like dissolves like: polar solutes dissolve in polar solvents (forming dipole-di
 - **Chromatography**: Separates mixtures based on differences in polarity.
   - **Paper/Thin-Layer Chromatography**: A mobile phase (solvent) carries the mixture up a stationary phase (paper). The component that is most attracted to the mobile phase moves the furthest.
   - **Retention Factor** ($R_f$):
-    $$R_f = \frac{\text{Distance traveled by solute}}{\text{Distance traveled by solvent front}}$$
+    $$R_f = \\frac{\\text{Distance traveled by solute}}{\\text{Distance traveled by solvent front}}$$
 
 ## Beer-Lambert Law
 
@@ -2007,7 +2007,7 @@ $$A = \\epsilon b c$$
 Where:
 - $A$ is the absorbance (unitless, measured by a spectrophotometer).
 - $\\epsilon$ is the molar absorptivity (constant for a specific solute at a specific wavelength).
-- $b$ is the path length of the cuvette (typically $1.0 \text{ cm}$).
+- $b$ is the path length of the cuvette (typically $1.0 \\text{ cm}$).
 - $c$ is the molar concentration of the solute.
 
 ### Calibration Curves:
@@ -2015,7 +2015,7 @@ A plot of Absorbance vs. Concentration yields a straight line passing through th
 
 ### Common Spectrophotometer Errors:
 - **Fingerprints or water droplets on cuvette**: Scatters light, increasing absorbance, yielding an artificially high calculated concentration.
-- **Incorrect wavelength**: Wavelength of maximum absorbance ($\\lambda_{\text{max}}$) should be selected for maximum sensitivity.
+- **Incorrect wavelength**: Wavelength of maximum absorbance ($\\lambda_{\\text{max}}$) should be selected for maximum sensitivity.
 `,
         questions: [
           {
@@ -2178,8 +2178,8 @@ A chemical equation represents a change in matter. Matter is conserved in all pr
 
 ## Physical vs. Chemical Changes
 
-- **Physical Changes**: Process where the intermolecular forces between molecules are altered, but the intramolecular covalent or ionic bonds are NOT broken. The chemical identity of the substance is conserved (e.g., phase changes like boiling water: $H_2O(l) \rightarrow H_2O(g)$).
-- **Chemical Changes**: Process where intramolecular bonds are broken and/or formed, creating new substances with different chemical properties (e.g., electrolysis of water: $2H_2O(l) \rightarrow 2H_2(g) + O_2(g)$).
+- **Physical Changes**: Process where the intermolecular forces between molecules are altered, but the intramolecular covalent or ionic bonds are NOT broken. The chemical identity of the substance is conserved (e.g., phase changes like boiling water: $H_2O(l) \\rightarrow H_2O(g)$).
+- **Chemical Changes**: Process where intramolecular bonds are broken and/or formed, creating new substances with different chemical properties (e.g., electrolysis of water: $2H_2O(l) \\rightarrow 2H_2(g) + O_2(g)$).
   - *Evidence of Chemical Change*: Heat release/absorption, gas production, precipitate formation, or permanent color change.
 
 ## Strong vs. Weak Electrolytes
@@ -2194,11 +2194,11 @@ When soluble ionic compounds are mixed, they may form an insoluble solid, called
 
 ### Example: Mixing $AgNO_3(aq)$ and $NaCl(aq)$
 1. **Molecular Equation**: Shows all reactants and products as intact compounds.
-   $$AgNO_3(aq) + NaCl(aq) \rightarrow AgCl(s) + NaNO_3(aq)$$
+   $$AgNO_3(aq) + NaCl(aq) \\rightarrow AgCl(s) + NaNO_3(aq)$$
 2. **Complete Ionic Equation**: Shows all soluble strong electrolytes dissociated into their constituent ions.
-   $$Ag^+(aq) + NO_3^-(aq) + Na^+(aq) + Cl^-(aq) \rightarrow AgCl(s) + Na^+(aq) + NO_3^-(aq)$$
+   $$Ag^+(aq) + NO_3^-(aq) + Na^+(aq) + Cl^-(aq) \\rightarrow AgCl(s) + Na^+(aq) + NO_3^-(aq)$$
 3. **Net Ionic Equation**: Shows only the species directly participating in the chemical reaction. We cross out <vocab term="Spectator Ions" definition="Ions that are present in the reaction mixture but do not participate in the actual chemical change.">spectator ions</vocab> (ions that appear unchanged on both sides of the equation, in this case $Na^+$ and $NO_3^-$).
-   $$Ag^+(aq) + Cl^-(aq) \rightarrow AgCl(s)$$
+   $$Ag^+(aq) + Cl^-(aq) \\rightarrow AgCl(s)$$
 
 <div class="flex justify-center my-8">
 <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
@@ -2389,7 +2389,7 @@ Stoichiometry uses the coefficients of a balanced chemical equation to determine
 ## Basic Stoichiometric Calculations
 
 A balanced chemical equation provides mole ratios. To solve stoichiometry problems, follow these steps:
-1. **Convert given quantity to moles** (e.g., using $n = m/M$ for mass, or $n = M \times V$ for solutions).
+1. **Convert given quantity to moles** (e.g., using $n = m/M$ for mass, or $n = M \\times V$ for solutions).
 2. **Use the mole ratio** from the balanced coefficients to convert moles of reactant to moles of desired product.
 3. **Convert moles of product back to the desired unit** (grams, liters, etc.).
 
@@ -2407,7 +2407,7 @@ A balanced chemical equation provides mole ratios. To solve stoichiometry proble
 - **Theoretical Yield**: The maximum amount of product that can form, calculated from stoichiometry.
 - **Actual Yield**: The amount of product actually obtained in the lab.
 - **Percent Yield**:
-  $$\\% \text{ Yield} = \\left( \frac{\text{Actual Yield}}{\text{Theoretical Yield}} \right) \times 100\\%$$
+  $$\\% \\text{ Yield} = \\left( \\frac{\\text{Actual Yield}}{\\text{Theoretical Yield}} \\right) \\times 100\\%$$
 
 ## Titrations
 
@@ -2416,7 +2416,7 @@ A <vocab term="Titration" definition="A laboratory method where a solution of kn
 - **Titrant**: The solution of known concentration (in the buret).
 - **Analyte**: The solution of unknown concentration (in the Erlenmeyer flask).
 - **Equivalence Point**: The point at which the moles of titrant added are stoichiometrically equal to the moles of analyte present:
-  $$n_{\text{titrant}} = n_{\text{analyte}} \\quad \text{(adjusted for stoichiometry)}$$
+  $$n_{\\text{titrant}} = n_{\\text{analyte}} \\quad \\text{(adjusted for stoichiometry)}$$
 - **Endpoint**: The point at which the indicator changes color. A good indicator has its color change (endpoint) as close as possible to the equivalence point.
 
 <div class="flex justify-center my-8">
@@ -2614,7 +2614,7 @@ Two key classes of chemical reactions are acid-base (proton transfer) and oxidat
 When an acid donates a proton, it forms its **conjugate base**. When a base accepts a proton, it forms its **conjugate acid**.
 
 ### Example:
-$$NH_3(aq) + H_2O(l) \rightleftharpoons NH_4^+(aq) + OH^-(aq)$$
+$$NH_3(aq) + H_2O(l) \\rightleftharpoons NH_4^+(aq) + OH^-(aq)$$
 - $NH_3$ (base) accepts a proton to become $NH_4^+$ (conjugate acid).
 - $H_2O$ (acid) donates a proton to become $OH^-$ (conjugate base).
 
@@ -2844,7 +2844,7 @@ The **rate of reaction** measures the change in concentration of a reactant or p
 
 A <vocab term="Rate Law" definition="An mathematical equation relating the rate of a reaction to the concentrations of its reactants, raised to specific powers called orders.">rate law</vocab> relates the reaction rate to the concentrations of reactants, multiplied by a **rate constant** ($k$):
 
-$$\text{Rate} = k [A]^x [B]^y$$
+$$\\text{Rate} = k [A]^x [B]^y$$
 
 Where:
 - $x$ and $y$ are the **reaction orders** with respect to reactants $A$ and $B$. Reaction orders must be determined **experimentally**; they cannot be deduced from balanced equation coefficients.
@@ -2852,9 +2852,9 @@ Where:
 
 ### Method of Initial Rates:
 To determine a rate law, run experiments varying one reactant concentration while keeping others constant, and measure the initial rate. If doubling the concentration of $A$:
-- **Rate remains unchanged**: Order is **0** ($\text{Rate} \\propto [A]^0$).
-- **Rate doubles**: Order is **1** ($\text{Rate} \\propto [A]^1$).
-- **Rate quadruples**: Order is **2** ($\text{Rate} \\propto [A]^2$).
+- **Rate remains unchanged**: Order is **0** ($\\text{Rate} \\propto [A]^0$).
+- **Rate doubles**: Order is **1** ($\\text{Rate} \\propto [A]^1$).
+- **Rate quadruples**: Order is **2** ($\\text{Rate} \\propto [A]^2$).
 
 <div class="flex justify-center my-8">
 <svg width="450" height="250" viewBox="0 0 450 250" class="max-w-full">
@@ -2894,16 +2894,16 @@ Integrated rate laws describe reactant concentration as a function of time. Plot
 ### First-Order Half-Life:
 For a first-order reaction, the half-life ($t_{1/2}$) is constant and independent of the initial concentration:
 
-$$t_{1/2} = \frac{0.693}{k}$$
+$$t_{1/2} = \\frac{0.693}{k}$$
 `,
         questions: [
           {
             id: "q5.1.1",
             unitId: 5,
-            text: `For the reaction $A + B \rightarrow C$, the following initial rates data were collected:
-Exp 1: $[A] = 0.10 M$, $[B] = 0.10 M$, Initial Rate = $2.0 \times 10^{-3} M/s$
-Exp 2: $[A] = 0.20 M$, $[B] = 0.10 M$, Initial Rate = $4.0 \times 10^{-3} M/s$
-Exp 3: $[A] = 0.10 M$, $[B] = 0.20 M$, Initial Rate = $8.0 \times 10^{-3} M/s$
+            text: `For the reaction $A + B \\rightarrow C$, the following initial rates data were collected:
+Exp 1: $[A] = 0.10 M$, $[B] = 0.10 M$, Initial Rate = $2.0 \\times 10^{-3} M/s$
+Exp 2: $[A] = 0.20 M$, $[B] = 0.10 M$, Initial Rate = $4.0 \\times 10^{-3} M/s$
+Exp 3: $[A] = 0.10 M$, $[B] = 0.20 M$, Initial Rate = $8.0 \\times 10^{-3} M/s$
 What is the rate law for this reaction?`,
             options: [
               "$\\text{Rate} = k [A][B]^2$",
@@ -3187,8 +3187,8 @@ Below is the Potential Energy Profile for an exothermic reaction:
             id: "q5.2.6",
             unitId: 5,
             text: `A proposed reaction mechanism consists of two steps:
-Step 1 (Slow): $NO_2(g) + CO(g) \rightarrow NO(g) + CO_2(g)$
-Step 2 (Fast): $NO_2(g) + NO(g) \rightarrow N_2O(g) + O_2(g)$
+Step 1 (Slow): $NO_2(g) + CO(g) \\rightarrow NO(g) + CO_2(g)$
+Step 2 (Fast): $NO_2(g) + NO(g) \\rightarrow N_2O(g) + O_2(g)$
 What is the expected rate law for this reaction?`,
             options: [
               "$\\text{Rate} = k[NO_2][CO]$",
@@ -3218,8 +3218,8 @@ What is the expected rate law for this reaction?`,
             id: "q5.2.8",
             unitId: 5,
             text: `Consider a reaction mechanism where the first step is fast and reversible, and the second step is slow:
-Step 1 (Fast equilibrium): $A + B \rightleftharpoons C$
-Step 2 (Slow): $C + D \rightarrow E$
+Step 1 (Fast equilibrium): $A + B \\rightleftharpoons C$
+Step 2 (Slow): $C + D \\rightarrow E$
 What is the rate law for this reaction?`,
             options: [
               "$\\text{Rate} = k[C][D]$",
@@ -3273,9 +3273,9 @@ Most chemical reactions occur via a series of simple elementary steps, which tog
 ## Multi-Step Mechanisms and Intermediates
 
 Consider the mechanism:
-- Step 1 (Slow): $NO_2(g) + NO_2(g) \rightarrow NO_3(g) + NO(g)$
-- Step 2 (Fast): $NO_3(g) + CO(g) \rightarrow NO_2(g) + CO_2(g)$
-- Overall: $NO_2(g) + CO(g) \rightarrow NO(g) + CO_2(g)$
+- Step 1 (Slow): $NO_2(g) + NO_2(g) \\rightarrow NO_3(g) + NO(g)$
+- Step 2 (Fast): $NO_3(g) + CO(g) \\rightarrow NO_2(g) + CO_2(g)$
+- Overall: $NO_2(g) + CO(g) \\rightarrow NO(g) + CO_2(g)$
 
 - **Reaction Intermediate**: A species that is **produced** in an early step and **consumed** in a later step (e.g., $NO_3$). It does not appear in the overall balanced chemical equation.
 - **Catalyst**: A species that is **consumed** in an early step and **regenerated** in a later step. It provides an alternative pathway with a lower activation energy, speeding up the reaction.
@@ -3286,17 +3286,17 @@ In a multi-step mechanism, one step is typically much slower than the others. Th
 
 ### Case 1: Slow First Step
 If the first step is the slow step, the rate law of the overall reaction is simply the rate law of that first step.
-- *Example above*: Since Step 1 is slow, $\text{Rate} = k[NO_2]^2$.
+- *Example above*: Since Step 1 is slow, $\\text{Rate} = k[NO_2]^2$.
 
 ### Case 2: Fast Equilibrium First Step
 If the slow step is preceded by a fast, reversible step, the reactants of the slow step contain an intermediate. We must express the intermediate in terms of the initial reactants using the equilibrium of the first step.
 - *Example*:
-  - Step 1 (Fast equilibrium): $NO(g) + Cl_2(g) \rightleftharpoons NOCl_2(g)$
-  - Step 2 (Slow): $NOCl_2(g) + NO(g) \rightarrow 2NOCl(g)$
+  - Step 1 (Fast equilibrium): $NO(g) + Cl_2(g) \\rightleftharpoons NOCl_2(g)$
+  - Step 2 (Slow): $NOCl_2(g) + NO(g) \\rightarrow 2NOCl(g)$
   - Intermediate: $NOCl_2$.
-  - Rate Law of slow step: $\text{Rate} = k_2[NOCl_2][NO]$.
-  - From Step 1 equilibrium: $k_f [NO][Cl_2] = k_r [NOCl_2] \rightarrow [NOCl_2] = (k_f/k_r)[NO][Cl_2]$.
-  - Substitute into slow step: $\text{Rate} = k [NO]^2 [Cl_2]$.
+  - Rate Law of slow step: $\\text{Rate} = k_2[NOCl_2][NO]$.
+  - From Step 1 equilibrium: $k_f [NO][Cl_2] = k_r [NOCl_2] \\rightarrow [NOCl_2] = (k_f/k_r)[NO][Cl_2]$.
+  - Substitute into slow step: $\\text{Rate} = k [NO]^2 [Cl_2]$.
 
 <div class="flex justify-center my-8">
 <svg width="450" height="280" viewBox="0 0 450 280" class="max-w-full">
@@ -3366,9 +3366,9 @@ A <vocab term="Catalyst" definition="A substance that increases the rate of a ch
             id: "q5.3.1",
             unitId: 5,
             text: `For the following proposed mechanism:
-Step 1 (Slow): $Cl_2(g) \rightarrow 2Cl(g)$
-Step 2 (Fast): $Cl(g) + CHCl_3(g) \rightarrow HCl(g) + CCl_3(g)$
-Step 3 (Fast): $Cl(g) + CCl_3(g) \rightarrow CCl_4(g)$
+Step 1 (Slow): $Cl_2(g) \\rightarrow 2Cl(g)$
+Step 2 (Fast): $Cl(g) + CHCl_3(g) \\rightarrow HCl(g) + CCl_3(g)$
+Step 3 (Fast): $Cl(g) + CCl_3(g) \\rightarrow CCl_4(g)$
 Identify the reaction intermediate(s).`,
             options: [
               "$Cl$ and $CCl_3$",
@@ -3384,8 +3384,8 @@ Identify the reaction intermediate(s).`,
             id: "q5.3.2",
             unitId: 5,
             text: `Given the mechanism:
-Step 1 (Slow): $H_2O_2(aq) + I^-(aq) \rightarrow H_2O(l) + IO^-(aq)$
-Step 2 (Fast): $H_2O_2(aq) + IO^-(aq) \rightarrow H_2O(l) + O_2(g) + I^-(aq)$
+Step 1 (Slow): $H_2O_2(aq) + I^-(aq) \\rightarrow H_2O(l) + IO^-(aq)$
+Step 2 (Fast): $H_2O_2(aq) + IO^-(aq) \\rightarrow H_2O(l) + O_2(g) + I^-(aq)$
 What is the overall rate law for this reaction?`,
             options: [
               "$\\text{Rate} = k [H_2O_2][I^-]$",
@@ -3534,7 +3534,7 @@ Thermodynamics is the study of heat, work, and the energy changes that accompany
 
 The **First Law of Thermodynamics** states that energy is conserved:
 
-$$\\Delta E_{\text{universe}} = \\Delta E_{\text{system}} + \\Delta E_{\text{surroundings}} = 0$$
+$$\\Delta E_{\\text{universe}} = \\Delta E_{\\text{system}} + \\Delta E_{\\text{surroundings}} = 0$$
 
 The internal energy change of a system ($\\Delta E$) is the sum of heat ($q$) and work ($w$):
 
@@ -3576,13 +3576,13 @@ $$\\Delta E = q + w$$
 
 When two substances at different temperatures are placed in contact, heat transfers from the hotter substance (higher average kinetic energy) to the cooler substance until they reach the same temperature. This state is called **thermal equilibrium** (no net heat transfer).
 
-$$q_{\text{lost}} = -q_{\text{gained}}$$
+$$q_{\\text{lost}} = -q_{\\text{gained}}$$
 
 ## Calorimetry
 
-<vocab term="Calorimetry" definition="An experimental technique used to measure the heat transfer in a chemical or physical process.">Calorimetry</vocab> is the experimental technique used to measure heat transfer. In a constant-pressure calorimeter (like a coffee-cup calorimeter), the heat change of the reaction ($q_{\text{rxn}}$) is equal and opposite to the heat change of the calorimeter contents (typically water or a solution, $q_{\text{cal}}$):
+<vocab term="Calorimetry" definition="An experimental technique used to measure the heat transfer in a chemical or physical process.">Calorimetry</vocab> is the experimental technique used to measure heat transfer. In a constant-pressure calorimeter (like a coffee-cup calorimeter), the heat change of the reaction ($q_{\\text{rxn}}$) is equal and opposite to the heat change of the calorimeter contents (typically water or a solution, $q_{\\text{cal}}$):
 
-$$q_{\text{rxn}} = -q_{\text{cal}}$$
+$$q_{\\text{rxn}} = -q_{\\text{cal}}$$
 
 The heat absorbed or released by a substance is calculated using:
 
@@ -3590,8 +3590,8 @@ $$q = m c \\Delta T$$
 
 Where:
 - $m$ is the mass of the substance ($g$).
-- $c$ is the <vocab term="Specific Heat Capacity" definition="The amount of heat required to raise the temperature of 1 gram of a substance by 1 degree Celsius.">specific heat capacity</vocab> ($J/g ^\\circ C$). For water, $c = 4.184 \text{ J/g } ^\\circ \text{C}$.
-- $\\Delta T$ is the change in temperature ($T_{\text{final}} - T_{\text{initial}}$).
+- $c$ is the <vocab term="Specific Heat Capacity" definition="The amount of heat required to raise the temperature of 1 gram of a substance by 1 degree Celsius.">specific heat capacity</vocab> ($J/g ^\\circ C$). For water, $c = 4.184 \\text{ J/g } ^\\circ \\text{C}$.
+- $\\Delta T$ is the change in temperature ($T_{\\text{final}} - T_{\\text{initial}}$).
 `,
         questions: [
           {
@@ -3747,10 +3747,10 @@ During a phase change, energy is transferred, but the temperature of the substan
 
 ## Enthalpies of Phase Changes
 
-- **Enthalpy of Fusion** ($\\Delta H_{\text{fus}}$): The energy required to melt one mole of solid into liquid at its melting point.
-  $$q = n \times \\Delta H_{\text{fus}}$$
-- **Enthalpy of Vaporization** ($\\Delta H_{\text{vap}}$): The energy required to vaporize one mole of liquid into gas at its boiling point.
-  $$q = n \times \\Delta H_{\text{vap}}$$
+- **Enthalpy of Fusion** ($\\Delta H_{\\text{fus}}$): The energy required to melt one mole of solid into liquid at its melting point.
+  $$q = n \\times \\Delta H_{\\text{fus}}$$
+- **Enthalpy of Vaporization** ($\\Delta H_{\\text{vap}}$): The energy required to vaporize one mole of liquid into gas at its boiling point.
+  $$q = n \\times \\Delta H_{\\text{vap}}$$
 
 ### Heating Curves:
 A heating curve tracks temperature as heat is added. It consists of two types of segments:
@@ -3784,15 +3784,15 @@ A heating curve tracks temperature as heat is added. It consists of two types of
 
 ## Enthalpy of Reaction
 
-The <vocab term="Enthalpy of Reaction" definition="The change in enthalpy (heat content) that occurs during a chemical reaction at constant pressure.">enthalpy of reaction</vocab> ($\\Delta H_{\text{rxn}}$) is the heat change associated with a chemical reaction at constant pressure. 
+The <vocab term="Enthalpy of Reaction" definition="The change in enthalpy (heat content) that occurs during a chemical reaction at constant pressure.">enthalpy of reaction</vocab> ($\\Delta H_{\\text{rxn}}$) is the heat change associated with a chemical reaction at constant pressure. 
 
 Enthalpy is an **extensive property**, meaning it scales with the amounts of substances reacting. The coefficients in a balanced equation correspond directly to the moles of reactant linked to the enthalpy value.
 
 ### Example:
-$$2H_2(g) + O_2(g) \rightarrow 2H_2O(g) \\quad \\Delta H_{\text{rxn}} = -483.6 \text{ kJ}$$
+$$2H_2(g) + O_2(g) \\rightarrow 2H_2O(g) \\quad \\Delta H_{\\text{rxn}} = -483.6 \\text{ kJ}$$
 
-- Reacting $2 \text{ moles of } H_2$ releases $483.6 \text{ kJ}$ of heat.
-- Reacting $1 \text{ mole of } H_2$ releases $241.8 \text{ kJ}$ of heat.
+- Reacting $2 \\text{ moles of } H_2$ releases $483.6 \\text{ kJ}$ of heat.
+- Reacting $1 \\text{ mole of } H_2$ releases $241.8 \\text{ kJ}$ of heat.
 `,
         questions: [
           {
@@ -3869,9 +3869,9 @@ $$2H_2(g) + O_2(g) \rightarrow 2H_2O(g) \\quad \\Delta H_{\text{rxn}} = -483.6 \
             id: "q6.2.6",
             unitId: 6,
             text: `Given the following reactions:
-1) $S(s) + O_2(g) \rightarrow SO_2(g) \\quad \\Delta H_1 = -297 \text{ kJ}$
-2) $2SO_2(g) + O_2(g) \rightarrow 2SO_3(g) \\quad \\Delta H_2 = -198 \text{ kJ}$
-Calculate the enthalpy change $\\Delta H$ for the reaction: $2S(s) + 3O_2(g) \rightarrow 2SO_3(g)$.`,
+1) $S(s) + O_2(g) \\rightarrow SO_2(g) \\quad \\Delta H_1 = -297 \\text{ kJ}$
+2) $2SO_2(g) + O_2(g) \\rightarrow 2SO_3(g) \\quad \\Delta H_2 = -198 \\text{ kJ}$
+Calculate the enthalpy change $\\Delta H$ for the reaction: $2S(s) + 3O_2(g) \\rightarrow 2SO_3(g)$.`,
             options: [
               "$-495 \\text{ kJ}$",
               "$-792 \\text{ kJ}$",
@@ -3953,7 +3953,7 @@ Enthalpy is a state function, meaning its change is independent of the pathway t
 
 Chemical reactions involve breaking bonds in reactants (endothermic, $\\Delta H > 0$) and forming bonds in products (exothermic, $\\Delta H < 0$).
 
-$$\\Delta H_{\text{rxn}} = \\sum \text{BE}_{\text{broken}} - \\sum \text{BE}_{\text{formed}}$$
+$$\\Delta H_{\\text{rxn}} = \\sum \\text{BE}_{\\text{broken}} - \\sum \\text{BE}_{\\text{formed}}$$
 
 *Note*: Since bond energies are tabulates as positive values representing bond dissociation, this equation is Reactants minus Products.
 
@@ -3962,7 +3962,7 @@ $$\\Delta H_{\text{rxn}} = \\sum \text{BE}_{\text{broken}} - \\sum \text{BE}_{\t
 The **standard enthalpy of formation** ($\\Delta H_f^\\circ$) is the enthalpy change when one mole of a substance is formed from its constituent elements in their standard states.
 - The standard enthalpy of formation of any element in its most stable standard state is **zero** (e.g., $O_2(g)$ is $0$, but $O(g)$ or $O_3(g)$ is not).
 
-$$\\Delta H_{\text{rxn}}^\\circ = \\sum n \\Delta H_f^\\circ(\text{products}) - \\sum m \\Delta H_f^\\circ(\text{reactants})$$
+$$\\Delta H_{\\text{rxn}}^\\circ = \\sum n \\Delta H_f^\\circ(\\text{products}) - \\sum m \\Delta H_f^\\circ(\\text{reactants})$$
 
 Where $n$ and $m$ are the stoichiometric coefficients. This is Products minus Reactants.
 
@@ -4012,10 +4012,10 @@ Where $n$ and $m$ are the stoichiometric coefficients. This is Products minus Re
             id: "q6.3.1",
             unitId: 6,
             text: `Using the following bond enthalpies:
-$H-H: 436 \text{ kJ/mol}$
-$Cl-Cl: 242 \text{ kJ/mol}$
-$H-Cl: 431 \text{ kJ/mol}$
-Calculate the enthalpy change ($\\Delta H$) for the reaction: $H_2(g) + Cl_2(g) \rightarrow 2HCl(g)$.`,
+$H-H: 436 \\text{ kJ/mol}$
+$Cl-Cl: 242 \\text{ kJ/mol}$
+$H-Cl: 431 \\text{ kJ/mol}$
+Calculate the enthalpy change ($\\Delta H$) for the reaction: $H_2(g) + Cl_2(g) \\rightarrow 2HCl(g)$.`,
             options: [
               "-184 kJ",
               "+184 kJ",
@@ -4030,10 +4030,10 @@ Calculate the enthalpy change ($\\Delta H$) for the reaction: $H_2(g) + Cl_2(g) 
             id: "q6.3.2",
             unitId: 6,
             text: `Given the standard enthalpies of formation:
-$\\Delta H_f^\\circ[CO_2(g)] = -393.5 \text{ kJ/mol}$
-$\\Delta H_f^\\circ[H_2O(l)] = -285.8 \text{ kJ/mol}$
-$\\Delta H_f^\\circ[C_3H_8(g)] = -103.8 \text{ kJ/mol}$
-Calculate the standard enthalpy of combustion ($\\Delta H_{\text{rxn}}^\\circ$) for propane: $C_3H_8(g) + 5O_2(g) \rightarrow 3CO_2(g) + 4H_2O(l)$.`,
+$\\Delta H_f^\\circ[CO_2(g)] = -393.5 \\text{ kJ/mol}$
+$\\Delta H_f^\\circ[H_2O(l)] = -285.8 \\text{ kJ/mol}$
+$\\Delta H_f^\\circ[C_3H_8(g)] = -103.8 \\text{ kJ/mol}$
+Calculate the standard enthalpy of combustion ($\\Delta H_{\\text{rxn}}^\\circ$) for propane: $C_3H_8(g) + 5O_2(g) \\rightarrow 3CO_2(g) + 4H_2O(l)$.`,
             options: [
               "-2220.1 kJ",
               "-2520.5 kJ",
@@ -4048,9 +4048,9 @@ Calculate the standard enthalpy of combustion ($\\Delta H_{\text{rxn}}^\\circ$) 
             id: "q6.3.3",
             unitId: 6,
             text: `Given the thermochemical equations:
-1) $S(s) + O_2(g) \rightarrow SO_2(g) \\quad \\Delta H = -297 \text{ kJ}$
-2) $2SO_3(g) \rightarrow 2SO_2(g) + O_2(g) \\quad \\Delta H = +198 \text{ kJ}$
-Calculate the enthalpy change ($\\Delta H$) for the reaction: $2S(s) + 3O_2(g) \rightarrow 2SO_3(g)$.`,
+1) $S(s) + O_2(g) \\rightarrow SO_2(g) \\quad \\Delta H = -297 \\text{ kJ}$
+2) $2SO_3(g) \\rightarrow 2SO_2(g) + O_2(g) \\quad \\Delta H = +198 \\text{ kJ}$
+Calculate the enthalpy change ($\\Delta H$) for the reaction: $2S(s) + 3O_2(g) \\rightarrow 2SO_3(g)$.`,
             options: [
               "-792 kJ",
               "-396 kJ",
@@ -4093,11 +4093,11 @@ Calculate the enthalpy change ($\\Delta H$) for the reaction: $2S(s) + 3O_2(g) \
             id: "q6.3.6",
             unitId: 6,
             text: `Calculate the standard enthalpy of reaction $\\Delta H_{rxn}^\\circ$ for the combustion of ethanol:
-$C_2H_5OH(l) + 3O_2(g) \rightarrow 2CO_2(g) + 3H_2O(l)$
+$C_2H_5OH(l) + 3O_2(g) \\rightarrow 2CO_2(g) + 3H_2O(l)$
 Given standard enthalpies of formation:
-$\\Delta H_f^\\circ [C_2H_5OH(l)] = -278 \text{ kJ/mol}$
-$\\Delta H_f^\\circ [CO_2(g)] = -394 \text{ kJ/mol}$
-$\\Delta H_f^\\circ [H_2O(l)] = -286 \text{ kJ/mol}$`,
+$\\Delta H_f^\\circ [C_2H_5OH(l)] = -278 \\text{ kJ/mol}$
+$\\Delta H_f^\\circ [CO_2(g)] = -394 \\text{ kJ/mol}$
+$\\Delta H_f^\\circ [H_2O(l)] = -286 \\text{ kJ/mol}$`,
             options: [
               "$-1368 \\text{ kJ}$",
               "$-954 \\text{ kJ}$",
@@ -4186,7 +4186,7 @@ Many chemical reactions are reversible, meaning reactants can form products (for
 
 A system reaches <vocab term="Dynamic Equilibrium" definition="A state in a reversible reaction where the rate of the forward reaction equals the rate of the reverse reaction, and concentrations remain constant.">dynamic equilibrium</vocab> when:
 
-$$\text{Rate of Forward Reaction} = \text{Rate of Reverse Reaction}$$
+$$\\text{Rate of Forward Reaction} = \\text{Rate of Reverse Reaction}$$
 
 At equilibrium, the concentrations of reactants and products remain **constant over time**, but the chemical reactions **do not stop** (it is dynamic, occurring at equal rates).
 
@@ -4216,20 +4216,20 @@ At equilibrium, the concentrations of reactants and products remain **constant o
 
 For a general reversible reaction:
 
-$$aA(aq) + bB(g) \rightleftharpoons cC(aq) + dD(g)$$
+$$aA(aq) + bB(g) \\rightleftharpoons cC(aq) + dD(g)$$
 
 The equilibrium constant expression ($K$) is written as:
 
-$$K_c = \frac{[C]^c [D]^d}{[A]^a [B]^b}$$
+$$K_c = \\frac{[C]^c [D]^d}{[A]^a [B]^b}$$
 
 ### Key Rules for Writing K Expressions:
 1. **Products over Reactants**: Raised to the power of their stoichiometric coefficients.
 2. **Exclude Pure Solids and Pure Liquids**: Their active concentrations are constant and do not appear in the expression (e.g., $H_2O(l)$, $CaCO_3(s)$).
 3. **Pressure Expressions** ($K_p$): For gas-phase reactions, use partial pressures ($P_i$) instead of concentrations:
-   $$K_p = \frac{(P_C)^c (P_D)^d}{(P_A)^a (P_B)^b}$$
+   $$K_p = \\frac{(P_C)^c (P_D)^d}{(P_A)^a (P_B)^b}$$
    The relationship between $K_p$ and $K_c$ is:
    $$K_p = K_c(RT)^{\\Delta n}$$
-   Where $\\Delta n$ is the change in moles of gas ($\text{moles of product gas} - \text{moles of reactant gas}$).
+   Where $\\Delta n$ is the change in moles of gas ($\\text{moles of product gas} - \\text{moles of reactant gas}$).
 
 ## Magnitude of K
 
@@ -4243,7 +4243,7 @@ $$K_c = \frac{[C]^c [D]^d}{[A]^a [B]^b}$$
 |---|---|
 | Reversing the reaction | Invert $K$ ($K' = 1/K$) |
 | Multiplying coefficients by factor $n$ | Raise $K$ to the power of $n$ ($K' = K^n$) |
-| Adding multiple reactions | Multiply the individual constants ($K' = K_1 \times K_2$) |
+| Adding multiple reactions | Multiply the individual constants ($K' = K_1 \\times K_2$) |
 `,
         questions: [
           {
@@ -4292,9 +4292,9 @@ $$K_c = \frac{[C]^c [D]^d}{[A]^a [B]^b}$$
             id: "q7.1.4",
             unitId: 7,
             text: `Given the reactions and their constants:
-1) $A \rightleftharpoons B \\quad K_1 = 2.0$
-2) $B \rightleftharpoons C \\quad K_2 = 4.0$
-What is the equilibrium constant for the reaction: $2A \rightleftharpoons 2C$?`,
+1) $A \\rightleftharpoons B \\quad K_1 = 2.0$
+2) $B \\rightleftharpoons C \\quad K_2 = 4.0$
+What is the equilibrium constant for the reaction: $2A \\rightleftharpoons 2C$?`,
             options: [
               "64.0",
               "6.0",
@@ -4420,15 +4420,15 @@ For equilibrium calculations, we set up an **ICE table** (Initial, Change, Equil
 
 ### Types of Stress and Shifts:
 1. **Concentration Changes**:
-   - Add a species $\rightarrow$ System shifts to **consume** it.
-   - Remove a species $\rightarrow$ System shifts to **replace** it.
+   - Add a species $\\rightarrow$ System shifts to **consume** it.
+   - Remove a species $\\rightarrow$ System shifts to **replace** it.
 2. **Volume / Pressure Changes (Gases)**:
-   - Decrease Volume (Increase Pressure) $\rightarrow$ System shifts toward the side with **fewer moles of gas** to reduce pressure.
-   - Increase Volume (Decrease Pressure) $\rightarrow$ System shifts toward the side with **more moles of gas**.
+   - Decrease Volume (Increase Pressure) $\\rightarrow$ System shifts toward the side with **fewer moles of gas** to reduce pressure.
+   - Increase Volume (Decrease Pressure) $\\rightarrow$ System shifts toward the side with **more moles of gas**.
 3. **Temperature Changes**:
    - Treats heat as a reactant (endothermic) or product (exothermic).
-   - Heating an endothermic reaction ($Heat + R \rightleftharpoons P$) shifts the reaction to the **right**, and **increases $K$**.
-   - Heating an exothermic reaction ($R \rightleftharpoons P + Heat$) shifts the reaction to the **left**, and **decreases $K$**.
+   - Heating an endothermic reaction ($Heat + R \\rightleftharpoons P$) shifts the reaction to the **right**, and **increases $K$**.
+   - Heating an exothermic reaction ($R \\rightleftharpoons P + Heat$) shifts the reaction to the **left**, and **decreases $K$**.
 4. **Catalysts and Inert Gases**:
    - Adding a catalyst does NOT shift equilibrium or change $K$ (it speeds up both rates equally).
    - Adding an inert gas (like Helium) at constant volume increases total pressure but does NOT change partial pressures of reactants, so it has **no effect** on equilibrium.
@@ -4615,7 +4615,7 @@ Slightly soluble ionic compounds set up a heterogeneous equilibrium between the 
 
 For a saturated solution of a slightly soluble salt:
 
-$$M_xX_y(s) \rightleftharpoons x M^{y+}(aq) + y X^{x-}(aq)$$
+$$M_xX_y(s) \\rightleftharpoons x M^{y+}(aq) + y X^{x-}(aq)$$
 
 The <vocab term="Solubility Product Constant" definition="The equilibrium constant for the dissolution of a slightly soluble ionic compound in water.">solubility product constant</vocab> ($K_{sp}$) expression is:
 
@@ -4624,16 +4624,16 @@ $$K_{sp} = [M^{y+}]^x [X^{x-}]^y$$
 Solid $M_xX_y$ is a pure solid and is **excluded** from the expression.
 
 ### Molar Solubility:
-The amount of salt (in moles) that dissolves to saturate $1 \text{ L}$ of solution.
-- For a $1:1$ salt like $AgCl(s) \rightleftharpoons Ag^+(aq) + Cl^-(aq)$:
-  $$K_{sp} = [s][s] = s^2 \rightarrow s = \\sqrt{K_{sp}}$$
-- For a $1:2$ salt like $CaF_2(s) \rightleftharpoons Ca^{2+}(aq) + 2F^-(aq)$:
-  $$K_{sp} = [s][2s]^2 = 4s^3 \rightarrow s = \\sqrt[3]{\frac{K_{sp}}{4}}$$
+The amount of salt (in moles) that dissolves to saturate $1 \\text{ L}$ of solution.
+- For a $1:1$ salt like $AgCl(s) \\rightleftharpoons Ag^+(aq) + Cl^-(aq)$:
+  $$K_{sp} = [s][s] = s^2 \\rightarrow s = \\sqrt{K_{sp}}$$
+- For a $1:2$ salt like $CaF_2(s) \\rightleftharpoons Ca^{2+}(aq) + 2F^-(aq)$:
+  $$K_{sp} = [s][2s]^2 = 4s^3 \\rightarrow s = \\sqrt[3]{\\frac{K_{sp}}{4}}$$
 
 ## The Common-Ion Effect
 
 According to Le Chatelier's Principle, adding a dissolved ion that is already present in the solubility equilibrium (a **common ion**) will shift the equilibrium to the **left**, causing precipitation and **decreasing the molar solubility** of the salt.
-- *Example*: The solubility of $AgCl$ is significantly lower in a $0.10 \text{ M } NaCl$ solution than in pure water, because the excess $Cl^-$ shifts $AgCl(s) \rightleftharpoons Ag^+ + Cl^-$ to the left.
+- *Example*: The solubility of $AgCl$ is significantly lower in a $0.10 \\text{ M } NaCl$ solution than in pure water, because the excess $Cl^-$ shifts $AgCl(s) \\rightleftharpoons Ag^+ + Cl^-$ to the left.
 
 <div class="flex justify-center my-8">
 <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
@@ -4681,7 +4681,7 @@ According to Le Chatelier's Principle, adding a dissolved ion that is already pr
 
 If a salt contains a **conjugate base of a weak acid** (e.g., $F^-$ from $HF$, $CO_3^{2-}$ from $H_2CO_3$, or $OH^-$), its solubility is pH-dependent:
 - **Adding Acid** (lowering pH) adds $H^+$ ions, which react with and consume the basic anion:
-  $$H^+(aq) + F^-(aq) \rightarrow HF(aq)$$
+  $$H^+(aq) + F^-(aq) \\rightarrow HF(aq)$$
 - This consumption of product shifts the solubility equilibrium to the **right**, **increasing the solubility** of the salt.
 - Salts containing anions of strong acids (like $Cl^-$ or $NO_3^-$) do not react with $H^+$ and are **unaffected by pH changes**.
 `,
@@ -4848,16 +4848,16 @@ Acids and bases are defined by proton transfer. The strength of an acid or base 
 
 Water undergoes self-ionization to a tiny extent:
 
-$$H_2O(l) + H_2O(l) \rightleftharpoons H_3O^+(aq) + OH^-(aq)$$
+$$H_2O(l) + H_2O(l) \\rightleftharpoons H_3O^+(aq) + OH^-(aq)$$
 
 The equilibrium constant is the **water ionization constant** ($K_w$):
 
-$$K_w = [H_3O^+][OH^-] = 1.0 \times 10^{-14} \\quad (\text{at } 25^\\circ\text{C})$$
+$$K_w = [H_3O^+][OH^-] = 1.0 \\times 10^{-14} \\quad (\\text{at } 25^\\circ\\text{C})$$
 
 Because this is an endothermic process, $K_w$ increases with temperature.
 - **pH**: $-\\log[H_3O^+]$
 - **pOH**: $-\\log[OH^-]$
-- **Relationship**: $\text{pH} + \text{pOH} = \text{p}K_w = 14.0 \\quad (\text{at } 25^\\circ\text{C})$
+- **Relationship**: $\\text{pH} + \\text{pOH} = \\text{p}K_w = 14.0 \\quad (\\text{at } 25^\\circ\\text{C})$
 
 <div class="flex justify-center my-8">
 <svg width="450" height="100" viewBox="0 0 450 100" class="max-w-full">
@@ -4889,27 +4889,27 @@ Because this is an endothermic process, $K_w$ increases with temperature.
 
 Strong acids and bases ionize $100\\%$ in water.
 - **Strong Acids**: $HCl, HBr, HI, HNO_3, H_2SO_4, HClO_4$.
-  - For a monoprotic strong acid, $[H_3O^+] = [\text{Acid}]_0$.
+  - For a monoprotic strong acid, $[H_3O^+] = [\\text{Acid}]_0$.
 - **Strong Bases**: Soluble metal hydroxides (Group 1 hydroxides and $Ca(OH)_2, Sr(OH)_2, Ba(OH)_2$).
-  - $[OH^-] = n \times [\text{Base}]_0$ (where $n$ is the number of hydroxide ions per formula unit).
+  - $[OH^-] = n \\times [\\text{Base}]_0$ (where $n$ is the number of hydroxide ions per formula unit).
 
 ## Weak Acids and Bases
 
 Weak acids and bases only partially ionize in water, setting up an equilibrium.
 
 - **Weak Acid Ionization**:
-  $$HA(aq) + H_2O(l) \rightleftharpoons H_3O^+(aq) + A^-(aq) \\quad K_a = \frac{[H_3O^+][A^-]}{[HA]}$$
+  $$HA(aq) + H_2O(l) \\rightleftharpoons H_3O^+(aq) + A^-(aq) \\quad K_a = \\frac{[H_3O^+][A^-]}{[HA]}$$
   To find pH, set up an ICE table, which simplifies to:
-  $$[H_3O^+] pprox \\sqrt{K_a [HA]_0} \\quad \text{(if } K_a \text{ is small relative to } [HA]_0\text{)}$$
+  $$[H_3O^+] pprox \\sqrt{K_a [HA]_0} \\quad \\text{(if } K_a \\text{ is small relative to } [HA]_0\\text{)}$$
 - **Weak Base Ionization**:
-  $$B(aq) + H_2O(l) \rightleftharpoons BH^+(aq) + OH^-(aq) \\quad K_b = \frac{[BH^+][OH^-]}{[B]}$$
+  $$B(aq) + H_2O(l) \\rightleftharpoons BH^+(aq) + OH^-(aq) \\quad K_b = \\frac{[BH^+][OH^-]}{[B]}$$
   $$[OH^-] pprox \\sqrt{K_b [B]_0}$$
 
 - **Conjugate Relationship**:
-  $$K_a \times K_b = K_w$$
+  $$K_a \\times K_b = K_w$$
 
 - **Percent Ionization**:
-  $$\\% \text{ Ionization} = \\left( \frac{[H_3O^+]_{\text{eq}}}{[HA]_0} \right) \times 100\\%$$
+  $$\\% \\text{ Ionization} = \\left( \\frac{[H_3O^+]_{\\text{eq}}}{[HA]_0} \\right) \\times 100\\%$$
   *Note*: As a weak acid solution is diluted, the percent ionization **increases** (due to Le Chatelier shifting the system toward more particles).
 `,
         questions: [
@@ -5068,12 +5068,12 @@ Neutralization reactions between acids and bases produce water and a salt. The p
 
 The net ionic equations for neutralization depend on the strengths of the reactants:
 1. **Strong Acid + Strong Base**:
-   $$H^+(aq) + OH^-(aq) \rightarrow H_2O(l) \\quad (\text{Equivalence Point pH } = 7)$$
+   $$H^+(aq) + OH^-(aq) \\rightarrow H_2O(l) \\quad (\\text{Equivalence Point pH } = 7)$$
 2. **Weak Acid + Strong Base**:
-   $$HA(aq) + OH^-(aq) \rightarrow A^-(aq) + H_2O(l) \\quad (\text{Equivalence Point pH } > 7)$$
+   $$HA(aq) + OH^-(aq) \\rightarrow A^-(aq) + H_2O(l) \\quad (\\text{Equivalence Point pH } > 7)$$
    The conjugate base ($A^-$) hydrolysis makes the solution basic at the equivalence point.
 3. **Strong Acid + Weak Base**:
-   $$H^+(aq) + B(aq) \rightarrow BH^+(aq) \\quad (\text{Equivalence Point pH } < 7)$$
+   $$H^+(aq) + B(aq) \\rightarrow BH^+(aq) \\quad (\\text{Equivalence Point pH } < 7)$$
    The conjugate acid ($BH^+$) hydrolysis makes the solution acidic.
 
 ## Analyzing Titration Curves
@@ -5120,7 +5120,7 @@ Below is the pH Titration Curve for a weak acid titrated with a strong base ($Na
 2. **Half-Equivalence Point**: The point at which exactly half of the weak acid has been neutralized.
    - At this point: $[HA] = [A^-]$
    - According to the Henderson-Hasselbalch equation:
-     $$\text{pH} = \text{p}K_a$$
+     $$\\text{pH} = \\text{p}K_a$$
    - This provides an experimental method to determine the $K_a$ of a weak acid.
 
 ## Molecular Structure and Acid Strength
@@ -5290,18 +5290,18 @@ A buffer solution resists changes in pH when small amounts of strong acid or str
 
 A buffer is composed of a **weak conjugate acid-base pair** (e.g., $HC_2H_3O_2$ and $NaC_2H_3O_2$).
 - **If strong base ($OH^-$) is added**: The weak acid component reacts to neutralize it:
-  $$HA(aq) + OH^-(aq) \rightarrow A^-(aq) + H_2O(l)$$
+  $$HA(aq) + OH^-(aq) \\rightarrow A^-(aq) + H_2O(l)$$
 - **If strong acid ($H^+$) is added**: The weak base component reacts to neutralize it:
-  $$A^-(aq) + H^+(aq) \rightarrow HA(aq)$$
+  $$A^-(aq) + H^+(aq) \\rightarrow HA(aq)$$
 
 ## The Henderson-Hasselbalch Equation
 
 The pH of a buffer solution can be calculated directly using the **Henderson-Hasselbalch equation**:
 
-$$\text{pH} = \text{p}K_a + \\log \\left( \frac{[A^-]}{[HA]} \right)$$
+$$\\text{pH} = \\text{p}K_a + \\log \\left( \\frac{[A^-]}{[HA]} \\right)$$
 
 ### Buffer Design:
-A buffer is most effective when the ratio of conjugate base to weak acid is close to 1 ($[A^-]/[HA] pprox 1$), which means $\text{pH} pprox \text{p}K_a$. Therefore, to design a buffer of a specific target pH, select a weak acid with a **$\text{p}K_a$ as close as possible to the target pH**.
+A buffer is most effective when the ratio of conjugate base to weak acid is close to 1 ($[A^-]/[HA] pprox 1$), which means $\\text{pH} pprox \\text{p}K_a$. Therefore, to design a buffer of a specific target pH, select a weak acid with a **$\\text{p}K_a$ as close as possible to the target pH**.
 
 <div class="flex justify-center my-8">
 <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
@@ -5329,7 +5329,7 @@ A buffer is most effective when the ratio of conjugate base to weak acid is clos
 ## Buffer Capacity
 
 <vocab term="Buffer Capacity" definition="The amount of acid or base a buffer can neutralize before its pH begins to change significantly.">Buffer capacity</vocab> is the measure of the buffer's ability to resist pH changes.
-- **High Concentrations**: A buffer with higher absolute concentrations of $HA$ and $A^-$ (e.g., $1.0 \text{ M}$ each) has a **higher buffer capacity** than a diluted buffer (e.g., $0.10 \text{ M}$ each), because it contains more moles of buffer components to neutralize added acid or base.
+- **High Concentrations**: A buffer with higher absolute concentrations of $HA$ and $A^-$ (e.g., $1.0 \\text{ M}$ each) has a **higher buffer capacity** than a diluted buffer (e.g., $0.10 \\text{ M}$ each), because it contains more moles of buffer components to neutralize added acid or base.
 `,
         questions: [
           {
@@ -5495,9 +5495,9 @@ Thermodynamic favorability determines whether a chemical or physical process can
 <vocab term="Entropy" definition="A measure of the dispersal of matter and energy in a system, associated with molecular disorder.">Entropy</vocab> ($S$) measures the dispersal of energy and matter in a system. The **Second Law of Thermodynamics** states that the entropy of the universe increases in any spontaneous process.
 
 - **Predicting the Sign of $\\Delta S$**:
-  - **Phase Changes**: $S_{\text{solid}} < S_{\text{liquid}} < S_{\text{gas}}$. Melting (fusion), vaporization, and sublimation have $\\Delta S > 0$.
+  - **Phase Changes**: $S_{\\text{solid}} < S_{\\text{liquid}} < S_{\\text{gas}}$. Melting (fusion), vaporization, and sublimation have $\\Delta S > 0$.
   - **Dissolution**: Dissolving a solid in water generally increases entropy ($\\Delta S > 0$).
-  - **Gas Moles**: If a reaction increases the number of gas molecules ($\\Delta n_{\text{gas}} > 0$), then $\\Delta S > 0$.
+  - **Gas Moles**: If a reaction increases the number of gas molecules ($\\Delta n_{\\text{gas}} > 0$), then $\\Delta S > 0$.
 
 <div class="flex justify-center my-8">
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
@@ -5741,22 +5741,22 @@ $$\\Delta G^\\circ = -RT \\ln K$$
 
 Where:
 - $\\Delta G^\\circ$ is the standard free energy change (typically converted to **Joules/mol** to match $R$).
-- $R$ is the gas constant ($8.314 \text{ J/(mol K)}$).
+- $R$ is the gas constant ($8.314 \\text{ J/(mol K)}$).
 - $T$ is the absolute temperature in **Kelvin**.
 - $K$ is the equilibrium constant ($K_c$ or $K_p$).
 
 ### Interpreting the Relationship:
-- **If $\\Delta G^\\circ < 0$**: The term $-RT \\ln K$ is negative, which means $\\ln K > 0 \rightarrow \\mathbf{K > 1}$. The products are favored at equilibrium.
-- **If $\\Delta G^\\circ > 0$**: The term $-RT \\ln K$ is positive, which means $\\ln K < 0 \rightarrow \\mathbf{K < 1}$. The reactants are favored at equilibrium.
+- **If $\\Delta G^\\circ < 0$**: The term $-RT \\ln K$ is negative, which means $\\ln K > 0 \\rightarrow \\mathbf{K > 1}$. The products are favored at equilibrium.
+- **If $\\Delta G^\\circ > 0$**: The term $-RT \\ln K$ is positive, which means $\\ln K < 0 \\rightarrow \\mathbf{K < 1}$. The reactants are favored at equilibrium.
 - **If $\\Delta G^\\circ = 0$**: The equilibrium constant is exactly $\\mathbf{K = 1}$.
 
 ## Coupled Reactions
 
 In biological and industrial systems, many essential reactions are thermodynamically unfavored ($\\Delta G^\\circ > 0$). To make these processes occur, they are **coupled** to a second, highly favored reaction ($\\Delta G^\\circ < 0$).
 
-- **Principle of Coupling**: Two reactions are coupled via a shared intermediate. The sum of the two reactions has a net **negative free energy** ($\\Delta G^\\circ_{\text{net}} < 0$), driving the overall process.
-- **Biological Example**: The phosphorylation of glucose (unfavored, $\\Delta G^\\circ pprox +14 \text{ kJ/mol}$) is coupled to the hydrolysis of ATP (highly favored, $\\Delta G^\\circ pprox -30.5 \text{ kJ/mol}$), yielding a net favored process:
-  $$\\Delta G^\\circ_{\text{net}} = +14 + (-30.5) = -16.5 \text{ kJ/mol}$$
+- **Principle of Coupling**: Two reactions are coupled via a shared intermediate. The sum of the two reactions has a net **negative free energy** ($\\Delta G^\\circ_{\\text{net}} < 0$), driving the overall process.
+- **Biological Example**: The phosphorylation of glucose (unfavored, $\\Delta G^\\circ pprox +14 \\text{ kJ/mol}$) is coupled to the hydrolysis of ATP (highly favored, $\\Delta G^\\circ pprox -30.5 \\text{ kJ/mol}$), yielding a net favored process:
+  $$\\Delta G^\\circ_{\\text{net}} = +14 + (-30.5) = -16.5 \\text{ kJ/mol}$$
 
 <div class="flex justify-center my-8">
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
@@ -5817,9 +5817,9 @@ In biological and industrial systems, many essential reactions are thermodynamic
             id: "q9.2.3",
             unitId: 9,
             text: `Consider the two reactions:
-1) $A \rightarrow B \\quad \\Delta G_1^\\circ = +20 \text{ kJ/mol}$
-2) $C \rightarrow D \\quad \\Delta G_2^\\circ = -35 \text{ kJ/mol}$
-If these two reactions are coupled, what is the net free energy change ($\\Delta G_{\text{net}}^\\circ$) of the coupled process, and is it thermodynamically favored?`,
+1) $A \\rightarrow B \\quad \\Delta G_1^\\circ = +20 \\text{ kJ/mol}$
+2) $C \\rightarrow D \\quad \\Delta G_2^\\circ = -35 \\text{ kJ/mol}$
+If these two reactions are coupled, what is the net free energy change ($\\Delta G_{\\text{net}}^\\circ$) of the coupled process, and is it thermodynamically favored?`,
             options: [
               "-15 \\text{ kJ/mol}$; favored",
               "$+55 \\text{ kJ/mol}$; unfavored",
@@ -5862,8 +5862,8 @@ If these two reactions are coupled, what is the net free energy change ($\\Delta
             id: "q9.2.6",
             unitId: 9,
             text: `A galvanic cell is constructed with a zinc electrode in $1.0 M$ $Zn(NO_3)_2$ and a copper electrode in $1.0 M$ $Cu(NO_3)_2$. Given the standard reduction potentials:
-$Zn^{2+} + 2e^- \rightarrow Zn \\quad E^\\circ = -0.76 \text{ V}$
-$Cu^{2+} + 2e^- \rightarrow Cu \\quad E^\\circ = +0.34 \text{ V}$
+$Zn^{2+} + 2e^- \\rightarrow Zn \\quad E^\\circ = -0.76 \\text{ V}$
+$Cu^{2+} + 2e^- \\rightarrow Cu \\quad E^\\circ = +0.34 \\text{ V}$
 What is the standard cell potential ($E^\\circ_{cell}$) for this galvanic cell?`,
             options: [
               "$+1.10 \\text{ V}$",
@@ -5944,8 +5944,8 @@ Electrochemistry deals with the interconversion of chemical energy and electrica
 
 ## Galvanic vs. Electrolytic Cells
 
-- **Galvanic Cells**: Driven by a **thermodynamically favored** redox reaction ($E^\\circ_{\text{cell}} > 0, \\Delta G^\\circ < 0$) to produce an electric current.
-- **Electrolytic Cells**: Driven by an external electrical source to force a **thermodynamically unfavored** redox reaction ($E^\\circ_{\text{cell}} < 0, \\Delta G^\\circ > 0$) to occur (e.g., electroplating).
+- **Galvanic Cells**: Driven by a **thermodynamically favored** redox reaction ($E^\\circ_{\\text{cell}} > 0, \\Delta G^\\circ < 0$) to produce an electric current.
+- **Electrolytic Cells**: Driven by an external electrical source to force a **thermodynamically unfavored** redox reaction ($E^\\circ_{\\text{cell}} < 0, \\Delta G^\\circ > 0$) to occur (e.g., electroplating).
 
 Below is the Vector Schematic of a Galvanic Cell ($Zn-Cu$ cell):
 
@@ -6001,25 +6001,25 @@ Below is the Vector Schematic of a Galvanic Cell ($Zn-Cu$ cell):
 
 ## Cell Potential and Free Energy
 
-The standard cell potential ($E^\\circ_{\text{cell}}$) is calculated from standard reduction potentials:
+The standard cell potential ($E^\\circ_{\\text{cell}}$) is calculated from standard reduction potentials:
 
-$$E^\\circ_{\text{cell}} = E^\\circ_{\text{reduction, cathode}} - E^\\circ_{\text{reduction, anode}}$$
+$$E^\\circ_{\\text{cell}} = E^\\circ_{\\text{reduction, cathode}} - E^\\circ_{\\text{reduction, anode}}$$
 
 The relationship between standard free energy and cell potential is:
 
-$$\\Delta G^\\circ = -nFE^\\circ_{\text{cell}}$$
+$$\\Delta G^\\circ = -nFE^\\circ_{\\text{cell}}$$
 
 Where:
 - $n$ is the moles of electrons transferred.
-- $F$ is Faraday's constant ($96485 \text{ C / mol } e^-$).
+- $F$ is Faraday's constant ($96485 \\text{ C / mol } e^-$).
 `,
         questions: [
           {
             id: "q9.3.1",
             unitId: 9,
-            text: `Calculate the standard cell potential ($E^\\circ_{\text{cell}}$) for a galvanic cell based on the half-reactions:
-$Ag^+(aq) + e^- \rightarrow Ag(s) \\quad E^\\circ = +0.80 \text{ V}$
-$Zn^{2+}(aq) + 2e^- \rightarrow Zn(s) \\quad E^\\circ = -0.76 \text{ V}$`,
+            text: `Calculate the standard cell potential ($E^\\circ_{\\text{cell}}$) for a galvanic cell based on the half-reactions:
+$Ag^+(aq) + e^- \\rightarrow Ag(s) \\quad E^\\circ = +0.80 \\text{ V}$
+$Zn^{2+}(aq) + 2e^- \\rightarrow Zn(s) \\quad E^\\circ = -0.76 \\text{ V}$`,
             options: [
               "+1.56 V",
               "+0.04 V",
@@ -6140,7 +6140,7 @@ $Zn^{2+}(aq) + 2e^- \rightarrow Zn(s) \\quad E^\\circ = -0.76 \text{ V}$`,
             ],
             correctIndex: 1,
             hint: "Consider the competing half-reactions of water. Water is easier to reduce than sodium ions, and chloride is easier to oxidize than water (due to overpotential).",
-            explanation: "In aqueous solution, there is competition at the electrodes. At the cathode, water ($E^\\circ_{red} = -0.83 \text{ V}$) is easier to reduce than $Na^+$ ($E^\\circ_{red} = -2.71 \text{ V}$), producing $H_2(g)$ and $OH^-$. At the anode, chloride ions are oxidized to $Cl_2(g)$ rather than water being oxidized to $O_2(g)$ due to kinetic overpotential. Thus, $H_2(g)$ and $Cl_2(g)$ are produced.",
+            explanation: "In aqueous solution, there is competition at the electrodes. At the cathode, water ($E^\\circ_{red} = -0.83 \\text{ V}$) is easier to reduce than $Na^+$ ($E^\\circ_{red} = -2.71 \\text{ V}$), producing $H_2(g)$ and $OH^-$. At the anode, chloride ions are oxidized to $Cl_2(g)$ rather than water being oxidized to $O_2(g)$ due to kinetic overpotential. Thus, $H_2(g)$ and $Cl_2(g)$ are produced.",
           },
           {
             id: "q9.3.10",

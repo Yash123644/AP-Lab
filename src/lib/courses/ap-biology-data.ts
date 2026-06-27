@@ -2371,7 +2371,7 @@ ATP consists of:
 - Three phosphate groups (alpha, beta, gamma)
 
 The key energy-releasing step:
-$$ATP + H_2O \rightarrow ADP + P_i \\quad \\Delta G = -7.3 \\text{ kcal/mol}$$
+$$ATP + H_2O \\rightarrow ADP + P_i \\quad \\Delta G = -7.3 \\text{ kcal/mol}$$
 
 This hydrolysis is coupled to cellular work:
 - **Mechanical work** - muscle contraction, ciliary movement
