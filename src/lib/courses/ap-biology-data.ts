@@ -40,7 +40,55 @@ export const apBiologyData: APBioUnit[] = [
 
 ## Structure of Water and Hydrogen Bonding
 
-![Water molecular structure showing polar covalent bonds and hydrogen bonding network](/images/biology/water_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="350" height="200" viewBox="0 0 350 200" class="max-w-full">
+    <!-- Water Molecule 1 (Top) -->
+    <g transform="translate(100, 30)">
+      <!-- Oxygen -->
+      <circle cx="50" cy="30" r="22" fill="#ef4444" />
+      <text x="50" y="34" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">O</text>
+      <text x="50" y="12" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">δ⁻</text>
+      
+      <!-- Hydrogens -->
+      <circle cx="20" cy="65" r="12" fill="#3b82f6" />
+      <text x="20" y="69" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">H</text>
+      <text x="10" y="82" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">δ⁺</text>
+      
+      <circle cx="80" cy="65" r="12" fill="#3b82f6" />
+      <text x="80" y="69" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">H</text>
+      <text x="90" y="82" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">δ⁺</text>
+      
+      <!-- Covalent bonds -->
+      <line x1="40" y1="42" x2="28" y2="56" stroke="#ffffff" stroke-width="3" />
+      <line x1="60" y1="42" x2="72" y2="56" stroke="#ffffff" stroke-width="3" />
+    </g>
+    
+    <!-- Hydrogen Bond (Dashed line) -->
+    <line x1="180" y1="95" x2="180" y2="135" stroke="#10b981" stroke-width="3" stroke-dasharray="6,6" />
+    <text x="195" y="120" fill="#10b981" font-size="10" font-weight="bold">Hydrogen Bond</text>
+    
+    <!-- Water Molecule 2 (Bottom) -->
+    <g transform="translate(100, 110)">
+      <!-- Oxygen -->
+      <circle cx="80" cy="45" r="22" fill="#ef4444" />
+      <text x="80" y="49" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">O</text>
+      <text x="95" y="32" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">δ⁻</text>
+      
+      <!-- Hydrogens -->
+      <circle cx="50" cy="80" r="12" fill="#3b82f6" />
+      <text x="50" y="84" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">H</text>
+      <text x="40" y="97" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">δ⁺</text>
+      
+      <circle cx="110" cy="80" r="12" fill="#3b82f6" />
+      <text x="110" y="84" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">H</text>
+      <text x="120" y="97" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">δ⁺</text>
+      
+      <!-- Covalent bonds -->
+      <line x1="70" y1="57" x2="58" y2="71" stroke="#ffffff" stroke-width="3" />
+      <line x1="90" y1="57" x2="102" y2="71" stroke="#ffffff" stroke-width="3" />
+    </g>
+  </svg>
+</div>
 
 Water ($H_2O$) is the **fundamental solvent of life**. Every chemical reaction in a living cell occurs in an aqueous environment, making water's unique properties essential to biology.
 
@@ -83,7 +131,35 @@ Water is an excellent <vocab term="Solvent" definition="The dissolving medium in
 
 ## Elements of Life
 
-![Biogeochemical cycling of carbon, nitrogen, and phosphorus](/images/biology/water_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="200" viewBox="0 0 400 200" class="max-w-full">
+    <!-- Atmosphere (Carbon) -->
+    <rect x="20" y="20" width="100" height="40" rx="4" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="70" y="44" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Atmospheric CO₂</text>
+    
+    <!-- Soil (Nitrogen and Phosphorus) -->
+    <rect x="250" y="130" width="130" height="50" rx="4" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="315" y="150" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Soil Ions: NO₃⁻, NH₄⁺</text>
+    <text x="315" y="168" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Phosphate: PO₄³⁻</text>
+    
+    <!-- Organism (Plant/Tree in center) -->
+    <path d="M 185 140 L 185 100 L 175 100 L 185 85 L 180 85 L 190 70 L 200 85 L 195 85 L 205 100 L 195 100 L 195 140 Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5" />
+    <text x="190" y="160" fill="#22c55e" font-size="11" font-weight="bold" text-anchor="middle">Producers (Plants)</text>
+    
+    <!-- Absorption Arrows -->
+    <path d="M 70 65 L 140 100" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#bio-cycle-arrow)" />
+    <text x="85" y="90" fill="#22c55e" font-size="9" font-weight="bold">Carbon Fixation</text>
+    
+    <path d="M 280 130 L 210 110" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#bio-cycle-arrow)" />
+    <text x="260" y="105" fill="#22c55e" font-size="9" font-weight="bold">Assimilation</text>
+    
+    <defs>
+      <marker id="bio-cycle-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#22c55e" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Living organisms are built from a select set of chemical elements. Although over 90 elements occur naturally, life uses roughly 25, with just four dominating biological molecules.
 
@@ -215,7 +291,42 @@ Elements cycle through the biosphere via biogeochemical cycles:
 
 ## Introduction to Biological Macromolecules
 
-![Monomer polymer relationships and dehydration synthesis / hydrolysis reactions](/images/biology/enzyme_structure.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <!-- Monomer 1 -->
+    <rect x="20" y="45" width="80" height="40" rx="6" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="60" y="68" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Monomer 1</text>
+    <text x="95" y="68" fill="#ef4444" font-size="10" font-weight="bold">-OH</text>
+    
+    <!-- Plus Sign -->
+    <text x="120" y="70" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">+</text>
+    
+    <!-- Monomer 2 -->
+    <text x="135" y="68" fill="#3b82f6" font-size="10" font-weight="bold">H-</text>
+    <rect x="150" y="45" width="80" height="40" rx="6" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="190" y="68" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Monomer 2</text>
+    
+    <!-- Forward Arrow (Dehydration) -->
+    <path d="M 245 55 L 295 55" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#dimer-arrow)" />
+    <text x="270" y="47" fill="#22c55e" font-size="8" font-weight="bold" text-anchor="middle">- H₂O</text>
+    
+    <!-- Reverse Arrow (Hydrolysis) -->
+    <path d="M 295 75 L 245 75" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#dimer-arrow)" />
+    <text x="270" y="90" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">+ H₂O</text>
+    
+    <!-- Dimer Product -->
+    <g transform="translate(315, 45)">
+      <rect x="0" y="0" width="110" height="40" rx="6" fill="rgba(16, 185, 129, 0.1)" stroke="#10b981" stroke-width="1.5" />
+      <text x="55" y="23" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Dimer</text>
+    </g>
+    
+    <defs>
+      <marker id="dimer-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Biological macromolecules are large, complex molecules essential for life. They are built from smaller organic subunits called monomers, which are linked together to form polymers.
 
@@ -261,7 +372,54 @@ Each class of macromolecules uses specific covalent bonds to link monomers:
 
 ## Properties of Biological Macromolecules
 
-![Structure of the four primary classes of biological macromolecules](/images/biology/enzyme_structure.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <!-- Carbohydrate (Hexagon) -->
+    <g transform="translate(10, 10)">
+      <polygon points="40,25 65,40 65,70 40,85 15,70 15,40" fill="none" stroke="#60a5fa" stroke-width="2" />
+      <text x="40" y="110" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Carbohydrate (Ring)</text>
+    </g>
+    
+    <!-- Lipid (Glycerol + 3 tails) -->
+    <g transform="translate(120, 10)">
+      <!-- Glycerol backbone -->
+      <line x1="20" y1="30" x2="20" y2="80" stroke="#f59e0b" stroke-width="3" />
+      <!-- Fatty acid tails -->
+      <path d="M 20 35 L 75 35 L 85 45 L 95 35" fill="none" stroke="#f59e0b" stroke-width="2" />
+      <path d="M 20 55 L 75 55 L 85 65 L 95 55" fill="none" stroke="#f59e0b" stroke-width="2" />
+      <path d="M 20 75 L 75 75 L 85 85 L 95 75" fill="none" stroke="#f59e0b" stroke-width="2" />
+      <text x="50" y="110" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Lipid (Triglyceride)</text>
+    </g>
+    
+    <!-- Protein (Amino acid skeleton) -->
+    <g transform="translate(230, 10)">
+      <rect x="15" y="35" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="1.5" />
+      <text x="25" y="48" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">N</text>
+      <line x1="35" y1="45" x2="50" y2="45" stroke="#ffffff" stroke-width="2" />
+      <circle cx="60" cy="45" r="10" fill="none" stroke="#ffffff" stroke-width="1.5" />
+      <text x="60" y="48" fill="#ffffff" font-size="8" text-anchor="middle">C</text>
+      <line x1="70" y1="45" x2="85" y2="45" stroke="#ef4444" stroke-width="2" />
+      <rect x="85" y="35" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="1.5" />
+      <text x="95" y="48" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">C</text>
+      <text x="60" y="110" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Protein (Amino Acid)</text>
+    </g>
+    
+    <!-- Nucleic Acid (Nucleotide) -->
+    <g transform="translate(340, 10)">
+      <!-- Phosphate -->
+      <circle cx="20" cy="35" r="10" fill="none" stroke="#10b981" stroke-width="1.5" />
+      <text x="20" y="38" fill="#10b981" font-size="8" font-weight="bold" text-anchor="middle">P</text>
+      <!-- Pentose sugar (Pentagon) -->
+      <polygon points="45,45 60,35 75,45 68,65 52,65" fill="none" stroke="#ffffff" stroke-width="1.5" />
+      <!-- Base -->
+      <rect x="80" y="35" width="22" height="18" rx="2" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+      <text x="91" y="47" fill="#3b82f6" font-size="8" font-weight="bold" text-anchor="middle">B</text>
+      <line x1="30" y1="35" x2="45" y2="40" stroke="#ffffff" stroke-width="1.5" />
+      <line x1="75" y1="45" x2="80" y2="45" stroke="#ffffff" stroke-width="1.5" />
+      <text x="60" y="110" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Nucleic Acid</text>
+    </g>
+  </svg>
+</div>
 
 The structural properties of biological macromolecules dictate their function. The four primary classes of macromolecules are carbohydrates, lipids, proteins, and nucleic acids.
 
@@ -393,7 +551,60 @@ Nucleic acids (DNA and RNA) are polymers of nucleotides. They store, transmit, a
 
 ## Structure of Nucleic Acids
 
-![Structure of DNA and RNA double helix and directionality](/images/biology/dna_replication.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <!-- Left Side: DNA Double Helix -->
+    <g transform="translate(20, 10)">
+      <text x="80" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">DNA (Double-Stranded)</text>
+      <!-- Strands -->
+      <path d="M 30 30 Q 55 120, 80 30 T 130 30" fill="none" stroke="#60a5fa" stroke-width="2.5" />
+      <path d="M 30 110 Q 55 20, 80 110 T 130 110" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+      
+      <!-- Base pairs -->
+      <line x1="42" y1="55" x2="42" y2="85" stroke="#ef4444" stroke-width="1.5" />
+      <line x1="55" y1="70" x2="55" y2="70" stroke="#10b981" stroke-width="1.5" />
+      <line x1="68" y1="55" x2="68" y2="85" stroke="#3b82f6" stroke-width="1.5" />
+      
+      <line x1="92" y1="85" x2="92" y2="55" stroke="#ef4444" stroke-width="1.5" />
+      <line x1="105" y1="70" x2="105" y2="70" stroke="#10b981" stroke-width="1.5" />
+      <line x1="118" y1="85" x2="118" y2="55" stroke="#3b82f6" stroke-width="1.5" />
+      
+      <!-- Directionality labels -->
+      <text x="20" y="30" fill="#60a5fa" font-size="9" font-weight="bold">5'</text>
+      <text x="140" y="30" fill="#60a5fa" font-size="9" font-weight="bold">3'</text>
+      <text x="20" y="115" fill="#f59e0b" font-size="9" font-weight="bold">3'</text>
+      <text x="140" y="115" fill="#f59e0b" font-size="9" font-weight="bold">5'</text>
+      <text x="80" y="150" fill="#a1a1aa" font-size="9" text-anchor="middle">Antiparallel Strands</text>
+    </g>
+    
+    <!-- Vertical separator -->
+    <line x1="220" y1="20" x2="220" y2="170" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    
+    <!-- Right Side: RNA Single Strand -->
+    <g transform="translate(250, 10)">
+      <text x="80" y="15" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">RNA (Single-Stranded)</text>
+      <!-- Single Strand -->
+      <path d="M 50 30 Q 75 120, 100 30 T 150 30" fill="none" stroke="#10b981" stroke-width="2.5" />
+      
+      <!-- Exposed Bases -->
+      <line x1="62" y1="55" x2="80" y2="55" stroke="#ef4444" stroke-width="2" />
+      <circle cx="80" cy="55" r="3" fill="#ef4444" />
+      
+      <line x1="75" y1="70" x2="95" y2="70" stroke="#3b82f6" stroke-width="2" />
+      <circle cx="95" cy="70" r="3" fill="#3b82f6" />
+      
+      <line x1="88" y1="55" x2="105" y2="55" stroke="#f59e0b" stroke-width="2" />
+      <circle cx="105" cy="55" r="3" fill="#f59e0b" />
+      
+      <line x1="112" y1="35" x2="130" y2="35" stroke="#8b5cf6" stroke-width="2" />
+      <circle cx="130" cy="35" r="3" fill="#8b5cf6" />
+      
+      <text x="40" y="30" fill="#10b981" font-size="9" font-weight="bold">5'</text>
+      <text x="160" y="30" fill="#10b981" font-size="9" font-weight="bold">3'</text>
+      <text x="80" y="150" fill="#a1a1aa" font-size="9" text-anchor="middle">Single Ribose-Phosphate Backbone</text>
+    </g>
+  </svg>
+</div>
 
 Nucleic acids are the molecular blueprints of life. The two primary types of nucleic acids are deoxyribonucleic acid (DNA) and ribonucleic acid (RNA).
 
@@ -539,7 +750,38 @@ DNA consists of two strands wrapped in a double helix:
 
 ## Cell Structure: Subcellular Components
 
-![Eukaryotic cell structure showing major organelles and subcellular components](/images/biology/endomembrane_system.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="280" viewBox="0 0 400 280" class="max-w-full">
+    <!-- Outer Membrane -->
+    <circle cx="200" cy="140" r="110" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="3" />
+    <text x="200" y="270" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Eukaryotic Cell Compartments</text>
+    
+    <!-- Nucleus -->
+    <circle cx="160" cy="120" r="35" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="2" />
+    <text x="160" y="124" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Nucleus</text>
+    
+    <!-- Rough ER -->
+    <path d="M 125 120 Q 95 110, 110 90 T 130 75" fill="none" stroke="#f59e0b" stroke-width="3" />
+    <circle cx="115" cy="105" r="2" fill="#ef4444" />
+    <circle cx="108" cy="95" r="2" fill="#ef4444" />
+    <circle cx="120" cy="85" r="2" fill="#ef4444" />
+    <text x="95" y="80" fill="#f59e0b" font-size="8" font-weight="bold">Rough ER (Ribosomes)</text>
+    
+    <!-- Golgi Apparatus -->
+    <path d="M 220 90 C 240 90, 240 100, 220 100" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 215 105 C 245 105, 245 115, 215 115" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 220 120 C 240 120, 240 130, 220 130" fill="none" stroke="#10b981" stroke-width="3" />
+    <text x="260" y="112" fill="#10b981" font-size="8" font-weight="bold">Golgi Body</text>
+    
+    <!-- Vesicle transport -->
+    <path d="M 195 125 L 210 125" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2" />
+    
+    <!-- Mitochondrion -->
+    <ellipse cx="230" cy="180" rx="25" ry="15" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 212 180 Q 220 170, 230 180 T 248 180" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="230" y="210" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">Mitochondria</text>
+  </svg>
+</div>
 
 Cells are the basic structural and functional units of all living organisms. Eukaryotic cells are characterized by internal compartmentalization, containing distinct membrane-bound organelles that coordinate cellular activities.
 
@@ -582,7 +824,38 @@ Mitochondria and chloroplasts specialize in energy conversion:
 
 ## Cell Structure and Function
 
-![Endomembrane system showing protein secretory pathway from nucleus to plasma membrane](/images/biology/endomembrane_system.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="280" viewBox="0 0 400 280" class="max-w-full">
+    <!-- Outer Membrane -->
+    <circle cx="200" cy="140" r="110" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="3" />
+    <text x="200" y="270" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Eukaryotic Cell Compartments</text>
+    
+    <!-- Nucleus -->
+    <circle cx="160" cy="120" r="35" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="2" />
+    <text x="160" y="124" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Nucleus</text>
+    
+    <!-- Rough ER -->
+    <path d="M 125 120 Q 95 110, 110 90 T 130 75" fill="none" stroke="#f59e0b" stroke-width="3" />
+    <circle cx="115" cy="105" r="2" fill="#ef4444" />
+    <circle cx="108" cy="95" r="2" fill="#ef4444" />
+    <circle cx="120" cy="85" r="2" fill="#ef4444" />
+    <text x="95" y="80" fill="#f59e0b" font-size="8" font-weight="bold">Rough ER (Ribosomes)</text>
+    
+    <!-- Golgi Apparatus -->
+    <path d="M 220 90 C 240 90, 240 100, 220 100" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 215 105 C 245 105, 245 115, 215 115" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 220 120 C 240 120, 240 130, 220 130" fill="none" stroke="#10b981" stroke-width="3" />
+    <text x="260" y="112" fill="#10b981" font-size="8" font-weight="bold">Golgi Body</text>
+    
+    <!-- Vesicle transport -->
+    <path d="M 195 125 L 210 125" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2" />
+    
+    <!-- Mitochondrion -->
+    <ellipse cx="230" cy="180" rx="25" ry="15" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 212 180 Q 220 170, 230 180 T 248 180" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="230" y="210" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">Mitochondria</text>
+  </svg>
+</div>
 
 The <vocab term="Endomembrane System" definition="A network of membrane-bound organelles in eukaryotic cells including the ER, Golgi, and vesicles that coordinate protein synthesis, modification, and secretion.">endomembrane system</vocab> and energy organelles work cooperatively to sustain all cellular activities.
 
@@ -634,7 +907,26 @@ The Golgi cisternae receive, modify, and redistribute cargo. <vocab term="Glycos
 
 ## Cell Size
 
-![Cell size comparison diagram showing prokaryotic and eukaryotic cells at different scales](/images/biology/cell_size_comparison.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="200" viewBox="0 0 400 200" class="max-w-full">
+    <!-- Eukaryotic Cell -->
+    <rect x="20" y="20" width="150" height="150" rx="8" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="2" />
+    <text x="95" y="90" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle">Eukaryotic Cell</text>
+    <text x="95" y="110" fill="#a1a1aa" font-size="9" text-anchor="middle">10 - 100 μm</text>
+    
+    <!-- Prokaryotic Cell -->
+    <rect x="200" y="50" width="70" height="40" rx="20" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" />
+    <text x="235" y="70" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">Bacterium</text>
+    <text x="235" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">1 - 5 μm</text>
+    
+    <!-- Virus -->
+    <polygon points="330,65 340,70 340,80 330,85 320,80 320,70" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1.5" />
+    <text x="330" y="105" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">Virus</text>
+    <text x="330" y="120" fill="#a1a1aa" font-size="8" text-anchor="middle">20 - 400 nm</text>
+    
+    <text x="200" y="160" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Cell Size Scale (Not to scale)</text>
+  </svg>
+</div>
 
 Cell size is fundamentally constrained by the <vocab term="Surface Area-to-Volume Ratio" definition="The ratio of a cell's surface area to its volume; as cells grow, volume increases faster than surface area, reducing exchange efficiency.">surface area-to-volume (SA:V) ratio</vocab>. This mathematical relationship determines whether diffusion can adequately supply nutrients and remove wastes from the cell interior.
 
@@ -794,7 +1086,42 @@ Doubling cell radius quadruples the time for nutrients to reach the center. Cell
 
 ## Plasma Membranes
 
-![Fluid mosaic model of the plasma membrane structure and selective permeability](/images/biology/membrane_transport.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full">
+    <!-- Phospholipid bilayer -->
+    <circle cx="30" cy="60" r="6" fill="#60a5fa" /><line x1="30" y1="66" x2="27" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="66" x2="33" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="60" r="6" fill="#60a5fa" /><line x1="50" y1="66" x2="47" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="66" x2="53" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="60" r="6" fill="#60a5fa" /><line x1="70" y1="66" x2="67" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="66" x2="73" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Channel Protein -->
+    <rect x="90" y="45" width="40" height="90" rx="8" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2" />
+    <path d="M 110 30 L 110 150" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="110" y="25" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Channel</text>
+    
+    <!-- Phospholipids -->
+    <circle cx="150" cy="60" r="6" fill="#60a5fa" /><line x1="150" y1="66" x2="147" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="66" x2="153" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="60" r="6" fill="#60a5fa" /><line x1="170" y1="66" x2="167" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="66" x2="173" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Active Pump -->
+    <rect x="190" y="45" width="50" height="90" rx="8" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 215 150 L 215 30" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="215" y="25" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Active Pump</text>
+    <text x="250" y="155" fill="#f59e0b" font-size="8" font-weight="bold">Requires ATP</text>
+    
+    <!-- Phospholipids Bottom -->
+    <circle cx="30" cy="120" r="6" fill="#60a5fa" /><line x1="30" y1="114" x2="27" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="114" x2="33" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="120" r="6" fill="#60a5fa" /><line x1="50" y1="114" x2="47" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="114" x2="53" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="120" r="6" fill="#60a5fa" /><line x1="70" y1="114" x2="67" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="114" x2="73" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="150" cy="120" r="6" fill="#60a5fa" /><line x1="150" y1="114" x2="147" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="114" x2="153" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="120" r="6" fill="#60a5fa" /><line x1="170" y1="114" x2="167" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="114" x2="173" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <defs>
+      <marker id="mem-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 The plasma membrane is the selectively permeable barrier that separates the interior of a cell from its environment, controlling all traffic of materials in and out.
 
@@ -846,7 +1173,42 @@ The membrane's structure determines what can cross:
 
 ## Membrane Transport
 
-![Membrane transport mechanisms diagram showing simple diffusion, facilitated diffusion with channels and carriers, and active transport](/images/biology/membrane_transport.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full">
+    <!-- Phospholipid bilayer -->
+    <circle cx="30" cy="60" r="6" fill="#60a5fa" /><line x1="30" y1="66" x2="27" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="66" x2="33" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="60" r="6" fill="#60a5fa" /><line x1="50" y1="66" x2="47" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="66" x2="53" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="60" r="6" fill="#60a5fa" /><line x1="70" y1="66" x2="67" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="66" x2="73" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Channel Protein -->
+    <rect x="90" y="45" width="40" height="90" rx="8" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2" />
+    <path d="M 110 30 L 110 150" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="110" y="25" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Channel</text>
+    
+    <!-- Phospholipids -->
+    <circle cx="150" cy="60" r="6" fill="#60a5fa" /><line x1="150" y1="66" x2="147" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="66" x2="153" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="60" r="6" fill="#60a5fa" /><line x1="170" y1="66" x2="167" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="66" x2="173" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Active Pump -->
+    <rect x="190" y="45" width="50" height="90" rx="8" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 215 150 L 215 30" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="215" y="25" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Active Pump</text>
+    <text x="250" y="155" fill="#f59e0b" font-size="8" font-weight="bold">Requires ATP</text>
+    
+    <!-- Phospholipids Bottom -->
+    <circle cx="30" cy="120" r="6" fill="#60a5fa" /><line x1="30" y1="114" x2="27" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="114" x2="33" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="120" r="6" fill="#60a5fa" /><line x1="50" y1="114" x2="47" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="114" x2="53" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="120" r="6" fill="#60a5fa" /><line x1="70" y1="114" x2="67" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="114" x2="73" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="150" cy="120" r="6" fill="#60a5fa" /><line x1="150" y1="114" x2="147" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="114" x2="153" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="120" r="6" fill="#60a5fa" /><line x1="170" y1="114" x2="167" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="114" x2="173" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <defs>
+      <marker id="mem-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 The <vocab term="Selective Permeability" definition="The property of cell membranes allowing certain substances to cross while restricting others; maintains distinct intracellular chemical environments.">selectively permeable</vocab> plasma membrane governs all traffic into and out of the cell. Transport is categorized as passive (no ATP) or active (requires ATP).
 
@@ -917,7 +1279,42 @@ Vesicles fuse with plasma membrane; contents released outside cell:
 
 ## Facilitated Diffusion
 
-![Membrane transport diagram highlighting channel and carrier protein mechanisms for passive facilitated diffusion](/images/biology/membrane_transport.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full">
+    <!-- Phospholipid bilayer -->
+    <circle cx="30" cy="60" r="6" fill="#60a5fa" /><line x1="30" y1="66" x2="27" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="66" x2="33" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="60" r="6" fill="#60a5fa" /><line x1="50" y1="66" x2="47" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="66" x2="53" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="60" r="6" fill="#60a5fa" /><line x1="70" y1="66" x2="67" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="66" x2="73" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Channel Protein -->
+    <rect x="90" y="45" width="40" height="90" rx="8" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2" />
+    <path d="M 110 30 L 110 150" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="110" y="25" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Channel</text>
+    
+    <!-- Phospholipids -->
+    <circle cx="150" cy="60" r="6" fill="#60a5fa" /><line x1="150" y1="66" x2="147" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="66" x2="153" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="60" r="6" fill="#60a5fa" /><line x1="170" y1="66" x2="167" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="66" x2="173" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Active Pump -->
+    <rect x="190" y="45" width="50" height="90" rx="8" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 215 150 L 215 30" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="215" y="25" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Active Pump</text>
+    <text x="250" y="155" fill="#f59e0b" font-size="8" font-weight="bold">Requires ATP</text>
+    
+    <!-- Phospholipids Bottom -->
+    <circle cx="30" cy="120" r="6" fill="#60a5fa" /><line x1="30" y1="114" x2="27" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="114" x2="33" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="120" r="6" fill="#60a5fa" /><line x1="50" y1="114" x2="47" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="114" x2="53" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="120" r="6" fill="#60a5fa" /><line x1="70" y1="114" x2="67" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="114" x2="73" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="150" cy="120" r="6" fill="#60a5fa" /><line x1="150" y1="114" x2="147" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="114" x2="153" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="120" r="6" fill="#60a5fa" /><line x1="170" y1="114" x2="167" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="114" x2="173" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <defs>
+      <marker id="mem-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Facilitated Diffusion" definition="Passive transport using integral membrane proteins (channels or carriers) to move molecules down their concentration gradient across the membrane; requires no ATP.">Facilitated diffusion</vocab> is passive — no ATP required — but uses specialized membrane proteins for molecules that cannot cross the hydrophobic bilayer unassisted.
 
@@ -994,7 +1391,42 @@ A common AP exam challenge:
 
 ## Mechanisms of Transport
 
-![Membrane transport mechanisms including bulk transport, endocytosis and exocytosis](/images/biology/membrane_transport.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full">
+    <!-- Phospholipid bilayer -->
+    <circle cx="30" cy="60" r="6" fill="#60a5fa" /><line x1="30" y1="66" x2="27" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="66" x2="33" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="60" r="6" fill="#60a5fa" /><line x1="50" y1="66" x2="47" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="66" x2="53" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="60" r="6" fill="#60a5fa" /><line x1="70" y1="66" x2="67" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="66" x2="73" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Channel Protein -->
+    <rect x="90" y="45" width="40" height="90" rx="8" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2" />
+    <path d="M 110 30 L 110 150" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="110" y="25" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Channel</text>
+    
+    <!-- Phospholipids -->
+    <circle cx="150" cy="60" r="6" fill="#60a5fa" /><line x1="150" y1="66" x2="147" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="66" x2="153" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="60" r="6" fill="#60a5fa" /><line x1="170" y1="66" x2="167" y2="85" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="66" x2="173" y2="85" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <!-- Active Pump -->
+    <rect x="190" y="45" width="50" height="90" rx="8" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 215 150 L 215 30" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#mem-arrow)" />
+    <text x="215" y="25" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Active Pump</text>
+    <text x="250" y="155" fill="#f59e0b" font-size="8" font-weight="bold">Requires ATP</text>
+    
+    <!-- Phospholipids Bottom -->
+    <circle cx="30" cy="120" r="6" fill="#60a5fa" /><line x1="30" y1="114" x2="27" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="30" y1="114" x2="33" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="50" cy="120" r="6" fill="#60a5fa" /><line x1="50" y1="114" x2="47" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="50" y1="114" x2="53" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="70" cy="120" r="6" fill="#60a5fa" /><line x1="70" y1="114" x2="67" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="70" y1="114" x2="73" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="150" cy="120" r="6" fill="#60a5fa" /><line x1="150" y1="114" x2="147" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="150" y1="114" x2="153" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    <circle cx="170" cy="120" r="6" fill="#60a5fa" /><line x1="170" y1="114" x2="167" y2="95" stroke="#a1a1aa" stroke-width="1.5" /><line x1="170" y1="114" x2="173" y2="95" stroke="#a1a1aa" stroke-width="1.5" />
+    
+    <defs>
+      <marker id="mem-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Transport across the plasma membrane encompasses passive diffusion, protein-mediated transport, and bulk membrane-enclosed movement. Understanding which mechanism is used depends on the molecule's size, polarity, and whether it moves with or against its gradient.
 
@@ -1166,7 +1598,40 @@ Three types of <vocab term="Endocytosis" definition="Bulk transport INTO the cel
 
 ## Tonicity and Osmoregulation
 
-![Tonicity diagram showing animal and plant cell responses to hypotonic, isotonic, and hypertonic solutions](/images/biology/tonicity_osmosis.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <!-- Hypotonic -->
+    <g transform="translate(10, 10)">
+      <rect x="0" y="20" width="100" height="80" rx="4" fill="rgba(255,255,255,0.01)" stroke="#a1a1aa" />
+      <circle cx="50" cy="60" r="22" fill="#22c55e" opacity="0.3" stroke="#22c55e" stroke-width="2" />
+      <text x="50" y="63" fill="#ffffff" font-size="8" text-anchor="middle">Swollen/Lysed</text>
+      <text x="50" y="115" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Hypotonic (H₂O In)</text>
+      <path d="M 10 60 Q 30 60, 40 60" fill="none" stroke="#60a5fa" stroke-width="2" marker-end="url(#ton-arrow)" />
+    </g>
+    <!-- Isotonic -->
+    <g transform="translate(160, 10)">
+      <rect x="0" y="20" width="100" height="80" rx="4" fill="rgba(255,255,255,0.01)" stroke="#a1a1aa" />
+      <circle cx="50" cy="60" r="18" fill="#3b82f6" opacity="0.3" stroke="#3b82f6" stroke-width="2" />
+      <text x="50" y="63" fill="#ffffff" font-size="8" text-anchor="middle">Normal</text>
+      <text x="50" y="115" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Isotonic (No Net)</text>
+      <path d="M 10 50 Q 30 50, 45 50" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#ton-arrow)" />
+      <path d="M 55 70 Q 70 70, 90 70" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#ton-arrow)" />
+    </g>
+    <!-- Hypertonic -->
+    <g transform="translate(310, 10)">
+      <rect x="0" y="20" width="100" height="80" rx="4" fill="rgba(255,255,255,0.01)" stroke="#a1a1aa" />
+      <path d="M 35 48 C 45 42, 55 42, 65 48 C 75 58, 65 72, 50 78 C 35 72, 25 58, 35 48" fill="#ef4444" opacity="0.3" stroke="#ef4444" stroke-width="2" />
+      <text x="50" y="63" fill="#ffffff" font-size="8" text-anchor="middle">Shriveled</text>
+      <text x="50" y="115" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Hypertonic (H₂O Out)</text>
+      <path d="M 50 60 Q 70 60, 90 60" fill="none" stroke="#60a5fa" stroke-width="2" marker-end="url(#ton-arrow)" />
+    </g>
+    <defs>
+      <marker id="ton-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Tonicity" definition="The ability of an extracellular solution to cause osmotic water movement across a cell membrane relative to the cell's internal solute concentration.">Tonicity</vocab> describes how a surrounding solution affects cell volume via osmosis. Three conditions exist: hypertonic, isotonic, and hypotonic.
 
@@ -1230,7 +1695,38 @@ Organisms maintain internal osmolarity against environmental gradients:
 
 ## Cell Compartmentalization
 
-![Endomembrane system showing compartmentalization of cellular processes](/images/biology/endomembrane_system.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="280" viewBox="0 0 400 280" class="max-w-full">
+    <!-- Outer Membrane -->
+    <circle cx="200" cy="140" r="110" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="3" />
+    <text x="200" y="270" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Eukaryotic Cell Compartments</text>
+    
+    <!-- Nucleus -->
+    <circle cx="160" cy="120" r="35" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="2" />
+    <text x="160" y="124" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Nucleus</text>
+    
+    <!-- Rough ER -->
+    <path d="M 125 120 Q 95 110, 110 90 T 130 75" fill="none" stroke="#f59e0b" stroke-width="3" />
+    <circle cx="115" cy="105" r="2" fill="#ef4444" />
+    <circle cx="108" cy="95" r="2" fill="#ef4444" />
+    <circle cx="120" cy="85" r="2" fill="#ef4444" />
+    <text x="95" y="80" fill="#f59e0b" font-size="8" font-weight="bold">Rough ER (Ribosomes)</text>
+    
+    <!-- Golgi Apparatus -->
+    <path d="M 220 90 C 240 90, 240 100, 220 100" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 215 105 C 245 105, 245 115, 215 115" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 220 120 C 240 120, 240 130, 220 130" fill="none" stroke="#10b981" stroke-width="3" />
+    <text x="260" y="112" fill="#10b981" font-size="8" font-weight="bold">Golgi Body</text>
+    
+    <!-- Vesicle transport -->
+    <path d="M 195 125 L 210 125" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2" />
+    
+    <!-- Mitochondrion -->
+    <ellipse cx="230" cy="180" rx="25" ry="15" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 212 180 Q 220 170, 230 180 T 248 180" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="230" y="210" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">Mitochondria</text>
+  </svg>
+</div>
 
 <vocab term="Compartmentalization" definition="The organization of eukaryotic cells into membrane-bound compartments (organelles), each with a distinct chemical environment that allows specialized biochemical reactions to occur simultaneously without interference.">Compartmentalization</vocab> is one of the defining features of eukaryotic cells. By dividing the cell into membrane-enclosed compartments, different chemical conditions (pH, ion concentrations, enzyme activities) can be maintained simultaneously in the same cell.
 
@@ -1309,7 +1805,26 @@ The nuclear envelope creates a crucial compartment separating transcription (in 
 
 ## Origins of Cell Compartmentalization
 
-![Cell structure diagram showing mitochondria and chloroplasts with prokaryotic features](/images/biology/cell_size_comparison.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="200" viewBox="0 0 400 200" class="max-w-full">
+    <!-- Eukaryotic Cell -->
+    <rect x="20" y="20" width="150" height="150" rx="8" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="2" />
+    <text x="95" y="90" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle">Eukaryotic Cell</text>
+    <text x="95" y="110" fill="#a1a1aa" font-size="9" text-anchor="middle">10 - 100 μm</text>
+    
+    <!-- Prokaryotic Cell -->
+    <rect x="200" y="50" width="70" height="40" rx="20" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" />
+    <text x="235" y="70" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">Bacterium</text>
+    <text x="235" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">1 - 5 μm</text>
+    
+    <!-- Virus -->
+    <polygon points="330,65 340,70 340,80 330,85 320,80 320,70" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1.5" />
+    <text x="330" y="105" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">Virus</text>
+    <text x="330" y="120" fill="#a1a1aa" font-size="8" text-anchor="middle">20 - 400 nm</text>
+    
+    <text x="200" y="160" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Cell Size Scale (Not to scale)</text>
+  </svg>
+</div>
 
 The <vocab term="Endosymbiotic Theory" definition="The scientific theory proposing that mitochondria and chloroplasts arose from free-living prokaryotes that were engulfed by a larger host cell and evolved into permanent intracellular organelles through mutual benefit.">endosymbiotic theory</vocab>, developed and championed by Lynn Margulis in 1967, explains how eukaryotic cells acquired their membrane-bound organelles. It proposes that mitochondria and chloroplasts were once free-living prokaryotes that were engulfed by larger host cells.
 
@@ -1478,7 +1993,22 @@ Understanding endosymbiosis explains:
 
 ## Enzyme Structure
 
-![Enzyme catalysis diagram showing lock-and-key and induced-fit models with energy diagram](/images/biology/enzyme_catalysis.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="220" viewBox="0 0 400 220" class="max-w-full">
+    <line x1="50" y1="30" x2="50" y2="180" stroke="#a1a1aa" stroke-width="2" />
+    <line x1="50" y1="180" x2="370" y2="180" stroke="#a1a1aa" stroke-width="2" />
+    <text x="210" y="210" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Coordinate</text>
+    <text x="15" y="105" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 105)">Free Energy (G)</text>
+    <line x1="50" y1="130" x2="100" y2="130" stroke="#ffffff" stroke-width="2" />
+    <text x="90" y="125" fill="#ffffff" font-size="9">Reactants</text>
+    <line x1="280" y1="160" x2="350" y2="160" stroke="#ffffff" stroke-width="2" />
+    <text x="310" y="150" fill="#ffffff" font-size="9">Products</text>
+    <path d="M 100 130 C 140 130, 160 40, 200 40 C 240 40, 250 160, 280 160" fill="none" stroke="#ef4444" stroke-width="2.5" />
+    <text x="200" y="32" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Uncatalyzed Ea</text>
+    <path d="M 100 130 C 140 130, 160 85, 200 85 C 240 85, 250 160, 280 160" fill="none" stroke="#10b981" stroke-width="2.5" />
+    <text x="200" y="78" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Catalyzed Ea</text>
+  </svg>
+</div>
 
 <vocab term="Enzymes" definition="Biological catalysts (mostly proteins) that lower the activation energy of chemical reactions without being consumed; highly specific for their substrates due to the complementary shape of their active site.">Enzymes</vocab> are biological catalysts that accelerate chemical reactions by lowering the activation energy. Understanding enzyme structure explains their remarkable specificity and catalytic power.
 
@@ -1552,7 +2082,22 @@ Enzymes exhibit different levels of substrate specificity:
 
 ## Enzyme Catalysis
 
-![Enzyme catalysis energy diagram and mechanism showing activation energy reduction](/images/biology/enzyme_catalysis.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="220" viewBox="0 0 400 220" class="max-w-full">
+    <line x1="50" y1="30" x2="50" y2="180" stroke="#a1a1aa" stroke-width="2" />
+    <line x1="50" y1="180" x2="370" y2="180" stroke="#a1a1aa" stroke-width="2" />
+    <text x="210" y="210" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Coordinate</text>
+    <text x="15" y="105" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 105)">Free Energy (G)</text>
+    <line x1="50" y1="130" x2="100" y2="130" stroke="#ffffff" stroke-width="2" />
+    <text x="90" y="125" fill="#ffffff" font-size="9">Reactants</text>
+    <line x1="280" y1="160" x2="350" y2="160" stroke="#ffffff" stroke-width="2" />
+    <text x="310" y="150" fill="#ffffff" font-size="9">Products</text>
+    <path d="M 100 130 C 140 130, 160 40, 200 40 C 240 40, 250 160, 280 160" fill="none" stroke="#ef4444" stroke-width="2.5" />
+    <text x="200" y="32" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Uncatalyzed Ea</text>
+    <path d="M 100 130 C 140 130, 160 85, 200 85 C 240 85, 250 160, 280 160" fill="none" stroke="#10b981" stroke-width="2.5" />
+    <text x="200" y="78" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Catalyzed Ea</text>
+  </svg>
+</div>
 
 <vocab term="Enzyme Catalysis" definition="The acceleration of a chemical reaction by an enzyme through lowering the activation energy; enzymes are not consumed and can catalyze the same reaction millions of times.">Enzyme catalysis</vocab> dramatically increases reaction rates - enzymes typically increase reaction rates by 10^6 to 10^12 fold compared to uncatalyzed reactions. This is essential because biological reactions must occur at mild temperatures and physiological pH.
 
@@ -1656,7 +2201,22 @@ Example: Threonine deaminase (first enzyme in isoleucine synthesis) is inhibited
 
 ## Environmental Impacts on Enzyme Function
 
-![Enzyme activity graphs showing effects of temperature and pH on enzyme activity](/images/biology/enzyme_catalysis.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="220" viewBox="0 0 400 220" class="max-w-full">
+    <line x1="50" y1="30" x2="50" y2="180" stroke="#a1a1aa" stroke-width="2" />
+    <line x1="50" y1="180" x2="370" y2="180" stroke="#a1a1aa" stroke-width="2" />
+    <text x="210" y="210" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Reaction Coordinate</text>
+    <text x="15" y="105" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 15 105)">Free Energy (G)</text>
+    <line x1="50" y1="130" x2="100" y2="130" stroke="#ffffff" stroke-width="2" />
+    <text x="90" y="125" fill="#ffffff" font-size="9">Reactants</text>
+    <line x1="280" y1="160" x2="350" y2="160" stroke="#ffffff" stroke-width="2" />
+    <text x="310" y="150" fill="#ffffff" font-size="9">Products</text>
+    <path d="M 100 130 C 140 130, 160 40, 200 40 C 240 40, 250 160, 280 160" fill="none" stroke="#ef4444" stroke-width="2.5" />
+    <text x="200" y="32" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Uncatalyzed Ea</text>
+    <path d="M 100 130 C 140 130, 160 85, 200 85 C 240 85, 250 160, 280 160" fill="none" stroke="#10b981" stroke-width="2.5" />
+    <text x="200" y="78" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">Catalyzed Ea</text>
+  </svg>
+</div>
 
 Enzyme function is exquisitely sensitive to environmental conditions because <vocab term="Enzyme Denaturation" definition="The unfolding and loss of enzyme structure (and thus activity) caused by extremes of temperature, pH, or other denaturing agents; disrupts hydrogen bonds, ionic bonds, and hydrophobic interactions that maintain 3D shape.">denaturation</vocab> disrupts the precise 3D structure that enzymes require to function. Any environmental factor that alters protein shape affects enzyme activity.
 
@@ -1848,7 +2408,19 @@ Natural selection has optimized enzyme characteristics for each organism's envir
 
 ## Cellular Energy
 
-![Energy flow diagram showing ATP structure and energy coupling in metabolic reactions](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 All living cells require energy to perform work. The primary energy currency of life is <vocab term="ATP" definition="Adenosine triphosphate; the universal energy currency of cells, consisting of adenosine attached to three phosphate groups; hydrolysis of the terminal phosphate releases ~7.3 kcal/mol of free energy.">ATP (adenosine triphosphate)</vocab>, which couples energy-releasing reactions (catabolism) to energy-requiring reactions (anabolism).
 
@@ -1945,7 +2517,32 @@ Energy density comparison: glucose = 4 kcal/g; fat = 9 kcal/g (fats store >2x th
 
 ## Photosynthesis
 
-![Overview of photosynthesis showing light reactions in thylakoids and Calvin cycle in stroma](/images/biology/calvin_cycle.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="180" viewBox="0 0 450 180" class="max-w-full">
+    <rect x="20" y="15" width="410" height="150" rx="12" fill="rgba(34,197,94,0.02)" stroke="#22c55e" stroke-width="1.5" />
+    <g transform="translate(40, 30)">
+      <rect x="0" y="10" width="130" height="90" rx="8" fill="rgba(34,197,94,0.1)" stroke="#22c55e" stroke-width="1.5" />
+      <text x="65" y="35" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Light Reactions</text>
+      <text x="65" y="55" fill="#60a5fa" font-size="9" text-anchor="middle">H₂O ➔ O₂</text>
+      <text x="65" y="75" fill="#ffffff" font-size="9" text-anchor="middle">in Thylakoid</text>
+    </g>
+    <path d="M 180 50 L 250 50" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#photo-arrow)" />
+    <text x="215" y="42" fill="#f59e0b" font-size="8" font-weight="bold" text-anchor="middle">ATP & NADPH</text>
+    <path d="M 250 90 L 180 90" fill="none" stroke="#a1a1aa" stroke-width="1.5" marker-end="url(#photo-arrow)" />
+    <text x="215" y="105" fill="#a1a1aa" font-size="8" text-anchor="middle">ADP & NADP⁺</text>
+    <g transform="translate(270, 30)">
+      <circle cx="65" cy="55" r="45" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,3" />
+      <text x="65" y="45" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Calvin Cycle</text>
+      <text x="65" y="60" fill="#f59e0b" font-size="9" text-anchor="middle">CO₂ ➔ Sugar</text>
+      <text x="65" y="75" fill="#ffffff" font-size="9" text-anchor="middle">in Stroma</text>
+    </g>
+    <defs>
+      <marker id="photo-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Photosynthesis is the process that converts solar energy into chemical energy, driving the biosphere. It occurs in two stages: the light-dependent reactions and the Calvin cycle.
 
@@ -2081,7 +2678,26 @@ The Calvin cycle uses ATP and NADPH from the light reactions to convert $CO_2$ i
 
 ## Cellular Respiration
 
-![Overview of cellular respiration showing Glycolysis, Krebs cycle, and the electron transport chain](/images/biology/etc_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <rect x="10" y="45" width="110" height="60" rx="6" fill="rgba(255,255,255,0.02)" stroke="#a1a1aa" stroke-width="1.5" />
+    <text x="65" y="65" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Glycolysis</text>
+    <text x="65" y="80" fill="#a1a1aa" font-size="8" text-anchor="middle">Cytosol (2 ATP)</text>
+    <path d="M 120 75 L 150 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#resp-arrow)" />
+    <rect x="160" y="45" width="110" height="60" rx="6" fill="rgba(239,68,68,0.05)" stroke="#ef4444" stroke-width="1.5" />
+    <text x="215" y="65" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Krebs Cycle</text>
+    <text x="215" y="80" fill="#ef4444" font-size="8" text-anchor="middle">Matrix (2 ATP)</text>
+    <path d="M 270 75 L 300 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#resp-arrow)" />
+    <rect x="310" y="45" width="130" height="60" rx="6" fill="rgba(16,185,129,0.05)" stroke="#10b981" stroke-width="1.5" />
+    <text x="375" y="65" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">ETC & Chemiosmosis</text>
+    <text x="375" y="80" fill="#10b981" font-size="8" text-anchor="middle">Cristae (~32 ATP)</text>
+    <defs>
+      <marker id="resp-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Cellular respiration is the process by which cells harvest chemical energy from organic molecules (like glucose) to produce ATP. The overall summary equation is:
 
@@ -2145,7 +2761,28 @@ In the absence of oxygen, cells undergo fermentation to regenerate $NAD^+$ so gl
 
 ## Fitness
 
-![Natural selection diagram showing fitness as reproductive success in a population](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 In evolutionary biology, <vocab term="Fitness" definition="The relative reproductive success of an organism; a measure of how well an organism is adapted to its environment, quantified by the number of viable, fertile offspring it produces relative to others in the population.">fitness</vocab> is not about physical strength - it is about reproductive success. An organism is fit if it survives and reproduces successfully in its environment, passing its alleles to the next generation.
 
@@ -2347,7 +2984,34 @@ Departure from Hardy-Weinberg = evolution is occurring.
 
 ## Cell Communication
 
-![Signal transduction diagram showing GPCR and RTK pathways from ligand binding to cellular response](/images/biology/signal_transduction.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+    <text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
+    <circle cx="80" cy="25" r="8" fill="#ef4444" />
+    <text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
+    <path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+    <rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
+    <circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
+    <rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
+    <path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
+    <path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
+    <text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
+    <path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <defs>
+      <marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Cells must constantly communicate to coordinate development, metabolism, and response to environmental changes. <vocab term="Cell Communication" definition="The process by which cells receive, process, and respond to signals from other cells or the environment; involves signal molecules (ligands), receptors, and intracellular signaling cascades.">Cell communication</vocab> involves signal molecules (ligands) binding to receptors, triggering intracellular responses.
 
@@ -2418,7 +3082,34 @@ This conservation suggests signaling machinery arose early in eukaryotic evoluti
 
 ## Introduction to Signal Transduction
 
-![Signal transduction pathway diagram showing GPCR mechanism with cAMP second messenger](/images/biology/signal_transduction.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+    <text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
+    <circle cx="80" cy="25" r="8" fill="#ef4444" />
+    <text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
+    <path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+    <rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
+    <circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
+    <rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
+    <path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
+    <path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
+    <text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
+    <path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <defs>
+      <marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Signal Transduction" definition="The process by which a cell converts an extracellular signal (ligand binding to receptor) into an intracellular response through a cascade of molecular changes involving second messengers and protein modifications.">Signal transduction</vocab> converts extracellular signals into intracellular responses. The signal is often amplified many times through molecular cascades, allowing minute concentrations of hormones to produce large cellular effects.
 
@@ -2508,7 +3199,34 @@ Mutations that constitutively activate RTKs (or downstream Ras) drive many cance
 
 ## Signal Transduction Receptors
 
-![Signal transduction receptor types showing GPCR and RTK on cell membrane](/images/biology/signal_transduction.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+    <text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
+    <circle cx="80" cy="25" r="8" fill="#ef4444" />
+    <text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
+    <path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+    <rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
+    <circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
+    <rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
+    <path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
+    <path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
+    <text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
+    <path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <defs>
+      <marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Cell-surface receptors are the gatekeepers of cell communication. Each receptor type has a distinct structure that determines which signals it can detect and how it initiates downstream signaling.
 
@@ -2601,7 +3319,34 @@ A receptor responds only to its specific ligand(s) because of complementary bind
 
 ## Signal Integration
 
-![Signal integration diagram showing how cells process multiple simultaneous signals](/images/biology/signal_transduction.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+    <text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
+    <circle cx="80" cy="25" r="8" fill="#ef4444" />
+    <text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
+    <path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+    <rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
+    <circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
+    <rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
+    <path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
+    <path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
+    <text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
+    <path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <defs>
+      <marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Cells rarely receive just one signal at a time. <vocab term="Signal Integration" definition="The process by which cells process multiple simultaneous signals to produce a coordinated response; convergence and divergence of signaling pathways allows sophisticated decision-making at the cellular level.">Signal integration</vocab> allows cells to weigh multiple inputs and produce appropriate, nuanced responses rather than simple on/off reactions.
 
@@ -2781,7 +3526,34 @@ Or: Gene Y expressed when signal A OR signal B is present (OR gate)
 
 ## Feedback Mechanisms
 
-![Cell cycle control diagram showing checkpoints and feedback regulation](/images/biology/signal_transduction.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+    <text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
+    <circle cx="80" cy="25" r="8" fill="#ef4444" />
+    <text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
+    <path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+    <rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
+    <circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
+    <rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
+    <path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
+    <path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
+    <text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
+    <path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <defs>
+      <marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Feedback Mechanisms" definition="Regulatory processes in which the output of a system affects the input; negative feedback maintains homeostasis by reversing deviations, while positive feedback amplifies responses toward a new state.">Feedback mechanisms</vocab> are fundamental to biological regulation, allowing organisms to maintain homeostasis and coordinate complex processes like the cell cycle.
 
@@ -2975,7 +3747,20 @@ Example: Isoleucine synthesis - isoleucine inhibits threonine deaminase (first e
 
 ## Cell Cycle
 
-![Phases of the cell cycle: Interphase, Mitosis, and Cytokinesis](/images/biology/meiosis_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(100, 30)">
+      <path d="M 20 20 L 40 80 M 40 20 L 20 80" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">Maternal</text>
+    </g>
+    <g transform="translate(130, 30)">
+      <line x1="20" y1="20" x2="40" y2="80" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+      <line x1="40" y1="20" x2="20" y2="80" stroke="#ef4444" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Paternal</text>
+    </g>
+    <text x="200" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Crossing Over (Prophase I)</text>
+  </svg>
+</div>
 
 The cell cycle is the ordered sequence of events by which a cell duplicates its genome and divides into two daughter cells. It is divided into Interphase and the Mitotic (M) phase.
 
@@ -3016,7 +3801,24 @@ The cell cycle is regulated by internal checkpoints that monitor progress:
 
 ## Apoptosis
 
-![Cell cycle diagram showing apoptosis vs cell cycle progression](/images/biology/dna_replication.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <path d="M 20 100 L 180 100 L 300 40 L 420 40" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 20 115 L 180 115 L 300 175 L 420 175" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 380 50 L 190 95" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="280" y="65" fill="#22c55e" font-size="9" font-weight="bold">Leading Strand (➔ 5' to 3')</text>
+    <path d="M 230 145 L 195 125" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <path d="M 285 170 L 250 150" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="290" y="145" fill="#ef4444" font-size="9" font-weight="bold">Okazaki Fragments (Lagging)</text>
+    <text x="350" y="25" fill="#60a5fa" font-size="8" font-weight="bold">Template 3'</text>
+    <text x="350" y="190" fill="#60a5fa" font-size="8" font-weight="bold">Template 5'</text>
+    <defs>
+      <marker id="rep-fork-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Apoptosis" definition="Programmed cell death; an active, genetically regulated process by which a cell destroys itself in an orderly manner without triggering inflammation; essential for development, tissue homeostasis, and immune function.">Apoptosis</vocab> is the cell's built-in suicide program. Unlike necrosis (accidental, chaotic cell death), apoptosis is a controlled, energy-requiring process that benefits the organism.
 
@@ -3214,7 +4016,20 @@ No inflammation occurs because the cell is packaged into apoptotic bodies before
 
 ## Meiosis
 
-![Stages of meiosis showing homologous chromosome separation and gamete formation](/images/biology/meiosis_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(100, 30)">
+      <path d="M 20 20 L 40 80 M 40 20 L 20 80" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">Maternal</text>
+    </g>
+    <g transform="translate(130, 30)">
+      <line x1="20" y1="20" x2="40" y2="80" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+      <line x1="40" y1="20" x2="20" y2="80" stroke="#ef4444" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Paternal</text>
+    </g>
+    <text x="200" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Crossing Over (Prophase I)</text>
+  </svg>
+</div>
 
 Meiosis is the specialized cell division that reduces the chromosome number by half, producing haploid gametes (sperm and egg) for sexual reproduction.
 
@@ -3277,7 +4092,20 @@ Errors during chromosome separation can have severe consequences:
 
 ## Meiosis and Genetic Diversity
 
-![Meiosis diagram comparing mitosis and meiosis showing crossing over and independent assortment](/images/biology/meiosis_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(100, 30)">
+      <path d="M 20 20 L 40 80 M 40 20 L 20 80" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">Maternal</text>
+    </g>
+    <g transform="translate(130, 30)">
+      <line x1="20" y1="20" x2="40" y2="80" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+      <line x1="40" y1="20" x2="20" y2="80" stroke="#ef4444" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Paternal</text>
+    </g>
+    <text x="200" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Crossing Over (Prophase I)</text>
+  </svg>
+</div>
 
 <vocab term="Meiosis" definition="A specialized form of cell division producing four haploid (n) daughter cells from a single diploid (2n) parent cell; occurs in reproductive organs; enables sexual reproduction.">Meiosis</vocab> is the specialized cell division that produces haploid gametes (sperm and eggs) from diploid germ cells. It generates remarkable genetic diversity through three key mechanisms.
 
@@ -3466,7 +4294,20 @@ When two gametes unite:
 
 ## Mitosis and the Cell Cycle
 
-![Cell cycle and mitosis diagram showing phases and checkpoints](/images/biology/meiosis_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(100, 30)">
+      <path d="M 20 20 L 40 80 M 40 20 L 20 80" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">Maternal</text>
+    </g>
+    <g transform="translate(130, 30)">
+      <line x1="20" y1="20" x2="40" y2="80" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+      <line x1="40" y1="20" x2="20" y2="80" stroke="#ef4444" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Paternal</text>
+    </g>
+    <text x="200" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Crossing Over (Prophase I)</text>
+  </svg>
+</div>
 
 The <vocab term="Cell Cycle" definition="The ordered sequence of events by which a cell grows and divides into two daughter cells; consists of interphase (G1, S, G2) and mitotic phase (mitosis and cytokinesis).">cell cycle</vocab> is the life cycle of a dividing cell, encompassing growth, DNA replication, and division into two genetically identical daughter cells.
 
@@ -3569,7 +4410,25 @@ Checkpoints are surveillance mechanisms that halt cell cycle progression if cond
 
 ## Mendelian Genetics
 
-![Mendelian genetics diagram showing monohybrid and dihybrid crosses with Punnett squares](/images/biology/mendelian_genetics.png)
+<div class="flex justify-center my-8">
+  <svg width="300" height="200" viewBox="0 0 300 200" class="max-w-full">
+    <line x1="100" y1="50" x2="250" y2="50" stroke="#a1a1aa" stroke-width="1.5" />
+    <line x1="100" y1="120" x2="250" y2="120" stroke="#a1a1aa" stroke-width="1.5" />
+    <line x1="100" y1="190" x2="250" y2="190" stroke="#a1a1aa" stroke-width="1.5" />
+    <line x1="100" y1="50" x2="100" y2="190" stroke="#a1a1aa" stroke-width="1.5" />
+    <line x1="175" y1="50" x2="175" y2="190" stroke="#a1a1aa" stroke-width="1.5" />
+    <line x1="250" y1="50" x2="250" y2="190" stroke="#a1a1aa" stroke-width="1.5" />
+    <text x="137" y="35" fill="#ef4444" font-size="14" font-weight="bold" text-anchor="middle">T</text>
+    <text x="212" y="35" fill="#ef4444" font-size="14" font-weight="bold" text-anchor="middle">t</text>
+    <text x="75" y="95" fill="#3b82f6" font-size="14" font-weight="bold" text-anchor="middle">T</text>
+    <text x="75" y="165" fill="#3b82f6" font-size="14" font-weight="bold" text-anchor="middle">t</text>
+    <text x="137" y="95" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">TT</text>
+    <text x="212" y="95" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Tt</text>
+    <text x="137" y="165" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Tt</text>
+    <text x="212" y="165" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">tt</text>
+    <text x="175" y="15" fill="#ffffff" font-size="10" text-anchor="middle">Monohybrid Cross (F2 Generation)</text>
+  </svg>
+</div>
 
 <vocab term="Gregor Mendel" definition="19th century Austrian monk who conducted hybridization experiments with pea plants, discovering the fundamental principles of heredity now known as Mendel's Laws.">Gregor Mendel</vocab> discovered the basic rules of inheritance by carefully tracking pea plant traits through multiple generations. His laws remain the foundation of genetics.
 
@@ -3682,7 +4541,20 @@ Pedigrees show inheritance patterns across generations:
 
 ## Chromosomal Inheritance
 
-![Meiosis and chromosomal inheritance diagram showing sex-linked traits and chromosomal abnormalities](/images/biology/meiosis_diagram.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(100, 30)">
+      <path d="M 20 20 L 40 80 M 40 20 L 20 80" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">Maternal</text>
+    </g>
+    <g transform="translate(130, 30)">
+      <line x1="20" y1="20" x2="40" y2="80" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+      <line x1="40" y1="20" x2="20" y2="80" stroke="#ef4444" stroke-width="6" stroke-linecap="round" />
+      <text x="30" y="100" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Paternal</text>
+    </g>
+    <text x="200" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Crossing Over (Prophase I)</text>
+  </svg>
+</div>
 
 Chromosomal inheritance extends Mendelian genetics to explain traits that do not follow simple patterns, including sex-linked traits, linked genes, and chromosomal abnormalities.
 
@@ -3869,7 +4741,28 @@ Some genes are expressed only from one parental chromosome (the other is silence
 
 ## Gene Expression
 
-![Gene expression diagram showing transcription in nucleus and translation at ribosomes](/images/biology/gene_expression.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <rect x="20" y="45" width="90" height="50" rx="6" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="65" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">DNA</text>
+    <text x="65" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Replication</text>
+    <path d="M 115 70 L 165 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="140" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Transcription</text>
+    <rect x="180" y="45" width="90" height="50" rx="6" fill="rgba(245,158,11,0.05)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="225" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">mRNA</text>
+    <text x="225" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Codons</text>
+    <path d="M 275 70 L 325 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="300" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Translation</text>
+    <rect x="340" y="45" width="90" height="50" rx="6" fill="rgba(16,185,129,0.05)" stroke="#10b981" stroke-width="1.5" />
+    <text x="385" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Protein</text>
+    <text x="385" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Amino Acids</text>
+    <defs>
+      <marker id="dog-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Gene Expression" definition="The process by which information encoded in a gene is used to synthesize a functional gene product (usually a protein); involves transcription (DNA to RNA) and translation (RNA to protein).">Gene expression</vocab> converts genetic information into functional proteins through the two-step process of transcription and translation. This is captured in the Central Dogma of Molecular Biology.
 
@@ -4061,7 +4954,24 @@ Gene expression is regulated at multiple levels:
 
 ## DNA Structure and Replication
 
-![DNA replication fork diagram showing leading strand, lagging strand, Okazaki fragments, and enzymes](/images/biology/dna_replication.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <path d="M 20 100 L 180 100 L 300 40 L 420 40" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 20 115 L 180 115 L 300 175 L 420 175" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 380 50 L 190 95" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="280" y="65" fill="#22c55e" font-size="9" font-weight="bold">Leading Strand (➔ 5' to 3')</text>
+    <path d="M 230 145 L 195 125" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <path d="M 285 170 L 250 150" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="290" y="145" fill="#ef4444" font-size="9" font-weight="bold">Okazaki Fragments (Lagging)</text>
+    <text x="350" y="25" fill="#60a5fa" font-size="8" font-weight="bold">Template 3'</text>
+    <text x="350" y="190" fill="#60a5fa" font-size="8" font-weight="bold">Template 5'</text>
+    <defs>
+      <marker id="rep-fork-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="DNA Replication" definition="The process by which a cell copies its DNA prior to cell division; uses each strand as a template for synthesizing a new complementary strand, producing two identical double-stranded DNA molecules.">DNA replication</vocab> is the fundamental mechanism by which genetic information is duplicated before cell division. Understanding its molecular machinery is essential for AP Biology.
 
@@ -4149,7 +5059,24 @@ DNA polymerase has a **3' to 5' exonuclease** (proofreading) activity:
 
 ## Replication
 
-![DNA replication fork showing leading strand, lagging strand, and replication enzymes](/images/biology/dna_replication.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <path d="M 20 100 L 180 100 L 300 40 L 420 40" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 20 115 L 180 115 L 300 175 L 420 175" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 380 50 L 190 95" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="280" y="65" fill="#22c55e" font-size="9" font-weight="bold">Leading Strand (➔ 5' to 3')</text>
+    <path d="M 230 145 L 195 125" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <path d="M 285 170 L 250 150" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="290" y="145" fill="#ef4444" font-size="9" font-weight="bold">Okazaki Fragments (Lagging)</text>
+    <text x="350" y="25" fill="#60a5fa" font-size="8" font-weight="bold">Template 3'</text>
+    <text x="350" y="190" fill="#60a5fa" font-size="8" font-weight="bold">Template 5'</text>
+    <defs>
+      <marker id="rep-fork-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 DNA replication is the biological process of producing two identical replicas of DNA from one original DNA molecule. It occurs during the S phase of the cell cycle.
 
@@ -4282,7 +5209,28 @@ Linear chromosomes face a structural challenge during replication:
 
 ## Transcription and RNA Processing
 
-![Transcription of DNA into pre-mRNA and eukaryotic post-transcriptional RNA processing](/images/biology/gene_expression.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <rect x="20" y="45" width="90" height="50" rx="6" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="65" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">DNA</text>
+    <text x="65" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Replication</text>
+    <path d="M 115 70 L 165 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="140" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Transcription</text>
+    <rect x="180" y="45" width="90" height="50" rx="6" fill="rgba(245,158,11,0.05)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="225" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">mRNA</text>
+    <text x="225" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Codons</text>
+    <path d="M 275 70 L 325 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="300" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Translation</text>
+    <rect x="340" y="45" width="90" height="50" rx="6" fill="rgba(16,185,129,0.05)" stroke="#10b981" stroke-width="1.5" />
+    <text x="385" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Protein</text>
+    <text x="385" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Amino Acids</text>
+    <defs>
+      <marker id="dog-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Transcription is the synthesis of RNA from a DNA template. In eukaryotes, the primary transcript must undergo post-transcriptional modifications before translation.
 
@@ -4327,7 +5275,28 @@ During splicing, different exons can be included or excluded:
 
 ## Translation
 
-![Translation process at the ribosome converting mRNA codons into a polypeptide chain](/images/biology/gene_expression.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <rect x="20" y="45" width="90" height="50" rx="6" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="65" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">DNA</text>
+    <text x="65" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Replication</text>
+    <path d="M 115 70 L 165 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="140" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Transcription</text>
+    <rect x="180" y="45" width="90" height="50" rx="6" fill="rgba(245,158,11,0.05)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="225" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">mRNA</text>
+    <text x="225" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Codons</text>
+    <path d="M 275 70 L 325 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="300" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Translation</text>
+    <rect x="340" y="45" width="90" height="50" rx="6" fill="rgba(16,185,129,0.05)" stroke="#10b981" stroke-width="1.5" />
+    <text x="385" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Protein</text>
+    <text x="385" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Amino Acids</text>
+    <defs>
+      <marker id="dog-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 Translation is the process by which ribosomes decode the genetic message carried by mRNA to synthesize a specific polypeptide chain (protein).
 
@@ -4469,7 +5438,34 @@ Polypeptides destined for membranes or secretion carry a **signal peptide** at t
 
 ## Gene Expression Regulation
 
-![Signal transduction showing how signals regulate gene expression through transcription factors](/images/biology/signal_transduction.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+    <text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
+    <circle cx="80" cy="25" r="8" fill="#ef4444" />
+    <text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
+    <path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+    <rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
+    <circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
+    <rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+    <text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
+    <path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
+    <path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
+    <text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
+    <path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+    <defs>
+      <marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Gene Regulation" definition="The mechanisms controlling when, where, and how much a gene is expressed; allows cells with identical DNA to have different structures and functions depending on which genes are active.">Gene regulation</vocab> is how cells control which genes are expressed at any given time. Every cell in your body has the same DNA, yet liver cells differ from neurons because different genes are active in each cell type.
 
@@ -4569,7 +5565,24 @@ mRNA half-lives vary from minutes to days, affecting protein levels:
 
 ## Mutation
 
-![DNA structure and mutation diagram showing how mutations alter gene sequences](/images/biology/dna_replication.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <path d="M 20 100 L 180 100 L 300 40 L 420 40" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 20 115 L 180 115 L 300 175 L 420 175" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 380 50 L 190 95" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="280" y="65" fill="#22c55e" font-size="9" font-weight="bold">Leading Strand (➔ 5' to 3')</text>
+    <path d="M 230 145 L 195 125" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <path d="M 285 170 L 250 150" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="290" y="145" fill="#ef4444" font-size="9" font-weight="bold">Okazaki Fragments (Lagging)</text>
+    <text x="350" y="25" fill="#60a5fa" font-size="8" font-weight="bold">Template 3'</text>
+    <text x="350" y="190" fill="#60a5fa" font-size="8" font-weight="bold">Template 5'</text>
+    <defs>
+      <marker id="rep-fork-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Mutation" definition="A permanent change in the nucleotide sequence of DNA; mutations can affect single nucleotides (point mutations) or larger chromosomal regions; the ultimate source of all genetic variation.">Mutations</vocab> are changes in the DNA sequence. While often deleterious, they are the raw material for evolution and the ultimate source of genetic diversity.
 
@@ -4663,7 +5676,24 @@ Cancer is fundamentally a disease of accumulated mutations in somatic cells:
 
 ## Biotechnology
 
-![DNA replication diagram showing enzymes used in biotechnology applications](/images/biology/dna_replication.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
+    <path d="M 20 100 L 180 100 L 300 40 L 420 40" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 20 115 L 180 115 L 300 175 L 420 175" fill="none" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 380 50 L 190 95" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="280" y="65" fill="#22c55e" font-size="9" font-weight="bold">Leading Strand (➔ 5' to 3')</text>
+    <path d="M 230 145 L 195 125" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <path d="M 285 170 L 250 150" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#rep-fork-arrow)" />
+    <text x="290" y="145" fill="#ef4444" font-size="9" font-weight="bold">Okazaki Fragments (Lagging)</text>
+    <text x="350" y="25" fill="#60a5fa" font-size="8" font-weight="bold">Template 3'</text>
+    <text x="350" y="190" fill="#60a5fa" font-size="8" font-weight="bold">Template 5'</text>
+    <defs>
+      <marker id="rep-fork-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Biotechnology" definition="The use of biological systems, organisms, or processes to develop and manufacture products; in molecular biology, refers to DNA technology tools used to manipulate genetic information.">Biotechnology</vocab> uses molecular biology techniques to analyze, manipulate, and apply biological systems. Key techniques are testable on the AP Biology exam.
 
@@ -4757,7 +5787,28 @@ Uses PCR to amplify STRs (short tandem repeats) - sequences that vary in length 
 
 ## Viral Replication
 
-![Gene expression diagram showing how viruses hijack cellular machinery for replication](/images/biology/gene_expression.png)
+<div class="flex justify-center my-8">
+  <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full">
+    <rect x="20" y="45" width="90" height="50" rx="6" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="65" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">DNA</text>
+    <text x="65" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Replication</text>
+    <path d="M 115 70 L 165 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="140" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Transcription</text>
+    <rect x="180" y="45" width="90" height="50" rx="6" fill="rgba(245,158,11,0.05)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="225" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">mRNA</text>
+    <text x="225" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Codons</text>
+    <path d="M 275 70 L 325 70" fill="none" stroke="#ffffff" stroke-width="2" marker-end="url(#dog-arrow)" />
+    <text x="300" y="60" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Translation</text>
+    <rect x="340" y="45" width="90" height="50" rx="6" fill="rgba(16,185,129,0.05)" stroke="#10b981" stroke-width="1.5" />
+    <text x="385" y="70" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Protein</text>
+    <text x="385" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">Amino Acids</text>
+    <defs>
+      <marker id="dog-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+      </marker>
+    </defs>
+  </svg>
+</div>
 
 <vocab term="Viruses" definition="Non-cellular, obligate intracellular parasites consisting of a nucleic acid genome (DNA or RNA) enclosed in a protein coat (capsid); use the host cell's machinery to replicate.">Viruses</vocab> are infectious particles that hijack host cellular machinery to replicate. They are not considered living organisms because they lack the ability to reproduce independently or perform metabolism on their own.
 
@@ -4953,7 +6004,28 @@ Influenza A mutates its surface proteins (hemagglutinin - HA, neuraminidase - NA
 
 ## Natural Selection
 
-![Natural selection diagram showing directional, stabilizing, and disruptive selection with Hardy-Weinberg equation](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 <vocab term="Natural Selection" definition="The differential survival and reproduction of individuals with heritable traits that confer an advantage in a given environment; the primary mechanism of evolutionary change.">Natural selection</vocab> is the primary driving force of evolution. Darwin observed that populations have heritable variation, and individuals with advantageous traits survive and reproduce at higher rates, passing those traits to offspring.
 
@@ -5053,7 +6125,28 @@ This shows evolution by selection can produce major changes relatively rapidly.
 
 ## Population Genetics and Hardy-Weinberg
 
-![Natural selection population genetics diagram with allele frequencies](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 <vocab term="Population Genetics" definition="The study of genetic variation within and between populations; examines allele frequencies and how they change over time due to natural selection, genetic drift, mutation, and gene flow.">Population genetics</vocab> applies mathematical models to understand how allele frequencies change in populations over time. The Hardy-Weinberg principle provides the foundational null model.
 
@@ -5159,7 +6252,28 @@ Creates new alleles - the ultimate source of all genetic variation:
 
 ## Evidence for Evolution
 
-![Natural selection diagram showing evidence from different species and populations](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 Evolution is one of the most well-supported theories in all of science, supported by converging lines of evidence from geology, comparative anatomy, molecular biology, and direct observation. Understanding these evidence lines is essential for AP Biology.
 
@@ -5247,7 +6361,28 @@ Embryos of different vertebrates are remarkably similar early in development:
 
 ## Common Ancestry
 
-![Evolutionary tree diagram showing common ancestry relationships](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 <vocab term="Common Ancestry" definition="The concept that all organisms share ancestors; more closely related species share more recent common ancestors; supported by fossil, molecular, and anatomical evidence.">Common ancestry</vocab> is a core principle of evolutionary biology: all life on Earth descended from a common ancestor. Phylogenetics reconstructs these evolutionary relationships using various types of data.
 
@@ -5430,7 +6565,28 @@ Calibrated using fossil record dates. Estimates when species separated:
 
 ## Hardy-Weinberg Equilibrium
 
-![Hardy-Weinberg genetics and natural selection model showing allele and genotype frequencies](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 The Hardy-Weinberg equations describe a mathematical model that determines whether evolution is occurring within a population.
 
@@ -5577,7 +6733,28 @@ Let's solve a typical genetic problem: Cystic Fibrosis is an autosomal recessive
 
 ## Speciation
 
-![Natural selection and speciation diagram showing allopatric and sympatric speciation](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 <vocab term="Speciation" definition="The evolutionary process by which new species form from an ancestral population; requires evolution of reproductive isolation between diverging populations.">Speciation</vocab> is the origin of new species. It requires populations to diverge genetically until they become reproductively isolated - unable to interbreed and produce fertile offspring.
 
@@ -5677,7 +6854,28 @@ The fossil record often shows punctuated patterns:
 
 ## Phylogeny and the Tree of Life
 
-![Tree of life phylogeny diagram showing three domains of life](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 <vocab term="Phylogeny" definition="The evolutionary history of a species or group of species; depicted in phylogenetic trees that show the branching pattern of descent from common ancestors.">Phylogeny</vocab> is the study of evolutionary relationships. Building and interpreting phylogenetic trees is a core AP Biology skill.
 
@@ -5763,7 +6961,28 @@ Convergent evolution creates analogous features that can mislead phylogenetics:
 
 ## Evolution of Populations
 
-![Population genetics diagram showing allele frequency changes through natural selection](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 Evolution occurs at the level of populations, not individuals. <vocab term="Microevolution" definition="Changes in allele frequencies within a population over time; the smallest scale of evolution; includes natural selection, genetic drift, gene flow, and mutation.">Microevolution</vocab> refers to changes in allele frequencies within a population over generations. Understanding the mechanisms and quantification of these changes is central to population genetics.
 
@@ -5855,7 +7074,28 @@ Creates new alleles:
 
 ## Mechanisms of Evolution
 
-![Natural selection modes showing how populations change over generations](/images/biology/natural_selection.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
+    <g transform="translate(10, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Directional</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 35 120 C 55 120, 65 40, 75 40 C 85 40, 95 120, 115 120" fill="none" stroke="#ef4444" stroke-width="2" />
+    </g>
+    <g transform="translate(140, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Stabilizing</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 25 120 C 45 120, 48 20, 55 20 C 62 20, 65 120, 85 120" fill="none" stroke="#10b981" stroke-width="2" />
+    </g>
+    <g transform="translate(270, 10)">
+      <text x="50" y="15" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Disruptive</text>
+      <line x1="10" y1="120" x2="110" y2="120" stroke="#a1a1aa" stroke-width="1" />
+      <path d="M 15 120 C 35 120, 45 40, 55 40 C 65 40, 75 120, 95 120" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M 15 120 C 25 120, 30 50, 40 50 C 50 50, 60 120, 70 50 C 80 50, 85 120, 95 120" fill="none" stroke="#3b82f6" stroke-width="2" />
+    </g>
+  </svg>
+</div>
 
 The mechanisms of evolution operate simultaneously and interact to shape the genetic composition of populations. A thorough understanding requires knowing how each mechanism works independently and how they interact.
 
@@ -6041,7 +7281,26 @@ All mechanisms operate simultaneously, each influencing the others.
 
 ## Origin of Life
 
-![Cell structure diagram showing evolution from simple chemical systems to first cells](/images/biology/cell_size_comparison.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="200" viewBox="0 0 400 200" class="max-w-full">
+    <!-- Eukaryotic Cell -->
+    <rect x="20" y="20" width="150" height="150" rx="8" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="2" />
+    <text x="95" y="90" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle">Eukaryotic Cell</text>
+    <text x="95" y="110" fill="#a1a1aa" font-size="9" text-anchor="middle">10 - 100 μm</text>
+    
+    <!-- Prokaryotic Cell -->
+    <rect x="200" y="50" width="70" height="40" rx="20" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" />
+    <text x="235" y="70" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">Bacterium</text>
+    <text x="235" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">1 - 5 μm</text>
+    
+    <!-- Virus -->
+    <polygon points="330,65 340,70 340,80 330,85 320,80 320,70" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1.5" />
+    <text x="330" y="105" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">Virus</text>
+    <text x="330" y="120" fill="#a1a1aa" font-size="8" text-anchor="middle">20 - 400 nm</text>
+    
+    <text x="200" y="160" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Cell Size Scale (Not to scale)</text>
+  </svg>
+</div>
 
 The origin of life (~3.5-4 billion years ago) is one of the most profound questions in science. While no direct fossil evidence exists from the very first cells, chemical, phylogenetic, and experimental evidence provides a coherent picture of how life could have emerged from non-living chemistry.
 
@@ -6141,7 +7400,26 @@ Before ~2.4 billion years ago, Earth's atmosphere had little free O2:
 
 ## Prokaryotes
 
-![Cell size comparison showing prokaryotic bacteria structure and features](/images/biology/cell_size_comparison.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="200" viewBox="0 0 400 200" class="max-w-full">
+    <!-- Eukaryotic Cell -->
+    <rect x="20" y="20" width="150" height="150" rx="8" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="2" />
+    <text x="95" y="90" fill="#60a5fa" font-size="11" font-weight="bold" text-anchor="middle">Eukaryotic Cell</text>
+    <text x="95" y="110" fill="#a1a1aa" font-size="9" text-anchor="middle">10 - 100 μm</text>
+    
+    <!-- Prokaryotic Cell -->
+    <rect x="200" y="50" width="70" height="40" rx="20" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" />
+    <text x="235" y="70" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">Bacterium</text>
+    <text x="235" y="85" fill="#a1a1aa" font-size="8" text-anchor="middle">1 - 5 μm</text>
+    
+    <!-- Virus -->
+    <polygon points="330,65 340,70 340,80 330,85 320,80 320,70" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1.5" />
+    <text x="330" y="105" fill="#ef4444" font-size="10" font-weight="bold" text-anchor="middle">Virus</text>
+    <text x="330" y="120" fill="#a1a1aa" font-size="8" text-anchor="middle">20 - 400 nm</text>
+    
+    <text x="200" y="160" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Cell Size Scale (Not to scale)</text>
+  </svg>
+</div>
 
 <vocab term="Prokaryotes" definition="Single-celled organisms lacking a membrane-bound nucleus and other membrane-bound organelles; divided into two domains: Bacteria and Archaea.">Prokaryotes</vocab> (domains Bacteria and Archaea) are the most abundant and metabolically diverse organisms on Earth. Despite their small size and simple structure, they drive major biogeochemical cycles that maintain life on Earth.
 
@@ -6251,7 +7529,38 @@ Prokaryotes exhibit unparalleled metabolic diversity:
 
 ## Eukaryotes
 
-![Cell structure diagram showing eukaryotic organelles and their functions](/images/biology/endomembrane_system.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="280" viewBox="0 0 400 280" class="max-w-full">
+    <!-- Outer Membrane -->
+    <circle cx="200" cy="140" r="110" fill="rgba(96,165,250,0.05)" stroke="#60a5fa" stroke-width="3" />
+    <text x="200" y="270" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Eukaryotic Cell Compartments</text>
+    
+    <!-- Nucleus -->
+    <circle cx="160" cy="120" r="35" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="2" />
+    <text x="160" y="124" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Nucleus</text>
+    
+    <!-- Rough ER -->
+    <path d="M 125 120 Q 95 110, 110 90 T 130 75" fill="none" stroke="#f59e0b" stroke-width="3" />
+    <circle cx="115" cy="105" r="2" fill="#ef4444" />
+    <circle cx="108" cy="95" r="2" fill="#ef4444" />
+    <circle cx="120" cy="85" r="2" fill="#ef4444" />
+    <text x="95" y="80" fill="#f59e0b" font-size="8" font-weight="bold">Rough ER (Ribosomes)</text>
+    
+    <!-- Golgi Apparatus -->
+    <path d="M 220 90 C 240 90, 240 100, 220 100" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 215 105 C 245 105, 245 115, 215 115" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M 220 120 C 240 120, 240 130, 220 130" fill="none" stroke="#10b981" stroke-width="3" />
+    <text x="260" y="112" fill="#10b981" font-size="8" font-weight="bold">Golgi Body</text>
+    
+    <!-- Vesicle transport -->
+    <path d="M 195 125 L 210 125" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2" />
+    
+    <!-- Mitochondrion -->
+    <ellipse cx="230" cy="180" rx="25" ry="15" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="2" />
+    <path d="M 212 180 Q 220 170, 230 180 T 248 180" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="230" y="210" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">Mitochondria</text>
+  </svg>
+</div>
 
 <vocab term="Eukaryotes" definition="Organisms with cells containing a membrane-bound nucleus and other membrane-bound organelles; includes protists, fungi, plants, and animals; arose ~1.5-2 billion years ago from prokaryotic ancestors.">Eukaryotes</vocab> (domain Eukarya) include the most structurally complex organisms on Earth. Their defining feature - compartmentalization - enables the metabolic sophistication necessary for multicellular complexity.
 
@@ -6334,7 +7643,19 @@ Prokaryotes exhibit unparalleled metabolic diversity:
 
 ## Biological Diversity
 
-![Ecology and energy flow diagram showing diverse organisms in ecosystem](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Biodiversity" definition="The variety of life at all levels of organization - from genetic variation within species through species diversity in communities to ecosystem diversity; the result of evolution over 3.8 billion years.">Biodiversity</vocab> encompasses genetic variation within species, the variety of species in communities, and the diversity of ecosystems. The estimated ~8.7 million species on Earth (most undescribed) are the result of billions of years of evolution.
 
@@ -6541,7 +7862,19 @@ Key strategies:
 
 ## Ecology: Studying the Interactions of Life
 
-![Ecology energy flow diagram showing trophic levels, producers, consumers, and decomposers](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Ecology" definition="The scientific study of the interactions between organisms and their environments, including the biotic (living) and abiotic (nonliving) components; operates at the level of organisms, populations, communities, and ecosystems.">Ecology</vocab> is the study of how organisms interact with each other and with their physical environment. It operates at multiple levels of organization, each with distinct emergent properties.
 
@@ -6639,7 +7972,19 @@ All ecosystems require an energy source. <vocab term="Primary Producers" definit
 
 ## Energy Flow Through Ecosystems
 
-![Ecosystem trophic pyramid showing primary producers, consumers, and energy transfer](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 Energy flows one way through ecosystems, entering as sunlight, passing through trophic levels, and leaving as heat. Nutrients, in contrast, are recycled.
 
@@ -6779,7 +8124,19 @@ Productivity varies significantly across biomes and is limited by specific facto
 
 ## Population Ecology
 
-![Ecology diagram showing population growth and energy flow through ecosystems](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Population Ecology" definition="The study of factors that affect the size, density, dispersion, and age structure of populations, and how these change over time; applies principles of birth, death, immigration, and emigration.">Population ecology</vocab> examines how populations grow, change, and are regulated by biotic and abiotic factors.
 
@@ -6916,7 +8273,19 @@ Effects the same regardless of population density:
 
 ## Community Ecology
 
-![Ecology energy flow diagram showing species interactions in an ecosystem community](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Community" definition="All the populations of different species living and interacting in a defined area; characterized by species diversity, species interactions, and physical structure.">Communities</vocab> are assemblages of interacting species. The interactions among species shape community structure, energy flow, and the relative abundance of different organisms.
 
@@ -7034,7 +8403,19 @@ Higher diversity generally associated with:
 
 ## Energy and Matter in Ecosystems
 
-![Energy flow diagram showing trophic levels, 10 percent rule, and nutrient cycling in ecosystems](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Ecosystem" definition="The living community (biotic) together with the physical environment (abiotic) in a defined area; characterized by energy flow through trophic levels and nutrient cycling.">Ecosystems</vocab> are open systems for energy (flows through) but nearly closed systems for matter (cycles). Understanding energy flow and nutrient cycling is essential for explaining why ecosystems function the way they do.
 
@@ -7241,7 +8622,19 @@ Unlike carbon and nitrogen, phosphorus has **no atmospheric pool**:
 
 ## Ecosystem Interactions and Disturbances
 
-![Ecology energy flow diagram showing how disturbances affect ecosystems](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Ecosystem Stability" definition="The ability of an ecosystem to resist change (resistance) or return to its original state after disturbance (resilience); related to diversity and complexity of species interactions.">Ecosystem stability</vocab> reflects the ability to maintain structure and function despite perturbations. Understanding how ecosystems respond to natural and human-caused disturbances is critical for conservation.
 
@@ -7360,7 +8753,19 @@ MacArthur and Wilson's theory predicts that habitat fragmentation mimics island 
 
 ## Climate Change and Human Impact on Ecosystems
 
-![Ecology energy flow diagram showing how climate change disrupts ecosystem energy and nutrient flow](/images/biology/ecology_energy_flow.png)
+<div class="flex justify-center my-8">
+  <svg width="400" height="180" viewBox="0 0 400 180" class="max-w-full">
+    <polygon points="200,20 180,50 220,50" fill="none" stroke="#ef4444" stroke-width="1.5" />
+    <text x="200" y="42" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">0.1%</text>
+    <polygon points="180,50 220,50 240,90 160,90" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="200" y="75" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">1%</text>
+    <polygon points="160,90 240,90 260,130 140,130" fill="none" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="200" y="115" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">10%</text>
+    <polygon points="140,130 260,130 280,170 120,170" fill="none" stroke="#22c55e" stroke-width="2" />
+    <text x="200" y="155" fill="#22c55e" font-size="10" font-weight="bold" text-anchor="middle">100% (Producers)</text>
+    <text x="320" y="100" fill="#a1a1aa" font-size="10" font-weight="bold">10% Rule of Energy Transfer</text>
+  </svg>
+</div>
 
 <vocab term="Climate Change" definition="Long-term shifts in global temperatures and weather patterns; primarily driven by human activities since the Industrial Revolution, especially burning of fossil fuels which releases CO2 and other greenhouse gases.">Climate change</vocab> represents the greatest current threat to global biodiversity and ecosystem function. Understanding the mechanisms and biological consequences is critical for AP Biology.
 

@@ -1532,7 +1532,7 @@ export default function APDynamicCoursePage() {
   const [activeTopic, setActiveTopic] = useState<CourseTopic | null>(null);
   const [activeTab, setActiveTab] = useState<"video" | "article" | "practice">("video");
   const [expandedUnits, setExpandedUnits] = useState<number[]>([1]);
-  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+  const [expandedImage, setExpandedImage] = useState<{ src: string; isSvg?: boolean } | null>(null);
   const [showExam, setShowExam] = useState(false);
   const [showAccountPopup, setShowAccountPopup] = useState(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -1607,14 +1607,25 @@ export default function APDynamicCoursePage() {
             >
               <X className="w-6 h-6" />
             </button>
-            <motion.img 
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              src={expandedImage} 
-              alt="Expanded view" 
-              className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
-            />
+            {expandedImage.isSvg ? (
+              <motion.div 
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
+                className="max-w-[90vw] max-h-[90vh] overflow-hidden flex items-center justify-center p-8 bg-[#050508]/90 border border-white/10 rounded-xl shadow-2xl [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[80vh] [&>svg]:max-w-[80vw]"
+                dangerouslySetInnerHTML={{ __html: expandedImage.src }}
+                onClick={(e) => e.stopPropagation()}
+              />
+            ) : (
+              <motion.img 
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
+                src={expandedImage.src} 
+                alt="Expanded view" 
+                className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+              />
+            )}
           </motion.div>
         )}
       </AnimatePresence>
@@ -1969,13 +1980,61 @@ export default function APDynamicCoursePage() {
                                     );
                                   },
                                   img: ({ node, ...props }: any) => (
-                                    <img 
-                                      {...props} 
-                                      className="border-0 border-none outline-none shadow-none mx-auto my-6 rounded-2xl max-h-[350px] object-contain block bg-transparent cursor-zoom-in hover:scale-[1.02] transition-transform duration-300" 
-                                      style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
-                                      onClick={() => setExpandedImage(props.src || null)}
-                                    />
-                                  )
+                                    <div 
+                                      className="my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl animate-fade-in"
+                                      style={{
+                                        background: `linear-gradient(135deg, ${course.accentColor}66, transparent, ${course.accentColor}22)`
+                                      }}
+                                    >
+                                      <div className="bg-[#050508]/90 backdrop-blur-md rounded-[15px] overflow-hidden border border-white/5 p-6 flex flex-col items-center justify-center">
+                                        <img 
+                                          {...props} 
+                                          className="max-h-[350px] max-w-full object-contain rounded-lg cursor-zoom-in hover:scale-[1.01] transition-transform duration-300" 
+                                          onClick={() => setExpandedImage(props.src ? { src: props.src } : null)}
+                                        />
+                                        {props.alt && (
+                                          <p className="text-xs text-white/40 mt-3 text-center italic leading-relaxed border-t border-white/5 pt-2 w-full">
+                                            {props.alt}
+                                          </p>
+                                        )}
+                                      </div>
+                                    </div>
+                                  ),
+                                  svg: ({ node, children, className, ...props }: any) => {
+                                    const cleanClassName = className
+                                      ? className
+                                          .replace(/\bbg-black\/40\b/g, '')
+                                          .replace(/\bborder\b/g, '')
+                                          .replace(/\bborder-white\/10\b/g, '')
+                                          .replace(/\bp-4\b/g, '')
+                                          .trim()
+                                      : '';
+                                    return (
+                                      <div 
+                                        className="my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl animate-fade-in"
+                                        style={{
+                                          background: `linear-gradient(135deg, ${course.accentColor}66, transparent, ${course.accentColor}22)`
+                                        }}
+                                      >
+                                        <div 
+                                          className="bg-[#050508]/90 backdrop-blur-md rounded-[15px] overflow-hidden border border-white/5 p-6 flex flex-col items-center justify-center cursor-zoom-in hover:scale-[1.01] transition-transform duration-300 w-full"
+                                          onClick={(e) => {
+                                            const svgEl = e.currentTarget.querySelector('svg');
+                                            if (svgEl) {
+                                              setExpandedImage({ src: svgEl.outerHTML, isSvg: true });
+                                            }
+                                          }}
+                                        >
+                                          <svg 
+                                            {...props} 
+                                            className={cn("max-h-[350px] max-w-full object-contain rounded-lg", cleanClassName)}
+                                          >
+                                            {children}
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    );
+                                  }
                                 } as any}
                               >
                                 {fullSection}
