@@ -1,5 +1,6 @@
 import { apChemistryData } from "./ap-chemistry-data";
 import { apBiologyData } from "./ap-biology-data";
+import { apPhysicsData } from "./ap-physics-data";
 
 export interface CourseQuestion {
   id: string;
@@ -89,163 +90,28 @@ const apBiologyUnits: CourseUnit[] = apBiologyData.map((unit) => ({
   })),
 }));
 
-// Complete high-yield curricula for the 7 additional dashboard courses
-const apPhysicsUnits: CourseUnit[] = [
-  {
-    id: 1,
-    title: "Kinematics",
-    masteryWeight: "14–20%",
-    topics: [
-      {
-        id: "1.1",
-        title: "Motion in One Dimension",
-        description: "Analyze velocity, acceleration, and position as derivatives.",
-        youtubeId: "ZM83OS4p1Og",
-        article: `
-# Motion in One Dimension
-
-Kinematics describes motion without considering its forces. In calculus-based physics, position $x(t)$, velocity $v(t)$, and acceleration $a(t)$ are linked by derivatives and integrals:
-
-## Differential Kinematics
-- Velocity is the first derivative of position:
-  $$v(t) = \\frac{dx}{dt}$$
-- Acceleration is the first derivative of velocity and the second derivative of position:
-  $$a(t) = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$$
-
-## Integral Kinematics
-- To find velocity from acceleration:
-  $$v(t) = v_0 + \\int_{0}^{t} a(t') dt'$$
-- To find position from velocity:
-  $$x(t) = x_0 + \\int_{0}^{t} v(t') dt'$$
-`,
-        questions: [
-          {
-            id: "q_phys_1.1.1",
-            unitId: 1,
-            text: "A particle's position is given by $x(t) = 3t^2 - 4t + 2$. What is its velocity at $t = 2$ seconds?",
-            options: ["4 m/s", "6 m/s", "8 m/s", "10 m/s"],
-            correctIndex: 2,
-            hint: "Differentiate $x(t)$ with respect to $t$.",
-            explanation: "Velocity is $v(t) = \\frac{dx}{dt} = 6t - 4$. At $t = 2$, $v(2) = 6(2) - 4 = 8\\text{ m/s}$."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Newton's Laws of Motion",
-    masteryWeight: "17–23%",
-    topics: [
-      {
-        id: "2.1",
-        title: "Systems and Friction",
-        description: "Analyze force interactions, static and kinetic friction, and inclined planes.",
-        youtubeId: "ZM83OS4p1Og",
-        article: `
-# Systems and Friction
-
-Newton's Second Law state that the net force on a system equals the mass times acceleration:
-$$\\Sigma \\vec{F} = m \\vec{a}$$
-
-## Friction Forces
-- Friction is modeled as proportional to the Normal force $F_N$:
-- **Static Friction**: Resists initial movement, variable up to a maximum:
-  $$F_f \\le \\mu_s F_N$$
-- **Kinetic Friction**: Occurs when surfaces slide:
-  $$F_f = \\mu_k F_N$$
-`,
-        questions: [
-          {
-            id: "q_phys_2.1.1",
-            unitId: 2,
-            text: "A block of mass $m$ sits at rest on a rough inclined plane of angle $\\theta$. What is the magnitude of the static friction force?",
-            options: ["$mg \\cos\\theta$", "$mg \\sin\\theta$", "$\\mu_s mg$", "$\\mu_s mg \\cos\\theta$"],
-            correctIndex: 1,
-            hint: "Consider the forces parallel to the incline.",
-            explanation: "Since the block is at rest, the static friction force balances the component of gravity down the incline, which is $mg \\sin\\theta$."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Work, Energy, and Power",
-    masteryWeight: "14–17%",
-    topics: [
-      {
-        id: "3.1",
-        title: "Work-Energy Theorem & Conservation",
-        description: "Evaluate conservative forces, kinetic energy, and potential energy functions.",
-        youtubeId: "QnQe0xW_JY4",
-        article: `
-# Work, Energy, and Power
-
-The Work-Energy Theorem states that the net work done on a particle equals its change in kinetic energy:
-$$W_{net} = \\Delta K$$
-
-## Work Done by a Variable Force
-For a force that varies with position $x$:
-$$W = \\int_{x_i}^{x_f} F(x) dx$$
-
-## Conservative Forces and Potential Energy
-A force is conservative if the work done is path-independent. Potential energy $U(x)$ is defined by:
-$$F(x) = -\\frac{dU}{dx}$$
-`,
-        questions: [
-          {
-            id: "q_phys_3.1.1",
-            unitId: 3,
-            text: "If the potential energy function of a particle is given by $U(x) = 2x^3 - 4x$, what is the force acting on the particle at $x = 2$?",
-            options: ["-20 N", "-8 N", "8 N", "20 N"],
-            correctIndex: 0,
-            hint: "Differentiate U(x) with respect to x and multiply by negative one.",
-            explanation: "Force is $F(x) = -\\frac{dU}{dx} = -(6x^2 - 4) = 4 - 6x^2$. At $x = 2$, $F(2) = 4 - 6(4) = -20\\text{ N}$."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Systems of Particles & Momentum",
-    masteryWeight: "14–17%",
-    topics: [
-      {
-        id: "4.1",
-        title: "Center of Mass and Collisions",
-        description: "Determine center of mass for systems and apply conservation of linear momentum.",
-        youtubeId: "ZM83OS4p1Og",
-        article: `
-# Systems of Particles and Linear Momentum
-
-The center of mass $x_{cm}$ of a discrete system of particles is defined by:
-$$x_{cm} = \\frac{\\sum m_i x_i}{\\sum m_i}$$
-
-## Conservation of Linear Momentum
-In the absence of external net forces, the total momentum of a system is conserved:
-$$\\vec{P}_{initial} = \\vec{P}_{final}$$
-
-## Impulse and Momentum
-Impulse $\\vec{J}$ is the change in linear momentum:
-$$\\vec{J} = \\int \\vec{F} dt = \\Delta \\vec{p}$$
-`,
-        questions: [
-          {
-            id: "q_phys_4.1.1",
-            unitId: 4,
-            text: "A 2 kg block moving at 4 m/s collides and sticks to a stationary 2 kg block. What is their final velocity?",
-            options: ["1 m/s", "2 m/s", "3 m/s", "4 m/s"],
-            correctIndex: 1,
-            hint: "Apply conservation of momentum: m1*v1 + m2*v2 = (m1+m2)*v_final.",
-            explanation: "Total initial momentum is $2 \\times 4 + 2 \\times 0 = 8\\text{ kg m/s}$. Final mass is $4\\text{ kg}$. Final velocity is $8 / 4 = 2\\text{ m/s}$."
-          }
-        ]
-      }
-    ]
-  }
-];
+const apPhysicsUnits: CourseUnit[] = apPhysicsData.map((unit) => ({
+  id: unit.id,
+  title: unit.title,
+  masteryWeight: unit.masteryWeight,
+  topics: unit.topics.map((topic) => ({
+    id: topic.id,
+    title: topic.title,
+    description: topic.description,
+    youtubeId: topic.youtubeId,
+    article: topic.article,
+    image: topic.image,
+    questions: topic.questions.map((q) => ({
+      id: q.id,
+      text: q.text,
+      options: q.options,
+      correctIndex: q.correctIndex,
+      hint: q.hint,
+      explanation: q.explanation,
+      unitId: q.unitId,
+    })),
+  })),
+}));
 
 const apUshUnits: CourseUnit[] = [
   {
