@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export function ScrollVideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const mouseX = useMotionValue(-1000);
   const mouseY = useMotionValue(-1000);
@@ -19,7 +20,6 @@ export function ScrollVideoSection() {
   };
 
   const handleMouseEnter = (e: React.MouseEvent) => {
-    // Instantly snap spring to current position so cursor doesn't fly in from corner
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -41,6 +41,29 @@ export function ScrollVideoSection() {
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => {
+            console.log("Auto-play failed/prevented:", err);
+          });
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(video);
+    return () => {
+      observer.unobserve(video);
+    };
+  }, []);
 
   return (
     <section 
@@ -116,18 +139,16 @@ export function ScrollVideoSection() {
           {/* Inner Liquid Glass Border */}
           <div className="relative w-full h-full rounded-[16px] md:rounded-[32px] overflow-hidden border border-white/20 bg-[#020202] flex justify-center items-center shadow-[inset_0_0_50px_rgba(0,0,0,0.8)]">
              
-             {/* Video will go here later */}
-             <div className="absolute inset-0 bg-[#0A0A0A] z-0" />
+             <video
+               ref={videoRef}
+               src="/videos/Dashboardvideo.mp4"
+               muted
+               loop
+               playsInline
+               className="w-full h-full object-cover absolute inset-0 z-10"
+             />
              
-             {/* Placeholder Overlay */}
-             <div className="relative z-10 flex flex-col items-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center animate-pulse">
-                   <div className="w-4 h-4 bg-medical-teal rounded-full shadow-[0_0_20px_rgba(45,212,191,0.5)]" />
-                </div>
-                <div className="text-white/30 font-inter text-sm md:text-xl tracking-[0.2em] uppercase font-semibold">
-                  Platform Demo Video
-                </div>
-             </div>
+             <div className="absolute inset-0 bg-[#0A0A0A] z-0" />
 
              {/* Glass Refraction effect overlay */}
              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.05] pointer-events-none z-20" />
