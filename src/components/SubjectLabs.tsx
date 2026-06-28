@@ -27,16 +27,16 @@ const COURSE_PREVIEWS: CoursePreview[] = [
   {
     id: "biology",
     name: "AP Biology",
-    badge: "32 Articles • 16 Videos",
+    badge: "25 Articles • 25 Videos",
     category: "STEM & Sciences",
     description: "Explore the fundamental principles of life. Decode the cellular matrix, delve into evolutionary models, and unravel gene replication mechanics with deep-dive visual modules, laboratory guides, and interactive simulations.",
     accentHex: "#10b981",
     slug: "ap-biology",
     stats: [
-      { label: "Articles", value: "32" },
-      { label: "Videos", value: "16" },
+      { label: "Articles", value: "25" },
+      { label: "Videos", value: "25" },
       { label: "Est. Study", value: "48h" },
-      { label: "Practice Qs", value: "1,200+" }
+      { label: "Practice Qs", value: "250+" }
     ],
     units: [
       { number: "Unit 1", title: "Chemistry of Life", desc: "Properties of water, macromolecule structures, biological polymers, and cellular chemical reactions." },
@@ -85,16 +85,16 @@ const COURSE_PREVIEWS: CoursePreview[] = [
   {
     id: "physics",
     name: "AP Physics",
-    badge: "24 Articles • 12 Videos",
+    badge: "36 Articles • 36 Videos",
     category: "STEM & Sciences",
     description: "Master the laws governing the universe. Investigate particle dynamics, electromagnetism, and energy conservation models with precision vector setups, force diagrams, and physical system sandboxes.",
     accentHex: "#818cf8",
     slug: "ap-physics-c",
     stats: [
-      { label: "Articles", value: "24" },
-      { label: "Videos", value: "12" },
+      { label: "Articles", value: "36" },
+      { label: "Videos", value: "36" },
       { label: "Est. Study", value: "38h" },
-      { label: "Practice Qs", value: "950+" }
+      { label: "Practice Qs", value: "360+" }
     ],
     units: [
       { number: "Unit 1", title: "Kinematics & Dynamics", desc: "Motion vector analysis, projectile paths, Newton's laws of motion, and friction coefficients." },
@@ -114,16 +114,16 @@ const COURSE_PREVIEWS: CoursePreview[] = [
   {
     id: "chemistry",
     name: "AP Chemistry",
-    badge: "30 Articles • 15 Videos",
+    badge: "27 Articles • 27 Videos",
     category: "STEM & Sciences",
     description: "Deconstruct the micro-world. Analyze thermodynamic systems, equilibrium math, kinetics, and molecular orbital structures using fully interactive chemical reaction simulations and molecular models.",
     accentHex: "#60a5fa",
     slug: "ap-chemistry",
     stats: [
-      { label: "Articles", value: "30" },
-      { label: "Videos", value: "15" },
+      { label: "Articles", value: "27" },
+      { label: "Videos", value: "27" },
       { label: "Est. Study", value: "45h" },
-      { label: "Practice Qs", value: "1,100+" }
+      { label: "Practice Qs", value: "270+" }
     ],
     units: [
       { number: "Unit 1", title: "Atomic Structure & Properties", desc: "Electron configuration, periodic trends (electronegativity, atomic radius), and bonding types." },
@@ -274,7 +274,7 @@ export function SubjectLabs() {
               <div>
                 {/* Resource Density Badge */}
                 <div className="bg-white/[0.07] text-white/70 text-[11px] font-mono tracking-wider uppercase px-3.5 py-1.5 rounded-full w-fit mb-6 select-none">
-                  32 Articles &bull; 16 Videos
+                  25 Articles &bull; 25 Videos
                 </div>
                 <h3 className="font-manrope font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
                   AP Biology
@@ -407,7 +407,7 @@ export function SubjectLabs() {
             <div className="relative z-10">
               {/* Resource Density Badge */}
               <div className="bg-white/[0.07] text-white/70 text-[11px] font-mono tracking-wider uppercase px-3.5 py-1.5 rounded-full w-fit mb-6 select-none">
-                24 Articles &bull; 12 Videos
+                36 Articles &bull; 36 Videos
               </div>
               <h3 className="font-manrope font-bold text-3xl text-white mb-4 tracking-tight">
                 AP Physics
@@ -443,7 +443,7 @@ export function SubjectLabs() {
               <div>
                 {/* Resource Density Badge */}
                 <div className="bg-white/[0.07] text-white/70 text-[11px] font-mono tracking-wider uppercase px-3.5 py-1.5 rounded-full w-fit mb-6 select-none">
-                  30 Articles &bull; 15 Videos
+                  27 Articles &bull; 27 Videos
                 </div>
                 <h3 className="font-manrope font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
                   AP Chemistry
