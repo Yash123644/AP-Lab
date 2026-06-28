@@ -46,11 +46,11 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Genetics & Gene Regulation", desc: "Meiotic division, Mendelian inheritance, chromatin remodeling, and transcription regulation." }
     ],
     highlights: [
-      "Rotational 3D DNA Double Helix Visual: Interact with a fully responsive 3D model of DNA to understand base-pairing structure.",
-      "AP Biology Course Syllabus & Video Lessons: Learn through structured modules covering key molecular and cellular topics.",
-      "Highlighted Vocabulary Popovers: Interact with highlighted terms in articles (e.g., Electronegativity, Cohesion) to see popover definitions instantly.",
-      "Interactive Practice Quizzes: Test yourself with 10 multiple-choice questions per subtopic with immediate feedback and detailed explanations.",
-      "Comprehensive Mock Exam: Take a structured final diagnostic test at the bottom of the syllabus to measure overall course mastery."
+      "8 Mapped Curriculum Units: Mapped study structure covering the complete course syllabus.",
+      "25 Subtopic Video Lectures: Embedded video tutorials for every single subtopic.",
+      "Detailed Reading Articles: Comprehensive reading material to master complex concepts.",
+      "Interactive Vocabulary Definitions: Instant popover tooltips for highlighted terms in articles.",
+      "Multiple-Choice Quizzes: Practice questions for each subtopic with explanations."
     ],
     visualType: "dna"
   },
@@ -75,11 +75,10 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Integration & Accumulation", desc: "Riemann sums, Fundamental Theorem of Calculus, accumulation functions, and area calculations." }
     ],
     highlights: [
-      "Dynamic SVG Function Graphing & Tangent Line Simulator: Traces derivative slopes along customizable curves to visualize local linearity.",
-      "Interactive Riemann Sum & Area Estimator: Visually construct rectangular and trapezoidal slices to approximate definite integrals.",
-      "Formal Step-by-Step Analytical Proof Templates: Master Mean Value Theorem, Intermediate Value Theorem, and L'Hopital's rule.",
-      "Volume of Solids of Revolution 3D Visuals: conceptualize disk, washer, and shell methods about axes of rotation.",
-      "Targeted AP Free Response Question (FRQ) Drill Sets: Practice calculating rates of change, accumulation, and separation of variables."
+      "Structured Curriculum Units: Full syllabus coverage of limits, derivatives, and integrals.",
+      "28 Subtopic Video Lectures: Video tutorials mapping all sections of the course.",
+      "Interactive Reading Articles: Formatted articles for studying calculus proofs and concepts.",
+      "Multiple-Choice Quizzes: Practice question sets to test mathematical logic."
     ],
     visualType: "calculus"
   },
@@ -104,11 +103,11 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Oscillations & Gravity", desc: "Simple harmonic oscillators, gravitational force fields, and Kepler's laws." }
     ],
     highlights: [
-      "3D Keplerian Gravity & Orbit Simulator: Customize masses, gravity, orbital velocity, and vector scale inside a real-time responsive 3D gravitational sandbox.",
-      "Kinematics, Dynamics, & Rotation Modules: Comprehensive calculus-based AP Physics C study modules.",
-      "Vocabulary Popovers: Tap key terms in articles to access definitions and conceptual breakdowns.",
-      "10 Practice Questions Per Subtopic: Solve 360 total multiple-choice practice questions with hints and detailed solution walk-throughs.",
-      "Full Diagnostic Mock Exam: Test your readiness with a complete exam simulation matching the AP Physics C format."
+      "12 Mapped Curriculum Units: Thorough coverage of Newtonian mechanics, kinematics, and rotation.",
+      "36 Subtopic Video Lectures: Embedded video explanations for every subtopic.",
+      "Detailed Mechanics Articles: Targeted reading guides covering core physics equations.",
+      "Interactive Vocabulary Definitions: Tap highlighted terms in articles to read quick definitions.",
+      "Multiple-Choice Quizzes: 10 practice questions per subtopic with explanations."
     ],
     visualType: "physics"
   },
@@ -133,11 +132,11 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Thermodynamics & pH", desc: "Enthalpy, entropy, Gibbs free energy, acid-base theories, and buffer system math." }
     ],
     highlights: [
-      "Interactive 3D Molecular Bonding Canvas: Interact with a floating 3D molecular orbital visualizer.",
-      "Thermodynamics, Equilibrium, & Kinetics Modules: Access detailed study guides mapped to the AP Chemistry curriculum.",
-      "Highlighted Vocabulary Terms: Access popover definitions for key chemical terms.",
-      "10 Practice Questions Per Subtopic: Review with 270 total practice questions with explanations for correct and incorrect options.",
-      "Course Final Mock Exam: Verify your mastery of AP Chemistry equations and theories before exam day."
+      "9 Mapped Curriculum Units: Mapped study structure for atomic structure, thermodynamics, and kinetics.",
+      "27 Subtopic Video Lectures: Video tutorials for every subtopic.",
+      "Comprehensive Chemistry Articles: Reading material covering reactions and equilibrium principles.",
+      "Interactive Vocabulary Definitions: Instant definition tooltips for key chemistry terms.",
+      "Multiple-Choice Quizzes: 10 practice questions per subtopic with explanations."
     ],
     visualType: "chemistry"
   }
@@ -637,36 +636,33 @@ export function SubjectLabs() {
                       <h4 className="text-xs font-mono uppercase tracking-wider text-white/40 mt-8 mb-4">
                         {courseRegistry[activeCourseData.slug] ? "Full Curriculum Syllabus" : "Curriculum Syllabus (4 Main Units)"}
                       </h4>
-                      <div className="space-y-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[220px] overflow-y-auto pr-1 no-scrollbar">
                         {(() => {
                           const registryCourse = courseRegistry[activeCourseData.slug];
                           const displayUnits = registryCourse
                             ? registryCourse.units.map(u => ({
                                 number: `Unit ${u.id}`,
                                 title: u.title,
-                                desc: `${u.topics.length} Subtopics: ${u.topics.map(t => t.title).slice(0, 3).join(", ")}${u.topics.length > 3 ? "..." : ""}`
                               }))
-                            : activeCourseData.units;
+                            : activeCourseData.units.map(u => ({
+                                number: u.number,
+                                title: u.title,
+                              }));
 
                           return displayUnits.map((unit, index) => (
                             <div 
                               key={index}
-                              className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-4 hover:bg-white/[0.04] transition-all duration-300"
+                              className="bg-white/[0.02] border border-white/[0.05] rounded-xl px-3 py-2.5 hover:bg-white/[0.04] transition-all duration-300 flex items-center gap-3"
                             >
-                              <div className="flex items-center justify-between mb-1">
-                                <span 
-                                  className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5"
-                                  style={{ color: activeCourseData.accentHex }}
-                                >
-                                  {unit.number}
-                                </span>
-                              </div>
-                              <h5 className="text-sm font-semibold text-white">
+                              <span 
+                                className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 shrink-0"
+                                style={{ color: activeCourseData.accentHex }}
+                              >
+                                {unit.number}
+                              </span>
+                              <h5 className="text-xs font-semibold text-white/90 truncate">
                                 {unit.title}
                               </h5>
-                              <p className="text-white/40 text-xs mt-1 leading-relaxed">
-                                {unit.desc}
-                              </p>
                             </div>
                           ));
                         })()}
