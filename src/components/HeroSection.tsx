@@ -369,7 +369,7 @@ export function HeroSection() {
         </div>
 
         {/* Massive Headline */}
-        <h1 className="font-inter font-bold text-white text-6xl md:text-[96px] leading-[1.05] mb-8 tracking-tight max-w-5xl text-center select-none mix-blend-difference">
+        <h1 className="font-inter font-bold text-white text-5xl sm:text-6xl md:text-[96px] leading-[1.05] mb-8 tracking-tight max-w-5xl text-center select-none mix-blend-difference">
           For the love <br />
           <motion.span 
             layout="position" 

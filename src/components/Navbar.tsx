@@ -26,7 +26,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "/about" },
+    // { name: "About", href: "/about" },
     { name: "Impact", href: "/community-impact" },
     { name: "Join", href: "/join" },
     { name: "Contact Us", href: "/contact" },

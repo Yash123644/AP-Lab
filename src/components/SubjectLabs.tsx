@@ -267,10 +267,10 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("biology")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-2 md:col-span-2 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-2 md:col-span-2 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Card Content (Left) */}
-            <div className="flex flex-col justify-between relative z-10 w-full md:w-1/2 h-full">
+            <div className="flex flex-col justify-between relative z-10 w-full md:w-1/2 min-h-[200px] md:min-h-0">
               <div>
                 {/* Resource Density Badge */}
                 <div className="bg-white/[0.07] text-white/70 text-[11px] font-mono tracking-wider uppercase px-3.5 py-1.5 rounded-full w-fit mb-6 select-none">
@@ -295,7 +295,7 @@ export function SubjectLabs() {
 
             {/* 3D Visual Section (Right) */}
             <div 
-              className="relative w-full md:w-1/2 flex items-center justify-center min-h-[220px] md:min-h-0 select-none"
+              className="relative w-full md:w-1/2 flex items-center justify-center h-[200px] md:h-auto select-none"
               style={{
                 WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
                 maskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)"
@@ -316,7 +316,7 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("calculus")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-1 md:col-span-1 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-1 md:col-span-1 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Background SVG Curve Animation */}
             <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none mt-28">
@@ -396,7 +396,7 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("physics")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-1 md:col-span-1 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-1 md:col-span-1 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* 3D Visual Section */}
             <div className="absolute inset-x-0 bottom-12 flex items-center justify-center h-[200px] pointer-events-none z-0">
@@ -436,10 +436,10 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("chemistry")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-2 md:col-span-2 h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row-reverse justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-2 md:col-span-2 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row-reverse justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Card Content (Right/Left depending on orientation, here it is md:flex-row-reverse) */}
-            <div className="flex flex-col justify-between relative z-10 w-full md:w-1/2 h-full">
+            <div className="flex flex-col justify-between relative z-10 w-full md:w-1/2 min-h-[200px] md:min-h-0">
               <div>
                 {/* Resource Density Badge */}
                 <div className="bg-white/[0.07] text-white/70 text-[11px] font-mono tracking-wider uppercase px-3.5 py-1.5 rounded-full w-fit mb-6 select-none">
@@ -463,7 +463,7 @@ export function SubjectLabs() {
             </div>
 
             {/* 3D Visual Section (Left/Right) */}
-            <div className="relative w-full md:w-1/2 flex items-center justify-center min-h-[220px] md:min-h-0 select-none">
+            <div className="relative w-full md:w-1/2 flex items-center justify-center h-[200px] md:h-auto select-none">
               <div className="absolute inset-0 bg-radial-gradient from-indigo-500/5 to-transparent pointer-events-none" />
               <ChemistryMolecule3D isHovered={hoveredCard === "chemistry"} />
             </div>

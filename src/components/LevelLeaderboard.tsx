@@ -23,7 +23,7 @@ export function LevelLeaderboard() {
   const fetchLeaderboard = async (showLoading = false) => {
     if (showLoading) setLoading(true);
     try {
-      const res = await fetch(`/api/leaderboard?t=${Date.now()}`, { cache: "no-store" });
+      const res = await fetch(`/api/leaderboard?uid=${progress?.uid || ""}&t=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error || `Server responded with status ${res.status}`);

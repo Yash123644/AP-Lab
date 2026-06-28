@@ -219,6 +219,14 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
 
 function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progressData, bgGradient }: typeof folders[0] & { progressData: Record<string, number> }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div 
@@ -226,7 +234,7 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        transform: isHovered ? "translateY(-6px)" : "translateY(0px)"
+        transform: (isHovered && !isMobile) ? "translateY(-6px)" : "translateY(0px)"
       }}
     >
       {/* Folder Notch Tab (sloped top notch tab) */}
@@ -328,10 +336,9 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
               })}
             </div>
 
-            {/* Glossy Front Cover (slides down on hover) */}
             <motion.div
               className="absolute inset-0 z-20 bg-white/[0.05] backdrop-blur-xl border border-white/10 rounded-[19px] shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] flex flex-col items-center justify-center p-6"
-              animate={{ y: isHovered ? "105%" : "0%" }}
+              animate={{ y: (isHovered || isMobile) ? "105%" : "0%" }}
               transition={{ type: "spring", stiffness: 120, damping: 18 }}
             >
               {/* Glossy glass reflection gradient overlay */}

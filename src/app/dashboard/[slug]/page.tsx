@@ -1533,6 +1533,7 @@ export default function APDynamicCoursePage() {
   const [activeTab, setActiveTab] = useState<"video" | "article" | "practice">("video");
   const [expandedUnits, setExpandedUnits] = useState<number[]>([1]);
   const [expandedImage, setExpandedImage] = useState<{ src: string; isSvg?: boolean } | null>(null);
+  const [isMobileSyllabusOpen, setIsMobileSyllabusOpen] = useState(false);
   const [showExam, setShowExam] = useState(false);
   const [showAccountPopup, setShowAccountPopup] = useState(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -1685,9 +1686,18 @@ export default function APDynamicCoursePage() {
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div className="h-4 w-[1px] bg-white/10" />
-          <h1 className="font-instrument text-xl text-white tracking-tight">
-            {course.name} <span className="text-white/40 font-inter text-sm ml-2">Quantitative Mastery</span>
-          </h1>
+          <div className="flex flex-col items-start">
+            <h1 className="font-instrument text-lg md:text-xl text-white tracking-tight leading-tight">
+              {course.name}
+            </h1>
+            <button 
+              onClick={() => setIsMobileSyllabusOpen(true)}
+              className="lg:hidden text-[10px] text-white/50 hover:text-white font-manrope font-bold uppercase tracking-wider flex items-center gap-1 mt-0.5"
+            >
+              <span>Topic {activeTopic?.id || "1.1"} (Change)</span>
+              <ChevronDown className="w-3 h-3" />
+            </button>
+          </div>
         </div>
         <div className="flex items-center space-x-6">
           <button 
@@ -2100,6 +2110,134 @@ export default function APDynamicCoursePage() {
           )}
         </main>
       </div>
+
+      {/* Mobile Syllabus Drawer */}
+      <AnimatePresence>
+        {isMobileSyllabusOpen && (
+          <div className="fixed inset-0 z-[100] lg:hidden">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileSyllabusOpen(false)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-md"
+            />
+            {/* Drawer Panel */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="absolute inset-y-0 left-0 w-full max-w-[320px] bg-[#0c0c0e] border-r border-white/10 p-6 flex flex-col justify-between shadow-[5px_0_30px_rgba(0,0,0,0.5)]"
+            >
+              <div className="flex flex-col flex-1 overflow-hidden">
+                {/* Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-white/5 mb-4">
+                  <span className="font-manrope font-bold text-white tracking-tight text-lg">Syllabus</span>
+                  <button 
+                    onClick={() => setIsMobileSyllabusOpen(false)}
+                    className="p-1.5 rounded-full bg-white/5 text-white/60 hover:text-white border border-white/5"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {/* Units List */}
+                <div className="flex-1 overflow-y-auto scrollbar-hide space-y-2 pr-1">
+                  {course.units.map((unit) => {
+                    const isUnitCompleted = unit.topics.length > 0 && unit.topics.every(topic => 
+                      progress.completedTopics.includes(`${course.masteryPrefix}-${topic.id}`)
+                    );
+
+                    return (
+                      <div key={unit.id} className="space-y-1">
+                        <button
+                          onClick={() => toggleUnit(unit.id)}
+                          className={cn(
+                            "w-full flex items-center justify-between p-3 rounded-xl transition-all duration-300 relative overflow-hidden group",
+                            activeUnit === unit.id ? "bg-white/5" : "hover:bg-white/5"
+                          )}
+                        >
+                          <div className="flex flex-col items-start text-left relative z-10">
+                            <span className="text-[10px] font-manrope font-black uppercase tracking-widest mb-1 subject-accent-text flex items-center gap-1.5">
+                              <span>Unit {unit.id}</span>
+                              {isUnitCompleted && (
+                                <span className="text-[8px] px-1.5 py-0.5 rounded bg-white/10 text-white/90">✓</span>
+                              )}
+                            </span>
+                            <span className={cn(
+                              "text-sm font-medium leading-tight",
+                              activeUnit === unit.id ? "text-white" : "text-white/60"
+                            )}>
+                              {unit.title}
+                            </span>
+                          </div>
+                          <ChevronDown className={cn("w-4 h-4 text-white/40 transition-transform", expandedUnits.includes(unit.id) && "rotate-180")} />
+                        </button>
+
+                        <AnimatePresence>
+                          {expandedUnits.includes(unit.id) && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden pl-4 space-y-1 border-l border-white/5 ml-4"
+                            >
+                              {unit.topics.map((topic) => {
+                                const isCompleted = progress.completedTopics.includes(`${course.masteryPrefix}-${topic.id}`);
+                                const isActive = activeTopic?.id === topic.id;
+
+                                return (
+                                  <button
+                                    key={topic.id}
+                                    onClick={() => {
+                                      setActiveUnit(unit.id);
+                                      setActiveTopic(topic);
+                                      setShowExam(false);
+                                      setIsMobileSyllabusOpen(false);
+                                    }}
+                                    className={cn(
+                                      "w-full flex items-center justify-between p-2.5 rounded-lg text-left text-xs transition-colors",
+                                      isActive 
+                                        ? "bg-white/10 text-white" 
+                                        : "text-white/40 hover:text-white/60"
+                                    )}
+                                  >
+                                    <div className="flex items-center space-x-2 truncate">
+                                      <span className="font-mono font-bold">{topic.id}</span>
+                                      <span className="truncate">{topic.title}</span>
+                                    </div>
+                                    {isCompleted && <CheckCircle2 className="w-3.5 h-3.5 text-green-400 shrink-0 ml-2" />}
+                                  </button>
+                                );
+                              })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Footer inside Drawer */}
+              <div className="pt-4 border-t border-white/5 mt-4">
+                <button 
+                  onClick={() => {
+                    setShowExam(true);
+                    setIsMobileSyllabusOpen(false);
+                  }}
+                  className="w-full flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white"
+                >
+                  <span className="text-xs font-bold uppercase tracking-widest">Mock Exam</span>
+                  <Trophy className="w-4 h-4 subject-accent-text" />
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

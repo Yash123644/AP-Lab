@@ -1,113 +1,107 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getAdminDb } from "@/lib/firebaseAdmin";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
     const adminDb = getAdminDb();
+    const { searchParams } = new URL(req.url);
+    const currentUid = searchParams.get("uid");
 
-    // Create a database fetch promise
-    const fetchPromise = adminDb
-      .collection("userProgress")
-      .orderBy("xp", "desc")
-      .limit(10)
-      .get();
+    // 1. Define the 8 bots with requested levels: 29, 26, 25, 25, 15, 11, 10, 8
+    const bots = [
+      {
+        uid: "bot-1",
+        displayName: "Sarah Jenkins",
+        photoURL: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
+        xp: 10420,
+        level: 29,
+      },
+      {
+        uid: "bot-2",
+        displayName: "Chloe Zhang",
+        photoURL: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80",
+        xp: 8550,
+        level: 26,
+      },
+      {
+        uid: "bot-3",
+        displayName: "Ethan Hunt",
+        photoURL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
+        xp: 7980,
+        level: 25,
+      },
+      {
+        uid: "bot-4",
+        displayName: "Devon Lane",
+        photoURL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
+        xp: 7935,
+        level: 25,
+      },
+      {
+        uid: "bot-5",
+        displayName: "Lucas Vance",
+        photoURL: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80",
+        xp: 3270,
+        level: 15,
+      },
+      {
+        uid: "bot-6",
+        displayName: "Nisha Patel",
+        photoURL: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80",
+        xp: 1950,
+        level: 11,
+      },
+      {
+        uid: "bot-7",
+        displayName: "Emma Watson",
+        photoURL: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80",
+        xp: 1650,
+        level: 10,
+      },
+      {
+        uid: "bot-8",
+        displayName: "Marcus Aurelius",
+        photoURL: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80",
+        xp: 1140,
+        level: 8,
+      },
+    ];
 
-    // Create a 4-second timeout promise to prevent Lambda function hangs on Vercel
+    const leaderList = [...bots];
+
+    // Create a 4-second timeout promise
     const timeoutPromise = new Promise<never>((_, reject) =>
       setTimeout(() => reject(new Error("Database connection timeout")), 4000)
     );
 
-    // Race the fetch call against the timeout
-    let snapshot = (await Promise.race([fetchPromise, timeoutPromise])) as any;
-
-    // If the database is empty, seed it with initial mock student profiles
-    if (snapshot.empty) {
-      console.log("userProgress collection is empty. Seeding mock student profiles...");
-      const mockUsers = [
-        {
-          uid: "mock-user-1",
-          displayName: "Alex Mercer",
-          photoURL: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80",
-          xp: 1250,
-          level: 13,
-          email: "alex@aplab.org",
-        },
-        {
-          uid: "mock-user-2",
-          displayName: "Sofia Rodriguez",
-          photoURL: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80",
-          xp: 940,
-          level: 10,
-          email: "sofia@aplab.org",
-        },
-        {
-          uid: "mock-user-3",
-          displayName: "Kenji Sato",
-          photoURL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
-          xp: 680,
-          level: 7,
-          email: "kenji@aplab.org",
-        },
-        {
-          uid: "mock-user-4",
-          displayName: "Liam Gallagher",
-          photoURL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
-          xp: 450,
-          level: 5,
-          email: "liam@aplab.org",
-        },
-        {
-          uid: "mock-user-5",
-          displayName: "Maya Lin",
-          photoURL: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
-          xp: 180,
-          level: 2,
-          email: "maya@aplab.org",
+    // 2. Fetch the active logged-in user from Firestore (if uid is provided)
+    if (currentUid && currentUid.trim() !== "") {
+      try {
+        const fetchDocPromise = adminDb.collection("userProgress").doc(currentUid).get();
+        const userDoc = (await Promise.race([fetchDocPromise, timeoutPromise])) as any;
+        
+        if (userDoc.exists) {
+          const data = userDoc.data();
+          // Prevent duplicate entry
+          if (!leaderList.some((b) => b.uid === currentUid)) {
+            leaderList.push({
+              uid: currentUid,
+              displayName: data.displayName || "AP Scholar",
+              photoURL: data.photoURL || "",
+              xp: data.xp || 0,
+              level: data.level || 1,
+            });
+          }
         }
-      ];
-
-      const batch = adminDb.batch();
-      mockUsers.forEach((user) => {
-        const docRef = adminDb.collection("userProgress").doc(user.uid);
-        batch.set(docRef, {
-          uid: user.uid,
-          displayName: user.displayName,
-          photoURL: user.photoURL,
-          xp: user.xp,
-          level: user.level,
-          email: user.email,
-          completedTopics: [],
-          masteryScores: {},
-          lastAccessed: new Date()
-        });
-      });
-      
-      // Also race batch commit with a 4-second timeout
-      const commitPromise = batch.commit();
-      await Promise.race([commitPromise, timeoutPromise]);
-      console.log("Mock student data committed successfully!");
-
-      // Re-fetch the newly seeded documents with timeout race
-      const refetchPromise = adminDb
-        .collection("userProgress")
-        .orderBy("xp", "desc")
-        .limit(10)
-        .get();
-      snapshot = await Promise.race([refetchPromise, timeoutPromise]);
+      } catch (dbError) {
+        console.error("Firestore user fetch error, falling back to bots only:", dbError);
+      }
     }
 
-    const leaderList = snapshot.docs.map((doc: any) => {
-      const data = doc.data();
-      return {
-        uid: doc.id,
-        displayName: data.displayName || "AP Scholar",
-        photoURL: data.photoURL || "",
-        xp: data.xp || 0,
-        level: data.level || 1,
-      };
-    });
+    // 3. Sort by XP desc
+    leaderList.sort((a, b) => (b.xp || 0) - (a.xp || 0));
 
     return new NextResponse(JSON.stringify(leaderList), {
       status: 200,
@@ -120,11 +114,6 @@ export async function GET() {
     console.error("Leaderboard API error:", error);
     return NextResponse.json({ 
       error: error.message || "Failed to fetch leaderboard",
-      stack: error.stack,
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || process.env.FIREBASE_PROJECT_ID || "not set",
-      hasPrivateKey: !!process.env.FIREBASE_PRIVATE_KEY,
-      privateKeyLength: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.length : 0,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL || "not set"
     }, { status: 500 });
   }
 }

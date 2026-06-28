@@ -141,12 +141,12 @@ export function ScrollVideoSection() {
              
              <video
                ref={videoRef}
-               src="/videos/Dashboardvideo.mp4"
+               src="/videos/Dashboard.mp4"
                muted
                loop
                playsInline
-               // scale-[1.02] prevents subpixel rendering sliver gaps at borders under 3D transforms
-               className="w-full h-full object-cover absolute inset-0 z-10 scale-[1.02]"
+               // scale-[1.06] prevents subpixel rendering sliver gaps at borders under 3D transforms
+               className="w-full h-full object-cover absolute inset-0 z-10 scale-[1.06]"
              />
              
              <div className="absolute inset-0 bg-[#0A0A0A] z-0" />
