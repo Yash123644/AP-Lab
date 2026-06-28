@@ -8,6 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { BiologyDNA3D } from "./BiologyDNA3D";
 import { ChemistryMolecule3D } from "./ChemistryMolecule3D";
 import { PhysicsOrbit3D } from "./PhysicsOrbit3D";
+import { courseRegistry } from "@/lib/courses/course-registry";
 
 interface CoursePreview {
   id: string;
@@ -45,11 +46,11 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Genetics & Gene Regulation", desc: "Meiotic division, Mendelian inheritance, chromatin remodeling, and transcription regulation." }
     ],
     highlights: [
-      "Interactive 3D DNA Double Helix & Organelle Visualizers: Explore molecular models and eukaryotic cell structure in a fully rotational 3D canvas environment.",
-      "Dynamic Membrane Transport & Osmosis Sandbox: Experiment with concentration gradients, active/passive transport, and semi-permeable membranes.",
-      "Comprehensive Lab Reports & AP Review Guides: Master enzyme kinetics, cellular respiration, and photosynthesis calculations with step-by-step guides.",
-      "Practice Exam Simulator with Detailed Score Reports: Access realistic multiple-choice questions and free-response grading rubrics.",
-      "Real-time Progress Tracker & Flashcard Decks: Study high-yield biology vocabulary (e.g., endosymbiosis, transduction) with smart reviews."
+      "Rotational 3D DNA Double Helix Visual: Interact with a fully responsive 3D model of DNA to understand base-pairing structure.",
+      "AP Biology Course Syllabus & Video Lessons: Learn through structured modules covering key molecular and cellular topics.",
+      "Highlighted Vocabulary Popovers: Interact with highlighted terms in articles (e.g., Electronegativity, Cohesion) to see popover definitions instantly.",
+      "Interactive Practice Quizzes: Test yourself with 10 multiple-choice questions per subtopic with immediate feedback and detailed explanations.",
+      "Comprehensive Mock Exam: Take a structured final diagnostic test at the bottom of the syllabus to measure overall course mastery."
     ],
     visualType: "dna"
   },
@@ -103,11 +104,11 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Oscillations & Gravity", desc: "Simple harmonic oscillators, gravitational force fields, and Kepler's laws." }
     ],
     highlights: [
-      "3D Planetary Gravity & Keplerian Orbit Simulator: Visualize vector forces, orbital paths, and angular momentum in real time.",
-      "Interactive Vector Fields & Force Diagram Builder: Construct free-body diagrams and calculate net force, torque, and tension.",
-      "Real-Time Mass-Spring & Pendulum Oscillation Sandbox: Adjust damping coefficients, spring constants, and gravity to analyze simple harmonic motion.",
-      "Work-Energy Conservation System Visuals: Model elastic and inelastic collisions and analyze kinetic/potential energy transformations.",
-      "AP Physics C Calculus-Based Mechanics Review Modules: Master derivation of kinematics formulas using derivatives and integrals."
+      "3D Keplerian Gravity & Orbit Simulator: Customize masses, gravity, orbital velocity, and vector scale inside a real-time responsive 3D gravitational sandbox.",
+      "Kinematics, Dynamics, & Rotation Modules: Comprehensive calculus-based AP Physics C study modules.",
+      "Vocabulary Popovers: Tap key terms in articles to access definitions and conceptual breakdowns.",
+      "10 Practice Questions Per Subtopic: Solve 360 total multiple-choice practice questions with hints and detailed solution walk-throughs.",
+      "Full Diagnostic Mock Exam: Test your readiness with a complete exam simulation matching the AP Physics C format."
     ],
     visualType: "physics"
   },
@@ -132,11 +133,11 @@ const COURSE_PREVIEWS: CoursePreview[] = [
       { number: "Unit 4", title: "Thermodynamics & pH", desc: "Enthalpy, entropy, Gibbs free energy, acid-base theories, and buffer system math." }
     ],
     highlights: [
-      "Interactive 3D Molecular Bonding & Orbital Orbit Visualizer: Conceptualize hybridization, molecular geometry, and electron configuration.",
-      "Dynamic Le Chatelier Chemical Equilibrium Simulator: Adjust temperature, pressure, and concentrations to see shifts in real-time reaction quotients.",
-      "Virtual Titration Laboratory & pH Curver: Conduct simulated acid-base titrations and calculate equivalence points and buffer capacities.",
-      "Thermodynamic Calorimetry & Rate Law Calculators: Analyze enthalpy, entropy, activation energy, and half-life reaction rates.",
-      "Solubility & Precipitation Visual Product Guide: Master net ionic equations and precipitation reactions with visual cues."
+      "Interactive 3D Molecular Bonding Canvas: Interact with a floating 3D molecular orbital visualizer.",
+      "Thermodynamics, Equilibrium, & Kinetics Modules: Access detailed study guides mapped to the AP Chemistry curriculum.",
+      "Highlighted Vocabulary Terms: Access popover definitions for key chemical terms.",
+      "10 Practice Questions Per Subtopic: Review with 270 total practice questions with explanations for correct and incorrect options.",
+      "Course Final Mock Exam: Verify your mastery of AP Chemistry equations and theories before exam day."
     ],
     visualType: "chemistry"
   }
@@ -634,30 +635,41 @@ export function SubjectLabs() {
                       
                       {/* Syllabus */}
                       <h4 className="text-xs font-mono uppercase tracking-wider text-white/40 mt-8 mb-4">
-                        Curriculum Syllabus (4 Main Units)
+                        {courseRegistry[activeCourseData.slug] ? "Full Curriculum Syllabus" : "Curriculum Syllabus (4 Main Units)"}
                       </h4>
                       <div className="space-y-3">
-                        {activeCourseData.units.map((unit, index) => (
-                          <div 
-                            key={index}
-                            className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-4 hover:bg-white/[0.04] transition-all duration-300"
-                          >
-                            <div className="flex items-center justify-between mb-1">
-                              <span 
-                                className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5"
-                                style={{ color: activeCourseData.accentHex }}
-                              >
-                                {unit.number}
-                              </span>
+                        {(() => {
+                          const registryCourse = courseRegistry[activeCourseData.slug];
+                          const displayUnits = registryCourse
+                            ? registryCourse.units.map(u => ({
+                                number: `Unit ${u.id}`,
+                                title: u.title,
+                                desc: `${u.topics.length} Subtopics: ${u.topics.map(t => t.title).slice(0, 3).join(", ")}${u.topics.length > 3 ? "..." : ""}`
+                              }))
+                            : activeCourseData.units;
+
+                          return displayUnits.map((unit, index) => (
+                            <div 
+                              key={index}
+                              className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-4 hover:bg-white/[0.04] transition-all duration-300"
+                            >
+                              <div className="flex items-center justify-between mb-1">
+                                <span 
+                                  className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5"
+                                  style={{ color: activeCourseData.accentHex }}
+                                >
+                                  {unit.number}
+                                </span>
+                              </div>
+                              <h5 className="text-sm font-semibold text-white">
+                                {unit.title}
+                              </h5>
+                              <p className="text-white/40 text-xs mt-1 leading-relaxed">
+                                {unit.desc}
+                              </p>
                             </div>
-                            <h5 className="text-sm font-semibold text-white">
-                              {unit.title}
-                            </h5>
-                            <p className="text-white/40 text-xs mt-1 leading-relaxed">
-                              {unit.desc}
-                            </p>
-                          </div>
-                        ))}
+                          ));
+                        })()}
                       </div>
                     </div>
                   </div>
