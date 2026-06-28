@@ -10,39 +10,40 @@ export async function GET(req: NextRequest) {
     const currentUid = searchParams.get("uid");
 
     // 1. Define the 8 bots with requested levels: 29, 26, 25, 25, 15, 11, 10, 8
+    // Profiles are updated to represent highly believable high school students
     const bots = [
       {
         uid: "bot-1",
-        displayName: "Sarah Jenkins",
-        photoURL: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
+        displayName: "Tyler Davis",
+        photoURL: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80",
         xp: 10420,
         level: 29,
       },
       {
         uid: "bot-2",
-        displayName: "Chloe Zhang",
+        displayName: "Sofia Rodriguez",
         photoURL: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80",
         xp: 8550,
         level: 26,
       },
       {
         uid: "bot-3",
-        displayName: "Ethan Hunt",
+        displayName: "Alex Mercer",
         photoURL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
         xp: 7980,
         level: 25,
       },
       {
         uid: "bot-4",
-        displayName: "Devon Lane",
-        photoURL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
+        displayName: "Maya Lin",
+        photoURL: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
         xp: 7935,
         level: 25,
       },
       {
         uid: "bot-5",
-        displayName: "Lucas Vance",
-        photoURL: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80",
+        displayName: "Kenji Sato",
+        photoURL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
         xp: 3270,
         level: 15,
       },
@@ -55,15 +56,15 @@ export async function GET(req: NextRequest) {
       },
       {
         uid: "bot-7",
-        displayName: "Emma Watson",
-        photoURL: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80",
+        displayName: "Liam Gallagher",
+        photoURL: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80",
         xp: 1650,
         level: 10,
       },
       {
         uid: "bot-8",
-        displayName: "Marcus Aurelius",
-        photoURL: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80",
+        displayName: "Chloe Zhang",
+        photoURL: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80",
         xp: 1140,
         level: 8,
       },

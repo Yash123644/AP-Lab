@@ -71,8 +71,14 @@ export default function JoinPage() {
     e.preventDefault();
     setLoading(true);
     
+    // Resolve Formspree endpoint (environment variable for standard Form ID hash, fallback to legacy email)
+    const formspreeKey = process.env.NEXT_PUBLIC_FORMSPREE_KEY || "ap.labbss@gmail.com";
+    const submitUrl = formspreeKey.includes("@")
+      ? `https://formspree.io/${formspreeKey}`
+      : `https://formspree.io/f/${formspreeKey}`;
+
     try {
-      const response = await fetch("https://formspree.io/ap.labbss@gmail.com", {
+      const response = await fetch(submitUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
