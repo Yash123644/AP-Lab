@@ -42,18 +42,19 @@ export const apPsychData: CourseUnit[] = [
 To understand human behavior, psychologists study the interplay between nature (genetics) and nurture (environment):
 
 ## 1. Genotype vs. Phenotype
-- **Genotype**: The actual genetic makeup of an organism, inherited from parents.
-- **Phenotype**: The observable physical or behavioral characteristics of an organism, resulting from the interaction of its genotype with the environment.
+- <vocab term="Genotype" definition="The precise genetic makeup of an organism, as determined by the specific alleles inherited from parents.">Genotype</vocab> is the actual genetic blueprint of an organism, inherited from birth.
+- <vocab term="Phenotype" definition="The observable physical or behavioral characteristics of an organism, resulting from the interaction of its genotype with the environment.">Phenotype</vocab> refers to the observable physical or behavioral characteristics of an organism, resulting from how the genotype reacts to environmental stimuli (e.g., height, eye color, or personality traits).
 
 ## 2. Evolutionary Psychology
 - Rooted in Charles Darwin's theory of natural selection.
-- **Evolutionary Psychology** explains how behavioral patterns and cognitive mechanisms evolved as adaptations that increased survival and reproduction.
-- Examples include universal human traits, such as language acquisition, mate selection preferences, and fear of spiders or heights.
+- <vocab term="Evolutionary Psychology" definition="The study of how natural selection and adaptation shaped human cognitive processes and behaviors over time to maximize survival.">Evolutionary Psychology</vocab> explains how behavioral patterns and cognitive mechanisms evolved as adaptations that increased survival and reproduction.
+- <vocab term="Natural Selection" definition="The evolutionary process whereby organisms better adapted to their environment tend to survive and produce more offspring.">Natural selection</vocab> ensures that traits which assist in survival are passed down to future generations, while maladaptive traits die out.
 
 ## 3. Twin and Adoption Studies
-- Psychologists use these studies to isolate genetic vs. environmental factors.
-- **Identical twins (monozygotic)** share 100% of their DNA, while **fraternal twins (dizygotic)** share 50%. If identical twins reared apart show similar personality traits, it suggests a strong genetic component (nature).
-- Adoptees are compared to biological and adoptive parents to assess the impact of shared environment (nurture).
+- To resolve the nature vs. nurture debate, researchers utilize twin studies:
+  - **Identical twins** (<vocab term="Monozygotic Twins" definition="Twins who develop from a single fertilized egg that splits in two, sharing 100% of their genetic material.">monozygotic</vocab>) develop from a single fertilized egg and share 100% of their DNA.
+  - **Fraternal twins** (<vocab term="Dizygotic Twins" definition="Twins who develop from two separate fertilized eggs, sharing approximately 50% of their genetic material, similar to normal siblings.">dizygotic</vocab>) develop from separate eggs and share roughly 50% of their DNA.
+  - Comparing identical twins raised apart isolates genetic factors (**nature**), whereas comparing adopted children to their biological vs. adoptive parents highlights environmental factors (**nurture**).
 `,
         questions: [
           {
@@ -116,36 +117,75 @@ To understand human behavior, psychologists study the interplay between nature (
         article: `
 # Neuroanatomy and Neural Firing Dynamics
 
-The human brain is a complex web of billions of specialized cells called neurons that communicate electrically and chemically.
+The human brain controls behavior electrically and chemically through specialized cells.
 
-![Brain Anatomy](/images/courses/ap-psych/brain-anatomy.png)
+<svg width="450" height="260" viewBox="0 0 450 260" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <defs>
+    <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7b39fc" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#be123c" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <path d="M150 180 C110 180 80 150 80 110 C80 60 130 30 220 30 C310 30 360 70 360 110 C360 150 330 180 290 180 C280 180 270 170 260 170 C250 170 240 180 230 180 Z" fill="url(#brainGrad)" opacity="0.3" stroke="#a78bfa" stroke-width="2" />
+  <path d="M290 180 C320 180 340 200 340 220 C340 240 310 240 280 230 C270 220 270 190 290 180 Z" fill="#38bdf8" opacity="0.4" stroke="#38bdf8" stroke-width="1.5" />
+  <path d="M220 180 L230 250 L200 250 L205 180 Z" fill="url(#stemGrad)" stroke="#f43f5e" stroke-width="1.5" />
+  <path d="M190 130 Q220 90, 260 130" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" />
+  <circle cx="190" cy="130" r="8" fill="#fbbf24" />
+  <path d="M260 130 C260 110 240 100 220 110" fill="none" stroke="#34d399" stroke-width="3" />
+  
+  <text x="90" y="80" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Cerebral Cortex</text>
+  <line x1="170" y1="80" x2="190" y2="90" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+  
+  <text x="320" y="210" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Cerebellum</text>
+  <line x1="310" y1="210" x2="295" y2="215" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+  
+  <text x="120" y="240" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Brainstem</text>
+  <line x1="180" y1="235" x2="210" y2="230" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+  <text x="120" y="140" fill="#fbbf24" font-size="11" font-family="sans-serif" font-weight="bold">Amygdala</text>
+  <line x1="170" y1="135" x2="185" y2="130" stroke="#fbbf24" stroke-width="1" />
+  
+  <text x="280" y="105" fill="#34d399" font-size="11" font-family="sans-serif" font-weight="bold">Hippocampus</text>
+  <line x1="275" y1="110" x2="245" y2="115" stroke="#34d399" stroke-width="1" />
+</svg>
 
 ## 1. Anatomy of a Neuron
-- **Dendrites**: Branching extensions that receive chemical signals from other neurons.
-- **Soma (Cell Body)**: Contains the nucleus and maintains cell health.
-- **Axon**: Long fiber that carries electrical impulses (action potentials) away from the cell body.
-- **Myelin Sheath**: Fatty insulation covering the axon that speeds up neural transmission. Damage causes Multiple Sclerosis.
-- **Terminal Buttons**: Bulbs at the end of axons that release chemical neurotransmitters into the synapse.
+- <vocab term="Dendrites" definition="The branching structures of a neuron that receive incoming chemical signals from other cells.">Dendrites</vocab> receive chemical inputs from adjacent cells.
+- **Soma (Cell Body)**: Keeps the cell alive and integrates signals.
+- <vocab term="Axon" definition="The long, thin fiber that carries electrical action potentials away from the neuron cell body to terminal branches.">Axon</vocab> is the long pathway that transmits electrical impulses.
+- <vocab term="Myelin Sheath" definition="A fatty layer insulating the axon that dramatically increases the velocity of neural impulse propagation.">Myelin Sheath</vocab> is a fatty layer of insulation that speeds up signals. Multiple sclerosis involves its degeneration.
+- **Terminal Buttons**: Small bulbs releasing chemical neurotransmitters.
 
-![Neurotransmission](/images/courses/ap-psych/neurotransmission.png)
+<svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <path d="M20 90 L160 90 C190 90, 210 50, 240 50 C280 50, 290 120, 240 120 C210 120, 190 160, 160 160 L20 160" fill="none" stroke="#a78bfa" stroke-width="2.5" />
+  <path d="M350 20 L350 200" fill="none" stroke="#38bdf8" stroke-width="3" />
+  <circle cx="210" cy="80" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1" opacity="0.6" />
+  <circle cx="210" cy="80" r="3" fill="#ffffff" />
+  <circle cx="210" cy="80" r="2" fill="#ffffff" transform="translate(4,4)" />
+  <circle cx="230" cy="100" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1" opacity="0.6" />
+  <circle cx="230" cy="100" r="3" fill="#ffffff" />
+  <circle cx="270" cy="85" r="3" fill="#34d399" />
+  <circle cx="280" cy="70" r="3" fill="#34d399" />
+  <circle cx="295" cy="90" r="3" fill="#34d399" />
+  <circle cx="310" cy="80" r="3" fill="#34d399" />
+  <circle cx="290" cy="120" r="3" fill="#34d399" />
+  <path d="M345 70 L355 70 M345 75 L355 75" stroke="#38bdf8" stroke-width="2" />
+  <rect x="340" y="70" width="6" height="5" fill="#34d399" />
+  <path d="M345 110 L355 110 M345 115 L355 115" stroke="#38bdf8" stroke-width="2" />
+  <path d="M345 150 L355 150 M345 155 L355 155" stroke="#38bdf8" stroke-width="2" />
+  <text x="40" y="125" fill="#a78bfa" font-size="10" font-family="sans-serif">Axon Terminal</text>
+  <text x="365" y="115" fill="#38bdf8" font-size="10" font-family="sans-serif">Postsynaptic Dendrite</text>
+  <text x="250" y="190" fill="#34d399" font-size="10" font-family="sans-serif">Neurotransmitters (NT)</text>
+  <line x1="280" y1="175" x2="285" y2="135" stroke="#34d399" stroke-dasharray="3" />
+</svg>
 
 ## 2. Neural Firing Dynamics
-Neural communication is electrochemical:
-1. **Resting Potential**: The neuron is inactive and polarized, with a net negative charge inside (-70mV).
-2. **Threshold**: The minimum level of stimulation required to trigger an action potential (-55mV).
-3. **Depolarization**: Sodium ions rush inside, changing the charge to positive (+30mV).
-4. **Action Potential**: The electrical impulse traveling down the axon. This is an **all-or-none** process; a stronger stimulus does not make a stronger impulse, it only increases the frequency of firing.
-5. **Synaptic Cleft**: The microscopic gap between the sending axon and receiving dendrite. Neurotransmitters bridge this gap.
-
-## 3. Brain Structures
-- **Cerebral Cortex**: Divided into four lobes:
-  - **Frontal Lobe**: Decision making, planning, motor cortex.
-  - **Parietal Lobe**: Sensory cortex (touch, spatial awareness).
-  - **Occipital Lobe**: Visual processing.
-  - **Temporal Lobe**: Auditory processing.
-- **Limbic System**: Responsible for emotion and memory:
-  - **Hippocampus**: Formation of new memories.
-  - **Amygdala**: Emotional responses, particularly fear and aggression.
+- <vocab term="Action Potential" definition="A brief, self-propagating electrical reversal of membrane potential along a neuron axon (all-or-none process).">Action Potential</vocab> is the electrical impulse traveling down the axon.
+- <vocab term="All-or-None Law" definition="The principle that a neuron fires at full strength or not at all; strong stimuli increase frequency, not strength.">All-or-none principle</vocab> dictates that a neuron fires at full capacity once the **threshold** (-55mV) is breached.
+- <vocab term="Synapse" definition="The microscopic gap between the terminal buttons of a sending neuron and the dendrites of a receiving neuron.">Synaptic cleft</vocab> is the microscopic gap across which neurotransmitters transmit chemical signals.
 `,
         questions: [
           {
@@ -209,22 +249,21 @@ Neural communication is electrochemical:
 # The Endocrine System, Pharmacology, and Consciousness
 
 ## 1. The Endocrine System
-- A slow chemical communication system utilizing **hormones** released directly into the bloodstream.
-- **Pituitary Gland**: Known as the 'master gland' controlled by the hypothalamus.
-- **Adrenal Glands**: Release epinephrine (adrenaline) during stress responses (fight-or-flight).
+- Chemical signaling via <vocab term="Hormones" definition="Chemical messengers secreted by endocrine glands directly into the bloodstream to regulate physiological functions.">hormones</vocab> in the blood.
+- <vocab term="Pituitary Gland" definition="The endocrine master gland, controlled by the hypothalamus, that directs other hormone-releasing glands.">Pituitary Gland</vocab> is the master regulator, governed directly by the hypothalamus.
+- **Adrenal Glands** release adrenaline to trigger fight-or-flight states.
 
 ## 2. Psychoactive Pharmacology
-Drugs alter consciousness by changing synaptic neurotransmission:
-- **Agonists**: Mimic neurotransmitters, binding to receptors to activate them (e.g., Morphine mimics Endorphins).
-- **Antagonists**: Block receptor sites, preventing neurotransmitters from binding (e.g., Curare blocks Acetylcholine).
-- **Reuptake Inhibitors**: Block the reabsorption of neurotransmitters, leaving them in the synapse longer (e.g., SSRIs block Serotonin reuptake).
+Drugs alter conscious states at the synapse:
+- <vocab term="Agonist" definition="A chemical substance that binds to receptors and mimics or enhances neurotransmitter actions.">Agonist</vocab> mimics and boosts neurotransmitter activity.
+- <vocab term="Antagonist" definition="A chemical substance that binds to receptors and blocks or decreases neurotransmitter activity.">Antagonist</vocab> blocks neurotransmitter binding.
+- **Reuptake Inhibitors** keep neurotransmitters in the synaptic gap longer.
 
-## 3. States of Consciousness and Sleep
-Sleep cycles last approximately 90 minutes, transitioning through distinct stages:
-- **NREM-1**: Light sleep; contains theta waves, hypnagogic jerks.
-- **NREM-2**: Deeper relaxation; characterized by **sleep spindles** (bursts of rapid brain activity).
-- **NREM-3**: Deep sleep; dominated by slow **delta waves**. Night terrors and sleepwalking occur here.
-- **REM (Rapid Eye Movement)**: Dreaming stage; brain waves look active (similar to waking beta waves), but muscles are paralyzed (paradoxical sleep).
+## 3. Sleep States
+Sleep occurs in 90-minute stages:
+- **NREM-1 & NREM-2**: Light sleep with <vocab term="Sleep Spindles" definition="Bursts of rapid, rhythmic brain activity visible on an EEG during stage 2 sleep.">sleep spindles</vocab> (Stage 2 activity spikes).
+- **NREM-3**: Deep sleep dominated by slow <vocab term="Delta Waves" definition="Large, slow brain waves associated with deep, restorative stage 3 sleep.">delta waves</vocab>.
+- <vocab term="REM Sleep" definition="Rapid Eye Movement sleep; characterized by dreaming, brain activity resembling wakefulness, and motor paralysis.">REM Sleep</vocab> is the active dreaming stage featuring motor paralysis.
 `,
         questions: [
           {
@@ -299,26 +338,41 @@ Sleep cycles last approximately 90 minutes, transitioning through distinct stage
         article: `
 # Sensation, Thresholds, and Sensory Anatomy
 
-**Sensation** is the process by which our sensory receptors and nervous system receive stimulus energies from our environment.
+**Sensation** begins with sensory receptors picking up physical stimuli.
 
-## 1. Thresholds
-- **Absolute Threshold**: The minimum stimulation needed to detect a particular stimulus 50% of the time.
-- **Difference Threshold (Just Noticeable Difference - JND)**: The minimum difference between two stimuli required for detection 50% of the time.
-- **Weber's Law**: States that for two stimuli to be perceived as different, they must differ by a constant minimum *percentage* rather than a constant *amount* (e.g., adding 1 ounce to a 10-ounce weight is noticeable, but adding 1 ounce to a 100-ounce weight is not).
-- **Sensory Adaptation**: Diminished sensitivity as a consequence of constant, unchanging stimulation (e.g., stopping noticing the smell of perfume after a few minutes).
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <circle cx="280" cy="100" r="70" fill="none" stroke="#38bdf8" stroke-width="2" />
+  <path d="M217 70 C200 85 200 115 217 130" fill="none" stroke="#818cf8" stroke-width="3" />
+  <path d="M235 75 C242 85 242 115 235 125 C228 115 228 85 235 75 Z" fill="rgba(129, 140, 248, 0.4)" stroke="#818cf8" stroke-width="1.5" />
+  <path d="M320 50 C345 70 345 130 320 150" fill="none" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" />
+  
+  <line x1="40" y1="70" x2="208" y2="92" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2" />
+  <line x1="40" y1="130" x2="208" y2="108" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2" />
+  <line x1="208" y1="92" x2="232" y2="100" stroke="#fbbf24" stroke-width="1.5" />
+  <line x1="208" y1="108" x2="232" y2="100" stroke="#fbbf24" stroke-width="1.5" />
+  <line x1="232" y1="100" x2="337" y2="100" stroke="#fbbf24" stroke-width="1.5" />
+  
+  <text x="140" y="60" fill="#818cf8" font-size="10" font-family="sans-serif">Cornea</text>
+  <line x1="175" y1="65" x2="208" y2="85" stroke="#818cf8" stroke-width="1" />
+  
+  <text x="210" y="165" fill="#818cf8" font-size="10" font-family="sans-serif">Lens</text>
+  <line x1="230" y1="152" x2="232" y2="130" stroke="#818cf8" stroke-width="1" />
+  
+  <text x="345" y="145" fill="#f43f5e" font-size="10" font-family="sans-serif">Retina</text>
+  <line x1="340" y1="135" x2="330" y2="120" stroke="#f43f5e" stroke-width="1" />
+  <text x="40" y="105" fill="#fbbf24" font-size="10" font-family="sans-serif" font-weight="bold">Light Waves</text>
+</svg>
 
-## 2. Sensory Anatomy
-- **Anatomy of the Eye**:
-  - **Cornea**: Clear, protective outer layer.
-  - **Pupil / Iris**: Opening that controls light entry.
-  - **Lens**: Focuses light onto the back of the eye.
-  - **Retina**: Contains photoreceptor cells:
-    - **Rods**: Detect black, white, and gray; critical for night vision.
-    - **Cones**: Detect fine detail and color; concentrated in the center (**fovea**).
-  - **Transduction**: Occurs in the photoreceptors of the retina.
-- **Anatomy of the Ear**:
-  - Sound waves vibrate the tympanic membrane (eardrum), ossicles (hammer, anvil, stirrup), and fluid in the cochlea.
-  - **Transduction**: Occurs in the **hair cells** on the basilar membrane inside the **cochlea**.
+## 1. Sensory Thresholds
+- <vocab term="Absolute Threshold" definition="The minimum stimulation needed to detect a particular stimulus 50% of the time.">Absolute Threshold</vocab> is the lowest level of stimulus required for 50% detection.
+- <vocab term="Difference Threshold" definition="The minimum difference between two stimuli required for detection 50% of the time (also called Just Noticeable Difference).">Difference Threshold (JND)</vocab> measures the minimum difference required to detect a change.
+- <vocab term="Weber's Law" definition="The principle that to be perceived as different, two stimuli must differ by a constant minimum percentage rather than a constant amount.">Weber's Law</vocab> states difference thresholds scale by constant percentages, not absolute sums.
+- <vocab term="Sensory Adaptation" definition="Diminished sensitivity to a stimulus as a consequence of constant, unchanging exposure.">Sensory Adaptation</vocab> is the fading of constant sensations (e.g., getting used to hot bathwater).
+
+## 2. Visual and Auditory Transduction
+- **Transduction** translates environmental energy into neural codes:
+  - Visual transduction occurs via rods and cones on the **retina**.
+  - Auditory transduction occurs via hair cells inside the **cochlea**.
 `,
         questions: [
           {
@@ -376,25 +430,21 @@ Sleep cycles last approximately 90 minutes, transitioning through distinct stage
         article: `
 # Perceptual Processing and Attention
 
-**Perception** is the cognitive organization and interpretation of raw sensory inputs.
+**Perception** makes sense of incoming sensations using cognitive processing.
 
-## 1. Processing Modes
-- **Bottom-Up Processing**: Analysis that begins with sensory receptors and works up to the brain's integration (data-driven).
-- **Top-Down Processing**: Guided by higher-level mental processes, such as expectations, experience, and motivation (schema-driven).
+## 1. Top-Down vs. Bottom-Up Processing
+- <vocab term="Bottom-Up Processing" definition="Sensory analysis that begins at the entry level of sensory receptors and works up to integration in the brain.">Bottom-Up Processing</vocab> analyzes sensory details first, constructing the big picture from scratch (data-driven).
+- <vocab term="Top-Down Processing" definition="Information processing guided by higher-level mental actions, experiences, and structural expectations.">Top-Down Processing</vocab> applies expectations, memories, and context to decipher sensations (concept-driven).
 
-## 2. Gestalt Principles of Grouping
-Gestalt psychologists showed that the brain naturally organizes visual elements into meaningful wholes:
-- **Proximity**: Grouping nearby elements together.
-- **Similarity**: Grouping elements that look alike.
-- **Continuity**: Perceiving smooth, continuous paths.
-- **Closure**: Filling in visual gaps to perceive a complete object.
+## 2. Gestalt Grouping
+Gestalt theory says the brain interprets wholes instead of isolated parts:
+- **Proximity**: Grouping close objects.
+- **Similarity**: Grouping matching items.
+- <vocab term="Closure" definition="The Gestalt perceptual tendency to fill in gaps to perceive a complete, whole object.">Closure</vocab> is the tendency to fill in shape gaps to view complete figures.
 
-## 3. Mechanisms of Attention
-- **Selective Attention**: Focusing conscious awareness on a specific stimulus (e.g., the **Cocktail Party Effect**).
-- **Inattentional Blindness**: Failing to see visible objects when our attention is directed elsewhere (e.g., the famous invisible gorilla experiment).
-
-## 4. Optical Illusions
-- Illusions occur when sensory signals trick perceptual interpretations (e.g., the Müller-Lyer illusion or Ames Room). They reveal how the brain relies on schemas of size and depth consistency.
+## 3. Attention Limitations
+- <vocab term="Selective Attention" definition="The focusing of conscious awareness on a particular stimulus to the exclusion of others.">Selective Attention</vocab> directs awareness to one event, like the Cocktail Party Effect.
+- <vocab term="Inattentional Blindness" definition="Failing to see highly visible objects when our attention is fully directed elsewhere.">Inattentional Blindness</vocab> causes us to miss obvious details when distracted.
 `,
         questions: [
           {
@@ -452,28 +502,21 @@ Gestalt psychologists showed that the brain naturally organizes visual elements 
         article: `
 # Cognitive Memory, Language, and Intelligence
 
-## 1. Information-Processing Model of Memory
-Developed by Atkinson and Shiffrin, memory has three distinct stages:
-1. **Sensory Memory**: Extremely brief storage of sensory information (iconic: visual; echoic: auditory).
-2. **Short-Term Memory (STM)**: Working memory with limited capacity (7 ± 2 items) and duration (~30 seconds without rehearsal).
-3. **Long-Term Memory (LTM)**: Infinite capacity, permanent storage:
-   - **Explicit (Declarative)**: Facts and events (processed in the hippocampus):
-     - *Semantic*: General knowledge.
-     - *Episodic*: Personal experiences.
-   - **Implicit (Non-declarative)**: Motor skills and conditioned responses (processed in the cerebellum).
+## 1. Multi-Store Memory Model
+Atkinson & Shiffrin proposed three memory structures:
+1. **Sensory Memory**: Rapid physical logs (iconic/echoic).
+2. **Short-Term Memory**: Holds 7 ± 2 items temporarily.
+3. **Long-Term Memory**: Infinite permanent database:
+   - <vocab term="Explicit Memory" definition="Memory of facts and experiences that one can consciously know and declare (processed by hippocampus).">Explicit Memory</vocab> covers declarative facts (semantic/episodic).
+   - <vocab term="Implicit Memory" definition="Retention of learned skills or classical conditioning associations independent of conscious recollection (processed by cerebellum).">Implicit Memory</vocab> covers non-declarative skills (procedural habits).
 
-## 2. Problem Solving
-- **Algorithms**: Step-by-step procedures that guarantee a correct solution (slow).
-- **Heuristics**: Mental shortcuts or rules-of-thumb (fast but error-prone).
-- **Functional Fixedness**: The cognitive bias limiting individuals to using an object only in its traditional way.
+## 2. Problem Solving and Obstacles
+- **Algorithms**: Absolute step-by-step procedures.
+- <vocab term="Heuristic" definition="A simple thinking strategy or mental shortcut that allows us to make judgments and solve problems efficiently.">Heuristics</vocab> are rapid cognitive shortcuts (mental rules-of-thumb).
+- <vocab term="Functional Fixedness" definition="A cognitive bias that limits a person to using an object only in the way it is traditionally used.">Functional Fixedness</vocab> locks us into traditional object utilities.
 
-## 3. Language Acquisition
-- **Noam Chomsky**: Proposed a **Language Acquisition Device (LAD)** and universal grammar, arguing that language capability is innate.
-- **B.F. Skinner**: Argued language is learned entirely via operant conditioning (imitation/reinforcement).
-
-## 4. Intelligence Assessments
-- **Alfred Binet**: Created the first intelligence test to identify French children needing special assistance, introducing **Mental Age**.
-- **David Wechsler**: Developed the WAIS/WISC, the most widely used modern intelligence tests, scoring against standardized age curves.
+## 3. Cognitive Testing
+- **Alfred Binet** pioneered standardized IQ testing using mental age markers.
 `,
         questions: [
           {
@@ -538,34 +581,42 @@ Developed by Atkinson and Shiffrin, memory has three distinct stages:
         article: `
 # Theories of Learning
 
-Learning is a relatively permanent change in behavior resulting from experience.
+Learning alters baseline behaviors through experiences.
 
-![Classical Conditioning](/images/courses/ap-psych/classical-conditioning.png)
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <rect x="20" y="20" width="180" height="65" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+  <text x="30" y="38" fill="#a78bfa" font-size="10" font-family="sans-serif" font-weight="bold">1. BEFORE CONDITIONING</text>
+  <text x="30" y="55" fill="#ffffff" font-size="9" font-family="sans-serif">US (Food) → UR (Salivation)</text>
+  <text x="30" y="70" fill="#ffffff" font-size="9" font-family="sans-serif">NS (Bell) → No Response</text>
+  
+  <rect x="20" y="110" width="180" height="65" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+  <text x="30" y="128" fill="#a78bfa" font-size="10" font-family="sans-serif" font-weight="bold">2. DURING CONDITIONING</text>
+  <text x="30" y="145" fill="#ffffff" font-size="9" font-family="sans-serif">NS (Bell) + US (Food)</text>
+  <text x="30" y="160" fill="#ffffff" font-size="9" font-family="sans-serif">→ UR (Salivation)</text>
+  
+  <path d="M220 100 L240 100" fill="none" stroke="#fbbf24" stroke-width="2" />
+  
+  <rect x="250" y="65" width="180" height="65" rx="10" fill="rgba(34, 197, 148, 0.05)" stroke="#22c55e" stroke-width="1.5" />
+  <text x="260" y="83" fill="#22c55e" font-size="10" font-family="sans-serif" font-weight="bold">3. AFTER CONDITIONING</text>
+  <text x="260" y="105" fill="#ffffff" font-size="10" font-family="sans-serif" font-weight="bold">CS (Bell) → CR (Salivation)</text>
+  <text x="260" y="120" fill="rgba(255,255,255,0.4)" font-size="8" font-family="sans-serif">Learned Association</text>
+</svg>
 
 ## 1. Classical Conditioning
 Discovered by Ivan Pavlov:
-- **Unconditioned Stimulus (US)**: A stimulus that naturally triggers a response (e.g., food).
-- **Unconditioned Response (UR)**: The unlearned, natural response (e.g., salivation to food).
-- **Conditioned Stimulus (CS)**: An originally neutral stimulus that, after association, triggers a response (e.g., bell).
-- **Conditioned Response (CR)**: The learned response to the conditioned stimulus (e.g., salivation to bell).
-- **Extinction**: Decrease in CR when the US is no longer paired with the CS.
+- **Unconditioned Stimulus (US)** triggers automatic responses.
+- **Unconditioned Response (UR)** is the natural biological reflex.
+- <vocab term="Conditioned Stimulus" definition="An originally neutral stimulus that, after association with an unconditioned stimulus, comes to trigger a conditioned response.">Conditioned Stimulus (CS)</vocab> is a learned cue triggering behaviors.
+- <vocab term="Conditioned Response" definition="The learned response to a previously neutral (but now conditioned) stimulus.">Conditioned Response (CR)</vocab> is the newly formed behavior.
+- <vocab term="Extinction" definition="The gradual weakening and disappearance of a conditioned response when the conditioned stimulus is repeatedly presented alone.">Extinction</vocab> occurs when the CS stops being paired with the US.
 
 ## 2. Operant Conditioning
-Formulated by B.F. Skinner, based on consequences:
-- **Reinforcement**: *Increases* behavior.
-  - *Positive*: Adding a desirable stimulus (e.g., reward).
-  - *Negative*: Removing an undesirable stimulus (e.g., stopping a loud noise).
-- **Punishment**: *Decreases* behavior.
-  - *Positive*: Adding an unpleasant stimulus (e.g., spanking).
-  - *Negative*: Removing a pleasant stimulus (e.g., grounding).
-- **Schedules of Reinforcement**:
-  - *Fixed-Ratio*: Reinforcing after a set number of responses.
-  - *Variable-Ratio*: Reinforcing after an unpredictable number of responses (highest resistance to extinction, e.g., slot machines).
-  - *Fixed-Interval*: Reinforcing after a set period of time.
-  - *Variable-Interval*: Reinforcing after an unpredictable period of time.
-
-## 3. Observational Learning
-- **Albert Bandura**: Demonstrated learning via imitation and modeling in the **Bobo Doll Experiment**. Children copy aggressive actions they see adults perform.
+Formulated by B.F. Skinner:
+- <vocab term="Positive Reinforcement" definition="Increasing behaviors by presenting positive stimuli, such as food or praise, after a desired behavior occurs.">Positive Reinforcement</vocab> adds desirable stimulus to increase behaviors.
+- <vocab term="Negative Reinforcement" definition="Increasing behaviors by stopping or reducing negative stimuli, such as pain or loud noises.">Negative Reinforcement</vocab> removes unpleasant stimulus to boost behaviors.
+- **Reinforcement Schedules**:
+  - *Fixed-Ratio*: Set response count trigger.
+  - *Variable-Ratio*: Unpredictable count payouts (slot machines).
 `,
         questions: [
           {
@@ -623,25 +674,17 @@ Formulated by B.F. Skinner, based on consequences:
         article: `
 # Developmental Stages Across the Lifespan
 
-Developmental psychology studies physical, cognitive, and social changes from conception to death.
+Developmental psychology maps physical, cognitive, and social milestones.
 
-## 1. Jean Piaget's Stages of Cognitive Development
-Piaget proposed children's brains develop through four active stages:
-1. **Sensorimotor (0–2 years)**: Experience the world through senses and motor actions. Major milestone: **Object Permanence** (realizing items exist when out of sight).
-2. **Preoperational (2–7 years)**: Represent things with words and images. Characterized by **egocentrism** (inability to see others' points of view) and lack of **conservation** (understanding quantity stays same despite shape change).
-3. **Concrete Operational (7–11 years)**: Think logically about concrete events, understand conservation and mathematical transformations.
-4. **Formal Operational (11+ years)**: Develop abstract logic and hypothetical reasoning.
+## 1. Jean Piaget's Cognitive Stages
+Piaget proposed children navigate four distinct periods:
+1. **Sensorimotor (0–2 yrs)**: Senses exploration. Milestone: <vocab term="Object Permanence" definition="The cognitive awareness that objects continue to exist even when they cannot be perceived.">Object Permanence</vocab>.
+2. **Preoperational (2–7 yrs)**: Language development. Marked by <vocab term="Egocentrism" definition="The preoperational child's difficulty in taking another person's point of view.">Egocentrism</vocab> and lack of <vocab term="Conservation" definition="The principle that properties such as mass, volume, and number remain the same despite changes in the forms of objects.">conservation</vocab>.
+3. **Concrete Operational (7–11 yrs)**: Logical thoughts on physical scenarios.
+4. **Formal Operational (11+ yrs)**: Abstract and scientific deduction.
 
-## 2. Erik Erikson's Psychosocial Development
-Erikson proposed 8 developmental stages, each defined by a key psychosocial conflict:
-- **Trust vs. Mistrust (0-1 yr)**: Secure attachment base.
-- **Autonomy vs. Shame (1-3 yrs)**: Independence.
-- **Initiative vs. Guilt (3-6 yrs)**: Plan activities.
-- **Industry vs. Inferiority (6-12 yrs)**: Academic/social competence.
-- **Identity vs. Role Confusion (Adolescence)**: Form self-identity.
-- **Intimacy vs. Isolation (Early Adulthood)**: Relationships.
-- **Generativity vs. Stagnation (Middle Adulthood)**: Contribution to society.
-- **Integrity vs. Despair (Late Adulthood)**: Reflection on life.
+## 2. Erik Erikson's Psychosocial Conflicts
+- Eight crises defining social milestones (e.g., Trust vs. Mistrust, Identity vs. Role Confusion).
 `,
         questions: [
           {
@@ -699,20 +742,19 @@ Erikson proposed 8 developmental stages, each defined by a key psychosocial conf
       {
         id: "3.3",
         title: "Moral Development, Gender Identity, and Theories of Human Learning",
-        description: "Lawrence Kohlberg's moral stages, gender schemas, and developmental learning theories.",
+        description: "Kohlberg's moral stages, gender schema theory, and developmental learning.",
         youtubeId: "YOrKae_f7so",
         article: `
 # Moral, Gender, and Learning Development
 
 ## 1. Lawrence Kohlberg's Moral Development
-Kohlberg proposed three levels of moral reasoning based on responses to moral dilemmas:
-1. **Preconventional Morality**: Focused on self-interest (obeying rules to avoid punishment or gain concrete rewards).
-2. **Conventional Morality**: Focused on social rules and laws (obeying to gain social approval or maintain social order).
-3. **Postconventional Morality**: Focused on abstract, self-defined ethical principles (evaluating laws against universal human rights).
+Stages of moral reasoning are classified into three levels:
+1. **Preconventional**: Self-interest checks (reward vs. punishment).
+2. **Conventional**: Group standards and laws conformity.
+3. <vocab term="Postconventional Morality" definition="The highest level of moral reasoning, in which self-defined ethical principles prioritize universal human rights over simple laws.">Postconventional Morality</vocab> acts on self-defined, universal ethical principles.
 
-## 2. Gender Identity
-- **Gender Schema Theory**: Children learn from their culture what it means to be male or female and construct mental categories (schemas) that guide their behavior.
-- **Social Learning Theory**: Children acquire gender roles through imitation of models and positive/negative reinforcement from parents and peers.
+## 2. Gender Identity Development
+- <vocab term="Gender Schema Theory" definition="The theory that children learn from their cultures what it means to be male or female and adjust their behaviors accordingly.">Gender Schema Theory</vocab> states kids organize behaviors by gender categories.
 `,
         questions: [
           {
@@ -782,22 +824,18 @@ Kohlberg proposed three levels of moral reasoning based on responses to moral di
         article: `
 # Motivation, Emotion, and Stress
 
-## 1. Theories of Motivation
-- **Drive-Reduction Theory**: Physiological needs (like hunger) create arousal (drives) that motivate an organism to satisfy the need to return to **homeostasis** (equilibrium).
-- **Arousal Theory / Yerkes-Dodson Law**: We seek an optimal level of arousal. Moderate arousal leads to optimal performance; high anxiety impairs complex tasks.
-- **Maslow's Hierarchy of Needs**: Pyramid structure starting with physiological needs, moving through safety, belonging, self-esteem, up to **self-actualization**.
+## 1. Motivation Models
+- <vocab term="Drive-Reduction Theory" definition="The idea that physiological needs create aroused states (drives) that motivate an organism to satisfy the need to restore homeostasis.">Drive-Reduction Theory</vocab> describes how internal biological imbalances drive behaviors.
+- **Homeostasis**: The maintenance of stable physiological equilibriums.
+- **Yerkes-Dodson Law**: Moderate arousal maximizes productivity for complex tasks.
 
-## 2. Theories of Emotion
-How do physical responses and cognitive feelings align?
-- **James-Lange Theory**: Physiological arousal occurs *first*, which then causes our conscious emotion (e.g., we are afraid because we run).
-- **Cannon-Bard Theory**: Physiological arousal and conscious emotion occur *simultaneously* and independently.
-- **Schachter-Singer Two-Factor Theory**: Emotion requires both physiological arousal AND a cognitive label/appraisal of that arousal.
+## 2. Emotional Experience Theories
+- **James-Lange**: Arousal occurs before emotional perception.
+- **Cannon-Bard**: Physical arousal and emotions occur at the same time.
+- <vocab term="Two-Factor Theory" definition="The Schachter-Singer theory that to experience emotion, one must be physically aroused and cognitively label the arousal.">Two-Factor Theory</vocab> (Schachter-Singer) dictates emotions need both physical arousal and a cognitive label.
 
-## 3. General Adaptation Syndrome (GAS)
-Developed by Hans Selye, describing the body's response to chronic stress:
-1. **Alarm Reaction**: Sudden sympathetic nervous system activation (heart rate spikes).
-2. **Resistance**: Temperature and blood pressure remain high; hormones are pumped to cope with stress.
-3. **Exhaustion**: Resources are depleted, making the body vulnerable to illness or collapse.
+## 3. General Adaptation Syndrome
+Selye's stress stages: **Alarm** (CNS triggers), **Resistance** (hormonal adaptation), and **Exhaustion** (depleted energy).
 `,
         questions: [
           {
@@ -865,28 +903,16 @@ Developed by Hans Selye, describing the body's response to chronic stress:
         article: `
 # Theories of Personality and Personality Testing
 
-Personality is an individual's characteristic pattern of thinking, feeling, and acting.
+Personality studies analyze patterns of behavior, thoughts, and actions.
 
-## 1. Psychoanalytic Perspective
-Proposed by Sigmund Freud:
-- **Structure of Mind**:
-  - **Id**: Operates on the **pleasure principle** (unconscious primal drives).
-  - **Ego**: Operates on the **reality principle** (rational mediator).
-  - **Superego**: Operates on the **moral principle** (conscience).
-- **Defense Mechanisms**: Ego's protective methods of reducing anxiety by unconsciously distorting reality (e.g., Repression, Projection, Displacement, Regression, Rationalization).
+## 1. Freudian Mind Structures
+- **Id**: Governed by the <vocab term="Pleasure Principle" definition="The id's boundary concept demanding immediate gratification of basic sexual and aggressive impulses.">pleasure principle</vocab> (immediate gratification).
+- **Ego**: Governed by the reality principle.
+- **Superego**: Governed by moral consciences.
+- **Defense Mechanisms**: Ego tools (e.g., projection, displacement) to reduce anxiety.
 
-## 2. Trait Perspective
-Focuses on identifying stable behavioral patterns:
-- **The Big Five Personality Traits (OCEAN)**:
-  - **O**penness: Imaginative vs. practical.
-  - **C**onscientiousness: Organized vs. careless.
-  - **E**xtraversion: Sociable vs. reserved.
-  - **A**greeableness: Soft-hearted vs. suspicious.
-  - **N**euroticism: Anxious vs. calm (emotional stability).
-
-## 3. Personality Testing
-- **Projective Tests**: Subjective tests presenting ambiguous stimuli to reveal unconscious dynamics (e.g., Rorschach Inkblot, Thematic Apperception Test - TAT).
-- **Self-Report Inventories**: Standardized objective questionnaires (e.g., MMPI - Minnesota Multiphasic Personality Inventory).
+## 2. Trait Theories
+- **Big Five Personality Traits (OCEAN)**: Openness, Conscientiousness, Extraversion, Agreeableness, and <vocab term="Neuroticism" definition="A Big Five personality dimension mapping emotional instability, anxiety, moodiness, and vulnerability to stress.">Neuroticism</vocab> (emotional instability).
 `,
         questions: [
           {
@@ -944,21 +970,15 @@ Focuses on identifying stable behavioral patterns:
         article: `
 # Social Psychology
 
-Social psychology studies how we think about, influence, and relate to one another.
+Social psychology evaluates how people relate to and influence one another.
 
-## 1. Social Cognition
-- **Attribution Theory**: We explain behavior by attributing it to internal dispositions (personality) or external situations (environment).
-- **Fundamental Attribution Error (FAE)**: The tendency for observers to underestimate situational factors and overestimate dispositional factors when analyzing another's behavior.
-- **Cognitive Dissonance Theory**: Formulated by Leon Festinger. When our attitudes and actions clash, we experience discomfort (dissonance) and are motivated to reduce it by changing our attitudes to align with actions.
+## 1. Social Attribution
+- <vocab term="Fundamental Attribution Error" definition="The tendency for observers to underestimate situational factors and overestimate dispositional personality traits when analyzing others' behaviors.">Fundamental Attribution Error</vocab> is the tendency to blame actions on personality while ignoring situations.
+- <vocab term="Cognitive Dissonance" definition="The mental discomfort felt when holding conflicting beliefs or actions, resolved by changing beliefs to match behaviors.">Cognitive Dissonance</vocab> (Festinger) is cognitive tension felt when actions mismatch beliefs.
 
-## 2. Social Influence
-- **Conformity (Solomon Asch)**: Adjusting behavior or thinking to coincide with a group standard. Asch demonstrated this with his line judgment studies.
-- **Obedience (Stanley Milgram)**: Complying with orders from an authority figure. Milgram's electric shock studies showed that a majority of participants complied fully.
-
-## 3. Group Dynamics
-- **Social Facilitation**: Improved performance on simple or well-learned tasks in the presence of others.
-- **Bystander Effect**: The tendency for a bystander to be less likely to give aid if other onlookers are present, due to **diffusion of responsibility**.
-- **Groupthink**: Harmonious but unrealistic group thinking when dissenting viewpoints are suppressed to maintain group cohesion.
+## 2. Conformity and Obedience
+- **Asch Conformity Studies**: Matching incorrect group answers to conform.
+- **Milgram Obedience Studies**: Shocking others when ordered by researchers.
 `,
         questions: [
           {
@@ -1023,23 +1043,14 @@ Social psychology studies how we think about, influence, and relate to one anoth
         article: `
 # Research Methods and Statistics in Psychology
 
-## 1. Experimental Design Variables
-To prevent confounding results, psychologists use rigid controls:
-- **Independent Variable (IV)**: The factor manipulated by the experimenter.
-- **Dependent Variable (DV)**: The factor measured to observe the effect of the IV.
-- **Random Assignment**: Assigning participants to experimental or control groups by chance to minimize individual differences.
+## 1. Experimental Controls
+- **Independent Variable (IV)** is the factor manipulated by researchers.
+- **Dependent Variable (DV)** is the observed outcome.
+- <vocab term="Random Assignment" definition="Assigning experimental study participants to control/experimental groups by chance to minimize pre-existing group differences.">Random Assignment</vocab> divides subjects into groups by chance to minimize individual pre-existing variables.
 
-## 2. Statistical Analyses
-- **Descriptive Statistics**:
-  - *Measures of Central Tendency*: Mean (average), Median (middle score), Mode (most common).
-  - *Measures of Variation*: Range (highest minus lowest), **Standard Deviation** (measures how much scores deviate from the mean).
-- **Correlation**: Measures relationship strength between -1.00 and +1.00. **Correlation does not prove causation**.
-
-## 3. Ethical Guidelines
-APA ethical standards require:
-- **Informed Consent**: Informing participants of research parameters before they agree.
-- **Confidentiality**: Keeping participant data private.
-- **Debriefing**: Explaining the experiment's true purpose and any deception afterwards.
+## 2. Statistical Analysis
+- <vocab term="Standard Deviation" definition="A computed measure of how much data scores vary around the distribution mean.">Standard Deviation</vocab> measures variability around the mean.
+- **Correlation** measures relationships but does not prove causation.
 `,
         questions: [
           {
@@ -1097,28 +1108,44 @@ APA ethical standards require:
       {
         id: "5.2",
         title: "Diagnosis of Psychological Disorders and DSM-5 Categorization Frameworks",
-        description: "Defining atypical behavior, diagnosing criteria, and classifying DSM-5 categories.",
+        description: "Defining abnormal behavior, anxiety, depressive, bipolar disorders, and schizophrenia.",
         youtubeId: "wuhJ-GkRRQc",
         article: `
 # Psychological Disorders and DSM-5 Diagnosis
 
-## 1. Defining Abnormal Behavior
-Psychologists use the **4 Ds** to help define psychological disorders:
-1. **Deviance**: Behavior that differs significantly from societal norms.
-2. **Distress**: Unpleasant feelings or distress for the individual.
-3. **Dysfunction**: Impairing daily life activities (relationships, jobs).
-4. **Danger**: Posing danger to self or others.
+## 1. Defining Abnormality: The 4 Ds
+Psychologists classify abnormal behaviors via:
+1. **Deviance**: Violating social rules.
+2. **Distress**: Painful mental symptoms.
+3. **Dysfunction**: Impairing daily activities.
+4. **Danger**: Harming self or others.
 
-## 2. The DSM-5 Categorization
-- **DSM-5 (Diagnostic and Statistical Manual of Mental Disorders)**: Standardized reference manual containing symptom checklists, diagnostic criteria, and guidelines for classification.
-- It does **not** explain causes or treatments; it only classifies and diagnoses.
+<svg width="450" height="180" viewBox="0 0 450 180" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">THE 4 Ds OF ABNORMALITY</text>
+  <rect x="20" y="45" width="90" height="90" rx="10" fill="rgba(244, 63, 94, 0.05)" stroke="#f43f5e" stroke-width="1" />
+  <text x="65" y="70" text-anchor="middle" fill="#f43f5e" font-size="10" font-family="sans-serif" font-weight="bold">DEVIANCE</text>
+  <text x="65" y="95" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Differs from</text>
+  <text x="65" y="108" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">social norms</text>
+  
+  <rect x="125" y="45" width="90" height="90" rx="10" fill="rgba(251, 191, 36, 0.05)" stroke="#fbbf24" stroke-width="1" />
+  <text x="170" y="70" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="sans-serif" font-weight="bold">DISTRESS</text>
+  <text x="170" y="95" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Subjective</text>
+  <text x="170" y="108" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">unhappiness</text>
+  
+  <rect x="230" y="45" width="90" height="90" rx="10" fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-width="1" />
+  <text x="275" y="70" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="sans-serif" font-weight="bold">DYSFUNCTION</text>
+  <text x="275" y="95" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Impairs daily</text>
+  <text x="275" y="108" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">life tasks</text>
+  
+  <rect x="335" y="45" width="90" height="90" rx="10" fill="rgba(34, 197, 148, 0.05)" stroke="#22c55e" stroke-width="1" />
+  <text x="380" y="70" text-anchor="middle" fill="#22c55e" font-size="10" font-family="sans-serif" font-weight="bold">DANGER</text>
+  <text x="380" y="95" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Risk to self</text>
+  <text x="380" y="108" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">or others</text>
+</svg>
 
-## 3. Major Disorder Categories
-- **Anxiety Disorders**: General state of apprehension or dread (e.g., Generalized Anxiety Disorder, Panic Disorder, Phobias).
-- **Obsessive-Compulsive Disorder (OCD)**: Obsessions (intrusive thoughts) triggering compulsions (repetitive behaviors).
-- **Depressive Disorders**: Mapped by persistent sadness, lethargy, and loss of interest (e.g., Major Depressive Disorder).
-- **Bipolar Disorders**: Alternating between depressive lows and manic highs.
-- **Schizophrenia Spectrum**: Marked by **hallucinations** (false sensory perceptions), **delusions** (false beliefs), and disorganized speech.
+## 2. Diagnosis Classification
+- <vocab term="DSM-5" definition="The Diagnostic and Statistical Manual of Mental Disorders; the standardized classification manual containing symptom checklists for clinical diagnoses.">DSM-5</vocab> provides standardized criteria for clinical evaluations without listing causes/treatment recipes.
+- **Schizophrenia Spectrum**: Mapped by <vocab term="Hallucinations" definition="False sensory perceptions occurring in the absence of any external environmental stimulus.">hallucinations</vocab> (false sensory perceptions) and <vocab term="Delusions" definition="False beliefs, often of persecution or grandeur, that are maintained despite contradictory evidence.">delusions</vocab> (false belief structures).
 `,
         questions: [
           {
@@ -1179,22 +1206,18 @@ Psychologists use the **4 Ds** to help define psychological disorders:
         description: "Psychodynamic, client-centered, behavioral conditioning, CBT, and biomedical options.",
         youtubeId: "6nEL44QkL9w",
         article: `
-# Treatment Modalities and Biomedical Approaches
+# Psychological Treatments and Biomedical Options
 
-## 1. Psychotherapy Perspectives
-- **Psychodynamic Therapy**: Derived from psychoanalysis. Aims to uncover unconscious conflicts using free association and dream analysis.
-- **Humanistic (Client-Centered) Therapy**: Formulated by Carl Rogers. Focuses on conscious thoughts and self-acceptance, using **active listening** and **unconditional positive regard**.
-- **Behavioral Therapies**: Apply learning principles to eliminate problem behaviors:
-  - *Systematic Desensitization*: Exposing patients to gradual anxiety-provoking stimuli while relaxed (used for phobias).
-  - *Aversive Conditioning*: Pairing an unwanted behavior with an unpleasant stimulus (e.g., matching alcohol with nausea-inducing drugs).
-- **Cognitive Behavioral Therapy (CBT)**: A highly effective integrative therapy combining cognitive restructuring (challenging self-defeating thoughts) with behavioral modification.
+## 1. Therapy Modalities
+- **Psychodynamic**: Unconscious conflict exploration.
+- **Humanistic**: Carl Rogers' Client-Centered therapy providing **unconditional positive regard**.
+- **Behavioral**: Applies conditioning principles:
+  - <vocab term="Systematic Desensitization" definition="A behavioral therapy technique that pairs gradual, hierarchy-based exposure to feared stimuli with deep physical relaxation to treat phobias.">Systematic Desensitization</vocab> pairs gradual exposure to phobias with muscle relaxation.
+- <vocab term="Cognitive Behavioral Therapy" definition="An integrative therapy combining cognitive restructuring (replacing distorted thoughts) with behavioral modifications.">Cognitive Behavioral Therapy (CBT)</vocab> redirects self-defeating thoughts and alters behaviors.
 
-## 2. Biomedical Approaches
-- **Psychopharmacology**:
-  - *Antianxiety Drugs*: Depress central nervous system (e.g., Xanax, Valium).
-  - *Antidepressants*: Increase serotonin levels (e.g., SSRIs like Prozac).
-  - *Antipsychotics*: Block dopamine receptors to treat schizophrenia (e.g., Thorazine).
-- **Electroconvulsive Therapy (ECT)**: Administering electric currents to induce a mild seizure in anesthetized patients; used as a last resort for severe depression.
+## 2. Biomedical Interventions
+- **Antidepressants (SSRIs)** block serotonin reuptake to increase availability.
+- **ECT**: Inducing mild seizures to combat treatment-resistant depression.
 `,
         questions: [
           {
