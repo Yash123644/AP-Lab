@@ -636,7 +636,7 @@ export function SubjectLabs() {
                       <h4 className="text-xs font-mono uppercase tracking-wider text-white/40 mt-8 mb-4">
                         {courseRegistry[activeCourseData.slug] ? "Full Curriculum Syllabus" : "Curriculum Syllabus (4 Main Units)"}
                       </h4>
-                      <div className="flex flex-col gap-2 max-h-[300px] overflow-y-auto pr-1 no-scrollbar">
+                      <div className="flex flex-col gap-2">
                         {(() => {
                           const registryCourse = courseRegistry[activeCourseData.slug];
                           const displayUnits = registryCourse

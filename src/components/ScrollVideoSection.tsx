@@ -145,8 +145,8 @@ export function ScrollVideoSection() {
                muted
                loop
                playsInline
-               // scale-[1.002] prevents subpixel rendering sliver gaps while keeping video fully visible without side crop
-               className="w-full h-full object-contain absolute inset-0 z-10 scale-[1.002]"
+               // scale-x-[1.03] and scale-y-[1.08] zooms in to crop the blue OS background from the video recording borders
+               className="w-full h-full object-cover absolute inset-0 z-10 scale-x-[1.03] scale-y-[1.08]"
              />
              
              <div className="absolute inset-0 bg-[#0A0A0A] z-0" />

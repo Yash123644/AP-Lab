@@ -285,7 +285,7 @@ function AnimatedChat() {
   return (
     <motion.div 
       layout 
-      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col min-h-[450px] relative overflow-hidden group"
+      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[500px] relative overflow-hidden group"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       {/* Top Bar inside Chat */}
@@ -326,7 +326,7 @@ function AnimatedChat() {
         </AnimatePresence>
 
         {/* Typing Indicator */}
-        <AnimatePresence>
+        <AnimatePresence mode="popLayout">
           {visibleMessages % 2 !== 0 && visibleMessages < chatSequence.length && (
             <motion.div
               layout
