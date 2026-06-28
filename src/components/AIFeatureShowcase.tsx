@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowUp, MousePointer2 } from "lucide-react";
+import { Sparkles, ArrowUp, MousePointer2, Activity } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const IBeam = () => (
@@ -85,7 +85,11 @@ function AnimatedArticleHighlight() {
   }, [step]);
 
   return (
-    <motion.div layout className="w-full h-[500px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group">
+    <motion.div 
+      layout 
+      className="w-full h-[500px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group"
+      transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
+    >
       
       {/* Top Bar */}
       <div className="absolute top-0 left-0 right-0 h-16 border-b border-white/5 bg-white/[0.02] flex items-center px-6 backdrop-blur-md z-20">
@@ -130,12 +134,15 @@ function AnimatedArticleHighlight() {
                       Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
                     </span>
                     
-                     {/* Contextual Popover */}
-                    <AnimatePresence>
+                     <AnimatePresence>
                       {step >= 2 && (
                         <motion.div
                           initial={{ opacity: 0, y: 5, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          animate={{ 
+                            opacity: 1, 
+                            y: 0, 
+                            scale: step === 3 ? 0.92 : 1 
+                          }}
                           exit={{ opacity: 0, scale: 0.95 }}
                           transition={{ type: "spring", stiffness: 300, damping: 25 }}
                           className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2"
@@ -154,12 +161,12 @@ function AnimatedArticleHighlight() {
                           initial={{ opacity: 0, left: 0, top: 0 }}
                           animate={{ 
                             opacity: step === 3 ? [1, 0] : 1,
-                            left: step === 1 ? "100%" : "50%",
-                            top: step === 1 ? "100%" : -40,
+                            left: step === 1 ? "100%" : "100%",
+                            top: step === 1 ? "100%" : -25,
                             scale: step === 3 ? [1, 0.8, 1] : 1
                           }}
                           transition={{ 
-                            duration: step === 1 ? 1.2 : step === 3 ? 0.5 : 0.8, 
+                            duration: step === 1 ? 1.2 : step === 3 ? 0.3 : 0.6, 
                             ease: "easeInOut" 
                           }}
                           className="absolute z-[60] pointer-events-none"
@@ -279,13 +286,13 @@ function AnimatedChat() {
     <motion.div 
       layout 
       className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col min-h-[450px] relative overflow-hidden group"
-      transition={{ type: "spring", stiffness: 200, damping: 25 }}
+      transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       {/* Top Bar inside Chat */}
       <div className="absolute top-0 left-0 right-0 h-16 border-b border-white/5 bg-white/[0.02] flex items-center justify-center backdrop-blur-md z-10">
         <div className="flex flex-col items-center mt-1">
           <div className="w-6 h-6 rounded-full bg-primary-purple/20 flex items-center justify-center mb-0.5">
-            <Sparkles className="w-3 h-3 text-primary-purple" />
+            <Activity className="w-3 h-3 text-primary-purple animate-pulse" />
           </div>
           <span className="text-[9px] font-manrope font-bold text-white/50 uppercase tracking-widest">AP Lab AI</span>
         </div>
