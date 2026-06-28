@@ -134,10 +134,10 @@ export function ScrollVideoSection() {
             y,
             transformStyle: "preserve-3d" 
           }}
-          className="relative w-full aspect-video rounded-[24px] md:rounded-[40px] p-3 md:p-6 bg-white/[0.08] border border-white/[0.15] backdrop-blur-[40px] shadow-[0_50px_100px_-20px_rgba(0,0,0,1),_inset_0_2px_4px_rgba(255,255,255,0.3)] flex justify-center items-center overflow-hidden"
+          className="relative w-full aspect-video rounded-[12px] md:rounded-[20px] p-3 md:p-6 bg-white/[0.08] border border-white/[0.15] backdrop-blur-[40px] shadow-[0_50px_100px_-20px_rgba(0,0,0,1),_inset_0_2px_4px_rgba(255,255,255,0.3)] flex justify-center items-center overflow-hidden"
         >
           {/* Inner Liquid Glass Border */}
-          <div className="relative w-full h-full rounded-[16px] md:rounded-[32px] overflow-hidden border border-white/20 bg-[#020202] flex justify-center items-center shadow-[inset_0_0_50px_rgba(0,0,0,0.8)]">
+          <div className="relative w-full h-full rounded-[8px] md:rounded-[12px] overflow-hidden border border-white/20 bg-[#020202] flex justify-center items-center shadow-[inset_0_0_50px_rgba(0,0,0,0.8)]">
              
              <video
                ref={videoRef}

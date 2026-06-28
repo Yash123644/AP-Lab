@@ -26,9 +26,9 @@ const tabDetails = {
     description: "Write production React/TypeScript code, build interactive 3D simulations (WebGL/Three.js), and construct high-performance learning dashboard utilities.",
     skills: ["Proficiency in React / TypeScript", "Familiarity with Next.js & TailwindCSS", "Interest in 3D graphics or data analytics"],
     badge: "Core Platform",
-    hex: "#7b39fc", // primary-purple
-    bgHex: "rgba(123, 57, 252, 0.04)",
-    borderHex: "rgba(123, 57, 252, 0.25)",
+    hex: "#818cf8", // physics-indigo
+    bgHex: "rgba(129, 140, 248, 0.04)",
+    borderHex: "rgba(129, 140, 248, 0.25)",
     defaultSubject: "Core Codebase / Infrastructure",
     defaultRole: "Developer / Coder"
   },
@@ -37,9 +37,9 @@ const tabDetails = {
     description: "Create sleek visual layouts, design intuitive vector diagrams, develop branding guides, and design promotional/community visual assets.",
     skills: ["Proficiency in Figma or Adobe Illustrator", "Strong visual portfolio showcasing modern UI elements", "Expertise in vector illustration and branding"],
     badge: "Visual Brand",
-    hex: "#ec4899", // pink
-    bgHex: "rgba(236, 72, 153, 0.04)",
-    borderHex: "rgba(236, 72, 153, 0.25)",
+    hex: "#22c55e", // biology-green
+    bgHex: "rgba(34, 197, 94, 0.04)",
+    borderHex: "rgba(34, 197, 94, 0.25)",
     defaultSubject: "Visual Design / Branding",
     defaultRole: "Graphic Designer / Illustrator"
   }
@@ -275,7 +275,7 @@ export default function JoinPage() {
               >
                 
                 <h3 className="font-manrope font-extrabold text-white text-xs tracking-widest uppercase mb-6 flex items-center gap-2 relative z-10 text-left">
-                  <span className="w-2 h-2 rounded-full bg-medical-teal animate-pulse shadow-[0_0_10px_#00f2ff]" />
+                  <span className="w-2 h-2 rounded-full bg-medical-teal shadow-[0_0_8px_rgba(0,242,255,0.4)]" />
                   The Contribution Loop
                 </h3>
                 
@@ -294,26 +294,26 @@ export default function JoinPage() {
                   </div>
 
                   {/* Step 2 */}
-                  <div className="group relative rounded-2xl p-4 bg-white/[0.01] border border-white/5 hover:bg-white/[0.03] hover:border-primary-purple/30 hover:shadow-[0_8px_30px_rgba(123,57,252,0.03)] transition-all duration-500 flex-grow flex flex-col justify-center text-left">
+                  <div className="group relative rounded-2xl p-4 bg-white/[0.01] border border-white/5 hover:bg-white/[0.03] hover:border-indigo-500/30 hover:shadow-[0_8px_30px_rgba(129,140,248,0.03)] transition-all duration-500 flex-grow flex flex-col justify-center text-left">
                     <div className="flex items-start space-x-4">
-                      <div className="w-7 h-7 rounded-full bg-primary-purple/10 border border-primary-purple/30 flex items-center justify-center font-mono text-[10px] font-bold text-primary-purple shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(123,57,252,0.15)] z-10 relative bg-[#020202]">
+                      <div className="w-7 h-7 rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center font-mono text-[10px] font-bold text-indigo-400 shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(129,140,248,0.15)] z-10 relative bg-[#020202]">
                         02
                       </div>
                       <div className="space-y-1">
-                        <h4 className="font-manrope font-bold text-white text-sm tracking-wide group-hover:text-primary-purple transition-colors">Align on Discord</h4>
+                        <h4 className="font-manrope font-bold text-white text-sm tracking-wide group-hover:text-indigo-400 transition-colors">Align on Discord</h4>
                         <p className="font-inter text-white/50 text-xs leading-relaxed">We review details together and invite you to our private builder channels.</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="group relative rounded-2xl p-4 bg-white/[0.01] border border-white/5 hover:bg-white/[0.03] hover:border-pink-500/30 hover:shadow-[0_8px_30px_rgba(236,72,153,0.03)] transition-all duration-500 flex-grow flex flex-col justify-center text-left">
+                  <div className="group relative rounded-2xl p-4 bg-white/[0.01] border border-white/5 hover:bg-white/[0.03] hover:border-emerald-500/30 hover:shadow-[0_8px_30px_rgba(34,197,94,0.03)] transition-all duration-500 flex-grow flex flex-col justify-center text-left">
                     <div className="flex items-start space-x-4">
-                      <div className="w-7 h-7 rounded-full bg-pink-500/10 border border-pink-500/30 flex items-center justify-center font-mono text-[10px] font-bold text-pink-400 shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(236,72,153,0.15)] z-10 relative bg-[#020202]">
+                      <div className="w-7 h-7 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-mono text-[10px] font-bold text-emerald-400 shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(34,197,94,0.15)] z-10 relative bg-[#020202]">
                         03
                       </div>
                       <div className="space-y-1">
-                        <h4 className="font-manrope font-bold text-white text-sm tracking-wide group-hover:text-pink-400 transition-colors">Deploy & Ship</h4>
+                        <h4 className="font-manrope font-bold text-white text-sm tracking-wide group-hover:text-emerald-400 transition-colors">Deploy & Ship</h4>
                         <p className="font-inter text-white/50 text-xs leading-relaxed">Collaborate directly on lessons or tooling, and see your work published!</p>
                       </div>
                     </div>

@@ -12,8 +12,8 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 const generateMockData = () => {
   const data: Record<string, number> = {};
   for (let i = 0; i < 100; i++) {
-    // Generate a random number between 1,000 and 25,000
-    data[i.toString().padStart(2, "0")] = Math.floor(Math.random() * (25000 - 1000 + 1)) + 1000;
+    // Generate a random number between 20 and 250 scholars
+    data[i.toString().padStart(2, "0")] = Math.floor(Math.random() * (250 - 20 + 1)) + 20;
   }
   return data;
 };
@@ -50,7 +50,7 @@ export function USMap() {
             {({ geographies }) =>
               geographies.map(geo => {
                 // Get the state ID to map to our mock data (states are usually 01-56)
-                const users = mockData[geo.id] || Math.floor(Math.random() * 25000) + 1000;
+                const users = mockData[geo.id] || Math.floor(Math.random() * 230) + 20;
                 
                 return (
                   <Geography
