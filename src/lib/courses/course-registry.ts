@@ -1,6 +1,7 @@
 import { apChemistryData } from "./ap-chemistry-data";
 import { apBiologyData } from "./ap-biology-data";
 import { apPhysicsData } from "./ap-physics-data";
+import { apUshData } from "./ap-ush-data";
 
 export interface CourseQuestion {
   id: string;
@@ -112,137 +113,28 @@ const apPhysicsUnits: CourseUnit[] = apPhysicsData.map((unit) => ({
     })),
   })),
 }));
-
-const apUshUnits: CourseUnit[] = [
-  {
-    id: 1,
-    title: "Period 1: 1491–1607",
-    masteryWeight: "5%",
-    topics: [
-      {
-        id: "1.1",
-        title: "Demographics and Native Societies",
-        description: "Native American cultures prior to European contact.",
-        youtubeId: "6E9WU9TGrec",
-        article: `
-# Demographics and Native Societies
-
-Prior to European arrival in 1492, the Americas were home to diverse indigenous societies:
-- **Great Plains/Great Basin**: Mobile lifestyles due to lack of resources.
-- **Southwest**: Pueblo societies with complex irrigation and maize cultivation.
-- **Northeast/Atlantic Seaboard**: Mix of agricultural and hunter-gatherer economies, notably the Iroquois Confederacy.
-`,
-        questions: [
-          {
-            id: "q_ush_1.1.1",
-            unitId: 1,
-            text: "Which region's native societies relied heavily on maize cultivation and advanced irrigation systems prior to European arrival?",
-            options: ["Great Basin", "Southwest", "Great Plains", "Northwest coast"],
-            correctIndex: 1,
-            hint: "Pueblo peoples are highly famous for this cultivation.",
-            explanation: "Southwest Native societies developed complex irrigation systems to support maize cultivation in arid climates."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Period 2: 1607–1754",
-    masteryWeight: "10%",
-    topics: [
-      {
-        id: "2.1",
-        title: "Colonial Development Patterns",
-        description: "Compare Spanish, French, Dutch, and British colonization schemes.",
-        youtubeId: "6E9WU9TGrec",
-        article: `
-# Colonial Development Patterns
-
-European powers had diverse motives and colonial structures:
-- **Spanish**: Extract mineral wealth and convert natives via the Encomienda system.
-- **French & Dutch**: Focused on the fur trade, establishing peaceful trade relations.
-- **British**: Sought permanent agricultural settlement, resulting in demographic growth and conflicts with natives.
-`,
-        questions: [
-          {
-            id: "q_ush_2.1.1",
-            unitId: 2,
-            text: "Which European power's colonial strategy focused primarily on trade alliances and intermarriage to control the fur trade?",
-            options: ["Spain", "Great Britain", "France", "Portugal"],
-            correctIndex: 2,
-            hint: "This power established Quebec and traded along the Mississippi.",
-            explanation: "The French focused heavily on trade alliances, particularly in fur trading, and maintained amicable relations with Native tribes."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Period 3: 1754–1800",
-    masteryWeight: "12%",
-    topics: [
-      {
-        id: "3.1",
-        title: "Revolution & Constitution",
-        description: "Analyze the causes of the American Revolution and the drafting of the U.S. Constitution.",
-        youtubeId: "6E9WU9TGrec",
-        article: `
-# The American Revolution and the Constitution
-
-Tensions arose following the Seven Years' War due to imperial restructuring and taxation:
-- **Stamp Act (1765) & Townshend Acts**: Prompted colonial protests under "No taxation without representation."
-- **Common Sense by Thomas Paine**: Galvanized public opinion towards independence.
-- **Constitutional Convention (1787)**: Formulated a new federal government based on checks and balances, the Great Compromise, and the Bill of Rights.
-`,
-        questions: [
-          {
-            id: "q_ush_3.1.1",
-            unitId: 3,
-            text: "Which 1776 publication directly convinced many common colonists to support separation from Great Britain?",
-            options: ["Common Sense", "The Federalist Papers", "The Albany Plan", "Letters from a Pennsylvania Farmer"],
-            correctIndex: 0,
-            hint: "Written by Thomas Paine in accessible, plain language.",
-            explanation: "Thomas Paine's pamphlet Common Sense laid out clear arguments for American independence in simple prose."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Period 4: 1800–1848",
-    masteryWeight: "10%",
-    topics: [
-      {
-        id: "4.1",
-        title: "The Market Revolution",
-        description: "Examine technological innovations and economic changes in the early 19th century.",
-        youtubeId: "6E9WU9TGrec",
-        article: `
-# The Market Revolution
-
-The early 19th century saw massive shifts in trade, technology, and labor:
-- **Transportation**: Canals (Erie Canal), steamboats, and early railroads linked regional economies.
-- **Factory System**: The Lowell System mobilized young female labor in textile production.
-- **Political Ideologies**: Emergence of the Second Party System (Democrats vs. Whigs) and social reform movements.
-`,
-        questions: [
-          {
-            id: "q_ush_4.1.1",
-            unitId: 4,
-            text: "Which infrastructure project completed in 1825 connected the Hudson River with the Great Lakes, triggering boomtowns in upstate New York?",
-            options: ["Erie Canal", "National Road", "Baltimore and Ohio Railroad", "Chesapeake and Ohio Canal"],
-            correctIndex: 0,
-            hint: "Completed in New York State under Governor DeWitt Clinton.",
-            explanation: "The Erie Canal revolutionized transportation and commerce by linking Buffalo on the Great Lakes with New York City."
-          }
-        ]
-      }
-    ]
-  }
-];
+const apUshUnits: CourseUnit[] = apUshData.map((unit) => ({
+  id: unit.id,
+  title: unit.title,
+  masteryWeight: unit.masteryWeight,
+  topics: unit.topics.map((topic) => ({
+    id: topic.id,
+    title: topic.title,
+    description: topic.description,
+    youtubeId: topic.youtubeId,
+    article: topic.article,
+    image: topic.image,
+    questions: topic.questions.map((q) => ({
+      id: q.id,
+      text: q.text,
+      options: q.options,
+      correctIndex: q.correctIndex,
+      hint: q.hint,
+      explanation: q.explanation,
+      unitId: q.unitId,
+    })),
+  })),
+}));
 
 const apPsychUnits: CourseUnit[] = [
   {

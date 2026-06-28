@@ -20,19 +20,37 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate network request (will integrate Firebase/EmailJS later)
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log("Form Submitted:", formData);
-    
-    setLoading(false);
-    setSuccess(true);
-    
-    // Reset success state after a few seconds
-    setTimeout(() => {
-      setSuccess(false);
-      setFormData({ name: "", email: "", subject: "General Inquiry", message: "" });
-    }, 4000);
+    try {
+      const response = await fetch("https://formspree.io/ap.labbss@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `AP Lab Contact: ${formData.subject} from ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+      
+      if (response.ok) {
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+          setFormData({ name: "", email: "", subject: "General Inquiry", message: "" });
+        }, 4000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const containerVariants = {

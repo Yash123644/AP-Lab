@@ -71,26 +71,46 @@ export default function JoinPage() {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate network request
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log("Join Request Submitted:", formData);
-    
-    setLoading(false);
-    setSuccess(true);
-    
-    // Reset success state after a few seconds
-    setTimeout(() => {
-      setSuccess(false);
-      setFormData({
-        name: "",
-        email: "",
-        subject: tabDetails[selectedTab].defaultSubject,
-        role: tabDetails[selectedTab].defaultRole,
-        experience: "",
-        contribution: ""
+    try {
+      const response = await fetch("https://formspree.io/ap.labbss@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `AP Lab: Join Form Submission from ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          role: formData.role,
+          experience: formData.experience,
+          contribution: formData.contribution
+        })
       });
-    }, 4000);
+      
+      if (response.ok) {
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+          setFormData({
+            name: "",
+            email: "",
+            subject: tabDetails[selectedTab].defaultSubject,
+            role: tabDetails[selectedTab].defaultRole,
+            experience: "",
+            contribution: ""
+          });
+        }, 4000);
+      } else {
+        alert("Failed to submit application. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const containerVariants = {
