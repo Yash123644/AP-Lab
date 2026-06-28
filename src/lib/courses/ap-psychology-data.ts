@@ -45,16 +45,36 @@ To understand human behavior, psychologists study the interplay between nature (
 - <vocab term="Genotype" definition="The precise genetic makeup of an organism, as determined by the specific alleles inherited from parents.">Genotype</vocab> is the actual genetic blueprint of an organism, inherited from birth.
 - <vocab term="Phenotype" definition="The observable physical or behavioral characteristics of an organism, resulting from the interaction of its genotype with the environment.">Phenotype</vocab> refers to the observable physical or behavioral characteristics of an organism, resulting from how the genotype reacts to environmental stimuli (e.g., height, eye color, or personality traits).
 
-## 2. Evolutionary Psychology
-- Rooted in Charles Darwin's theory of natural selection.
-- <vocab term="Evolutionary Psychology" definition="The study of how natural selection and adaptation shaped human cognitive processes and behaviors over time to maximize survival.">Evolutionary Psychology</vocab> explains how behavioral patterns and cognitive mechanisms evolved as adaptations that increased survival and reproduction.
-- <vocab term="Natural Selection" definition="The evolutionary process whereby organisms better adapted to their environment tend to survive and produce more offspring.">Natural selection</vocab> ensures that traits which assist in survival are passed down to future generations, while maladaptive traits die out.
+<svg width="450" height="180" viewBox="0 0 450 180" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">TWIN GENETICS COMPARISON</text>
+  
+  {/* Monozygotic */}
+  <rect x="30" y="45" width="180" height="100" rx="10" fill="rgba(167, 139, 250, 0.05)" stroke="#a78bfa" stroke-width="1.5" />
+  <text x="120" y="70" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="sans-serif" font-weight="bold">Monozygotic (Identical)</text>
+  <circle cx="90" cy="110" r="15" fill="#7b39fc" opacity="0.6" />
+  <circle cx="150" cy="110" r="15" fill="#7b39fc" opacity="0.6" />
+  <text x="120" y="145" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Shares 100% of DNA</text>
 
-## 3. Twin and Adoption Studies
-- To resolve the nature vs. nurture debate, researchers utilize twin studies:
-  - **Identical twins** (<vocab term="Monozygotic Twins" definition="Twins who develop from a single fertilized egg that splits in two, sharing 100% of their genetic material.">monozygotic</vocab>) develop from a single fertilized egg and share 100% of their DNA.
-  - **Fraternal twins** (<vocab term="Dizygotic Twins" definition="Twins who develop from two separate fertilized eggs, sharing approximately 50% of their genetic material, similar to normal siblings.">dizygotic</vocab>) develop from separate eggs and share roughly 50% of their DNA.
-  - Comparing identical twins raised apart isolates genetic factors (**nature**), whereas comparing adopted children to their biological vs. adoptive parents highlights environmental factors (**nurture**).
+  {/* Dizygotic */}
+  <rect x="240" y="45" width="180" height="100" rx="10" fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-width="1.5" />
+  <text x="330" y="70" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="sans-serif" font-weight="bold">Dizygotic (Fraternal)</text>
+  <circle cx="300" cy="110" r="15" fill="#3b82f6" opacity="0.6" />
+  <circle cx="360" cy="110" r="15" fill="#ec4899" opacity="0.6" />
+  <text x="330" y="145" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Shares ~50% of DNA</text>
+</svg>
+
+## 2. Twin and Adoption Studies
+- Comparing identical twins raised apart isolates genetic factors (**nature**), whereas comparing adopted children to their biological vs. adoptive parents highlights environmental factors (**nurture**).
+- **Heritability** is a mathematical estimate ranging from 0 to 1 that measures the proportion of variation among individuals in a population that we can attribute to genes.
+
+| Factor | Nature (Genetics) | Nurture (Environment) |
+| :--- | :--- | :--- |
+| **Identical Twins** | Highly correlated in physical traits & basic intelligence | Differences reflect unique life events |
+| **Adopted Children** | Tend to share personality & cognitive traits with biological parents | Share values, manners, & political beliefs with adoptive parents |
+
+## 3. Evolutionary Psychology
+- <vocab term="Evolutionary Psychology" definition="The study of how natural selection and adaptation shaped human cognitive processes and behaviors over time to maximize survival.">Evolutionary Psychology</vocab> explains how behavioral patterns and cognitive mechanisms evolved as adaptations that increased survival and reproduction.
+- <vocab term="Natural Selection" definition="The evolutionary process whereby organisms better adapted to their environment tend to survive and produce more offspring.">Natural selection</vocab> ensures that traits which assist in survival are passed down to future generations.
 `,
         questions: [
           {
@@ -139,15 +159,12 @@ The human brain controls behavior electrically and chemically through specialize
   
   <text x="90" y="80" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Cerebral Cortex</text>
   <line x1="170" y1="80" x2="190" y2="90" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
-  
   <text x="320" y="210" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Cerebellum</text>
   <line x1="310" y1="210" x2="295" y2="215" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
-  
   <text x="120" y="240" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Brainstem</text>
   <line x1="180" y1="235" x2="210" y2="230" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
   <text x="120" y="140" fill="#fbbf24" font-size="11" font-family="sans-serif" font-weight="bold">Amygdala</text>
   <line x1="170" y1="135" x2="185" y2="130" stroke="#fbbf24" stroke-width="1" />
-  
   <text x="280" y="105" fill="#34d399" font-size="11" font-family="sans-serif" font-weight="bold">Hippocampus</text>
   <line x1="275" y1="110" x2="245" y2="115" stroke="#34d399" stroke-width="1" />
 </svg>
@@ -157,21 +174,18 @@ The human brain controls behavior electrically and chemically through specialize
 - **Soma (Cell Body)**: Keeps the cell alive and integrates signals.
 - <vocab term="Axon" definition="The long, thin fiber that carries electrical action potentials away from the neuron cell body to terminal branches.">Axon</vocab> is the long pathway that transmits electrical impulses.
 - <vocab term="Myelin Sheath" definition="A fatty layer insulating the axon that dramatically increases the velocity of neural impulse propagation.">Myelin Sheath</vocab> is a fatty layer of insulation that speeds up signals. Multiple sclerosis involves its degeneration.
-- **Terminal Buttons**: Small bulbs releasing chemical neurotransmitters.
 
 <svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <path d="M20 90 L160 90 C190 90, 210 50, 240 50 C280 50, 290 120, 240 120 C210 120, 190 160, 160 160 L20 160" fill="none" stroke="#a78bfa" stroke-width="2.5" />
   <path d="M350 20 L350 200" fill="none" stroke="#38bdf8" stroke-width="3" />
   <circle cx="210" cy="80" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1" opacity="0.6" />
   <circle cx="210" cy="80" r="3" fill="#ffffff" />
-  <circle cx="210" cy="80" r="2" fill="#ffffff" transform="translate(4,4)" />
   <circle cx="230" cy="100" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1" opacity="0.6" />
   <circle cx="230" cy="100" r="3" fill="#ffffff" />
   <circle cx="270" cy="85" r="3" fill="#34d399" />
   <circle cx="280" cy="70" r="3" fill="#34d399" />
   <circle cx="295" cy="90" r="3" fill="#34d399" />
   <circle cx="310" cy="80" r="3" fill="#34d399" />
-  <circle cx="290" cy="120" r="3" fill="#34d399" />
   <path d="M345 70 L355 70 M345 75 L355 75" stroke="#38bdf8" stroke-width="2" />
   <rect x="340" y="70" width="6" height="5" fill="#34d399" />
   <path d="M345 110 L355 110 M345 115 L355 115" stroke="#38bdf8" stroke-width="2" />
@@ -186,6 +200,13 @@ The human brain controls behavior electrically and chemically through specialize
 - <vocab term="Action Potential" definition="A brief, self-propagating electrical reversal of membrane potential along a neuron axon (all-or-none process).">Action Potential</vocab> is the electrical impulse traveling down the axon.
 - <vocab term="All-or-None Law" definition="The principle that a neuron fires at full strength or not at all; strong stimuli increase frequency, not strength.">All-or-none principle</vocab> dictates that a neuron fires at full capacity once the **threshold** (-55mV) is breached.
 - <vocab term="Synapse" definition="The microscopic gap between the terminal buttons of a sending neuron and the dendrites of a receiving neuron.">Synaptic cleft</vocab> is the microscopic gap across which neurotransmitters transmit chemical signals.
+
+| Neurotransmitter | Primary Function | Associated Disorders |
+| :--- | :--- | :--- |
+| **Dopamine** | Reward, motor control, pleasure | Excess: Schizophrenia; Deficit: Parkinson's |
+| **Serotonin** | Mood regulation, sleep, hunger | Deficit: Clinical Depression |
+| **Acetylcholine (ACh)**| Muscle action, learning, memory | Deficit: Alzheimer's Disease |
+| **Endorphins** | Pain control, stress reduction | Deficit: Chronic pain vulnerability |
 `,
         questions: [
           {
@@ -251,19 +272,36 @@ The human brain controls behavior electrically and chemically through specialize
 ## 1. The Endocrine System
 - Chemical signaling via <vocab term="Hormones" definition="Chemical messengers secreted by endocrine glands directly into the bloodstream to regulate physiological functions.">hormones</vocab> in the blood.
 - <vocab term="Pituitary Gland" definition="The endocrine master gland, controlled by the hypothalamus, that directs other hormone-releasing glands.">Pituitary Gland</vocab> is the master regulator, governed directly by the hypothalamus.
-- **Adrenal Glands** release adrenaline to trigger fight-or-flight states.
 
-## 2. Psychoactive Pharmacology
-Drugs alter conscious states at the synapse:
-- <vocab term="Agonist" definition="A chemical substance that binds to receptors and mimics or enhances neurotransmitter actions.">Agonist</vocab> mimics and boosts neurotransmitter activity.
-- <vocab term="Antagonist" definition="A chemical substance that binds to receptors and blocks or decreases neurotransmitter activity.">Antagonist</vocab> blocks neurotransmitter binding.
-- **Reuptake Inhibitors** keep neurotransmitters in the synaptic gap longer.
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">SLEEP WAVE STAGES</text>
+  
+  {/* Alpha/Beta */}
+  <path d="M 30 70 Q 40 50 50 70 T 70 70 T 90 70 T 110 70 T 130 70 T 150 70" fill="none" stroke="#60a5fa" stroke-width="1.5" />
+  <text x="90" y="105" text-anchor="middle" fill="#60a5fa" font-size="9" font-family="sans-serif">Beta/Alpha (Awake/Relaxed)</text>
 
-## 3. Sleep States
-Sleep occurs in 90-minute stages:
-- **NREM-1 & NREM-2**: Light sleep with <vocab term="Sleep Spindles" definition="Bursts of rapid, rhythmic brain activity visible on an EEG during stage 2 sleep.">sleep spindles</vocab> (Stage 2 activity spikes).
+  {/* Theta */}
+  <path d="M 180 70 Q 195 40 210 70 T 240 70 T 270 70 T 300 70" fill="none" stroke="#a78bfa" stroke-width="1.5" />
+  <text x="240" y="105" text-anchor="middle" fill="#a78bfa" font-size="9" font-family="sans-serif">Theta (NREM-1/2)</text>
+
+  {/* Delta */}
+  <path d="M 320 70 Q 345 20 370 70 T 420 70" fill="none" stroke="#f43f5e" stroke-width="1.5" />
+  <text x="370" y="105" text-anchor="middle" fill="#f43f5e" font-size="9" font-family="sans-serif">Delta (NREM-3 Deep Sleep)</text>
+</svg>
+
+## 2. Sleep States and Waves
+Sleep cycles last roughly 90 minutes, transitioning through distinct phases:
+- **NREM-1**: Light sleep; theta waves, hypnagogic jerks.
+- **NREM-2**: characterized by <vocab term="Sleep Spindles" definition="Bursts of rapid, rhythmic brain activity visible on an EEG during stage 2 sleep.">sleep spindles</vocab> (rhythmic EEG bursts).
 - **NREM-3**: Deep sleep dominated by slow <vocab term="Delta Waves" definition="Large, slow brain waves associated with deep, restorative stage 3 sleep.">delta waves</vocab>.
-- <vocab term="REM Sleep" definition="Rapid Eye Movement sleep; characterized by dreaming, brain activity resembling wakefulness, and motor paralysis.">REM Sleep</vocab> is the active dreaming stage featuring motor paralysis.
+- <vocab term="REM Sleep" definition="Rapid Eye Movement sleep; characterized by dreaming, brain activity resembling wakefulness, and motor paralysis.">REM Sleep</vocab> features active brain waves, dreaming, and skeletal muscle paralysis.
+
+| Sleep Stage | Primary Wave | Characteristics |
+| :--- | :--- | :--- |
+| **Awake / Alert** | Beta Waves | High-frequency active cognitive focus |
+| **NREM-2** | Theta Waves | Sleep Spindles & K-complexes |
+| **NREM-3** | Delta Waves | Deep tissue restoration; sleepwalking |
+| **REM** | Beta-like Waves | Active dreaming; muscle atonia |
 `,
         questions: [
           {
@@ -338,7 +376,7 @@ Sleep occurs in 90-minute stages:
         article: `
 # Sensation, Thresholds, and Sensory Anatomy
 
-**Sensation** begins with sensory receptors picking up physical stimuli.
+Sensation translates physical stimuli into neurological patterns.
 
 <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <circle cx="280" cy="100" r="70" fill="none" stroke="#38bdf8" stroke-width="2" />
@@ -354,10 +392,8 @@ Sleep occurs in 90-minute stages:
   
   <text x="140" y="60" fill="#818cf8" font-size="10" font-family="sans-serif">Cornea</text>
   <line x1="175" y1="65" x2="208" y2="85" stroke="#818cf8" stroke-width="1" />
-  
   <text x="210" y="165" fill="#818cf8" font-size="10" font-family="sans-serif">Lens</text>
   <line x1="230" y1="152" x2="232" y2="130" stroke="#818cf8" stroke-width="1" />
-  
   <text x="345" y="145" fill="#f43f5e" font-size="10" font-family="sans-serif">Retina</text>
   <line x1="340" y1="135" x2="330" y2="120" stroke="#f43f5e" stroke-width="1" />
   <text x="40" y="105" fill="#fbbf24" font-size="10" font-family="sans-serif" font-weight="bold">Light Waves</text>
@@ -367,12 +403,13 @@ Sleep occurs in 90-minute stages:
 - <vocab term="Absolute Threshold" definition="The minimum stimulation needed to detect a particular stimulus 50% of the time.">Absolute Threshold</vocab> is the lowest level of stimulus required for 50% detection.
 - <vocab term="Difference Threshold" definition="The minimum difference between two stimuli required for detection 50% of the time (also called Just Noticeable Difference).">Difference Threshold (JND)</vocab> measures the minimum difference required to detect a change.
 - <vocab term="Weber's Law" definition="The principle that to be perceived as different, two stimuli must differ by a constant minimum percentage rather than a constant amount.">Weber's Law</vocab> states difference thresholds scale by constant percentages, not absolute sums.
-- <vocab term="Sensory Adaptation" definition="Diminished sensitivity to a stimulus as a consequence of constant, unchanging exposure.">Sensory Adaptation</vocab> is the fading of constant sensations (e.g., getting used to hot bathwater).
+- <vocab term="Sensory Adaptation" definition="Diminished sensitivity to a stimulus as a consequence of constant, unchanging exposure.">Sensory Adaptation</vocab> is the fading of constant sensations.
 
-## 2. Visual and Auditory Transduction
-- **Transduction** translates environmental energy into neural codes:
-  - Visual transduction occurs via rods and cones on the **retina**.
-  - Auditory transduction occurs via hair cells inside the **cochlea**.
+| Sensory Modality | Stimulus Energy | Receptor Cells | Transduction Location |
+| :--- | :--- | :--- | :--- |
+| **Vision** | Electromagnetic Light | Rods & Cones | Retina |
+| **Audition** | Sound Pressure Waves | Hair Cells | Cochlea (Basilar Membrane) |
+| **Olfaction** | Airborne Chemicals | Olfactory Receptors | Olfactory Bulb |
 `,
         questions: [
           {
@@ -430,21 +467,45 @@ Sleep occurs in 90-minute stages:
         article: `
 # Perceptual Processing and Attention
 
-**Perception** makes sense of incoming sensations using cognitive processing.
+Perception is how the brain organizes and gives meaning to raw sensory information.
+
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">GESTALT GROUPING LAWS</text>
+  
+  {/* Proximity */}
+  <circle cx="50" cy="70" r="6" fill="#a78bfa" />
+  <circle cx="65" cy="70" r="6" fill="#a78bfa" />
+  <circle cx="50" cy="85" r="6" fill="#a78bfa" />
+  <circle cx="65" cy="85" r="6" fill="#a78bfa" />
+  <text x="57" y="125" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif">Proximity</text>
+
+  {/* Similarity */}
+  <circle cx="170" cy="70" r="6" fill="#38bdf8" />
+  <rect x="180" y="64" width="12" height="12" fill="#f43f5e" />
+  <circle cx="170" cy="88" r="6" fill="#38bdf8" />
+  <rect x="180" y="82" width="12" height="12" fill="#f43f5e" />
+  <text x="182" y="125" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif">Similarity</text>
+
+  {/* Closure */}
+  <path d="M 290 60 A 25 25 0 0 1 340 60 M 340 60 A 25 25 0 0 1 315 95" fill="none" stroke="#22c55e" stroke-width="2.5" />
+  <text x="315" y="125" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif">Closure</text>
+</svg>
 
 ## 1. Top-Down vs. Bottom-Up Processing
 - <vocab term="Bottom-Up Processing" definition="Sensory analysis that begins at the entry level of sensory receptors and works up to integration in the brain.">Bottom-Up Processing</vocab> analyzes sensory details first, constructing the big picture from scratch (data-driven).
-- <vocab term="Top-Down Processing" definition="Information processing guided by higher-level mental actions, experiences, and structural expectations.">Top-Down Processing</vocab> applies expectations, memories, and context to decipher sensations (concept-driven).
+- <vocab term="Top-Down Processing" definition="Information processing guided by higher-level mental actions, experiences, and structural expectations.">Top-Down Processing</vocab> applies expectations, memories, and context to decipher sensations.
 
-## 2. Gestalt Grouping
-Gestalt theory says the brain interprets wholes instead of isolated parts:
-- **Proximity**: Grouping close objects.
-- **Similarity**: Grouping matching items.
-- <vocab term="Closure" definition="The Gestalt perceptual tendency to fill in gaps to perceive a complete, whole object.">Closure</vocab> is the tendency to fill in shape gaps to view complete figures.
+## 2. Gestalt Principles
+The brain naturally groups visual fields to create meaning:
+- **Proximity**: Grouping close objects together.
+- **Similarity**: Grouping elements that match.
+- <vocab term="Closure" definition="The Gestalt perceptual tendency to fill in gaps to perceive a complete, whole object.">Closure</vocab>: Filling in visual spaces to perceive complete shapes.
 
-## 3. Attention Limitations
-- <vocab term="Selective Attention" definition="The focusing of conscious awareness on a particular stimulus to the exclusion of others.">Selective Attention</vocab> directs awareness to one event, like the Cocktail Party Effect.
-- <vocab term="Inattentional Blindness" definition="Failing to see highly visible objects when our attention is fully directed elsewhere.">Inattentional Blindness</vocab> causes us to miss obvious details when distracted.
+| Gestalt Principle | Definition | Visual Example |
+| :--- | :--- | :--- |
+| **Proximity** | Elements close together are grouped | Three columns of dots instead of one large block |
+| **Similarity** | Visually matching elements are grouped | Rows of circles alternating with rows of squares |
+| **Closure** | Incomplete shapes are filled in | A fragmented triangle perceived as whole |
 `,
         questions: [
           {
@@ -502,21 +563,50 @@ Gestalt theory says the brain interprets wholes instead of isolated parts:
         article: `
 # Cognitive Memory, Language, and Intelligence
 
-## 1. Multi-Store Memory Model
+## 1. Information-Processing Model
 Atkinson & Shiffrin proposed three memory structures:
-1. **Sensory Memory**: Rapid physical logs (iconic/echoic).
-2. **Short-Term Memory**: Holds 7 ± 2 items temporarily.
-3. **Long-Term Memory**: Infinite permanent database:
-   - <vocab term="Explicit Memory" definition="Memory of facts and experiences that one can consciously know and declare (processed by hippocampus).">Explicit Memory</vocab> covers declarative facts (semantic/episodic).
-   - <vocab term="Implicit Memory" definition="Retention of learned skills or classical conditioning associations independent of conscious recollection (processed by cerebellum).">Implicit Memory</vocab> covers non-declarative skills (procedural habits).
 
-## 2. Problem Solving and Obstacles
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">ATKINSON-SHIFFRIN MEMORY MODEL</text>
+  
+  {/* Sensory */}
+  <rect x="20" y="55" width="100" height="50" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" />
+  <text x="70" y="80" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif" font-weight="bold">Sensory Memory</text>
+  <text x="70" y="95" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">Duration: &lt;2s</text>
+
+  <path d="M 125 80 L 155 80" fill="none" stroke="#a78bfa" stroke-width="2" />
+  <text x="140" y="70" text-anchor="middle" fill="#a78bfa" font-size="7" font-family="sans-serif">Attention</text>
+
+  {/* STM */}
+  <rect x="165" y="55" width="100" height="50" rx="6" fill="rgba(121, 57, 252, 0.1)" stroke="#7b39fc" stroke-width="1.5" />
+  <text x="215" y="80" text-anchor="middle" fill="#7b39fc" font-size="9" font-family="sans-serif" font-weight="bold">Working / STM</text>
+  <text x="215" y="95" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">Capacity: 7±2 items</text>
+
+  <path d="M 270 70 L 305 70" fill="none" stroke="#22c55e" stroke-width="2" />
+  <text x="287" y="62" text-anchor="middle" fill="#22c55e" font-size="7" font-family="sans-serif">Encode</text>
+
+  <path d="M 305 90 L 270 90" fill="none" stroke="#fbbf24" stroke-width="2" />
+  <text x="287" y="105" text-anchor="middle" fill="#fbbf24" font-size="7" font-family="sans-serif">Retrieve</text>
+
+  {/* LTM */}
+  <rect x="315" y="55" width="100" height="50" rx="6" fill="rgba(34, 197, 148, 0.1)" stroke="#22c55e" stroke-width="1.5" />
+  <text x="365" y="80" text-anchor="middle" fill="#22c55e" font-size="9" font-family="sans-serif" font-weight="bold">Long-Term Memory</text>
+  <text x="365" y="95" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">Capacity: Infinite</text>
+</svg>
+
+- <vocab term="Explicit Memory" definition="Memory of facts and experiences that one can consciously know and declare (processed by hippocampus).">Explicit Memory</vocab> covers declarative facts (semantic/episodic).
+- <vocab term="Implicit Memory" definition="Retention of learned skills or classical conditioning associations independent of conscious recollection (processed by cerebellum).">Implicit Memory</vocab> covers non-declarative skills (procedural habits).
+
+## 2. Problem Solving and Heuristics
 - **Algorithms**: Absolute step-by-step procedures.
-- <vocab term="Heuristic" definition="A simple thinking strategy or mental shortcut that allows us to make judgments and solve problems efficiently.">Heuristics</vocab> are rapid cognitive shortcuts (mental rules-of-thumb).
+- <vocab term="Heuristic" definition="A simple thinking strategy or mental shortcut that allows us to make judgments and solve problems efficiently.">Heuristics</vocab> are rapid cognitive shortcuts.
 - <vocab term="Functional Fixedness" definition="A cognitive bias that limits a person to using an object only in the way it is traditionally used.">Functional Fixedness</vocab> locks us into traditional object utilities.
 
-## 3. Cognitive Testing
-- **Alfred Binet** pioneered standardized IQ testing using mental age markers.
+| Memory Store | Capacity | Duration | Example |
+| :--- | :--- | :--- | :--- |
+| **Sensory (Iconic)** | Large | <0.5 seconds | Visual afterimage |
+| **Working (STM)** | 7 ± 2 items | 18–30 seconds | Remembering a phone number |
+| **Long-Term (LTM)** | Infinite | Permanent | Remembering childhood address |
 `,
         questions: [
           {
@@ -581,7 +671,7 @@ Atkinson & Shiffrin proposed three memory structures:
         article: `
 # Theories of Learning
 
-Learning alters baseline behaviors through experiences.
+Learning represents relatively permanent changes in behavioral dynamics.
 
 <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <rect x="20" y="20" width="180" height="65" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
@@ -603,20 +693,19 @@ Learning alters baseline behaviors through experiences.
 </svg>
 
 ## 1. Classical Conditioning
-Discovered by Ivan Pavlov:
-- **Unconditioned Stimulus (US)** triggers automatic responses.
-- **Unconditioned Response (UR)** is the natural biological reflex.
-- <vocab term="Conditioned Stimulus" definition="An originally neutral stimulus that, after association with an unconditioned stimulus, comes to trigger a conditioned response.">Conditioned Stimulus (CS)</vocab> is a learned cue triggering behaviors.
+- **US** triggers an automatic response.
+- **UR** is the natural reflex.
+- <vocab term="Conditioned Stimulus" definition="An originally neutral stimulus that, after association with an unconditioned stimulus, comes to trigger a conditioned response.">Conditioned Stimulus (CS)</vocab> is the learned cue.
 - <vocab term="Conditioned Response" definition="The learned response to a previously neutral (but now conditioned) stimulus.">Conditioned Response (CR)</vocab> is the newly formed behavior.
-- <vocab term="Extinction" definition="The gradual weakening and disappearance of a conditioned response when the conditioned stimulus is repeatedly presented alone.">Extinction</vocab> occurs when the CS stops being paired with the US.
 
 ## 2. Operant Conditioning
-Formulated by B.F. Skinner:
 - <vocab term="Positive Reinforcement" definition="Increasing behaviors by presenting positive stimuli, such as food or praise, after a desired behavior occurs.">Positive Reinforcement</vocab> adds desirable stimulus to increase behaviors.
 - <vocab term="Negative Reinforcement" definition="Increasing behaviors by stopping or reducing negative stimuli, such as pain or loud noises.">Negative Reinforcement</vocab> removes unpleasant stimulus to boost behaviors.
-- **Reinforcement Schedules**:
-  - *Fixed-Ratio*: Set response count trigger.
-  - *Variable-Ratio*: Unpredictable count payouts (slot machines).
+
+| Conditioning Type | Stimulus Added | Stimulus Removed |
+| :--- | :--- | :--- |
+| **Reinforcement (Boosts Behavior)** | **Positive Reinforcement** (Give Reward) | **Negative Reinforcement** (Remove Pain) |
+| **Punishment (Limits Behavior)** | **Positive Punishment** (Give Pain/Scolding) | **Negative Punishment** (Remove Privileges) |
 `,
         questions: [
           {
@@ -674,17 +763,47 @@ Formulated by B.F. Skinner:
         article: `
 # Developmental Stages Across the Lifespan
 
-Developmental psychology maps physical, cognitive, and social milestones.
+Lifespan development analyzes changes from conception to late adulthood.
 
-## 1. Jean Piaget's Cognitive Stages
-Piaget proposed children navigate four distinct periods:
-1. **Sensorimotor (0–2 yrs)**: Senses exploration. Milestone: <vocab term="Object Permanence" definition="The cognitive awareness that objects continue to exist even when they cannot be perceived.">Object Permanence</vocab>.
-2. **Preoperational (2–7 yrs)**: Language development. Marked by <vocab term="Egocentrism" definition="The preoperational child's difficulty in taking another person's point of view.">Egocentrism</vocab> and lack of <vocab term="Conservation" definition="The principle that properties such as mass, volume, and number remain the same despite changes in the forms of objects.">conservation</vocab>.
-3. **Concrete Operational (7–11 yrs)**: Logical thoughts on physical scenarios.
-4. **Formal Operational (11+ yrs)**: Abstract and scientific deduction.
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">PIAGET'S COGNITIVE TIMELINE</text>
+  
+  {/* Line */}
+  <line x1="30" y1="80" x2="420" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+  
+  {/* Stage 1 */}
+  <circle cx="50" cy="80" r="5" fill="#f43f5e" />
+  <text x="50" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Sensorimotor</text>
+  <text x="50" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(0-2 yrs)</text>
 
-## 2. Erik Erikson's Psychosocial Conflicts
-- Eight crises defining social milestones (e.g., Trust vs. Mistrust, Identity vs. Role Confusion).
+  {/* Stage 2 */}
+  <circle cx="160" cy="80" r="5" fill="#fbbf24" />
+  <text x="160" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Preoperational</text>
+  <text x="160" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(2-7 yrs)</text>
+
+  {/* Stage 3 */}
+  <circle cx="280" cy="80" r="5" fill="#38bdf8" />
+  <text x="280" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Concrete Op</text>
+  <text x="280" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(7-11 yrs)</text>
+
+  {/* Stage 4 */}
+  <circle cx="390" cy="80" r="5" fill="#22c55e" />
+  <text x="390" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Formal Op</text>
+  <text x="390" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(11+ yrs)</text>
+</svg>
+
+## 1. Jean Piaget's Stages
+- **Sensorimotor**: Milestone: <vocab term="Object Permanence" definition="The cognitive awareness that objects continue to exist even when they cannot be perceived.">Object Permanence</vocab>.
+- **Preoperational**: Characterized by <vocab term="Egocentrism" definition="The preoperational child's difficulty in taking another person's point of view.">Egocentrism</vocab> and lack of <vocab term="Conservation" definition="The principle that properties such as mass, volume, and number remain the same despite changes in the forms of objects.">conservation</vocab>.
+- **Concrete Operational**: Logic applied to physical situations.
+- **Formal Operational**: Abstract hypotheses and deductive reasoning.
+
+| Piaget Stage | Key Milestone | Explanation |
+| :--- | :--- | :--- |
+| **Sensorimotor** | Object Permanence | Understanding hidden items still exist |
+| **Preoperational** | Egocentrism | Inability to perceive another's perspective |
+| **Concrete Operational** | Conservation | Volume/mass remains constant despite container changes |
+| **Formal Operational** | Hypothetical Logic | Capacity for abstract and philosophical thoughts |
 `,
         questions: [
           {
@@ -747,14 +866,32 @@ Piaget proposed children navigate four distinct periods:
         article: `
 # Moral, Gender, and Learning Development
 
-## 1. Lawrence Kohlberg's Moral Development
-Stages of moral reasoning are classified into three levels:
-1. **Preconventional**: Self-interest checks (reward vs. punishment).
-2. **Conventional**: Group standards and laws conformity.
-3. <vocab term="Postconventional Morality" definition="The highest level of moral reasoning, in which self-defined ethical principles prioritize universal human rights over simple laws.">Postconventional Morality</vocab> acts on self-defined, universal ethical principles.
+## 1. Kohlberg's Moral Levels
+Kohlberg mapped moral development into three broad levels:
 
-## 2. Gender Identity Development
-- <vocab term="Gender Schema Theory" definition="The theory that children learn from their cultures what it means to be male or female and adjust their behaviors accordingly.">Gender Schema Theory</vocab> states kids organize behaviors by gender categories.
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">KOHLBERG'S MORAL LADDER</text>
+  
+  {/* Steps */}
+  <rect x="40" y="100" width="100" height="30" rx="4" fill="rgba(244, 63, 94, 0.1)" stroke="#f43f5e" />
+  <text x="90" y="118" text-anchor="middle" fill="#f43f5e" font-size="9" font-family="sans-serif" font-weight="bold">1. Preconventional</text>
+
+  <rect x="175" y="70" width="100" height="30" rx="4" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" />
+  <text x="225" y="88" text-anchor="middle" fill="#fbbf24" font-size="9" font-family="sans-serif" font-weight="bold">2. Conventional</text>
+
+  <rect x="310" y="40" width="100" height="30" rx="4" fill="rgba(34, 197, 148, 0.1)" stroke="#22c55e" />
+  <text x="360" y="58" text-anchor="middle" fill="#22c55e" font-size="9" font-family="sans-serif" font-weight="bold">3. Postconventional</text>
+</svg>
+
+- **Preconventional**: Decisions focus on avoiding punishment and getting rewards.
+- **Conventional**: Focus on societal laws and rules.
+- <vocab term="Postconventional Morality" definition="The highest level of moral reasoning, in which self-defined ethical principles prioritize universal human rights over simple laws.">Postconventional Morality</vocab> acts on self-defined, universal ethical principles.
+
+| Moral Level | Core Focus | Primary Motivator |
+| :--- | :--- | :--- |
+| **Preconventional** | Egoistic Self-interest | Punishment avoidance & personal gain |
+| **Conventional** | Social Order & Conformity | Respect for law, order, & social reputation |
+| **Postconventional**| Universal Human Rights | Self-chosen ethical values, even if illegal |
 `,
         questions: [
           {
@@ -826,16 +963,35 @@ Stages of moral reasoning are classified into three levels:
 
 ## 1. Motivation Models
 - <vocab term="Drive-Reduction Theory" definition="The idea that physiological needs create aroused states (drives) that motivate an organism to satisfy the need to restore homeostasis.">Drive-Reduction Theory</vocab> describes how internal biological imbalances drive behaviors.
-- **Homeostasis**: The maintenance of stable physiological equilibriums.
-- **Yerkes-Dodson Law**: Moderate arousal maximizes productivity for complex tasks.
+- **Homeostasis**: Physiological equilibrium.
 
-## 2. Emotional Experience Theories
-- **James-Lange**: Arousal occurs before emotional perception.
-- **Cannon-Bard**: Physical arousal and emotions occur at the same time.
-- <vocab term="Two-Factor Theory" definition="The Schachter-Singer theory that to experience emotion, one must be physically aroused and cognitively label the arousal.">Two-Factor Theory</vocab> (Schachter-Singer) dictates emotions need both physical arousal and a cognitive label.
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">MASLOW'S HIERARCHY PYRAMID</text>
+  
+  <polygon points="225,40 375,150 75,150" fill="none" stroke="#7b39fc" stroke-width="2" />
+  
+  {/* Levels */}
+  <line x1="190" y1="65" x2="260" y2="65" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+  <text x="225" y="58" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif" font-weight="bold">Self-Actualization</text>
 
-## 3. General Adaptation Syndrome
-Selye's stress stages: **Alarm** (CNS triggers), **Resistance** (hormonal adaptation), and **Exhaustion** (depleted energy).
+  <line x1="160" y1="90" x2="290" y2="90" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+  <text x="225" y="82" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Self-Esteem</text>
+
+  <line x1="130" y1="115" x2="320" y2="115" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+  <text x="225" y="108" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Belonging / Love</text>
+  <text x="225" y="132" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Physiological Needs</text>
+</svg>
+
+## 2. Emotional Theories
+- **James-Lange**: Arousal occurs before emotion.
+- **Cannon-Bard**: Physical response and emotion occur simultaneously.
+- <vocab term="Two-Factor Theory" definition="The Schachter-Singer theory that to experience emotion, one must be physically aroused and cognitively label the arousal.">Two-Factor Theory</vocab>: Requires both physical arousal and a cognitive appraisal.
+
+| Theory of Emotion | Stimulus Trigger | Physiological Reaction | Cognitive Processing |
+| :--- | :--- | :--- | :--- |
+| **James-Lange** | High stress event | Instant physical arousal | Interprets physical change as emotion |
+| **Cannon-Bard** | High stress event | Simultaneous physical change & emotional feeling | Occurs independently in thalamus |
+| **Schachter-Singer**| High stress event | Physical arousal occurs | Cognitive appraisal labels the arousal |
 `,
         questions: [
           {
@@ -903,16 +1059,42 @@ Selye's stress stages: **Alarm** (CNS triggers), **Resistance** (hormonal adapta
         article: `
 # Theories of Personality and Personality Testing
 
-Personality studies analyze patterns of behavior, thoughts, and actions.
+Personality studies map behavior patterns, traits, and temperaments.
 
-## 1. Freudian Mind Structures
-- **Id**: Governed by the <vocab term="Pleasure Principle" definition="The id's boundary concept demanding immediate gratification of basic sexual and aggressive impulses.">pleasure principle</vocab> (immediate gratification).
+## 1. Freudian Metaphor: The Iceberg
+Freud compared the mind to an iceberg:
+
+<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">FREUDIAN MIND ICEBERG</text>
+  
+  {/* Water Line */}
+  <line x1="20" y1="70" x2="430" y2="70" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4" />
+  <text x="380" y="65" fill="#38bdf8" font-size="8" font-family="sans-serif">Water Line</text>
+
+  {/* Iceberg */}
+  <polygon points="225,45 320,180 130,180" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1.5" />
+  
+  <text x="225" y="60" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif" font-weight="bold">Ego</text>
+  <text x="225" y="110" text-anchor="middle" fill="#fbbf24" font-size="9" font-family="sans-serif" font-weight="bold">Superego</text>
+  <text x="225" y="150" text-anchor="middle" fill="#f43f5e" font-size="9" font-family="sans-serif" font-weight="bold">Id</text>
+
+  <text x="50" y="60" fill="rgba(255,255,255,0.4)" font-size="8" font-family="sans-serif">Conscious</text>
+  <text x="50" y="110" fill="rgba(255,255,255,0.4)" font-size="8" font-family="sans-serif">Unconscious</text>
+</svg>
+
+- **Id**: Governed by the <vocab term="Pleasure Principle" definition="The id's boundary concept demanding immediate gratification of basic sexual and aggressive impulses.">pleasure principle</vocab>.
 - **Ego**: Governed by the reality principle.
-- **Superego**: Governed by moral consciences.
-- **Defense Mechanisms**: Ego tools (e.g., projection, displacement) to reduce anxiety.
+- **Superego**: Governed by moral standards.
 
-## 2. Trait Theories
-- **Big Five Personality Traits (OCEAN)**: Openness, Conscientiousness, Extraversion, Agreeableness, and <vocab term="Neuroticism" definition="A Big Five personality dimension mapping emotional instability, anxiety, moodiness, and vulnerability to stress.">Neuroticism</vocab> (emotional instability).
+## 2. Trait Perspectives
+- **The Big Five Traits (OCEAN)**:
+  - Openness, Conscientiousness, Extraversion, Agreeableness, and <vocab term="Neuroticism" definition="A Big Five personality dimension mapping emotional instability, anxiety, moodiness, and vulnerability to stress.">Neuroticism</vocab>.
+
+| Big Five Trait | High Score Traits | Low Score Traits |
+| :--- | :--- | :--- |
+| **Openness** | Creative, curious, prefers variety | Practical, routine-bound, traditional |
+| **Conscientiousness**| Organized, disciplined, reliable | Careless, impulsive, disorganized |
+| **Neuroticism** | Anxious, moody, emotionally reactive| Calm, secure, emotionally stable |
 `,
         questions: [
           {
@@ -972,13 +1154,38 @@ Personality studies analyze patterns of behavior, thoughts, and actions.
 
 Social psychology evaluates how people relate to and influence one another.
 
-## 1. Social Attribution
+## 1. Social Attribution and Conformity
 - <vocab term="Fundamental Attribution Error" definition="The tendency for observers to underestimate situational factors and overestimate dispositional personality traits when analyzing others' behaviors.">Fundamental Attribution Error</vocab> is the tendency to blame actions on personality while ignoring situations.
 - <vocab term="Cognitive Dissonance" definition="The mental discomfort felt when holding conflicting beliefs or actions, resolved by changing beliefs to match behaviors.">Cognitive Dissonance</vocab> (Festinger) is cognitive tension felt when actions mismatch beliefs.
 
-## 2. Conformity and Obedience
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">ASCH CONFORMITY STANDARD CARD</text>
+  
+  {/* Standard */}
+  <rect x="50" y="45" width="80" height="90" rx="6" fill="rgba(255,255,255,0.02)" stroke="#ffffff" />
+  <line x1="90" y1="60" x2="90" y2="120" stroke="#ffffff" stroke-width="4" />
+  <text x="90" y="145" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Standard</text>
+
+  {/* Options */}
+  <rect x="180" y="45" width="220" height="90" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.2)" />
+  <line x1="220" y1="70" x2="220" y2="120" stroke="#f43f5e" stroke-width="4" />
+  <text x="220" y="145" text-anchor="middle" fill="#f43f5e" font-size="8" font-family="sans-serif">1</text>
+  
+  <line x1="290" y1="60" x2="290" y2="120" stroke="#22c55e" stroke-width="4" />
+  <text x="290" y="145" text-anchor="middle" fill="#22c55e" font-size="8" font-family="sans-serif">2</text>
+
+  <line x1="360" y1="80" x2="360" y2="120" stroke="#fbbf24" stroke-width="4" />
+  <text x="360" y="145" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="sans-serif">3</text>
+</svg>
+
 - **Asch Conformity Studies**: Matching incorrect group answers to conform.
 - **Milgram Obedience Studies**: Shocking others when ordered by researchers.
+
+| Social Experiment | Key Concept | Major Finding |
+| :--- | :--- | :--- |
+| **Asch Line Study** | Conformity | People will conform to incorrect responses to avoid standing out |
+| **Milgram Shock Study** | Obedience to Authority | Over 60% of people administered lethal shocks when ordered |
+| **Stanford Prison** | Social Roles | Deindividuation & power roles dictate abusive habits |
 `,
         questions: [
           {
@@ -1046,11 +1253,33 @@ Social psychology evaluates how people relate to and influence one another.
 ## 1. Experimental Controls
 - **Independent Variable (IV)** is the factor manipulated by researchers.
 - **Dependent Variable (DV)** is the observed outcome.
-- <vocab term="Random Assignment" definition="Assigning experimental study participants to control/experimental groups by chance to minimize pre-existing group differences.">Random Assignment</vocab> divides subjects into groups by chance to minimize individual pre-existing variables.
+- <vocab term="Random Assignment" definition="Assigning experimental study participants to control/experimental groups by chance to minimize pre-existing group differences.">Random Assignment</vocab> divides subjects into groups by chance.
+
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">THE NORMAL BELL CURVE</text>
+  
+  {/* Curve */}
+  <path d="M 50 110 Q 150 110 200 40 T 350 110 C 370 110 390 110 400 110" fill="none" stroke="#22c55e" stroke-width="2" />
+  
+  {/* SD Lines */}
+  <line x1="225" y1="40" x2="225" y2="110" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
+  <line x1="175" y1="75" x2="175" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+  <line x1="275" y1="75" x2="275" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+
+  <text x="225" y="125" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Mean (68% inside 1 SD)</text>
+  <text x="175" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">-1 SD</text>
+  <text x="275" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">+1 SD</text>
+</svg>
 
 ## 2. Statistical Analysis
 - <vocab term="Standard Deviation" definition="A computed measure of how much data scores vary around the distribution mean.">Standard Deviation</vocab> measures variability around the mean.
 - **Correlation** measures relationships but does not prove causation.
+
+| Research Method | Core Advantage | Primary Limitation |
+| :--- | :--- | :--- |
+| **Controlled Experiment** | Establish cause-and-effect relationships | Artificial lab setups may lack realism |
+| **Correlational Study** | Highlights relationships between variables | Cannot establish direct causation |
+| **Naturalistic Observation**| Authenticity of raw behaviors | Lack of environmental control |
 `,
         questions: [
           {
@@ -1144,8 +1373,14 @@ Psychologists classify abnormal behaviors via:
 </svg>
 
 ## 2. Diagnosis Classification
-- <vocab term="DSM-5" definition="The Diagnostic and Statistical Manual of Mental Disorders; the standardized classification manual containing symptom checklists for clinical diagnoses.">DSM-5</vocab> provides standardized criteria for clinical evaluations without listing causes/treatment recipes.
-- **Schizophrenia Spectrum**: Mapped by <vocab term="Hallucinations" definition="False sensory perceptions occurring in the absence of any external environmental stimulus.">hallucinations</vocab> (false sensory perceptions) and <vocab term="Delusions" definition="False beliefs, often of persecution or grandeur, that are maintained despite contradictory evidence.">delusions</vocab> (false belief structures).
+- <vocab term="DSM-5" definition="The Diagnostic and Statistical Manual of Mental Disorders; the standardized classification manual containing symptom checklists for clinical diagnoses.">DSM-5</vocab> provides standardized criteria for clinical diagnoses.
+- **Schizophrenia Spectrum**: Mapped by <vocab term="Hallucinations" definition="False sensory perceptions occurring in the absence of any external environmental stimulus.">hallucinations</vocab> (false sensory perceptions) and <vocab term="Delusions" definition="False beliefs, often of persecution or grandeur, that are maintained despite contradictory evidence.">delusions</vocab> (false beliefs).
+
+| Disorder Class | Key Symptoms | Clinical Example |
+| :--- | :--- | :--- |
+| **Anxiety Disorders** | Excessive worry, panic, autonomic arousal | Generalized Anxiety Disorder (GAD) |
+| **Mood Disorders** | Persistent sadness, loss of interest, lethargy | Major Depressive Disorder (MDD) |
+| **Schizophrenia Spectrum**| Hallucinations, delusions, flat affect | Disorganized schizophrenia spectrum |
 `,
         questions: [
           {
@@ -1208,16 +1443,40 @@ Psychologists classify abnormal behaviors via:
         article: `
 # Psychological Treatments and Biomedical Options
 
-## 1. Therapy Modalities
-- **Psychodynamic**: Unconscious conflict exploration.
-- **Humanistic**: Carl Rogers' Client-Centered therapy providing **unconditional positive regard**.
-- **Behavioral**: Applies conditioning principles:
-  - <vocab term="Systematic Desensitization" definition="A behavioral therapy technique that pairs gradual, hierarchy-based exposure to feared stimuli with deep physical relaxation to treat phobias.">Systematic Desensitization</vocab> pairs gradual exposure to phobias with muscle relaxation.
-- <vocab term="Cognitive Behavioral Therapy" definition="An integrative therapy combining cognitive restructuring (replacing distorted thoughts) with behavioral modifications.">Cognitive Behavioral Therapy (CBT)</vocab> redirects self-defeating thoughts and alters behaviors.
+## 1. CBT Triangle
+Cognitive Behavioral Therapy explores interactions between thoughts, feelings, and behaviors:
 
-## 2. Biomedical Interventions
-- **Antidepressants (SSRIs)** block serotonin reuptake to increase availability.
-- **ECT**: Inducing mild seizures to combat treatment-resistant depression.
+<svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
+  <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">CBT DYNAMIC TRIANGLE</text>
+  
+  {/* Nodes */}
+  <rect x="185" y="40" width="80" height="25" rx="4" fill="rgba(244, 63, 94, 0.1)" stroke="#f43f5e" />
+  <text x="225" y="56" text-anchor="middle" fill="#f43f5e" font-size="8" font-family="sans-serif" font-weight="bold">THOUGHTS</text>
+
+  <rect x="70" y="105" width="80" height="25" rx="4" fill="rgba(56, 189, 248, 0.1)" stroke="#38bdf8" />
+  <text x="110" y="121" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="sans-serif" font-weight="bold">FEELINGS</text>
+
+  <rect x="300" y="105" width="80" height="25" rx="4" fill="rgba(34, 197, 148, 0.1)" stroke="#22c55e" />
+  <text x="340" y="121" text-anchor="middle" fill="#22c55e" font-size="8" font-family="sans-serif" font-weight="bold">BEHAVIORS</text>
+
+  {/* Connecting Lines */}
+  <line x1="185" y1="65" x2="135" y2="105" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+  <line x1="265" y1="65" x2="315" y2="105" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+  <line x1="150" y1="117" x2="300" y2="117" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+</svg>
+
+## 2. Therapy Types
+- **Psychodynamic**: Derived from Freud, uncovers unconscious complexes.
+- **Humanistic**: active listening, unconditional positive regard.
+- **Behavioral**: uses learning. <vocab term="Systematic Desensitization" definition="A behavioral therapy technique that pairs gradual, hierarchy-based exposure to feared stimuli with deep physical relaxation to treat phobias.">Systematic Desensitization</vocab> reduces phobias.
+- <vocab term="Cognitive Behavioral Therapy" definition="An integrative therapy combining cognitive restructuring (replacing distorted thoughts) with behavioral modifications.">Cognitive Behavioral Therapy (CBT)</vocab> replaces distorted cognitions.
+
+| Therapy Perspective | Primary Goal | Therapeutic Tool |
+| :--- | :--- | :--- |
+| **Psychodynamic** | Uncover unconscious blocks | Free association & transference analysis |
+| **Humanistic** | Achieve self-actualization | Active listening & empathy |
+| **Behavioral** | Eliminate maladaptive habits | Exposure therapy & token economies |
+| **Cognitive (CBT)** | Challenge cognitive distortions | Restructuring thoughts + behavioral goals |
 `,
         questions: [
           {
