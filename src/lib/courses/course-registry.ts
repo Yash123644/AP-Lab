@@ -2,6 +2,7 @@ import { apChemistryData } from "./ap-chemistry-data";
 import { apBiologyData } from "./ap-biology-data";
 import { apPhysicsData } from "./ap-physics-data";
 import { apUshData } from "./ap-ush-data";
+import { apPsychData } from "./ap-psychology-data";
 
 export interface CourseQuestion {
   id: string;
@@ -136,135 +137,7 @@ const apUshUnits: CourseUnit[] = apUshData.map((unit) => ({
   })),
 }));
 
-const apPsychUnits: CourseUnit[] = [
-  {
-    id: 1,
-    title: "Scientific Foundations",
-    masteryWeight: "10–14%",
-    topics: [
-      {
-        id: "1.1",
-        title: "Research Methods in Psychology",
-        description: "Understand experimental design, correlation, and ethical variables.",
-        youtubeId: "vo4pMVb0R6M",
-        article: `
-# Research Methods in Psychology
-
-Psychology uses scientific methods to investigate behavior:
-- **Experiments**: The only method that establishes **cause-and-effect** by manipulating an independent variable.
-- **Correlational Studies**: Measure relationships, but **correlation does not imply causation**.
-- **Case Studies**: In-depth analysis of a single individual or small group.
-`,
-        questions: [
-          {
-            id: "q_psych_1.1.1",
-            unitId: 1,
-            text: "Which research design is the only one capable of proving cause-and-effect relationships?",
-            options: ["Naturalistic Observation", "Correlational Study", "Controlled Experiment", "Survey Method"],
-            correctIndex: 2,
-            hint: "Requires manipulation of variables and random assignment.",
-            explanation: "Controlled experiments isolate and manipulate independent variables to establish cause-and-effect."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Biological Bases of Behavior",
-    masteryWeight: "8–10%",
-    topics: [
-      {
-        id: "2.1",
-        title: "Neural Transmission and the Brain",
-        description: "Structure of neurons and synaptic communication.",
-        youtubeId: "vo4pMVb0R6M",
-        article: `
-# Neural Transmission and the Brain
-
-Information travels through a neuron electrically and between neurons chemically:
-- **Action Potential**: An all-or-none electrical impulse that travels down the axon.
-- **Neurotransmitters**: Chemical messengers released into the synapse (e.g., Dopamine, Serotonin).
-`,
-        questions: [
-          {
-            id: "q_psych_2.1.1",
-            unitId: 2,
-            text: "What is the primary electrical signal that propagates down the axon of a neuron?",
-            options: ["Resting Potential", "Action Potential", "Synaptic Cleft", "Neurotransmitter Release"],
-            correctIndex: 1,
-            hint: "Follows an 'all-or-none' law.",
-            explanation: "The action potential is the brief electrical charge that travels down an axon."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Sensation and Perception",
-    masteryWeight: "6–8%",
-    topics: [
-      {
-        id: "3.1",
-        title: "Sensory Mechanisms & Thresholds",
-        description: "Examine absolute thresholds, signal detection, and visual/auditory transduction.",
-        youtubeId: "vo4pMVb0R6M",
-        article: `
-# Sensation and Perception
-
-Sensation is the activation of receptors, while perception is the organization and interpretation of sensory inputs:
-- **Absolute Threshold**: The minimum stimulation needed to detect a stimulus 50% of the time.
-- **Transduction**: Conversion of physical energy (light/sound waves) into neural impulses.
-- **Gestalt Principles**: Laws describing how the brain groups visual elements (e.g., proximity, similarity).
-`,
-        questions: [
-          {
-            id: "q_psych_3.1.1",
-            unitId: 3,
-            text: "What term describes the process by which raw sensory energy is converted into electrochemical neural signals?",
-            options: ["Accommodation", "Transduction", "Adaptation", "Habituation"],
-            correctIndex: 1,
-            hint: "Think of translating one form of energy into another.",
-            explanation: "Transduction is the transformation of stimulus energies, such as sights and sounds, into neural impulses our brain can interpret."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Cognitive Psychology & Learning",
-    masteryWeight: "13–17%",
-    topics: [
-      {
-        id: "4.1",
-        title: "Classical Conditioning & Memory",
-        description: "Apply behaviorist learning principles and structural models of memory.",
-        youtubeId: "vo4pMVb0R6M",
-        article: `
-# Cognitive Psychology and Learning
-
-How humans acquire, process, and store information:
-- **Classical Conditioning**: Learning via association, discovered by Ivan Pavlov (CS, US, CR, UR).
-- **Operant Conditioning**: Learning via reinforcement or punishment (B.F. Skinner).
-- **Memory Stages**: Sensory memory, Short-Term memory (working memory), and Long-Term memory.
-`,
-        questions: [
-          {
-            id: "q_psych_4.1.1",
-            unitId: 4,
-            text: "In Pavlov's classic dog experiment, what type of stimulus was the meat powder before conditioning?",
-            options: ["Conditioned Stimulus", "Unconditioned Stimulus", "Neutral Stimulus", "Conditioned Response"],
-            correctIndex: 1,
-            hint: "The dog naturally salivated to it without any prior training.",
-            explanation: "The food/meat powder naturally triggers salivation, representing the Unconditioned Stimulus (US)."
-          }
-        ]
-      }
-    ]
-  }
-];
+const apPsychUnits: CourseUnit[] = apPsychData;
 
 const apEngLangUnits: CourseUnit[] = [
   {

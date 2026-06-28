@@ -87,7 +87,7 @@ function AnimatedArticleHighlight() {
   return (
     <motion.div 
       layout 
-      className="w-full h-[500px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group"
+      className="w-full h-[540px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       
@@ -285,7 +285,7 @@ function AnimatedChat() {
   return (
     <motion.div 
       layout 
-      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[500px] relative overflow-hidden group"
+      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[540px] relative overflow-hidden group"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       {/* Top Bar inside Chat */}
@@ -298,7 +298,7 @@ function AnimatedChat() {
         </div>
       </div>
 
-      <div className="flex-1 mt-16 pb-16 space-y-4 pr-1">
+      <div className="flex-1 mt-16 pb-20 space-y-4 pr-1">
         <AnimatePresence>
           {chatSequence.slice(0, visibleMessages).map((msg) => (
             <motion.div
