@@ -35,7 +35,7 @@ export const apPsychData: CourseUnit[] = [
         id: "1.1",
         title: "Heredity, Evolutionary Psychology, and Environmental Interactions",
         description: "Explore how genetics, natural selection, and environment shape human behavior.",
-        youtubeId: "3SdCoEEo7m0",
+        youtubeId: "W4N-7AlzK7s",
         article: `
 # Heredity, Evolutionary Psychology, and Environmental Interactions
 
@@ -48,14 +48,12 @@ To understand human behavior, psychologists study the interplay between nature (
 <svg width="450" height="180" viewBox="0 0 450 180" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">TWIN GENETICS COMPARISON</text>
   
-  {/* Monozygotic */}
   <rect x="30" y="45" width="180" height="100" rx="10" fill="rgba(167, 139, 250, 0.05)" stroke="#a78bfa" stroke-width="1.5" />
   <text x="120" y="70" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="sans-serif" font-weight="bold">Monozygotic (Identical)</text>
   <circle cx="90" cy="110" r="15" fill="#7b39fc" opacity="0.6" />
   <circle cx="150" cy="110" r="15" fill="#7b39fc" opacity="0.6" />
   <text x="120" y="145" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Shares 100% of DNA</text>
 
-  {/* Dizygotic */}
   <rect x="240" y="45" width="180" height="100" rx="10" fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-width="1.5" />
   <text x="330" y="70" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="sans-serif" font-weight="bold">Dizygotic (Fraternal)</text>
   <circle cx="300" cy="110" r="15" fill="#3b82f6" opacity="0.6" />
@@ -74,7 +72,7 @@ To understand human behavior, psychologists study the interplay between nature (
 
 ## 3. Evolutionary Psychology
 - <vocab term="Evolutionary Psychology" definition="The study of how natural selection and adaptation shaped human cognitive processes and behaviors over time to maximize survival.">Evolutionary Psychology</vocab> explains how behavioral patterns and cognitive mechanisms evolved as adaptations that increased survival and reproduction.
-- <vocab term="Natural Selection" definition="The evolutionary process whereby organisms better adapted to their environment tend to survive and produce more offspring.">Natural selection</vocab> ensures that traits which assist in survival are passed down to future generations.
+- <vocab term="Natural Selection" definition="The evolutionary process whereby organisms better adapted to their environment tend to survive and produce more offspring.">Natural selection</vocab> ensures that traits which assist in survival are passed down to future generations, while maladaptive traits die out.
 `,
         questions: [
           {
@@ -133,40 +131,39 @@ To understand human behavior, psychologists study the interplay between nature (
         id: "1.2",
         title: "Neuroanatomy, Nervous System Structures, and Neural Firing Dynamics",
         description: "Structure of neurons, action potentials, neurotransmitters, and brain organization.",
-        youtubeId: "qPix_X-9t7E",
+        youtubeId: "vHrmiy4W9C0",
         article: `
 # Neuroanatomy and Neural Firing Dynamics
 
-The human brain controls behavior electrically and chemically through specialized cells.
+The human brain controls behavior electrically and chemically through specialized cells called neurons.
 
 <svg width="450" height="260" viewBox="0 0 450 260" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
-  <defs>
-    <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#7b39fc" stop-opacity="0.8" />
-    </linearGradient>
-    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#be123c" stop-opacity="0.8" />
-    </linearGradient>
-  </defs>
-  <path d="M150 180 C110 180 80 150 80 110 C80 60 130 30 220 30 C310 30 360 70 360 110 C360 150 330 180 290 180 C280 180 270 170 260 170 C250 170 240 180 230 180 Z" fill="url(#brainGrad)" opacity="0.3" stroke="#a78bfa" stroke-width="2" />
-  <path d="M290 180 C320 180 340 200 340 220 C340 240 310 240 280 230 C270 220 270 190 290 180 Z" fill="#38bdf8" opacity="0.4" stroke="#38bdf8" stroke-width="1.5" />
-  <path d="M220 180 L230 250 L200 250 L205 180 Z" fill="url(#stemGrad)" stroke="#f43f5e" stroke-width="1.5" />
-  <path d="M190 130 Q220 90, 260 130" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" />
-  <circle cx="190" cy="130" r="8" fill="#fbbf24" />
-  <path d="M260 130 C260 110 240 100 220 110" fill="none" stroke="#34d399" stroke-width="3" />
-  
-  <text x="90" y="80" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Cerebral Cortex</text>
-  <line x1="170" y1="80" x2="190" y2="90" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
-  <text x="320" y="210" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Cerebellum</text>
-  <line x1="310" y1="210" x2="295" y2="215" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
-  <text x="120" y="240" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold">Brainstem</text>
-  <line x1="180" y1="235" x2="210" y2="230" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
-  <text x="120" y="140" fill="#fbbf24" font-size="11" font-family="sans-serif" font-weight="bold">Amygdala</text>
-  <line x1="170" y1="135" x2="185" y2="130" stroke="#fbbf24" stroke-width="1" />
-  <text x="280" y="105" fill="#34d399" font-size="11" font-family="sans-serif" font-weight="bold">Hippocampus</text>
-  <line x1="275" y1="110" x2="245" y2="115" stroke="#34d399" stroke-width="1" />
+  <path d="M 40 80 Q 20 60 10 90 M 40 100 Q 15 110 20 130 M 45 120 Q 25 140 40 160" fill="none" stroke="#a78bfa" stroke-width="2" />
+  <path d="M 50 90 C 40 90 35 110 50 130 C 65 140 85 130 85 110 C 85 90 65 80 50 90 Z" fill="rgba(167, 139, 250, 0.2)" stroke="#a78bfa" stroke-width="2" />
+  <circle cx="60" cy="110" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1.5" />
+  <line x1="85" y1="110" x2="350" y2="110" stroke="#38bdf8" stroke-width="3" />
+  <rect x="110" y="98" width="50" height="24" rx="4" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="1.5" />
+  <rect x="180" y="98" width="50" height="24" rx="4" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="1.5" />
+  <rect x="250" y="98" width="50" height="24" rx="4" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="1.5" />
+  <circle cx="170" cy="110" r="4" fill="#fbbf24" />
+  <circle cx="240" cy="110" r="4" fill="#fbbf24" />
+  <path d="M 350 110 Q 370 90 390 85 M 350 110 Q 380 110 400 110 M 350 110 Q 370 130 390 140" fill="none" stroke="#a78bfa" stroke-width="2" />
+  <circle cx="390" cy="85" r="4" fill="#a78bfa" />
+  <circle cx="400" cy="110" r="4" fill="#a78bfa" />
+  <circle cx="390" cy="140" r="4" fill="#a78bfa" />
+  <path d="M 120 140 L 320 140" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="4,4" />
+  <polygon points="325,140 315,135 315,145" fill="#22c55e" />
+  <text x="35" y="60" fill="#a78bfa" font-size="9" font-family="sans-serif" font-weight="bold">Dendrites</text>
+  <line x1="45" y1="65" x2="40" y2="85" stroke="#a78bfa" stroke-width="1" />
+  <text x="65" y="170" fill="#a78bfa" font-size="9" font-family="sans-serif" font-weight="bold">Soma (Cell Body)</text>
+  <line x1="65" y1="160" x2="60" y2="135" stroke="#a78bfa" stroke-width="1" />
+  <text x="160" y="75" fill="#38bdf8" font-size="9" font-family="sans-serif" font-weight="bold">Myelin Sheath</text>
+  <line x1="160" y1="80" x2="140" y2="98" stroke="#38bdf8" stroke-width="1" />
+  <text x="235" y="170" fill="#fbbf24" font-size="9" font-family="sans-serif" font-weight="bold">Node of Ranvier</text>
+  <line x1="235" y1="160" x2="240" y2="118" stroke="#fbbf24" stroke-width="1" />
+  <text x="350" y="65" fill="#a78bfa" font-size="9" font-family="sans-serif" font-weight="bold">Axon Terminals</text>
+  <line x1="360" y1="70" x2="380" y2="85" stroke="#a78bfa" stroke-width="1" />
+  <text x="225" y="155" text-anchor="middle" fill="#22c55e" font-size="8" font-family="sans-serif">Action Potential Direction</text>
 </svg>
 
 ## 1. Anatomy of a Neuron
@@ -174,27 +171,7 @@ The human brain controls behavior electrically and chemically through specialize
 - **Soma (Cell Body)**: Keeps the cell alive and integrates signals.
 - <vocab term="Axon" definition="The long, thin fiber that carries electrical action potentials away from the neuron cell body to terminal branches.">Axon</vocab> is the long pathway that transmits electrical impulses.
 - <vocab term="Myelin Sheath" definition="A fatty layer insulating the axon that dramatically increases the velocity of neural impulse propagation.">Myelin Sheath</vocab> is a fatty layer of insulation that speeds up signals. Multiple sclerosis involves its degeneration.
-
-<svg width="450" height="220" viewBox="0 0 450 220" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
-  <path d="M20 90 L160 90 C190 90, 210 50, 240 50 C280 50, 290 120, 240 120 C210 120, 190 160, 160 160 L20 160" fill="none" stroke="#a78bfa" stroke-width="2.5" />
-  <path d="M350 20 L350 200" fill="none" stroke="#38bdf8" stroke-width="3" />
-  <circle cx="210" cy="80" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1" opacity="0.6" />
-  <circle cx="210" cy="80" r="3" fill="#ffffff" />
-  <circle cx="230" cy="100" r="10" fill="#7b39fc" stroke="#a78bfa" stroke-width="1" opacity="0.6" />
-  <circle cx="230" cy="100" r="3" fill="#ffffff" />
-  <circle cx="270" cy="85" r="3" fill="#34d399" />
-  <circle cx="280" cy="70" r="3" fill="#34d399" />
-  <circle cx="295" cy="90" r="3" fill="#34d399" />
-  <circle cx="310" cy="80" r="3" fill="#34d399" />
-  <path d="M345 70 L355 70 M345 75 L355 75" stroke="#38bdf8" stroke-width="2" />
-  <rect x="340" y="70" width="6" height="5" fill="#34d399" />
-  <path d="M345 110 L355 110 M345 115 L355 115" stroke="#38bdf8" stroke-width="2" />
-  <path d="M345 150 L355 150 M345 155 L355 155" stroke="#38bdf8" stroke-width="2" />
-  <text x="40" y="125" fill="#a78bfa" font-size="10" font-family="sans-serif">Axon Terminal</text>
-  <text x="365" y="115" fill="#38bdf8" font-size="10" font-family="sans-serif">Postsynaptic Dendrite</text>
-  <text x="250" y="190" fill="#34d399" font-size="10" font-family="sans-serif">Neurotransmitters (NT)</text>
-  <line x1="280" y1="175" x2="285" y2="135" stroke="#34d399" stroke-dasharray="3" />
-</svg>
+- **Terminal Buttons**: Small bulbs releasing chemical neurotransmitters.
 
 ## 2. Neural Firing Dynamics
 - <vocab term="Action Potential" definition="A brief, self-propagating electrical reversal of membrane potential along a neuron axon (all-or-none process).">Action Potential</vocab> is the electrical impulse traveling down the axon.
@@ -265,31 +242,34 @@ The human brain controls behavior electrically and chemically through specialize
         id: "1.3",
         title: "The Endocrine System, Psychoactive Pharmacology, and States of Consciousness",
         description: "Hormones, agonist/antagonist pharmacology, psychoactive drugs, and sleep cycle states.",
-        youtubeId: "YcSG0UPsJ7c",
+        youtubeId: "rMHus-0wFSo",
         article: `
 # The Endocrine System, Pharmacology, and Consciousness
 
 ## 1. The Endocrine System
 - Chemical signaling via <vocab term="Hormones" definition="Chemical messengers secreted by endocrine glands directly into the bloodstream to regulate physiological functions.">hormones</vocab> in the blood.
 - <vocab term="Pituitary Gland" definition="The endocrine master gland, controlled by the hypothalamus, that directs other hormone-releasing glands.">Pituitary Gland</vocab> is the master regulator, governed directly by the hypothalamus.
+- **Adrenal Glands** release adrenaline to trigger fight-or-flight states.
 
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">SLEEP WAVE STAGES</text>
   
-  {/* Alpha/Beta */}
   <path d="M 30 70 Q 40 50 50 70 T 70 70 T 90 70 T 110 70 T 130 70 T 150 70" fill="none" stroke="#60a5fa" stroke-width="1.5" />
   <text x="90" y="105" text-anchor="middle" fill="#60a5fa" font-size="9" font-family="sans-serif">Beta/Alpha (Awake/Relaxed)</text>
 
-  {/* Theta */}
   <path d="M 180 70 Q 195 40 210 70 T 240 70 T 270 70 T 300 70" fill="none" stroke="#a78bfa" stroke-width="1.5" />
   <text x="240" y="105" text-anchor="middle" fill="#a78bfa" font-size="9" font-family="sans-serif">Theta (NREM-1/2)</text>
 
-  {/* Delta */}
   <path d="M 320 70 Q 345 20 370 70 T 420 70" fill="none" stroke="#f43f5e" stroke-width="1.5" />
   <text x="370" y="105" text-anchor="middle" fill="#f43f5e" font-size="9" font-family="sans-serif">Delta (NREM-3 Deep Sleep)</text>
 </svg>
 
-## 2. Sleep States and Waves
+## 2. Psychoactive Pharmacology
+Drugs alter conscious states at the synapse:
+- <vocab term="Agonist" definition="A chemical substance that binds to receptors and mimics or enhances neurotransmitter actions.">Agonist</vocab> mimics and boosts neurotransmitter activity.
+- <vocab term="Antagonist" definition="A chemical substance that binds to receptors and blocks or decreases neurotransmitter activity.">Antagonist</vocab> blocks neurotransmitter binding.
+
+## 3. Sleep States and Waves
 Sleep cycles last roughly 90 minutes, transitioning through distinct phases:
 - **NREM-1**: Light sleep; theta waves, hypnagogic jerks.
 - **NREM-2**: characterized by <vocab term="Sleep Spindles" definition="Bursts of rapid, rhythmic brain activity visible on an EEG during stage 2 sleep.">sleep spindles</vocab> (rhythmic EEG bursts).
@@ -472,21 +452,18 @@ Perception is how the brain organizes and gives meaning to raw sensory informati
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">GESTALT GROUPING LAWS</text>
   
-  {/* Proximity */}
   <circle cx="50" cy="70" r="6" fill="#a78bfa" />
   <circle cx="65" cy="70" r="6" fill="#a78bfa" />
   <circle cx="50" cy="85" r="6" fill="#a78bfa" />
   <circle cx="65" cy="85" r="6" fill="#a78bfa" />
   <text x="57" y="125" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif">Proximity</text>
 
-  {/* Similarity */}
   <circle cx="170" cy="70" r="6" fill="#38bdf8" />
   <rect x="180" y="64" width="12" height="12" fill="#f43f5e" />
   <circle cx="170" cy="88" r="6" fill="#38bdf8" />
   <rect x="180" y="82" width="12" height="12" fill="#f43f5e" />
   <text x="182" y="125" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif">Similarity</text>
 
-  {/* Closure */}
   <path d="M 290 60 A 25 25 0 0 1 340 60 M 340 60 A 25 25 0 0 1 315 95" fill="none" stroke="#22c55e" stroke-width="2.5" />
   <text x="315" y="125" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif">Closure</text>
 </svg>
@@ -559,7 +536,7 @@ The brain naturally groups visual fields to create meaning:
         id: "2.3",
         title: "Cognitive Memory Systems, Problem Solving, Language, and Intelligence Testing",
         description: "Memory models, explicit/implicit storage, heuristics, language acquisition, and IQ testing.",
-        youtubeId: "bSycdDx-gCA",
+        youtubeId: "HVWbrNls-Kw",
         article: `
 # Cognitive Memory, Language, and Intelligence
 
@@ -569,7 +546,6 @@ Atkinson & Shiffrin proposed three memory structures:
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">ATKINSON-SHIFFRIN MEMORY MODEL</text>
   
-  {/* Sensory */}
   <rect x="20" y="55" width="100" height="50" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" />
   <text x="70" y="80" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif" font-weight="bold">Sensory Memory</text>
   <text x="70" y="95" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">Duration: &lt;2s</text>
@@ -577,7 +553,6 @@ Atkinson & Shiffrin proposed three memory structures:
   <path d="M 125 80 L 155 80" fill="none" stroke="#a78bfa" stroke-width="2" />
   <text x="140" y="70" text-anchor="middle" fill="#a78bfa" font-size="7" font-family="sans-serif">Attention</text>
 
-  {/* STM */}
   <rect x="165" y="55" width="100" height="50" rx="6" fill="rgba(121, 57, 252, 0.1)" stroke="#7b39fc" stroke-width="1.5" />
   <text x="215" y="80" text-anchor="middle" fill="#7b39fc" font-size="9" font-family="sans-serif" font-weight="bold">Working / STM</text>
   <text x="215" y="95" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">Capacity: 7±2 items</text>
@@ -588,7 +563,6 @@ Atkinson & Shiffrin proposed three memory structures:
   <path d="M 305 90 L 270 90" fill="none" stroke="#fbbf24" stroke-width="2" />
   <text x="287" y="105" text-anchor="middle" fill="#fbbf24" font-size="7" font-family="sans-serif">Retrieve</text>
 
-  {/* LTM */}
   <rect x="315" y="55" width="100" height="50" rx="6" fill="rgba(34, 197, 148, 0.1)" stroke="#22c55e" stroke-width="1.5" />
   <text x="365" y="80" text-anchor="middle" fill="#22c55e" font-size="9" font-family="sans-serif" font-weight="bold">Long-Term Memory</text>
   <text x="365" y="95" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="7" font-family="sans-serif">Capacity: Infinite</text>
@@ -768,25 +742,20 @@ Lifespan development analyzes changes from conception to late adulthood.
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">PIAGET'S COGNITIVE TIMELINE</text>
   
-  {/* Line */}
   <line x1="30" y1="80" x2="420" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
   
-  {/* Stage 1 */}
   <circle cx="50" cy="80" r="5" fill="#f43f5e" />
   <text x="50" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Sensorimotor</text>
   <text x="50" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(0-2 yrs)</text>
 
-  {/* Stage 2 */}
   <circle cx="160" cy="80" r="5" fill="#fbbf24" />
   <text x="160" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Preoperational</text>
   <text x="160" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(2-7 yrs)</text>
 
-  {/* Stage 3 */}
   <circle cx="280" cy="80" r="5" fill="#38bdf8" />
   <text x="280" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Concrete Op</text>
   <text x="280" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(7-11 yrs)</text>
 
-  {/* Stage 4 */}
   <circle cx="390" cy="80" r="5" fill="#22c55e" />
   <text x="390" y="110" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif">Formal Op</text>
   <text x="390" y="125" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">(11+ yrs)</text>
@@ -872,7 +841,6 @@ Kohlberg mapped moral development into three broad levels:
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">KOHLBERG'S MORAL LADDER</text>
   
-  {/* Steps */}
   <rect x="40" y="100" width="100" height="30" rx="4" fill="rgba(244, 63, 94, 0.1)" stroke="#f43f5e" />
   <text x="90" y="118" text-anchor="middle" fill="#f43f5e" font-size="9" font-family="sans-serif" font-weight="bold">1. Preconventional</text>
 
@@ -957,7 +925,7 @@ Kohlberg mapped moral development into three broad levels:
         id: "4.1",
         title: "Motivational Drivers, Theories of Emotion, and Stress Responses",
         description: "Maslow's hierarchy, drive-reduction, theories of emotion, and General Adaptation Syndrome.",
-        youtubeId: "t177QGgL4YI",
+        youtubeId: "gAMbkJk6gnE",
         article: `
 # Motivation, Emotion, and Stress
 
@@ -970,7 +938,6 @@ Kohlberg mapped moral development into three broad levels:
   
   <polygon points="225,40 375,150 75,150" fill="none" stroke="#7b39fc" stroke-width="2" />
   
-  {/* Levels */}
   <line x1="190" y1="65" x2="260" y2="65" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
   <text x="225" y="58" text-anchor="middle" fill="#ffffff" font-size="7" font-family="sans-serif" font-weight="bold">Self-Actualization</text>
 
@@ -1055,7 +1022,7 @@ Kohlberg mapped moral development into three broad levels:
         id: "4.2",
         title: "Determinants of Personality, Psychometric Testing, and Trait Perspectives",
         description: "Freudian psychoanalysis, trait theories (Big Five), and personality assessments.",
-        youtubeId: "mUELAi_qOBk",
+        youtubeId: "sUrV6oZ3DM8",
         article: `
 # Theories of Personality and Personality Testing
 
@@ -1067,11 +1034,9 @@ Freud compared the mind to an iceberg:
 <svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">FREUDIAN MIND ICEBERG</text>
   
-  {/* Water Line */}
   <line x1="20" y1="70" x2="430" y2="70" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4" />
   <text x="380" y="65" fill="#38bdf8" font-size="8" font-family="sans-serif">Water Line</text>
 
-  {/* Iceberg */}
   <polygon points="225,45 320,180 130,180" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1.5" />
   
   <text x="225" y="60" text-anchor="middle" fill="#ffffff" font-size="9" font-family="sans-serif" font-weight="bold">Ego</text>
@@ -1161,12 +1126,10 @@ Social psychology evaluates how people relate to and influence one another.
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">ASCH CONFORMITY STANDARD CARD</text>
   
-  {/* Standard */}
   <rect x="50" y="45" width="80" height="90" rx="6" fill="rgba(255,255,255,0.02)" stroke="#ffffff" />
   <line x1="90" y1="60" x2="90" y2="120" stroke="#ffffff" stroke-width="4" />
   <text x="90" y="145" text-anchor="middle" fill="#ffffff" font-size="8" font-family="sans-serif">Standard</text>
 
-  {/* Options */}
   <rect x="180" y="45" width="220" height="90" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.2)" />
   <line x1="220" y1="70" x2="220" y2="120" stroke="#f43f5e" stroke-width="4" />
   <text x="220" y="145" text-anchor="middle" fill="#f43f5e" font-size="8" font-family="sans-serif">1</text>
@@ -1246,7 +1209,7 @@ Social psychology evaluates how people relate to and influence one another.
         id: "5.1",
         title: "Research Methods, Statistical Analyses, and Ethical Guidelines in Psychological Science",
         description: "Scientific variable controls, correlation vs causation, data deviations, and ethical boundaries.",
-        youtubeId: "hFV71QPvRYc",
+        youtubeId: "3SdCoEEo7m0",
         article: `
 # Research Methods and Statistics in Psychology
 
@@ -1258,10 +1221,8 @@ Social psychology evaluates how people relate to and influence one another.
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">THE NORMAL BELL CURVE</text>
   
-  {/* Curve */}
   <path d="M 50 110 Q 150 110 200 40 T 350 110 C 370 110 390 110 400 110" fill="none" stroke="#22c55e" stroke-width="2" />
   
-  {/* SD Lines */}
   <line x1="225" y1="40" x2="225" y2="110" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
   <line x1="175" y1="75" x2="175" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
   <line x1="275" y1="75" x2="275" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
@@ -1449,7 +1410,6 @@ Cognitive Behavioral Therapy explores interactions between thoughts, feelings, a
 <svg width="450" height="150" viewBox="0 0 450 150" class="max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4">
   <text x="225" y="25" text-anchor="middle" fill="#a78bfa" font-size="12" font-family="sans-serif" font-weight="bold">CBT DYNAMIC TRIANGLE</text>
   
-  {/* Nodes */}
   <rect x="185" y="40" width="80" height="25" rx="4" fill="rgba(244, 63, 94, 0.1)" stroke="#f43f5e" />
   <text x="225" y="56" text-anchor="middle" fill="#f43f5e" font-size="8" font-family="sans-serif" font-weight="bold">THOUGHTS</text>
 
@@ -1459,7 +1419,6 @@ Cognitive Behavioral Therapy explores interactions between thoughts, feelings, a
   <rect x="300" y="105" width="80" height="25" rx="4" fill="rgba(34, 197, 148, 0.1)" stroke="#22c55e" />
   <text x="340" y="121" text-anchor="middle" fill="#22c55e" font-size="8" font-family="sans-serif" font-weight="bold">BEHAVIORS</text>
 
-  {/* Connecting Lines */}
   <line x1="185" y1="65" x2="135" y2="105" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
   <line x1="265" y1="65" x2="315" y2="105" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
   <line x1="150" y1="117" x2="300" y2="117" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
