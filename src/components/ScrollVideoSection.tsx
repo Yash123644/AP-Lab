@@ -102,18 +102,19 @@ export function ScrollVideoSection() {
           perspective: "1200px"
         }}
       >
-        {/* Custom play cursor that trails behind the real cursor — does NOT replace it */}
+        {/* Custom play cursor that trails behind the real cursor — inverts colors it passes over */}
         <motion.div
           style={{
             x: cursorX,
             y: cursorY,
             translateX: "-50%",
             translateY: "-50%",
+            mixBlendMode: "difference",
             opacity: isHovered ? 1 : 0,
             pointerEvents: "none",
           }}
           transition={{ opacity: { duration: 0.2 } }}
-          className="absolute z-[100] w-16 h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-[0_4px_24px_rgba(0,0,0,0.5)] border border-white/20"
+          className="absolute z-[100] w-16 h-16 bg-white rounded-full flex items-center justify-center"
         >
           <svg
             viewBox="0 0 100 100"

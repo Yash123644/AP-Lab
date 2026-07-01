@@ -54,7 +54,7 @@ export function Footer() {
     <footer className="w-full bg-black text-white pt-16 overflow-hidden relative">
       
       {/* Top Section: Three Columns with Vertical Lines */}
-      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 border-b border-white/10 pb-16 relative">
+      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1fr_auto_auto] gap-8 md:gap-0 border-b border-white/10 pb-16 relative">
         
         {/* Left Column */}
         <div className="flex flex-col md:border-r border-white/10 md:pr-8">
@@ -91,7 +91,28 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Right Column */}
+        {/* Social Icons Column — sits to the left of Connect */}
+        <div className="flex flex-col md:border-r border-white/10 md:px-8">
+          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-3">
+            Follow:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {footerSocials.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+                className="w-9 h-9 rounded-[10px] bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/60 hover:text-white hover:bg-white/[0.12] hover:border-white/20 transition-all duration-200 hover:scale-105 active:scale-95"
+              >
+                <social.Icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Column — Connect */}
         <div className="flex flex-col md:pl-8 md:text-right">
           <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
             Connect:
@@ -105,23 +126,7 @@ export function Footer() {
 
       </div>
 
-      {/* Social Icons Row */}
-      <div className="max-w-[1400px] mx-auto px-6 py-10 flex justify-center">
-        <div className="flex items-center gap-3 flex-wrap justify-center">
-          {footerSocials.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.name}
-              className="w-11 h-11 rounded-[12px] bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/60 hover:text-white hover:bg-white/[0.12] hover:border-white/20 transition-all duration-200 hover:scale-105 active:scale-95"
-            >
-              <social.Icon className="w-5 h-5" />
-            </a>
-          ))}
-        </div>
-      </div>
+
 
       {/* Center Subtitle */}
       <div className="w-full text-center mb-4">
