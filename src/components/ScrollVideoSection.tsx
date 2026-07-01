@@ -10,8 +10,9 @@ export function ScrollVideoSection() {
   const mouseX = useMotionValue(-1000);
   const mouseY = useMotionValue(-1000);
 
-  const cursorX = useSpring(mouseX, { stiffness: 180, damping: 28, mass: 0.8 });
-  const cursorY = useSpring(mouseY, { stiffness: 180, damping: 28, mass: 0.8 });
+  // Lower stiffness = more lag = trails behind the real cursor
+  const cursorX = useSpring(mouseX, { stiffness: 60, damping: 18, mass: 1.2 });
+  const cursorY = useSpring(mouseY, { stiffness: 60, damping: 18, mass: 1.2 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -97,31 +98,29 @@ export function ScrollVideoSection() {
         }}
         onMouseMove={handleMouseMove}
         style={{ 
-          cursor: isHovered ? "none" : "auto",
+          cursor: "auto",
           perspective: "1200px"
         }}
       >
-        {/* Custom Inverted Play Cursor — sibling of the card, NOT inside overflow-hidden */}
+        {/* Custom play cursor that trails behind the real cursor — does NOT replace it */}
         <motion.div
           style={{
             x: cursorX,
             y: cursorY,
             translateX: "-50%",
             translateY: "-50%",
-            mixBlendMode: "difference",
             opacity: isHovered ? 1 : 0,
             pointerEvents: "none",
           }}
-          className="absolute z-[100] w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg"
+          transition={{ opacity: { duration: 0.2 } }}
+          className="absolute z-[100] w-16 h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-[0_4px_24px_rgba(0,0,0,0.5)] border border-white/20"
         >
-          {/* Perfectly centred play triangle — nudge right by half the visual asymmetry */}
           <svg
             viewBox="0 0 100 100"
-            className="w-9 h-9 fill-black"
+            className="w-7 h-7 fill-black"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Triangle: left edge at x=28, right tip at x=78, vertically centred at y=50 */}
-            <polygon points="30,18 78,50 30,82" />
+            <polygon points="32,20 76,50 32,80" />
           </svg>
         </motion.div>
 

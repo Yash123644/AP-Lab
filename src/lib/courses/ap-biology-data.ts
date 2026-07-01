@@ -3022,31 +3022,34 @@ This conservation suggests signaling machinery arose early in eukaryotic evoluti
 ## Introduction to Signal Transduction
 
 <div class="flex justify-center my-8">
-<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-<rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
-<text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
-<circle cx="80" cy="25" r="8" fill="#ef4444" />
-<text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
-<path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
-<rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
-<text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
-<circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
-<text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
-<rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
-<text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
-<path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
-<path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
-<circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
-<text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
-<path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
-<rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
-<text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
-<path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+<svg width="500" height="220" viewBox="0 0 500 220" class="max-w-full">
 <defs>
-<marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+<marker id="rtk-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
 <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
 </marker>
 </defs>
+<rect x="0" y="65" width="500" height="20" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
+<text x="220" y="57" fill="#60a5fa" font-size="9" font-weight="bold" text-anchor="middle">Plasma Membrane</text>
+<text x="80" y="20" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Growth Factor (Ligand)</text>
+<circle cx="60" cy="35" r="10" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="1.5" />
+<circle cx="100" cy="35" r="10" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="1.5" />
+<rect x="45" y="55" width="30" height="55" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+<rect x="85" y="55" width="30" height="55" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
+<text x="80" y="88" fill="#ffffff" font-size="7.5" text-anchor="middle" font-weight="bold">RTK</text>
+<path d="M 75 80 L 85 80" stroke="#f59e0b" stroke-width="2" />
+<circle cx="60" cy="125" r="8" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5" />
+<text x="60" y="128" fill="#fff" font-size="7" text-anchor="middle">P</text>
+<circle cx="100" cy="125" r="8" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5" />
+<text x="100" y="128" fill="#fff" font-size="7" text-anchor="middle">P</text>
+<text x="80" y="150" fill="#f59e0b" font-size="8" font-weight="bold" text-anchor="middle">Autophosphorylation</text>
+<path d="M 115 120 L 200 145" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#rtk-arrow)" />
+<rect x="200" y="140" width="90" height="28" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
+<text x="245" y="157" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Ras / MAPK</text>
+<path d="M 292 155 L 360 155" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#rtk-arrow)" />
+<rect x="360" y="140" width="120" height="28" rx="4" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="1.5" />
+<text x="420" y="157" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">Gene Expression / Growth</text>
+<text x="245" y="115" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Receptor Tyrosine Kinase (RTK)</text>
+<text x="245" y="200" fill="#ffffff" font-size="8" text-anchor="middle" opacity="0.5">Ligand binding causes dimerization and cross-phosphorylation of tyrosine residues</text>
 </svg>
 </div>
 
@@ -3466,31 +3469,31 @@ Or: Gene Y expressed when signal A OR signal B is present (OR gate)
 ## Feedback Mechanisms
 
 <div class="flex justify-center my-8">
-<svg width="450" height="200" viewBox="0 0 450 200" class="max-w-full">
-<rect x="0" y="60" width="450" height="25" fill="rgba(255,255,255,0.05)" stroke="#60a5fa" stroke-width="1" />
-<text x="35" y="50" fill="#60a5fa" font-size="9" font-weight="bold">Plasma Membrane</text>
-<circle cx="80" cy="25" r="8" fill="#ef4444" />
-<text x="80" y="28" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">L</text>
-<path d="M 80 35 L 80 58" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
-<rect x="65" y="50" width="30" height="45" rx="4" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1.5" />
-<text x="80" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">GPCR</text>
-<circle cx="120" cy="85" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5" />
-<text x="120" y="88" fill="#ffffff" font-size="8" text-anchor="middle">Gα</text>
-<rect x="180" y="50" width="40" height="45" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5" />
-<text x="200" y="76" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">AC</text>
-<path d="M 98 75 Q 110 75, 115 75" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
-<path d="M 132 80 Q 150 72, 175 72" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#sig-arrow)" />
-<circle cx="200" cy="130" r="14" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="1.5" />
-<text x="200" y="133" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">cAMP</text>
-<path d="M 200 98 L 200 112" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#sig-arrow)" />
-<rect x="290" y="115" width="130" height="30" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5" />
-<text x="355" y="133" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Phosphorylation Cascade</text>
-<path d="M 218 130 L 285 130" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#sig-arrow)" />
+<svg width="480" height="240" viewBox="0 0 480 240" class="max-w-full">
 <defs>
-<marker id="sig-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
-<path d="M 0 0 L 10 5 L 0 10 z" fill="#d4d4d4" />
+<marker id="fb-arrow-neg" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#22c55e" />
+</marker>
+<marker id="fb-arrow-pos" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
 </marker>
 </defs>
+<rect x="140" y="10" width="120" height="36" rx="8" fill="rgba(59,130,246,0.2)" stroke="#60a5fa" stroke-width="1.5" />
+<text x="200" y="32" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Stimulus / Change</text>
+<path d="M 200 46 L 200 78" stroke="#60a5fa" stroke-width="2" marker-end="url(#fb-arrow-neg)" />
+<rect x="140" y="80" width="120" height="36" rx="8" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1.5" />
+<text x="200" y="102" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Control Center</text>
+<path d="M 200 116 L 200 148" stroke="#10b981" stroke-width="2" marker-end="url(#fb-arrow-neg)" />
+<rect x="140" y="150" width="120" height="36" rx="8" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1.5" />
+<text x="200" y="172" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Effector Response</text>
+<path d="M 140 168 Q 50 168, 50 28 Q 50 28, 140 28" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#fb-arrow-neg)" />
+<text x="28" y="100" fill="#22c55e" font-size="8" font-weight="bold" text-anchor="middle" transform="rotate(-90 28 100)">NEGATIVE FEEDBACK</text>
+<path d="M 260 168 Q 370 168, 370 28 Q 370 28, 260 28" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#fb-arrow-pos)" />
+<text x="392" y="100" fill="#f59e0b" font-size="8" font-weight="bold" text-anchor="middle" transform="rotate(90 392 100)">POSITIVE FEEDBACK</text>
+<text x="55" y="210" fill="#22c55e" font-size="8" text-anchor="middle">Dampens / Reverses</text>
+<text x="55" y="222" fill="#22c55e" font-size="8" text-anchor="middle">(homeostasis)</text>
+<text x="360" y="210" fill="#f59e0b" font-size="8" text-anchor="middle">Amplifies / Reinforces</text>
+<text x="360" y="222" fill="#f59e0b" font-size="8" text-anchor="middle">(threshold events)</text>
 </svg>
 </div>
 
@@ -3687,17 +3690,33 @@ Example: Isoleucine synthesis - isoleucine inhibits threonine deaminase (first e
 ## Cell Cycle
 
 <div class="flex justify-center my-8">
-<svg width="400" height="150" viewBox="0 0 400 150" class="max-w-full">
-<g transform="translate(100, 30)">
-<path d="M 20 20 L 40 80 M 40 20 L 20 80" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
-<text x="30" y="100" fill="#3b82f6" font-size="9" font-weight="bold" text-anchor="middle">Maternal</text>
-</g>
-<g transform="translate(130, 30)">
-<line x1="20" y1="20" x2="40" y2="80" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
-<line x1="40" y1="20" x2="20" y2="80" stroke="#ef4444" stroke-width="6" stroke-linecap="round" />
-<text x="30" y="100" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">Paternal</text>
-</g>
-<text x="200" y="125" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Crossing Over (Prophase I)</text>
+<svg width="520" height="180" viewBox="0 0 520 180" class="max-w-full">
+<defs>
+<marker id="cc-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa" />
+</marker>
+</defs>
+<rect x="10" y="55" width="90" height="70" rx="10" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="1.5" />
+<text x="55" y="80" fill="#60a5fa" font-size="9" font-weight="bold" text-anchor="middle">G1 Phase</text>
+<text x="55" y="95" fill="#ffffff" font-size="8" text-anchor="middle">Cell grows</text>
+<text x="55" y="108" fill="#ffffff" font-size="8" text-anchor="middle">2N, 2C</text>
+<rect x="140" y="55" width="90" height="70" rx="10" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="1.5" />
+<text x="185" y="80" fill="#f59e0b" font-size="9" font-weight="bold" text-anchor="middle">S Phase</text>
+<text x="185" y="95" fill="#ffffff" font-size="8" text-anchor="middle">DNA replication</text>
+<text x="185" y="108" fill="#ffffff" font-size="8" text-anchor="middle">2N, 4C</text>
+<rect x="270" y="55" width="90" height="70" rx="10" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1.5" />
+<text x="315" y="80" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">G2 Phase</text>
+<text x="315" y="95" fill="#ffffff" font-size="8" text-anchor="middle">Prep for division</text>
+<text x="315" y="108" fill="#ffffff" font-size="8" text-anchor="middle">2N, 4C</text>
+<rect x="400" y="55" width="110" height="70" rx="10" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="1.5" />
+<text x="455" y="76" fill="#c084fc" font-size="9" font-weight="bold" text-anchor="middle">M Phase</text>
+<text x="455" y="90" fill="#ffffff" font-size="7.5" text-anchor="middle">Mitosis + Cytokinesis</text>
+<text x="455" y="103" fill="#ffffff" font-size="7.5" text-anchor="middle">2 daughter cells</text>
+<text x="455" y="116" fill="#ffffff" font-size="7.5" text-anchor="middle">2N, 2C each</text>
+<path d="M 100 90 L 138 90" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#cc-arrow)" />
+<path d="M 230 90 L 268 90" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#cc-arrow)" />
+<path d="M 360 90 L 398 90" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#cc-arrow)" />
+<text x="260" y="165" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle" opacity="0.6">Eukaryotic Cell Cycle: Interphase (G1 + S + G2) and M Phase</text>
 </svg>
 </div>
 
