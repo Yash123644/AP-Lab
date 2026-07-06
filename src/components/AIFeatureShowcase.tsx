@@ -5,13 +5,6 @@ import { motion, Variants } from "framer-motion";
 import { Sparkles, ArrowUp, MousePointer2, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const IBeam = () => (
-  <div className="w-[2px] h-5 bg-white drop-shadow-md relative -translate-y-1">
-    <div className="absolute top-0 -left-[3px] w-2 h-[2px] bg-white" />
-    <div className="absolute bottom-0 -left-[3px] w-2 h-[2px] bg-white" />
-  </div>
-);
-
 const phrases = [
   "explain complex topics.",
   "tutor you 24/7.",
@@ -70,34 +63,34 @@ function AnimatedArticleHighlight() {
     initial: { width: "0%" },
     hover: {
       width: "100%",
-      transition: { duration: 0.5, delay: 0.1, ease: "easeOut" }
+      transition: { duration: 1.0, delay: 0.2, ease: "easeOut" }
     }
   };
 
   const popoverVariants: Variants = {
     initial: { opacity: 0, y: 10, scale: 0.95 },
     hover: {
-      opacity: 1,
-      y: 0,
-      scale: [0.95, 1, 1, 0.92, 1], // Click shrink simulation
+      opacity: [0, 0, 1, 1, 1, 1, 1],
+      y: [10, 10, 0, 0, 0, 0, 0],
+      scale: [0.95, 0.95, 1, 1, 0.92, 1, 1], // Click shrink simulation
       transition: {
-        duration: 1.5,
-        times: [0, 0.45, 0.65, 0.8, 1],
+        duration: 2.2,
+        times: [0, 0.55, 0.68, 0.77, 0.77, 0.86, 1],
         ease: "easeInOut"
       }
     }
   };
 
   const cursorVariants: Variants = {
-    initial: { opacity: 0, left: "10%", top: "75%", scale: 1 },
+    initial: { opacity: 0, left: "0%", top: "60%", scale: 1 },
     hover: {
-      opacity: [0, 1, 1, 1, 0],
-      left: ["10%", "50%", "72%", "72%", "72%"],
-      top: ["75%", "45%", "-15px", "-15px", "-15px"],
-      scale: [1, 1, 1, 0.8, 1], // Clicks the button
+      opacity: [0, 1, 1, 1, 1, 1, 0],
+      left: ["0%", "0%", "72%", "72%", "72%", "72%", "72%"],
+      top: ["60%", "60%", "60%", "-10px", "-10px", "-10px", "-10px"],
+      scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
-        duration: 1.5,
-        times: [0, 0.35, 0.65, 0.8, 1],
+        duration: 2.2,
+        times: [0, 0.09, 0.55, 0.68, 0.77, 0.86, 1],
         ease: "easeInOut"
       }
     }
@@ -111,10 +104,10 @@ function AnimatedArticleHighlight() {
       className="w-full h-[520px] max-w-md mx-auto bg-[#080B11] border border-white/5 rounded-3xl p-6 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/10 hover:shadow-[0_12px_40px_rgba(255,255,255,0.02)]"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
-      {/* Header Info Inside Card (Appwrite Style) */}
+      {/* Header Info Inside Card (Appwrite Style with White Pointer Icon) */}
       <div className="flex items-start space-x-4 mb-5 z-20">
-        <div className="w-11 h-11 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.15)] flex-shrink-0">
-          <Sparkles className="w-5 h-5" />
+        <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white shadow-md flex-shrink-0">
+          <MousePointer2 className="w-5 h-5" />
         </div>
         <div>
           <h3 className="font-manrope font-bold text-[16px] text-white leading-tight">Smart Highlighting</h3>
@@ -126,13 +119,10 @@ function AnimatedArticleHighlight() {
 
       {/* Mockup Preview Container */}
       <div className="flex-1 bg-[#03050C]/60 border border-white/5 rounded-2xl p-5 relative overflow-hidden flex flex-col justify-start min-h-[300px]">
-        {/* Top Browser Bar Mock */}
-        <div className="flex space-x-1.5 mb-6 opacity-60">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
-          <span className="text-[9px] font-manrope font-bold text-white/30 uppercase tracking-wider ml-2 leading-none">
-            AP Biology Textbook
+        {/* Top Browser Bar Mock - Text Only */}
+        <div className="flex items-center mb-6 opacity-60">
+          <span className="text-[9px] font-manrope font-bold text-white/40 uppercase tracking-wider leading-none">
+            AP Biology Article — Topic 2.2
           </span>
         </div>
 
@@ -146,12 +136,12 @@ function AnimatedArticleHighlight() {
               Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
               <br/><br/>
               <span className="relative inline-block py-0.5 px-1 text-white">
-                {/* Highlight Span */}
+                {/* Highlight Span (Blue Highlight Effect) */}
                 <motion.span 
                   variants={highlightVariants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute inset-0 bg-white/20 rounded origin-left"
+                  className="absolute inset-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
                 />
                 <span className="relative z-10 text-white/90">
                   Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
@@ -237,9 +227,9 @@ function AnimatedChat() {
       className="w-full h-[520px] max-w-md mx-auto bg-[#080B11] border border-white/5 rounded-3xl p-6 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/10 hover:shadow-[0_12px_40px_rgba(255,255,255,0.02)]"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
-      {/* Header Info Inside Card (Appwrite Style) */}
+      {/* Header Info Inside Card (Appwrite Style with White Chat Bubble Icon) */}
       <div className="flex items-start space-x-4 mb-5 z-20">
-        <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.15)] flex-shrink-0">
+        <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white shadow-md flex-shrink-0">
           <MessageSquare className="w-5 h-5" />
         </div>
         <div>
@@ -254,14 +244,14 @@ function AnimatedChat() {
       <div className="flex-1 bg-[#03050C]/60 border border-white/5 rounded-2xl p-4 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
         {/* Chat Conversation Stack */}
         <div className="space-y-3">
-          {/* User Message */}
+          {/* User Message (Blue Chat Bubble) */}
           <motion.div
             variants={userMsgVariants}
             initial="initial"
             animate={isHovered ? "hover" : "initial"}
             className="flex w-full justify-end"
           >
-            <div className="max-w-[85%] rounded-[20px] px-4 py-2.5 text-[13px] font-inter leading-relaxed shadow-lg relative bg-emerald-600 text-white rounded-br-sm">
+            <div className="max-w-[85%] rounded-[20px] px-4 py-2.5 text-[13px] font-inter leading-relaxed shadow-lg relative bg-blue-600 text-white rounded-br-sm">
               {chatSequence[0].text}
             </div>
           </motion.div>
@@ -372,4 +362,3 @@ export function AIFeatureShowcase() {
     </section>
   );
 }
-
