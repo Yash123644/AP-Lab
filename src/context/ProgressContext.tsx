@@ -38,6 +38,7 @@ interface ProgressContextType {
   recordQuestionAttempt: (isCorrect: boolean, masteryKey?: string) => Promise<void>;
   recordTutorMessage: () => Promise<void>;
   recordMockExamAttempt: (correctCount: number, totalQuestions: number) => Promise<void>;
+  claimSocialXp?: (taskName: string, xpAmount: number) => Promise<void>;
 }
 
 const defaultProgress: UserProgress = {
@@ -68,6 +69,7 @@ const ProgressContext = createContext<ProgressContextType>({
   recordQuestionAttempt: async (isCorrect: boolean, masteryKey?: string) => {},
   recordTutorMessage: async () => {},
   recordMockExamAttempt: async () => {},
+  claimSocialXp: async () => {},
 });
 
 export const useProgress = () => useContext(ProgressContext);
@@ -863,8 +865,69 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  const claimSocialXp = async (taskName: string, xpAmount: number) => {
+    const localKey = currentUser ? `ap-lab-progress-${currentUser.uid}` : "ap-lab-progress-guest";
+    const docRef = currentUser ? doc(db, "userProgress", currentUser.uid) : null;
+
+    try {
+      const currentXp = progress.xp || 0;
+      const newXp = currentXp + xpAmount;
+      const oldLevel = progress.level || 1;
+      const newLevel = getLevelForXp(newXp);
+      const isLevelUp = newLevel > oldLevel;
+
+      let updatedProgress: UserProgress = {
+        ...progress,
+        xp: newXp,
+        level: newLevel,
+        lastAccessed: new Date()
+      };
+
+      updatedProgress = updateStreakAndLogs(
+        updatedProgress,
+        xpAmount,
+        "social",
+        `Claimed Social XP: ${taskName}`,
+        15
+      );
+
+      triggerXpToast(xpAmount, "XP Claimed!", "section");
+
+      if (isLevelUp) {
+        setTimeout(() => {
+          setLevelUpData({ oldLevel, newLevel });
+        }, 500);
+      }
+
+      setProgress(updatedProgress);
+
+      try {
+        localStorage.setItem(localKey, JSON.stringify(updatedProgress));
+      } catch (e) {
+        console.error("Error writing progress to localStorage:", e);
+      }
+
+      if (docRef) {
+        setDoc(docRef, {
+          xp: updatedProgress.xp,
+          level: updatedProgress.level,
+          lastAccessed: serverTimestamp(),
+          streakCount: updatedProgress.streakCount,
+          maxStreak: updatedProgress.maxStreak,
+          streakLastActive: updatedProgress.streakLastActive,
+          activityLogs: updatedProgress.activityLogs,
+          studyTimeLogs: updatedProgress.studyTimeLogs
+        }, { merge: true }).catch((err) => {
+          console.error("Error syncing social XP to Firestore:", err);
+        });
+      }
+    } catch (error) {
+      console.error("Error setting up social XP update:", error);
+    }
+  };
+
   return (
-    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage, recordMockExamAttempt }}>
+    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage, recordMockExamAttempt, claimSocialXp }}>
       {children}
       
       {/* Level Up Modal */}

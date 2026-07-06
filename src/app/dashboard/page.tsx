@@ -22,6 +22,7 @@ import { ReviewModal } from "@/components/ReviewModal";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
 import { DashboardContextMenu } from "@/components/DashboardContextMenu";
+import { FloatingXPOperations } from "@/components/FloatingXPOperations";
 
 
 const folders = [
@@ -765,6 +766,7 @@ export default function Dashboard() {
       </AnimatePresence>
 
       <DashboardContextMenu onOpenProfile={() => setShowAccountPopup(true)} />
+      <FloatingXPOperations />
     </div>
   );
 }
