@@ -1702,16 +1702,6 @@ export default function APDynamicCoursePage() {
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <Link
-            href="/dashboard/progress"
-            className="w-10 h-10 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300"
-            title="View Progress Analytics"
-            style={{
-              borderColor: `${course.accentColor}33`
-            }}
-          >
-            <BarChart2 className="w-4.5 h-4.5 text-white/80" />
-          </Link>
           <button 
             onClick={() => setShowAccountPopup(true)}
             className="flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all"
@@ -2677,13 +2667,17 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
     : (currentUser?.email ? currentUser.email.charAt(0).toUpperCase() : "U");
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex items-center justify-center p-4">
+    <div 
+      className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ type: "spring", duration: 0.5 }}
         className="w-full max-w-lg bg-[#07080e]/95 border border-white/10 rounded-[32px] overflow-hidden relative shadow-[0_0_80px_rgba(0,0,0,0.8)] backdrop-blur-3xl p-8"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Glow effect */}
         <div 

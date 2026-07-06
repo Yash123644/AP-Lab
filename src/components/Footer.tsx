@@ -58,11 +58,8 @@ export function Footer() {
         
         {/* Left Column */}
         <div className="flex flex-col md:border-r border-white/10 md:pr-8">
-          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
+          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-4">
             © {new Date().getFullYear()} All Rights Reserved.
-          </span>
-          <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest mb-4">
-            AP Lab: The Pre-Med Accelerator
           </span>
           <div className="flex space-x-4">
             <Link href="/terms" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">

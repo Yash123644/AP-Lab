@@ -49,51 +49,75 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
     return () => window.removeEventListener("contextmenu", handleContextMenu);
   }, []);
 
-  // Keyboard shortcut listener when menu is active
+  // Global & Dropdown Keyboard Shortcut Handler
   useEffect(() => {
-    if (!visible) return;
-
-    const handleMenuKeys = (e: KeyboardEvent) => {
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      
+    const handleKeys = (e: KeyboardEvent) => {
+      const isCmdOrCtrl = e.metaKey || e.ctrlKey;
       const key = e.key.toLowerCase();
-      if (key === "s") {
-        e.preventDefault();
-        setVisible(false);
-        setSearchOpen(true);
-      } else if (key === "p") {
-        e.preventDefault();
-        setVisible(false);
-        onOpenProfile();
-      } else if (key === "v") {
-        e.preventDefault();
-        setVisible(false);
-        router.push("/dashboard/progress");
-      } else if (key === "q") {
-        e.preventDefault();
-        setVisible(false);
-        handleSignOut();
-      } else if (key === "escape") {
-        e.preventDefault();
-        setVisible(false);
+
+      // Check if user is typing in a text field
+      const isEditing = document.activeElement && (
+        document.activeElement.tagName === "INPUT" || 
+        document.activeElement.tagName === "TEXTAREA" ||
+        document.activeElement.getAttribute("contenteditable") === "true"
+      );
+
+      // Handle Escape key
+      if (key === "escape") {
+        if (visible) {
+          e.preventDefault();
+          setVisible(false);
+        }
+        return;
+      }
+
+      // 1. Global Commands: Cmd + Key (when user is not writing in input)
+      if (isCmdOrCtrl) {
+        if (isEditing) return;
+
+        if (key === "s" || key === "k") {
+          e.preventDefault();
+          setSearchOpen(true);
+          setVisible(false);
+        } else if (key === "p") {
+          e.preventDefault();
+          onOpenProfile();
+          setVisible(false);
+        } else if (key === "g") {
+          e.preventDefault();
+          router.push("/dashboard/progress");
+          setVisible(false);
+        } else if (key === "e") {
+          e.preventDefault();
+          handleSignOut();
+          setVisible(false);
+        }
+      } 
+      // 2. Menu-Specific hotkeys (when dropdown is visible, e.g. pressing S, P, V, Q)
+      else if (visible) {
+        if (key === "s") {
+          e.preventDefault();
+          setSearchOpen(true);
+          setVisible(false);
+        } else if (key === "p") {
+          e.preventDefault();
+          onOpenProfile();
+          setVisible(false);
+        } else if (key === "g" || key === "v") {
+          e.preventDefault();
+          router.push("/dashboard/progress");
+          setVisible(false);
+        } else if (key === "e" || key === "q") {
+          e.preventDefault();
+          handleSignOut();
+          setVisible(false);
+        }
       }
     };
 
-    window.addEventListener("keydown", handleMenuKeys);
-    return () => window.removeEventListener("keydown", handleMenuKeys);
+    window.addEventListener("keydown", handleKeys);
+    return () => window.removeEventListener("keydown", handleKeys);
   }, [visible, onOpenProfile, router]);
-
-  // Global search trigger (Cmd+K / Ctrl+K)
-  useEffect(() => {
-    const handleGlobalSearch = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        setSearchOpen(true);
-      }
-    };
-    window.addEventListener("keydown", handleGlobalSearch);
-    return () => window.removeEventListener("keydown", handleGlobalSearch);
-  }, []);
 
   // Hide context menu on click outside
   useEffect(() => {
@@ -163,7 +187,7 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.1 }}
-            className="fixed z-[999999] w-52 rounded-xl bg-neutral-900/90 backdrop-blur-2xl border border-white/10 p-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.05)] text-white/90"
+            className="fixed z-[999999] w-52 rounded-xl bg-[#060608]/98 border border-white/10 p-1.5 shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.05)] text-white/90"
             style={{
               top: `${Math.min(position.y, window.innerHeight - 200)}px`,
               left: `${Math.min(position.x, window.innerWidth - 220)}px`,
@@ -181,7 +205,7 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 <span>Search</span>
               </div>
               <div className="flex items-center space-x-1">
-                <span className="text-[9px] font-mono text-white/30 bg-white/5 border border-white/10 px-1 py-0.2 rounded">S</span>
+                <span className="text-[9px] font-mono text-white/35 bg-white/5 border border-white/10 px-1 py-0.5 rounded">⌘S</span>
               </div>
             </button>
 
@@ -196,7 +220,7 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 <User className="w-3.5 h-3.5 text-white/40" />
                 <span>Profile</span>
               </div>
-              <span className="text-[9px] font-mono text-white/30 bg-white/5 border border-white/10 px-1 py-0.2 rounded">P</span>
+              <span className="text-[9px] font-mono text-white/35 bg-white/5 border border-white/10 px-1 py-0.5 rounded">⌘P</span>
             </button>
 
             <button
@@ -210,7 +234,7 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 <Calendar className="w-3.5 h-3.5 text-white/40" />
                 <span>Progress</span>
               </div>
-              <span className="text-[9px] font-mono text-white/30 bg-white/5 border border-white/10 px-1 py-0.2 rounded">V</span>
+              <span className="text-[9px] font-mono text-white/35 bg-white/5 border border-white/10 px-1 py-0.5 rounded">⌘G</span>
             </button>
 
             <div className="h-[1px] bg-white/5 my-1" />
@@ -226,7 +250,7 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 <LogOut className="w-3.5 h-3.5 opacity-60" />
                 <span>Sign Out</span>
               </div>
-              <span className="text-[9px] font-mono text-red-400/40 bg-red-950/20 border border-red-500/10 px-1 py-0.2 rounded">Q</span>
+              <span className="text-[9px] font-mono text-red-400/40 bg-red-950/20 border border-red-500/10 px-1 py-0.5 rounded">⌘E</span>
             </button>
           </motion.div>
         )}
@@ -277,7 +301,13 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
               </div>
 
               {/* Scrollable List */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-hide">
+              <div 
+                className="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-hide"
+                style={{
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none"
+                }}
+              >
                 {filteredPages.length === 0 ? (
                   <div className="py-16 text-center text-white/30">
                     <Compass className="w-10 h-10 mx-auto mb-3 opacity-20" />

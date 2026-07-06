@@ -77,6 +77,65 @@ export default function ProgressPage() {
   const streakCount = progress.streakCount || 0;
   const maxStreak = progress.maxStreak || 0;
 
+  const streakStyle = useMemo(() => {
+    if (streakCount < 3) {
+      return {
+        glowClass: "from-white/5 to-transparent",
+        flameColor: "text-white/60",
+        bgClass: "bg-white/[0.01]",
+        borderColor: "border-white/5",
+        animateProps: { scale: 1 }
+      };
+    } else if (streakCount < 7) {
+      return {
+        glowClass: "from-amber-600/10 to-transparent",
+        flameColor: "text-amber-500 drop-shadow-[0_0_8px_rgba(217,119,6,0.3)]",
+        bgClass: "bg-amber-950/[0.03]",
+        borderColor: "border-amber-500/15",
+        animateProps: { 
+          scale: [1, 1.05, 1],
+          transition: { repeat: Infinity, duration: 2, ease: "easeInOut" }
+        }
+      };
+    } else if (streakCount < 14) {
+      return {
+        glowClass: "from-cyan-500/10 to-transparent",
+        flameColor: "text-cyan-400 drop-shadow-[0_0_10px_rgba(6,182,212,0.4)]",
+        bgClass: "bg-cyan-950/[0.03]",
+        borderColor: "border-cyan-500/15",
+        animateProps: { 
+          scale: [1, 1.08, 1],
+          rotate: [0, 2, -2, 0],
+          transition: { repeat: Infinity, duration: 1.8, ease: "easeInOut" }
+        }
+      };
+    } else if (streakCount < 30) {
+      return {
+        glowClass: "from-yellow-500/10 to-transparent",
+        flameColor: "text-yellow-400 drop-shadow-[0_0_12px_rgba(234,179,8,0.5)]",
+        bgClass: "bg-yellow-950/[0.03]",
+        borderColor: "border-yellow-500/15",
+        animateProps: { 
+          scale: [1, 1.12, 1],
+          rotate: [0, 4, -4, 0],
+          transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+        }
+      };
+    } else {
+      return {
+        glowClass: "from-purple-500/15 to-transparent",
+        flameColor: "text-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.7)]",
+        bgClass: "bg-purple-950/[0.04]",
+        borderColor: "border-purple-500/20",
+        animateProps: { 
+          scale: [1, 1.15, 0.95, 1.15, 1],
+          rotate: [0, 6, -6, 4, -4, 0],
+          transition: { repeat: Infinity, duration: 1.2, ease: "easeInOut" }
+        }
+      };
+    }
+  }, [streakCount]);
+
   const streakMilestones = useMemo(() => {
     return [
       { name: "3-Day Bronze Spark", required: 3, description: "Active study for 3 days", completed: streakCount >= 3 },
@@ -89,25 +148,34 @@ export default function ProgressPage() {
   // Real-time XP Breakdown calculated from user progression stats
   const xpBreakdown = useMemo(() => {
     if (xp === 0) {
-      return { practice: 0, mastery: 0, exams: 0, tutor: 0 };
+      return { practice: 0, mastery: 0, exams: 0 };
     }
     const quizXp = totalCorrect * 10;
     const masteryXp = (progress.completedTopics?.length || 0) * 100;
-    const tutorXp = (progress.dailyTutorMessagesCount || 0) * 5;
-    const examXp = Math.max(0, xp - quizXp - masteryXp - tutorXp);
+    const examXp = Math.max(0, xp - quizXp - masteryXp);
 
     const practicePercent = Math.min(100, Math.round((quizXp / xp) * 100));
     const masteryPercent = Math.min(100, Math.round((masteryXp / xp) * 100));
-    const examsPercent = Math.min(100, Math.round((examXp / xp) * 100));
-    const tutorPercent = Math.max(0, 100 - practicePercent - masteryPercent - examsPercent);
+    const examsPercent = Math.max(0, 100 - practicePercent - masteryPercent);
 
     return {
       practice: practicePercent,
       mastery: masteryPercent,
-      exams: examsPercent,
-      tutor: tutorPercent
+      exams: examsPercent
     };
-  }, [xp, totalCorrect, progress.completedTopics, progress.dailyTutorMessagesCount]);
+  }, [xp, totalCorrect, progress.completedTopics]);
+
+  const accuracyColor = useMemo(() => {
+    if (accuracyRate >= 80) return "#22c55e"; // Green
+    if (accuracyRate >= 50) return "#eab308"; // Yellow
+    return "#ef4444"; // Red
+  }, [accuracyRate]);
+
+  const getBarColor = (mins: number) => {
+    if (mins >= 45) return "bg-emerald-500/60 hover:bg-emerald-400";
+    if (mins >= 15) return "bg-yellow-500/50 hover:bg-yellow-400";
+    return "bg-red-500/40 hover:bg-red-400";
+  };
 
   // Real tracked weekly study minutes from studyTimeLogs YYYY-MM-DD
   const weeklyStudyStats = useMemo(() => {
@@ -422,10 +490,14 @@ export default function ProgressPage() {
               </div>
 
               {/* Central Streak Flame Widget */}
-              <div className="flex flex-col items-center py-4 bg-white/[0.01] border border-white/5 rounded-xl">
-                <div className="flex items-center justify-center w-16 h-16 mb-2">
-                  <Flame className="w-10 h-10 text-white/80" />
-                </div>
+              <div className={`flex flex-col items-center py-4 rounded-xl border relative overflow-hidden w-full transition-all duration-300 ${streakStyle.borderColor} ${streakStyle.bgClass}`}>
+                <div className={`absolute inset-0 bg-gradient-to-br ${streakStyle.glowClass} pointer-events-none -z-10`} />
+                <motion.div 
+                  animate={streakStyle.animateProps as any}
+                  className="flex items-center justify-center w-16 h-16 mb-2"
+                >
+                  <Flame className={`w-10 h-10 ${streakStyle.flameColor}`} />
+                </motion.div>
                 <div className="font-instrument text-3xl font-extrabold text-white">
                   {streakCount} <span className="text-xs font-manrope font-bold text-white/50 uppercase tracking-widest">Days</span>
                 </div>
@@ -573,16 +645,6 @@ export default function ProgressPage() {
                 </div>
               </div>
 
-              {/* AI chat assistant reviews */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-xs font-mono">
-                  <span className="text-white/60">AI Tutor Mentor</span>
-                  <span className="font-bold text-white/80">{xpBreakdown.tutor}%</span>
-                </div>
-                <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                  <div className="h-full bg-white/50 rounded-full" style={{ width: `${xpBreakdown.tutor}%` }} />
-                </div>
-              </div>
             </div>
           </motion.div>
 
@@ -626,7 +688,7 @@ export default function ProgressPage() {
                         initial={{ height: 0 }}
                         animate={{ height: `${heightPercent}%` }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.03 }}
-                        className="w-full bg-white/40 rounded-t transition-all duration-200"
+                        className={`w-full rounded-t transition-all duration-200 ${getBarColor(item.minutes)}`}
                       />
                     </div>
                     <span className="text-[10px] font-mono font-bold text-white/30 mt-1.5 group-hover/bar:text-white transition-colors">{item.dayLabel}</span>
@@ -680,7 +742,7 @@ export default function ProgressPage() {
                     cx="48"
                     cy="48"
                     r="40"
-                    stroke="rgba(255,255,255,0.4)"
+                    stroke={accuracyColor}
                     strokeWidth="6"
                     fill="transparent"
                     strokeDasharray={2 * Math.PI * 40}
@@ -716,13 +778,17 @@ export default function ProgressPage() {
       {/* Account Profile Stats Modal */}
       <AnimatePresence>
         {showAccountPopup && (
-          <div className="fixed inset-0 bg-black/85 backdrop-blur-xl z-[999999] flex items-center justify-center p-4">
+          <div 
+            className="fixed inset-0 bg-black/85 backdrop-blur-xl z-[999999] flex items-center justify-center p-4"
+            onClick={() => setShowAccountPopup(false)}
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ type: "spring", duration: 0.4 }}
               className="w-full max-w-lg bg-[#07080e] border border-white/10 rounded-2xl overflow-hidden relative shadow-2xl p-8 text-white"
+              onClick={(e) => e.stopPropagation()}
             >
               <button 
                 onClick={() => setShowAccountPopup(false)}
