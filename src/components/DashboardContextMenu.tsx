@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Search, User, Calendar, LogOut, Compass, Sparkles, BookOpen } from "lucide-react";
+import { Search, User, Calendar, LogOut, Compass, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
@@ -49,16 +49,50 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
     return () => window.removeEventListener("contextmenu", handleContextMenu);
   }, []);
 
-  // Keyboard shortcut for search (Cmd+K or Ctrl+K)
+  // Keyboard shortcut listener when menu is active
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    if (!visible) return;
+
+    const handleMenuKeys = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      
+      const key = e.key.toLowerCase();
+      if (key === "s") {
+        e.preventDefault();
+        setVisible(false);
+        setSearchOpen(true);
+      } else if (key === "p") {
+        e.preventDefault();
+        setVisible(false);
+        onOpenProfile();
+      } else if (key === "v") {
+        e.preventDefault();
+        setVisible(false);
+        router.push("/dashboard/progress");
+      } else if (key === "q") {
+        e.preventDefault();
+        setVisible(false);
+        handleSignOut();
+      } else if (key === "escape") {
+        e.preventDefault();
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleMenuKeys);
+    return () => window.removeEventListener("keydown", handleMenuKeys);
+  }, [visible, onOpenProfile, router]);
+
+  // Global search trigger (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleGlobalSearch = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setSearchOpen(true);
       }
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleGlobalSearch);
+    return () => window.removeEventListener("keydown", handleGlobalSearch);
   }, []);
 
   // Hide context menu on click outside
@@ -66,15 +100,13 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setVisible(false);
-      } else if (!menuRef.current) {
-        setVisible(false);
       }
     };
     window.addEventListener("click", handleClickOutside);
     return () => window.removeEventListener("click", handleClickOutside);
   }, []);
 
-  // Auto-focus search input when opened
+  // Focus input when Search opens
   useEffect(() => {
     if (searchOpen) {
       setTimeout(() => {
@@ -127,32 +159,29 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
         {visible && (
           <motion.div
             ref={menuRef}
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.15 }}
-            className="fixed z-[99999] w-64 rounded-2xl bg-neutral-950/85 backdrop-blur-2xl border border-white/10 p-2 shadow-[0_12px_40px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.1)] text-white"
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={{ duration: 0.1 }}
+            className="fixed z-[999999] w-52 rounded-xl bg-neutral-900/90 backdrop-blur-2xl border border-white/10 p-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.05)] text-white/90"
             style={{
-              top: `${Math.min(position.y, window.innerHeight - 240)}px`,
-              left: `${Math.min(position.x, window.innerWidth - 270)}px`,
+              top: `${Math.min(position.y, window.innerHeight - 200)}px`,
+              left: `${Math.min(position.x, window.innerWidth - 220)}px`,
             }}
           >
-            <div className="px-3 py-1.5 text-[10px] font-manrope font-bold text-white/40 uppercase tracking-[0.2em] border-b border-white/5 mb-1.5 flex items-center justify-between">
-              <span>AP LAB MENU</span>
-              <Sparkles className="w-3 h-3 text-cyan-400" />
-            </div>
-
             <button
               onClick={() => {
                 setVisible(false);
                 setSearchOpen(true);
               }}
-              className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-sm text-white/80 hover:text-white hover:bg-white/5 transition-all text-left"
+              className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all text-left"
             >
-              <Search className="w-4 h-4 text-cyan-400" />
-              <div className="flex-1 flex justify-between items-center">
-                <span>Search Platform</span>
-                <span className="text-[10px] font-mono text-white/40 bg-white/5 px-1.5 py-0.5 rounded">⌘K</span>
+              <div className="flex items-center space-x-2.5">
+                <Search className="w-3.5 h-3.5 text-white/40" />
+                <span>Search</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <span className="text-[9px] font-mono text-white/30 bg-white/5 border border-white/10 px-1 py-0.2 rounded">S</span>
               </div>
             </button>
 
@@ -161,10 +190,13 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 setVisible(false);
                 onOpenProfile();
               }}
-              className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-sm text-white/80 hover:text-white hover:bg-white/5 transition-all text-left"
+              className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all text-left"
             >
-              <User className="w-4 h-4 text-blue-400" />
-              <span>Open Profile</span>
+              <div className="flex items-center space-x-2.5">
+                <User className="w-3.5 h-3.5 text-white/40" />
+                <span>Profile</span>
+              </div>
+              <span className="text-[9px] font-mono text-white/30 bg-white/5 border border-white/10 px-1 py-0.2 rounded">P</span>
             </button>
 
             <button
@@ -172,23 +204,29 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 setVisible(false);
                 router.push("/dashboard/progress");
               }}
-              className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-sm text-white/80 hover:text-white hover:bg-white/5 transition-all text-left"
+              className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all text-left"
             >
-              <Calendar className="w-4 h-4 text-emerald-400" />
-              <span>View Progress</span>
+              <div className="flex items-center space-x-2.5">
+                <Calendar className="w-3.5 h-3.5 text-white/40" />
+                <span>Progress</span>
+              </div>
+              <span className="text-[9px] font-mono text-white/30 bg-white/5 border border-white/10 px-1 py-0.2 rounded">V</span>
             </button>
 
-            <div className="h-[1px] bg-white/5 my-1.5" />
+            <div className="h-[1px] bg-white/5 my-1" />
 
             <button
               onClick={() => {
                 setVisible(false);
                 handleSignOut();
               }}
-              className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-sm text-red-400 hover:bg-red-950/20 transition-all text-left"
+              className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium text-red-400 hover:bg-red-950/20 hover:text-red-300 transition-all text-left"
             >
-              <LogOut className="w-4 h-4" />
-              <span>Sign Out</span>
+              <div className="flex items-center space-x-2.5">
+                <LogOut className="w-3.5 h-3.5 opacity-60" />
+                <span>Sign Out</span>
+              </div>
+              <span className="text-[9px] font-mono text-red-400/40 bg-red-950/20 border border-red-500/10 px-1 py-0.2 rounded">Q</span>
             </button>
           </motion.div>
         )}
@@ -197,53 +235,53 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
       {/* Command Palette Search Modal */}
       <AnimatePresence>
         {searchOpen && (
-          <div className="fixed inset-0 z-[999999] flex items-start justify-center pt-[15vh] px-4">
+          <div className="fixed inset-0 z-[9999999] flex items-start justify-center pt-[12vh] px-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSearchOpen(false)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-black/85 backdrop-blur-md"
             />
 
             {/* Modal Box */}
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.98 }}
+              initial={{ opacity: 0, y: -16, scale: 0.99 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.98 }}
-              transition={{ type: "spring", duration: 0.4 }}
-              className="relative w-full max-w-2xl bg-neutral-950/90 border border-white/10 rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.1)] flex flex-col max-h-[60vh] text-white"
+              exit={{ opacity: 0, y: -16, scale: 0.99 }}
+              transition={{ type: "spring", duration: 0.35 }}
+              className="relative w-full max-w-3xl bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-[0_32px_100px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.05)] flex flex-col max-h-[70vh] text-white"
             >
               {/* Header Search Input */}
-              <div className="flex items-center px-6 py-4.5 border-b border-white/10 relative">
-                <Search className="w-5 h-5 text-white/50 mr-4 shrink-0" />
+              <div className="flex items-center px-6 py-5 border-b border-white/5 relative">
+                <Search className="w-5 h-5 text-white/30 mr-4.5 shrink-0" />
                 <input
                   ref={searchInputRef}
                   type="text"
-                  placeholder="Search pages, classes, progress, general tools..."
+                  placeholder="Search AP topics, pages, and account actions..."
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
                     setSelectedIndex(0);
                   }}
                   onKeyDown={handleSearchKeyDown}
-                  className="w-full bg-transparent border-0 outline-none text-white text-base placeholder-white/40 focus:ring-0"
+                  className="w-full bg-transparent border-0 outline-none text-white text-lg placeholder-white/30 focus:ring-0"
                 />
                 <button
                   onClick={() => setSearchOpen(false)}
-                  className="text-xs text-white/40 bg-white/5 hover:bg-white/10 px-2 py-1 rounded-lg transition-all"
+                  className="text-[10px] font-mono tracking-widest text-white/40 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md transition-all shrink-0 hover:bg-white/10"
                 >
                   ESC
                 </button>
               </div>
 
               {/* Scrollable List */}
-              <div className="flex-1 overflow-y-auto p-3 space-y-1.5 scrollbar-hide">
+              <div className="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-hide">
                 {filteredPages.length === 0 ? (
-                  <div className="py-12 text-center text-white/40">
-                    <Compass className="w-8 h-8 mx-auto mb-3 opacity-30 animate-pulse" />
-                    <p className="text-sm">No pages found matching "{searchQuery}"</p>
+                  <div className="py-16 text-center text-white/30">
+                    <Compass className="w-10 h-10 mx-auto mb-3 opacity-20" />
+                    <p className="text-sm font-medium">No results found matching "{searchQuery}"</p>
                   </div>
                 ) : (
                   filteredPages.map((page, index) => {
@@ -256,34 +294,31 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                           setSearchOpen(false);
                         }}
                         onMouseEnter={() => setSelectedIndex(index)}
-                        className={`w-full flex items-start text-left px-4 py-3 rounded-2xl transition-all duration-150 relative ${
+                        className={`w-full flex items-center justify-between text-left px-5 py-4 rounded-xl transition-all duration-100 ${
                           isSelected
-                            ? "bg-white/[0.08] text-white shadow-[0_4px_16px_rgba(255,255,255,0.02)]"
-                            : "text-white/60 hover:text-white"
+                            ? "bg-white/[0.05] text-white shadow-sm"
+                            : "text-white/70 hover:text-white"
                         }`}
                       >
-                        <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-white/5 border border-white/10 mr-4.5 shrink-0 mt-0.5">
-                          {page.category === "Classes" ? (
-                            <BookOpen className="w-4 h-4 text-cyan-400" />
-                          ) : page.category === "Core" ? (
-                            <Sparkles className="w-4 h-4 text-emerald-400" />
-                          ) : (
-                            <Compass className="w-4 h-4 text-blue-400" />
-                          )}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between">
-                            <span className="font-semibold text-sm truncate">{page.name}</span>
-                            <span className={`text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold ${
-                              page.category === "Classes" ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20" :
-                              page.category === "Core" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" :
-                              "bg-blue-500/10 text-blue-400 border border-blue-500/20"
-                            }`}>
-                              {page.category}
-                            </span>
+                        <div className="flex items-center space-x-4 min-w-0 mr-4">
+                          <div className={`flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 border border-white/5 shrink-0 transition-colors ${
+                            isSelected ? "border-white/15 bg-white/10" : ""
+                          }`}>
+                            {page.category === "Classes" ? (
+                              <BookOpen className="w-4 h-4 text-white/50" />
+                            ) : (
+                              <Compass className="w-4 h-4 text-white/50" />
+                            )}
                           </div>
-                          <p className="text-xs text-white/40 mt-1 truncate">{page.desc}</p>
+                          <div className="min-w-0">
+                            <span className="font-semibold text-sm block leading-none">{page.name}</span>
+                            <span className="text-xs text-white/40 block mt-1.5 truncate leading-none font-medium">{page.desc}</span>
+                          </div>
                         </div>
+                        
+                        <span className="text-[10px] font-mono tracking-[0.15em] text-white/30 uppercase shrink-0 font-bold">
+                          {page.category}
+                        </span>
                       </button>
                     );
                   })

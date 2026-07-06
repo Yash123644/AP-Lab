@@ -11,6 +11,26 @@ html {
   scroll-behavior: smooth;
 }
 
+html.lenis, html.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html.lenis-smooth body {
+  overflow: anchor;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-prevent {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

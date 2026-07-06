@@ -24,6 +24,11 @@ interface UserProgress {
   photoURL?: string;
   email?: string;
   uid?: string;
+  streakCount?: number;
+  maxStreak?: number;
+  streakLastActive?: string;
+  activityLogs?: { date: string; time: string; type: string; title: string; xp: number }[];
+  studyTimeLogs?: Record<string, number>;
 }
 
 interface ProgressContextType {
@@ -49,6 +54,11 @@ const defaultProgress: UserProgress = {
   photoURL: "",
   email: "",
   uid: "",
+  streakCount: 0,
+  maxStreak: 0,
+  streakLastActive: "",
+  activityLogs: [],
+  studyTimeLogs: {},
 };
 
 const ProgressContext = createContext<ProgressContextType>({
@@ -242,6 +252,65 @@ function LevelUpModal({ oldLevel, newLevel, onClose }: LevelUpModalProps) {
   );
 }
 
+const updateStreakAndLogs = (
+  currentProgress: UserProgress,
+  xpEarned: number,
+  activityType: string,
+  activityTitle: string,
+  studyMinutesEarned: number
+): UserProgress => {
+  const todayStr = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+
+  let streakCount = currentProgress.streakCount || 0;
+  let maxStreak = currentProgress.maxStreak || 0;
+  const streakLastActive = currentProgress.streakLastActive || "";
+
+  if (streakLastActive === "") {
+    streakCount = 1;
+  } else if (streakLastActive === todayStr) {
+    // Stays the same
+  } else {
+    try {
+      const lastActiveDate = new Date(streakLastActive + 'T00:00:00');
+      const todayDate = new Date(todayStr + 'T00:00:00');
+      const diffTime = Math.abs(todayDate.getTime() - lastActiveDate.getTime());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      if (diffDays === 1) {
+        streakCount += 1;
+      } else if (diffDays > 1) {
+        streakCount = 1;
+      }
+    } catch (e) {
+      streakCount = 1;
+    }
+  }
+  maxStreak = Math.max(maxStreak, streakCount);
+
+  const newLog = {
+    date: todayStr,
+    time: timeStr,
+    type: activityType,
+    title: activityTitle,
+    xp: xpEarned
+  };
+  const activityLogs = [newLog, ...(currentProgress.activityLogs || [])].slice(0, 100);
+
+  const studyTimeLogs = { ...(currentProgress.studyTimeLogs || {}) };
+  studyTimeLogs[todayStr] = (studyTimeLogs[todayStr] || 0) + studyMinutesEarned;
+
+  return {
+    ...currentProgress,
+    streakCount,
+    maxStreak,
+    streakLastActive: todayStr,
+    activityLogs,
+    studyTimeLogs
+  };
+};
+
 export const ProgressProvider = ({ children }: { children: React.ReactNode }) => {
   const { currentUser } = useAuth();
   const [progress, setProgress] = useState<UserProgress>(defaultProgress);
@@ -404,13 +473,19 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           photoURL: firestoreData.photoURL || localProgress?.photoURL || currentUser.photoURL || "",
           email: firestoreData.email || localProgress?.email || currentUser.email || "",
           uid: firestoreData.uid || localProgress?.uid || currentUser.uid || "",
+          streakCount: Math.max(firestoreData.streakCount || 0, localProgress?.streakCount || 0, guestProgress?.streakCount || 0),
+          maxStreak: Math.max(firestoreData.maxStreak || 0, localProgress?.maxStreak || 0, guestProgress?.maxStreak || 0),
+          streakLastActive: firestoreData.streakLastActive || localProgress?.streakLastActive || guestProgress?.streakLastActive || "",
+          activityLogs: firestoreData.activityLogs || localProgress?.activityLogs || guestProgress?.activityLogs || [],
+          studyTimeLogs: firestoreData.studyTimeLogs || localProgress?.studyTimeLogs || guestProgress?.studyTimeLogs || {},
         };
 
         // Sync back to Firestore if Firestore is out of sync or guest migration is needed
         const needsFirestoreWrite = 
           firestoreData.xp !== merged.xp || 
           firestoreData.level !== merged.level || 
-          (firestoreData.completedTopics || []).length !== merged.completedTopics.length;
+          (firestoreData.completedTopics || []).length !== merged.completedTopics.length ||
+          firestoreData.streakCount !== merged.streakCount;
 
         if (needsFirestoreWrite || (guestProgress && (guestProgress.xp || 0) > 0)) {
           console.log("Firestore is out of sync or guest migration needed. Syncing merged progress to Firestore...");
@@ -421,7 +496,12 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
             totalQuestionsCorrect: merged.totalQuestionsCorrect,
             xp: merged.xp,
             level: merged.level,
-            lastAccessed: serverTimestamp()
+            lastAccessed: serverTimestamp(),
+            streakCount: merged.streakCount,
+            maxStreak: merged.maxStreak,
+            streakLastActive: merged.streakLastActive,
+            activityLogs: merged.activityLogs,
+            studyTimeLogs: merged.studyTimeLogs
           }, { merge: true }).then(() => {
             if (guestProgress) {
               try {
@@ -459,6 +539,11 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           photoURL: currentUser.photoURL || "",
           email: currentUser.email || "",
           uid: currentUser.uid,
+          streakCount: guestProgress?.streakCount || 0,
+          maxStreak: guestProgress?.maxStreak || 0,
+          streakLastActive: guestProgress?.streakLastActive || "",
+          activityLogs: guestProgress?.activityLogs || [],
+          studyTimeLogs: guestProgress?.studyTimeLogs || {},
         };
 
         setProgress(initialDoc);
@@ -505,7 +590,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       const newLevel = getLevelForXp(newXp);
       const isLevelUp = newLevel > oldLevel;
 
-      const updatedProgress: UserProgress = {
+      let updatedProgress: UserProgress = {
         ...progress,
         completedTopics: isFirstTime
           ? [...progress.completedTopics, topicId]
@@ -518,6 +603,16 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         level: newLevel,
         lastAccessed: new Date()
       };
+
+      const courseNameClean = topicId.split("-").slice(0, 2).join(" ").toUpperCase();
+      const topicNumClean = topicId.split("-").slice(2).join(".");
+      updatedProgress = updateStreakAndLogs(
+        updatedProgress,
+        xpEarned,
+        "mastery",
+        `Mastered Topic ${topicNumClean} in ${courseNameClean}`,
+        15
+      );
 
       if (xpEarned > 0) {
         triggerXpToast(xpEarned, "Section Completed!", "section");
@@ -540,14 +635,16 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       // 2. Sync to Firestore in the background
       if (docRef) {
         await setDoc(docRef, {
-          completedTopics: arrayUnion(topicId),
-          masteryScores: {
-            ...progress.masteryScores,
-            [topicId]: newScore
-          },
-          xp: newXp,
-          level: newLevel,
-          lastAccessed: serverTimestamp()
+          completedTopics: updatedProgress.completedTopics,
+          masteryScores: updatedProgress.masteryScores,
+          xp: updatedProgress.xp,
+          level: updatedProgress.level,
+          lastAccessed: serverTimestamp(),
+          streakCount: updatedProgress.streakCount,
+          maxStreak: updatedProgress.maxStreak,
+          streakLastActive: updatedProgress.streakLastActive,
+          activityLogs: updatedProgress.activityLogs,
+          studyTimeLogs: updatedProgress.studyTimeLogs
         }, { merge: true });
       }
 
@@ -572,7 +669,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       const newLevel = getLevelForXp(newXp);
       const isLevelUp = newLevel > oldLevel;
 
-      const updatedProgress: UserProgress = {
+      let updatedProgress: UserProgress = {
         ...progress,
         totalQuestionsAnswered: updatedAnswered,
         totalQuestionsCorrect: updatedCorrect,
@@ -580,6 +677,24 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         level: newLevel,
         lastAccessed: new Date()
       };
+
+      if (isCorrect) {
+        updatedProgress = updateStreakAndLogs(
+          updatedProgress,
+          xpEarned,
+          "quiz",
+          `Solved practice question correctly`,
+          2
+        );
+      } else {
+        updatedProgress = updateStreakAndLogs(
+          updatedProgress,
+          0,
+          "quiz",
+          `Attempted practice question`,
+          2
+        );
+      }
 
       if (xpEarned > 0) {
         triggerXpToast(xpEarned, isCompleted ? "Practice Repeated (Halved XP)" : "Question Correct!", "question");
@@ -602,11 +717,16 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       // 2. Sync to Firestore in the background
       if (docRef) {
         setDoc(docRef, {
-          totalQuestionsAnswered: updatedAnswered,
-          totalQuestionsCorrect: updatedCorrect,
-          xp: newXp,
-          level: newLevel,
-          lastAccessed: serverTimestamp()
+          totalQuestionsAnswered: updatedProgress.totalQuestionsAnswered,
+          totalQuestionsCorrect: updatedProgress.totalQuestionsCorrect,
+          xp: updatedProgress.xp,
+          level: updatedProgress.level,
+          lastAccessed: serverTimestamp(),
+          streakCount: updatedProgress.streakCount,
+          maxStreak: updatedProgress.maxStreak,
+          streakLastActive: updatedProgress.streakLastActive,
+          activityLogs: updatedProgress.activityLogs,
+          studyTimeLogs: updatedProgress.studyTimeLogs
         }, { merge: true }).catch((err) => {
           console.error("Error syncing question attempt to Firestore:", err);
         });
@@ -627,12 +747,20 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         const isSameDay = prev.dailyTutorMessagesDate === todayStr;
         const newCount = isSameDay ? (prev.dailyTutorMessagesCount || 0) + 1 : 1;
 
-        const updatedProgress: UserProgress = {
+        let updatedProgress: UserProgress = {
           ...prev,
           dailyTutorMessagesCount: newCount,
           dailyTutorMessagesDate: todayStr,
           lastAccessed: new Date()
         };
+
+        updatedProgress = updateStreakAndLogs(
+          updatedProgress,
+          0,
+          "tutor",
+          "Consulted AI tutor assistant",
+          3
+        );
 
         // 1. Immediately update LocalStorage
         try {
@@ -646,7 +774,12 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           setDoc(docRef, {
             dailyTutorMessagesCount: newCount,
             dailyTutorMessagesDate: todayStr,
-            lastAccessed: serverTimestamp()
+            lastAccessed: serverTimestamp(),
+            streakCount: updatedProgress.streakCount,
+            maxStreak: updatedProgress.maxStreak,
+            streakLastActive: updatedProgress.streakLastActive,
+            activityLogs: updatedProgress.activityLogs,
+            studyTimeLogs: updatedProgress.studyTimeLogs
           }, { merge: true }).catch((err) => {
             console.error("Error syncing message count to Firestore:", err);
           });
@@ -675,7 +808,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       const newLevel = getLevelForXp(newXp);
       const isLevelUp = newLevel > oldLevel;
 
-      const updatedProgress: UserProgress = {
+      let updatedProgress: UserProgress = {
         ...progress,
         totalQuestionsAnswered: updatedAnswered,
         totalQuestionsCorrect: updatedCorrect,
@@ -683,6 +816,14 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         level: newLevel,
         lastAccessed: new Date()
       };
+
+      updatedProgress = updateStreakAndLogs(
+        updatedProgress,
+        xpEarned,
+        "exam",
+        `Finished Mock Exam with ${correctCount}/${totalQuestions} score`,
+        20
+      );
 
       if (xpEarned > 0) {
         triggerXpToast(xpEarned, `Mock Exam Finished!`, "section");
@@ -703,11 +844,16 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
       if (docRef) {
         setDoc(docRef, {
-          totalQuestionsAnswered: updatedAnswered,
-          totalQuestionsCorrect: updatedCorrect,
-          xp: newXp,
-          level: newLevel,
-          lastAccessed: serverTimestamp()
+          totalQuestionsAnswered: updatedProgress.totalQuestionsAnswered,
+          totalQuestionsCorrect: updatedProgress.totalQuestionsCorrect,
+          xp: updatedProgress.xp,
+          level: updatedProgress.level,
+          lastAccessed: serverTimestamp(),
+          streakCount: updatedProgress.streakCount,
+          maxStreak: updatedProgress.maxStreak,
+          streakLastActive: updatedProgress.streakLastActive,
+          activityLogs: updatedProgress.activityLogs,
+          studyTimeLogs: updatedProgress.studyTimeLogs
         }, { merge: true }).catch((err) => {
           console.error("Error syncing mock exam to Firestore:", err);
         });

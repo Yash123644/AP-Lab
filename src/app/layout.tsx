@@ -5,6 +5,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { UIProvider } from "@/context/UIContext";
 import { ProgressProvider } from "@/context/ProgressContext";
 import { LiquidFilter } from "@/components/LiquidFilter";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -78,7 +79,9 @@ export default function RootLayout({
         <AuthProvider>
           <ProgressProvider>
             <UIProvider>
-              {children}
+              <SmoothScroll>
+                {children}
+              </SmoothScroll>
             </UIProvider>
           </ProgressProvider>
         </AuthProvider>
