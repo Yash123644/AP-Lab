@@ -4,6 +4,7 @@ import { LevelBadge } from "@/components/LevelBadge";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { Flame } from "lucide-react";
 
 const showcaseImages = [
   "/images/dashboard-live.webp",
@@ -316,13 +317,22 @@ export function AppShowcase() {
                 <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">PROGRESS TRACKING</span>
                 <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">Real-Time Performance Metrics.</h3>
                 <p className="text-white/50 font-inter text-xs max-w-md mt-1.5 leading-relaxed">
-                  Track your mastery indices, current study streaks, and estimated AP scores per course.
+                  Track your mastery indices, syllabus progress, and current study streaks per course.
                 </p>
               </div>
               
               {/* Daily Streak Indicator */}
               <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5 backdrop-blur-md self-start md:self-auto">
-                <span className="text-[20px]">🔥</span>
+                <motion.div 
+                  animate={{ 
+                    scale: [1, 1.1, 0.95, 1.05, 1],
+                    filter: ["drop-shadow(0 0 2px rgba(245,158,11,0.4))", "drop-shadow(0 0 8px rgba(245,158,11,0.7))", "drop-shadow(0 0 2px rgba(245,158,11,0.4))"]
+                  }}
+                  transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                  className="text-amber-500 shrink-0"
+                >
+                  <Flame className="w-6 h-6 fill-amber-500 text-amber-400" />
+                </motion.div>
                 <div className="flex flex-col">
                   <span className="text-white font-manrope font-extrabold text-[15px] leading-none">14 Days</span>
                   <span className="text-[9px] font-mono text-white/30 tracking-wider uppercase mt-1">Study Streak</span>
@@ -348,7 +358,6 @@ export function AppShowcase() {
                   </div>
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
                     <span>Mastered: 18/22 topics</span>
-                    <span>Score: 5</span>
                   </div>
                 </div>
               </div>
@@ -369,7 +378,6 @@ export function AppShowcase() {
                   </div>
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
                     <span>Mastered: 15/20 topics</span>
-                    <span>Score: 4</span>
                   </div>
                 </div>
               </div>
@@ -390,7 +398,6 @@ export function AppShowcase() {
                   </div>
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
                     <span>Mastered: 20/22 topics</span>
-                    <span>Score: 5</span>
                   </div>
                 </div>
               </div>

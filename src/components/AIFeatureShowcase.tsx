@@ -89,8 +89,8 @@ function AnimatedArticleHighlight() {
     initial: { opacity: 0, left: "5%", top: "15px", scale: 1 },
     hover: {
       opacity: [0, 1, 1, 1, 1, 1, 0],
-      left: ["5%", "5%", "90%", "50%", "50%", "50%", "50%"],
-      top: ["15px", "15px", "70px", "-15px", "-15px", "-15px", "-15px"],
+      left: ["5%", "5%", "90%", "51%", "51%", "51%", "51%"],
+      top: ["15px", "15px", "70px", "-32px", "-32px", "-32px", "-32px"],
       scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
         duration: 2.5,
