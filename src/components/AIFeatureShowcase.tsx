@@ -59,38 +59,66 @@ function GoogleDocCursor() {
 function AnimatedArticleHighlight() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const highlightVariants: Variants = {
+  const highlight1Variants: Variants = {
     initial: { width: "0%" },
     hover: {
-      width: "100%",
-      transition: { duration: 1.0, delay: 0.2, ease: "easeOut" }
+      width: ["0%", "0%", "100%", "100%"],
+      transition: {
+        duration: 3.8,
+        times: [0, 0.05, 0.26, 1],
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const highlight2Variants: Variants = {
+    initial: { width: "0%" },
+    hover: {
+      width: ["0%", "0%", "100%", "100%"],
+      transition: {
+        duration: 3.8,
+        times: [0, 0.32, 0.53, 1],
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const highlight3Variants: Variants = {
+    initial: { width: "0%" },
+    hover: {
+      width: ["0%", "0%", "65%", "65%"],
+      transition: {
+        duration: 3.8,
+        times: [0, 0.58, 0.74, 1],
+        ease: "easeOut"
+      }
     }
   };
 
   const popoverVariants: Variants = {
     initial: { opacity: 0, y: 10, scale: 0.95 },
     hover: {
-      opacity: [0, 0, 1, 1, 1, 1, 1],
-      y: [10, 10, 0, 0, 0, 0, 0],
-      scale: [0.95, 0.95, 1, 1, 0.92, 1, 1], // Click shrink simulation
+      opacity: [0, 0, 1, 1, 1, 0],
+      y: [10, 10, 0, 0, 0, 0],
+      scale: [0.95, 0.95, 1, 0.92, 1, 1], // Click shrink simulation
       transition: {
-        duration: 2.2,
-        times: [0, 0.55, 0.68, 0.77, 0.77, 0.86, 1],
+        duration: 3.8,
+        times: [0, 0.74, 0.82, 0.84, 0.87, 1],
         ease: "easeInOut"
       }
     }
   };
 
   const cursorVariants: Variants = {
-    initial: { opacity: 0, left: "5%", top: "50%", scale: 1 },
+    initial: { opacity: 0, left: "0%", top: "15px", scale: 1 },
     hover: {
-      opacity: [0, 1, 1, 1, 1, 1, 0],
-      left: ["5%", "5%", "95%", "50%", "50%", "50%", "50%"],
-      top: ["50%", "50%", "50%", "-15px", "-15px", "-15px", "-15px"],
-      scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
+      opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+      left: ["0%", "0%", "100%", "0%", "100%", "0%", "65%", "50%", "50%", "50%", "50%"],
+      top: ["15px", "15px", "15px", "45px", "45px", "75px", "75px", "-25px", "-25px", "-25px", "-25px"],
+      scale: [1, 1, 1, 1, 1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
-        duration: 2.2,
-        times: [0, 0.09, 0.55, 0.68, 0.77, 0.86, 1],
+        duration: 3.8,
+        times: [0, 0.05, 0.26, 0.32, 0.53, 0.58, 0.74, 0.82, 0.84, 0.87, 1],
         ease: "easeInOut"
       }
     }
@@ -131,46 +159,70 @@ function AnimatedArticleHighlight() {
           <div className="h-3.5 w-full bg-white/5 rounded-full" />
           <div className="h-3.5 w-5/6 bg-white/5 rounded-full" />
           
-          <div className="relative mt-6 space-y-4">
-            <div className="text-white/50 font-inter text-[14px] leading-relaxed">
-              Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
-              <br/><br/>
-              Chemical energy produced by the mitochondria is stored in a small molecule called{" "}
-              <span className="relative inline-block py-0.5 px-1 text-white">
-                {/* Highlight Span (Blue Highlight Effect) */}
+          <div className="relative mt-6 p-1">
+            <div className="relative text-white/50 font-inter text-[13.5px] leading-[30px]">
+              
+              {/* Line 1 */}
+              <div className="relative w-full h-[30px] whitespace-nowrap">
                 <motion.span 
-                  variants={highlightVariants}
+                  variants={highlight1Variants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute inset-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
+                  className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
                 />
                 <span className="relative z-10 text-white/90">
-                  adenosine triphosphate (ATP).
+                  Mitochondria are membrane-bound cell organelles that
                 </span>
-                
-                {/* Popover */}
-                <motion.div
-                  variants={popoverVariants}
-                  initial="initial"
-                  animate={isHovered ? "hover" : "initial"}
-                  className="absolute -top-12 left-1/2 -translate-x-1/2 z-50 pb-2 pointer-events-none"
-                >
-                  <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
-                    <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
-                  </div>
-                </motion.div>
+              </div>
 
-                {/* Animated Cursor */}
-                <motion.div
-                  variants={cursorVariants}
+              {/* Line 2 */}
+              <div className="relative w-full h-[30px] whitespace-nowrap mt-1">
+                <motion.span 
+                  variants={highlight2Variants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute z-[60] pointer-events-none"
-                  style={{ x: "-50%", y: "-50%" }}
-                >
-                  <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
-                </motion.div>
-              </span>
+                  className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
+                />
+                <span className="relative z-10 text-white/90">
+                  generate most of the chemical energy needed to power
+                </span>
+              </div>
+
+              {/* Line 3 */}
+              <div className="relative w-full h-[30px] whitespace-nowrap mt-1">
+                <motion.span 
+                  variants={highlight3Variants}
+                  initial="initial"
+                  animate={isHovered ? "hover" : "initial"}
+                  className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
+                />
+                <span className="relative z-10 text-white/90 font-semibold text-white">
+                  the cell's biochemical reactions.
+                </span>
+              </div>
+              
+              {/* Popover */}
+              <motion.div
+                variants={popoverVariants}
+                initial="initial"
+                animate={isHovered ? "hover" : "initial"}
+                className="absolute -top-12 left-1/2 -translate-x-1/2 z-50 pb-2 pointer-events-none"
+              >
+                <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
+                  <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
+                </div>
+              </motion.div>
+
+              {/* Animated Cursor */}
+              <motion.div
+                variants={cursorVariants}
+                initial="initial"
+                animate={isHovered ? "hover" : "initial"}
+                className="absolute z-[60] pointer-events-none"
+                style={{ x: "-50%", y: "-50%" }}
+              >
+                <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
+              </motion.div>
             </div>
           </div>
         </div>
