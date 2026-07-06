@@ -198,7 +198,7 @@ function AnimatedArticleHighlight() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 className="flex w-full justify-end"
               >
-                <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-white/10 border border-white/10 text-white rounded-br-sm">
+                <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-emerald-600 text-white rounded-br-sm">
                   Regarding this text: "Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP)."
                 </div>
               </motion.div>
@@ -316,7 +316,7 @@ function AnimatedChat() {
               <div className={cn(
                 "max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative",
                 msg.role === "user" 
-                  ? "bg-white/15 border border-white/10 text-white rounded-br-sm" 
+                  ? "bg-emerald-600 text-white rounded-br-sm shadow-md" 
                   : "bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md"
               )}>
                 {msg.text}

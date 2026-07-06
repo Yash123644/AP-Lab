@@ -38,6 +38,11 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
   </svg>
 );
+const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.18.94 1.13 2.27 1.9 3.73 2.16.01 1.29.01 2.58.01 3.87-1.46-.06-2.85-.64-3.95-1.58-.29-.25-.56-.52-.8-.82V14.5a7.5 7.5 0 1 1-8.5-7.44V11a3.5 3.5 0 1 0 4.5 3.36V0h.05z" />
+  </svg>
+);
 
 const footerSocials = [
   { name: "Discord", url: "https://discord.com/invite/dUSaevPETd", Icon: DiscordIcon },
@@ -47,6 +52,7 @@ const footerSocials = [
   { name: "YouTube", url: "https://www.youtube.com/@AP_Labss", Icon: YoutubeIcon },
   { name: "Reddit", url: "https://www.reddit.com/user/APLabs/", Icon: RedditIcon },
   { name: "Instagram", url: "https://www.instagram.com/ap.labb/", Icon: InstagramIcon },
+  { name: "TikTok", url: "https://www.tiktok.com/@ap_lab", Icon: TiktokIcon },
 ];
 
 export function Footer() {

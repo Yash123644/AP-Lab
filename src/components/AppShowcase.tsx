@@ -12,6 +12,8 @@ const showcaseImages = [
 ];
 
 export function AppShowcase() {
+  const [hoveredCard, setHoveredCard] = React.useState<number | null>(null);
+
   return (
     <section className="relative w-full py-[160px] px-6 md:px-[120px] bg-transparent overflow-hidden">
       {/* Seamless blend: fade in from above (deep-navy) and out to below (deep-navy) */}
@@ -57,10 +59,10 @@ export function AppShowcase() {
           >
             {/* Typography & Call to Action */}
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-amber-500/80 font-bold uppercase mb-1">GAMIFICATION</span>
+              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">GAMIFICATION</span>
               <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">Academic Progression & Badges.</h3>
               <p className="text-white/50 font-inter text-xs max-w-sm mt-2 leading-relaxed">
-                Earn XP across all courses to level up, morph your badges dynamically, and climb the live global leaderboard.
+                Earn XP across all courses to level up and climb the live global leaderboard.
               </p>
             </div>
 
@@ -93,72 +95,121 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Graphic: MacBook Pro Keyboard chassis and screen display with biological structure */}
-            <div className="relative w-full h-[220px] flex justify-center items-end z-10">
-              <div className="relative w-[85%] aspect-[16/10] bg-[#1a1a1a] rounded-t-xl border border-neutral-300 shadow-2xl p-1.5 flex flex-col justify-between">
-                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full" />
-                {/* SVG Biological Structure Screen */}
-                {/* SVG Biological Structure Screen */}
-                <div className="w-full h-full bg-[#0a0b0d] rounded-md overflow-hidden relative border border-white/5 flex items-center justify-center p-4">
-                  <svg className="w-full h-full text-white/80" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Helix base pair connector lines (detailed ladder) */}
-                    <line x1="25" y1="43" x2="25" y2="77" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="35" y1="30" x2="35" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="45" y1="24" x2="45" y2="96" stroke="white" strokeWidth="0.8" opacity="0.2" />
-                    <line x1="55" y1="30" x2="55" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="65" y1="43" x2="65" y2="77" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    
-                    <line x1="85" y1="77" x2="85" y2="43" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="95" y1="90" x2="95" y2="30" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="105" y1="96" x2="105" y2="24" stroke="white" strokeWidth="0.8" opacity="0.2" />
-                    <line x1="115" y1="90" x2="115" y2="30" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="125" y1="77" x2="125" y2="43" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    
-                    <line x1="145" y1="43" x2="145" y2="77" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="155" y1="30" x2="155" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
-                    <line x1="165" y1="24" x2="165" y2="96" stroke="white" strokeWidth="0.8" opacity="0.2" />
-                    <line x1="175" y1="30" x2="175" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
+            {/* 3 Spread Flashcards Stack */}
+            <div className="relative w-full h-[240px] flex items-center justify-center z-10 mt-4 overflow-visible">
+              <div className="relative w-full max-w-[280px] h-[180px] flex items-center justify-center overflow-visible">
+                
+                {/* Card 1: Biology (Enzyme Kinetics) */}
+                <motion.div
+                  onMouseEnter={() => setHoveredCard(0)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="absolute w-[150px] h-[190px] rounded-2xl border bg-[#0a0b0f] border-white/10 p-3 shadow-2xl flex flex-col justify-between cursor-pointer text-left"
+                  style={{
+                    left: "15px",
+                    top: "0px",
+                    zIndex: hoveredCard === 0 ? 30 : 10,
+                  }}
+                  animate={{
+                    rotate: hoveredCard === 0 ? 0 : -6,
+                    scale: hoveredCard === 0 ? 1.05 : 0.95,
+                    y: hoveredCard === 0 ? -12 : 0,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div>
+                    <span className="text-[7px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Biology</span>
+                    <h4 className="text-[10px] font-bold text-white mt-0.5 leading-tight">Enzyme Catalysis</h4>
+                  </div>
+                  {/* Simplistic activation energy graph */}
+                  <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center p-1.5">
+                    <svg className="w-full h-full text-white/50" viewBox="0 0 100 60" fill="none">
+                      <path d="M 5,50 L 95,50" stroke="white" strokeWidth="0.8" opacity="0.3" />
+                      <path d="M 10,50 L 10,10" stroke="white" strokeWidth="0.8" opacity="0.3" />
+                      {/* Uncatalyzed curve */}
+                      <path d="M 10,40 Q 35,5 50,20 T 90,45" stroke="#ef4444" strokeWidth="1.2" strokeDasharray="1.5,1.5" fill="none" opacity="0.6" />
+                      {/* Catalyzed curve */}
+                      <path d="M 10,40 Q 35,20 50,30 T 90,45" stroke="#22c55e" strokeWidth="1.5" fill="none" />
+                      
+                      <text x="35" y="15" fill="#ef4444" fontSize="4" opacity="0.8">Ea</text>
+                      <text x="75" y="40" fill="white" fontSize="4.5" opacity="0.5">Reaction</text>
+                    </svg>
+                  </div>
+                  <div className="text-[8px] text-white/40 font-mono text-center">Reactants → Products</div>
+                </motion.div>
 
-                    {/* DNA Strands */}
-                    <path d="M 15 60 C 35 20, 55 20, 75 60 C 95 100, 115 100, 135 60 C 155 20, 175 20, 190 60" stroke="url(#dnaGrad1)" strokeWidth="2.5" fill="none" />
-                    <path d="M 15 60 C 35 100, 55 100, 75 60 C 95 20, 115 20, 135 60 C 155 100, 175 100, 190 60" stroke="url(#dnaGrad2)" strokeWidth="2.5" fill="none" opacity="0.6" />
-                    
-                    {/* Helix Vertices Nodes (Detailed) */}
-                    <circle cx="45" cy="24" r="2.5" fill="#34c759" />
-                    <circle cx="45" cy="96" r="2" fill="#007aff" opacity="0.7" />
-                    
-                    <circle cx="105" cy="24" r="2" fill="#007aff" opacity="0.7" />
-                    <circle cx="105" cy="96" r="2.5" fill="#ff9500" />
-                    
-                    <circle cx="165" cy="24" r="2.5" fill="#007aff" />
-                    <circle cx="165" cy="96" r="2" fill="#34c759" opacity="0.7" />
+                {/* Card 2: Chemistry (Titration Curve) */}
+                <motion.div
+                  onMouseEnter={() => setHoveredCard(1)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="absolute w-[150px] h-[190px] rounded-2xl border bg-[#0a0b0f] border-white/10 p-3 shadow-2xl flex flex-col justify-between cursor-pointer text-left"
+                  style={{
+                    zIndex: hoveredCard === 1 ? 30 : 20,
+                    top: "-10px",
+                  }}
+                  animate={{
+                    rotate: hoveredCard === 1 ? 0 : 0,
+                    scale: hoveredCard === 1 ? 1.05 : 1,
+                    y: hoveredCard === 1 ? -12 : 0,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div>
+                    <span className="text-[7px] font-mono text-cyan-400 font-bold uppercase tracking-wider">Chemistry</span>
+                    <h4 className="text-[10px] font-bold text-white mt-0.5 leading-tight">pH Titration</h4>
+                  </div>
+                  {/* Simplistic titration S-curve */}
+                  <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center p-1.5">
+                    <svg className="w-full h-full text-white/50" viewBox="0 0 100 60" fill="none">
+                      <path d="M 5,50 L 95,50" stroke="white" strokeWidth="0.8" opacity="0.3" />
+                      <path d="M 10,50 L 10,10" stroke="white" strokeWidth="0.8" opacity="0.3" />
+                      {/* S curve */}
+                      <path d="M 15,45 C 40,45 40,15 65,15 T 90,12" stroke="#38bdf8" strokeWidth="1.5" fill="none" />
+                      {/* Equivalence point indicator */}
+                      <circle cx="52.5" cy="30" r="1.5" fill="#ef4444" />
+                      
+                      <text x="60" y="32" fill="white" fontSize="4" opacity="0.7">Equiv. Pt.</text>
+                      <text x="80" y="55" fill="white" fontSize="4.5" opacity="0.5">Volume</text>
+                    </svg>
+                  </div>
+                  <div className="text-[8px] text-white/40 font-mono text-center">pH vs Vol. Titrant</div>
+                </motion.div>
 
-                    {/* Dotted Pointer Lines */}
-                    <path d="M 45,14 L 45,21" stroke="white" strokeWidth="0.8" strokeDasharray="1.5,1.5" opacity="0.4" />
-                    <path d="M 105,106 L 105,113" stroke="white" strokeWidth="0.8" strokeDasharray="1.5,1.5" opacity="0.4" />
-                    <path d="M 165,14 L 165,21" stroke="white" strokeWidth="0.8" strokeDasharray="1.5,1.5" opacity="0.4" />
+                {/* Card 3: Physics/Chemistry (Boyle's Law) */}
+                <motion.div
+                  onMouseEnter={() => setHoveredCard(2)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="absolute w-[150px] h-[190px] rounded-2xl border bg-[#0a0b0f] border-white/10 p-3 shadow-2xl flex flex-col justify-between cursor-pointer text-left"
+                  style={{
+                    right: "15px",
+                    top: "0px",
+                    zIndex: hoveredCard === 2 ? 30 : 10,
+                  }}
+                  animate={{
+                    rotate: hoveredCard === 2 ? 0 : 6,
+                    scale: hoveredCard === 2 ? 1.05 : 0.95,
+                    y: hoveredCard === 2 ? -12 : 0,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div>
+                    <span className="text-[7px] font-mono text-yellow-400 font-bold uppercase tracking-wider">Physics</span>
+                    <h4 className="text-[10px] font-bold text-white mt-0.5 leading-tight">Gas Laws (Isotherm)</h4>
+                  </div>
+                  {/* Simplistic P-V hyperbola curve */}
+                  <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center p-1.5">
+                    <svg className="w-full h-full text-white/50" viewBox="0 0 100 60" fill="none">
+                      <path d="M 5,50 L 95,50" stroke="white" strokeWidth="0.8" opacity="0.3" />
+                      <path d="M 10,50 L 10,10" stroke="white" strokeWidth="0.8" opacity="0.3" />
+                      {/* Hyperbola curve */}
+                      <path d="M 15,15 Q 25,40 85,45" stroke="#fbbf24" strokeWidth="1.5" fill="none" />
+                      
+                      <text x="50" y="25" fill="white" fontSize="4.5" opacity="0.7">PV = nRT</text>
+                      <text x="80" y="55" fill="white" fontSize="4.5" opacity="0.5">Volume</text>
+                    </svg>
+                  </div>
+                  <div className="text-[8px] text-white/40 font-mono text-center">Pressure vs Vol.</div>
+                </motion.div>
 
-                    {/* Labels */}
-                    <text x="45" y="9" fill="white" fontSize="6.5" fontFamily="monospace" textAnchor="middle" opacity="0.75" fontWeight="bold">5'-GATTACA-3'</text>
-                    <text x="105" y="114" fill="white" fontSize="6.5" fontFamily="monospace" textAnchor="middle" opacity="0.75" fontWeight="bold">Exon Region</text>
-                    <text x="165" y="9" fill="white" fontSize="6.5" fontFamily="monospace" textAnchor="middle" opacity="0.75" fontWeight="bold">Poly-A Tail</text>
-                    
-                    <defs>
-                      <linearGradient id="dnaGrad1" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#007aff" />
-                        <stop offset="100%" stopColor="#34c759" />
-                      </linearGradient>
-                      <linearGradient id="dnaGrad2" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#34c759" />
-                        <stop offset="100%" stopColor="#007aff" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
-              {/* Aluminium Bottom Base */}
-              <div className="absolute bottom-0 w-[96%] h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#d1d1d6] rounded-t-sm border-t border-white shadow-xl z-20 flex justify-center">
-                <div className="w-16 h-1 bg-[#b5b5be] rounded-b-md" />
               </div>
             </div>
           </motion.div>

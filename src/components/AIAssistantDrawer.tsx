@@ -169,7 +169,7 @@ export function AIAssistantDrawer({
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" title="Active" />
                   </div>
                   <p className="text-xs text-white/40 mt-0.5">
-                    {getCourseDisplayName(course)} • {userMessageCount}/5 messages
+                    {getCourseDisplayName(course)} • {userMessageCount}/5 messages • Powered by Gemini
                   </p>
                 </div>
               </div>

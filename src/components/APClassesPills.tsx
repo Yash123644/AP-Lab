@@ -101,7 +101,7 @@ export function APClassesPills() {
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group relative flex items-center gap-3 px-6 py-3 rounded-full cursor-pointer bg-[#181818]/90 border shadow-[0_4px_12px_rgba(0,0,0,0.35)] transition-all duration-300 overflow-hidden"
+                className="group relative flex items-center gap-3 px-6 py-3 rounded-full cursor-pointer bg-[#181818]/90 border shadow-[0_4px_12px_rgba(0,0,0,0.35)] transition-all duration-150 overflow-hidden"
                 style={{
                   borderColor: isHovered ? `${ap.hex}40` : "rgba(255, 255, 255, 0.04)",
                   boxShadow: isHovered 

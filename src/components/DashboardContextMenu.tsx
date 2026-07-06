@@ -303,6 +303,7 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
 
               {/* Scrollable List */}
               <div 
+                data-lenis-prevent
                 className="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-hide"
                 style={{
                   scrollbarWidth: "none",

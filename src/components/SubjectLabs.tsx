@@ -267,7 +267,7 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("biology")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-2 md:col-span-2 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-2 md:col-span-2 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-150 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Card Content (Left) */}
             <div className="flex flex-col justify-between relative z-10 w-full md:w-1/2 min-h-[200px] md:min-h-0">
@@ -316,10 +316,10 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("calculus")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-1 md:col-span-1 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-1 md:col-span-1 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-150 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Background SVG Curve Animation */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none mt-28">
+            <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity duration-150 pointer-events-none mt-28">
               <svg width="280" height="180" viewBox="0 0 280 180" className="w-full h-full max-w-[280px]">
                 <defs>
                   <linearGradient id="calcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -396,7 +396,7 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("physics")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-1 md:col-span-1 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-1 md:col-span-1 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-150 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* 3D Visual Section */}
             <div className="absolute inset-x-0 bottom-12 flex items-center justify-center h-[200px] pointer-events-none z-0">
@@ -436,7 +436,7 @@ export function SubjectLabs() {
             onMouseLeave={() => setHoveredCard(null)}
             onClick={() => setActiveCourse("chemistry")}
             whileHover={{ y: -6 }}
-            className="lg:col-span-2 md:col-span-2 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row-reverse justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-500 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="lg:col-span-2 md:col-span-2 h-auto md:h-[440px] relative bg-[#121212] border border-white/[0.03] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row-reverse justify-between items-stretch overflow-hidden group cursor-pointer transition-all duration-150 hover:bg-[#1a1a1a] hover:border-white/[0.08] shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Card Content (Right/Left depending on orientation, here it is md:flex-row-reverse) */}
             <div className="flex flex-col justify-between relative z-10 w-full md:w-1/2 min-h-[200px] md:min-h-0">
