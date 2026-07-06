@@ -22,7 +22,7 @@ interface Review {
 }
 
 const ReviewCard = ({ review }: { review: Review }) => (
-  <div className="shrink-0 w-[360px] md:w-[460px] bg-[#121212] border border-white/[0.03] rounded-[28px] p-7 md:p-8 mx-4 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.3)] relative group overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.08] hover:bg-[#1a1a1a]">
+  <div className="shrink-0 w-[360px] md:w-[460px] bg-neutral-50/50 border border-neutral-200/70 rounded-[28px] p-7 md:p-8 mx-4 flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative group overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-neutral-300 hover:bg-neutral-50/80">
     
     <div className="flex space-x-1 mb-5">
       {[1, 2, 3, 4, 5].map((star) => (
@@ -30,17 +30,17 @@ const ReviewCard = ({ review }: { review: Review }) => (
       ))}
     </div>
     
-    <p className="font-inter text-white/80 text-[16px] leading-relaxed mb-8 flex-1 italic select-none">
+    <p className="font-inter text-neutral-700 text-[16px] leading-relaxed mb-8 flex-1 italic select-none">
       &ldquo;{review.text}&rdquo;
     </p>
     
     <div className="flex items-center space-x-4">
-      <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center font-manrope font-bold text-white text-[17px] select-none">
+      <div className="w-11 h-11 rounded-full bg-neutral-200/50 flex items-center justify-center font-manrope font-bold text-neutral-800 text-[17px] select-none">
         {review.name[0]}
       </div>
       <div className="flex flex-col">
-        <span className="font-inter font-semibold text-white text-[15px] tracking-tight">{review.name}</span>
-        <span className="font-inter text-white/45 text-[13px]">{review.role}</span>
+        <span className="font-inter font-semibold text-neutral-800 text-[15px] tracking-tight">{review.name}</span>
+        <span className="font-inter text-neutral-500 text-[13px]">{review.role}</span>
       </div>
     </div>
   </div>
@@ -52,13 +52,8 @@ export function ReviewSection() {
   const row2 = [...reviews.slice(4, 8), ...reviews.slice(4, 8)];
 
   return (
-    <section className="relative w-full py-[160px] bg-deep-navy overflow-hidden flex flex-col items-center z-10">
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-deep-navy to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-deep-navy to-transparent pointer-events-none z-10" />
+    <section className="relative w-full py-[120px] bg-transparent overflow-hidden flex flex-col items-center z-10">
       
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 blur-[150px] rounded-full pointer-events-none" />
-
       {/* Header */}
       <div className="text-center mb-20 relative z-20 px-6">
         <motion.h2 
@@ -66,7 +61,7 @@ export function ReviewSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-inter font-extrabold text-white text-3xl md:text-5xl tracking-tight mb-4 select-none"
+          className="font-inter font-extrabold text-neutral-900 text-3xl md:text-5xl tracking-tight mb-4 select-none"
         >
           Included Reviews
         </motion.h2>
@@ -75,7 +70,7 @@ export function ReviewSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed select-none"
+          className="font-inter text-neutral-500 text-sm md:text-base max-w-lg mx-auto leading-relaxed select-none"
         >
           The verdict is in. See how our cognitive tools are actively shaping the next generation of top performers.
         </motion.p>
@@ -85,8 +80,8 @@ export function ReviewSection() {
       <div className="relative w-full flex flex-col space-y-6">
         
         {/* Edge Gradients for smooth fade */}
-        <div className="absolute top-0 bottom-0 left-0 w-[100px] md:w-[250px] bg-gradient-to-r from-deep-navy to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-[100px] md:w-[250px] bg-gradient-to-l from-deep-navy to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-[100px] md:w-[250px] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-[100px] md:w-[250px] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         {/* Row 1 - Moves Left */}
         <div className="flex w-max">

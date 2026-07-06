@@ -37,7 +37,7 @@ function GoogleDocCursor() {
 
   return (
     <span className="relative inline-flex items-center whitespace-pre-wrap">
-      <span className="relative bg-neutral-800 border border-neutral-700 text-white px-4 py-1.5 md:py-2.5 rounded-xl font-instrument italic leading-none inline-flex items-center min-h-[1.2em] shadow-lg">
+      <span className="relative bg-neutral-800 border border-neutral-700 text-white px-4 py-2.5 md:py-3.5 rounded-xl font-manrope font-bold text-sm md:text-base tracking-wide leading-none inline-flex items-center min-h-[1.2em] shadow-lg">
         {text || "\u00A0"}
         {/* Nametag placed exactly at the end of the text background */}
         <div className="absolute -top-7 -right-2 bg-neutral-800 border border-neutral-700 text-white text-[11px] font-manrope font-bold px-3 py-1 rounded shadow-xl whitespace-nowrap z-10 flex flex-col items-center">
@@ -82,11 +82,11 @@ function AnimatedArticleHighlight() {
   };
 
   const cursorVariants: Variants = {
-    initial: { opacity: 0, left: "0%", top: "60%", scale: 1 },
+    initial: { opacity: 0, left: "5%", top: "50%", scale: 1 },
     hover: {
       opacity: [0, 1, 1, 1, 1, 1, 0],
-      left: ["0%", "0%", "72%", "72%", "72%", "72%", "72%"],
-      top: ["60%", "60%", "60%", "-10px", "-10px", "-10px", "-10px"],
+      left: ["5%", "5%", "95%", "50%", "50%", "50%", "50%"],
+      top: ["50%", "50%", "50%", "-15px", "-15px", "-15px", "-15px"],
       scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
         duration: 2.2,
@@ -135,6 +135,7 @@ function AnimatedArticleHighlight() {
             <div className="text-white/50 font-inter text-[14px] leading-relaxed">
               Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
               <br/><br/>
+              Chemical energy produced by the mitochondria is stored in a small molecule called{" "}
               <span className="relative inline-block py-0.5 px-1 text-white">
                 {/* Highlight Span (Blue Highlight Effect) */}
                 <motion.span 
@@ -144,7 +145,7 @@ function AnimatedArticleHighlight() {
                   className="absolute inset-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
                 />
                 <span className="relative z-10 text-white/90">
-                  Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
+                  adenosine triphosphate (ATP).
                 </span>
                 
                 {/* Popover */}
@@ -152,7 +153,7 @@ function AnimatedArticleHighlight() {
                   variants={popoverVariants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute -top-12 left-[72%] -translate-x-1/2 z-50 pb-2 pointer-events-none"
+                  className="absolute -top-12 left-1/2 -translate-x-1/2 z-50 pb-2 pointer-events-none"
                 >
                   <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
                     <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
@@ -186,16 +187,6 @@ const chatSequence = [
 function AnimatedChat() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const userMsgVariants: Variants = {
-    initial: { opacity: 0, y: 15, scale: 0.95 },
-    hover: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 350, damping: 26, delay: 0.2 }
-    }
-  };
-
   const typingVariants: Variants = {
     initial: { opacity: 0, y: 10 },
     hover: {
@@ -204,7 +195,7 @@ function AnimatedChat() {
       transition: {
         duration: 1.1,
         times: [0, 0.15, 0.85, 1],
-        delay: 0.7
+        delay: 0.2
       }
     }
   };
@@ -215,7 +206,7 @@ function AnimatedChat() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 300, damping: 25, delay: 1.7 }
+      transition: { type: "spring", stiffness: 300, damping: 25, delay: 1.2 }
     }
   };
 
@@ -244,17 +235,12 @@ function AnimatedChat() {
       <div className="flex-1 bg-[#03050C]/60 border border-white/5 rounded-2xl p-4 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
         {/* Chat Conversation Stack */}
         <div className="space-y-3">
-          {/* User Message (Blue Chat Bubble) */}
-          <motion.div
-            variants={userMsgVariants}
-            initial="initial"
-            animate={isHovered ? "hover" : "initial"}
-            className="flex w-full justify-end"
-          >
+          {/* User Message (Blue Chat Bubble) - Always visible (Static) */}
+          <div className="flex w-full justify-end">
             <div className="max-w-[85%] rounded-[20px] px-4 py-2.5 text-[13px] font-inter leading-relaxed shadow-lg relative bg-blue-600 text-white rounded-br-sm">
               {chatSequence[0].text}
             </div>
-          </motion.div>
+          </div>
 
           {/* Typing Indicator */}
           <motion.div

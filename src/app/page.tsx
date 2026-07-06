@@ -30,8 +30,10 @@ export default function LandingPage() {
         <AIFeatureShowcase />
         <PracticeQuizSection />
         <SubjectLabs />
-        <ReviewSection />
-        <CollegesLogoWheel />
+        <div className="bg-white text-black relative z-10">
+          <ReviewSection />
+          <CollegesLogoWheel />
+        </div>
         <FAQSection />
         <SocialsSlider />
       </div>

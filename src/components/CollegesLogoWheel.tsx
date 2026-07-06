@@ -22,13 +22,13 @@ function CollegeCard({ college }: { college: typeof collegesList[0] }) {
       <div 
         className="absolute inset-0 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none z-0"
         style={{
-          background: `radial-gradient(circle at center, rgba(${college.colorRgb}, 0.35) 0%, transparent 75%)`
+          background: `radial-gradient(circle at center, rgba(${college.colorRgb}, 0.15) 0%, transparent 75%)`
         }}
       />
 
       {/* Card container */}
       <div 
-        className="relative z-10 w-48 h-48 bg-[#07090E]/90 border border-white/5 shadow-inner rounded-[32px] flex items-center justify-center p-8 transition-all duration-500 hover:border-white/15 hover:bg-[#0C0F16] cursor-pointer overflow-hidden"
+        className="relative z-10 w-48 h-48 bg-neutral-50/50 border border-neutral-200 shadow-sm rounded-[32px] flex items-center justify-center p-8 transition-all duration-500 hover:border-neutral-300 hover:bg-neutral-50/80 cursor-pointer overflow-hidden"
         style={{
           boxShadow: "inset 0 1px 1px rgba(255,255,255,0.02)"
         }}
@@ -37,12 +37,12 @@ function CollegeCard({ college }: { college: typeof collegesList[0] }) {
         <div 
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
           style={{
-            background: `radial-gradient(circle at center, rgba(${college.colorRgb}, 0.2) 0%, transparent 60%)`
+            background: `radial-gradient(circle at center, rgba(${college.colorRgb}, 0.08) 0%, transparent 60%)`
           }}
         />
 
         {/* Logo Image */}
-        <div className="relative z-10 w-32 h-32 flex items-center justify-center grayscale opacity-35 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
+        <div className="relative z-10 w-32 h-32 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
           <img 
             src={college.src} 
             alt={college.name} 
@@ -51,7 +51,7 @@ function CollegeCard({ college }: { college: typeof collegesList[0] }) {
         </div>
 
         {/* Brand label tooltip */}
-        <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 text-[9px] font-mono text-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 tracking-wider uppercase">
+        <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 text-[9px] font-mono text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 tracking-wider uppercase">
           {college.name}
         </div>
       </div>
@@ -122,13 +122,13 @@ export function CollegesLogoWheel() {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-deep-navy overflow-hidden relative flex flex-col items-center z-10">
+    <section className="w-full py-16 bg-transparent overflow-hidden relative flex flex-col items-center z-10">
       {/* Title */}
       <div className="text-center mb-12 px-6">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 select-none">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-3 select-none">
            Ivy League & Elite Placement
         </p>
-        <h2 className="font-inter font-extrabold text-white text-2xl md:text-4xl tracking-tight leading-tight select-none">
+        <h2 className="font-inter font-extrabold text-neutral-900 text-2xl md:text-4xl tracking-tight leading-tight select-none">
           AP Lab is trusted by students who got into...
         </h2>
       </div>
@@ -136,8 +136,8 @@ export function CollegesLogoWheel() {
       {/* Infinite slider container */}
       <div className="relative w-full overflow-hidden py-4 flex items-center">
         {/* Edge Gradients for smooth fade in/out */}
-        <div className="absolute top-0 bottom-0 left-0 w-32 md:w-64 bg-gradient-to-r from-deep-navy via-deep-navy/80 to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-32 md:w-64 bg-gradient-to-l from-deep-navy via-deep-navy/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-32 md:w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-32 md:w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
 
         <div className="flex w-max">
           <div 

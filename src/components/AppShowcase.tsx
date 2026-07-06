@@ -68,15 +68,16 @@ export function AppShowcase() {
 
             {/* Center Graphic: Mini Simplistic White Leaderboard */}
             <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2">
-              <div className="flex flex-col space-y-2 bg-[#ffffff] border border-neutral-200 rounded-2xl p-4 w-full max-w-[280px] text-left shadow-lg">
+              <div className="flex flex-col space-y-2 bg-[#ffffff] border border-neutral-200 rounded-2xl p-4 w-full max-w-[300px] text-left shadow-lg">
                 {[
                   { rank: 1, name: "Tyler Davis", lvl: 29, xp: "10.4k XP" },
                   { rank: 2, name: "Sofia Rodriguez", lvl: 26, xp: "8.6k XP" },
                   { rank: 3, name: "Alex Mercer", lvl: 25, xp: "8.0k XP" }
                 ].map((user) => (
-                  <div key={user.rank} className="flex items-center justify-between bg-neutral-50 border border-neutral-100 rounded-xl px-3.5 py-2">
-                    <div className="flex items-center space-x-2.5">
+                  <div key={user.rank} className="flex items-center justify-between bg-neutral-50 border border-neutral-100 rounded-xl px-3 py-2">
+                    <div className="flex items-center space-x-2">
                       <span className="text-[10px] font-mono font-bold text-neutral-400 w-3">#{user.rank}</span>
+                      <LevelBadge level={user.lvl} showLabel={false} size="sm" className="scale-75 origin-center shrink-0 -mx-1" />
                       <div className="flex flex-col">
                         <span className="text-[11px] font-manrope font-bold text-neutral-800 leading-tight">{user.name}</span>
                         <span className="text-[8px] font-mono text-neutral-400 mt-0.5">Level {user.lvl}</span>
