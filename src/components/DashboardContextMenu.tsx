@@ -187,10 +187,11 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.1 }}
-            className="fixed z-[999999] w-52 rounded-xl bg-[#060608]/98 border border-white/10 p-1.5 shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.05)] text-white/90"
+            className="fixed z-[999999] w-52 rounded-xl bg-[#060608] border border-white/10 p-1.5 shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.05)] text-white/90"
             style={{
               top: `${Math.min(position.y, window.innerHeight - 200)}px`,
               left: `${Math.min(position.x, window.innerWidth - 220)}px`,
+              backgroundColor: "#060608"
             }}
           >
             <button

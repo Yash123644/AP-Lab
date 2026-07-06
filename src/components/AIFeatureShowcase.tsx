@@ -44,10 +44,10 @@ function GoogleDocCursor() {
 
   return (
     <span className="relative inline-flex items-center whitespace-pre-wrap">
-      <span className="relative bg-[#48228A] text-white px-4 py-1.5 md:py-2.5 rounded-xl font-instrument italic leading-none inline-flex items-center min-h-[1.2em] shadow-lg">
+      <span className="relative bg-neutral-800 border border-neutral-700 text-white px-4 py-1.5 md:py-2.5 rounded-xl font-instrument italic leading-none inline-flex items-center min-h-[1.2em] shadow-lg">
         {text || "\u00A0"}
         {/* Nametag placed exactly at the end of the text background */}
-        <div className="absolute -top-7 -right-2 bg-[#48228A] text-white text-[11px] font-manrope font-bold px-3 py-1 rounded shadow-xl whitespace-nowrap z-10 flex flex-col items-center">
+        <div className="absolute -top-7 -right-2 bg-neutral-800 border border-neutral-700 text-white text-[11px] font-manrope font-bold px-3 py-1 rounded shadow-xl whitespace-nowrap z-10 flex flex-col items-center">
           AP Lab
         </div>
       </span>
@@ -56,7 +56,7 @@ function GoogleDocCursor() {
         <motion.div 
           animate={{ opacity: [1, 0, 1] }}
           transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-          className="w-[3px] h-[1.2em] bg-[#48228A] rounded-full ml-[2px]"
+          className="w-[3px] h-[1.2em] bg-neutral-400 rounded-full ml-[2px]"
         />
       </span>
     </span>
@@ -128,7 +128,7 @@ function AnimatedArticleHighlight() {
                       initial={{ width: "0%" }}
                       animate={{ width: step >= 1 ? "100%" : "0%" }}
                       transition={{ duration: 1.2, ease: "easeInOut" }}
-                      className="absolute inset-0 bg-medical-teal/40 rounded shadow-[0_0_15px_rgba(45,212,191,0.2)] origin-left"
+                      className="absolute inset-0 bg-white/20 rounded origin-left"
                     />
                     <span className="relative z-10">
                       Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
@@ -198,7 +198,7 @@ function AnimatedArticleHighlight() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 className="flex w-full justify-end"
               >
-                <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-gradient-to-br from-medical-teal to-emerald-600 text-white rounded-br-sm">
+                <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-white/10 border border-white/10 text-white rounded-br-sm">
                   Regarding this text: "Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP)."
                 </div>
               </motion.div>
@@ -244,7 +244,7 @@ function AnimatedArticleHighlight() {
           className="absolute bottom-4 left-4 right-4 h-12 rounded-full bg-black/40 border border-white/10 flex items-center px-4 justify-between backdrop-blur-xl z-20"
         >
           <span className="text-white/30 text-[13px] font-inter">Message AP Lab AI...</span>
-          <div className="w-7 h-7 rounded-full bg-medical-teal flex items-center justify-center shadow-lg cursor-pointer transition-colors">
+          <div className="w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center shadow-lg cursor-pointer transition-colors">
             <ArrowUp className="w-4 h-4 text-white" />
           </div>
         </motion.div>
@@ -291,8 +291,8 @@ function AnimatedChat() {
       {/* Top Bar inside Chat */}
       <div className="absolute top-0 left-0 right-0 h-16 border-b border-white/5 bg-white/[0.02] flex items-center justify-center backdrop-blur-md z-10">
         <div className="flex flex-col items-center mt-1">
-          <div className="w-6 h-6 rounded-full bg-primary-purple/20 flex items-center justify-center mb-0.5">
-            <Activity className="w-3 h-3 text-primary-purple animate-pulse" />
+          <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center mb-0.5">
+            <Activity className="w-3 h-3 text-white/60 animate-pulse" />
           </div>
           <span className="text-[9px] font-manrope font-bold text-white/50 uppercase tracking-widest">AP Lab AI</span>
         </div>
@@ -316,7 +316,7 @@ function AnimatedChat() {
               <div className={cn(
                 "max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative",
                 msg.role === "user" 
-                  ? "bg-gradient-to-br from-primary-purple to-indigo-500 text-white rounded-br-sm" 
+                  ? "bg-white/15 border border-white/10 text-white rounded-br-sm" 
                   : "bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md"
               )}>
                 {msg.text}
@@ -349,7 +349,7 @@ function AnimatedChat() {
       {/* Input bar mockup */}
       <motion.div layout className="absolute bottom-4 left-4 right-4 h-12 rounded-full bg-black/40 border border-white/10 flex items-center px-4 justify-between backdrop-blur-xl">
         <span className="text-white/30 text-[13px] font-inter">Message AP Lab AI...</span>
-        <div className="w-7 h-7 rounded-full bg-primary-purple flex items-center justify-center shadow-lg cursor-pointer hover:bg-primary-purple/80 transition-colors">
+        <div className="w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center shadow-lg cursor-pointer transition-colors">
           <ArrowUp className="w-4 h-4 text-white" />
         </div>
       </motion.div>
@@ -365,8 +365,8 @@ export function AIFeatureShowcase() {
       
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary-purple/10 blur-[150px] rounded-full animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-medical-teal/5 blur-[120px] rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white/[0.02] blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-white/[0.01] blur-[120px] rounded-full" />
         
         {/* Subtle Grid overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wNSkiLz48L3N2Zz4=')] opacity-20 mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />

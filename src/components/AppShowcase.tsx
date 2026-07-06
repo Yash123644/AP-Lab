@@ -98,21 +98,50 @@ export function AppShowcase() {
               <div className="relative w-[85%] aspect-[16/10] bg-[#1a1a1a] rounded-t-xl border border-neutral-300 shadow-2xl p-1.5 flex flex-col justify-between">
                 <div className="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full" />
                 {/* SVG Biological Structure Screen */}
+                {/* SVG Biological Structure Screen */}
                 <div className="w-full h-full bg-[#0a0b0d] rounded-md overflow-hidden relative border border-white/5 flex items-center justify-center p-4">
                   <svg className="w-full h-full text-white/80" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 20 40 Q 50 15, 80 40 T 140 40 T 200 40" stroke="url(#dnaGrad1)" strokeWidth="2.5" fill="none" />
-                    <path d="M 20 40 Q 50 65, 80 40 T 140 40 T 200 40" stroke="url(#dnaGrad2)" strokeWidth="2.5" fill="none" opacity="0.6" />
-                    <line x1="50" y1="28" x2="50" y2="52" stroke="white" strokeWidth="1" opacity="0.4" />
-                    <line x1="110" y1="28" x2="110" y2="52" stroke="white" strokeWidth="1" opacity="0.4" />
-                    <line x1="170" y1="28" x2="170" y2="52" stroke="white" strokeWidth="1" opacity="0.4" />
+                    {/* Helix base pair connector lines (detailed ladder) */}
+                    <line x1="25" y1="43" x2="25" y2="77" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="35" y1="30" x2="35" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="45" y1="24" x2="45" y2="96" stroke="white" strokeWidth="0.8" opacity="0.2" />
+                    <line x1="55" y1="30" x2="55" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="65" y1="43" x2="65" y2="77" stroke="white" strokeWidth="0.8" opacity="0.15" />
                     
-                    <circle cx="50" cy="28" r="3" fill="#34c759" />
-                    <circle cx="110" cy="52" r="3" fill="#ff9500" />
-                    <circle cx="170" cy="28" r="3" fill="#007aff" />
+                    <line x1="85" y1="77" x2="85" y2="43" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="95" y1="90" x2="95" y2="30" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="105" y1="96" x2="105" y2="24" stroke="white" strokeWidth="0.8" opacity="0.2" />
+                    <line x1="115" y1="90" x2="115" y2="30" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="125" y1="77" x2="125" y2="43" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    
+                    <line x1="145" y1="43" x2="145" y2="77" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="155" y1="30" x2="155" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
+                    <line x1="165" y1="24" x2="165" y2="96" stroke="white" strokeWidth="0.8" opacity="0.2" />
+                    <line x1="175" y1="30" x2="175" y2="90" stroke="white" strokeWidth="0.8" opacity="0.15" />
 
-                    <text x="50" y="18" fill="white" fontSize="6" fontFamily="monospace" textAnchor="middle" opacity="0.8">5'-GATTACA-3'</text>
-                    <text x="110" y="64" fill="white" fontSize="6" fontFamily="monospace" textAnchor="middle" opacity="0.8">Exon Region</text>
-                    <text x="170" y="18" fill="white" fontSize="6" fontFamily="monospace" textAnchor="middle" opacity="0.8">Poly-A Tail</text>
+                    {/* DNA Strands */}
+                    <path d="M 15 60 C 35 20, 55 20, 75 60 C 95 100, 115 100, 135 60 C 155 20, 175 20, 190 60" stroke="url(#dnaGrad1)" strokeWidth="2.5" fill="none" />
+                    <path d="M 15 60 C 35 100, 55 100, 75 60 C 95 20, 115 20, 135 60 C 155 100, 175 100, 190 60" stroke="url(#dnaGrad2)" strokeWidth="2.5" fill="none" opacity="0.6" />
+                    
+                    {/* Helix Vertices Nodes (Detailed) */}
+                    <circle cx="45" cy="24" r="2.5" fill="#34c759" />
+                    <circle cx="45" cy="96" r="2" fill="#007aff" opacity="0.7" />
+                    
+                    <circle cx="105" cy="24" r="2" fill="#007aff" opacity="0.7" />
+                    <circle cx="105" cy="96" r="2.5" fill="#ff9500" />
+                    
+                    <circle cx="165" cy="24" r="2.5" fill="#007aff" />
+                    <circle cx="165" cy="96" r="2" fill="#34c759" opacity="0.7" />
+
+                    {/* Dotted Pointer Lines */}
+                    <path d="M 45,14 L 45,21" stroke="white" strokeWidth="0.8" strokeDasharray="1.5,1.5" opacity="0.4" />
+                    <path d="M 105,106 L 105,113" stroke="white" strokeWidth="0.8" strokeDasharray="1.5,1.5" opacity="0.4" />
+                    <path d="M 165,14 L 165,21" stroke="white" strokeWidth="0.8" strokeDasharray="1.5,1.5" opacity="0.4" />
+
+                    {/* Labels */}
+                    <text x="45" y="9" fill="white" fontSize="6.5" fontFamily="monospace" textAnchor="middle" opacity="0.75" fontWeight="bold">5'-GATTACA-3'</text>
+                    <text x="105" y="114" fill="white" fontSize="6.5" fontFamily="monospace" textAnchor="middle" opacity="0.75" fontWeight="bold">Exon Region</text>
+                    <text x="165" y="9" fill="white" fontSize="6.5" fontFamily="monospace" textAnchor="middle" opacity="0.75" fontWeight="bold">Poly-A Tail</text>
                     
                     <defs>
                       <linearGradient id="dnaGrad1" x1="0" y1="0" x2="1" y2="0">
@@ -140,19 +169,19 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#e0f2fe] border border-blue-200/50 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-blue-600/60 font-bold uppercase mb-1">24/7 AI TUTOR</span>
+              <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">24/7 AI TUTOR</span>
               <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">Your 24/7 Context-Aware Academic Partner.</h3>
             </div>
 
             {/* Chat conversation box detailing cellular respiration */}
             <div className="w-[90%] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.02] -translate-y-2">
-              <div className="bg-white/80 backdrop-blur-md border border-neutral-200/50 rounded-2xl p-4 shadow-lg text-[11px] font-sans space-y-3">
+              <div className="bg-neutral-50/90 border border-neutral-200/80 rounded-2xl p-4 shadow-lg text-[11px] font-sans space-y-3">
                 {/* User message */}
                 <div className="flex flex-col items-end">
-                  <div className="bg-neutral-100 text-neutral-800 rounded-2xl rounded-tr-sm px-3.5 py-1.5 max-w-[85%] font-medium">
+                  <div className="bg-neutral-200 text-neutral-800 rounded-2xl rounded-tr-sm px-3.5 py-1.5 max-w-[85%] font-medium">
                     Explain cellular respiration simply.
                   </div>
                 </div>

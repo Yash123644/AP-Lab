@@ -127,11 +127,11 @@ export function PracticeQuizSection() {
               const [title, desc] = item.split(": ");
               return (
                 <div key={idx} className="flex items-start space-x-3.5 group">
-                  <div className="mt-1 w-5 h-5 rounded-full bg-primary-purple/10 border border-primary-purple/30 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary-purple/20">
-                    <Check className="w-3 h-3 text-primary-purple" />
+                  <div className="mt-1 w-5 h-5 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-white/15">
+                    <Check className="w-3 h-3 text-white" />
                   </div>
                   <div>
-                    <span className="font-manrope font-bold text-sm text-white block group-hover:text-primary-purple transition-colors duration-300">{title}</span>
+                    <span className="font-manrope font-bold text-sm text-white block group-hover:text-emerald-400 transition-colors duration-300">{title}</span>
                     <span className="font-inter text-xs text-white/50 block mt-0.5">{desc}</span>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export function PracticeQuizSection() {
                   >
                     <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-white/50 font-inter leading-relaxed space-y-1">
                       <div className="flex items-center space-x-1.5 text-white/80 font-bold text-xs">
-                        <HelpCircle className="w-3.5 h-3.5 text-primary-purple" />
+                        <HelpCircle className="w-3.5 h-3.5 text-white" />
                         <span>Explanation:</span>
                       </div>
                       <p>{currentQuestion.explanation}</p>
