@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { Sparkles, ArrowUp, MousePointer2, Activity } from "lucide-react";
+import { motion, Variants } from "framer-motion";
+import { Sparkles, ArrowUp, MousePointer2, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const IBeam = () => (
@@ -79,20 +79,24 @@ function AnimatedArticleHighlight() {
     hover: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 350, damping: 25, delay: 0.5 }
+      scale: [0.95, 1, 1, 0.92, 1], // Click shrink simulation
+      transition: {
+        duration: 1.5,
+        times: [0, 0.45, 0.65, 0.8, 1],
+        ease: "easeInOut"
+      }
     }
   };
 
   const cursorVariants: Variants = {
-    initial: { opacity: 0, x: -30, y: 70, scale: 1 },
+    initial: { opacity: 0, left: "10%", top: "75%", scale: 1 },
     hover: {
       opacity: [0, 1, 1, 1, 0],
-      x: [0, 110, 150, 150, 150],
-      y: [70, 50, -10, -10, -10],
-      scale: [1, 1, 1, 0.85, 0.85],
+      left: ["10%", "50%", "72%", "72%", "72%"],
+      top: ["75%", "45%", "-15px", "-15px", "-15px"],
+      scale: [1, 1, 1, 0.8, 1], // Clicks the button
       transition: {
-        duration: 1.4,
+        duration: 1.5,
         times: [0, 0.35, 0.65, 0.8, 1],
         ease: "easeInOut"
       }
@@ -104,30 +108,41 @@ function AnimatedArticleHighlight() {
       layout 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-full h-[540px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/20 hover:shadow-[0_12px_40px_rgba(255,255,255,0.03)]"
+      className="w-full h-[520px] max-w-md mx-auto bg-[#080B11] border border-white/5 rounded-3xl p-6 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/10 hover:shadow-[0_12px_40px_rgba(255,255,255,0.02)]"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
-      {/* Top Bar */}
-      <div className="absolute top-0 left-0 right-0 h-16 border-b border-white/5 bg-white/[0.02] flex items-center px-6 backdrop-blur-md z-20">
-        <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/50" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-          <div className="w-3 h-3 rounded-full bg-green-500/50" />
+      {/* Header Info Inside Card (Appwrite Style) */}
+      <div className="flex items-start space-x-4 mb-5 z-20">
+        <div className="w-11 h-11 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.15)] flex-shrink-0">
+          <Sparkles className="w-5 h-5" />
         </div>
-        <span className="text-[10px] font-manrope font-bold text-white/50 uppercase tracking-widest ml-4">
-          AP Biology Curriculum
-        </span>
+        <div>
+          <h3 className="font-manrope font-bold text-[16px] text-white leading-tight">Smart Highlighting</h3>
+          <p className="text-white/40 text-[12px] mt-1.5 font-inter leading-relaxed">
+            Highlight any sentence in the textbook to immediately trigger the AI mentor popover.
+          </p>
+        </div>
       </div>
 
-      <div className="flex-1 overflow-hidden mt-12 relative w-full h-full pt-4">
-        <div className="space-y-4 px-2">
-          <div className="h-4 w-3/4 bg-white/10 rounded-full" />
-          <div className="h-4 w-full bg-white/10 rounded-full" />
-          <div className="h-4 w-5/6 bg-white/10 rounded-full" />
-          <div className="h-4 w-full bg-white/10 rounded-full" />
+      {/* Mockup Preview Container */}
+      <div className="flex-1 bg-[#03050C]/60 border border-white/5 rounded-2xl p-5 relative overflow-hidden flex flex-col justify-start min-h-[300px]">
+        {/* Top Browser Bar Mock */}
+        <div className="flex space-x-1.5 mb-6 opacity-60">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
+          <span className="text-[9px] font-manrope font-bold text-white/30 uppercase tracking-wider ml-2 leading-none">
+            AP Biology Textbook
+          </span>
+        </div>
+
+        <div className="space-y-3.5">
+          <div className="h-3.5 w-3/4 bg-white/5 rounded-full" />
+          <div className="h-3.5 w-full bg-white/5 rounded-full" />
+          <div className="h-3.5 w-5/6 bg-white/5 rounded-full" />
           
-          <div className="relative mt-8 space-y-4">
-            <div className="text-white/60 font-inter text-[15px] leading-relaxed">
+          <div className="relative mt-6 space-y-4">
+            <div className="text-white/50 font-inter text-[14px] leading-relaxed">
               Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
               <br/><br/>
               <span className="relative inline-block py-0.5 px-1 text-white">
@@ -138,7 +153,7 @@ function AnimatedArticleHighlight() {
                   animate={isHovered ? "hover" : "initial"}
                   className="absolute inset-0 bg-white/20 rounded origin-left"
                 />
-                <span className="relative z-10">
+                <span className="relative z-10 text-white/90">
                   Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
                 </span>
                 
@@ -147,7 +162,7 @@ function AnimatedArticleHighlight() {
                   variants={popoverVariants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2 pointer-events-none"
+                  className="absolute -top-12 left-[72%] -translate-x-1/2 z-50 pb-2 pointer-events-none"
                 >
                   <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
                     <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
@@ -219,66 +234,73 @@ function AnimatedChat() {
       layout 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[540px] relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/20 hover:shadow-[0_12px_40px_rgba(255,255,255,0.03)]"
+      className="w-full h-[520px] max-w-md mx-auto bg-[#080B11] border border-white/5 rounded-3xl p-6 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/10 hover:shadow-[0_12px_40px_rgba(255,255,255,0.02)]"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
-      {/* Top Bar inside Chat */}
-      <div className="absolute top-0 left-0 right-0 h-16 border-b border-white/5 bg-white/[0.02] flex items-center justify-center backdrop-blur-md z-10">
-        <div className="flex flex-col items-center mt-1">
-          <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center mb-0.5">
-            <Activity className="w-3 h-3 text-white/60 animate-pulse" />
-          </div>
-          <span className="text-[9px] font-manrope font-bold text-white/50 uppercase tracking-widest">AP Lab AI</span>
+      {/* Header Info Inside Card (Appwrite Style) */}
+      <div className="flex items-start space-x-4 mb-5 z-20">
+        <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.15)] flex-shrink-0">
+          <MessageSquare className="w-5 h-5" />
+        </div>
+        <div>
+          <h3 className="font-manrope font-bold text-[16px] text-white leading-tight">24/7 Contextual Tutor</h3>
+          <p className="text-white/40 text-[12px] mt-1.5 font-inter leading-relaxed">
+            Ask any question directly to get instant answers and tailored study walkthroughs.
+          </p>
         </div>
       </div>
 
-      <div className="flex-1 mt-16 pb-20 space-y-4 pr-1">
-        {/* User Message */}
-        <motion.div
-          variants={userMsgVariants}
-          initial="initial"
-          animate={isHovered ? "hover" : "initial"}
-          className="flex w-full justify-end"
-        >
-          <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-emerald-600 text-white rounded-br-sm shadow-md">
-            {chatSequence[0].text}
-          </div>
-        </motion.div>
+      {/* Mockup Preview Container */}
+      <div className="flex-1 bg-[#03050C]/60 border border-white/5 rounded-2xl p-4 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+        {/* Chat Conversation Stack */}
+        <div className="space-y-3">
+          {/* User Message */}
+          <motion.div
+            variants={userMsgVariants}
+            initial="initial"
+            animate={isHovered ? "hover" : "initial"}
+            className="flex w-full justify-end"
+          >
+            <div className="max-w-[85%] rounded-[20px] px-4 py-2.5 text-[13px] font-inter leading-relaxed shadow-lg relative bg-emerald-600 text-white rounded-br-sm">
+              {chatSequence[0].text}
+            </div>
+          </motion.div>
 
-        {/* Typing Indicator */}
-        <motion.div
-          variants={typingVariants}
-          initial="initial"
-          animate={isHovered ? "hover" : "initial"}
-          className="flex justify-start w-full pointer-events-none"
-        >
-          <div className="bg-white/5 border border-white/5 rounded-[20px] rounded-bl-sm px-4 py-3.5 flex space-x-1.5 items-center w-fit backdrop-blur-md">
-            <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" />
-            <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.15s" }} />
-            <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.3s" }} />
-          </div>
-        </motion.div>
+          {/* Typing Indicator */}
+          <motion.div
+            variants={typingVariants}
+            initial="initial"
+            animate={isHovered ? "hover" : "initial"}
+            className="flex justify-start w-full pointer-events-none"
+          >
+            <div className="bg-white/5 border border-white/5 rounded-[16px] rounded-bl-sm px-3.5 py-2.5 flex space-x-1.5 items-center w-fit backdrop-blur-md">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40 animate-bounce" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.15s" }} />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.3s" }} />
+            </div>
+          </motion.div>
 
-        {/* AI Message */}
-        <motion.div
-          variants={aiMsgVariants}
-          initial="initial"
-          animate={isHovered ? "hover" : "initial"}
-          className="flex w-full justify-start"
-        >
-          <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md">
-            {chatSequence[1].text}
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Input bar mockup */}
-      <motion.div layout className="absolute bottom-4 left-4 right-4 h-12 rounded-full bg-black/40 border border-white/10 flex items-center px-4 justify-between backdrop-blur-xl">
-        <span className="text-white/30 text-[13px] font-inter">Message AP Lab AI...</span>
-        <div className="w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center shadow-lg cursor-pointer transition-colors">
-          <ArrowUp className="w-4 h-4 text-white" />
+          {/* AI Message */}
+          <motion.div
+            variants={aiMsgVariants}
+            initial="initial"
+            animate={isHovered ? "hover" : "initial"}
+            className="flex w-full justify-start"
+          >
+            <div className="max-w-[85%] rounded-[20px] px-4 py-2.5 text-[13px] font-inter leading-relaxed shadow-lg relative bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md">
+              {chatSequence[1].text}
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
+
+        {/* Input Bar Mockup - Pinned Inside the Preview Box */}
+        <div className="h-10 rounded-full bg-black/40 border border-white/10 flex items-center px-4 justify-between backdrop-blur-xl mt-4">
+          <span className="text-white/30 text-[11px] font-inter">Message AP Lab AI...</span>
+          <div className="w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center shadow-lg cursor-pointer transition-colors">
+            <ArrowUp className="w-3.5 h-3.5 text-white" />
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }
@@ -350,3 +372,4 @@ export function AIFeatureShowcase() {
     </section>
   );
 }
+
