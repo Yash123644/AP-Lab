@@ -73,14 +73,24 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-6">
           {currentUser ? (
             <Link href="/dashboard">
-              <button className="bg-white text-black font-manrope font-semibold text-[13px] px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.1)]">
+              <button className={cn(
+                "font-manrope font-semibold text-[13px] transition-all duration-300",
+                isScrolled
+                  ? "bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+                  : "text-white/60 hover:text-white bg-transparent px-0 py-0"
+              )}>
                 Dashboard
               </button>
             </Link>
           ) : (
             <button
               onClick={() => openAuthModal("signin")}
-              className="bg-white text-black font-manrope font-semibold text-[13px] px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+              className={cn(
+                "font-manrope font-semibold text-[13px] transition-all duration-300",
+                isScrolled
+                  ? "bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+                  : "text-white/60 hover:text-white bg-transparent px-0 py-0"
+              )}
             >
               Sign In
             </button>

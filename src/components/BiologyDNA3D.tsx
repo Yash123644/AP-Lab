@@ -26,7 +26,9 @@ export function BiologyDNA3D({ isHovered }: BiologyDNA3DProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setInView(true);
+        }
       },
       { rootMargin: "200px" } // load 200px before coming into view for smooth transition
     );

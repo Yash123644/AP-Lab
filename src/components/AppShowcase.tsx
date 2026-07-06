@@ -66,13 +66,23 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Center Graphic: Grid of 6 interactive badges */}
+            {/* Center Graphic: Mini Simplistic White Leaderboard */}
             <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2">
-              <div className="grid grid-cols-3 gap-x-6 gap-y-4 bg-white/[0.02] border border-white/5 rounded-3xl p-5 shadow-inner w-full max-w-[340px]">
-                {[1, 15, 35, 55, 75, 100].map((lvl) => (
-                  <div key={lvl} className="flex flex-col items-center justify-center space-y-1 transition-all duration-300 hover:scale-110">
-                    <LevelBadge level={lvl} size="sm" showLabel={false} />
-                    <span className="text-[8px] font-mono font-black text-white/40 tracking-wider">LVL {lvl}</span>
+              <div className="flex flex-col space-y-2 bg-[#ffffff] border border-neutral-200 rounded-2xl p-4 w-full max-w-[280px] text-left shadow-lg">
+                {[
+                  { rank: 1, name: "Tyler Davis", lvl: 29, xp: "10.4k XP" },
+                  { rank: 2, name: "Sofia Rodriguez", lvl: 26, xp: "8.6k XP" },
+                  { rank: 3, name: "Alex Mercer", lvl: 25, xp: "8.0k XP" }
+                ].map((user) => (
+                  <div key={user.rank} className="flex items-center justify-between bg-neutral-50 border border-neutral-100 rounded-xl px-3.5 py-2">
+                    <div className="flex items-center space-x-2.5">
+                      <span className="text-[10px] font-mono font-bold text-neutral-400 w-3">#{user.rank}</span>
+                      <div className="flex flex-col">
+                        <span className="text-[11px] font-manrope font-bold text-neutral-800 leading-tight">{user.name}</span>
+                        <span className="text-[8px] font-mono text-neutral-400 mt-0.5">Level {user.lvl}</span>
+                      </div>
+                    </div>
+                    <span className="text-[9px] font-mono font-bold text-neutral-600 bg-neutral-200/50 px-2 py-0.5 rounded">{user.xp}</span>
                   </div>
                 ))}
               </div>

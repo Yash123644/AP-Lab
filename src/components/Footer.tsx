@@ -120,7 +120,11 @@ export function Footer() {
           <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
             Connect:
           </span>
-          <div className="flex md:justify-end space-x-4">
+          <div className="flex md:justify-end space-x-4 items-center">
+            <Link href="/join" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Join
+            </Link>
+            <span className="text-white/20">/</span>
             <Link href="/contact" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
               Contact Us
             </Link>

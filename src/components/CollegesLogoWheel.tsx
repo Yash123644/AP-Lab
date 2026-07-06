@@ -12,6 +12,7 @@ const collegesList = [
   { name: "Duke", src: "/images/colleges/duke.png", colorRgb: "0, 48, 135" },
   { name: "Stanford", src: "/images/colleges/stanford.png", colorRgb: "140, 21, 21" },
   { name: "UPenn", src: "/images/colleges/upenn.png", colorRgb: "1, 31, 91" },
+  { name: "NYU", src: "/images/colleges/nyu.png", colorRgb: "87, 6, 140" },
 ];
 
 function CollegeCard({ college }: { college: typeof collegesList[0] }) {
