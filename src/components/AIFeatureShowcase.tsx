@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Sparkles, ArrowUp, MousePointer2, Activity } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -65,36 +65,46 @@ function GoogleDocCursor() {
 
 function AnimatedArticleHighlight() {
   const [isHovered, setIsHovered] = useState(false);
-  const [step, setStep] = useState(0);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    if (isHovered) {
-      if (step === 0) {
-        timeout = setTimeout(() => setStep(1), 800); // Start highlight
-      } else if (step === 1) {
-        timeout = setTimeout(() => setStep(2), 1500); // Show popover and move cursor
-      } else if (step === 2) {
-        timeout = setTimeout(() => setStep(3), 1000); // Click Ask AI
-      }
-    } else {
-      if (step === 3) {
-        timeout = setTimeout(() => setStep(2), 400);
-      } else if (step === 2) {
-        timeout = setTimeout(() => setStep(1), 600);
-      } else if (step === 1) {
-        timeout = setTimeout(() => setStep(0), 800);
+  const highlightVariants: Variants = {
+    initial: { width: "0%" },
+    hover: {
+      width: "100%",
+      transition: { duration: 0.5, delay: 0.1, ease: "easeOut" }
+    }
+  };
+
+  const popoverVariants: Variants = {
+    initial: { opacity: 0, y: 10, scale: 0.95 },
+    hover: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { type: "spring", stiffness: 350, damping: 25, delay: 0.5 }
+    }
+  };
+
+  const cursorVariants: Variants = {
+    initial: { opacity: 0, x: -30, y: 70, scale: 1 },
+    hover: {
+      opacity: [0, 1, 1, 1, 0],
+      x: [0, 110, 150, 150, 150],
+      y: [70, 50, -10, -10, -10],
+      scale: [1, 1, 1, 0.85, 0.85],
+      transition: {
+        duration: 1.4,
+        times: [0, 0.35, 0.65, 0.8, 1],
+        ease: "easeInOut"
       }
     }
-    return () => clearTimeout(timeout);
-  }, [step, isHovered]);
+  };
 
   return (
     <motion.div 
       layout 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-full h-[540px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default"
+      className="w-full h-[540px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/20 hover:shadow-[0_12px_40px_rgba(255,255,255,0.03)]"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       {/* Top Bar */}
@@ -121,63 +131,39 @@ function AnimatedArticleHighlight() {
               Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
               <br/><br/>
               <span className="relative inline-block py-0.5 px-1 text-white">
-                {/* The animated highlight background */}
+                {/* Highlight Span */}
                 <motion.span 
-                  initial={{ width: "0%" }}
-                  animate={{ width: step >= 1 ? "100%" : "0%" }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  variants={highlightVariants}
+                  initial="initial"
+                  animate={isHovered ? "hover" : "initial"}
                   className="absolute inset-0 bg-white/20 rounded origin-left"
                 />
                 <span className="relative z-10">
                   Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
                 </span>
                 
-                <AnimatePresence>
-                  {step >= 2 && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 5, scale: 0.95 }}
-                      animate={{ 
-                        opacity: 1, 
-                        y: 0, 
-                        scale: step === 3 ? 0.92 : 1 
-                      }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                      className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2"
-                    >
-                      <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
-                        <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* Popover */}
+                <motion.div
+                  variants={popoverVariants}
+                  initial="initial"
+                  animate={isHovered ? "hover" : "initial"}
+                  className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2 pointer-events-none"
+                >
+                  <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
+                    <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
+                  </div>
+                </motion.div>
 
                 {/* Animated Cursor */}
-                <AnimatePresence>
-                  {step >= 1 && step <= 3 && (
-                    <motion.div
-                      initial={{ opacity: 0, left: 0, top: 0 }}
-                      animate={{ 
-                        opacity: step === 3 ? [1, 0] : 1,
-                        left: step === 1 ? "100%" : "100%",
-                        top: step === 1 ? "100%" : -25,
-                        scale: step === 3 ? [1, 0.8, 1] : 1
-                      }}
-                      transition={{ 
-                        duration: step === 1 ? 1.2 : step === 3 ? 0.3 : 0.6, 
-                        ease: "easeInOut" 
-                      }}
-                      className="absolute z-[60] pointer-events-none"
-                      style={{ x: "-50%", y: "-50%" }}
-                    >
-                      {step === 1 ? (
-                        <IBeam />
-                      ) : (
-                        <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <motion.div
+                  variants={cursorVariants}
+                  initial="initial"
+                  animate={isHovered ? "hover" : "initial"}
+                  className="absolute z-[60] pointer-events-none"
+                  style={{ x: "-50%", y: "-50%" }}
+                >
+                  <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
+                </motion.div>
               </span>
             </div>
           </div>
@@ -194,32 +180,46 @@ const chatSequence = [
 
 function AnimatedChat() {
   const [isHovered, setIsHovered] = useState(false);
-  const [visibleMessages, setVisibleMessages] = useState<number>(0);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    if (isHovered) {
-      if (visibleMessages === 0) {
-        timeout = setTimeout(() => setVisibleMessages(1), 800); // User asks
-      } else if (visibleMessages === 1) {
-        timeout = setTimeout(() => setVisibleMessages(2), 2500); // AI answers
-      }
-    } else {
-      if (visibleMessages === 2) {
-        timeout = setTimeout(() => setVisibleMessages(1), 600);
-      } else if (visibleMessages === 1) {
-        timeout = setTimeout(() => setVisibleMessages(0), 800);
+  const userMsgVariants: Variants = {
+    initial: { opacity: 0, y: 15, scale: 0.95 },
+    hover: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { type: "spring", stiffness: 350, damping: 26, delay: 0.2 }
+    }
+  };
+
+  const typingVariants: Variants = {
+    initial: { opacity: 0, y: 10 },
+    hover: {
+      opacity: [0, 1, 1, 0],
+      y: [10, 0, 0, -10],
+      transition: {
+        duration: 1.1,
+        times: [0, 0.15, 0.85, 1],
+        delay: 0.7
       }
     }
-    return () => clearTimeout(timeout);
-  }, [visibleMessages, isHovered]);
+  };
+
+  const aiMsgVariants: Variants = {
+    initial: { opacity: 0, y: 15, scale: 0.95 },
+    hover: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { type: "spring", stiffness: 300, damping: 25, delay: 1.7 }
+    }
+  };
 
   return (
     <motion.div 
       layout 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[540px] relative overflow-hidden group select-none cursor-default"
+      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[540px] relative overflow-hidden group select-none cursor-default transition-all duration-300 hover:border-white/20 hover:shadow-[0_12px_40px_rgba(255,255,255,0.03)]"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       {/* Top Bar inside Chat */}
@@ -233,51 +233,43 @@ function AnimatedChat() {
       </div>
 
       <div className="flex-1 mt-16 pb-20 space-y-4 pr-1">
-        <AnimatePresence>
-          {chatSequence.slice(0, visibleMessages).map((msg) => (
-            <motion.div
-              layout
-              key={msg.id}
-              initial={{ opacity: 0, y: 15, scale: 0.95, originX: msg.role === "user" ? 1 : 0 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20, mass: 0.8 }}
-              className={cn(
-                "flex w-full",
-                msg.role === "user" ? "justify-end" : "justify-start"
-              )}
-            >
-              <div className={cn(
-                "max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative",
-                msg.role === "user" 
-                  ? "bg-emerald-600 text-white rounded-br-sm shadow-md" 
-                  : "bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md"
-              )}>
-                {msg.text}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+        {/* User Message */}
+        <motion.div
+          variants={userMsgVariants}
+          initial="initial"
+          animate={isHovered ? "hover" : "initial"}
+          className="flex w-full justify-end"
+        >
+          <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-emerald-600 text-white rounded-br-sm shadow-md">
+            {chatSequence[0].text}
+          </div>
+        </motion.div>
 
         {/* Typing Indicator */}
-        <AnimatePresence mode="popLayout">
-          {visibleMessages === 1 && (
-            <motion.div
-              layout
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="flex justify-start w-full"
-            >
-              <div className="bg-white/5 border border-white/5 rounded-[20px] rounded-bl-sm px-4 py-3.5 flex space-x-1.5 items-center w-fit backdrop-blur-md">
-                <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" />
-                <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.15s" }} />
-                <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.3s" }} />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          variants={typingVariants}
+          initial="initial"
+          animate={isHovered ? "hover" : "initial"}
+          className="flex justify-start w-full pointer-events-none"
+        >
+          <div className="bg-white/5 border border-white/5 rounded-[20px] rounded-bl-sm px-4 py-3.5 flex space-x-1.5 items-center w-fit backdrop-blur-md">
+            <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" />
+            <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.15s" }} />
+            <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.3s" }} />
+          </div>
+        </motion.div>
+
+        {/* AI Message */}
+        <motion.div
+          variants={aiMsgVariants}
+          initial="initial"
+          animate={isHovered ? "hover" : "initial"}
+          className="flex w-full justify-start"
+        >
+          <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md">
+            {chatSequence[1].text}
+          </div>
+        </motion.div>
       </div>
 
       {/* Input bar mockup */}
