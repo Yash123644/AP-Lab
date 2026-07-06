@@ -385,41 +385,40 @@ export function AppShowcase() {
                 </div>
               </div>
 
-              {/* Metric 2: Weekly Study Calendar */}
+              {/* Metric 2: Study Duration Graph */}
               <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">Habit Tracker</span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Weekly Active Days</h4>
+                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">Activity</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Study Duration</h4>
                   </div>
                 </div>
 
-                {/* Days layout */}
-                <div className="flex justify-between items-center my-3.5 px-0.5">
+                {/* Sleek mini bar chart representation */}
+                <div className="flex items-end justify-between h-14 my-3 px-1">
                   {[
-                    { label: "M", active: true },
-                    { label: "T", active: true },
-                    { label: "W", active: true },
-                    { label: "T", active: true },
-                    { label: "F", active: true },
-                    { label: "S", active: false },
-                    { label: "S", active: false },
-                  ].map((day, idx) => (
-                    <div key={idx} className="flex flex-col items-center space-y-1.5">
-                      <span className="text-[9px] font-mono text-white/40">{day.label}</span>
-                      <div className={`w-5.5 h-5.5 rounded-full flex items-center justify-center text-[10px] font-bold transition-all ${
-                        day.active 
-                          ? "bg-cyan-500/20 text-cyan-400 border border-cyan-400/40 shadow-[0_0_8px_rgba(34,211,238,0.2)]" 
-                          : "bg-white/5 text-white/20 border border-white/5"
-                      }`}>
-                        {day.active ? "✓" : "·"}
+                    { label: "M", value: "35%", hrs: "1.5h" },
+                    { label: "T", value: "60%", hrs: "2.2h" },
+                    { label: "W", value: "45%", hrs: "1.8h" },
+                    { label: "T", value: "85%", hrs: "3.5h" },
+                    { label: "F", value: "65%", hrs: "2.5h" },
+                    { label: "S", value: "100%", hrs: "4.0h" },
+                    { label: "S", value: "50%", hrs: "2.0h" }
+                  ].map((bar, idx) => (
+                    <div key={idx} className="flex flex-col items-center flex-1">
+                      <div className="relative w-2 bg-white/10 rounded-full h-10 flex items-end">
+                        <div 
+                          className="w-full bg-cyan-400 rounded-full" 
+                          style={{ height: bar.value }}
+                        />
                       </div>
+                      <span className="text-[8px] font-mono text-white/40 mt-1.5">{bar.label}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5">
-                  <span>Continuous active streak</span>
+                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
+                  <span>Weekly Average: 2.5h/day</span>
                 </div>
               </div>
 
