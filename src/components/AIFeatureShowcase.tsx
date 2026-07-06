@@ -64,8 +64,8 @@ function AnimatedArticleHighlight() {
     hover: {
       width: ["0%", "0%", "100%", "100%"],
       transition: {
-        duration: 3.8,
-        times: [0, 0.05, 0.26, 1],
+        duration: 2.5,
+        times: [0, 0.08, 0.48, 1],
         ease: "easeOut"
       }
     }
@@ -76,8 +76,8 @@ function AnimatedArticleHighlight() {
     hover: {
       width: ["0%", "0%", "100%", "100%"],
       transition: {
-        duration: 3.8,
-        times: [0, 0.32, 0.53, 1],
+        duration: 2.5,
+        times: [0, 0.08, 0.48, 1],
         ease: "easeOut"
       }
     }
@@ -88,8 +88,8 @@ function AnimatedArticleHighlight() {
     hover: {
       width: ["0%", "0%", "65%", "65%"],
       transition: {
-        duration: 3.8,
-        times: [0, 0.58, 0.74, 1],
+        duration: 2.5,
+        times: [0, 0.08, 0.48, 1],
         ease: "easeOut"
       }
     }
@@ -102,8 +102,8 @@ function AnimatedArticleHighlight() {
       y: [10, 10, 0, 0, 0, 0],
       scale: [0.95, 0.95, 1, 0.92, 1, 1], // Click shrink simulation
       transition: {
-        duration: 3.8,
-        times: [0, 0.74, 0.82, 0.84, 0.87, 1],
+        duration: 2.5,
+        times: [0, 0.48, 0.6, 0.68, 0.76, 1],
         ease: "easeInOut"
       }
     }
@@ -112,13 +112,13 @@ function AnimatedArticleHighlight() {
   const cursorVariants: Variants = {
     initial: { opacity: 0, left: "0%", top: "15px", scale: 1 },
     hover: {
-      opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-      left: ["0%", "0%", "100%", "0%", "100%", "0%", "65%", "50%", "50%", "50%", "50%"],
-      top: ["15px", "15px", "15px", "45px", "45px", "75px", "75px", "-25px", "-25px", "-25px", "-25px"],
-      scale: [1, 1, 1, 1, 1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
+      opacity: [0, 1, 1, 1, 1, 1, 0],
+      left: ["0%", "0%", "65%", "50%", "50%", "50%", "50%"],
+      top: ["15px", "15px", "75px", "-25px", "-25px", "-25px", "-25px"],
+      scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
-        duration: 3.8,
-        times: [0, 0.05, 0.26, 0.32, 0.53, 0.58, 0.74, 0.82, 0.84, 0.87, 1],
+        duration: 2.5,
+        times: [0, 0.08, 0.48, 0.6, 0.68, 0.76, 1],
         ease: "easeInOut"
       }
     }
@@ -160,8 +160,11 @@ function AnimatedArticleHighlight() {
           <div className="h-3.5 w-5/6 bg-white/5 rounded-full" />
           
           <div className="relative mt-6 p-1">
-            <div className="relative text-white/50 font-inter text-[13.5px] leading-[30px]">
-              
+            <div className="text-white/40 mb-4 text-[13px] leading-relaxed">
+              Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions.
+            </div>
+
+            <div className="relative text-white font-inter text-[13.5px] leading-[30px]">
               {/* Line 1 */}
               <div className="relative w-full h-[30px] whitespace-nowrap">
                 <motion.span 
@@ -171,7 +174,7 @@ function AnimatedArticleHighlight() {
                   className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
                 />
                 <span className="relative z-10 text-white/90">
-                  Mitochondria are membrane-bound cell organelles that
+                  Chemical energy produced by the mitochondria is
                 </span>
               </div>
 
@@ -184,7 +187,7 @@ function AnimatedArticleHighlight() {
                   className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
                 />
                 <span className="relative z-10 text-white/90">
-                  generate most of the chemical energy needed to power
+                  stored in a small molecule called adenosine
                 </span>
               </div>
 
@@ -197,7 +200,7 @@ function AnimatedArticleHighlight() {
                   className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
                 />
                 <span className="relative z-10 text-white/90 font-semibold text-white">
-                  the cell's biochemical reactions.
+                  triphosphate (ATP).
                 </span>
               </div>
               
