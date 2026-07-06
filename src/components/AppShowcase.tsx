@@ -302,6 +302,101 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
+          {/* Box 5 (Bottom Span) - PROGRESS TRACKING (Col-span 2) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="bg-[#000000] border border-white/10 rounded-[28px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1 md:col-span-2"
+          >
+            {/* Header info */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 z-10">
+              <div className="text-left">
+                <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">PROGRESS TRACKING</span>
+                <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">Real-Time Performance Metrics.</h3>
+                <p className="text-white/50 font-inter text-xs max-w-md mt-1.5 leading-relaxed">
+                  Track your mastery indices, current study streaks, and estimated AP scores per course.
+                </p>
+              </div>
+              
+              {/* Daily Streak Indicator */}
+              <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5 backdrop-blur-md self-start md:self-auto">
+                <span className="text-[20px]">🔥</span>
+                <div className="flex flex-col">
+                  <span className="text-white font-manrope font-extrabold text-[15px] leading-none">14 Days</span>
+                  <span className="text-[9px] font-mono text-white/30 tracking-wider uppercase mt-1">Study Streak</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Metrics Dashboard Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-8 z-10">
+              {/* Metric 1: AP Biology */}
+              <div className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">AP Biology</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Cellular Energetics</h4>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">84%</span>
+                </div>
+                {/* Progress bar */}
+                <div className="mt-5">
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full" style={{ width: "84%" }} />
+                  </div>
+                  <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
+                    <span>Mastered: 18/22 topics</span>
+                    <span>Score: 5</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Metric 2: AP Chemistry */}
+              <div className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">AP Chemistry</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Equilibrium</h4>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded">72%</span>
+                </div>
+                {/* Progress bar */}
+                <div className="mt-5">
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full" style={{ width: "72%" }} />
+                  </div>
+                  <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
+                    <span>Mastered: 15/20 topics</span>
+                    <span>Score: 4</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Metric 3: AP Calculus */}
+              <div className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-[10px] font-mono text-purple-400 font-bold uppercase">AP Calculus BC</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Integration Techniques</h4>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">91%</span>
+                </div>
+                {/* Progress bar */}
+                <div className="mt-5">
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-purple-400 h-full rounded-full" style={{ width: "91%" }} />
+                  </div>
+                  <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
+                    <span>Mastered: 20/22 topics</span>
+                    <span>Score: 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

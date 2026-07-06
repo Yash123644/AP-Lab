@@ -59,34 +59,10 @@ function GoogleDocCursor() {
 function AnimatedArticleHighlight() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const highlight1Variants: Variants = {
+  const highlightVariants: Variants = {
     initial: { width: "0%" },
     hover: {
       width: ["0%", "0%", "100%", "100%"],
-      transition: {
-        duration: 2.5,
-        times: [0, 0.08, 0.48, 1],
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const highlight2Variants: Variants = {
-    initial: { width: "0%" },
-    hover: {
-      width: ["0%", "0%", "100%", "100%"],
-      transition: {
-        duration: 2.5,
-        times: [0, 0.08, 0.48, 1],
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const highlight3Variants: Variants = {
-    initial: { width: "0%" },
-    hover: {
-      width: ["0%", "0%", "65%", "65%"],
       transition: {
         duration: 2.5,
         times: [0, 0.08, 0.48, 1],
@@ -110,11 +86,11 @@ function AnimatedArticleHighlight() {
   };
 
   const cursorVariants: Variants = {
-    initial: { opacity: 0, left: "0%", top: "15px", scale: 1 },
+    initial: { opacity: 0, left: "5%", top: "15px", scale: 1 },
     hover: {
       opacity: [0, 1, 1, 1, 1, 1, 0],
-      left: ["0%", "0%", "65%", "50%", "50%", "50%", "50%"],
-      top: ["15px", "15px", "75px", "-25px", "-25px", "-25px", "-25px"],
+      left: ["5%", "5%", "90%", "50%", "50%", "50%", "50%"],
+      top: ["15px", "15px", "70px", "-15px", "-15px", "-15px", "-15px"],
       scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
         duration: 2.5,
@@ -165,67 +141,47 @@ function AnimatedArticleHighlight() {
             </div>
 
             <div className="relative text-white font-inter text-[13.5px] leading-[30px]">
-              {/* Line 1 */}
-              <div className="relative w-full h-[30px] whitespace-nowrap">
+              <span className="relative inline-block py-1 px-2 text-white w-full">
+                {/* Highlight Span (One single unified blue highlight block spanning all 3 lines) */}
                 <motion.span 
-                  variants={highlight1Variants}
+                  variants={highlightVariants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
+                  className="absolute inset-0 bg-blue-600/30 rounded-xl origin-left border-l-4 border-blue-500"
                 />
-                <span className="relative z-10 text-white/90">
+                
+                {/* Highlighted text spans across 3 lines inside the container */}
+                <span className="relative z-10 text-white/90 block font-inter text-[13.5px] leading-[28px] select-none text-left">
                   Chemical energy produced by the mitochondria is
-                </span>
-              </div>
-
-              {/* Line 2 */}
-              <div className="relative w-full h-[30px] whitespace-nowrap mt-1">
-                <motion.span 
-                  variants={highlight2Variants}
-                  initial="initial"
-                  animate={isHovered ? "hover" : "initial"}
-                  className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
-                />
-                <span className="relative z-10 text-white/90">
+                  <br />
                   stored in a small molecule called adenosine
-                </span>
-              </div>
-
-              {/* Line 3 */}
-              <div className="relative w-full h-[30px] whitespace-nowrap mt-1">
-                <motion.span 
-                  variants={highlight3Variants}
-                  initial="initial"
-                  animate={isHovered ? "hover" : "initial"}
-                  className="absolute inset-y-0 left-0 bg-blue-600/30 rounded origin-left border-l-2 border-blue-500"
-                />
-                <span className="relative z-10 text-white/90 font-semibold text-white">
+                  <br />
                   triphosphate (ATP).
                 </span>
-              </div>
-              
-              {/* Popover */}
-              <motion.div
-                variants={popoverVariants}
-                initial="initial"
-                animate={isHovered ? "hover" : "initial"}
-                className="absolute -top-12 left-1/2 -translate-x-1/2 z-50 pb-2 pointer-events-none"
-              >
-                <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
-                  <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
-                </div>
-              </motion.div>
+                
+                {/* Popover */}
+                <motion.div
+                  variants={popoverVariants}
+                  initial="initial"
+                  animate={isHovered ? "hover" : "initial"}
+                  className="absolute -top-12 left-1/2 -translate-x-1/2 z-50 pb-2 pointer-events-none"
+                >
+                  <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
+                    <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
+                  </div>
+                </motion.div>
 
-              {/* Animated Cursor */}
-              <motion.div
-                variants={cursorVariants}
-                initial="initial"
-                animate={isHovered ? "hover" : "initial"}
-                className="absolute z-[60] pointer-events-none"
-                style={{ x: "-50%", y: "-50%" }}
-              >
-                <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
-              </motion.div>
+                {/* Animated Cursor */}
+                <motion.div
+                  variants={cursorVariants}
+                  initial="initial"
+                  animate={isHovered ? "hover" : "initial"}
+                  className="absolute z-[60] pointer-events-none"
+                  style={{ x: "-50%", y: "-50%" }}
+                >
+                  <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
+                </motion.div>
+              </span>
             </div>
           </div>
         </div>
