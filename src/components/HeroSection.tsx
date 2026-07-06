@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform, AnimatePresence, Transition, Variants } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence, Transition, Variants, useSpring } from "framer-motion";
 import { CursorLinesBackground } from "./CursorLinesBackground";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
@@ -194,6 +194,59 @@ const charVariants: Variants = {
   }),
 };
 
+function MousePushedWrapper({ children, className, style, animate, transition }: { 
+  children: React.ReactNode; 
+  className?: string; 
+  style?: React.CSSProperties;
+  animate?: any;
+  transition?: any;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useSpring(0, { stiffness: 80, damping: 15 });
+  const y = useSpring(0, { stiffness: 80, damping: 15 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const elemX = rect.left + rect.width / 2;
+      const elemY = rect.top + rect.height / 2;
+      
+      const dx = elemX - e.clientX;
+      const dy = elemY - e.clientY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const pushRadius = 240; // pixel proximity range
+
+      if (distance < pushRadius) {
+        // Smooth cursor push displacement
+        const force = (pushRadius - distance) / pushRadius;
+        const pushAmount = force * 50; // max push of 50px
+        const angle = Math.atan2(dy, dx);
+        x.set(Math.cos(angle) * pushAmount);
+        y.set(Math.sin(angle) * pushAmount);
+      } else {
+        x.set(0);
+        y.set(0);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [x, y]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      style={{ ...style, x, y }}
+      animate={animate}
+      transition={transition}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export function HeroSection() {
   const { currentUser } = useAuth();
   const { openAuthModal } = useUI();
@@ -230,124 +283,124 @@ export function HeroSection() {
         }}
       >
         {/* DNA: top-left */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[14%] left-[10%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -12, 0], rotate: [0, 8, -8, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
           <DNAIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Molecule: top-right */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[14%] right-[10%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -15, 0], rotate: [0, -12, 12, 0] }}
           transition={{ duration: 9.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
           <MoleculeIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Math Graph: bottom-left */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute bottom-[20%] left-[8%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         >
           <MathGraphIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Stacked Books: mid-left */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[32%] left-[6%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -11, 0], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         >
           <BooksIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Graduation Cap: mid-right */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[32%] right-[6%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -13, 0], rotate: [0, 7, -7, 0] }}
           transition={{ duration: 8.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
         >
           <CapIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Microscope: bottom-right */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute bottom-[20%] right-[8%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -14, 0], rotate: [0, -8, 8, 0] }}
           transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
         >
           <MicroscopeIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Atom: lower-mid-right */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[55%] right-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -9, 0], rotate: [0, 15, -15, 0] }}
           transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
         >
           <AtomIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Brain: lower-mid-left */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[55%] left-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -12, 0], rotate: [0, -5, 5, 0] }}
           transition={{ duration: 8.0, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         >
           <BrainIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Flask: top-center-left */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[10%] left-[22%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -10, 0], rotate: [0, -6, 6, 0] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
           <FlaskIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Sigma: top-center-right */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute top-[10%] right-[22%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
           transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 3 }}
         >
           <SigmaIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Ruler: bottom-center-left */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute bottom-[12%] left-[20%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -11, 0], rotate: [0, 4, -4, 0] }}
           transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
         >
           <RulerIcon />
-        </motion.div>
+        </MousePushedWrapper>
 
         {/* Periodic Table: bottom-center-right */}
-        <motion.div 
+        <MousePushedWrapper 
           className="absolute bottom-[12%] right-[20%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -9, 0], rotate: [0, -7, 7, 0] }}
           transition={{ duration: 9.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
         >
           <PeriodicIcon />
-        </motion.div>
+        </MousePushedWrapper>
       </div>
 
       {/* Seamless Fade Transition at bottom to transition to deep-navy sections */}

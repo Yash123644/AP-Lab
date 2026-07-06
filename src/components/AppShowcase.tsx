@@ -342,63 +342,107 @@ export function AppShowcase() {
 
             {/* Metrics Dashboard Layout */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-8 z-10">
-              {/* Metric 1: AP Biology */}
-              <div className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
+              {/* Metric 1: Question Accuracy Circle */}
+              <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">AP Biology</span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Cellular Energetics</h4>
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Accuracy</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Question Correct Rate</h4>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">84%</span>
                 </div>
-                {/* Progress bar */}
-                <div className="mt-5">
-                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-emerald-400 h-full rounded-full" style={{ width: "84%" }} />
+                
+                {/* Circular Progress Gauge */}
+                <div className="flex items-center space-x-4 my-3">
+                  <div className="relative w-14 h-14 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                      <path
+                        className="text-white/10"
+                        strokeWidth="3"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="text-emerald-400"
+                        strokeDasharray="92, 100"
+                        strokeWidth="3.2"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <span className="absolute text-[11px] font-mono font-bold text-white">92%</span>
                   </div>
-                  <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
-                    <span>Mastered: 18/22 topics</span>
+                  <div className="flex flex-col">
+                    <span className="text-white/90 text-xs font-semibold">Excellent Mastery</span>
+                    <span className="text-[9px] text-white/40 mt-0.5">Top 5% of AP Students</span>
                   </div>
+                </div>
+
+                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5">
+                  <span>Based on 250+ recent items</span>
                 </div>
               </div>
 
-              {/* Metric 2: AP Chemistry */}
-              <div className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
+              {/* Metric 2: Weekly Study Calendar */}
+              <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">AP Chemistry</span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Equilibrium</h4>
+                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">Habit Tracker</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Weekly Active Days</h4>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded">72%</span>
                 </div>
-                {/* Progress bar */}
-                <div className="mt-5">
-                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-cyan-400 h-full rounded-full" style={{ width: "72%" }} />
-                  </div>
-                  <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
-                    <span>Mastered: 15/20 topics</span>
-                  </div>
+
+                {/* Days layout */}
+                <div className="flex justify-between items-center my-3.5 px-0.5">
+                  {[
+                    { label: "M", active: true },
+                    { label: "T", active: true },
+                    { label: "W", active: true },
+                    { label: "T", active: true },
+                    { label: "F", active: true },
+                    { label: "S", active: false },
+                    { label: "S", active: false },
+                  ].map((day, idx) => (
+                    <div key={idx} className="flex flex-col items-center space-y-1.5">
+                      <span className="text-[9px] font-mono text-white/40">{day.label}</span>
+                      <div className={`w-5.5 h-5.5 rounded-full flex items-center justify-center text-[10px] font-bold transition-all ${
+                        day.active 
+                          ? "bg-cyan-500/20 text-cyan-400 border border-cyan-400/40 shadow-[0_0_8px_rgba(34,211,238,0.2)]" 
+                          : "bg-white/5 text-white/20 border border-white/5"
+                      }`}>
+                        {day.active ? "✓" : "·"}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5">
+                  <span>Continuous active streak</span>
                 </div>
               </div>
 
-              {/* Metric 3: AP Calculus */}
-              <div className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
+              {/* Metric 3: Syllabus Mastery Progress */}
+              <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-purple-400 font-bold uppercase">AP Calculus BC</span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Integration Techniques</h4>
+                    <span className="text-[10px] font-mono text-purple-400 font-bold uppercase">Mastery</span>
+                    <h4 className="text-[13px] font-bold text-white mt-0.5">Syllabus Completion</h4>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">91%</span>
+                  <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">84%</span>
                 </div>
+                
                 {/* Progress bar */}
-                <div className="mt-5">
+                <div className="mt-5 mb-2">
                   <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-purple-400 h-full rounded-full" style={{ width: "91%" }} />
+                    <div className="bg-purple-400 h-full rounded-full" style={{ width: "84%" }} />
                   </div>
-                  <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1.5">
-                    <span>Mastered: 20/22 topics</span>
-                  </div>
+                </div>
+
+                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
+                  <span>Mastered: 18/22 units</span>
+                  <span>AP Biology</span>
                 </div>
               </div>
             </div>
