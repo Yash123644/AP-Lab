@@ -64,33 +64,39 @@ function GoogleDocCursor() {
 }
 
 function AnimatedArticleHighlight() {
+  const [isHovered, setIsHovered] = useState(false);
   const [step, setStep] = useState(0);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    if (step === 0) {
-      timeout = setTimeout(() => setStep(1), 1000); // Start highlight
-    } else if (step === 1) {
-      timeout = setTimeout(() => setStep(2), 1500); // Show popover and move cursor to it
-    } else if (step === 2) {
-      timeout = setTimeout(() => setStep(3), 1000); // Click Ask AI
-    } else if (step === 3) {
-      timeout = setTimeout(() => setStep(4), 800);  // Transition to Chat
-    } else if (step === 4) {
-      timeout = setTimeout(() => setStep(5), 2000); // AI Typing
-    } else if (step === 5) {
-      timeout = setTimeout(() => setStep(0), 4000); // Reset
+    if (isHovered) {
+      if (step === 0) {
+        timeout = setTimeout(() => setStep(1), 800); // Start highlight
+      } else if (step === 1) {
+        timeout = setTimeout(() => setStep(2), 1500); // Show popover and move cursor
+      } else if (step === 2) {
+        timeout = setTimeout(() => setStep(3), 1000); // Click Ask AI
+      }
+    } else {
+      if (step === 3) {
+        timeout = setTimeout(() => setStep(2), 400);
+      } else if (step === 2) {
+        timeout = setTimeout(() => setStep(1), 600);
+      } else if (step === 1) {
+        timeout = setTimeout(() => setStep(0), 800);
+      }
     }
     return () => clearTimeout(timeout);
-  }, [step]);
+  }, [step, isHovered]);
 
   return (
     <motion.div 
       layout 
-      className="w-full h-[540px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="w-full h-[540px] max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col relative overflow-hidden group select-none cursor-default"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
-      
       {/* Top Bar */}
       <div className="absolute top-0 left-0 right-0 h-16 border-b border-white/5 bg-white/[0.02] flex items-center px-6 backdrop-blur-md z-20">
         <div className="flex space-x-2">
@@ -99,193 +105,121 @@ function AnimatedArticleHighlight() {
           <div className="w-3 h-3 rounded-full bg-green-500/50" />
         </div>
         <span className="text-[10px] font-manrope font-bold text-white/50 uppercase tracking-widest ml-4">
-          {step < 4 ? "AP Biology Curriculum" : "AP Lab AI"}
+          AP Biology Curriculum
         </span>
       </div>
 
       <div className="flex-1 overflow-hidden mt-12 relative w-full h-full pt-4">
-        <AnimatePresence mode="wait">
-          {step < 4 ? (
-            <motion.div 
-              key="article"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="space-y-4 px-2"
-            >
-              <div className="h-4 w-3/4 bg-white/10 rounded-full" />
-              <div className="h-4 w-full bg-white/10 rounded-full" />
-              <div className="h-4 w-5/6 bg-white/10 rounded-full" />
-              <div className="h-4 w-full bg-white/10 rounded-full" />
-              
-              <div className="relative mt-8 space-y-4">
-                <div className="text-white/60 font-inter text-[15px] leading-relaxed">
-                  Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
-                  <br/><br/>
-                  <span className="relative inline-block py-0.5 px-1 text-white">
-                    {/* The animated highlight background */}
-                    <motion.span 
-                      initial={{ width: "0%" }}
-                      animate={{ width: step >= 1 ? "100%" : "0%" }}
-                      transition={{ duration: 1.2, ease: "easeInOut" }}
-                      className="absolute inset-0 bg-white/20 rounded origin-left"
-                    />
-                    <span className="relative z-10">
-                      Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
-                    </span>
-                    
-                     <AnimatePresence>
-                      {step >= 2 && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 5, scale: 0.95 }}
-                          animate={{ 
-                            opacity: 1, 
-                            y: 0, 
-                            scale: step === 3 ? 0.92 : 1 
-                          }}
-                          exit={{ opacity: 0, scale: 0.95 }}
-                          transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                          className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2"
-                        >
-                          <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
-                            <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
-                          </div>
-                        </motion.div>
+        <div className="space-y-4 px-2">
+          <div className="h-4 w-3/4 bg-white/10 rounded-full" />
+          <div className="h-4 w-full bg-white/10 rounded-full" />
+          <div className="h-4 w-5/6 bg-white/10 rounded-full" />
+          <div className="h-4 w-full bg-white/10 rounded-full" />
+          
+          <div className="relative mt-8 space-y-4">
+            <div className="text-white/60 font-inter text-[15px] leading-relaxed">
+              Mitochondria are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. 
+              <br/><br/>
+              <span className="relative inline-block py-0.5 px-1 text-white">
+                {/* The animated highlight background */}
+                <motion.span 
+                  initial={{ width: "0%" }}
+                  animate={{ width: step >= 1 ? "100%" : "0%" }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-white/20 rounded origin-left"
+                />
+                <span className="relative z-10">
+                  Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP).
+                </span>
+                
+                <AnimatePresence>
+                  {step >= 2 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 5, scale: 0.95 }}
+                      animate={{ 
+                        opacity: 1, 
+                        y: 0, 
+                        scale: step === 3 ? 0.92 : 1 
+                      }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      className="absolute -top-10 right-0 translate-x-1/2 z-50 pb-2"
+                    >
+                      <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
+                        <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Animated Cursor */}
+                <AnimatePresence>
+                  {step >= 1 && step <= 3 && (
+                    <motion.div
+                      initial={{ opacity: 0, left: 0, top: 0 }}
+                      animate={{ 
+                        opacity: step === 3 ? [1, 0] : 1,
+                        left: step === 1 ? "100%" : "100%",
+                        top: step === 1 ? "100%" : -25,
+                        scale: step === 3 ? [1, 0.8, 1] : 1
+                      }}
+                      transition={{ 
+                        duration: step === 1 ? 1.2 : step === 3 ? 0.3 : 0.6, 
+                        ease: "easeInOut" 
+                      }}
+                      className="absolute z-[60] pointer-events-none"
+                      style={{ x: "-50%", y: "-50%" }}
+                    >
+                      {step === 1 ? (
+                        <IBeam />
+                      ) : (
+                        <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
                       )}
-                    </AnimatePresence>
-
-                    {/* Animated Cursor */}
-                    <AnimatePresence>
-                      {step >= 1 && step <= 3 && (
-                        <motion.div
-                          initial={{ opacity: 0, left: 0, top: 0 }}
-                          animate={{ 
-                            opacity: step === 3 ? [1, 0] : 1,
-                            left: step === 1 ? "100%" : "100%",
-                            top: step === 1 ? "100%" : -25,
-                            scale: step === 3 ? [1, 0.8, 1] : 1
-                          }}
-                          transition={{ 
-                            duration: step === 1 ? 1.2 : step === 3 ? 0.3 : 0.6, 
-                            ease: "easeInOut" 
-                          }}
-                          className="absolute z-[60] pointer-events-none"
-                          style={{ x: "-50%", y: "-50%" }}
-                        >
-                          {step === 1 ? (
-                            <IBeam />
-                          ) : (
-                            <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
-                          )}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div 
-              key="chat"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              className="flex flex-col space-y-4 px-2 h-full justify-start pt-4"
-            >
-              {/* User message containing highlighted text */}
-              <motion.div
-                initial={{ opacity: 0, y: 10, scale: 0.95, originX: 1 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                className="flex w-full justify-end"
-              >
-                <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-emerald-600 text-white rounded-br-sm">
-                  Regarding this text: "Chemical energy produced by the mitochondria is stored in a small molecule called adenosine triphosphate (ATP)."
-                </div>
-              </motion.div>
-
-              {/* AI Response or Typing */}
-              <AnimatePresence mode="wait">
-                {step === 4 ? (
-                  <motion.div
-                    key="typing"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    className="flex justify-start w-full"
-                  >
-                    <div className="bg-white/5 border border-white/5 rounded-[20px] rounded-bl-sm px-4 py-3.5 flex space-x-1.5 items-center w-fit backdrop-blur-md">
-                      <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" />
-                      <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.15s" }} />
-                      <div className="w-2 h-2 rounded-full bg-white/40 animate-bounce" style={{ animationDelay: "0.3s" }} />
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="response"
-                    initial={{ opacity: 0, y: 10, scale: 0.95, originX: 0 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    className="flex w-full justify-start"
-                  >
-                    <div className="max-w-[85%] rounded-[24px] px-5 py-3.5 text-[14px] font-inter leading-relaxed shadow-lg relative bg-white/10 border border-white/10 text-white/90 rounded-bl-sm backdrop-blur-md">
-                      ATP is like the "energy currency" of the cell! When the cell needs to do work (like moving molecules or contracting muscles), it breaks down ATP to release the stored energy.
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {step >= 4 && (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute bottom-4 left-4 right-4 h-12 rounded-full bg-black/40 border border-white/10 flex items-center px-4 justify-between backdrop-blur-xl z-20"
-        >
-          <span className="text-white/30 text-[13px] font-inter">Message AP Lab AI...</span>
-          <div className="w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center shadow-lg cursor-pointer transition-colors">
-            <ArrowUp className="w-4 h-4 text-white" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </span>
+            </div>
           </div>
-        </motion.div>
-      )}
+        </div>
+      </div>
     </motion.div>
   );
 }
 
 const chatSequence = [
   { id: 1, role: "user", text: "Can you explain Le Chatelier's Principle?" },
-  { id: 2, role: "assistant", text: "Sure! Le Chatelier's Principle states that if a dynamic equilibrium is disturbed by changing the conditions, the position of equilibrium shifts to counteract the change." },
-  { id: 3, role: "user", text: "So if I increase pressure?" },
-  { id: 4, role: "assistant", text: "The equilibrium will shift towards the side with fewer moles of gas to reduce the pressure! 🎈" }
+  { id: 2, role: "assistant", text: "Sure! Le Chatelier's Principle states that if a dynamic equilibrium is disturbed by changing the conditions, the position of equilibrium shifts to counteract the change." }
 ];
 
 function AnimatedChat() {
+  const [isHovered, setIsHovered] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number>(0);
 
   useEffect(() => {
-    // Sequence timing logic
     let timeout: NodeJS.Timeout;
-    
-    if (visibleMessages === 0) {
-      timeout = setTimeout(() => setVisibleMessages(1), 1000); // User asks
-    } else if (visibleMessages === 1) {
-      timeout = setTimeout(() => setVisibleMessages(2), 2500); // AI typing... answers
-    } else if (visibleMessages === 2) {
-      timeout = setTimeout(() => setVisibleMessages(3), 2000); // User asks again
-    } else if (visibleMessages === 3) {
-      timeout = setTimeout(() => setVisibleMessages(4), 2500); // AI typing... answers
-    } else if (visibleMessages === 4) {
-      timeout = setTimeout(() => setVisibleMessages(0), 5000); // Reset after reading
+    if (isHovered) {
+      if (visibleMessages === 0) {
+        timeout = setTimeout(() => setVisibleMessages(1), 800); // User asks
+      } else if (visibleMessages === 1) {
+        timeout = setTimeout(() => setVisibleMessages(2), 2500); // AI answers
+      }
+    } else {
+      if (visibleMessages === 2) {
+        timeout = setTimeout(() => setVisibleMessages(1), 600);
+      } else if (visibleMessages === 1) {
+        timeout = setTimeout(() => setVisibleMessages(0), 800);
+      }
     }
-
     return () => clearTimeout(timeout);
-  }, [visibleMessages]);
+  }, [visibleMessages, isHovered]);
 
   return (
     <motion.div 
       layout 
-      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[540px] relative overflow-hidden group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="w-full max-w-md mx-auto liquid-glass-strong rounded-[32px] p-6 border border-white/10 shadow-2xl flex flex-col h-[540px] relative overflow-hidden group select-none cursor-default"
       transition={{ type: "tween", duration: 0.45, ease: "easeInOut" }}
     >
       {/* Top Bar inside Chat */}
@@ -327,7 +261,7 @@ function AnimatedChat() {
 
         {/* Typing Indicator */}
         <AnimatePresence mode="popLayout">
-          {visibleMessages % 2 !== 0 && visibleMessages < chatSequence.length && (
+          {visibleMessages === 1 && (
             <motion.div
               layout
               initial={{ opacity: 0, y: 10 }}

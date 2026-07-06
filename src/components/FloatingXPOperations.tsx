@@ -205,11 +205,10 @@ export function FloatingXPOperations() {
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-neutral-950 flex flex-col items-center justify-center text-white font-manrope font-bold text-xs uppercase tracking-wider shadow-[0_8px_32px_rgba(255,255,255,0.12)] cursor-pointer border border-white/15 hover:border-white/30 hover:shadow-[0_8px_32px_rgba(255,255,255,0.22)] transition-all group select-none"
+        className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-neutral-950 flex items-center justify-center text-white shadow-[0_8px_32px_rgba(255,255,255,0.12)] cursor-pointer border border-white/15 hover:border-white/30 hover:shadow-[0_8px_32px_rgba(255,255,255,0.22)] transition-all group select-none"
       >
         <div className="absolute inset-0 rounded-full bg-white/5 animate-ping pointer-events-none group-hover:animate-none" />
-        <Award className="w-5 h-5 mb-0.5 text-white/90" />
-        <span className="font-extrabold text-[9px] tracking-tight leading-none text-white/80">Boost</span>
+        <Award className="w-7 h-7 text-white/90" />
       </motion.button>
 
       {/* Quest Pop-up Drawer/Modal */}
