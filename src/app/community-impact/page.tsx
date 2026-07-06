@@ -279,7 +279,7 @@ export default function CommunityImpactPage() {
             className="group relative liquid-glass-strong px-12 py-6 rounded-full border border-medical-teal/40 hover:bg-medical-teal hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(32,201,151,0.2)]"
           >
             <span className="font-mono text-xs font-bold uppercase tracking-[0.3em] flex items-center space-x-4">
-              <span>Initialize Dashboard</span>
+              <span>Go to Dashboard</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </span>
           </motion.button>

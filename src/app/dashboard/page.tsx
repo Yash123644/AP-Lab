@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
-  ChevronRight, Activity, Star, User, Mail, X
+  ChevronRight, Activity, Star, User, Mail, X, BarChart2
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
@@ -21,6 +21,7 @@ import { courseRegistry } from "@/lib/courses/course-registry";
 import { ReviewModal } from "@/components/ReviewModal";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
+import { DashboardContextMenu } from "@/components/DashboardContextMenu";
 
 
 const folders = [
@@ -500,6 +501,13 @@ export default function Dashboard() {
         </div>
 
         <div className="flex items-center space-x-3 sm:space-x-4">
+          <Link
+            href="/dashboard/progress"
+            className="w-10 h-10 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300"
+            title="View Progress Analytics"
+          >
+            <BarChart2 className="w-4.5 h-4.5 text-white/80" />
+          </Link>
           <button
             onClick={() => setIsReviewModalOpen(true)}
             className="w-10 h-10 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300"
@@ -751,6 +759,8 @@ export default function Dashboard() {
           </div>
         )}
       </AnimatePresence>
+
+      <DashboardContextMenu onOpenProfile={() => setShowAccountPopup(true)} />
     </div>
   );
 }

@@ -19,8 +19,10 @@ import {
   User,
   Mail,
   X,
-  Check
+  Check,
+  BarChart2
 } from "lucide-react";
+import { DashboardContextMenu } from "@/components/DashboardContextMenu";
 import Link from "next/link";
 import { courseRegistry, CourseUnit, CourseTopic } from "@/lib/courses/course-registry";
 import { cn } from "@/lib/utils";
@@ -1699,7 +1701,17 @@ export default function APDynamicCoursePage() {
             </button>
           </div>
         </div>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4">
+          <Link
+            href="/dashboard/progress"
+            className="w-10 h-10 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300"
+            title="View Progress Analytics"
+            style={{
+              borderColor: `${course.accentColor}33`
+            }}
+          >
+            <BarChart2 className="w-4.5 h-4.5 text-white/80" />
+          </Link>
           <button 
             onClick={() => setShowAccountPopup(true)}
             className="flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all"
@@ -2238,6 +2250,7 @@ export default function APDynamicCoursePage() {
           </div>
         )}
       </AnimatePresence>
+      <DashboardContextMenu onOpenProfile={() => setShowAccountPopup(true)} />
     </div>
   );
 }

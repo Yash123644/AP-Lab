@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
       {
         uid: "bot-1",
         displayName: "Tyler Davis",
-        photoURL: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80",
+        photoURL: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop&q=80",
         xp: 10420,
         level: 29,
       },
@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
       {
         uid: "bot-3",
         displayName: "Alex Mercer",
-        photoURL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
+        photoURL: "https://images.unsplash.com/photo-1604871000636-074fa5117945?w=100&auto=format&fit=crop&q=80",
         xp: 7980,
         level: 25,
       },
@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
       {
         uid: "bot-5",
         displayName: "Kenji Sato",
-        photoURL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
+        photoURL: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=100&auto=format&fit=crop&q=80",
         xp: 3270,
         level: 15,
       },
@@ -57,14 +57,14 @@ export async function GET(req: NextRequest) {
       {
         uid: "bot-7",
         displayName: "Liam Gallagher",
-        photoURL: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80",
+        photoURL: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=100&auto=format&fit=crop&q=80",
         xp: 1650,
         level: 10,
       },
       {
         uid: "bot-8",
         displayName: "Chloe Zhang",
-        photoURL: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80",
+        photoURL: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=100&auto=format&fit=crop&q=80",
         xp: 1140,
         level: 8,
       },
