@@ -52,7 +52,7 @@ const SOCIAL_TASKS: Task[] = [
   {
     id: "discord",
     name: "Join Discord Server",
-    xp: 150,
+    xp: 500,
     url: "https://discord.com/invite/dUSaevPETd",
     actionText: "Join Server",
     icon: DiscordIcon,
@@ -62,7 +62,7 @@ const SOCIAL_TASKS: Task[] = [
   {
     id: "youtube",
     name: "Subscribe on YouTube",
-    xp: 120,
+    xp: 500,
     url: "https://www.youtube.com/@AP_Labss",
     actionText: "Subscribe",
     icon: YoutubeIcon,
@@ -72,7 +72,7 @@ const SOCIAL_TASKS: Task[] = [
   {
     id: "instagram",
     name: "Follow on Instagram",
-    xp: 100,
+    xp: 500,
     url: "https://www.instagram.com/ap.labb/",
     actionText: "Follow",
     icon: InstagramIcon,
@@ -82,7 +82,7 @@ const SOCIAL_TASKS: Task[] = [
   {
     id: "linkedin",
     name: "Connect on LinkedIn",
-    xp: 100,
+    xp: 500,
     url: "https://www.linkedin.com/company/ap-labb",
     actionText: "Connect",
     icon: LinkedinIcon,
@@ -205,11 +205,11 @@ export function FloatingXPOperations() {
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-400 flex flex-col items-center justify-center text-black font-manrope font-black text-xs uppercase tracking-wider shadow-[0_4px_24px_rgba(245,158,11,0.45)] cursor-pointer border border-yellow-300/30 group select-none"
+        className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-neutral-950 flex flex-col items-center justify-center text-white font-manrope font-bold text-xs uppercase tracking-wider shadow-[0_8px_32px_rgba(255,255,255,0.12)] cursor-pointer border border-white/15 hover:border-white/30 hover:shadow-[0_8px_32px_rgba(255,255,255,0.22)] transition-all group select-none"
       >
-        <div className="absolute inset-0 rounded-full bg-amber-400/20 animate-ping pointer-events-none group-hover:animate-none" />
-        <Award className="w-5 h-5 mb-0.5 text-black" />
-        <span className="font-extrabold text-[9px] tracking-tight leading-none">Boost</span>
+        <div className="absolute inset-0 rounded-full bg-white/5 animate-ping pointer-events-none group-hover:animate-none" />
+        <Award className="w-5 h-5 mb-0.5 text-white/90" />
+        <span className="font-extrabold text-[9px] tracking-tight leading-none text-white/80">Boost</span>
       </motion.button>
 
       {/* Quest Pop-up Drawer/Modal */}
@@ -233,9 +233,6 @@ export function FloatingXPOperations() {
               transition={{ type: "spring", duration: 0.4 }}
               className="relative w-full max-w-md bg-neutral-950 border border-white/10 rounded-3xl p-6 md:p-8 shadow-[0_32px_100px_rgba(0,0,0,0.85)] text-white overflow-hidden"
             >
-              {/* Top Accent Light Glow */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-12 bg-amber-500/10 rounded-full blur-xl pointer-events-none" />
-
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
@@ -245,14 +242,9 @@ export function FloatingXPOperations() {
               </button>
 
               {/* Header */}
-              <div className="flex items-center space-x-3 mb-4 mt-2">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                  <Sparkles className="w-5 h-5 animate-pulse" />
-                </div>
-                <div>
-                  <h3 className="font-manrope font-bold text-lg leading-tight">Social Quests</h3>
-                  <p className="text-white/40 text-xs mt-0.5 font-inter">Follow us to claim instant XP boosts</p>
-                </div>
+              <div className="mb-4 mt-2">
+                <h3 className="font-manrope font-bold text-xl leading-tight tracking-tight">Social Quests</h3>
+                <p className="text-white/40 text-xs mt-1 font-inter">Complete the tasks below to claim instant XP boosts</p>
               </div>
 
               {/* Quests Lists */}
@@ -279,7 +271,7 @@ export function FloatingXPOperations() {
                             <p className="text-[10px] text-white/30 font-inter mt-0.5">Earn bonus levels instantly</p>
                           </div>
                         </div>
-                        <span className="font-mono font-black text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-lg">
+                        <span className="font-mono font-bold text-xs text-white/90 bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg">
                           +{task.xp} XP
                         </span>
                       </div>
@@ -319,7 +311,7 @@ export function FloatingXPOperations() {
                         ) : isClicked ? (
                           <button
                             onClick={() => handleClaimClick(task)}
-                            className="flex-1 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-manrope font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.25)] select-none"
+                            className="flex-1 px-4 py-2.5 rounded-xl bg-white hover:bg-neutral-200 text-black font-manrope font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.15)] select-none transition-all"
                           >
                             Claim XP
                           </button>
