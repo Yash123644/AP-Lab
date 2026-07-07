@@ -55,6 +55,17 @@ export default function LandingPage() {
               <CollegesLogoWheel />
             </div>
           </div>
+          
+          {/* White dots transition mask on the black background at the bottom */}
+          <div 
+            className="absolute bottom-[-96px] left-0 right-0 h-[96px] z-20 pointer-events-none opacity-80"
+            style={{
+              backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.35) 1.2px, transparent 1.2px)",
+              backgroundSize: "14px 14px",
+              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.95), transparent)",
+              maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.95), transparent)",
+            }}
+          />
         </div>
         <FAQSection />
         <SocialsSlider />

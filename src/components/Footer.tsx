@@ -80,7 +80,7 @@ export function Footer() {
 
         {/* Center Column */}
         <div className="flex flex-col md:border-r border-white/10 md:px-8">
-          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
+          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-4">
             Navigation:
           </span>
           <div className="flex space-x-4">
@@ -96,7 +96,7 @@ export function Footer() {
 
         {/* Social Icons Column — sits to the left of Connect */}
         <div className="flex flex-col md:border-r border-white/10 md:px-8">
-          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-3">
+          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-4">
             Follow:
           </span>
           <div className="flex flex-wrap gap-2">
@@ -117,7 +117,7 @@ export function Footer() {
 
         {/* Right Column — Connect */}
         <div className="flex flex-col md:pl-8 md:text-right">
-          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-1">
+          <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-4">
             Connect:
           </span>
           <div className="flex md:justify-end space-x-4 items-center">
