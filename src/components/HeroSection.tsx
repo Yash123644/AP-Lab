@@ -469,11 +469,11 @@ export function HeroSection() {
           Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.{" "}
           <span className="whitespace-nowrap">
             <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
-            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-2">
+            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-2 translate-y-[-3px]">
               <img 
                 src="/images/verified-badge.png" 
                 alt="Verified Badge" 
-                className="w-[30px] h-[30px] shrink-0 aspect-square select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
+                className="w-[34px] h-[34px] shrink-0 aspect-square select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
               />
               
               {/* Tooltip bubble */}

@@ -402,9 +402,6 @@ body {
   will-change: transform;
 }
 
-.animate-free-badge:hover {
-  transform: translateY(-2px) scale(1.05);
-}
 
 /* Discord Invite Button from Uiverse.io by vinodjangid07 */
 .discord-invite-btn {
