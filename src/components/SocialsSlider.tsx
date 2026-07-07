@@ -155,7 +155,7 @@ export function SocialsSlider() {
           className="text-center mb-24"
         >
           <h2 className="font-inter font-extrabold text-5xl md:text-7xl text-white mb-6">
-            The Lab <span className="italic">Community</span>
+            The Lab <span>Community</span>
           </h2>
           <p className="font-inter text-white/50 text-xl max-w-2xl mx-auto">
             Stay synchronized with elite study protocols and academic breakthroughs across our global network.

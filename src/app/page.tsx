@@ -30,17 +30,30 @@ export default function LandingPage() {
         <AIFeatureShowcase />
         <PracticeQuizSection />
         <SubjectLabs />
-        <div className="bg-white text-black relative z-10 overflow-hidden pt-20 pb-16 [clip-path:polygon(0_60px,100%_0,100%_100%,0_100%)]">
+        <div className="relative">
+          {/* White dots transition mask on the black background */}
+          <div 
+            className="absolute -top-24 left-0 right-0 h-[156px] z-20 pointer-events-none opacity-80"
+            style={{
+              backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.35) 1.2px, transparent 1.2px)",
+              backgroundSize: "14px 14px",
+              WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0.95), transparent)",
+              maskImage: "linear-gradient(to top, rgba(0,0,0,0.95), transparent)",
+              clipPath: "polygon(0 0, 100% 0, 100% 96px, 0 156px)",
+            }}
+          />
+          <div className="bg-white text-black relative z-10 overflow-hidden pt-20 pb-16 [clip-path:polygon(0_60px,100%_0,100%_100%,0_100%)]">
 
-          {/* Clean black dot-matrix patterns in the background (enhanced visibility) */}
-          <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.09] mix-blend-multiply bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjEuNSIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==')] bg-repeat" />
-          
-          {/* Faint grid lines overlay (enhanced visibility) */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0" />
+            {/* Clean black dot-matrix patterns in the background (enhanced visibility) */}
+            <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.09] mix-blend-multiply bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjEuNSIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==')] bg-repeat" />
+            
+            {/* Faint grid lines overlay (enhanced visibility) */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0" />
 
-          <div className="relative z-10">
-            <ReviewSection />
-            <CollegesLogoWheel />
+            <div className="relative z-10">
+              <ReviewSection />
+              <CollegesLogoWheel />
+            </div>
           </div>
         </div>
         <FAQSection />
