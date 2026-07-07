@@ -7,34 +7,60 @@ import { LogoFieldBackground } from "@/components/LogoFieldBackground";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2, Users, Eye, GraduationCap, Award } from "lucide-react";
 
-// CountUp component using requestAnimationFrame for smooth animations
+// CountUp component using requestAnimationFrame for smooth animations with motion blur
 function CountUp({ end, duration = 2.0, suffix = "", delay = 0 }: { end: number; duration?: number; suffix?: string; delay?: number }) {
   const [count, setCount] = useState(0);
+  const [blur, setBlur] = useState(0);
 
   useEffect(() => {
-    let timer = setTimeout(() => {
-      let startTimestamp: number | null = null;
+    let animationFrameId: number;
+    let startTimestamp: number | null = null;
+
+    const timer = setTimeout(() => {
       const step = (timestamp: number) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const elapsed = timestamp - startTimestamp;
         const progress = Math.min(elapsed / (duration * 1000), 1);
         
-        // Cubic ease-out formula
-        const eased = 1 - Math.pow(1 - progress, 3);
+        // Quartic ease-out for smoother deceleration
+        const eased = 1 - Math.pow(1 - progress, 4);
         
         setCount(Math.floor(eased * end));
         
+        // Blur is proportional to the velocity (rate of change)
+        // Velocity = 4 * (1 - progress)^3
+        const velocity = 4 * Math.pow(1 - progress, 3);
+        const maxBlur = 3.5; // Max blur in pixels
+        setBlur(velocity * (maxBlur / 4));
+
         if (progress < 1) {
-          window.requestAnimationFrame(step);
+          animationFrameId = window.requestAnimationFrame(step);
+        } else {
+          setBlur(0);
         }
       };
-      window.requestAnimationFrame(step);
+      animationFrameId = window.requestAnimationFrame(step);
     }, delay * 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [end, duration, delay]);
 
-  return <span>{count.toLocaleString()}{suffix}</span>;
+  return (
+    <span 
+      style={{ 
+        filter: blur > 0.05 ? `blur(${blur}px)` : "none", 
+        transition: blur === 0 ? "filter 0.3s ease-out" : "none",
+        display: "inline-block"
+      }}
+    >
+      {count.toLocaleString()}{suffix}
+    </span>
+  );
 }
 
 export default function JoinPage() {
@@ -184,7 +210,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <h3 className="font-mono text-2xl font-extrabold text-white tracking-tight">
-                    <CountUp end={120000} suffix="+" delay={0} />
+                    <CountUp end={10000} suffix="+" delay={0} />
                   </h3>
                   <span className="font-manrope text-[10px] uppercase tracking-wider text-white/50 text-left block mt-1 leading-normal">Students Impacted</span>
                 </div>
@@ -197,7 +223,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <h3 className="font-mono text-2xl font-extrabold text-white tracking-tight">
-                    <CountUp end={1500000} suffix="+" delay={0.2} />
+                    <CountUp end={20000} suffix="+" delay={0.2} />
                   </h3>
                   <span className="font-manrope text-[10px] uppercase tracking-wider text-white/50 text-left block mt-1 leading-normal">Site Visits</span>
                 </div>
@@ -210,7 +236,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <h3 className="font-mono text-2xl font-extrabold text-white tracking-tight">
-                    <CountUp end={45000} suffix="+" delay={0.4} />
+                    <CountUp end={1000} suffix="+" delay={0.4} />
                   </h3>
                   <span className="font-manrope text-[10px] uppercase tracking-wider text-white/50 text-left block mt-1 leading-normal">Total Accounts</span>
                 </div>
@@ -230,7 +256,7 @@ export default function JoinPage() {
                   <div className="space-y-1">
                     <h4 className="font-manrope font-bold text-white text-sm">Pioneer Interactive Classrooms</h4>
                     <p className="font-inter text-white/50 text-xs leading-relaxed">
-                      Help replace static textbook diagrams with dynamic, browser-rendered visualizers like 3D cellular biology models, orbital simulators, and custom chemistry molecular engines.
+                      Help create interactive articles, practice questions, and realistic mock exams that bring learning to life and mirror the real digital testing environment.
                     </p>
                   </div>
                 </div>
@@ -258,9 +284,9 @@ export default function JoinPage() {
                 <div className="flex items-start space-x-4 group">
                   <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 shrink-0 group-hover:scale-125 transition-transform duration-300" />
                   <div className="space-y-1">
-                    <h4 className="font-manrope font-bold text-white text-sm">Permanent Attribution</h4>
+                    <h4 className="font-manrope font-bold text-white text-sm">Website Attribution</h4>
                     <p className="font-inter text-white/50 text-xs leading-relaxed">
-                      Every lesson you audit, code feature you ship, or design layout you produce carries your permanent credit, bio link, and contributor badge on the public repository directory.
+                      Every resource you write, code feature you ship, or design layout you produce carries your profile link, credit, and contributor badge on the live platform.
                     </p>
                   </div>
                 </div>

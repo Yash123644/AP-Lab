@@ -6,6 +6,7 @@ import { CursorLinesBackground } from "./CursorLinesBackground";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { useUI } from "@/context/UIContext";
+import { BadgeCheck } from "lucide-react";
 
 const DNAIcon = () => (
   <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
@@ -466,7 +467,21 @@ export function HeroSection() {
 
         {/* Subtitle formatted like Apple Music's subtext */}
         <p className="font-inter font-medium text-[16px] md:text-[20px] text-white/80 max-w-[820px] mb-12 text-center leading-relaxed text-balance px-4 select-none">
-          Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams. Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be. <strong className="font-extrabold animate-free-badge">100% Free.</strong>
+          Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams. Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be.{" "}
+          <span className="relative inline-flex items-center gap-1.5 group cursor-pointer whitespace-nowrap">
+            <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
+            <BadgeCheck className="w-5 h-5 text-medical-teal drop-shadow-[0_0_6px_rgba(32,201,151,0.4)] transition-transform duration-300 group-hover:scale-110" />
+            
+            {/* Tooltip bubble */}
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-72 p-3 bg-[#0a0a0f]/98 backdrop-blur-xl border border-medical-teal/40 rounded-xl text-center shadow-[0_12px_30px_rgba(0,0,0,0.7)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal">
+              <span className="block font-sans text-xs font-medium text-white/95 leading-relaxed">
+                We are committed to permanently keeping the website free for all with no paywalls or subscriptions.
+              </span>
+              {/* Tooltip Arrow */}
+              <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#0a0a0f]" />
+            </span>
+          </span>
+          .
         </p>
 
         {/* Call to Action Buttons */}
