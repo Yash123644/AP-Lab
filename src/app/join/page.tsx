@@ -7,7 +7,51 @@ import { LogoFieldBackground } from "@/components/LogoFieldBackground";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2, Users, Eye, GraduationCap, Award } from "lucide-react";
 
-// CountUp component using requestAnimationFrame for smooth animations with motion blur
+function Digit({ digit, blurAmount }: { digit: string; blurAmount: number }) {
+  const isNumber = !isNaN(Number(digit));
+  
+  if (digit === " ") {
+    return <span className="inline-block w-[0.6em] h-[1.25em]" />;
+  }
+
+  if (!isNumber) {
+    return (
+      <span 
+        className="inline-block font-mono text-center w-[0.6em] h-[1.25em] align-middle"
+        style={{ 
+          filter: blurAmount > 0.05 ? `blur(${blurAmount}px)` : "none",
+          transition: blurAmount === 0 ? "filter 0.2s ease-out" : "none"
+        }}
+      >
+        {digit}
+      </span>
+    );
+  }
+
+  const num = Number(digit);
+
+  return (
+    <span className="relative inline-block h-[1.25em] overflow-hidden w-[0.6em] align-middle">
+      <motion.span
+        animate={{ y: -num * 1.25 + "em" }}
+        transition={{ type: "spring", stiffness: 100, damping: 15, mass: 0.8 }}
+        className="flex flex-col absolute left-0 top-0 w-full"
+        style={{ 
+          filter: blurAmount > 0.05 ? `blur(${blurAmount}px)` : "none",
+          transition: blurAmount === 0 ? "filter 0.2s ease-out" : "none"
+        }}
+      >
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+          <span key={n} className="h-[1.25em] flex items-center justify-center select-none font-mono">
+            {n}
+          </span>
+        ))}
+      </motion.span>
+    </span>
+  );
+}
+
+// CountUp component using requestAnimationFrame for smooth animations with motion blur and rolling digits
 function CountUp({ end, duration = 2.0, suffix = "", delay = 0 }: { end: number; duration?: number; suffix?: string; delay?: number }) {
   const [count, setCount] = useState(0);
   const [blur, setBlur] = useState(0);
@@ -28,7 +72,6 @@ function CountUp({ end, duration = 2.0, suffix = "", delay = 0 }: { end: number;
         setCount(Math.floor(eased * end));
         
         // Blur is proportional to the velocity (rate of change)
-        // Velocity = 4 * (1 - progress)^3
         const velocity = 4 * Math.pow(1 - progress, 3);
         const maxBlur = 3.5; // Max blur in pixels
         setBlur(velocity * (maxBlur / 4));
@@ -50,15 +93,16 @@ function CountUp({ end, duration = 2.0, suffix = "", delay = 0 }: { end: number;
     };
   }, [end, duration, delay]);
 
+  const endStr = end.toLocaleString();
+  const countStr = count.toLocaleString().padStart(endStr.length, " ");
+  const digits = countStr.split("");
+
   return (
-    <span 
-      style={{ 
-        filter: blur > 0.05 ? `blur(${blur}px)` : "none", 
-        transition: blur === 0 ? "filter 0.3s ease-out" : "none",
-        display: "inline-block"
-      }}
-    >
-      {count.toLocaleString()}{suffix}
+    <span className="inline-flex items-center">
+      {digits.map((char, index) => (
+        <Digit key={index} digit={char} blurAmount={blur} />
+      ))}
+      <span className="ml-0.5">{suffix}</span>
     </span>
   );
 }
