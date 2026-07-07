@@ -5,24 +5,34 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LogoFieldBackground } from "@/components/LogoFieldBackground";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Loader2, Users, Eye, Sparkles, Award } from "lucide-react";
+import { CheckCircle2, Loader2, Users, Eye, GraduationCap, Award } from "lucide-react";
 
 // CountUp component using requestAnimationFrame for smooth animations
-function CountUp({ end, duration = 2.0, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+function CountUp({ end, duration = 2.0, suffix = "", delay = 0 }: { end: number; duration?: number; suffix?: string; delay?: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let startTimestamp: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }, [end, duration]);
+    let timer = setTimeout(() => {
+      let startTimestamp: number | null = null;
+      const step = (timestamp: number) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / (duration * 1000), 1);
+        
+        // Cubic ease-out formula
+        const eased = 1 - Math.pow(1 - progress, 3);
+        
+        setCount(Math.floor(eased * end));
+        
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }, delay * 1000);
+
+    return () => clearTimeout(timer);
+  }, [end, duration, delay]);
 
   return <span>{count.toLocaleString()}{suffix}</span>;
 }
@@ -135,8 +145,8 @@ export default function JoinPage() {
   return (
     <main className="relative z-0 min-h-screen selection:bg-[#00f2ff] selection:text-white flex flex-col overflow-hidden bg-[#020202]">
       
-      {/* Canvas Logo Field Background - Cyan theme */}
-      <LogoFieldBackground color="#00f2ff" opacity={0.22} speedX={0.25} speedY={0.12} />
+      {/* Canvas Logo Field Background - White theme */}
+      <LogoFieldBackground color="#ffffff" opacity={0.14} speedX={0.25} speedY={0.12} />
 
       {/* Radial Gradient Mask for Vignette Effect */}
       <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none">
@@ -174,7 +184,7 @@ export default function JoinPage() {
                 </div>
                 <div>
                   <h3 className="font-mono text-2xl font-extrabold text-white tracking-tight">
-                    <CountUp end={120000} suffix="+" />
+                    <CountUp end={120000} suffix="+" delay={0} />
                   </h3>
                   <span className="font-manrope text-[10px] uppercase tracking-wider text-white/50 text-left block mt-1 leading-normal">Students Impacted</span>
                 </div>
@@ -183,11 +193,11 @@ export default function JoinPage() {
               {/* Stat 2 */}
               <div className="liquid-glass border border-white/10 rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between">
                 <div className="text-white/40 mb-2">
-                  <Eye className="w-5 h-5 text-indigo-400" />
+                  <Eye className="w-5 h-5 text-cyan-400" />
                 </div>
                 <div>
                   <h3 className="font-mono text-2xl font-extrabold text-white tracking-tight">
-                    <CountUp end={1500000} suffix="+" />
+                    <CountUp end={1500000} suffix="+" delay={0.2} />
                   </h3>
                   <span className="font-manrope text-[10px] uppercase tracking-wider text-white/50 text-left block mt-1 leading-normal">Site Visits</span>
                 </div>
@@ -196,11 +206,11 @@ export default function JoinPage() {
               {/* Stat 3 */}
               <div className="liquid-glass border border-white/10 rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between">
                 <div className="text-white/40 mb-2">
-                  <Sparkles className="w-5 h-5 text-emerald-400" />
+                  <GraduationCap className="w-5 h-5 text-cyan-400" />
                 </div>
                 <div>
                   <h3 className="font-mono text-2xl font-extrabold text-white tracking-tight">
-                    <CountUp end={45000} suffix="+" />
+                    <CountUp end={45000} suffix="+" delay={0.4} />
                   </h3>
                   <span className="font-manrope text-[10px] uppercase tracking-wider text-white/50 text-left block mt-1 leading-normal">Total Accounts</span>
                 </div>
@@ -208,34 +218,50 @@ export default function JoinPage() {
             </motion.div>
 
             {/* Why People Should Join Cards */}
-            <motion.div variants={itemVariants} className="liquid-glass border border-white/10 rounded-[28px] p-6 space-y-5">
-              <h3 className="font-manrope font-extrabold text-white text-xs tracking-widest uppercase flex items-center gap-2">
+            <motion.div variants={itemVariants} className="liquid-glass border border-white/10 rounded-[28px] p-8 space-y-6 flex-grow flex flex-col justify-center">
+              <h3 className="font-manrope font-extrabold text-white text-xs tracking-widest uppercase flex items-center gap-2 mb-2">
                 <Award className="w-4 h-4 text-cyan-400 animate-pulse" />
                 Why Join AP Lab?
               </h3>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  <div className="space-y-0.5">
-                    <h4 className="font-manrope font-bold text-white text-sm">Empower Global Education</h4>
-                    <p className="font-inter text-white/50 text-xs leading-relaxed">Help make elite study guides and interactive tools 100% free and open to everyone.</p>
+              <div className="space-y-5">
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                  <div className="space-y-1">
+                    <h4 className="font-manrope font-bold text-white text-sm">Pioneer Interactive Classrooms</h4>
+                    <p className="font-inter text-white/50 text-xs leading-relaxed">
+                      Help replace static textbook diagrams with dynamic, browser-rendered visualizers like 3D cellular biology models, orbital simulators, and custom chemistry molecular engines.
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0" />
-                  <div className="space-y-0.5">
-                    <h4 className="font-manrope font-bold text-white text-sm">Build Interactive Technology</h4>
-                    <p className="font-inter text-white/50 text-xs leading-relaxed">Collaborate directly on immersive 3D simulation modules, calculators, and core codebases.</p>
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                  <div className="space-y-1">
+                    <h4 className="font-manrope font-bold text-white text-sm">Empower Global Equity</h4>
+                    <p className="font-inter text-white/50 text-xs leading-relaxed">
+                      Contribute to a completely free, open platform that levels the playing field for student groups in underfunded districts who lack access to premium prep materials.
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
-                  <div className="space-y-0.5">
-                    <h4 className="font-manrope font-bold text-white text-sm">Join a Peer Network of Elites</h4>
-                    <p className="font-inter text-white/50 text-xs leading-relaxed">Exchange ideas and work alongside top high school and university student builders worldwide.</p>
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                  <div className="space-y-1">
+                    <h4 className="font-manrope font-bold text-white text-sm">Learn Production-Grade Architecture</h4>
+                    <p className="font-inter text-white/50 text-xs leading-relaxed">
+                      Gain practical frontend, backend, and 3D graphics experience using Next.js App Router, Framer Motion render triggers, WebGL/Three.js environments, and serverless architectures.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                  <div className="space-y-1">
+                    <h4 className="font-manrope font-bold text-white text-sm">Permanent Attribution</h4>
+                    <p className="font-inter text-white/50 text-xs leading-relaxed">
+                      Every lesson you audit, code feature you ship, or design layout you produce carries your permanent credit, bio link, and contributor badge on the public repository directory.
+                    </p>
                   </div>
                 </div>
               </div>
