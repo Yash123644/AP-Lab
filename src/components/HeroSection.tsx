@@ -466,14 +466,14 @@ export function HeroSection() {
 
         {/* Subtitle formatted like Apple Music's subtext */}
         <p className="font-inter font-medium text-[16px] md:text-[20px] text-white/80 max-w-[820px] mb-12 text-center leading-relaxed text-balance px-4 select-none">
-          Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams. Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be.{" "}
+          Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.{" "}
           <span className="whitespace-nowrap">
-            <span className="relative inline-flex items-center group cursor-pointer align-middle">
-              <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
+            <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
+            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-2">
               <img 
                 src="/images/verified-badge.png" 
                 alt="Verified Badge" 
-                className="w-[26px] h-[26px] shrink-0 aspect-square ml-1.5 select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
+                className="w-[30px] h-[30px] shrink-0 aspect-square select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
               />
               
               {/* Tooltip bubble */}
@@ -485,7 +485,6 @@ export function HeroSection() {
                 <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#0a0a0f]/90" />
               </span>
             </span>
-            .
           </span>
         </p>
 
