@@ -1,48 +1,61 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LogoFieldBackground } from "@/components/LogoFieldBackground";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { CheckCircle2, Loader2, Users, Eye, GraduationCap, Award } from "lucide-react";
 
-function Digit({ digit, blurAmount }: { digit: string; blurAmount: number }) {
+function OdometerDigit({ digit, delay }: { digit: string; delay: number }) {
   const isNumber = !isNaN(Number(digit));
-  
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isInView) {
+      setHasAnimated(true);
+    }
+  }, [isInView]);
+
   if (digit === " ") {
-    return <span className="inline-block w-[0.6em] h-[1.25em]" />;
+    return <span className="inline-block w-[0.6em] h-[1.2em]" />;
   }
 
   if (!isNumber) {
     return (
-      <span 
-        className="inline-block font-mono text-center w-[0.6em] h-[1.25em] align-middle"
-        style={{ 
-          filter: blurAmount > 0.05 ? `blur(${blurAmount}px)` : "none",
-          transition: blurAmount === 0 ? "filter 0.2s ease-out" : "none"
-        }}
-      >
+      <span className="inline-block font-mono text-center w-[0.6em] h-[1.2em] align-middle">
         {digit}
       </span>
     );
   }
 
   const num = Number(digit);
+  
+  // We will create a list of digits: 3 cycles of 0-9 to make it spin
+  const cycles = 3;
+  const digitList = Array.from({ length: cycles * 10 }, (_, i) => i % 10);
+  
+  // The final position is in the last cycle: (cycles - 1) * 10 + num
+  const finalIndex = (cycles - 1) * 10 + num;
 
   return (
-    <span className="relative inline-block h-[1.25em] overflow-hidden w-[0.6em] align-middle">
+    <span ref={ref} className="relative inline-block h-[1.2em] overflow-hidden w-[0.6em] align-middle">
       <motion.span
-        animate={{ y: -num * 1.25 + "em" }}
-        transition={{ type: "spring", stiffness: 100, damping: 15, mass: 0.8 }}
-        className="flex flex-col absolute left-0 top-0 w-full"
-        style={{ 
-          filter: blurAmount > 0.05 ? `blur(${blurAmount}px)` : "none",
-          transition: blurAmount === 0 ? "filter 0.2s ease-out" : "none"
+        initial={{ y: "0em", filter: "blur(0px)" }}
+        animate={hasAnimated ? {
+          y: -finalIndex * 1.2 + "em",
+          filter: ["blur(0px)", "blur(2.5px)", "blur(0px)"]
+        } : {}}
+        transition={{
+          y: { duration: 1.8, delay, ease: [0.16, 1, 0.3, 1] }, // custom ease-out
+          filter: { duration: 1.8, delay, ease: "easeInOut" }
         }}
+        className="flex flex-col absolute left-0 top-0 w-full"
       >
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-          <span key={n} className="h-[1.25em] flex items-center justify-center select-none font-mono">
+        {digitList.map((n, idx) => (
+          <span key={idx} className="h-[1.2em] flex items-center justify-center select-none font-mono">
             {n}
           </span>
         ))}
@@ -51,56 +64,19 @@ function Digit({ digit, blurAmount }: { digit: string; blurAmount: number }) {
   );
 }
 
-// CountUp component using requestAnimationFrame for smooth animations with motion blur and rolling digits
-function CountUp({ end, duration = 2.0, suffix = "", delay = 0 }: { end: number; duration?: number; suffix?: string; delay?: number }) {
-  const [count, setCount] = useState(0);
-  const [blur, setBlur] = useState(0);
-
-  useEffect(() => {
-    let animationFrameId: number;
-    let startTimestamp: number | null = null;
-
-    const timer = setTimeout(() => {
-      const step = (timestamp: number) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const elapsed = timestamp - startTimestamp;
-        const progress = Math.min(elapsed / (duration * 1000), 1);
-        
-        // Quartic ease-out for smoother deceleration
-        const eased = 1 - Math.pow(1 - progress, 4);
-        
-        setCount(Math.floor(eased * end));
-        
-        // Blur is proportional to the velocity (rate of change)
-        const velocity = 4 * Math.pow(1 - progress, 3);
-        const maxBlur = 3.5; // Max blur in pixels
-        setBlur(velocity * (maxBlur / 4));
-
-        if (progress < 1) {
-          animationFrameId = window.requestAnimationFrame(step);
-        } else {
-          setBlur(0);
-        }
-      };
-      animationFrameId = window.requestAnimationFrame(step);
-    }, delay * 1000);
-
-    return () => {
-      clearTimeout(timer);
-      if (animationFrameId) {
-        window.cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, [end, duration, delay]);
-
-  const endStr = end.toLocaleString();
-  const countStr = count.toLocaleString().padStart(endStr.length, " ");
-  const digits = countStr.split("");
+// CountUp component using high-performance hardware-accelerated odometer roll-up
+function CountUp({ end, suffix = "", delay = 0 }: { end: number; duration?: number; suffix?: string; delay?: number }) {
+  const valueStr = end.toLocaleString();
+  const digits = valueStr.split("");
 
   return (
     <span className="inline-flex items-center">
-      {digits.map((char, index) => (
-        <Digit key={index} digit={char} blurAmount={blur} />
+      {digits.map((char, idx) => (
+        <OdometerDigit 
+          key={idx} 
+          digit={char} 
+          delay={delay + (idx * 0.06)} // Stagger delay from left to right
+        />
       ))}
       <span className="ml-0.5">{suffix}</span>
     </span>
@@ -290,7 +266,7 @@ export default function JoinPage() {
             {/* Why People Should Join Cards */}
             <motion.div variants={itemVariants} className="liquid-glass border border-white/10 rounded-[28px] p-8 space-y-6 flex-grow flex flex-col justify-center">
               <h3 className="font-manrope font-extrabold text-white text-xs tracking-widest uppercase flex items-center gap-2 mb-2">
-                <Award className="w-4 h-4 text-cyan-400 animate-pulse" />
+                <Award className="w-4 h-4 text-cyan-400" />
                 Why Join AP Lab?
               </h3>
 

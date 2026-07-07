@@ -467,16 +467,17 @@ export function HeroSection() {
         {/* Subtitle formatted like Apple Music's subtext */}
         <p className="font-inter font-medium text-[16px] md:text-[20px] text-white/80 max-w-[820px] mb-12 text-center leading-relaxed text-balance px-4 select-none">
           Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams. Access to exclusive content, including tutor interviews and live diagnostics. This is everything learning was meant to be.{" "}
-          <span className="relative inline-flex items-center gap-1.5 group cursor-pointer whitespace-nowrap">
+          <span className="relative inline-block group cursor-pointer whitespace-nowrap align-middle">
             <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
             <img 
               src="/images/verified-badge.png" 
               alt="Verified Badge" 
-              className="w-[21px] h-[21px] object-contain select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
+              className="inline-block w-[24px] h-[24px] ml-1.5 align-middle select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
             />
+            .
             
             {/* Tooltip bubble */}
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 px-4 py-3 bg-[#0a0a0f]/90 backdrop-blur-xl rounded-[16px] text-center shadow-[0_12px_32px_rgba(0,0,0,0.85)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline">
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-64 px-4 py-3 bg-[#0a0a0f]/90 backdrop-blur-xl rounded-[16px] text-center shadow-[0_12px_32px_rgba(0,0,0,0.85)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline">
               <span className="block font-sans text-xs font-semibold text-white/90 leading-relaxed">
                 We are committed to permanently keeping the website free for all with no paywalls or subscriptions.
               </span>
@@ -484,7 +485,6 @@ export function HeroSection() {
               <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#0a0a0f]/90" />
             </span>
           </span>
-          .
         </p>
 
         {/* Call to Action Buttons */}
