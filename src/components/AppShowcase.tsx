@@ -14,9 +14,9 @@ const showcaseImages = [
 
 const getColorForPercentage = (pct: number, opacity: number = 1) => {
   const cleanPct = Math.max(0, Math.min(100, pct));
-  // HSL hue: 0 is red, ~60 is yellow, 125 is vibrant emerald green
-  const hue = (cleanPct / 100) * 125;
-  return `hsla(${hue}, 85%, 50%, ${opacity})`;
+  // Scale hue from 0 (red) to 156 (emerald-400 green)
+  const hue = (cleanPct / 100) * 156;
+  return `hsla(${hue}, 72%, 52%, ${opacity})`;
 };
 
 export function AppShowcase() {
@@ -332,8 +332,7 @@ export function AppShowcase() {
               <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5 backdrop-blur-md self-start md:self-auto">
                 <motion.div 
                   animate={{ 
-                    scale: [1, 1.1, 0.95, 1.05, 1],
-                    filter: ["drop-shadow(0 0 2px rgba(245,158,11,0.4))", "drop-shadow(0 0 8px rgba(245,158,11,0.7))", "drop-shadow(0 0 2px rgba(245,158,11,0.4))"]
+                    scale: [1, 1.1, 0.95, 1.05, 1]
                   }}
                   transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
                   className="text-amber-500 shrink-0"
@@ -398,7 +397,7 @@ export function AppShowcase() {
                   <div>
                     <span 
                       className="text-[10px] font-mono font-bold uppercase transition-colors duration-300"
-                      style={{ color: getColorForPercentage(63) }}
+                      style={{ color: getColorForPercentage(53) }}
                     >
                       Activity
                     </span>
@@ -409,13 +408,13 @@ export function AppShowcase() {
                 {/* Sleek mini bar chart representation */}
                 <div className="flex items-end justify-between h-14 my-3 px-1">
                   {[
-                    { label: "M", value: "35%", hrs: "1.5h" },
+                    { label: "M", value: "15%", hrs: "0.5h" },
                     { label: "T", value: "60%", hrs: "2.2h" },
-                    { label: "W", value: "45%", hrs: "1.8h" },
+                    { label: "W", value: "25%", hrs: "1.0h" },
                     { label: "T", value: "85%", hrs: "3.5h" },
                     { label: "F", value: "65%", hrs: "2.5h" },
                     { label: "S", value: "100%", hrs: "4.0h" },
-                    { label: "S", value: "50%", hrs: "2.0h" }
+                    { label: "S", value: "20%", hrs: "0.8h" }
                   ].map((bar, idx) => {
                     const pct = parseInt(bar.value);
                     const color = getColorForPercentage(pct);
@@ -426,8 +425,7 @@ export function AppShowcase() {
                             className="w-full rounded-full transition-all duration-300" 
                             style={{ 
                               height: bar.value,
-                              backgroundColor: color,
-                              boxShadow: `0 0 6px ${getColorForPercentage(pct, 0.4)}`
+                              backgroundColor: color
                             }}
                           />
                         </div>
@@ -438,7 +436,7 @@ export function AppShowcase() {
                 </div>
 
                 <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
-                  <span>Weekly Average: 2.5h/day</span>
+                  <span>Weekly Average: 2.1h/day</span>
                 </div>
               </div>
 
@@ -472,8 +470,7 @@ export function AppShowcase() {
                       className="h-full rounded-full transition-all duration-500" 
                       style={{ 
                         width: "84%",
-                        backgroundColor: getColorForPercentage(84),
-                        boxShadow: `0 0 8px ${getColorForPercentage(84, 0.4)}`
+                        backgroundColor: getColorForPercentage(84)
                       }} 
                     />
                   </div>

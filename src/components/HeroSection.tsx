@@ -124,9 +124,38 @@ const SigmaIcon = () => (
   </svg>
 );
 
-const SparkleIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] text-black">
-    <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z" />
+const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
+  <svg viewBox="0 0 24 24" fill="none" className="w-[20px] h-[20px] text-black">
+    {/* Door Frame Bracket */}
+    <path 
+      d="M12 5H8.5C7.67 5 7 5.67 7 6.5v11c0 .83.67 1.5 1.5 1.5H12" 
+      stroke="currentColor" 
+      strokeWidth="2.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+    />
+    {/* Arrow pointing right */}
+    <motion.path 
+      d="M2 12h9.5M8.5 9l3 3-3 3" 
+      stroke="currentColor" 
+      strokeWidth="2.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      animate={{ x: isHovered ? 2.5 : 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    />
+    {/* Door Leaf (Swinging/Morphing) */}
+    <motion.path 
+      d={isHovered 
+        ? "M13 3 L21 5.5 L21 18.5 L13 21 Z" 
+        : "M13 5 L21 5 L21 19 L13 19 Z"
+      }
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="0.8"
+      strokeLinejoin="round"
+      transition={{ type: "spring", stiffness: 260, damping: 22 }}
+    />
   </svg>
 );
 
@@ -256,6 +285,8 @@ export function HeroSection() {
 
   const words = ["learning", "discovery", "mastery", "science", "medicine", "knowledge"];
   const [wordIndex, setWordIndex] = useState(0);
+  const [isHoveredDashboard, setIsHoveredDashboard] = useState(false);
+  const [isHoveredSignIn, setIsHoveredSignIn] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -469,7 +500,7 @@ export function HeroSection() {
           Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.{" "}
           <span className="whitespace-nowrap">
             <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
-            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-1 translate-y-[-3px]">
+            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-[-2px] translate-y-[-3px]">
               <img 
                 src="/images/verified-badge.png" 
                 alt="Verified Badge" 
@@ -477,11 +508,7 @@ export function HeroSection() {
               />
               
               {/* Tooltip bubble */}
-              <span className="!absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-64 px-4 py-3.5 bg-[#030307]/95 backdrop-blur-2xl rounded-[20px] text-center shadow-[0_12px_40px_rgba(0,0,0,0.85),_0_0_20px_rgba(32,201,151,0.15)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline border border-white/5">
-                <span className="flex items-center justify-center gap-1.5 text-[10px] font-mono font-extrabold text-medical-teal tracking-widest uppercase mb-1.5 select-none">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-medical-teal animate-pulse" />
-                  Verified Pledge
-                </span>
+              <span className="!absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-64 px-4 py-3 bg-[#030307]/95 backdrop-blur-2xl rounded-[16px] text-center shadow-[0_12px_40px_rgba(0,0,0,0.85)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline border border-white/5">
                 <span className="block font-sans text-[11.5px] font-semibold text-white/90 leading-relaxed">
                   We are committed to keeping AP Lab 100% free forever. No paywalls, ads, or subscriptions.
                 </span>
@@ -496,9 +523,13 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-6 mt-2 relative z-10">
           {currentUser ? (
             <Link href="/dashboard">
-              <button className="pb-ai-button">
+              <button 
+                className="pb-ai-button"
+                onMouseEnter={() => setIsHoveredDashboard(true)}
+                onMouseLeave={() => setIsHoveredDashboard(false)}
+              >
                 <span className="pb-ai-sparkle flex items-center justify-center">
-                  <SparkleIcon />
+                  <DoorIcon isHovered={isHoveredDashboard} />
                 </span>
                 <span>Go to Dashboard</span>
               </button>
@@ -507,9 +538,11 @@ export function HeroSection() {
             <button 
               onClick={() => openAuthModal("signin")}
               className="pb-ai-button"
+              onMouseEnter={() => setIsHoveredSignIn(true)}
+              onMouseLeave={() => setIsHoveredSignIn(false)}
             >
               <span className="pb-ai-sparkle flex items-center justify-center">
-                <SparkleIcon />
+                <DoorIcon isHovered={isHoveredSignIn} />
               </span>
               <span>Sign In</span>
             </button>

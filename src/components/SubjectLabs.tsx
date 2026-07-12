@@ -241,7 +241,7 @@ export function SubjectLabs() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-inter font-extrabold text-white text-3xl md:text-5xl tracking-tight mb-4"
           >
-            Included Classes
+            Class Previews
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
