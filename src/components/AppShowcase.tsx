@@ -12,6 +12,13 @@ const showcaseImages = [
   "https://media.discordapp.net/attachments/1125466904966991872/1501074138809499678/Screenshot_2026-05-05_at_12.11.55_AM.png?ex=69fabfbb&is=69f96e3b&hm=a2bc24dcb606560d4af2b46ff50b90e6000dc24cdca460310792fc90f6dfff02&=&format=webp&quality=lossless&width=3096&height=1566"
 ];
 
+const getColorForPercentage = (pct: number, opacity: number = 1) => {
+  const cleanPct = Math.max(0, Math.min(100, pct));
+  // HSL hue: 0 is red, ~60 is yellow, 125 is vibrant emerald green
+  const hue = (cleanPct / 100) * 125;
+  return `hsla(${hue}, 85%, 50%, ${opacity})`;
+};
+
 export function AppShowcase() {
   const [hoveredCard, setHoveredCard] = React.useState<number | null>(null);
 
@@ -389,7 +396,12 @@ export function AppShowcase() {
               <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">Activity</span>
+                    <span 
+                      className="text-[10px] font-mono font-bold uppercase transition-colors duration-300"
+                      style={{ color: getColorForPercentage(63) }}
+                    >
+                      Activity
+                    </span>
                     <h4 className="text-[13px] font-bold text-white mt-0.5">Study Duration</h4>
                   </div>
                 </div>
@@ -404,17 +416,25 @@ export function AppShowcase() {
                     { label: "F", value: "65%", hrs: "2.5h" },
                     { label: "S", value: "100%", hrs: "4.0h" },
                     { label: "S", value: "50%", hrs: "2.0h" }
-                  ].map((bar, idx) => (
-                    <div key={idx} className="flex flex-col items-center flex-1">
-                      <div className="relative w-2 bg-white/10 rounded-full h-10 flex items-end">
-                        <div 
-                          className="w-full bg-cyan-400 rounded-full" 
-                          style={{ height: bar.value }}
-                        />
+                  ].map((bar, idx) => {
+                    const pct = parseInt(bar.value);
+                    const color = getColorForPercentage(pct);
+                    return (
+                      <div key={idx} className="flex flex-col items-center flex-1">
+                        <div className="relative w-2 bg-white/10 rounded-full h-10 flex items-end">
+                          <div 
+                            className="w-full rounded-full transition-all duration-300" 
+                            style={{ 
+                              height: bar.value,
+                              backgroundColor: color,
+                              boxShadow: `0 0 6px ${getColorForPercentage(pct, 0.4)}`
+                            }}
+                          />
+                        </div>
+                        <span className="text-[8px] font-mono text-white/40 mt-1.5">{bar.label}</span>
                       </div>
-                      <span className="text-[8px] font-mono text-white/40 mt-1.5">{bar.label}</span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
@@ -426,16 +446,36 @@ export function AppShowcase() {
               <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-purple-400 font-bold uppercase">Mastery</span>
+                    <span 
+                      className="text-[10px] font-mono font-bold uppercase transition-colors duration-300"
+                      style={{ color: getColorForPercentage(84) }}
+                    >
+                      Mastery
+                    </span>
                     <h4 className="text-[13px] font-bold text-white mt-0.5">Syllabus Completion</h4>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">84%</span>
+                  <span 
+                    className="text-[11px] font-mono font-bold px-2 py-0.5 rounded transition-all duration-300"
+                    style={{
+                      color: getColorForPercentage(84),
+                      backgroundColor: getColorForPercentage(84, 0.1)
+                    }}
+                  >
+                    84%
+                  </span>
                 </div>
                 
                 {/* Progress bar */}
                 <div className="mt-5 mb-2">
                   <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-purple-400 h-full rounded-full" style={{ width: "84%" }} />
+                    <div 
+                      className="h-full rounded-full transition-all duration-500" 
+                      style={{ 
+                        width: "84%",
+                        backgroundColor: getColorForPercentage(84),
+                        boxShadow: `0 0 8px ${getColorForPercentage(84, 0.4)}`
+                      }} 
+                    />
                   </div>
                 </div>
 

@@ -469,7 +469,7 @@ export function HeroSection() {
           Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.{" "}
           <span className="whitespace-nowrap">
             <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
-            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-2 translate-y-[-3px]">
+            <span className="relative inline-flex items-center group cursor-pointer align-middle ml-1 translate-y-[-3px]">
               <img 
                 src="/images/verified-badge.png" 
                 alt="Verified Badge" 
@@ -477,12 +477,16 @@ export function HeroSection() {
               />
               
               {/* Tooltip bubble */}
-              <span className="!absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-64 px-4 py-3 bg-[#0a0a0f]/90 backdrop-blur-xl rounded-[16px] text-center shadow-[0_12px_32px_rgba(0,0,0,0.85)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline">
-                <span className="block font-sans text-xs font-semibold text-white/90 leading-relaxed">
-                  We are committed to permanently keeping the website free for all with no paywalls or subscriptions.
+              <span className="!absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-64 px-4 py-3.5 bg-[#030307]/95 backdrop-blur-2xl rounded-[20px] text-center shadow-[0_12px_40px_rgba(0,0,0,0.85),_0_0_20px_rgba(32,201,151,0.15)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline border border-white/5">
+                <span className="flex items-center justify-center gap-1.5 text-[10px] font-mono font-extrabold text-medical-teal tracking-widest uppercase mb-1.5 select-none">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-medical-teal animate-pulse" />
+                  Verified Pledge
+                </span>
+                <span className="block font-sans text-[11.5px] font-semibold text-white/90 leading-relaxed">
+                  We are committed to keeping AP Lab 100% free forever. No paywalls, ads, or subscriptions.
                 </span>
                 {/* Tooltip Arrow */}
-                <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#0a0a0f]/90" />
+                <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#030307]/95" />
               </span>
             </span>
           </span>

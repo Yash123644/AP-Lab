@@ -4,23 +4,23 @@ import { FAQCard } from "./FAQCard";
 const faqs = [
   {
     question: "How does the AI personalize my learning experience?",
-    answer: "Our AI engine analyzes your performance across quizzes and practice exams, identifying precise knowledge gaps. It then generates custom study plans and practice questions tailored to strengthen your weak points, ensuring efficient mastery."
+    answer: "Rather than using a black-box algorithm to force you down a fixed track, AP Lab puts you in control. You can open our Gemini-powered AI Tutor at any time during a lesson for custom topic breakdowns, key term clarifications, or on-demand practice quizzes. You can also highlight any text on the page to instantly ask the AI for a contextual explanation or diagnostic question."
   },
   {
     question: "Are the practice exams aligned with the real AP tests?",
-    answer: "Yes. Our content team continuously updates the question banks to reflect the latest College Board course and exam descriptions, matching the difficulty, format, and weighting of the actual AP exams."
+    answer: "Yes. Our practice exams draw from curated, Unit-by-Unit question banks designed to match the curriculum, formatting, and style of the College Board's official AP course guidelines, helping you practice the exact concepts you need."
   },
   {
     question: "Can I track my progress over time?",
-    answer: "Absolutely. Your Dashboard features a comprehensive analytics suite that visualizes your mastery percentage per unit, retention index, and study streaks, giving you a clear picture of your exam readiness."
+    answer: "Yes, you can track your study journey. The dashboard monitors your lesson completion progress, quiz scores, overall XP, user level, and daily study streaks, saving them locally or to your cloud profile so you always know where you stand."
   },
   {
     question: "What subjects are currently supported on AP Lab?",
-    answer: "We currently offer comprehensive materials for STEM & Sciences (AP Biology, Chemistry, Physics C), Humanities (AP US History, Psychology, English Language), and Math (AP Calculus BC, Statistics, Computer Science A)."
+    answer: "We currently support nine courses: AP Biology, AP Chemistry, AP Physics C, AP US History, AP Psychology, AP English Language, AP Calculus BC, AP Statistics, and AP Computer Science A."
   },
   {
     question: "Is there a community or tutor support feature?",
-    answer: "While our core product is self-paced AI-driven learning, you can always utilize our 'Ask AI' feature for immediate, detailed explanations on any topic. Community features are on our roadmap for upcoming releases."
+    answer: "We do not offer live human tutoring or student forums at this time. Instead, our interactive AI Tutor is built directly into every course dashboard, providing 24/7 support for explaining tricky problems or building custom review sheets."
   }
 ];
 
