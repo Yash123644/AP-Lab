@@ -108,127 +108,131 @@ export function AppShowcase() {
           >
             <div className="text-center relative z-10 flex flex-col items-center">
               <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">INTERACTIVE LESSONS</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-1">AP Biology Deep-Dives.</h3>
+              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-1">Interactive Course Guides.</h3>
               <p className="text-black/50 font-inter text-xs max-w-sm mt-1 leading-relaxed">
-                Curated curriculum mapping video modules and reading articles seamlessly.
+                Seamless curriculum mapping of video modules, reading articles, and interactive visual aids.
               </p>
             </div>
 
-            {/* 3 Spread Flashcards Stack */}
-            <div className="relative w-full h-[240px] flex items-center justify-center z-10 mt-4 overflow-visible">
-              <div className="relative w-full max-w-[280px] h-[180px] flex items-center justify-center overflow-visible">
+            {/* Mini Dashboard Visualization */}
+            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-6 px-2">
+              <div className="bg-[#05060b] border border-white/10 rounded-2xl w-full max-w-[360px] h-[210px] shadow-2xl flex overflow-hidden text-left font-sans relative group/dash hover:border-white/15 transition-all duration-300">
+                {/* Simulated Glass Highlight Reflection */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] pointer-events-none" />
                 
-                {/* Card 1: Biology (Enzyme Kinetics) */}
-                <motion.div
-                  onMouseEnter={() => setHoveredCard(0)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  className="absolute w-[150px] h-[190px] rounded-2xl border bg-[#0a0b0f] border-white/10 p-3 shadow-2xl flex flex-col justify-between cursor-pointer text-left"
-                  style={{
-                    left: "15px",
-                    top: "0px",
-                    zIndex: hoveredCard === 0 ? 30 : 10,
-                  }}
-                  animate={{
-                    rotate: hoveredCard === 0 ? 0 : -6,
-                    scale: hoveredCard === 0 ? 1.05 : 0.95,
-                    y: hoveredCard === 0 ? -12 : 0,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <div>
-                    <span className="text-[7px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Biology</span>
-                    <h4 className="text-[10px] font-bold text-white mt-0.5 leading-tight">Enzyme Catalysis</h4>
+                {/* Mini Sidebar */}
+                <div className="w-[24%] bg-[#090b11] border-r border-white/5 p-2 flex flex-col justify-between select-none shrink-0">
+                  <div className="space-y-3">
+                    {/* Logo area */}
+                    <div className="flex items-center space-x-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span className="text-[6.5px] font-mono font-bold text-white tracking-widest uppercase">AP LAB</span>
+                    </div>
+                    {/* Sidebar menu items */}
+                    <div className="space-y-1.5">
+                      <div className="bg-white/10 rounded px-1.5 py-0.5 flex items-center space-x-1">
+                        <div className="w-1 h-1 rounded bg-emerald-400/80" />
+                        <span className="text-[5.5px] font-bold text-white">Lessons</span>
+                      </div>
+                      <div className="rounded px-1.5 py-0.5 flex items-center space-x-1 opacity-40">
+                        <div className="w-1 h-1 rounded bg-white" />
+                        <span className="text-[5.5px] text-white">Quizzes</span>
+                      </div>
+                      <div className="rounded px-1.5 py-0.5 flex items-center space-x-1 opacity-40">
+                        <div className="w-1 h-1 rounded bg-white" />
+                        <span className="text-[5.5px] text-white">Exams</span>
+                      </div>
+                      <div className="rounded px-1.5 py-0.5 flex items-center space-x-1 opacity-40">
+                        <div className="w-1 h-1 rounded bg-white" />
+                        <span className="text-[5.5px] text-white">Analytics</span>
+                      </div>
+                    </div>
                   </div>
-                  {/* Simplistic activation energy graph */}
-                  <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center p-1.5">
-                    <svg className="w-full h-full text-white/50" viewBox="0 0 100 60" fill="none">
-                      <path d="M 5,50 L 95,50" stroke="white" strokeWidth="0.8" opacity="0.3" />
-                      <path d="M 10,50 L 10,10" stroke="white" strokeWidth="0.8" opacity="0.3" />
-                      {/* Uncatalyzed curve */}
-                      <path d="M 10,40 Q 35,5 50,20 T 90,45" stroke="#ef4444" strokeWidth="1.2" strokeDasharray="1.5,1.5" fill="none" opacity="0.6" />
-                      {/* Catalyzed curve */}
-                      <path d="M 10,40 Q 35,20 50,30 T 90,45" stroke="#22c55e" strokeWidth="1.5" fill="none" />
-                      
-                      <text x="35" y="15" fill="#ef4444" fontSize="4" opacity="0.8">Ea</text>
-                      <text x="75" y="40" fill="white" fontSize="4.5" opacity="0.5">Reaction</text>
-                    </svg>
+                  
+                  {/* User Profile Capsule */}
+                  <div className="bg-white/[0.04] border border-white/5 rounded px-1 py-0.5 flex items-center space-x-1">
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex items-center justify-center text-[5px] font-bold text-white">U</div>
+                    <span className="text-[4.5px] font-mono text-white/50 truncate">user@aplab.org</span>
                   </div>
-                  <div className="text-[8px] text-white/40 font-mono text-center">Reactants → Products</div>
-                </motion.div>
+                </div>
 
-                {/* Card 2: Chemistry (Titration Curve) */}
-                <motion.div
-                  onMouseEnter={() => setHoveredCard(1)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  className="absolute w-[150px] h-[190px] rounded-2xl border bg-[#0a0b0f] border-white/10 p-3 shadow-2xl flex flex-col justify-between cursor-pointer text-left"
-                  style={{
-                    zIndex: hoveredCard === 1 ? 30 : 20,
-                    top: "-10px",
-                  }}
-                  animate={{
-                    rotate: hoveredCard === 1 ? 0 : 0,
-                    scale: hoveredCard === 1 ? 1.05 : 1,
-                    y: hoveredCard === 1 ? -12 : 0,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <div>
-                    <span className="text-[7px] font-mono text-cyan-400 font-bold uppercase tracking-wider">Chemistry</span>
-                    <h4 className="text-[10px] font-bold text-white mt-0.5 leading-tight">pH Titration</h4>
+                {/* Mini Main Panel */}
+                <div className="flex-1 bg-[#040407] p-2.5 flex flex-col justify-between select-none overflow-hidden">
+                  {/* Panel Header */}
+                  <div className="flex items-center justify-between text-[5px] font-mono text-white/35 uppercase border-b border-white/5 pb-1">
+                    <span>Course: AP Biology</span>
+                    <span>Unit 1: Chemistry of Life</span>
                   </div>
-                  {/* Simplistic titration S-curve */}
-                  <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center p-1.5">
-                    <svg className="w-full h-full text-white/50" viewBox="0 0 100 60" fill="none">
-                      <path d="M 5,50 L 95,50" stroke="white" strokeWidth="0.8" opacity="0.3" />
-                      <path d="M 10,50 L 10,10" stroke="white" strokeWidth="0.8" opacity="0.3" />
-                      {/* S curve */}
-                      <path d="M 15,45 C 40,45 40,15 65,15 T 90,12" stroke="#38bdf8" strokeWidth="1.5" fill="none" />
-                      {/* Equivalence point indicator */}
-                      <circle cx="52.5" cy="30" r="1.5" fill="#ef4444" />
-                      
-                      <text x="60" y="32" fill="white" fontSize="4" opacity="0.7">Equiv. Pt.</text>
-                      <text x="80" y="55" fill="white" fontSize="4.5" opacity="0.5">Volume</text>
-                    </svg>
-                  </div>
-                  <div className="text-[8px] text-white/40 font-mono text-center">pH vs Vol. Titrant</div>
-                </motion.div>
 
-                {/* Card 3: Physics/Chemistry (Boyle's Law) */}
-                <motion.div
-                  onMouseEnter={() => setHoveredCard(2)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  className="absolute w-[150px] h-[190px] rounded-2xl border bg-[#0a0b0f] border-white/10 p-3 shadow-2xl flex flex-col justify-between cursor-pointer text-left"
-                  style={{
-                    right: "15px",
-                    top: "0px",
-                    zIndex: hoveredCard === 2 ? 30 : 10,
-                  }}
-                  animate={{
-                    rotate: hoveredCard === 2 ? 0 : 6,
-                    scale: hoveredCard === 2 ? 1.05 : 0.95,
-                    y: hoveredCard === 2 ? -12 : 0,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <div>
-                    <span className="text-[7px] font-mono text-yellow-400 font-bold uppercase tracking-wider">Physics</span>
-                    <h4 className="text-[10px] font-bold text-white mt-0.5 leading-tight">Gas Laws (Isotherm)</h4>
-                  </div>
-                  {/* Simplistic P-V hyperbola curve */}
-                  <div className="h-20 w-full bg-white/[0.02] border border-white/5 rounded-lg flex items-center justify-center p-1.5">
-                    <svg className="w-full h-full text-white/50" viewBox="0 0 100 60" fill="none">
-                      <path d="M 5,50 L 95,50" stroke="white" strokeWidth="0.8" opacity="0.3" />
-                      <path d="M 10,50 L 10,10" stroke="white" strokeWidth="0.8" opacity="0.3" />
-                      {/* Hyperbola curve */}
-                      <path d="M 15,15 Q 25,40 85,45" stroke="#fbbf24" strokeWidth="1.5" fill="none" />
-                      
-                      <text x="50" y="25" fill="white" fontSize="4.5" opacity="0.7">PV = nRT</text>
-                      <text x="80" y="55" fill="white" fontSize="4.5" opacity="0.5">Volume</text>
-                    </svg>
-                  </div>
-                  <div className="text-[8px] text-white/40 font-mono text-center">Pressure vs Vol.</div>
-                </motion.div>
+                  {/* Panel Body */}
+                  <div className="flex-1 py-1.5 flex gap-2 overflow-hidden">
+                    {/* Left: Article reading view */}
+                    <div className="flex-1 flex flex-col justify-between overflow-hidden">
+                      <div>
+                        <h4 className="text-[7.5px] font-extrabold text-white leading-tight mb-1 truncate">
+                          1.1 Structure of Water
+                        </h4>
+                        <p className="text-[5px] text-white/50 leading-relaxed max-w-[130px] line-clamp-3">
+                          Water is a polar molecule due to oxygen's high electronegativity. This polarity allows hydrogen bonding to form between molecules...
+                        </p>
+                      </div>
+                      {/* Highlighted text callout in article */}
+                      <div className="bg-emerald-400/5 border-l border-emerald-400/40 p-1 rounded-r mt-1">
+                        <p className="text-[4.5px] text-emerald-400 font-medium italic leading-tight">
+                          Key: Cohesion creates high surface tension.
+                        </p>
+                      </div>
+                    </div>
 
+                    {/* Right: Media / Interactive component */}
+                    <div className="w-[38%] flex flex-col space-y-1 shrink-0">
+                      {/* Interactive molecule visual */}
+                      <div className="flex-1 bg-white/[0.02] border border-white/5 rounded-lg flex flex-col items-center justify-center p-1 relative overflow-hidden">
+                        {/* Tiny coordinate grid grid-lines */}
+                        <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 opacity-[0.03]">
+                          {Array.from({ length: 16 }).map((_, i) => (
+                            <div key={i} className="border-[0.25px] border-white" />
+                          ))}
+                        </div>
+                        {/* Molecule representation */}
+                        <svg className="w-8 h-8 text-emerald-400 relative z-10" viewBox="0 0 40 40" fill="none">
+                          <circle cx="20" cy="18" r="4" fill="#10b981" />
+                          <circle cx="11" cy="11" r="2.5" fill="#ffffff" />
+                          <circle cx="29" cy="11" r="2.5" fill="#ffffff" />
+                          <line x1="20" y1="18" x2="11" y2="11" stroke="#ffffff" strokeWidth="1" opacity="0.6" />
+                          <line x1="20" y1="18" x2="29" y2="11" stroke="#ffffff" strokeWidth="1" opacity="0.6" />
+                          <text x="18" y="20" fill="black" fontSize="5" fontWeight="bold">O</text>
+                          <text x="9.5" y="13" fill="black" fontSize="4.5" fontWeight="bold">H</text>
+                          <text x="27.5" y="13" fill="black" fontSize="4.5" fontWeight="bold">H</text>
+                        </svg>
+                        <span className="text-[4.5px] font-mono text-white/30 z-10 uppercase mt-0.5">H₂O Molecule</span>
+                      </div>
+                      
+                      {/* Video clip representation */}
+                      <div className="h-[36px] bg-black border border-white/5 rounded-lg flex items-center justify-center relative overflow-hidden">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,transparent_60%)]" />
+                        {/* Play Icon */}
+                        <svg className="w-3 h-3 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        {/* Video timeline */}
+                        <div className="absolute bottom-1 inset-x-1 h-[1px] bg-white/20 rounded-full overflow-hidden">
+                          <div className="w-[45%] h-full bg-emerald-400" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Panel Footer / Interactive AI Tutor Button */}
+                  <div className="flex justify-between items-center border-t border-white/5 pt-1 mt-0.5">
+                    <span className="text-[4.5px] text-white/30 font-mono">Page 1 of 6</span>
+                    {/* Ask AI Toggle */}
+                    <div className="bg-emerald-400 text-black px-1.5 py-0.5 rounded-[3px] text-[4.5px] font-manrope font-extrabold flex items-center space-x-0.5 shadow-sm">
+                      <span className="w-1 h-1 rounded-full bg-black animate-pulse" />
+                      <span>Ask AI Tutor</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

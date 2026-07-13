@@ -134,27 +134,40 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
       strokeLinecap="round" 
       strokeLinejoin="round" 
     />
-    {/* Arrow pointing right */}
-    <motion.path 
-      d="M2 12h9.5M8.5 9l3 3-3 3" 
-      stroke="currentColor" 
-      strokeWidth="2.2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-      animate={{ x: isHovered ? 2.5 : 0 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    />
-    {/* Door Leaf (Swinging/Morphing) */}
+    
+    {/* Door Leaf (Swinging/Morphing) - Rendered BEFORE the arrow so arrow is drawn on top */}
     <motion.path 
       d={isHovered 
-        ? "M13 3 L21 5.5 L21 18.5 L13 21 Z" 
-        : "M13 5 L21 5 L21 19 L13 19 Z"
+        ? "M14 3 L21 5.5 L21 18.5 L14 21 Z" 
+        : "M12 5 L20 5 L20 19 L12 19 Z"
       }
       fill="currentColor"
       stroke="currentColor"
       strokeWidth="0.8"
       strokeLinejoin="round"
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
+    />
+
+    {/* Thicker White Arrow Outline (for contrast when overlapping black door) */}
+    <motion.path 
+      d="M2 12h9.5M8.5 9l3 3-3 3" 
+      stroke="white" 
+      strokeWidth="4.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      animate={{ x: isHovered ? 4.5 : 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    />
+    
+    {/* Black Arrow */}
+    <motion.path 
+      d="M2 12h9.5M8.5 9l3 3-3 3" 
+      stroke="currentColor" 
+      strokeWidth="2.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      animate={{ x: isHovered ? 4.5 : 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
     />
   </svg>
 );
