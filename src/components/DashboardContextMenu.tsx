@@ -183,15 +183,16 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
         {visible && (
           <motion.div
             ref={menuRef}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.96 }}
-            transition={{ duration: 0.1 }}
-            className="fixed z-[999999] w-52 rounded-xl bg-[#060608] border border-white/10 p-1.5 shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.05)] text-white/90"
+            initial={{ opacity: 0, filter: "blur(12px)", scale: 0.94 }}
+            animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+            exit={{ opacity: 0, filter: "blur(12px)", scale: 0.94 }}
+            transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+            className="fixed z-[999999] w-52 rounded-xl bg-[#060608]/85 backdrop-blur-xl border border-white/10 p-1.5 shadow-[0_16px_50px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.07)] text-white/90"
             style={{
               top: `${Math.min(position.y, window.innerHeight - 200)}px`,
               left: `${Math.min(position.x, window.innerWidth - 220)}px`,
-              backgroundColor: "#060608"
+              backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 100%), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjYiPjxyZWN0IHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9InRyYW5zcGFyZW50Ii8+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjAuNSIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjA4Ii8+PGNpcmNsZSBjeD0iNCIgY3k9IjQiIHI9IjAuNSIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjA0Ii8+PC9zdmc+')",
+              backgroundSize: "auto, 6px 6px",
             }}
           >
             <button

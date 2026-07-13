@@ -70,20 +70,11 @@ const folders = [
 function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const [cursorOffset, setCursorOffset] = useState(0);
-  const measureRef = useRef<HTMLSpanElement>(null);
   
-  const allClassList = folders.flatMap(f => f.classes.map(c => ({ ...c, category: f.title })));
+  const allClassList = folders.flatMap(f => f.classes.map(c => ({ ...c, category: f.title, color: f.color })));
   const filtered = query === "" ? [] : allClassList.filter(c => 
     c.name.toLowerCase().includes(query.toLowerCase())
   );
-
-  useEffect(() => {
-    if (measureRef.current) {
-      setCursorOffset(measureRef.current.offsetWidth);
-    }
-  }, [query]);
 
   return (
     <div className="relative w-full max-w-3xl mb-24 z-[60] group">
@@ -122,41 +113,6 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
         <div className="flex-1 flex items-center px-6 relative overflow-hidden">
           <Search className="w-5 h-5 text-white/80 mr-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
           <div className="relative flex-1 flex items-center">
-            {/* Hidden span for text measurement */}
-            <span ref={measureRef} className="absolute invisible whitespace-pre text-xl font-manrope font-medium">
-              {query}
-            </span>
-
-            {/* Custom glowing caret and monochrome light ray */}
-            {isFocused && (
-              <div 
-                className="absolute pointer-events-none h-6 flex items-center transition-all duration-75"
-                style={{ left: `${cursorOffset}px` }}
-              >
-                {/* Glowing Caret */}
-                <div className="w-[2px] h-6 bg-white shadow-[0_0_10px_rgba(255,255,255,1),0_0_20px_rgba(255,255,255,0.8)]" />
-                
-                {/* Volumetric Light Ray */}
-                <div 
-                  className="h-12 opacity-80 blur-md pointer-events-none"
-                  style={{
-                    width: "350px",
-                    background: "linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.01) 50%, transparent 100%)",
-                    transformOrigin: "left center",
-                    transform: "skewX(-20deg) translateY(-2px)",
-                  }}
-                />
-
-                {/* Floating monochrome dust particles */}
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 w-48 h-10 overflow-hidden pointer-events-none opacity-60">
-                  <div className="absolute w-[2px] h-[2px] bg-white rounded-full dust-mote" style={{ top: '20%', left: '10%', animationDelay: '0s' }} />
-                  <div className="absolute w-[1px] h-[1px] bg-white rounded-full dust-mote" style={{ top: '65%', left: '35%', animationDelay: '1.2s' }} />
-                  <div className="absolute w-[2px] h-[2px] bg-white rounded-full dust-mote" style={{ top: '45%', left: '55%', animationDelay: '0.6s' }} />
-                  <div className="absolute w-[1.5px] h-[1.5px] bg-white rounded-full dust-mote" style={{ top: '80%', left: '75%', animationDelay: '2.4s' }} />
-                </div>
-              </div>
-            )}
-
             <input
               type="text"
               placeholder="Search for an AP Course..."
@@ -167,15 +123,12 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
               }}
               onFocus={() => {
                 setIsOpen(true);
-                setIsFocused(true);
               }}
               onBlur={() => {
                 setTimeout(() => {
                   setIsOpen(false);
-                  setIsFocused(false);
                 }, 200);
               }}
-              style={{ caretColor: "transparent" }}
               className="w-full bg-transparent py-4.5 text-white placeholder-white/20 focus:outline-none text-xl font-manrope font-medium"
             />
           </div>
@@ -202,7 +155,7 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
               >
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-primary-purple" />
+                    <item.icon className={cn("w-5 h-5", item.color)} />
                   </div>
                   <div>
                     <div className="text-white font-medium">{item.name}</div>
@@ -363,6 +316,16 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
       </div>
     </div>
   );
+}
+
+function getLevelName(lvl: number): string {
+  if (lvl === 100) return "Grandmaster";
+  if (lvl >= 90) return "Ascendant";
+  if (lvl >= 70) return "Elite";
+  if (lvl >= 50) return "Master";
+  if (lvl >= 30) return "Expert";
+  if (lvl >= 10) return "Scholar";
+  return "Apprentice";
 }
 
 export default function Dashboard() {
@@ -537,7 +500,10 @@ export default function Dashboard() {
             className="text-sm md:text-base uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-3 mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
           >
             <span>WELCOME BACK, {firstName.toUpperCase()}</span>
-            <LevelBadge level={level} className="normal-case tracking-normal shrink-0" />
+            <div className="flex flex-col items-center translate-y-[3px]">
+              <span className="text-[8px] font-mono tracking-[0.2em] text-[#a484d7] uppercase font-black leading-none mb-1 normal-case">{getLevelName(level).toUpperCase()}</span>
+              <LevelBadge level={level} className="normal-case tracking-normal shrink-0" />
+            </div>
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}

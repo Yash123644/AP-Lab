@@ -41,7 +41,16 @@ export function Navbar() {
           : "bg-transparent border-b border-transparent py-6"
       )}>
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
+        <Link 
+          href="/" 
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="flex items-center space-x-3 cursor-pointer group"
+        >
           <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
             <Activity className="w-5 h-5 text-white animate-pulse" />
           </div>
