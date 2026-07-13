@@ -296,10 +296,6 @@ export function SubjectLabs() {
             {/* 3D Visual Section (Right) */}
             <div 
               className="relative w-full md:w-1/2 flex items-center justify-center h-[200px] md:h-auto select-none"
-              style={{
-                WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
-                maskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)"
-              }}
             >
               <div className="absolute inset-0 bg-radial-gradient from-emerald-500/5 to-transparent pointer-events-none" />
               <BiologyDNA3D isHovered={hoveredCard === "biology"} />

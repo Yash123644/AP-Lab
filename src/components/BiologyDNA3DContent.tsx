@@ -99,7 +99,7 @@ function DNAHelix({ isHovered }: DNAProps) {
 export function BiologyDNA3DContent({ isHovered }: DNAProps) {
   return (
     <div className="w-full h-full min-h-[220px] max-h-[300px] relative">
-      <Canvas camera={{ position: [0, 0, 7.5], fov: 45 }}>
+      <Canvas camera={{ position: [0, 0, 8.2], fov: 45 }}>
         <ambientLight intensity={isHovered ? 0.7 : 0.3} />
         <pointLight position={[10, 10, 10]} intensity={1.5} />
         <pointLight position={[-10, -10, -10]} intensity={0.5} />

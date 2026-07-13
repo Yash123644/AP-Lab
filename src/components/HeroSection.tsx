@@ -138,8 +138,8 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
     {/* Door Leaf (Swinging/Morphing) - Rendered BEFORE the arrow so arrow is drawn on top */}
     <motion.path 
       d={isHovered 
-        ? "M14 3 L21 5.5 L21 18.5 L14 21 Z" 
-        : "M12 5 L14 5 L14 19 L12 19 Z"
+        ? "M12 3 L16 5 L16 19 L12 21 Z" 
+        : "M8.5 5 L16 5 L16 19 L8.5 19 Z"
       }
       fill="currentColor"
       stroke="currentColor"
@@ -519,15 +519,6 @@ export function HeroSection() {
                 alt="Verified Badge" 
                 className="w-[34px] h-[34px] shrink-0 aspect-square select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
               />
-              
-              {/* Tooltip bubble */}
-              <span className="!absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 w-64 px-4 py-3 bg-[#030307]/95 backdrop-blur-2xl rounded-[16px] text-center shadow-[0_12px_40px_rgba(0,0,0,0.85)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 whitespace-normal liquid-glass-outline border border-white/5">
-                <span className="block font-sans text-[11.5px] font-semibold text-white/90 leading-relaxed">
-                  We are committed to keeping AP Lab 100% free forever. No paywalls, ads, or subscriptions.
-                </span>
-                {/* Tooltip Arrow */}
-                <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-[#030307]/95" />
-              </span>
             </span>
           </span>
         </p>
