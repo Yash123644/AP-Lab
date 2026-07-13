@@ -116,120 +116,134 @@ export function AppShowcase() {
 
             {/* Mini Dashboard Visualization */}
             <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-6 px-2">
-              <div className="bg-[#05060b] border border-white/10 rounded-2xl w-full max-w-[360px] h-[210px] shadow-2xl flex overflow-hidden text-left font-sans relative group/dash hover:border-white/15 transition-all duration-300">
+              <div className="bg-[#05060b] border border-white/10 rounded-2xl w-full max-w-[390px] h-[225px] shadow-2xl flex flex-col overflow-hidden text-left font-sans relative group/dash hover:border-white/15 transition-all duration-300">
                 {/* Simulated Glass Highlight Reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] pointer-events-none" />
                 
-                {/* Mini Sidebar */}
-                <div className="w-[24%] bg-[#090b11] border-r border-white/5 p-2 flex flex-col justify-between select-none shrink-0">
-                  <div className="space-y-3">
-                    {/* Logo area */}
-                    <div className="flex items-center space-x-1">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      <span className="text-[6.5px] font-mono font-bold text-white tracking-widest uppercase">AP LAB</span>
-                    </div>
-                    {/* Sidebar menu items */}
-                    <div className="space-y-1.5">
-                      <div className="bg-white/10 rounded px-1.5 py-0.5 flex items-center space-x-1">
-                        <div className="w-1 h-1 rounded bg-emerald-400/80" />
-                        <span className="text-[5.5px] font-bold text-white">Lessons</span>
-                      </div>
-                      <div className="rounded px-1.5 py-0.5 flex items-center space-x-1 opacity-40">
-                        <div className="w-1 h-1 rounded bg-white" />
-                        <span className="text-[5.5px] text-white">Quizzes</span>
-                      </div>
-                      <div className="rounded px-1.5 py-0.5 flex items-center space-x-1 opacity-40">
-                        <div className="w-1 h-1 rounded bg-white" />
-                        <span className="text-[5.5px] text-white">Exams</span>
-                      </div>
-                      <div className="rounded px-1.5 py-0.5 flex items-center space-x-1 opacity-40">
-                        <div className="w-1 h-1 rounded bg-white" />
-                        <span className="text-[5.5px] text-white">Analytics</span>
-                      </div>
-                    </div>
+                {/* Top Nav Bar */}
+                <div className="h-[18px] bg-[#080a0f] border-b border-white/5 flex items-center justify-between px-2 shrink-0 select-none">
+                  <div className="flex items-center space-x-1.5">
+                    {/* Back arrow */}
+                    <svg className="w-1.5 h-1.5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <line x1="19" y1="12" x2="5" y2="12" />
+                      <polyline points="12 19 5 12 12 5" />
+                    </svg>
+                    <span className="text-[5.5px] font-bold text-white tracking-wide">AP Biology</span>
                   </div>
-                  
-                  {/* User Profile Capsule */}
-                  <div className="bg-white/[0.04] border border-white/5 rounded px-1 py-0.5 flex items-center space-x-1">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex items-center justify-center text-[5px] font-bold text-white">U</div>
-                    <span className="text-[4.5px] font-mono text-white/50 truncate">user@aplab.org</span>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[4px] font-mono text-emerald-400 bg-emerald-400/10 px-1 py-[1px] rounded-[2px] border border-emerald-400/20">LIVE</span>
+                    <div className="border border-white/10 rounded-[3px] px-1 py-[1.5px] bg-white/[0.02] text-[4.5px] font-bold text-white/70 flex items-center space-x-0.5">
+                      <span className="w-1 h-1 rounded-full bg-white/40" />
+                      <span>ACCOUNT</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Mini Main Panel */}
-                <div className="flex-1 bg-[#040407] p-2.5 flex flex-col justify-between select-none overflow-hidden">
-                  {/* Panel Header */}
-                  <div className="flex items-center justify-between text-[5px] font-mono text-white/35 uppercase border-b border-white/5 pb-1">
-                    <span>Course: AP Biology</span>
-                    <span>Unit 1: Chemistry of Life</span>
-                  </div>
-
-                  {/* Panel Body */}
-                  <div className="flex-1 py-1.5 flex gap-2 overflow-hidden">
-                    {/* Left: Article reading view */}
-                    <div className="flex-1 flex flex-col justify-between overflow-hidden">
-                      <div>
-                        <h4 className="text-[7.5px] font-extrabold text-white leading-tight mb-1 truncate">
-                          1.1 Structure of Water
-                        </h4>
-                        <p className="text-[5px] text-white/50 leading-relaxed max-w-[130px] line-clamp-3">
-                          Water is a polar molecule due to oxygen's high electronegativity. This polarity allows hydrogen bonding to form between molecules...
-                        </p>
-                      </div>
-                      {/* Highlighted text callout in article */}
-                      <div className="bg-emerald-400/5 border-l border-emerald-400/40 p-1 rounded-r mt-1">
-                        <p className="text-[4.5px] text-emerald-400 font-medium italic leading-tight">
-                          Key: Cohesion creates high surface tension.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right: Media / Interactive component */}
-                    <div className="w-[38%] flex flex-col space-y-1 shrink-0">
-                      {/* Interactive molecule visual */}
-                      <div className="flex-1 bg-white/[0.02] border border-white/5 rounded-lg flex flex-col items-center justify-center p-1 relative overflow-hidden">
-                        {/* Tiny coordinate grid grid-lines */}
-                        <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 opacity-[0.03]">
-                          {Array.from({ length: 16 }).map((_, i) => (
-                            <div key={i} className="border-[0.25px] border-white" />
-                          ))}
+                <div className="flex-1 flex overflow-hidden">
+                  {/* Left Sidebar */}
+                  <div className="w-[28%] bg-[#08090d] border-r border-white/5 p-1.5 flex flex-col justify-between select-none shrink-0 overflow-y-auto no-scrollbar">
+                    <div className="space-y-2">
+                      {/* Unit 1 */}
+                      <div className="space-y-1">
+                        <div className="text-[4px] font-bold text-white/30 uppercase leading-none">UNIT 1 • 8-11%</div>
+                        <div className="text-[4.5px] font-bold text-white/60 leading-none">Chemistry of Life</div>
+                        
+                        <div className="space-y-0.5 mt-1 border-l border-white/5 pl-1.5">
+                          <div className="text-[4px] font-semibold text-[#34d399] leading-tight flex items-center space-x-0.5">
+                            <span className="w-0.5 h-0.5 rounded-full bg-[#34d399] shrink-0" />
+                            <span className="truncate">1.1 Water & Life</span>
+                          </div>
+                          <div className="text-[4px] text-white/30 leading-tight truncate">1.2 Macromolecules</div>
+                          <div className="text-[4px] text-white/30 leading-tight truncate">1.3 Nucleic Acids</div>
                         </div>
-                        {/* Molecule representation */}
-                        <svg className="w-8 h-8 text-emerald-400 relative z-10" viewBox="0 0 40 40" fill="none">
-                          <circle cx="20" cy="18" r="4" fill="#10b981" />
-                          <circle cx="11" cy="11" r="2.5" fill="#ffffff" />
-                          <circle cx="29" cy="11" r="2.5" fill="#ffffff" />
-                          <line x1="20" y1="18" x2="11" y2="11" stroke="#ffffff" strokeWidth="1" opacity="0.6" />
-                          <line x1="20" y1="18" x2="29" y2="11" stroke="#ffffff" strokeWidth="1" opacity="0.6" />
-                          <text x="18" y="20" fill="black" fontSize="5" fontWeight="bold">O</text>
-                          <text x="9.5" y="13" fill="black" fontSize="4.5" fontWeight="bold">H</text>
-                          <text x="27.5" y="13" fill="black" fontSize="4.5" fontWeight="bold">H</text>
-                        </svg>
-                        <span className="text-[4.5px] font-mono text-white/30 z-10 uppercase mt-0.5">H₂O Molecule</span>
+                      </div>
+
+                      {/* Unit 2 */}
+                      <div className="space-y-0.5">
+                        <div className="text-[4px] font-bold text-white/20 uppercase leading-none">UNIT 2 • 10-13%</div>
+                        <div className="text-[4.5px] font-bold text-white/20 leading-none truncate">Cell Structure</div>
                       </div>
                       
-                      {/* Video clip representation */}
-                      <div className="h-[36px] bg-black border border-white/5 rounded-lg flex items-center justify-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,transparent_60%)]" />
-                        {/* Play Icon */}
-                        <svg className="w-3 h-3 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
-                          <polygon points="5 3 19 12 5 21 5 3" />
-                        </svg>
-                        {/* Video timeline */}
-                        <div className="absolute bottom-1 inset-x-1 h-[1px] bg-white/20 rounded-full overflow-hidden">
-                          <div className="w-[45%] h-full bg-emerald-400" />
-                        </div>
+                      {/* Unit 3 */}
+                      <div className="space-y-0.5">
+                        <div className="text-[4px] font-bold text-white/20 uppercase leading-none">UNIT 3 • 12-16%</div>
+                        <div className="text-[4.5px] font-bold text-white/20 leading-none truncate">Cell Energetics</div>
                       </div>
+                    </div>
+                    
+                    {/* User profile */}
+                    <div className="bg-white/[0.03] border border-white/5 rounded p-1 flex items-center space-x-1 mt-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex items-center justify-center text-[5px] font-bold text-white shrink-0">Y</div>
+                      <span className="text-[4px] font-mono text-white/40 truncate">yash@aplab.org</span>
                     </div>
                   </div>
 
-                  {/* Panel Footer / Interactive AI Tutor Button */}
-                  <div className="flex justify-between items-center border-t border-white/5 pt-1 mt-0.5">
-                    <span className="text-[4.5px] text-white/30 font-mono">Page 1 of 6</span>
-                    {/* Ask AI Toggle */}
-                    <div className="bg-emerald-400 text-black px-1.5 py-0.5 rounded-[3px] text-[4.5px] font-manrope font-extrabold flex items-center space-x-0.5 shadow-sm">
-                      <span className="w-1 h-1 rounded-full bg-black animate-pulse" />
-                      <span>Ask AI Tutor</span>
+                  {/* Main Content Panel */}
+                  <div className="flex-1 bg-[#030305] p-2 flex flex-col justify-between select-none overflow-y-auto no-scrollbar">
+                    {/* Header Card */}
+                    <div className="bg-gradient-to-r from-[#0a0c10] to-[#07080b] border border-white/5 rounded-lg p-2 flex justify-between items-center relative overflow-hidden shrink-0">
+                      {/* Grid Pattern inside Card */}
+                      <div className="absolute inset-0 grid grid-cols-6 grid-rows-3 opacity-[0.02]">
+                        {Array.from({ length: 18 }).map((_, i) => (
+                          <div key={i} className="border-[0.25px] border-white" />
+                        ))}
+                      </div>
+                      
+                      <div className="relative z-10 max-w-[70%]">
+                        <div className="text-[3.5px] font-mono font-bold text-emerald-400 uppercase tracking-wider">AP BIOLOGY &bull; UNIT 1 &bull; TOPIC 1.1</div>
+                        <h4 className="text-[7.5px] font-extrabold text-white leading-tight mt-0.5">
+                          Water Chemistry and the Elements of Life
+                        </h4>
+                        <p className="text-[4px] text-white/40 leading-snug mt-0.5 line-clamp-2">
+                          Explore the polar molecular structure of water and its life-sustaining hydrogen bonding...
+                        </p>
+                      </div>
+
+                      <div className="relative z-10 bg-white/[0.02] border border-white/5 p-1 rounded-md text-right shrink-0">
+                        <div className="text-[3.5px] font-mono font-bold text-white/30 uppercase leading-none">TOPIC MASTERY</div>
+                        <div className="text-[7px] font-mono font-bold text-emerald-400 leading-none mt-0.5">100%</div>
+                        <div className="w-10 bg-white/10 h-[1.5px] rounded-full overflow-hidden mt-1">
+                          <div className="w-full h-full bg-emerald-400" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Tab Selection */}
+                    <div className="flex items-center space-x-1 mt-1.5 shrink-0">
+                      <div className="border border-white/5 bg-white/[0.01] text-white/40 text-[4px] font-bold px-1.5 py-0.5 rounded-[3px] flex items-center space-x-0.5">
+                        <svg className="w-1 h-1 text-white/40 fill-white/40" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        <span>Video</span>
+                      </div>
+                      <div className="border border-white/10 bg-white/5 text-white text-[4.5px] font-bold px-2 py-0.5 rounded-[3px] flex items-center space-x-0.5">
+                        <svg className="w-1 h-1 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span>Article</span>
+                      </div>
+                      <div className="border border-white/5 bg-white/[0.01] text-white/40 text-[4px] font-bold px-1.5 py-0.5 rounded-[3px] flex items-center space-x-0.5">
+                        <svg className="w-1 h-1 text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.364-6.364l-.707-.707M6.022 17.5a6.5 6.5 0 1 1 11.956 0h-6z"/></svg>
+                        <span>Practice</span>
+                      </div>
+                    </div>
+
+                    {/* Article Content view */}
+                    <div className="bg-[#0a0c10] border border-white/5 rounded-lg p-2 mt-1.5 flex-1 flex flex-col justify-between overflow-hidden">
+                      <div className="overflow-hidden">
+                        <h5 className="text-[6.5px] font-extrabold text-white leading-tight">
+                          Structure of Water and Hydrogen Bonding
+                        </h5>
+                        <p className="text-[4.5px] text-white/40 leading-relaxed mt-1 line-clamp-3">
+                          Water is a polar molecule due to oxygen's high electronegativity. This polarity allows hydrogen bonding to form between molecules, giving water its unique properties such as high cohesion, adhesion, and thermal capacity.
+                        </p>
+                      </div>
+                      
+                      {/* Dotted underline highlight in article */}
+                      <div className="border-t border-dashed border-emerald-400/20 pt-1 flex items-center justify-between mt-1 shrink-0">
+                        <span className="text-[4px] text-emerald-400 italic">Highly cohesive molecules create high surface tension.</span>
+                        {/* Tiny Ask AI float button at bottom right */}
+                        <div className="bg-emerald-400 text-black px-1.5 py-0.5 rounded-[3px] text-[4.5px] font-manrope font-extrabold flex items-center space-x-0.5 shadow-sm shrink-0">
+                          <span className="w-0.5 h-0.5 rounded-full bg-black animate-pulse" />
+                          <span>Ask AI</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

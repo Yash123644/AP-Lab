@@ -139,7 +139,7 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
     <motion.path 
       d={isHovered 
         ? "M14 3 L21 5.5 L21 18.5 L14 21 Z" 
-        : "M12 5 L20 5 L20 19 L12 19 Z"
+        : "M12 5 L14 5 L14 19 L12 19 Z"
       }
       fill="currentColor"
       stroke="currentColor"
@@ -155,7 +155,7 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
       strokeWidth="4.2" 
       strokeLinecap="round" 
       strokeLinejoin="round"
-      animate={{ x: isHovered ? 4.5 : 0 }}
+      animate={{ x: isHovered ? 4.5 : -2.5 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     />
     
@@ -166,7 +166,7 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
       strokeWidth="2.2" 
       strokeLinecap="round" 
       strokeLinejoin="round"
-      animate={{ x: isHovered ? 4.5 : 0 }}
+      animate={{ x: isHovered ? 4.5 : -2.5 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     />
   </svg>
