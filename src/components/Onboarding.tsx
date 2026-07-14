@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Star, Search, Upload, User, Check, Book, 
@@ -70,9 +70,11 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" className={props.className}>
     <rect width="24" height="24" rx="5" fill="#000000" />
-    <path d="M17 9.5a3.5 3.5 0 0 1-2.5-1.2V13a3.5 3.5 0 1 1-5-3.13V12.7a1 1 0 1 0 2.5 1V3h2.5a3.5 3.5 0 0 0 3.5 3.5v3z" fill="#FFFFFF" />
-    <path d="M17 6.5a3.5 3.5 0 0 1-2.5-1.2V13a3.5 3.5 0 1 1-5-3.13" stroke="#25F4EE" strokeWidth="1" fill="none" />
-    <path d="M14.5 3h2.5a3.5 3.5 0 0 0 3.5 3.5" stroke="#FE2C55" strokeWidth="1" fill="none" />
+    <g transform="translate(2, 2)">
+      <path d="M12.5 3v11.5a3.5 3.5 0 1 1-5-3.1v2.7a1 1 0 1 0 2.5 1V3h2.5a3.5 3.5 0 0 0 3.5 3.5V3h-3.5z" fill="#FFFFFF" />
+      <path d="M12.5 3v11.5a3.5 3.5 0 1 1-5-3.1" stroke="#25F4EE" strokeWidth="1" fill="none" />
+      <path d="M10 3.5h2.5a3.5 3.5 0 0 0 3.5 3.5" stroke="#FE2C55" strokeWidth="1" fill="none" />
+    </g>
   </svg>
 );
 
@@ -104,10 +106,11 @@ const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+// ChatGPT: White circle background with black swirl orb mascot
 const ChatGPTIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" className={props.className}>
-    <circle cx="12" cy="12" r="12" fill="#10a37f" />
-    <path d="M16.5 10.3c.3-.2.5-.5.6-.9.1-.3.1-.7 0-1-.1-.3-.3-.6-.6-.8s-.6-.3-1-.3h-2.1c-.2-.5-.5-1-.9-1.3-.4-.3-.9-.5-1.4-.5s-1 .2-1.4.5c-.4.3-.7.8-.9 1.3H7.1c-.4 0-.7.1-1 .3s-.5.5-.6.8c-.1.3-.1.7 0 1 .1.3.3.6.6.8.3.2.5.5.6.9.1.3.1.7 0 1-.1.3-.3.6-.6.8s-.6.3-1 .3h2.1c.2.5.5 1 .9 1.3.4.3.9.5 1.4.5s1-.2 1.4-.5c.4-.3.7-.8.9-1.3h2.1c.4 0 .7-.1 1-.3s.5-.5.6-.8c.1-.3.1-.7 0-1-.1-.3-.3-.6-.6-.8z" fill="#FFFFFF" />
+    <circle cx="12" cy="12" r="12" fill="#FFFFFF" />
+    <path d="M16.5 10.3c.3-.2.5-.5.6-.9.1-.3.1-.7 0-1-.1-.3-.3-.6-.6-.8s-.6-.3-1-.3h-2.1c-.2-.5-.5-1-.9-1.3-.4-.3-.9-.5-1.4-.5s-1 .2-1.4.5c-.4.3-.7.8-.9 1.3H7.1c-.4 0-.7.1-1 .3s-.5.5-.6.8c-.1.3-.1.7 0 1 .1.3.3.6.6.8.3.2.5.5.6.9.1.3.1.7 0 1-.1.3-.3.6-.6.8s-.6.3-1 .3h2.1c.2.5.5 1 .9 1.3.4.3.9.5 1.4.5s1-.2 1.4-.5c.4-.3.7-.8.9-1.3h2.1c.4 0 .7-.1 1-.3s.5-.5.6-.8c.1-.3.1-.7 0-1-.1-.3-.3-.6-.6-.8z" fill="#000000" />
   </svg>
 );
 
@@ -185,7 +188,6 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
   // State values for responses
   const [gradYear, setGradYear] = useState<number | null>(null);
   const [referredBy, setReferredBy] = useState("");
-  const [otherReferral, setOtherReferral] = useState("");
   const [goalScore, setGoalScore] = useState(5);
   const [selectedIntents, setSelectedIntents] = useState<string[]>([]);
   const [selectedClasses, setSelectedClasses] = useState<string[]>([]);
@@ -193,6 +195,33 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
   const [username, setUsername] = useState("");
   const [photoDataUrl, setPhotoDataUrl] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+
+  // Marquee Position & Hover Refs for glitch-free loop
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const speedRef = useRef(0.8);
+  const xRef = useRef(0);
+  const [marqueeHovered, setMarqueeHovered] = useState(false);
+
+  useEffect(() => {
+    speedRef.current = marqueeHovered ? 0.15 : 0.8;
+  }, [marqueeHovered]);
+
+  useEffect(() => {
+    let animationFrameId: number;
+    const updateMarquee = () => {
+      if (marqueeRef.current) {
+        xRef.current -= speedRef.current;
+        const halfWidth = marqueeRef.current.scrollWidth / 2;
+        if (Math.abs(xRef.current) >= halfWidth) {
+          xRef.current = 0;
+        }
+        marqueeRef.current.style.transform = `translate3d(${xRef.current}px, 0, 0)`;
+      }
+      animationFrameId = requestAnimationFrame(updateMarquee);
+    };
+    animationFrameId = requestAnimationFrame(updateMarquee);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
 
   // Dynamic grade calculation from graduation year (assuming current year is 2026)
   const calculateGradeInfo = (year: number) => {
@@ -238,50 +267,62 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
 
   const handleSubmit = async () => {
     setSaving(true);
-    try {
-      const activeUser = auth.currentUser;
-      const finalUsername = username.trim() || activeUser?.displayName || "AP Scholar";
+    const activeUser = auth.currentUser;
+    const finalUsername = username.trim() || activeUser?.displayName || "AP Scholar";
+    const uid = userId || activeUser?.uid;
 
+    try {
       // 1. Update Firebase Auth Profile
       if (activeUser) {
         await updateProfile(activeUser, {
           displayName: finalUsername,
           photoURL: photoDataUrl || activeUser.photoURL || ""
-        });
+        }).catch(err => console.error("Firebase auth update profile error:", err));
       }
+    } catch (e) {}
 
-      // 2. Save Onboarding progress to Firestore Progress Document under correct 'userProgress' collection
-      const uid = userId || activeUser?.uid;
-      if (uid) {
-        const docRef = doc(db, "userProgress", uid);
-        const updatedProgress = {
-          ...progress,
-          uid,
-          email: userEmail || activeUser?.email || "",
-          displayName: finalUsername,
-          photoURL: photoDataUrl || activeUser?.photoURL || "",
-          isOnboarded: true,
-          graduationYear: gradYear,
-          referredBy: referredBy,
-          goalScore,
-          usageIntents: selectedIntents,
-          selectedClasses
-        };
+    // 2. Save Onboarding progress to Firestore Progress Document under correct 'userProgress' collection
+    if (uid) {
+      const docRef = doc(db, "userProgress", uid);
+      const updatedProgress = {
+        ...progress,
+        uid,
+        email: userEmail || activeUser?.email || "",
+        displayName: finalUsername,
+        photoURL: photoDataUrl || activeUser?.photoURL || "",
+        isOnboarded: true,
+        graduationYear: gradYear,
+        referredBy: referredBy,
+        goalScore,
+        usageIntents: selectedIntents,
+        selectedClasses
+      };
 
-        // Write to local storage for zero-latency recovery
+      // Write to local storage for zero-latency recovery
+      try {
         localStorage.setItem(`ap-lab-progress-${uid}`, JSON.stringify(updatedProgress));
+      } catch (e) {}
 
-        // Write to firestore collection 'userProgress'
+      // Write to firestore collection 'userProgress' (non-blocking fallback)
+      try {
         await setDoc(docRef, updatedProgress, { merge: true });
+      } catch (e) {
+        console.error("Firestore write permission block/error:", e);
       }
-
-      // 3. Complete and hide onboarding view
-      onComplete();
-    } catch (e) {
-      console.error("Onboarding submission error:", e);
-    } finally {
-      setSaving(false);
     }
+
+    // 3. Unconditionally trigger redirect via callback
+    setSaving(false);
+    try {
+      onComplete();
+    } catch (err) {
+      console.error("onComplete error, falling back to hard redirect:", err);
+    }
+    
+    // Fallback hard redirect to guarantee transition
+    setTimeout(() => {
+      window.location.href = "/dashboard";
+    }, 50);
   };
 
   const filteredClasses = classes.filter(c => 
@@ -291,29 +332,38 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
   return (
     <div className="fixed inset-0 z-[100] bg-black text-white flex flex-col font-manrope selection:bg-emerald-500/30 selection:text-white">
       
-      {/* Thicker Progress Bar at the very top of the page */}
-      <div className="w-full h-4 bg-neutral-950 border-b border-white/5 relative shrink-0">
-        <motion.div 
-          className="h-full bg-gradient-to-r from-emerald-400 to-blue-500" 
-          animate={{ width: `${(step / totalSteps) * 100}%` }}
-          transition={{ duration: 0.3 }}
-        />
-      </div>
+      {/* Thicker Progress Bar with circular pill shape layout centered at the top */}
+      <div className="w-full bg-[#030303]/40 py-4 px-6 md:px-12 flex items-center justify-between border-b border-white/5 shrink-0 z-20">
+        
+        {/* Back arrow to the left */}
+        <div className="w-10 flex justify-start">
+          {step > 1 ? (
+            <button 
+              onClick={handleBack} 
+              className="text-white/50 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/5 focus:outline-none shrink-0"
+              title="Go back to previous step"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          ) : (
+            <div className="w-9 shrink-0" />
+          )}
+        </div>
 
-      {/* Header Actions (Back Arrow + Step Counter) below progress bar, logo removed */}
-      <div className="w-full bg-[#030303]/40 py-3.5 px-6 md:px-12 flex items-center justify-between z-20 border-b border-white/5 shrink-0">
-        {step > 1 ? (
-          <button 
-            onClick={handleBack} 
-            className="text-white/50 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/5 focus:outline-none shrink-0"
-            title="Go back to previous step"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-        ) : (
-          <div className="w-9 shrink-0" />
-        )}
-        <span className="text-xs font-semibold text-neutral-500">Step {step} of {totalSteps}</span>
+        {/* Circular pill-ended thicker progress bar in the center */}
+        <div className="flex-1 max-w-3xl h-4 bg-neutral-900 border border-white/10 rounded-full overflow-hidden p-[2px] mx-4">
+          <motion.div 
+            className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-blue-500" 
+            animate={{ width: `${(step / totalSteps) * 100}%` }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
+
+        {/* Step count text to the right */}
+        <div className="w-24 text-right select-none shrink-0">
+          <span className="text-xs font-semibold text-neutral-500 font-mono">Step {step} of {totalSteps}</span>
+        </div>
+
       </div>
 
       {/* Steps Content Area */}
@@ -334,39 +384,34 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
                 </p>
               </div>
 
-              {/* Reviews Marquee */}
+              {/* Glitch-Free Reviews Marquee */}
               <div className="relative w-full overflow-hidden py-4 flex flex-col space-y-4">
-                <style>{`
-                  @keyframes onboarding-marquee {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
-                  }
-                  .onboarding-marquee-track {
-                    display: flex;
-                    animation: onboarding-marquee 25s linear infinite;
-                  }
-                  .onboarding-marquee-track:hover {
-                    animation-duration: 90s; /* Slower when hovered */
-                  }
-                `}</style>
-
                 <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
                 <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-                <div className="flex w-max overflow-hidden">
-                  <div className="onboarding-marquee-track space-x-6 pr-6">
+                <div 
+                  className="flex w-max overflow-hidden"
+                  onMouseEnter={() => setMarqueeHovered(true)}
+                  onMouseLeave={() => setMarqueeHovered(false)}
+                >
+                  <div 
+                    ref={marqueeRef}
+                    className="flex space-x-6 pr-6 will-change-transform"
+                  >
                     {[...reviews, ...reviews].map((review, i) => (
                       <div key={i} className="shrink-0 w-[300px] md:w-[380px] bg-neutral-900/60 border border-white/5 rounded-3xl p-6 text-left flex flex-col justify-between">
+                        {/* Yellow stars */}
                         <div className="flex space-x-1 mb-3">
                           {[1, 2, 3, 4, 5].map((star) => (
-                            <Star key={star} className="w-[14px] h-[14px] fill-emerald-400 text-emerald-400" />
+                            <Star key={star} className="w-[14px] h-[14px] fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                         <p className="text-neutral-300 text-sm leading-relaxed mb-6 italic select-none">
                           &ldquo;{review.text}&rdquo;
                         </p>
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                          {/* White avatar placeholder with dark text */}
+                          <div className="w-8 h-8 rounded-full bg-white text-neutral-900 flex items-center justify-center font-bold text-sm select-none border border-neutral-200">
                             {review.name[0]}
                           </div>
                           <div className="flex flex-col">
