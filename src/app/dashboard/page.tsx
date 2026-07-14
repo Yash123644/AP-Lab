@@ -8,13 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
-  ChevronRight, Activity, Star, User, Mail, X, BarChart2
+  ChevronRight, Activity, Star, User, Mail, X, BarChart2, Upload
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
 import MuxPlayer from "@mux/mux-player-react";
-import { auth } from "@/lib/firebase";
-import { signOut } from "firebase/auth";
+import { auth, db } from "@/lib/firebase";
+import { signOut, updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { cn } from "@/lib/utils";
 import { useProgress } from "@/context/ProgressContext";
 import { courseRegistry } from "@/lib/courses/course-registry";
@@ -340,6 +341,68 @@ export default function Dashboard() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [onboardCompleted, setOnboardCompleted] = useState(false);
+  const avatarInputRef = useRef<HTMLInputElement>(null);
+
+  const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && currentUser) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const img = new Image();
+        img.onload = async () => {
+          const canvas = document.createElement("canvas");
+          const MAX_WIDTH = 128;
+          const MAX_HEIGHT = 128;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height *= MAX_WIDTH / width;
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width *= MAX_HEIGHT / height;
+              height = MAX_HEIGHT;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            const compressedDataUrl = canvas.toDataURL("image/jpeg", 0.7);
+
+            // Save immediately to LocalStorage
+            const progressRef = doc(db, "userProgress", currentUser.uid);
+            const updated = {
+              ...progress,
+              photoURL: compressedDataUrl
+            };
+            try {
+              localStorage.setItem(`ap-lab-progress-${currentUser.uid}`, JSON.stringify(updated));
+            } catch (err) {}
+
+            // Save to Firestore
+            try {
+              await setDoc(progressRef, { photoURL: compressedDataUrl }, { merge: true });
+            } catch (err) {
+              console.error("Error updating avatar in Firestore:", err);
+            }
+
+            // Update Auth profile
+            try {
+              await updateProfile(currentUser, { photoURL: compressedDataUrl });
+            } catch (err) {}
+          }
+        };
+        img.src = event.target?.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -650,19 +713,37 @@ export default function Dashboard() {
 
               {/* Profile info */}
               <div className="flex items-center space-x-4 mb-8">
-                {progress?.photoURL || currentUser?.photoURL ? (
-                  <img
-                    src={progress?.photoURL || currentUser?.photoURL || ""}
-                    alt={progress?.displayName || currentUser?.displayName || "Avatar"}
-                    className="w-14 h-14 rounded-2xl object-cover border border-white/15"
-                  />
-                ) : (
-                  <div 
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center font-instrument text-2xl font-bold text-black shadow-lg bg-gradient-to-br from-cyan-400 to-white"
-                  >
-                    {firstName.charAt(0).toUpperCase()}
+                <div 
+                  className="relative group cursor-pointer shrink-0" 
+                  onClick={() => avatarInputRef.current?.click()}
+                  title="Click to change profile picture"
+                >
+                  {progress?.photoURL || currentUser?.photoURL ? (
+                    <img
+                      src={progress?.photoURL || currentUser?.photoURL || ""}
+                      alt={progress?.displayName || currentUser?.displayName || "Avatar"}
+                      className="w-14 h-14 rounded-2xl object-cover border border-white/15 group-hover:opacity-75 transition-opacity"
+                    />
+                  ) : (
+                    <div 
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center font-instrument text-2xl font-bold text-black shadow-lg bg-gradient-to-br from-cyan-400 to-white group-hover:opacity-75 transition-opacity"
+                    >
+                      {firstName.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                  {/* Hover upload icon overlay */}
+                  <div className="absolute inset-0 bg-black/40 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Upload className="w-4 h-4 text-white" />
                   </div>
-                )}
+                  {/* Hidden input element */}
+                  <input 
+                    type="file" 
+                    ref={avatarInputRef} 
+                    onChange={handleAvatarChange} 
+                    accept="image/*" 
+                    className="hidden" 
+                  />
+                </div>
                 <div className="space-y-1">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                     <h3 className="font-instrument text-2xl text-white font-medium">

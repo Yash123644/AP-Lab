@@ -44,7 +44,7 @@ export function LevelLeaderboard() {
     // Poll every 10 seconds to keep it fresh
     const interval = setInterval(() => fetchLeaderboard(false), 10000);
     return () => clearInterval(interval);
-  }, [progress?.xp]);
+  }, [progress?.uid, progress?.xp, progress?.photoURL, progress?.displayName]);
 
   const getRankStyle = (index: number) => {
     switch (index) {
