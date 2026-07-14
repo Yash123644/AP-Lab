@@ -917,7 +917,7 @@ body {
   outline: none;
   cursor: pointer;
 
-  padding: 18px 72px;
+  padding: 18px 56px;
   border-radius: 999px;
 
   color: #fff;
@@ -959,7 +959,7 @@ body {
   pointer-events: none;
 }
 
-/* Bottom subtle glow */
+/* Grain + bottom glow for inverted button */
 .pb-ai-button-inverted::after {
   content: "";
   position: absolute;
@@ -967,10 +967,27 @@ body {
   border-radius: inherit;
 
   background-image: radial-gradient(
-    circle at bottom center,
-    rgba(255, 255, 255, 0.05) 0%,
-    transparent 70%
-  );
+      circle at bottom center,
+      rgba(255, 255, 255, 0.03) 0%,
+      transparent 70%
+    ),
+    radial-gradient(rgba(255, 255, 255, 0.08) 0.8px, transparent 0.8px),
+    radial-gradient(rgba(255, 255, 255, 0.04) 0.5px, transparent 0.5px),
+    radial-gradient(rgba(255, 255, 255, 0.12) 0.7px, transparent 0.7px);
+
+  background-size:
+    100% 100%,
+    4px 4px,
+    7px 7px,
+    5px 5px;
+
+  background-position:
+    center,
+    0 0,
+    2px 2px,
+    1px 3px;
+
+  opacity: 0.85;
 
   z-index: 2;
   pointer-events: none;

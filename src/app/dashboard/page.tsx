@@ -494,17 +494,16 @@ export default function Dashboard() {
         
         {/* Header Section */}
         <div className="text-center mb-12 flex flex-col items-center justify-center">
-          <motion.span 
+          <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm md:text-base uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-3 mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent w-fit mx-auto"
+            className="flex items-center justify-center gap-3 mb-3 w-fit mx-auto"
           >
-            <span>WELCOME BACK, {firstName.toUpperCase()}</span>
-            <div className="flex flex-col items-center translate-y-[3px]">
-              <span className="text-[8px] font-mono tracking-[0.2em] text-[#a484d7] uppercase font-black leading-none mb-1 normal-case">{getLevelName(level).toUpperCase()}</span>
-              <LevelBadge level={level} className="normal-case tracking-normal shrink-0" />
-            </div>
-          </motion.span>
+            <span className="text-sm md:text-base uppercase tracking-[0.3em] font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              WELCOME BACK, {firstName.toUpperCase()}
+            </span>
+            <LevelBadge level={level} className="normal-case tracking-normal shrink-0 translate-y-[1px]" />
+          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
