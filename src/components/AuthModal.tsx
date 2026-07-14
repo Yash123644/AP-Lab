@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useMotionValue, useMotionTemplate } from "framer-motion";
-import { X, AlertCircle, ArrowRight } from "lucide-react";
+import { X, AlertCircle, ArrowRight, Eye, EyeOff } from "lucide-react";
 import { 
   signInWithPopup, 
   signInWithRedirect,
@@ -34,6 +34,7 @@ export function AuthModal() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -326,7 +327,7 @@ export function AuthModal() {
                     <div className="flex flex-col flex-1 justify-center">
                       <span className="text-[10px] text-white/30 font-semibold uppercase tracking-wider">Password</span>
                       <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         placeholder="••••••••"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -334,6 +335,13 @@ export function AuthModal() {
                         className="w-full bg-transparent text-white text-[15px] focus:outline-none placeholder:text-white/20 mt-0.5"
                       />
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="text-white/40 hover:text-white/70 transition-colors focus:outline-none p-1.5"
+                    >
+                      {showPassword ? <EyeOff className="w-4.5 h-4.5" /> : <Eye className="w-4.5 h-4.5" />}
+                    </button>
                     <button
                       type="submit"
                       disabled={loading}
