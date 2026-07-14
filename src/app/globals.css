@@ -1023,5 +1023,12 @@ body {
   box-shadow: 0 0 10px rgba(239, 68, 68, 0.2) !important;
 }
 
+@keyframes draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
 
 
