@@ -2697,10 +2697,10 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
 
         {/* Profile info */}
         <div className="flex items-center space-x-4 mb-8">
-          {currentUser?.photoURL ? (
+          {progress?.photoURL || currentUser?.photoURL ? (
             <img
-              src={currentUser.photoURL}
-              alt={currentUser.displayName || "Avatar"}
+              src={progress?.photoURL || currentUser?.photoURL || ""}
+              alt={progress?.displayName || currentUser?.displayName || "Avatar"}
               className="w-14 h-14 rounded-2xl object-cover border border-white/15"
             />
           ) : (

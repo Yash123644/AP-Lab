@@ -317,9 +317,9 @@ export default function ProgressPage() {
           className="bg-neutral-950/80 rounded-2xl border border-white/5 p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-md relative overflow-hidden"
         >
           <div className="flex items-center space-x-4">
-            {currentUser.photoURL ? (
+            {progress?.photoURL || currentUser.photoURL ? (
               <img 
-                src={currentUser.photoURL} 
+                src={(progress?.photoURL || currentUser.photoURL) || undefined} 
                 alt="Avatar" 
                 className="w-14 h-14 rounded-xl object-cover border border-white/10 shadow"
               />
@@ -799,10 +799,10 @@ export default function ProgressPage() {
               </button>
 
               <div className="flex items-center space-x-4 mb-8">
-                {currentUser?.photoURL ? (
+                {progress?.photoURL || currentUser?.photoURL ? (
                   <img
-                    src={currentUser.photoURL}
-                    alt={currentUser.displayName || "Avatar"}
+                    src={progress?.photoURL || currentUser?.photoURL || ""}
+                    alt={progress?.displayName || currentUser?.displayName || "Avatar"}
                     className="w-14 h-14 rounded-xl object-cover border border-white/15"
                   />
                 ) : (

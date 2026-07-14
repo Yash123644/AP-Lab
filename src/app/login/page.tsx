@@ -237,6 +237,17 @@ export default function LoginPage() {
       setLoading(true);
       await setPersistence(auth, browserLocalPersistence);
       if (isSignUp) {
+        // Enforce length, uppercase, and digit constraints
+        const isLengthValid = password.length >= 6;
+        const hasUpper = /[A-Z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        if (!isLengthValid || !hasUpper || !hasNumber) {
+          setError("Password must be at least 6 characters, contain an uppercase letter, and a number.");
+          setShouldShake(true);
+          setTimeout(() => setShouldShake(false), 500);
+          setLoading(false);
+          return;
+        }
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         if (userCredential.user && name) {
           await updateProfile(userCredential.user, { displayName: name });
@@ -438,6 +449,22 @@ export default function LoginPage() {
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
                 </div>
+                {isSignUp && (
+                  <div className="mt-3.5 space-y-1.5 text-left px-2">
+                    <div className="flex items-center space-x-2">
+                      <div className={`w-1.5 h-1.5 rounded-full transition-colors ${password.length >= 6 ? "bg-emerald-400" : "bg-white/10"}`} />
+                      <span className={`text-[11px] font-semibold transition-colors ${password.length >= 6 ? "text-emerald-400" : "text-white/30"}`}>At least 6 characters</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className={`w-1.5 h-1.5 rounded-full transition-colors ${/[A-Z]/.test(password) ? "bg-emerald-400" : "bg-white/10"}`} />
+                      <span className={`text-[11px] font-semibold transition-colors ${/[A-Z]/.test(password) ? "text-emerald-400" : "text-white/30"}`}>At least one uppercase letter</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className={`w-1.5 h-1.5 rounded-full transition-colors ${/\d/.test(password) ? "bg-emerald-400" : "bg-white/10"}`} />
+                      <span className={`text-[11px] font-semibold transition-colors ${/\d/.test(password) ? "text-emerald-400" : "text-white/30"}`}>At least one number</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <button

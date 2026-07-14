@@ -224,6 +224,17 @@ export function AuthModal() {
       setLoading(true);
       await setPersistence(auth, browserLocalPersistence);
       if (isSignUp) {
+        // Enforce length, uppercase and digit constraints
+        const isLengthValid = password.length >= 6;
+        const hasUpper = /[A-Z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        if (!isLengthValid || !hasUpper || !hasNumber) {
+          setError("Password must be at least 6 characters, contain an uppercase letter, and a number.");
+          setShouldShake(true);
+          setTimeout(() => setShouldShake(false), 500);
+          setLoading(false);
+          return;
+        }
         await createUserWithEmailAndPassword(auth, email, password);
       } else {
         await signInWithEmailAndPassword(auth, email, password);
@@ -360,6 +371,22 @@ export function AuthModal() {
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </div>
+                  {isSignUp && (
+                    <div className="mt-3.5 space-y-1.5 text-left px-4">
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${password.length >= 6 ? "bg-[#00ffb3]" : "bg-white/10"}`} />
+                        <span className={`text-[11px] font-semibold transition-colors ${password.length >= 6 ? "text-[#00ffb3]" : "text-white/30"}`}>At least 6 characters</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${/[A-Z]/.test(password) ? "bg-[#00ffb3]" : "bg-white/10"}`} />
+                        <span className={`text-[11px] font-semibold transition-colors ${/[A-Z]/.test(password) ? "text-[#00ffb3]" : "text-white/30"}`}>At least one uppercase letter</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${/\d/.test(password) ? "bg-[#00ffb3]" : "bg-white/10"}`} />
+                        <span className={`text-[11px] font-semibold transition-colors ${/\d/.test(password) ? "text-[#00ffb3]" : "text-white/30"}`}>At least one number</span>
+                      </div>
+                    </div>
+                  )}
                 </form>
 
                 <div className="w-full flex items-center space-x-4 mb-8">
