@@ -427,12 +427,11 @@ export default function Dashboard() {
   }
 
   if (progress && !progress.isOnboarded && !onboardCompleted) {
+    router.push("/onboarding");
     return (
-      <Onboarding 
-        onComplete={() => setOnboardCompleted(true)}
-        userEmail={currentUser.email || undefined}
-        userId={currentUser.uid}
-      />
+      <div className="min-h-screen flex items-center justify-center bg-deep-navy">
+        <LoadingSpinner />
+      </div>
     );
   }
 
