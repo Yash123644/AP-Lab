@@ -463,12 +463,13 @@ export function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col items-center justify-center w-full max-w-6xl -mt-12 relative"
       >
-        {/* Apple-style Logo Header */}
-        <div className="flex items-center gap-2 mb-8 text-white select-none">
-          <svg viewBox="0 0 24 24" className="w-8 h-8 fill-white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.8 18.2L14 10V5h1a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2h1v5l-4.8 8.2A2 2 0 0 0 7 21h10a2 2 0 0 0 1.8-2.8zM8.5 18l3.5-6 3.5 6z" />
-          </svg>
-          <span className="font-inter font-semibold text-[26px] tracking-tight">AP Lab</span>
+        {/* Shifting Gradient Capsule Header */}
+        <div className="mb-8 select-none">
+          <div className="gradient-shifting-badge px-6 py-2.5 rounded-full border border-white/10 shadow-[0_0_30px_rgba(99,102,241,0.25)] flex items-center justify-center text-center">
+            <span className="font-sans font-extrabold text-[10px] sm:text-xs text-white uppercase tracking-wider">
+              SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
+            </span>
+          </div>
         </div>
 
         {/* Massive Headline */}

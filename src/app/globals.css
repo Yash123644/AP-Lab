@@ -1048,6 +1048,18 @@ body {
   animation: discord-logo-shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+/* Shifting gradient badge for homepage top header */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-shifting-badge {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed, #2563eb, #4f46e5);
+  background-size: 300% 300%;
+  animation: gradient-shift 5s ease infinite;
+}
+
 
 
 
