@@ -339,6 +339,8 @@ export default function Dashboard() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [onboardCompleted, setOnboardCompleted] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -361,10 +363,10 @@ export default function Dashboard() {
     );
   }
 
-  if (progress && !progress.isOnboarded) {
+  if (progress && !progress.isOnboarded && !onboardCompleted) {
     return (
       <Onboarding 
-        onComplete={() => {}}
+        onComplete={() => setOnboardCompleted(true)}
         userEmail={currentUser.email || undefined}
         userId={currentUser.uid}
       />

@@ -487,6 +487,12 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           streakLastActive: firestoreData.streakLastActive || localProgress?.streakLastActive || guestProgress?.streakLastActive || "",
           activityLogs: firestoreData.activityLogs || localProgress?.activityLogs || guestProgress?.activityLogs || [],
           studyTimeLogs: firestoreData.studyTimeLogs || localProgress?.studyTimeLogs || guestProgress?.studyTimeLogs || {},
+          isOnboarded: firestoreData.isOnboarded || localProgress?.isOnboarded || false,
+          graduationYear: firestoreData.graduationYear !== undefined ? firestoreData.graduationYear : (localProgress?.graduationYear !== undefined ? localProgress.graduationYear : null),
+          referredBy: firestoreData.referredBy || localProgress?.referredBy || "",
+          goalScore: firestoreData.goalScore || localProgress?.goalScore || 5,
+          usageIntents: firestoreData.usageIntents || localProgress?.usageIntents || [],
+          selectedClasses: firestoreData.selectedClasses || localProgress?.selectedClasses || [],
         };
 
         // Sync back to Firestore if Firestore is out of sync or guest migration is needed
