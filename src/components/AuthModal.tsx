@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useUI } from "@/context/UIContext";
 import { useAuth } from "@/context/AuthContext";
+import { cn } from "@/lib/utils";
 
 export function AuthModal() {
   const { isAuthModalOpen: isOpen, closeAuthModal: onClose, authView } = useUI();
@@ -35,6 +36,7 @@ export function AuthModal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [shouldShake, setShouldShake] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -235,6 +237,8 @@ export function AuthModal() {
       } else {
         setError("Invalid email or password.");
       }
+      setShouldShake(true);
+      setTimeout(() => setShouldShake(false), 500);
     } finally {
       setLoading(false);
     }
@@ -309,7 +313,10 @@ export function AuthModal() {
                 {/* Error Banner (Hidden from UI per user request, logged to console) */}
 
                 <form onSubmit={handleEmailAuth} className="w-full flex flex-col space-y-3 mb-8">
-                  <div className="relative flex items-center bg-[#141414] border border-white/5 hover:border-white/10 focus-within:border-white/20 transition-colors rounded-[2rem] px-5 py-2.5 h-[64px]">
+                  <div className={cn(
+                    "relative flex items-center bg-[#141414] border border-white/5 hover:border-white/10 focus-within:border-white/20 transition-colors rounded-[2rem] px-5 py-2.5 h-[64px]",
+                    shouldShake && "shake-error"
+                  )}>
                     <div className="flex flex-col flex-1 justify-center">
                       <span className="text-[10px] text-white/30 font-semibold uppercase tracking-wider">Email</span>
                       <input
@@ -323,7 +330,10 @@ export function AuthModal() {
                     </div>
                   </div>
                   
-                  <div className="relative flex items-center bg-[#141414] border border-white/5 hover:border-white/10 focus-within:border-white/20 transition-colors rounded-[2rem] pl-5 pr-2 py-2.5 h-[64px]">
+                  <div className={cn(
+                    "relative flex items-center bg-[#141414] border border-white/5 hover:border-white/10 focus-within:border-white/20 transition-colors rounded-[2rem] pl-5 pr-2 py-2.5 h-[64px]",
+                    shouldShake && "shake-error"
+                  )}>
                     <div className="flex flex-col flex-1 justify-center">
                       <span className="text-[10px] text-white/30 font-semibold uppercase tracking-wider">Password</span>
                       <input

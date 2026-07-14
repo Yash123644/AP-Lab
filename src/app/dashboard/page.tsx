@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { useProgress } from "@/context/ProgressContext";
 import { courseRegistry } from "@/lib/courses/course-registry";
 import { ReviewModal } from "@/components/ReviewModal";
+import { Onboarding } from "@/components/Onboarding";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
 import { DashboardContextMenu } from "@/components/DashboardContextMenu";
@@ -357,6 +358,16 @@ export default function Dashboard() {
       <div className="min-h-screen flex items-center justify-center bg-deep-navy">
         <LoadingSpinner />
       </div>
+    );
+  }
+
+  if (progress && !progress.isOnboarded) {
+    return (
+      <Onboarding 
+        onComplete={() => {}}
+        userEmail={currentUser.email || undefined}
+        userId={currentUser.uid}
+      />
     );
   }
 

@@ -19,6 +19,7 @@ import {
 import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { RotatingPulse3D } from "@/components/RotatingPulse3D";
 import { useAuth } from "@/context/AuthContext";
+import { cn } from "@/lib/utils";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -35,6 +36,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [shouldShake, setShouldShake] = useState(false);
   const [name, setName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -250,6 +252,8 @@ export default function LoginPage() {
       } else {
         setError("Invalid email or password.");
       }
+      setShouldShake(true);
+      setTimeout(() => setShouldShake(false), 500);
       setLoading(false);
     }
   };
@@ -405,7 +409,10 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-[#111111] border border-white/10 hover:border-white/20 focus:border-white/50 rounded-xl px-4 py-3 text-white focus:outline-none transition-all text-sm placeholder:text-white/20"
+                  className={cn(
+                    "w-full bg-[#111111] border border-white/10 hover:border-white/20 focus:border-white/50 rounded-xl px-4 py-3 text-white focus:outline-none transition-all text-sm placeholder:text-white/20",
+                    shouldShake && "shake-error"
+                  )}
                 />
               </div>
 
@@ -418,7 +425,10 @@ export default function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full bg-[#111111] border border-white/10 hover:border-white/20 focus:border-white/50 rounded-xl pl-4 pr-12 py-3 text-white focus:outline-none transition-all text-sm placeholder:text-white/20"
+                    className={cn(
+                      "w-full bg-[#111111] border border-white/10 hover:border-white/20 focus:border-white/50 rounded-xl pl-4 pr-12 py-3 text-white focus:outline-none transition-all text-sm placeholder:text-white/20",
+                      shouldShake && "shake-error"
+                    )}
                   />
                   <button
                     type="button"

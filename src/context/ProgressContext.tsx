@@ -29,6 +29,12 @@ interface UserProgress {
   streakLastActive?: string;
   activityLogs?: { date: string; time: string; type: string; title: string; xp: number }[];
   studyTimeLogs?: Record<string, number>;
+  isOnboarded?: boolean;
+  graduationYear?: number | null;
+  referredBy?: string;
+  goalScore?: number;
+  usageIntents?: string[];
+  selectedClasses?: string[];
 }
 
 interface ProgressContextType {
@@ -60,6 +66,7 @@ const defaultProgress: UserProgress = {
   streakLastActive: "",
   activityLogs: [],
   studyTimeLogs: {},
+  isOnboarded: false,
 };
 
 const ProgressContext = createContext<ProgressContextType>({
