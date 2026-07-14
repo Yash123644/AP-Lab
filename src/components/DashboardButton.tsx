@@ -35,7 +35,7 @@ export function DashboardButton() {
         whileTap={{ scale: 0.98 }}
         className="relative liquid-glass-strong rounded-[10px] px-12 py-4 text-white font-cabin font-bold text-[18px] overflow-hidden shadow-[0_0_25px_rgba(123,57,252,0.4)] group-hover:shadow-[0_0_50px_rgba(164,132,215,0.6)] transition-all duration-300 min-w-[240px]"
       >
-        <span className="relative z-10">Go to Dashboard</span>
+        <span className="relative z-10 select-none">Go to Dashboard</span>
         
         {/* Cinematic Sweep Shine */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

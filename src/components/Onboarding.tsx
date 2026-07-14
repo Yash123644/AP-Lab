@@ -415,8 +415,9 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
       </div>
 
       {/* Steps Content Area */}
-      <div className="flex-1 overflow-y-auto px-6 py-10 md:px-12 flex flex-col items-center justify-center max-w-5xl mx-auto w-full">
-        <AnimatePresence mode="wait">
+      <div className="flex-1 overflow-y-auto px-6 py-10 md:px-12 flex flex-col items-center justify-start max-w-5xl mx-auto w-full">
+        <div className="my-auto w-full flex flex-col items-center justify-center">
+          <AnimatePresence mode="wait">
           {step === 1 && (
             <motion.div
               key="step1"
@@ -991,6 +992,7 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
             </motion.div>
           )}
         </AnimatePresence>
+        </div>
       </div>
     </div>
   );

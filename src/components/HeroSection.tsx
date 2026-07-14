@@ -545,7 +545,7 @@ export function HeroSection() {
                 <span className="pb-ai-sparkle flex items-center justify-center">
                   <DoorIcon isHovered={isHoveredDashboard} />
                 </span>
-                <span>Go to Dashboard</span>
+                <span className="select-none">Go to Dashboard</span>
               </button>
             </Link>
           ) : (
@@ -558,7 +558,7 @@ export function HeroSection() {
               <span className="pb-ai-sparkle flex items-center justify-center">
                 <DoorIcon isHovered={isHoveredSignIn} />
               </span>
-              <span>Sign In</span>
+              <span className="select-none">Sign In</span>
             </button>
           )}
 
@@ -571,7 +571,7 @@ export function HeroSection() {
               <span className="pb-ai-sparkle flex items-center justify-center">
                 <DiscordLogoIcon className="w-5 h-5" />
               </span>
-              <span>Join Discord</span>
+              <span className="select-none">Join Discord</span>
             </button>
           </a>
         </div>

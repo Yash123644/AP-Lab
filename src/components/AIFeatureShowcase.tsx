@@ -89,8 +89,8 @@ function AnimatedArticleHighlight() {
     initial: { opacity: 0, left: "5%", top: "15px", scale: 1 },
     hover: {
       opacity: [0, 1, 1, 1, 1, 1, 0],
-      left: ["5%", "5%", "90%", "54.5%", "54.5%", "54.5%", "54.5%"],
-      top: ["15px", "15px", "70px", "-38px", "-38px", "-38px", "-38px"],
+      left: ["5%", "5%", "90%", "82%", "82%", "82%", "82%"],
+      top: ["15px", "15px", "70px", "-30px", "-30px", "-30px", "-30px"],
       scale: [1, 1, 1, 1, 0.8, 1, 1], // Clicks the button
       transition: {
         duration: 2.5,
@@ -164,7 +164,7 @@ function AnimatedArticleHighlight() {
                   variants={popoverVariants}
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
-                  className="absolute -top-12 left-1/2 -translate-x-1/2 z-50 pb-2 pointer-events-none"
+                  className="absolute -top-12 right-4 z-50 pb-2 pointer-events-none"
                 >
                   <div className="liquid-glass-strong px-3 py-1.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/10 text-white font-medium flex items-center justify-center whitespace-nowrap">
                     <span className="text-[11px] font-sans font-medium text-white tracking-wide">Ask AI</span>
@@ -177,7 +177,6 @@ function AnimatedArticleHighlight() {
                   initial="initial"
                   animate={isHovered ? "hover" : "initial"}
                   className="absolute z-[60] pointer-events-none"
-                  style={{ x: "-50%", y: "-50%" }}
                 >
                   <MousePointer2 className="w-5 h-5 text-white fill-white drop-shadow-lg" />
                 </motion.div>

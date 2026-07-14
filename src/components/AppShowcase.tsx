@@ -14,8 +14,8 @@ const showcaseImages = [
 
 const getColorForPercentage = (pct: number, opacity: number = 1) => {
   const cleanPct = Math.max(0, Math.min(100, pct));
-  // Scale hue from 0 (red) to 156 (emerald-400 green)
-  const hue = (cleanPct / 100) * 156;
+  // Non-linear power scale to make orange colors more red
+  const hue = Math.pow(cleanPct / 100, 1.8) * 156;
   return `hsla(${hue}, 72%, 52%, ${opacity})`;
 };
 
@@ -314,15 +314,9 @@ export function AppShowcase() {
               
               {/* Daily Streak Indicator */}
               <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5 backdrop-blur-md self-start md:self-auto">
-                <motion.div 
-                  animate={{ 
-                    scale: [1, 1.1, 0.95, 1.05, 1]
-                  }}
-                  transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                  className="text-amber-500 shrink-0"
-                >
+                <div className="text-amber-500 shrink-0">
                   <Flame className="w-6 h-6 fill-amber-500 text-amber-400" />
-                </motion.div>
+                </div>
                 <div className="flex flex-col">
                   <span className="text-white font-manrope font-extrabold text-[15px] leading-none">14 Days</span>
                   <span className="text-[9px] font-mono text-white/30 tracking-wider uppercase mt-1">Study Streak</span>
