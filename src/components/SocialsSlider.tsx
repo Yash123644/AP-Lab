@@ -35,9 +35,11 @@ const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 const RedditIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.68-6.39-1.78l1.3-4.1 4.2.9c.09 1.09 1 1.97 2.12 1.97 1.15 0 2.1-1.05 2.1-2.2s-.95-2.2-2.1-2.2c-1.11 0-2.03.88-2.12 1.97l-4.63-1a.34.34 0 0 0-.41.24L10.9 9c-2.63.05-4.9.73-6.57 1.74C3.76 10 2.87 9.5 1.9 9.5c-1.65 0-3 1.35-3 3 0 1.11.6 2.07 1.5 2.58-.08.3-.12.62-.12.95 0 3.32 3.65 6 8.16 6s8.16-2.68 8.16-6c0-.3-.04-.62-.12-.92.8-.52 1.4-1.48 1.4-2.61zm-15.6 1.4c0-1 1-1.8 2.1-1.8s2.1.8 2.1 1.8-1 1.8-2.1 1.8-2.1-.8-2.1-1.8zm7.84 5.38c-1.17 1.15-3.4 1.15-4.57 0a.39.39 0 0 1 0-.54.39.39 0 0 1 .54 0c.87.85 2.63.85 3.5 0a.39.39 0 0 1 .54.54zm-2.14-3.58c-1.1 0-2.1-.8-2.1-1.8s1-1.8 2.1-1.8 2.1.8 2.1 1.8-1 1.8-2.1 1.8z" />
-  </svg>
+  <img 
+    src="/images/onboarding/reddit_white.png" 
+    alt="Reddit" 
+    className={`${props.className || ""} object-contain`} 
+  />
 );
 const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>

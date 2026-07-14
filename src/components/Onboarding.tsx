@@ -109,11 +109,11 @@ const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const ChatGPTIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <div className={`${props.className || ""} flex items-center justify-center bg-white rounded-lg overflow-hidden p-1`}>
+  <div className={`${props.className || ""} flex items-center justify-center bg-white rounded-full overflow-hidden p-0`}>
     <img 
       src="/images/onboarding/chatgpt.png" 
       alt="ChatGPT" 
-      className="w-full h-full object-contain" 
+      className="w-full h-full object-cover scale-[1.1]" 
     />
   </div>
 );
