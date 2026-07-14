@@ -441,6 +441,20 @@ export default function LoginPage() {
                 {isSignUp ? "Log in" : "Sign up"}
               </button>
             </div>
+
+            {isSignUp && (
+              <p className="mt-6 text-[12px] text-white/40 text-center leading-relaxed">
+                By signing up, you agree to our{" "}
+                <Link href="/terms" target="_blank" className="font-semibold text-white/90 hover:text-white underline transition-colors">
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link href="/privacy" target="_blank" className="font-semibold text-white/90 hover:text-white underline transition-colors">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
+            )}
           </div>
         </div>
       </div>

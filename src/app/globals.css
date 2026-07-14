@@ -896,3 +896,102 @@ body {
   scrollbar-width: none !important;
 }
 
+/* Inverted style of the main signup/dashboard button */
+.pb-ai-button-inverted,
+.pb-ai-button-inverted * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+.pb-ai-button-inverted {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  cursor: pointer;
+
+  padding: 18px 72px;
+  border-radius: 999px;
+
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+
+  background: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.03),
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+  overflow: hidden;
+  isolation: isolate;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Top gloss */
+.pb-ai-button-inverted::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0)
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Bottom subtle glow */
+.pb-ai-button-inverted::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background-image: radial-gradient(
+    circle at bottom center,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pb-ai-button-inverted span {
+  position: relative;
+  z-index: 3;
+}
+
+.pb-ai-button-inverted:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(180deg, #27272a 0%, #0f0f11 100%);
+  box-shadow:
+    0 0 0 10px rgba(255, 255, 255, 0.05),
+    0 16px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.pb-ai-button-inverted:active {
+  transform: scale(0.98);
+}
+
+

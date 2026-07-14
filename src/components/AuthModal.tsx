@@ -15,6 +15,7 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider, githubProvider, microsoftProvider } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useUI } from "@/context/UIContext";
 import { useAuth } from "@/context/AuthContext";
 
@@ -416,6 +417,20 @@ export function AuthModal() {
                     {isSignUp ? "Sign in" : "Sign up"}
                   </button>
                 </div>
+
+                {isSignUp && (
+                  <p className="mt-4 text-[12px] text-white/40 text-center leading-relaxed max-w-[320px]">
+                    By signing up, you agree to our{" "}
+                    <Link href="/terms" target="_blank" className="font-semibold text-white/90 hover:text-white underline transition-colors">
+                      Terms of Service
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/privacy" target="_blank" className="font-semibold text-white/90 hover:text-white underline transition-colors">
+                      Privacy Policy
+                    </Link>
+                    .
+                  </p>
+                )}
 
               </div>
             </motion.div>

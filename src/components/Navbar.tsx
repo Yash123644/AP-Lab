@@ -40,22 +40,25 @@ export function Navbar() {
           ? "bg-black/60 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg" 
           : "bg-transparent border-b border-transparent py-6"
       )}>
-        {/* Logo */}
-        <Link 
-          href="/" 
-          onClick={(e) => {
-            if (pathname === "/") {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          }}
-          className="flex items-center space-x-3 cursor-pointer group"
-        >
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-            <Activity className="w-5 h-5 text-white animate-pulse" />
-          </div>
-          <span className="font-manrope font-bold text-white tracking-tight text-lg">AP Lab</span>
-        </Link>
+        {/* Left Container */}
+        <div className="flex-1 flex justify-start">
+          {/* Logo */}
+          <Link 
+            href="/" 
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="flex items-center space-x-3 cursor-pointer group"
+          >
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
+              <Activity className="w-5 h-5 text-white animate-pulse" />
+            </div>
+            <span className="font-manrope font-bold text-white tracking-tight text-lg">AP Lab</span>
+          </Link>
+        </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-10">
@@ -78,41 +81,44 @@ export function Navbar() {
           })}
         </div>
 
-        {/* Desktop Actions */}
-        <div className="hidden md:flex items-center space-x-6">
-          {currentUser ? (
-            <Link href="/dashboard">
-              <button className={cn(
-                "font-manrope font-semibold text-[13px] transition-all duration-300",
-                isScrolled
-                  ? "bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
-                  : "text-white/60 hover:text-white bg-transparent px-0 py-0"
-              )}>
-                Dashboard
+        {/* Right Container */}
+        <div className="flex-1 flex justify-end items-center">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-6 mr-6 md:mr-0">
+            {currentUser ? (
+              <Link href="/dashboard">
+                <button className={cn(
+                  "font-manrope font-semibold text-[13px] transition-all duration-300",
+                  isScrolled
+                    ? "bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+                    : "text-white/60 hover:text-white bg-transparent px-0 py-0"
+                )}>
+                  Dashboard
+                </button>
+              </Link>
+            ) : (
+              <button
+                onClick={() => openAuthModal("signin")}
+                className={cn(
+                  "font-manrope font-semibold text-[13px] transition-all duration-300",
+                  isScrolled
+                    ? "bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+                    : "text-white/60 hover:text-white bg-transparent px-0 py-0"
+                )}
+              >
+                Sign In
               </button>
-            </Link>
-          ) : (
-            <button
-              onClick={() => openAuthModal("signin")}
-              className={cn(
-                "font-manrope font-semibold text-[13px] transition-all duration-300",
-                isScrolled
-                  ? "bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
-                  : "text-white/60 hover:text-white bg-transparent px-0 py-0"
-              )}
-            >
-              Sign In
-            </button>
-          )}
-        </div>
+            )}
+          </div>
 
-        {/* Mobile Hamburger */}
-        <button 
-          className="md:hidden text-white p-2"
-          onClick={() => setIsMobileMenuOpen(true)}
-        >
-          <Menu className="w-6 h-6" />
-        </button>
+          {/* Mobile Hamburger */}
+          <button 
+            className="md:hidden text-white p-2"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
