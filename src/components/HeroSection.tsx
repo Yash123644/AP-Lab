@@ -464,10 +464,13 @@ export function HeroSection() {
         className="flex flex-col items-center justify-center w-full max-w-6xl -mt-12 relative"
       >
         {/* Glassmorphic Link Capsule Header */}
-        <Link href="/why-aplab" className="mb-8 block select-none">
+        <Link href="/why-aplab" className="mb-8 block select-none group">
           <div className="liquid-glass-badge px-6 py-2.5 rounded-full flex items-center justify-center text-center">
-            <span className="font-sans font-extrabold text-[10px] sm:text-xs text-white/95 uppercase tracking-wider">
+            <span className="relative z-10 font-sans font-extrabold text-[10px] sm:text-xs text-white/90 uppercase tracking-wider flex items-center justify-center gap-2">
               SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-white/60 stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </span>
           </div>
         </Link>

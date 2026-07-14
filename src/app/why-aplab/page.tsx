@@ -8,197 +8,148 @@ const features = [
   {
     id: "diagnostics",
     icon: Dna,
-    title: "Active Diagnostics & Real-Time Recall",
-    desc: "Stop studying blindly. AP Lab constantly monitors your recall speed and accuracy across cell biology, physics derivations, and DBQs, spotlighting exact curriculum weakpoints before they damage your score.",
-    imgLabel: "Diagnostic Dashboard Preview",
-    color: "from-teal-400 to-emerald-500",
-    glowColor: "rgba(16, 185, 129, 0.15)"
+    title: "01 / Active Diagnostics & Recommendations",
+    desc: "A continuous diagnostic protocol. Rather than static practice tracks, AP Lab analyzes concept recall latency and mistake distribution in real-time, adapting recommendations to target your curriculum vulnerabilities before they impact your grades.",
+    figureTitle: "Figure 1.0 — Real-Time Diagnostic Mastery Matrix",
+    imgLabel: "Diagnostic Matrix Dashboard"
   },
   {
     id: "tutor",
     icon: Sparkles,
-    title: "Gemini-Powered Contextual AI Tutor",
-    desc: "Stuck on a clinical study or complex equation? Simply highlight any paragraph on the screen to trigger your hyper-intelligent personal tutor. Receive instant contextual translations, step-by-step guides, or diagnostic test items.",
-    imgLabel: "AI Tutor Sidebar Preview",
-    color: "from-violet-400 to-indigo-500",
-    glowColor: "rgba(99, 102, 241, 0.15)"
+    title: "02 / Contextual Reasoning Engine",
+    desc: "On-demand tutoring aligned to the text. Highlight any passage, diagram, or formula across the curriculum to activate the AI Tutor. Receive step-by-step mathematical proofs, clinical context, or conceptual translations instantly.",
+    figureTitle: "Figure 2.0 — Contextual Reasoning Panel Interface",
+    imgLabel: "AI Tutor Sidebar Panel"
   },
   {
     id: "spaced-repetition",
     icon: Brain,
-    title: "Neural Recall Spaced Repetition",
-    desc: "Lock in complex vocabulary and formulas effortlessly. Our spaced repetition engine customizes card frequency to match your personal memory retention cycle, built directly around official College Board Learning Objectives.",
-    imgLabel: "Flashcards App Interface",
-    color: "from-cyan-400 to-blue-500",
-    glowColor: "rgba(59, 130, 246, 0.15)"
+    title: "03 / Neural Recall Architecture",
+    desc: "Spaced-repetition active recall, calibrated to memory decay. Cards are dynamically weighted and scheduled based on retention curves, mapped directly to the official College Board Course and Exam Description (CED) frameworks.",
+    figureTitle: "Figure 3.0 — Neural Recall Spaced-Repetition Deck",
+    imgLabel: "Flashcards Active Recall Grid"
   },
   {
     id: "mock-exams",
     icon: Beaker,
-    title: "Full-Length College Board Mock Exams",
-    desc: "Simulate test day with strict timing bounds and rigorous, standard-level AP questions. Receive immediate diagnostic reports detailing your estimated AP score (1 to 5) and sub-topic mastery level.",
-    imgLabel: "Exam Simulator Interface",
-    color: "from-pink-400 to-rose-500",
-    glowColor: "rgba(244, 63, 94, 0.15)"
+    title: "04 / High-Fidelity Exam Simulations",
+    desc: "Simulated testing environments under official time constraints. Mock exams are calibrated to duplicate College Board question weightings, scoring algorithms, and complexity thresholds, generating diagnostic score breakdowns (1-5).",
+    figureTitle: "Figure 4.0 — Exam Simulator Timer & Master Report",
+    imgLabel: "Mock Exam Diagnostic Scorecard"
   }
 ];
 
 export default function WhyAPLab() {
   return (
-    <div className="min-h-screen bg-[#06070c] text-white font-sans relative overflow-x-hidden">
-      {/* Decorative Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f111a_1px,transparent_1px),linear-gradient(to_bottom,#0f111a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+    <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-neutral-800 selection:text-white">
+      {/* Sleek top border accent */}
+      <div className="h-1 w-full bg-neutral-900" />
 
-      {/* Decorative Orbs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
-      <div className="absolute top-[30%] right-[-10%] w-[45%] h-[45%] rounded-full bg-cyan-600/5 blur-[120px] pointer-events-none" />
-
-      {/* Header Area */}
-      <header className="max-w-7xl mx-auto px-6 py-8 flex items-center relative z-20">
+      {/* Navigation */}
+      <header className="max-w-6xl mx-auto px-6 pt-10 pb-8 flex items-center justify-between border-b border-neutral-950">
         <Link 
           href="/" 
-          className="flex items-center space-x-2 text-white/50 hover:text-white transition-colors group font-semibold text-sm"
+          className="flex items-center space-x-1.5 text-neutral-500 hover:text-neutral-200 transition-colors font-medium text-xs tracking-tight"
         >
-          <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Home</span>
+          <ChevronLeft className="w-4 h-4" />
+          <span>Home</span>
         </Link>
+        <span className="text-[10px] text-neutral-600 font-mono tracking-widest uppercase">
+          AP LAB // RESEARCH & ACCELERATORS
+        </span>
       </header>
 
-      {/* Hero Section */}
-      <main className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10">
-        <div className="text-center space-y-6 max-w-3xl mx-auto mb-28">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
+      {/* Hero Header */}
+      <main className="max-w-5xl mx-auto px-6 py-20">
+        <div className="max-w-3xl space-y-6 mb-28">
+          <motion.h1 
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 backdrop-blur-sm"
+            className="text-white text-3xl sm:text-4xl font-extrabold tracking-tight font-instrument"
           >
-            <Sparkles className="w-4 h-4 text-violet-400" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-300">Why AP Lab?</span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] font-instrument"
-          >
-            Engineered for <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-indigo-300 to-cyan-400">
-              Absolute Subject Mastery
-            </span>
+            System Accelerators.
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-neutral-400 text-lg leading-relaxed font-medium"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-neutral-400 text-base sm:text-lg leading-relaxed font-medium"
           >
-            Say goodbye to generic practice sets and passive lecture videos. AP Lab integrates active diagnostic tracking, AI-powered reasoning helpers, and paced memory algorithms.
+            A high-fidelity academic platform. AP Lab integrates active diagnostic tracking, contextual reasoning models, and custom memory schedulers built for elite student performance.
           </motion.p>
         </div>
 
-        {/* Alternating Features Section */}
-        <div className="space-y-36">
+        {/* Minimalist Feature Rows */}
+        <div className="space-y-32">
           {features.map((feat, index) => {
             const FeatIcon = feat.icon;
-            const isEven = index % 2 === 0;
 
             return (
               <div 
                 key={feat.id}
-                className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-16 ${
-                  isEven ? "" : "lg:flex-row-reverse"
-                }`}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start border-t border-neutral-900 pt-12"
               >
-                {/* Feature Description Card */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7 }}
-                  className="flex-1 space-y-6"
-                >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feat.color} flex items-center justify-center shadow-lg shadow-black/20`}>
-                    <FeatIcon className="w-6 h-6 text-black" />
+                {/* Feature Description Card (Left) */}
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="flex items-center space-x-3 text-neutral-400">
+                    <FeatIcon className="w-4 h-4 stroke-[1.8]" />
+                    <h3 className="text-sm font-bold text-white tracking-tight uppercase">
+                      {feat.title}
+                    </h3>
                   </div>
                   
-                  <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight font-instrument">
-                    {feat.title}
-                  </h3>
-                  
-                  <p className="text-neutral-400 leading-relaxed text-base font-medium">
+                  <p className="text-neutral-400 leading-relaxed text-xs sm:text-sm font-medium">
                     {feat.desc}
                   </p>
-                </motion.div>
+                </div>
 
-                {/* Picture Placeholder Slot */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7 }}
-                  className="flex-1 w-full"
-                >
-                  <div className="w-full h-72 sm:h-80 md:h-[340px] rounded-3xl bg-neutral-900/35 border border-white/5 flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-md shadow-inner group p-8">
-                    {/* Glow background orb */}
-                    <div 
-                      className="absolute w-60 h-60 rounded-full blur-[80px] pointer-events-none transition-all duration-500 group-hover:scale-110" 
-                      style={{ 
-                        backgroundColor: feat.glowColor,
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)"
-                      }}
-                    />
+                {/* Picture Placeholder Slot (Right) */}
+                <div className="lg:col-span-7 space-y-2">
+                  <div className="w-full h-64 sm:h-72 rounded-lg bg-[#07070a] border border-neutral-900 flex flex-col items-center justify-center relative overflow-hidden select-none">
+                    {/* Architectural Grid Pattern Lines inside the box */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#121216_1px,transparent_1px),linear-gradient(to_bottom,#121216_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-40 pointer-events-none" />
 
-                    {/* Placeholder content styling */}
-                    <div className="relative z-10 text-center space-y-2 flex flex-col items-center justify-center select-none">
-                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                        <FeatIcon className="w-6 h-6 text-white/40" />
+                    {/* Minimalist Visual Mockup box */}
+                    <div className="relative z-10 text-center space-y-1.5 p-6">
+                      <div className="w-8 h-8 rounded border border-neutral-800 bg-[#0d0d12] flex items-center justify-center mx-auto mb-2 opacity-50">
+                        <FeatIcon className="w-4 h-4 text-neutral-400" />
                       </div>
-                      <span className="text-white/60 font-bold text-sm tracking-wider uppercase">
+                      <span className="block text-neutral-300 font-bold text-xs tracking-wider uppercase">
                         {feat.imgLabel}
                       </span>
-                      <span className="text-white/20 text-[10px] tracking-widest uppercase font-semibold">
+                      <span className="block text-neutral-600 text-[9px] tracking-widest uppercase font-semibold">
                         [ Drag & Drop Screen Mockup Here ]
                       </span>
                     </div>
                   </div>
-                </motion.div>
+                  <span className="block text-[10px] text-neutral-600 font-mono tracking-tight text-right">
+                    {feat.figureTitle}
+                  </span>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* CTA Get Started Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mt-40 text-center relative"
-        >
-          {/* Subtle glow orb behind button */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-violet-500/10 blur-[100px] pointer-events-none" />
+        {/* Minimalist CTA Footer */}
+        <div className="mt-40 border-t border-neutral-900 pt-20 text-center max-w-xl mx-auto space-y-8">
+          <h2 className="text-white text-xl sm:text-2xl font-extrabold tracking-tight font-instrument">
+            Begin Exam Diagnostics.
+          </h2>
+          <p className="text-neutral-500 leading-relaxed text-xs sm:text-sm font-medium">
+            Deploy diagnostics instantly across official units. AP Lab is completely free.
+          </p>
 
-          <div className="max-w-2xl mx-auto space-y-8 relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-instrument">
-              Ready to Master Your AP Exams?
-            </h2>
-            <p className="text-neutral-400 leading-relaxed font-medium">
-              Join thousands of scholars boosting their recall efficiency and conceptual scoring today. AP Lab is completely free.
-            </p>
-
-            <Link href="/dashboard" className="inline-block">
-              <button className="px-8 py-4.5 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 text-white font-bold text-base hover:opacity-90 hover:scale-105 transition-all shadow-[0_0_30px_rgba(124,58,237,0.3)] flex items-center space-x-2.5">
-                <span>Get Started Now</span>
-                <ArrowRight className="w-5 h-5" />
+          <div className="flex justify-center pt-2">
+            <Link href="/dashboard">
+              <button className="px-6 py-3 rounded bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center space-x-2">
+                <span>Access Dashboard</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </main>
     </div>
   );
