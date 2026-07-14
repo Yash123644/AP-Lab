@@ -463,14 +463,14 @@ export function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col items-center justify-center w-full max-w-6xl -mt-12 relative"
       >
-        {/* Shifting Gradient Capsule Header */}
-        <div className="mb-8 select-none">
-          <div className="gradient-shifting-badge px-6 py-2.5 rounded-full border border-white/10 shadow-[0_0_30px_rgba(99,102,241,0.25)] flex items-center justify-center text-center">
-            <span className="font-sans font-extrabold text-[10px] sm:text-xs text-white uppercase tracking-wider">
+        {/* Glassmorphic Link Capsule Header */}
+        <Link href="/why-aplab" className="mb-8 block select-none">
+          <div className="liquid-glass-badge px-6 py-2.5 rounded-full flex items-center justify-center text-center">
+            <span className="font-sans font-extrabold text-[10px] sm:text-xs text-white/95 uppercase tracking-wider">
               SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Massive Headline */}
         <h1 className="font-inter font-bold text-white text-5xl sm:text-6xl md:text-[96px] leading-[1.05] mb-8 tracking-tight max-w-5xl text-center select-none mix-blend-difference">
