@@ -55,7 +55,7 @@ const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const socialLinks = [
   { name: "Instagram", color: "#E4405F", url: "https://www.instagram.com/ap.labb/", Icon: InstagramIcon },
   { name: "LinkedIn", color: "#0077B5", url: "https://www.linkedin.com/company/ap-labb", Icon: LinkedinIcon },
-  { name: "GitHub", color: "#ffffff", url: "https://github.com/Yash123644/AP-Lab", Icon: GithubIcon },
+  { name: "GitHub", color: "#ffffff", url: "https://github.com/AP-Labb", Icon: GithubIcon },
   { name: "Facebook", color: "#1877F2", url: "https://www.facebook.com/ap.labb/", Icon: FacebookIcon },
   { name: "X", color: "#ffffff", url: "https://x.com/APLabss", Icon: TwitterIcon },
   { name: "YouTube", color: "#FF0000", url: "https://www.youtube.com/@AP_Labss", Icon: YoutubeIcon },

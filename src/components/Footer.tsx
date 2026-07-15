@@ -48,7 +48,7 @@ const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const footerSocials = [
   { name: "Discord", url: "https://discord.com/invite/dUSaevPETd", Icon: DiscordIcon },
-  { name: "GitHub", url: "https://github.com/Yash123644/AP-Lab", Icon: GithubIcon },
+  { name: "GitHub", url: "https://github.com/AP-Labb", Icon: GithubIcon },
   { name: "X", url: "https://x.com/APLabss", Icon: TwitterIcon },
   { name: "LinkedIn", url: "https://www.linkedin.com/company/ap-labb", Icon: LinkedinIcon },
   { name: "YouTube", url: "https://www.youtube.com/@AP_Labss", Icon: YoutubeIcon },
