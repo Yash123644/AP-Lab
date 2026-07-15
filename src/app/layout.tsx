@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     siteName: "AP Lab",
     images: [
       {
-        url: "https://theaplab.org/images/embed-preview.jpg",
-        width: 1024,
-        height: 575,
+        url: "https://theaplab.org/images/embed-preview.png",
+        width: 2500,
+        height: 1406,
         alt: "AP Lab - Website Logo Preview",
       }
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AP Lab",
     description: "Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.",
-    images: ["https://theaplab.org/images/embed-preview.jpg"],
+    images: ["https://theaplab.org/images/embed-preview.png"],
   }
 };
 
