@@ -78,6 +78,11 @@ export function Footer() {
               Privacy Policy
             </Link>
           </div>
+          <div className="mt-2.5">
+            <a href="mailto:ap.labbss@gmail.com" className="font-mono text-[10px] text-white/40 hover:text-white tracking-widest transition-colors lowercase">
+              ap.labbss@gmail.com
+            </a>
+          </div>
         </div>
 
         {/* Center Column */}
