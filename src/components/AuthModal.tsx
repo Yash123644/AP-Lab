@@ -237,7 +237,9 @@ export function AuthModal() {
           return;
         }
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        await sendEmailVerification(userCredential.user);
+        await sendEmailVerification(userCredential.user, {
+          url: "https://theaplab.org/onboarding",
+        });
         onClose();
         router.push("/verify-email");
       } else {

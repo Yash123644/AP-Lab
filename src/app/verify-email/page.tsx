@@ -66,7 +66,9 @@ export default function VerifyEmailPage() {
     try {
       setIsResending(true);
       setMessage(null);
-      await sendEmailVerification(currentUser);
+      await sendEmailVerification(currentUser, {
+        url: "https://theaplab.org/onboarding",
+      });
       setMessage({ type: "success", text: "Verification email resent successfully!" });
       setResendCooldown(60); // 60 seconds cooldown
     } catch (err: any) {
