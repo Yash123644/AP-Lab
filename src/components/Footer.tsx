@@ -78,11 +78,6 @@ export function Footer() {
               Privacy Policy
             </Link>
           </div>
-          <div className="mt-1">
-            <a href="mailto:ap.labbss@gmail.com" className="font-mono text-[10px] text-white/40 hover:text-white tracking-widest transition-colors lowercase">
-              ap.labbss@gmail.com
-            </a>
-          </div>
         </div>
 
         {/* Center Column */}
@@ -127,7 +122,7 @@ export function Footer() {
           <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-4">
             Connect:
           </span>
-          <div className="flex md:justify-end space-x-4 items-center">
+          <div className="flex md:justify-end space-x-4 items-center mb-1">
             <Link href="/join" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
               Join
             </Link>
@@ -135,6 +130,11 @@ export function Footer() {
             <Link href="/contact" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
               Contact Us
             </Link>
+          </div>
+          <div className="mt-1">
+            <a href="mailto:ap.labbss@gmail.com" className="font-mono text-[10px] text-white/40 hover:text-white tracking-widest transition-colors lowercase">
+              ap.labbss@gmail.com
+            </a>
           </div>
         </div>
 

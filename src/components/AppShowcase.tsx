@@ -327,9 +327,9 @@ export function AppShowcase() {
                 
                 {/* Calendar Days */}
                 <div className="grid grid-cols-7 gap-1.5 w-full max-w-[285px] mx-auto">
-                  {Array.from({ length: 35 }).map((_, idx) => {
+                  {Array.from({ length: 28 }).map((_, idx) => {
                     const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
-                    const isValid = dayNum > 0 && dayNum <= 31;
+                    const isValid = dayNum > 0 && dayNum <= 25;
                     
                     let bgClass = "bg-white/[0.02] border-white/5 text-white/20 opacity-30 cursor-default select-none";
                     let displayDay = "";
@@ -349,10 +349,7 @@ export function AppShowcase() {
                         20: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 60 },
                         21: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 120 },
                         22: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 420 },
-                        23: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 380 },
-                        27: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 250 },
-                        28: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 480 },
-                        29: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 320 }
+                        23: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 380 }
                       } as Record<number, { bg: string, xp: number }>;
                       
                       const dayInfo = activeDays[dayNum];
@@ -360,12 +357,8 @@ export function AppShowcase() {
                       displayDay = String(dayNum);
                       xpGained = dayInfo ? dayInfo.xp : 0;
                     } else {
-                      // Padding days (show grey boxes with mock day numbers for visual completion)
-                      if (dayNum <= 0) {
-                        displayDay = String(28 + idx); // June padding days (28, 29, 30)
-                      } else {
-                        displayDay = String(dayNum - 31); // August padding days (1, 2, etc.)
-                      }
+                      // Padding days (show grey boxes with mock day numbers for June padding)
+                      displayDay = String(28 + idx);
                     }
 
                     return (
