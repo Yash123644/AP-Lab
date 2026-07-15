@@ -30,7 +30,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "AP Lab",
-  description: "For the love of learning. Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams.",
+  description: "Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "AP Lab",
-    description: "For the love of learning. Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams.",
+    description: "Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.",
     url: "https://theaplab.org",
     siteName: "AP Lab",
     images: [
       {
-        url: "https://theaplab.org/images/abstract-showcase.png",
+        url: "https://theaplab.org/images/embed-preview.jpg",
         width: 1024,
-        height: 409,
+        height: 575,
         alt: "AP Lab - Website Logo Preview",
       }
     ],
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AP Lab",
-    description: "For the love of learning. Over 30 subjects, always free. The highest prep quality with immersive interactive labs and comprehensive exams.",
-    images: ["https://theaplab.org/images/abstract-showcase.png"],
+    description: "Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.",
+    images: ["https://theaplab.org/images/embed-preview.jpg"],
   }
 };
 
