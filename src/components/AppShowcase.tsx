@@ -312,59 +312,80 @@ export function AppShowcase() {
 
             {/* Activity Calendar Display */}
             <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-4 z-10 flex-1 min-h-[220px] shrink-0">
-              <div className="flex items-center space-x-2 mb-2 text-emerald-400">
-                <Calendar className="w-4 h-4" />
+              <div className="flex items-center space-x-2 mb-3 text-emerald-400 shrink-0">
+                <Calendar className="w-4.5 h-4.5" />
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
               </div>
               
-              {/* Weekdays */}
-              <div className="grid grid-cols-7 gap-1 text-center text-[7px] font-mono text-white/30 font-bold uppercase">
-                {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
-                  <div key={idx}>{day}</div>
-                ))}
-              </div>
-              
-              {/* Calendar Days */}
-              <div className="grid grid-cols-7 gap-1 mt-1.5">
-                {Array.from({ length: 35 }).map((_, idx) => {
-                  const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
-                  const isValid = dayNum > 0 && dayNum <= 31;
-                  
-                  let bgClass = "bg-white/[0.01] border-white/5 text-white/10";
-                  if (isValid) {
-                    const activeDays = {
-                      1: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
-                      2: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                      4: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      5: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      8: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
-                      9: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                      14: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      15: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      16: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                      20: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
-                      21: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                      22: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      23: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      27: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                      28: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                      29: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100"
-                    } as Record<number, string>;
+              <div className="flex-1 flex flex-col justify-center">
+                {/* Weekdays */}
+                <div className="grid grid-cols-7 gap-1 text-center w-full max-w-[240px] mx-auto text-[7px] font-mono text-white/30 font-bold uppercase mb-1.5 shrink-0">
+                  {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
+                    <div key={idx}>{day}</div>
+                  ))}
+                </div>
+                
+                {/* Calendar Days */}
+                <div className="grid grid-cols-7 gap-1 w-full max-w-[240px] mx-auto">
+                  {Array.from({ length: 35 }).map((_, idx) => {
+                    const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
+                    const isValid = dayNum > 0 && dayNum <= 31;
                     
-                    bgClass = activeDays[dayNum] || "bg-white/[0.02] border-white/5 text-white/50";
-                  } else {
-                    bgClass = "opacity-0 pointer-events-none";
-                  }
+                    let bgClass = "bg-white/[0.02] border-white/5 text-white/20 opacity-30 cursor-default select-none";
+                    let displayDay = "";
+                    let xpGained = 0;
+                    
+                    if (isValid) {
+                      const activeDays = {
+                        1: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 50 },
+                        2: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 150 },
+                        4: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 450 },
+                        5: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 350 },
+                        8: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 75 },
+                        9: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 200 },
+                        14: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 400 },
+                        15: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 300 },
+                        16: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 180 },
+                        20: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 60 },
+                        21: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 120 },
+                        22: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 420 },
+                        23: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 380 },
+                        27: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 250 },
+                        28: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 480 },
+                        29: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 320 }
+                      } as Record<number, { bg: string, xp: number }>;
+                      
+                      const dayInfo = activeDays[dayNum];
+                      bgClass = dayInfo ? `${dayInfo.bg} cursor-pointer hover:scale-[1.05] transition-transform` : "bg-white/[0.02] border-white/5 text-white/50 cursor-pointer hover:bg-white/[0.04]";
+                      displayDay = String(dayNum);
+                      xpGained = dayInfo ? dayInfo.xp : 0;
+                    } else {
+                      // Padding days (show grey boxes with mock day numbers for visual completion)
+                      if (dayNum <= 0) {
+                        displayDay = String(28 + idx); // June padding days (28, 29, 30)
+                      } else {
+                        displayDay = String(dayNum - 31); // August padding days (1, 2, etc.)
+                      }
+                    }
 
-                  return (
-                    <div 
-                      key={idx}
-                      className={`aspect-square rounded border flex items-center justify-center text-[7.5px] font-mono ${bgClass}`}
-                    >
-                      {isValid ? dayNum : ""}
-                    </div>
-                  );
-                })}
+                    return (
+                      <div 
+                        key={idx}
+                        className={`group/cell relative aspect-square rounded border flex items-center justify-center text-[7.5px] font-mono ${bgClass}`}
+                      >
+                        {displayDay}
+                        
+                        {/* Tooltip */}
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/cell:flex flex-col items-center z-30 pointer-events-none">
+                          <div className="bg-neutral-900/95 border border-white/15 backdrop-blur-md px-2 py-1 rounded-md text-[8.5px] font-mono text-white whitespace-nowrap shadow-2xl leading-none">
+                            {isValid ? `${xpGained} XP Gained` : "No Activity"}
+                          </div>
+                          <div className="w-1.5 h-1.5 bg-neutral-900 border-r border-b border-white/15 rotate-45 -mt-1" />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -395,7 +416,7 @@ export function AppShowcase() {
                 fill
                 sizes="(max-w-md) 100vw, 350px"
                 style={{ objectFit: "cover" }}
-                className="opacity-90 group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="opacity-90 scale-[1.05] group-hover:scale-110 transition-transform duration-500 ease-out"
               />
 
               {/* Glowing Background Pattern & Overlay */}
