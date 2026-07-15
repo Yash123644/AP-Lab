@@ -253,13 +253,20 @@ export default function LoginPage() {
         if (userCredential.user && name) {
           await updateProfile(userCredential.user, { displayName: name });
         }
-        await sendEmailVerification(userCredential.user, {
-          url: "https://theaplab.org/onboarding",
+        await fetch("/api/auth/send-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ uid: userCredential.user.uid, email: userCredential.user.email }),
         });
         router.push("/verify-email");
       } else {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         if (!userCredential.user.emailVerified) {
+          await fetch("/api/auth/send-otp", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ uid: userCredential.user.uid, email: userCredential.user.email }),
+          });
           router.push("/verify-email");
         } else {
           router.push("/dashboard");

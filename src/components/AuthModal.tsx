@@ -237,8 +237,10 @@ export function AuthModal() {
           return;
         }
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        await sendEmailVerification(userCredential.user, {
-          url: "https://theaplab.org/onboarding",
+        await fetch("/api/auth/send-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ uid: userCredential.user.uid, email: userCredential.user.email }),
         });
         onClose();
         router.push("/verify-email");
@@ -246,6 +248,11 @@ export function AuthModal() {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         onClose();
         if (!userCredential.user.emailVerified) {
+          await fetch("/api/auth/send-otp", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ uid: userCredential.user.uid, email: userCredential.user.email }),
+          });
           router.push("/verify-email");
         } else {
           router.push("/dashboard");
