@@ -24,17 +24,23 @@ export default function VerifyEmailPage() {
   // Redirect if user is not logged in or already verified
   useEffect(() => {
     if (loading) return;
-    if (!currentUser) {
-      router.push("/");
-      return;
-    }
-    if (currentUser.emailVerified) {
+    
+    // Give Firebase a small window to resolve the auth state on tab focus/refresh
+    const timeout = setTimeout(() => {
+      if (!auth.currentUser) {
+        router.push("/");
+      }
+    }, 1500);
+
+    if (currentUser && currentUser.emailVerified) {
       setIsVerified(true);
       const timer = setTimeout(() => {
         router.push("/onboarding");
       }, 1500);
       return () => clearTimeout(timer);
     }
+
+    return () => clearTimeout(timeout);
   }, [currentUser, loading, router]);
 
   // Handle resend cooldown countdown
@@ -205,7 +211,7 @@ export default function VerifyEmailPage() {
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex items-center justify-center p-6 font-inter select-none">
-      <div className="w-full max-w-sm flex flex-col items-center">
+      <div className="w-full max-w-sm border border-white/10 rounded-2xl p-8 bg-transparent flex flex-col items-center">
         <AnimatePresence mode="wait">
           {!isVerified ? (
             <motion.div
@@ -316,7 +322,7 @@ export default function VerifyEmailPage() {
               </h1>
               
               <p className="text-white/50 text-sm leading-relaxed text-center mb-6">
-                Taking you to your dashboard...
+                Taking you to onboarding...
               </p>
 
               <RotateCw className="w-4 h-4 text-white/30 animate-spin" />

@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: `"AP Lab" <${process.env.SMTP_USER || "ap.labbss@gmail.com"}>`,
       to: email,
-      subject: `Verify your email for AP Lab - Code: ${code}`,
+      subject: "Welcome to AP Lab!",
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 40px 30px; border: 1px solid #27272a; border-radius: 16px; background-color: #09090b; color: #f4f4f5; text-align: center;">
           <div style="margin-bottom: 30px; border-bottom: 1px solid #27272a; padding-bottom: 20px;">
