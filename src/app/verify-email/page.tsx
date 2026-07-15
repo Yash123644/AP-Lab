@@ -190,10 +190,10 @@ export default function VerifyEmailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#020308]">
+      <div className="min-h-screen flex items-center justify-center bg-[#050508]">
         <div className="flex flex-col items-center space-y-4">
-          <RotateCw className="w-12 h-12 text-medical-teal animate-spin" />
-          <p className="text-white/60 font-manrope">Loading account info...</p>
+          <RotateCw className="w-8 h-8 text-white/40 animate-spin" />
+          <p className="text-white/40 font-manrope text-sm">Loading...</p>
         </div>
       </div>
     );
@@ -204,52 +204,30 @@ export default function VerifyEmailPage() {
   const isCodeComplete = otp.join("").length === 5;
 
   return (
-    <div className="min-h-screen bg-[#020308] text-white flex items-center justify-center p-6 relative overflow-hidden font-inter select-none">
-      {/* Decorative Glow Background */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-medical-teal/15 blur-[120px] pointer-events-none z-0" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/15 blur-[140px] pointer-events-none z-0" />
-
-      {/* Main Container Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 w-full max-w-md bg-white/[0.01] border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-2xl shadow-2xl flex flex-col items-center text-center"
-      >
+    <div className="min-h-screen bg-[#050508] text-white flex items-center justify-center p-6 font-inter select-none">
+      <div className="w-full max-w-sm flex flex-col items-center">
         <AnimatePresence mode="wait">
           {!isVerified ? (
             <motion.div
               key="otp-form"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col items-center w-full"
             >
-              {/* Icon Header */}
-              <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
-                <motion.div
-                  animate={{ scale: [1, 1.12, 1], opacity: [0.3, 0.5, 0.3] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-medical-teal/20 rounded-full blur-md"
-                />
-                <div className="w-16 h-16 rounded-full bg-medical-teal/10 border border-medical-teal/30 flex items-center justify-center shadow-[0_0_15px_rgba(32,201,151,0.15)]">
-                  <Mail className="w-8 h-8 text-medical-teal" />
-                </div>
-              </div>
-
               <h1 className="text-2xl font-bold font-manrope tracking-tight mb-3 text-white">
-                Enter Verification Code
+                Verify your email
               </h1>
               
-              <p className="text-white/60 text-xs md:text-sm leading-relaxed mb-8">
-                We've sent a 5-digit verification code to <br />
-                <span className="text-medical-teal font-medium select-text">{currentUser.email}</span>.<br />
-                Please enter the code below to authorize your account.
+              <p className="text-white/50 text-sm leading-relaxed mb-10 text-center text-balance">
+                Enter the 5-digit code sent to <br />
+                <span className="text-white font-medium select-text">{currentUser.email}</span>
               </p>
 
               {/* OTP Form Inputs */}
               <form onSubmit={handleVerify} className="w-full flex flex-col items-center">
-                <div className="flex justify-center gap-3.5 mb-8">
+                <div className="flex justify-center gap-4 mb-10">
                   {otp.map((digit, idx) => (
                     <input
                       key={idx}
@@ -262,7 +240,7 @@ export default function VerifyEmailPage() {
                       onChange={(e) => handleChange(e.target.value, idx)}
                       onKeyDown={(e) => handleKeyDown(e, idx)}
                       onPaste={idx === 0 ? handlePaste : undefined}
-                      className="w-12 h-14 bg-white/[0.02] border border-white/10 focus:border-medical-teal rounded-xl text-center text-2xl font-bold font-manrope text-white focus:outline-none transition-all duration-200 focus:shadow-[0_0_15px_rgba(32,201,151,0.25)]"
+                      className="w-12 h-14 bg-transparent border-b-2 border-white/10 focus:border-white text-center text-3xl font-light font-manrope text-white focus:outline-none transition-colors duration-150"
                     />
                   ))}
                 </div>
@@ -270,12 +248,12 @@ export default function VerifyEmailPage() {
                 {/* Feedback Message */}
                 {message && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`text-xs p-3.5 rounded-xl border w-full mb-6 ${
+                    className={`text-xs p-3.5 rounded-lg border w-full mb-6 text-center ${
                       message.type === "success"
-                        ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
-                        : "bg-rose-500/10 border-rose-500/20 text-rose-400"
+                        ? "bg-emerald-500/5 border-emerald-500/10 text-emerald-400"
+                        : "bg-rose-500/5 border-rose-500/10 text-rose-400"
                     }`}
                   >
                     {message.text}
@@ -283,33 +261,30 @@ export default function VerifyEmailPage() {
                 )}
 
                 {/* Verification Actions */}
-                <div className="w-full space-y-4">
+                <div className="w-full space-y-5">
                   <button
                     type="submit"
                     disabled={!isCodeComplete || isVerifying}
-                    className="w-full py-4 px-6 rounded-xl bg-white text-black font-semibold text-sm hover:bg-white/90 disabled:bg-white/10 disabled:text-white/40 transition-all duration-300 shadow-lg shadow-white/5 flex items-center justify-center gap-2 group"
+                    className="w-full py-4 px-6 rounded-lg bg-white text-black font-semibold text-sm hover:bg-neutral-200 disabled:bg-white/10 disabled:text-white/30 transition-colors duration-200 flex items-center justify-center gap-2"
                   >
                     {isVerifying ? (
                       <RotateCw className="w-4 h-4 animate-spin" />
                     ) : (
-                      <>
-                        <span>Verify Code</span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </>
+                      <span>Verify Code</span>
                     )}
                   </button>
 
-                  <div className="flex justify-between items-center w-full text-xs px-1 pt-2">
+                  <div className="flex justify-between items-center w-full text-xs text-neutral-500 px-1 pt-2">
                     <button
                       type="button"
                       onClick={handleResend}
                       disabled={resendCooldown > 0 || isResending}
-                      className="text-medical-teal font-medium hover:underline disabled:text-white/30 disabled:no-underline transition-all duration-200"
+                      className="hover:text-white disabled:hover:text-neutral-500 transition-colors duration-200"
                     >
                       {isResending ? (
                         <span className="flex items-center gap-1.5"><RotateCw className="w-3 h-3 animate-spin" /> Resending...</span>
                       ) : resendCooldown > 0 ? (
-                        `Resend code in ${resendCooldown}s`
+                        `Resend in ${resendCooldown}s`
                       ) : (
                         "Resend Code"
                       )}
@@ -318,7 +293,7 @@ export default function VerifyEmailPage() {
                     <button
                       type="button"
                       onClick={handleSignOut}
-                      className="text-white/50 hover:text-white font-medium flex items-center gap-1 transition-colors duration-200"
+                      className="hover:text-white flex items-center gap-1 transition-colors duration-200"
                     >
                       <LogOut className="w-3.5 h-3.5" />
                       <span>Sign Out</span>
@@ -330,41 +305,25 @@ export default function VerifyEmailPage() {
           ) : (
             <motion.div
               key="verified"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
               className="flex flex-col items-center w-full py-6"
             >
-              <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1.2, opacity: [0, 0.35, 0] }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
-                  className="absolute inset-0 bg-emerald-500/20 rounded-full blur-md"
-                />
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 220, damping: 14 }}
-                  className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-                >
-                  <CheckCircle2 className="w-10 h-10 text-emerald-400" />
-                </motion.div>
-              </div>
+              <CheckCircle2 className="w-12 h-12 text-white mb-6" />
 
-              <h1 className="text-2xl font-bold font-manrope tracking-tight mb-3 text-white">
-                Code Verified!
+              <h1 className="text-2xl font-bold font-manrope tracking-tight mb-2 text-white">
+                Verified
               </h1>
               
-              <p className="text-white/60 text-xs md:text-sm leading-relaxed mb-4">
-                Your email has been authorized. <br />
-                Preparing your onboarding experience...
+              <p className="text-white/50 text-sm leading-relaxed text-center mb-6">
+                Taking you to your dashboard...
               </p>
 
-              <RotateCw className="w-4 h-4 text-emerald-400 animate-spin mt-4" />
+              <RotateCw className="w-4 h-4 text-white/30 animate-spin" />
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }
