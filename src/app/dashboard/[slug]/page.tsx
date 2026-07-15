@@ -1552,8 +1552,19 @@ export default function APDynamicCoursePage() {
     }
   }, [course]);
 
+  // Redirect unverified logged-in users
+  useEffect(() => {
+    if (currentUser && !currentUser.emailVerified) {
+      router.push("/verify-email");
+    }
+  }, [currentUser, router]);
+
   if (!course) {
     return <UpcomingCourseFallback slug={slug} />;
+  }
+
+  if (currentUser && !currentUser.emailVerified) {
+    return null;
   }
 
   const toggleUnit = (id: number) => {

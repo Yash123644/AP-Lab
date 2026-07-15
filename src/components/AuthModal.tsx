@@ -9,6 +9,7 @@ import {
   AuthProvider,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   setPersistence,
   browserLocalPersistence,
   signInWithCustomToken
@@ -235,12 +236,19 @@ export function AuthModal() {
           setLoading(false);
           return;
         }
-        await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(userCredential.user);
+        onClose();
+        router.push("/verify-email");
       } else {
-        await signInWithEmailAndPassword(auth, email, password);
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        onClose();
+        if (!userCredential.user.emailVerified) {
+          router.push("/verify-email");
+        } else {
+          router.push("/dashboard");
+        }
       }
-      onClose();
-      router.push("/dashboard");
     } catch (err) {
       console.error("Firebase Email Auth Error:", err);
       if (err instanceof Error) {

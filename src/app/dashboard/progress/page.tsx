@@ -41,10 +41,14 @@ export default function ProgressPage() {
   // Calendar date view (defaults to current month)
   const [currentDate, setCurrentDate] = useState(() => new Date());
 
-  // Redirect if not logged in
+  // Redirect if not logged in or email not verified
   useEffect(() => {
-    if (!authLoading && !currentUser) {
-      router.push("/");
+    if (!authLoading) {
+      if (!currentUser) {
+        router.push("/");
+      } else if (!currentUser.emailVerified) {
+        router.push("/verify-email");
+      }
     }
   }, [currentUser, authLoading, router]);
 
@@ -263,7 +267,7 @@ export default function ProgressPage() {
     setSelectedDayInfo(null);
   };
 
-  if (authLoading || progressLoading || !currentUser) {
+  if (authLoading || progressLoading || !currentUser || !currentUser.emailVerified) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#020308]">
         <LoadingSpinner />

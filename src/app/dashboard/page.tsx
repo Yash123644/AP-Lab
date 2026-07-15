@@ -413,12 +413,16 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    if (!authLoading && !currentUser) {
-      router.push("/");
+    if (!authLoading) {
+      if (!currentUser) {
+        router.push("/");
+      } else if (!currentUser.emailVerified) {
+        router.push("/verify-email");
+      }
     }
   }, [currentUser, authLoading, router]);
 
-  if (authLoading || progressLoading || !currentUser) {
+  if (authLoading || progressLoading || !currentUser || !currentUser.emailVerified) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-deep-navy">
         <LoadingSpinner />

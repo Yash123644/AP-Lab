@@ -11,6 +11,7 @@ import {
   AuthProvider,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   setPersistence,
   browserLocalPersistence,
   signInWithCustomToken,
@@ -252,10 +253,16 @@ export default function LoginPage() {
         if (userCredential.user && name) {
           await updateProfile(userCredential.user, { displayName: name });
         }
+        await sendEmailVerification(userCredential.user);
+        router.push("/verify-email");
       } else {
-        await signInWithEmailAndPassword(auth, email, password);
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        if (!userCredential.user.emailVerified) {
+          router.push("/verify-email");
+        } else {
+          router.push("/dashboard");
+        }
       }
-      router.push("/dashboard");
     } catch (err) {
       console.error("Firebase Email Auth Error:", err);
       if (err instanceof Error) {
