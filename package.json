@@ -56,5 +56,8 @@
   },
   "optionalDependencies": {
     "@next/swc-darwin-arm64": "^16.2.10"
+  },
+  "overrides": {
+    "jose": "4.15.9"
   }
 }

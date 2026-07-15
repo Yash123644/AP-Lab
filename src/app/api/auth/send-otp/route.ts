@@ -54,19 +54,19 @@ export async function POST(req: NextRequest) {
       to: email,
       subject: `Verify your email for AP Lab - Code: ${code}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 30px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; color: #1e293b;">
-          <div style="text-align: center; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
-            <h2 style="margin: 0; color: #020308; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">AP Lab</h2>
-            <p style="margin: 4px 0 0 0; color: #0088ff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">theaplab.org</p>
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 40px 30px; border: 1px solid #27272a; border-radius: 16px; background-color: #09090b; color: #f4f4f5; text-align: center;">
+          <div style="margin-bottom: 30px; border-bottom: 1px solid #27272a; padding-bottom: 20px;">
+            <h2 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">AP Lab</h2>
+            <p style="margin: 4px 0 0 0; color: #38bdf8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">theaplab.org</p>
           </div>
-          <h3 style="color: #0f172a; margin: 0 0 16px 0; font-size: 18px; font-weight: 700;">Confirm your registration</h3>
-          <p style="font-size: 15px; line-height: 1.6; margin-bottom: 24px;">Thank you for signing up for AP Lab! To complete your registration and unlock your study dashboard, please enter the following 5-digit verification code on the verification screen:</p>
-          <div style="text-align: center; margin: 30px 0;">
-            <span style="font-size: 36px; font-weight: 800; letter-spacing: 6px; color: #0088ff; background-color: #f8fafc; padding: 12px 30px; border-radius: 12px; border: 1px solid #e2e8f0; display: inline-block;">${code}</span>
+          <h3 style="color: #ffffff; margin: 0 0 16px 0; font-size: 18px; font-weight: 700; text-align: left;">Verify your email</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #a1a1aa; margin-bottom: 30px; text-align: left;">Welcome to AP Lab! To complete your registration, please enter the following 5-digit verification code on the verification screen:</p>
+          <div style="margin: 32px 0;">
+            <span style="font-size: 32px; font-weight: 800; letter-spacing: 8px; color: #ffffff; background-color: #18181b; padding: 16px 32px; border-radius: 12px; border: 1px solid #27272a; display: inline-block; padding-left: 40px;">${code}</span>
           </div>
-          <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin-bottom: 24px;">This code will expire in 15 minutes. If you did not sign up for an account on AP Lab, you can safely ignore this email.</p>
-          <div style="border-top: 1px solid #f1f5f9; padding-top: 16px; text-align: center; margin-top: 24px;">
-            <p style="margin: 0; color: #94a3b8; font-size: 12px;">&copy; 2026 AP Lab. All rights reserved.</p>
+          <p style="color: #71717a; font-size: 12px; line-height: 1.5; margin-bottom: 30px; text-align: left;">This code is valid for 15 minutes. If you did not request this code, you can safely ignore this email.</p>
+          <div style="border-top: 1px solid #27272a; padding-top: 20px; text-align: center; margin-top: 30px;">
+            <p style="margin: 0; color: #52525b; font-size: 11px;">&copy; 2026 AP Lab. All rights reserved.</p>
           </div>
         </div>
       `,
