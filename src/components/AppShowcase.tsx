@@ -4,7 +4,7 @@ import { LevelBadge } from "@/components/LevelBadge";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import { Flame } from "lucide-react";
+import { Flame, Play } from "lucide-react";
 
 const showcaseImages = [
   "/images/dashboard-live.webp",
@@ -294,13 +294,12 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
-          {/* Box 5 (Bottom Span) - PROGRESS TRACKING (Col-span 2) */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1 md:col-span-2"
+            className="bg-[#000000] border border-white/10 rounded-[28px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1"
           >
             {/* Header info */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 z-10">
@@ -325,7 +324,7 @@ export function AppShowcase() {
             </div>
 
             {/* Metrics Dashboard Layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-8 z-10">
+            <div className="grid grid-cols-1 gap-4 w-full mt-8 z-10">
               {/* Metric 1: Question Accuracy Circle */}
               <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
@@ -457,6 +456,58 @@ export function AppShowcase() {
                 <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
                   <span>Mastered: 18/22 units</span>
                   <span>AP Biology</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Box 6 (Bottom Right) - TOPIC-SPECIFIC VIDEOS */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1 text-black cursor-pointer min-h-[440px] hover:border-neutral-300 transition-all duration-300"
+          >
+            {/* Header info */}
+            <div className="text-left relative z-10 flex flex-col">
+              <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">VIDEO COMPANIONS</span>
+              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight">Topic-Specific Video Lessons.</h3>
+              <p className="text-black/50 font-inter text-xs max-w-sm mt-1.5 leading-relaxed">
+                Every syllabus topic is paired with a handpicked specialized video to clarify complex concepts (curated, not created by us, for optimal quality).
+              </p>
+            </div>
+
+            {/* Video Thumbnail mockup */}
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-neutral-200/80 shadow-lg mt-6 bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 flex flex-col justify-between p-4 transition-all duration-300">
+              {/* Glowing Background Pattern */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.15)_0%,transparent_70%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px]" />
+
+              {/* Top Bar */}
+              <div className="flex justify-between items-center relative z-10">
+                <span className="text-[9px] font-mono font-semibold tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">AP BIOLOGY</span>
+                <span className="text-[8px] font-mono text-white/50">12:45</span>
+              </div>
+
+              {/* Center Play Button */}
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ease-out group-hover:bg-red-600 group-hover:text-white">
+                  <Play className="w-6 h-6 text-black fill-current translate-x-0.5 transition-colors duration-300 group-hover:text-white" />
+                </div>
+              </div>
+
+              {/* Bottom Info & Custom Youtube Progress Bar */}
+              <div className="w-full relative z-10 space-y-2">
+                <div className="flex flex-col">
+                  <span className="text-white font-manrope font-bold text-xs leading-none">Cellular Respiration & Krebs Cycle</span>
+                  <span className="text-[8px] text-white/50 mt-1">Unit 3: Cellular Energetics</span>
+                </div>
+                
+                {/* YouTube Playback Progress Bar */}
+                <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden relative">
+                  <div className="bg-red-600 h-full w-[65%] rounded-full" />
                 </div>
               </div>
             </div>
