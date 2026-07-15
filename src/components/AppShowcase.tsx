@@ -4,7 +4,7 @@ import { LevelBadge } from "@/components/LevelBadge";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import { Flame, Play } from "lucide-react";
+import { Flame, Play, Calendar } from "lucide-react";
 
 const showcaseImages = [
   "/images/dashboard-live.webp",
@@ -299,159 +299,72 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1 md:col-span-2"
+            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-2xl col-span-1"
           >
             {/* Header info */}
             <div className="text-left z-10 shrink-0">
               <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">PROGRESS TRACKING</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">Real-Time Performance Metrics.</h3>
-              <p className="text-white/50 font-inter text-xs max-w-md mt-1 leading-relaxed">
-                Track your syllabus progress, question accuracy, and daily learning habits in one unified place.
+              <h3 className="text-2xl font-inter font-bold text-white tracking-tight">Real-Time Performance Metrics.</h3>
+              <p className="text-white/50 font-inter text-[11px] max-w-sm mt-1 leading-relaxed">
+                Track your syllabus progress and daily learning habits in one unified place.
               </p>
             </div>
 
-            {/* Split Content: Charts (Left) & Calendar (Right) */}
-            <div className="flex flex-col md:flex-row gap-6 w-full mt-4 z-10 flex-1 items-center justify-between overflow-hidden">
-              {/* Left Column: Charts squished */}
-              <div className="flex flex-col gap-3 flex-1 w-full max-w-sm">
-                {/* Metric 1: Question Accuracy Circle */}
-                <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-[9px] font-mono text-emerald-400 font-bold uppercase">Accuracy</span>
-                      <h4 className="text-[11px] font-bold text-white mt-0.5">Question Correct Rate</h4>
-                    </div>
-                  </div>
-                  
-                  {/* Circular Progress Gauge */}
-                  <div className="flex items-center space-x-3 my-2">
-                    <div className="relative w-10 h-10 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                        <path
-                          className="text-white/10"
-                          strokeWidth="3.2"
-                          stroke="currentColor"
-                          fill="none"
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path
-                          className="text-emerald-400"
-                          strokeDasharray="92, 100"
-                          strokeWidth="3.2"
-                          strokeLinecap="round"
-                          stroke="currentColor"
-                          fill="none"
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                      </svg>
-                      <span className="absolute text-[9px] font-mono font-bold text-white">92%</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-white/90 text-[10px] font-semibold">Excellent Mastery</span>
-                      <span className="text-[8px] text-white/40 mt-0.5">Top 5% of AP Students</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Metric 3: Syllabus Mastery Progress */}
-                <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span 
-                        className="text-[9px] font-mono font-bold uppercase transition-colors duration-300"
-                        style={{ color: getColorForPercentage(84) }}
-                      >
-                        Mastery
-                      </span>
-                      <h4 className="text-[11px] font-bold text-white mt-0.5">Syllabus Completion</h4>
-                    </div>
-                    <span 
-                      className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded transition-all duration-300"
-                      style={{
-                        color: getColorForPercentage(84),
-                        backgroundColor: getColorForPercentage(84, 0.1)
-                      }}
-                    >
-                      84%
-                    </span>
-                  </div>
-                  
-                  {/* Progress bar */}
-                  <div className="mt-3 mb-1.5">
-                    <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full rounded-full transition-all duration-500" 
-                        style={{ 
-                          width: "84%",
-                          backgroundColor: getColorForPercentage(84)
-                        }} 
-                      />
-                    </div>
-                  </div>
-
-                  <div className="text-[8px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
-                    <span>Mastered: 18/22 units</span>
-                    <span>AP Biology</span>
-                  </div>
-                </div>
+            {/* Activity Calendar Display */}
+            <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-4 z-10 flex-1 min-h-[220px] shrink-0">
+              <div className="flex items-center space-x-2 mb-2 text-emerald-400">
+                <Calendar className="w-4 h-4" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
               </div>
-
-              {/* Right Column: Activity Calendar Preview */}
-              <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors flex-1 w-full max-w-sm self-stretch h-full min-h-[220px]">
-                <div className="flex justify-between items-center mb-1">
-                  <span className="text-[9px] font-mono text-emerald-400 font-bold uppercase">Activity Heatmap</span>
-                  <span className="text-[9px] font-mono text-white/50">July 2026</span>
-                </div>
-                
-                {/* Weekdays */}
-                <div className="grid grid-cols-7 gap-1 text-center text-[7px] font-mono text-white/30 font-bold uppercase">
-                  {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
-                    <div key={idx}>{day}</div>
-                  ))}
-                </div>
-                
-                {/* Calendar Days */}
-                <div className="grid grid-cols-7 gap-1 mt-1.5">
-                  {Array.from({ length: 35 }).map((_, idx) => {
-                    const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
-                    const isValid = dayNum > 0 && dayNum <= 31;
+              
+              {/* Weekdays */}
+              <div className="grid grid-cols-7 gap-1 text-center text-[7px] font-mono text-white/30 font-bold uppercase">
+                {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
+                  <div key={idx}>{day}</div>
+                ))}
+              </div>
+              
+              {/* Calendar Days */}
+              <div className="grid grid-cols-7 gap-1 mt-1.5">
+                {Array.from({ length: 35 }).map((_, idx) => {
+                  const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
+                  const isValid = dayNum > 0 && dayNum <= 31;
+                  
+                  let bgClass = "bg-white/[0.01] border-white/5 text-white/10";
+                  if (isValid) {
+                    const activeDays = {
+                      1: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
+                      2: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
+                      4: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      5: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      8: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
+                      9: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
+                      14: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      15: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      16: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
+                      20: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
+                      21: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
+                      22: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      23: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      27: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
+                      28: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
+                      29: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100"
+                    } as Record<number, string>;
                     
-                    let bgClass = "bg-white/[0.01] border-white/5 text-white/10";
-                    if (isValid) {
-                      const activeDays = {
-                        1: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
-                        2: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                        4: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        5: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        8: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
-                        9: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                        14: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        15: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        16: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                        20: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400",
-                        21: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                        22: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        23: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        27: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300",
-                        28: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100",
-                        29: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100"
-                      } as Record<number, string>;
-                      
-                      bgClass = activeDays[dayNum] || "bg-white/[0.02] border-white/5 text-white/50";
-                    } else {
-                      bgClass = "opacity-0 pointer-events-none";
-                    }
+                    bgClass = activeDays[dayNum] || "bg-white/[0.02] border-white/5 text-white/50";
+                  } else {
+                    bgClass = "opacity-0 pointer-events-none";
+                  }
 
-                    return (
-                      <div 
-                        key={idx}
-                        className={`aspect-square rounded border flex items-center justify-center text-[7.5px] font-mono ${bgClass}`}
-                      >
-                        {isValid ? dayNum : ""}
-                      </div>
-                    );
-                  })}
-                </div>
+                  return (
+                    <div 
+                      key={idx}
+                      className={`aspect-square rounded border flex items-center justify-center text-[7.5px] font-mono ${bgClass}`}
+                    >
+                      {isValid ? dayNum : ""}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
@@ -462,55 +375,54 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col md:flex-row justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1 md:col-span-2 text-black cursor-pointer hover:border-neutral-300 transition-colors duration-300"
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-2xl col-span-1 text-black cursor-pointer hover:border-neutral-300 transition-colors duration-300"
           >
-            {/* Left Side: Header info */}
-            <div className="text-left relative z-10 flex flex-col justify-center flex-1 md:pr-8">
+            {/* Header info */}
+            <div className="text-left relative z-10 flex flex-col shrink-0">
               <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">VIDEO COMPANIONS</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight">Topic-Specific Video Lessons.</h3>
-              <p className="text-black/50 font-inter text-xs max-w-sm mt-2 leading-relaxed">
+              <h3 className="text-2xl font-inter font-bold text-black tracking-tight">Topic-Specific Video Lessons.</h3>
+              <p className="text-black/50 font-inter text-[11px] max-w-sm mt-1 leading-relaxed">
                 Every syllabus topic is paired with a handpicked specialized video to clarify complex concepts (curated, not created by us, for optimal quality).
               </p>
             </div>
 
-            {/* Right Side: Video Thumbnail mockup */}
-            <div className="flex-1 w-full max-w-md relative z-10 flex items-center">
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-neutral-200/80 shadow-lg bg-black flex flex-col justify-between p-4 transition-all duration-300">
-                {/* Cover Image with zoom hover effect inside */}
-                <Image 
-                  src="/images/biology-thumbnail.jpg"
-                  alt="Introduction to Cells with the Amoeba Sisters"
-                  fill
-                  sizes="(max-w-7xl) 100vw, 400px"
-                  className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-500 ease-out"
-                />
+            {/* Video Thumbnail mockup */}
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-neutral-200/80 shadow-lg mt-4 bg-black flex flex-col justify-between p-4 transition-all duration-300 shrink-0">
+              {/* Cover Image with zoom hover effect inside */}
+              <Image 
+                src="/images/biology-thumbnail.jpg"
+                alt="Introduction to Cells with the Amoeba Sisters"
+                fill
+                sizes="(max-w-md) 100vw, 350px"
+                style={{ objectFit: "cover" }}
+                className="opacity-90 group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
 
-                {/* Glowing Background Pattern & Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+              {/* Glowing Background Pattern & Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
 
-                {/* Top Bar (Metadata) */}
-                <div className="flex justify-end items-center relative z-10">
-                  <span className="text-[8px] font-mono text-white/90 bg-black/60 backdrop-blur-md px-1.5 py-0.5 rounded">12:45</span>
+              {/* Top Bar (Metadata) */}
+              <div className="flex justify-end items-center relative z-10">
+                <span className="text-[8px] font-mono text-white/90 bg-black/60 backdrop-blur-md px-1.5 py-0.5 rounded">12:45</span>
+              </div>
+
+              {/* Center Play Button */}
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ease-out group-hover:bg-red-600 group-hover:text-white">
+                  <Play className="w-5 h-5 text-black fill-current transition-colors duration-300 group-hover:text-white" />
                 </div>
+              </div>
 
-                {/* Center Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center z-10">
-                  <div className="w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ease-out group-hover:bg-red-600 group-hover:text-white">
-                    <Play className="w-5 h-5 text-black fill-current translate-x-0.5 transition-colors duration-300 group-hover:text-white" />
-                  </div>
+              {/* Bottom Info & Custom Youtube Progress Bar */}
+              <div className="w-full relative z-10 space-y-2">
+                <div className="flex flex-col">
+                  <span className="text-white font-manrope font-extrabold text-[12px] leading-tight drop-shadow-md">Introduction to Cells</span>
+                  <span className="text-[9px] text-white/70 mt-0.5 drop-shadow-sm">with the Amoeba Sisters</span>
                 </div>
-
-                {/* Bottom Info & Custom Youtube Progress Bar */}
-                <div className="w-full relative z-10 space-y-2">
-                  <div className="flex flex-col">
-                    <span className="text-white font-manrope font-extrabold text-[12px] leading-tight drop-shadow-md">Introduction to Cells</span>
-                    <span className="text-[9px] text-white/70 mt-0.5 drop-shadow-sm">with the Amoeba Sisters</span>
-                  </div>
-                  
-                  {/* YouTube Playback Progress Bar */}
-                  <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden relative">
-                    <div className="bg-red-600 h-full w-[65%] rounded-full" />
-                  </div>
+                
+                {/* YouTube Playback Progress Bar */}
+                <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden relative">
+                  <div className="bg-red-600 h-full w-[65%] rounded-full" />
                 </div>
               </div>
             </div>
