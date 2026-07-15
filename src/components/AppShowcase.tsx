@@ -299,48 +299,35 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1"
+            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-2xl col-span-1"
           >
             {/* Header info */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 z-10">
-              <div className="text-left">
-                <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">PROGRESS TRACKING</span>
-                <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight">Real-Time Performance Metrics.</h3>
-                <p className="text-white/50 font-inter text-xs max-w-md mt-1.5 leading-relaxed">
-                  Track your mastery indices, syllabus progress, and current study streaks per course.
-                </p>
-              </div>
-              
-              {/* Daily Streak Indicator */}
-              <div className="flex items-center space-x-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5 backdrop-blur-md self-start md:self-auto">
-                <div className="text-amber-500 shrink-0">
-                  <Flame className="w-6 h-6 fill-amber-500 text-amber-400" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-white font-manrope font-extrabold text-[15px] leading-none">14 Days</span>
-                  <span className="text-[9px] font-mono text-white/30 tracking-wider uppercase mt-1">Study Streak</span>
-                </div>
-              </div>
+            <div className="text-left z-10 shrink-0">
+              <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">PROGRESS TRACKING</span>
+              <h3 className="text-2xl font-inter font-bold text-white tracking-tight">Real-Time Performance Metrics.</h3>
+              <p className="text-white/50 font-inter text-[11px] max-w-sm mt-1 leading-relaxed">
+                Track your syllabus progress and concept mastery per course.
+              </p>
             </div>
 
             {/* Metrics Dashboard Layout */}
-            <div className="grid grid-cols-1 gap-4 w-full mt-8 z-10">
+            <div className="flex flex-col gap-3 w-full mt-4 z-10 flex-1 justify-center">
               {/* Metric 1: Question Accuracy Circle */}
-              <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
+              <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Accuracy</span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Question Correct Rate</h4>
+                    <span className="text-[9px] font-mono text-emerald-400 font-bold uppercase">Accuracy</span>
+                    <h4 className="text-[11px] font-bold text-white mt-0.5">Question Correct Rate</h4>
                   </div>
                 </div>
                 
                 {/* Circular Progress Gauge */}
-                <div className="flex items-center space-x-4 my-3">
-                  <div className="relative w-14 h-14 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center space-x-3 my-2">
+                  <div className="relative w-10 h-10 flex items-center justify-center flex-shrink-0">
                     <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                       <path
                         className="text-white/10"
-                        strokeWidth="3"
+                        strokeWidth="3.2"
                         stroke="currentColor"
                         fill="none"
                         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -355,82 +342,29 @@ export function AppShowcase() {
                         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                       />
                     </svg>
-                    <span className="absolute text-[11px] font-mono font-bold text-white">92%</span>
+                    <span className="absolute text-[9px] font-mono font-bold text-white">92%</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white/90 text-xs font-semibold">Excellent Mastery</span>
-                    <span className="text-[9px] text-white/40 mt-0.5">Top 5% of AP Students</span>
+                    <span className="text-white/90 text-[10px] font-semibold">Excellent Mastery</span>
+                    <span className="text-[8px] text-white/40 mt-0.5">Top 5% of AP Students</span>
                   </div>
-                </div>
-
-                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5">
-                  <span>Based on 250+ recent items</span>
-                </div>
-              </div>
-
-              {/* Metric 2: Study Duration Graph */}
-              <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <span 
-                      className="text-[10px] font-mono font-bold uppercase transition-colors duration-300"
-                      style={{ color: getColorForPercentage(53) }}
-                    >
-                      Activity
-                    </span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Study Duration</h4>
-                  </div>
-                </div>
-
-                {/* Sleek mini bar chart representation */}
-                <div className="flex items-end justify-between h-14 my-3 px-1">
-                  {[
-                    { label: "M", value: "15%", hrs: "0.5h" },
-                    { label: "T", value: "60%", hrs: "2.2h" },
-                    { label: "W", value: "25%", hrs: "1.0h" },
-                    { label: "T", value: "85%", hrs: "3.5h" },
-                    { label: "F", value: "65%", hrs: "2.5h" },
-                    { label: "S", value: "100%", hrs: "4.0h" },
-                    { label: "S", value: "20%", hrs: "0.8h" }
-                  ].map((bar, idx) => {
-                    const pct = parseInt(bar.value);
-                    const color = getColorForPercentage(pct);
-                    return (
-                      <div key={idx} className="flex flex-col items-center flex-1">
-                        <div className="relative w-2 bg-white/10 rounded-full h-10 flex items-end">
-                          <div 
-                            className="w-full rounded-full transition-all duration-300" 
-                            style={{ 
-                              height: bar.value,
-                              backgroundColor: color
-                            }}
-                          />
-                        </div>
-                        <span className="text-[8px] font-mono text-white/40 mt-1.5">{bar.label}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
-                  <span>Weekly Average: 2.1h/day</span>
                 </div>
               </div>
 
               {/* Metric 3: Syllabus Mastery Progress */}
-              <div className="bg-white/5 border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors">
+              <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
                     <span 
-                      className="text-[10px] font-mono font-bold uppercase transition-colors duration-300"
+                      className="text-[9px] font-mono font-bold uppercase transition-colors duration-300"
                       style={{ color: getColorForPercentage(84) }}
                     >
                       Mastery
                     </span>
-                    <h4 className="text-[13px] font-bold text-white mt-0.5">Syllabus Completion</h4>
+                    <h4 className="text-[11px] font-bold text-white mt-0.5">Syllabus Completion</h4>
                   </div>
                   <span 
-                    className="text-[11px] font-mono font-bold px-2 py-0.5 rounded transition-all duration-300"
+                    className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded transition-all duration-300"
                     style={{
                       color: getColorForPercentage(84),
                       backgroundColor: getColorForPercentage(84, 0.1)
@@ -441,8 +375,8 @@ export function AppShowcase() {
                 </div>
                 
                 {/* Progress bar */}
-                <div className="mt-5 mb-2">
-                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div className="mt-3 mb-1.5">
+                  <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
                     <div 
                       className="h-full rounded-full transition-all duration-500" 
                       style={{ 
@@ -453,7 +387,7 @@ export function AppShowcase() {
                   </div>
                 </div>
 
-                <div className="text-[9px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
+                <div className="text-[8px] font-mono text-white/30 pt-1 border-t border-white/5 flex justify-between">
                   <span>Mastered: 18/22 units</span>
                   <span>AP Biology</span>
                 </div>
@@ -467,42 +401,49 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl col-span-1 text-black cursor-pointer min-h-[440px] hover:border-neutral-300 transition-all duration-300"
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-2xl col-span-1 text-black cursor-pointer hover:border-neutral-300 transition-colors duration-300"
           >
             {/* Header info */}
-            <div className="text-left relative z-10 flex flex-col">
+            <div className="text-left relative z-10 flex flex-col shrink-0">
               <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">VIDEO COMPANIONS</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight">Topic-Specific Video Lessons.</h3>
-              <p className="text-black/50 font-inter text-xs max-w-sm mt-1.5 leading-relaxed">
+              <h3 className="text-2xl font-inter font-bold text-black tracking-tight">Topic-Specific Video Lessons.</h3>
+              <p className="text-black/50 font-inter text-[11px] max-w-sm mt-1 leading-relaxed">
                 Every syllabus topic is paired with a handpicked specialized video to clarify complex concepts (curated, not created by us, for optimal quality).
               </p>
             </div>
 
             {/* Video Thumbnail mockup */}
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-neutral-200/80 shadow-lg mt-6 bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 flex flex-col justify-between p-4 transition-all duration-300">
-              {/* Glowing Background Pattern */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.15)_0%,transparent_70%)] pointer-events-none" />
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px]" />
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-neutral-200/80 shadow-lg mt-4 bg-black flex flex-col justify-between p-4 transition-all duration-300">
+              {/* Cover Image with zoom hover effect inside */}
+              <Image 
+                src="/images/biology-thumbnail.png"
+                alt="Biology Respiration Lesson Cover"
+                fill
+                sizes="(max-w-7xl) 100vw, 400px"
+                className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
 
-              {/* Top Bar */}
-              <div className="flex justify-between items-center relative z-10">
-                <span className="text-[9px] font-mono font-semibold tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">AP BIOLOGY</span>
-                <span className="text-[8px] font-mono text-white/50">12:45</span>
+              {/* Glowing Background Pattern & Overlay */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.1)_0%,transparent_70%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
+
+              {/* Top Bar (Metadata) */}
+              <div className="flex justify-end items-center relative z-10">
+                <span className="text-[8px] font-mono text-white/90 bg-black/60 backdrop-blur-md px-1.5 py-0.5 rounded">12:45</span>
               </div>
 
               {/* Center Play Button */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ease-out group-hover:bg-red-600 group-hover:text-white">
-                  <Play className="w-6 h-6 text-black fill-current translate-x-0.5 transition-colors duration-300 group-hover:text-white" />
+                <div className="w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ease-out group-hover:bg-red-600 group-hover:text-white">
+                  <Play className="w-5 h-5 text-black fill-current translate-x-0.5 transition-colors duration-300 group-hover:text-white" />
                 </div>
               </div>
 
               {/* Bottom Info & Custom Youtube Progress Bar */}
               <div className="w-full relative z-10 space-y-2">
                 <div className="flex flex-col">
-                  <span className="text-white font-manrope font-bold text-xs leading-none">Cellular Respiration & Krebs Cycle</span>
-                  <span className="text-[8px] text-white/50 mt-1">Unit 3: Cellular Energetics</span>
+                  <span className="text-white font-manrope font-extrabold text-[12px] leading-tight drop-shadow-md">Cellular Respiration & Krebs Cycle</span>
+                  <span className="text-[9px] text-white/70 mt-0.5 drop-shadow-sm">Unit 3: Cellular Energetics</span>
                 </div>
                 
                 {/* YouTube Playback Progress Bar */}
