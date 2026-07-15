@@ -311,22 +311,22 @@ export function AppShowcase() {
             </div>
 
             {/* Activity Calendar Display */}
-            <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-4 z-10 flex-1 min-h-[220px] shrink-0">
-              <div className="flex items-center space-x-2 mb-3 text-emerald-400 shrink-0">
-                <Calendar className="w-4.5 h-4.5" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
+            <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-4 z-10 flex-1 min-h-[240px] shrink-0">
+              <div className="flex items-center space-x-2 mb-3.5 text-emerald-400 shrink-0">
+                <Calendar className="w-5 h-5" />
+                <span className="text-[12px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
               </div>
               
               <div className="flex-1 flex flex-col justify-center">
                 {/* Weekdays */}
-                <div className="grid grid-cols-7 gap-1 text-center w-full max-w-[240px] mx-auto text-[7px] font-mono text-white/30 font-bold uppercase mb-1.5 shrink-0">
+                <div className="grid grid-cols-7 gap-1.5 text-center w-full max-w-[285px] mx-auto text-[9px] font-mono text-white/30 font-bold uppercase mb-2 shrink-0">
                   {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
                     <div key={idx}>{day}</div>
                   ))}
                 </div>
                 
                 {/* Calendar Days */}
-                <div className="grid grid-cols-7 gap-1 w-full max-w-[240px] mx-auto">
+                <div className="grid grid-cols-7 gap-1.5 w-full max-w-[285px] mx-auto">
                   {Array.from({ length: 35 }).map((_, idx) => {
                     const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
                     const isValid = dayNum > 0 && dayNum <= 31;
@@ -371,7 +371,7 @@ export function AppShowcase() {
                     return (
                       <div 
                         key={idx}
-                        className={`group/cell relative aspect-square rounded border flex items-center justify-center text-[7.5px] font-mono ${bgClass}`}
+                        className={`group/cell relative aspect-square rounded-md border flex items-center justify-center text-[10px] font-mono ${bgClass}`}
                       >
                         {displayDay}
                         
