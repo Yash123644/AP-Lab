@@ -597,7 +597,7 @@ export default function Dashboard() {
             transition={{ delay: 0.25 }}
             className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed"
           >
-            Navigate your folders or initiate a new study module below.
+            Navigate your folders or search for a course below.
           </motion.p>
         </div>
 

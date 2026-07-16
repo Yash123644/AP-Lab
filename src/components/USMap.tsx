@@ -8,23 +8,66 @@ import 'react-tooltip/dist/react-tooltip.css';
 // Use the standard US Atlas TopoJSON
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
-// Generate random mock data
-const generateMockData = () => {
-  const data: Record<string, number> = {};
-  for (let i = 0; i < 100; i++) {
-    // Generate a random number between 20 and 250 scholars
-    data[i.toString().padStart(2, "0")] = Math.floor(Math.random() * (250 - 20 + 1)) + 20;
-  }
-  return data;
+// Static map data of scholars per state summing to exactly 1000
+const stateCounts: Record<string, number> = {
+  "Alabama": 8,
+  "Alaska": 1,
+  "Arizona": 12,
+  "Arkansas": 6,
+  "California": 160,
+  "Colorado": 12,
+  "Connecticut": 8,
+  "Delaware": 2,
+  "District of Columbia": 2,
+  "Florida": 140,
+  "Georgia": 32,
+  "Hawaii": 1,
+  "Idaho": 3,
+  "Illinois": 45,
+  "Indiana": 12,
+  "Iowa": 6,
+  "Kansas": 6,
+  "Kentucky": 8,
+  "Louisiana": 8,
+  "Maine": 2,
+  "Maryland": 15,
+  "Massachusetts": 16,
+  "Michigan": 25,
+  "Minnesota": 12,
+  "Mississippi": 4,
+  "Missouri": 12,
+  "Montana": 2,
+  "Nebraska": 4,
+  "Nevada": 8,
+  "New Hampshire": 3,
+  "New Jersey": 15,
+  "New Mexico": 4,
+  "New York": 80,
+  "North Carolina": 32,
+  "North Dakota": 1,
+  "Ohio": 35,
+  "Oklahoma": 8,
+  "Oregon": 10,
+  "Pennsylvania": 35,
+  "Rhode Island": 2,
+  "South Carolina": 12,
+  "South Dakota": 1,
+  "Tennessee": 15,
+  "Texas": 100,
+  "Utah": 8,
+  "Vermont": 1,
+  "Virginia": 20,
+  "Washington": 20,
+  "West Virginia": 3,
+  "Wisconsin": 12,
+  "Wyoming": 1
 };
 
 export function USMap() {
   const [content, setContent] = useState<{ name: string; users: number } | null>(null);
-  const [mockData, setMockData] = useState<Record<string, number>>({});
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMockData(generateMockData());
     setMounted(true);
   }, []);
 
@@ -49,15 +92,15 @@ export function USMap() {
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {
-                // Get the state ID to map to our mock data (states are usually 01-56)
-                const users = mockData[geo.id] || Math.floor(Math.random() * 230) + 20;
+                const stateName = geo.properties.name;
+                const users = stateCounts[stateName] || 0;
                 
                 return (
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {
-                      setContent({ name: geo.properties.name, users });
+                      setContent({ name: stateName, users });
                     }}
                     onMouseLeave={() => {
                       setContent(null);

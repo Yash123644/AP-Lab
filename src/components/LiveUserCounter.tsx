@@ -38,15 +38,25 @@ export function LiveUserCounter() {
   useEffect(() => {
     if (!isInView) return;
 
-    // Fluctuate count by -2 to +2 every 3.5 seconds
-    const interval = setInterval(() => {
-      setCount((prev) => {
-        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
-        return Math.max(8, prev + change);
-      });
-    }, 3500);
+    let timeoutId: NodeJS.Timeout;
 
-    return () => clearInterval(interval);
+    const tick = () => {
+      setCount((prev) => {
+        const direction = Math.random() > 0.5 ? 1 : -1;
+        const amount = Math.floor(Math.random() * 3) + 1; // 1 to 3
+        const change = direction * amount;
+        return Math.max(10, Math.min(70, prev + change));
+      });
+
+      // Average 14 seconds: random duration between 10 and 18 seconds
+      const nextDelay = 14000 + (Math.random() - 0.5) * 8000;
+      timeoutId = setTimeout(tick, nextDelay);
+    };
+
+    const firstDelay = 14000 + (Math.random() - 0.5) * 8000;
+    timeoutId = setTimeout(tick, firstDelay);
+
+    return () => clearTimeout(timeoutId);
   }, [isInView]);
 
   const digits = count.toLocaleString().split("");

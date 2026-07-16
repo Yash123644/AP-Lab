@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Users, Star, Trophy, Activity, MapPin, ArrowRight } from "lucide-react";
+import { Users, Star, Trophy, Activity, MapPin, ArrowRight, Clock } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useState, useRef } from "react";
@@ -132,14 +132,13 @@ export default function CommunityImpactPage() {
                 <div className="w-12 h-12 rounded-xl bg-medical-teal/10 border border-medical-teal/20 flex items-center justify-center">
                   <Users className="w-6 h-6 text-medical-teal" />
                 </div>
-                <span className="font-mono text-xs uppercase tracking-widest text-medical-teal">Active Node Network</span>
               </div>
               <div className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-widest animate-pulse">
                 Online
               </div>
             </div>
             <div className="relative z-10">
-              <div className="text-7xl md:text-8xl font-instrument mb-4 tracking-tighter text-white">128</div>
+              <div className="text-7xl md:text-8xl font-instrument mb-4 tracking-tighter text-white">1,024</div>
               <div className="flex items-center space-x-4">
                 <div className="h-[2px] w-12 bg-medical-teal/50" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Verified Concurrent Scholars</span>
@@ -148,7 +147,7 @@ export default function CommunityImpactPage() {
             <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wNSkiLz48L3N2Zz4=')] opacity-50 mask-image:linear-gradient(to_bottom_left,black,transparent)" />
           </motion.div>
 
-          {/* Average AP Score */}
+          {/* Average Study Session */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,11 +156,11 @@ export default function CommunityImpactPage() {
             className="liquid-glass-strong bg-[#0a0a0f] border border-white/10 rounded-[32px] p-8 relative group hover:border-yellow-400/30 transition-all duration-500 flex flex-col justify-between"
           >
              <div className="w-10 h-10 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center mb-8">
-               <Star className="w-5 h-5 text-yellow-400" />
+               <Clock className="w-5 h-5 text-yellow-400" />
              </div>
               <div>
-                <div className="text-5xl font-instrument mb-2 text-white">4.6</div>
-                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Average AP Score</span>
+                <div className="text-5xl font-instrument mb-2 text-white">24m</div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Avg. Study Session</span>
               </div>
           </motion.div>
 
@@ -244,16 +243,16 @@ export default function CommunityImpactPage() {
               Reach across <br /><span className="italic text-white/50">state lines.</span>
             </h2>
             <p className="font-inter text-white/40 text-xl leading-relaxed mb-12">
-              AP Lab operates in all 50 states, processing millions of cognitive data points daily to refine the optimal pathway to academic mastery for every scholar.
+              AP Lab is active nationwide, providing students across the country with interactive study tools, practice modules, and real-time concept mastery tracking to succeed on their AP exams.
             </p>
             <div className="flex items-center space-x-8">
               <div>
-                <div className="text-4xl font-instrument mb-1 text-white">15</div>
+                <div className="text-4xl font-instrument mb-1 text-white">50</div>
                 <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-white/30">States Active</div>
               </div>
               <div className="w-[1px] h-12 bg-white/10" />
               <div>
-                <div className="text-4xl font-instrument mb-1 text-white">4.8K+</div>
+                <div className="text-4xl font-instrument mb-1 text-white">10K+</div>
                 <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-white/30">Scholars Reached</div>
               </div>
             </div>
