@@ -23,7 +23,6 @@ import {
   BarChart2
 } from "lucide-react";
 import { DashboardContextMenu } from "@/components/DashboardContextMenu";
-import { FloatingXPOperations } from "@/components/FloatingXPOperations";
 import Link from "next/link";
 import { courseRegistry, CourseUnit, CourseTopic } from "@/lib/courses/course-registry";
 import { cn } from "@/lib/utils";
@@ -2253,7 +2252,6 @@ export default function APDynamicCoursePage() {
         )}
       </AnimatePresence>
       <DashboardContextMenu onOpenProfile={() => setShowAccountPopup(true)} />
-      <FloatingXPOperations />
     </div>
   );
 }

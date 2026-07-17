@@ -14,7 +14,6 @@ import { useAuth } from "@/context/AuthContext";
 import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
 import { LevelBadge } from "@/components/LevelBadge";
 import { DashboardContextMenu } from "@/components/DashboardContextMenu";
-import { FloatingXPOperations } from "@/components/FloatingXPOperations";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
@@ -935,7 +934,6 @@ export default function ProgressPage() {
       </AnimatePresence>
 
       <DashboardContextMenu onOpenProfile={() => setShowAccountPopup(true)} />
-      <FloatingXPOperations />
     </div>
   );
 }
