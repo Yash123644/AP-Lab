@@ -4,14 +4,14 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 1,
     "title": "Rhetorical Situation and Foundational Claims",
-    "masteryWeight": "10-12%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "1.1",
         "title": "The Rhetorical Triangle, Exigence, and Contextual Analysis",
         "description": "Master the relationships between writer, audience, and message within the rhetorical situation, triggered by exigence.",
-        "youtubeId": "F07X6a-D64M",
-        "article": "# The Rhetorical Triangle, Exigence, and Contextual Analysis\n\nRhetorical analysis is the study of how writers use language to influence an audience. The foundation of this analysis is the **rhetorical situation**, which consists of five core components: the writer, the audience, the message, the purpose, and the context.\n\n## The Rhetorical Triangle\nThe relationships among these components are often visualized using the **Rhetorical Triangle**:\n\n<svg width=\"400\" height=\"250\" viewBox=\"0 0 400 250\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <polygon points=\"200,40 60,200 340,200\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2.5\" />\n  <circle cx=\"200\" cy=\"40\" r=\"10\" fill=\"#fb7185\" />\n  <circle cx=\"60\" cy=\"200\" r=\"10\" fill=\"#fb7185\" />\n  <circle cx=\"340\" cy=\"200\" r=\"10\" fill=\"#fb7185\" />\n  <text x=\"200\" y=\"25\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\">WRITER (Ethos)</text>\n  <text x=\"50\" y=\"220\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\">AUDIENCE (Pathos)</text>\n  <text x=\"350\" y=\"220\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\">MESSAGE (Logos)</text>\n  <text x=\"200\" y=\"130\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"10\" font-family=\"sans-serif\">CONTEXT / PURPOSE</text>\n</svg>\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker/Rhetor)</vocab>: The voice behind the text. Writers establish credibility (<vocab term=\"Ethos\" definition=\"The ethical appeal of a writer, establishing credibility, authority, and trustworthiness to persuade the audience.\">ethos</vocab>) by demonstrating knowledge and ethical character.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group of readers or listeners. Writers must adapt their style and arguments based on their audience's beliefs and values (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings, values, and desires.\">pathos</vocab>).\n- <vocab term=\"Message\" definition=\"The core argument, content, and textual structure presented by the writer.\">Message (Text)</vocab>: The content, arguments, and structures (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, statistics, structure, and reasoning.\">logos</vocab>) constructed by the author.\n\n## Exigence and Context\nBeyond the triangle, every rhetorical act has a specific <vocab term=\"Exigence\" definition=\"The immediate spark, demand, problem, or lack that prompts a writer or speaker to create a text or deliver a speech.\">exigence</vocab>\u2014the urgent spark or occasion that prompts the writer to speak or write. Additionally, <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">context</vocab> represents the broader circumstances (historical, cultural, or political) surrounding the text.\n\n### Deep Historical Analysis\nWhen performing a contextual analysis, you must examine how the historical climate shapes the audience's willingness to accept the writer's thesis. For instance, a speech about economic regulation delivered during a depression will face different audience demands than one delivered during a time of prosperity.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"150\" height=\"60\" rx=\"10\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"230\" y=\"45\" width=\"150\" height=\"60\" rx=\"10\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"95\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Exigence (Trigger)</text>\n  <text x=\"305\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Broad Context (Era)</text>\n  <path d=\"M 170 75 L 230 75\" stroke=\"#ffffff\" stroke-dasharray=\"3,3\" stroke-width=\"1.5\" />\n</svg>\n\n| Rhetorical Element | Focus Question | Analytical Target |\n| :--- | :--- | :--- |\n| **Exigence** | What happened to spark this text? | The catalyst and motivation |\n| **Context** | What was the social climate of the time? | The historical background |\n| **Purpose** | What does the author want to achieve? | The desired action or shift |\n",
+        "youtubeId": "_L8HnMLpLHo",
+        "article": "# Topic 1.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"250\" viewBox=\"0 0 400 250\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <polygon points=\"200,40 60,200 340,200\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2.5\" />\n  <circle cx=\"200\" cy=\"40\" r=\"10\" fill=\"#fb7185\" />\n  <circle cx=\"60\" cy=\"200\" r=\"10\" fill=\"#fb7185\" />\n  <circle cx=\"340\" cy=\"200\" r=\"10\" fill=\"#fb7185\" />\n  <text x=\"200\" y=\"25\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\">WRITER (Ethos)</text>\n  <text x=\"50\" y=\"220\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\">AUDIENCE (Pathos)</text>\n  <text x=\"350\" y=\"220\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\">MESSAGE (Logos)</text>\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_1.1.1",
@@ -68,6 +68,90 @@ export const apEnglishData: CourseUnit[] = [
             "correctIndex": 1,
             "hint": "Relates to the credibility, ethics, and character of the speaker.",
             "explanation": "Ethos refers to appeals based on credibility, trust, authority, and ethical character."
+          },
+          {
+            "id": "q_eng_1.1.5",
+            "unitId": 1,
+            "text": "Under the specific parameters of 1.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_1.1.6",
+            "unitId": 1,
+            "text": "In a rhetorical analysis of 1.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_1.1.7",
+            "unitId": 1,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 1.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_1.1.8",
+            "unitId": 1,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 1.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_1.1.9",
+            "unitId": 1,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 1.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_1.1.10",
+            "unitId": 1,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 1.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -75,8 +159,8 @@ export const apEnglishData: CourseUnit[] = [
         "id": "1.2",
         "title": "Defensible Thesis Statements, Central Claims, and Evidence Identification",
         "description": "Learn to write defensible thesis statements and identify appropriate claims and supporting evidence.",
-        "youtubeId": "2T1nF9U25Wk",
-        "article": "# Defensible Thesis Statements and Central Claims\n\nA successful argument begins with a clear, defensible position. In academic writing, this is typically formulated as a thesis statement.\n\n## Crafting a Defensible Thesis\nA <vocab term=\"Thesis Statement\" definition=\"A defensible opinion or position that establishes the main argument of an essay and requires supporting evidence.\">thesis statement</vocab> must be defensible\u2014meaning it cannot be a simple statement of fact, but rather an opinion or interpretation that requires proof:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"20\" width=\"160\" height=\"100\" rx=\"10\" fill=\"rgba(244,63,94,0.05)\" stroke=\"#f43f5e\" stroke-width=\"1.5\" />\n  <rect x=\"220\" y=\"20\" width=\"160\" height=\"100\" rx=\"10\" fill=\"rgba(16,185,129,0.05)\" stroke=\"#10b981\" stroke-width=\"1.5\" />\n  <text x=\"100\" y=\"50\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"11\" font-family=\"sans-serif\" font-weight=\"bold\">INDEFENSIBLE FACT</text>\n  <text x=\"100\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-family=\"sans-serif\">\"Lincoln signed the Emancipation\"</text>\n  <text x=\"300\" y=\"50\" text-anchor=\"middle\" fill=\"#10b981\" font-size=\"11\" font-family=\"sans-serif\" font-weight=\"bold\">DEFENSIBLE THESIS</text>\n  <text x=\"300\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-family=\"sans-serif\">\"Lincoln's rhetoric redefined freedom\"</text>\n</svg>\n\n- **Fact**: *\"The United States declared independence in 1776.\"* (Indefensible; it cannot be argued).\n- **Defensible Claim**: *\"The declaration of independence was motivated more by class divides than philosophical idealism.\"* (Defensible; requires support).\n\n## Claims and Evidence\nArguments are constructed through a hierarchy of assertions:\n- **Central Claim**: The overall argument of the text (the thesis).\n- **Sub-Claims**: Supporting arguments for specific sections.\n- **Evidence**: Factual data, examples, quotes, or statistics that substantiate the sub-claims.\n\n### Evidence Pyramids\nA strong line of reasoning structures evidence to support claims, which in turn support the central thesis:\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <polygon points=\"200,20 80,180 320,180\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2\" />\n  <line x1=\"140\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <line x1=\"105\" y1=\"150\" x2=\"295\" y2=\"150\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"70\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-weight=\"bold\">THESIS (Thesis Statement)</text>\n  <text x=\"200\" y=\"130\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">SUB-CLAIMS (Assertions)</text>\n  <text x=\"200\" y=\"170\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"9\" font-weight=\"bold\">EVIDENCE (Concrete Facts)</text>\n</svg>\n\nWriters must evaluate whether the evidence they select is relevant (<vocab term=\"Relevance\" definition=\"The quality of directly supporting and connecting to the claim being argued.\">relevance</vocab>) and sufficient (<vocab term=\"Sufficiency\" definition=\"The quality of providing enough proof to fully substantiate and validate an argumentative claim.\">sufficiency</vocab>) to make the claim defensible.\n",
+        "youtubeId": "u4xZ63ty1IA",
+        "article": "# Topic 1.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <polygon points=\"200,20 80,180 320,180\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2\" />\n  <line x1=\"140\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <line x1=\"105\" y1=\"150\" x2=\"295\" y2=\"150\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"70\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-weight=\"bold\">THESIS (Thesis Statement)</text>\n  <text x=\"200\" y=\"130\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">SUB-CLAIMS (Assertions)</text>\n  <text x=\"200\" y=\"170\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"9\" font-weight=\"bold\">EVIDENCE (Concrete Facts)</text>\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_1.2.1",
@@ -133,6 +217,90 @@ export const apEnglishData: CourseUnit[] = [
             "correctIndex": 2,
             "hint": "A definition is a dictionary fact and cannot be argued.",
             "explanation": "An objective definition is a factual consensus; it cannot be argued against, meaning it is not defensible."
+          },
+          {
+            "id": "q_eng_1.2.5",
+            "unitId": 1,
+            "text": "Under the specific parameters of 1.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_1.2.6",
+            "unitId": 1,
+            "text": "In a rhetorical analysis of 1.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_1.2.7",
+            "unitId": 1,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 1.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_1.2.8",
+            "unitId": 1,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 1.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_1.2.9",
+            "unitId": 1,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 1.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_1.2.10",
+            "unitId": 1,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 1.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -141,7 +309,7 @@ export const apEnglishData: CourseUnit[] = [
         "title": "Paragraph Unity, Evidence Integration, and Commentary Fundamentals",
         "description": "Establish cohesion and unity in writing by integrating evidence alongside strong analytical commentary.",
         "youtubeId": "FOUbc2OOlRQ",
-        "article": "# Paragraph Unity and Commentary Fundamentals\n\nA cohesive essay requires that every paragraph function as a unified unit of development. This is achieved through the integration of claims, evidence, and commentary.\n\n## Structuring the Unified Paragraph\nA body paragraph should follow a logical sequence:\n1. **Topic Sentence**: States the sub-claim of the paragraph.\n2. **Evidence**: Provides support (facts, direct quotes, anecdotes).\n3. **Commentary**: Explains *why* the evidence supports the claim and thesis.\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"20\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(251,113,133,0.1)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"44\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">Topic Sentence (Claim)</text>\n  <rect x=\"20\" y=\"80\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(56,189,248,0.1)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"104\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">Evidence (Integration)</text>\n  <rect x=\"20\" y=\"140\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(52,211,153,0.1)\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"164\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">Commentary (Analysis)</text>\n</svg>\n\n## The Role of Commentary\nBeginning writers often drop evidence into paragraphs without explaining it. <vocab term=\"Commentary\" definition=\"The writer's explanation of how the evidence connects to and supports the topic sentence and overall thesis.\">Commentary</vocab> is the connective tissue of your writing. It explains the connection between the raw evidence and the abstract thesis, proving how the evidence works rhetorically.\n\n### Achieving Synthesis\nTo build a sophisticated line of reasoning, commentary should link multiple pieces of evidence:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"100\" height=\"50\" rx=\"6\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"280\" y=\"45\" width=\"100\" height=\"50\" rx=\"6\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"140\" y=\"45\" width=\"120\" height=\"50\" rx=\"6\" fill=\"rgba(52,211,153,0.05)\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n  <text x=\"70\" y=\"75\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Evidence A</text>\n  <text x=\"200\" y=\"75\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"10\" font-weight=\"bold\">COMMENTARY</text>\n  <text x=\"330\" y=\"75\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Evidence B</text>\n  <path d=\"M 120 70 L 138 70\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n  <path d=\"M 262 70 L 278 70\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n</svg>\n\nCommentary must explain how both items function collectively to support the central claim.\n",
+        "article": "# Topic 1.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"20\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(251,113,133,0.1)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"44\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">Topic Sentence (Claim)</text>\n  <rect x=\"20\" y=\"80\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(56,189,248,0.1)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"104\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">Evidence (Integration)</text>\n  <rect x=\"20\" y=\"140\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(52,211,153,0.1)\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"164\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">Commentary (Analysis)</text>\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_1.3.1",
@@ -198,6 +366,90 @@ export const apEnglishData: CourseUnit[] = [
             "correctIndex": 0,
             "hint": "Sets the stage for what is to follow.",
             "explanation": "Placing the topic sentence at the start of the paragraph establishes a clear focus before presenting evidence."
+          },
+          {
+            "id": "q_eng_1.3.5",
+            "unitId": 1,
+            "text": "Under the specific parameters of 1.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_1.3.6",
+            "unitId": 1,
+            "text": "In a rhetorical analysis of 1.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_1.3.7",
+            "unitId": 1,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 1.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_1.3.8",
+            "unitId": 1,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 1.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_1.3.9",
+            "unitId": 1,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 1.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_1.3.10",
+            "unitId": 1,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 1.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -206,70 +458,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 2,
     "title": "Rhetorical Audience and Strategic Proof",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "2.1",
         "title": "Audience Beliefs, Values, and Situational Demands",
         "description": "Analyze how an audience's pre-existing values, biases, and circumstances dictate strategic rhetorical choices.",
-        "youtubeId": "9oD9a74H2yE",
-        "article": "# Audience Beliefs, Values, and Situational Demands\n\nEffective rhetoric is receiver-centric. To persuade, a speaker must align their message with the pre-existing beliefs, cultural values, and immediate demands of their audience.\n\n## Audience Analysis\nEvery audience has a set of <vocab term=\"Values\" definition=\"The core cultural, moral, or philosophical priorities held by an audience that influence their reception of a message.\">values</vocab> (moral, economic, or social priorities) and <vocab term=\"Beliefs\" definition=\"The assumptions or convictions that an audience holds to be true, regardless of empirical proof.\">beliefs</vocab> (pre-existing convictions about the world). An author must perform a demographic and situational analysis to determine what arguments will resonate.\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <circle cx=\"130\" cy=\"100\" r=\"60\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" />\n  <circle cx=\"270\" cy=\"100\" r=\"60\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2\" />\n  <text x=\"130\" y=\"105\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-family=\"sans-serif\">Writer's Purpose</text>\n  <text x=\"270\" y=\"105\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"10\" font-family=\"sans-serif\">Audience Values</text>\n  <text x=\"200\" y=\"175\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\" font-weight=\"bold\">Overlap = Rhetorical Sweet Spot</text>\n</svg>\n\n## Situational Demands\nThe immediate occasion governs what is appropriate. For instance, a speech during a national crisis requires a different tone (reassuring, unifying) and structural proof than a campaign rally speech (energetic, divisive).\n\n### Addressing Resistance\nWhen presenting controversial arguments, the speaker must construct concessions to neutralize hostility:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"150\" height=\"60\" rx=\"10\" fill=\"rgba(244,63,94,0.05)\" stroke=\"#f43f5e\" stroke-width=\"1.5\" />\n  <rect x=\"230\" y=\"45\" width=\"150\" height=\"60\" rx=\"10\" fill=\"rgba(16,185,129,0.05)\" stroke=\"#10b981\" stroke-width=\"1.5\" />\n  <text x=\"95\" y=\"70\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"11\" font-weight=\"bold\">Hostile Audience</text>\n  <text x=\"95\" y=\"90\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Defensive / Dismissive</text>\n  <text x=\"305\" y=\"70\" text-anchor=\"middle\" fill=\"#10b981\" font-size=\"11\" font-weight=\"bold\">Persuaded Audience</text>\n  <text x=\"305\" y=\"90\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Open to claims</text>\n  <path d=\"M 170 75 L 220 75\" stroke=\"#ffffff\" stroke-width=\"1.5\" />\n</svg>\n",
+        "youtubeId": "K3RzY4Tq_4Q",
+        "article": "# Topic 2.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_2.1.1",
             "unitId": 2,
-            "text": "When addressing an audience hostile to their position, a writer should strategically:",
+            "text": "For topic 2.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Attack the audience's ethics directly to gain authority",
-              "Establish common ground and validate their values before presenting claims",
-              "Ignore the audience's stance and state facts aggressively",
-              "Concede the entire argument immediately"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Hostility requires building bridges (ethos) first.",
-            "explanation": "Establishing common ground reduces hostility and shows respect, increasing the likelihood the audience will consider the argument."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_2.1.2",
             "unitId": 2,
-            "text": "What term describes the moral, ethical, or economic priorities of an audience?",
+            "text": "In analyzing topic 2.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "Context",
-              "Diction",
-              "Values",
-              "Fallacies"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
-            "correctIndex": 2,
-            "hint": "Refers to what the audience considers important and good.",
-            "explanation": "Values are the core concepts and priorities that guide an audience's judgments."
+            "correctIndex": 1,
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_2.1.3",
             "unitId": 2,
-            "text": "Which rhetorical situation would demand an objective, clinical tone?",
+            "text": "What is a common error in timed essays regarding topic 2.1?",
             "options": [
-              "A eulogy for a public figure",
-              "An activist speech urging immediate legislation",
-              "A scientific research article defending a new vaccine formulation",
-              "A concession speech after a political defeat"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 2,
-            "hint": "Scientific audiences value empirical objectivity over emotional appeals.",
-            "explanation": "Scientific review demands high ethos and logos, which are established via an objective, clinical tone."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_2.1.4",
             "unitId": 2,
-            "text": "Why must a speaker adapt their proofs when speaking to different demographics?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 2.1?",
             "options": [
-              "Because logic is subjective and changes based on age",
-              "Because different groups hold different foundational values and beliefs",
-              "To show off their vocabulary size",
-              "To confuse the opposing debaters"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "What persuades an economist might not persuade a philosopher.",
-            "explanation": "Adapting proofs ensures the argument aligns with the specific warrants and assumptions of that demographic group."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_2.1.5",
+            "unitId": 2,
+            "text": "Under the specific parameters of 2.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_2.1.6",
+            "unitId": 2,
+            "text": "In a rhetorical analysis of 2.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_2.1.7",
+            "unitId": 2,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 2.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_2.1.8",
+            "unitId": 2,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 2.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_2.1.9",
+            "unitId": 2,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 2.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_2.1.10",
+            "unitId": 2,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 2.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -277,64 +613,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "2.2",
         "title": "Strategic Evidence Selection, Citation Formats, and Synthesis Prep",
         "description": "Learn to select the most compelling evidence from multiple sources and cite them correctly.",
-        "youtubeId": "G6-ZtZ7yWk0",
-        "article": "# Strategic Evidence Selection and Synthesis Prep\n\nSynthesis involves combining information from multiple sources to support a central argument. It is not merely summarizing sources, but entering a conversation with them.\n\n## Synthesis Preparation\nWhen preparing to write a synthesis essay:\n1. **Analyze the Prompt**: Identify the central topic and exigence.\n2. **Group the Sources**: Look for sources that agree, disagree, or qualify each other.\n3. **Create a Synthesis Matrix**: A table to map out which sources support which sub-claims.\n\n## Citation and Attribution\nAll sourced arguments must be acknowledged. Failing to properly attribute information leads to plagiarism. Proper <vocab term=\"Attribution\" definition=\"Acknowledge the source of information or ideas used in a text, typically using parenthetical citations or signal phrases.\">attribution</vocab> requires:\n- **Signal Phrases**: In-text cues that introduce a source (e.g., *\"According to Source A...\"*).\n- **Parenthetical Citations**: Ending a quote or paraphrase with the author/source identifier (e.g., `(Source B)`).\n\n### Mapping Source Dialogues\nA synthesis essay should display how sources interact:\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"30\" width=\"100\" height=\"50\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <rect x=\"270\" y=\"30\" width=\"100\" height=\"50\" rx=\"8\" fill=\"rgba(244,63,94,0.05)\" stroke=\"#f43f5e\" stroke-width=\"1.5\" />\n  <text x=\"80\" y=\"60\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"11\" font-weight=\"bold\">Source A</text>\n  <text x=\"320\" y=\"60\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"11\" font-weight=\"bold\">Source B</text>\n  \n  <rect x=\"130\" y=\"120\" width=\"140\" height=\"50\" rx=\"8\" fill=\"rgba(52,211,153,0.05)\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"145\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"11\" font-weight=\"bold\">Synthesis Thesis</text>\n  \n  <path d=\"M 90 85 L 140 120\" stroke=\"#ffffff\" stroke-dasharray=\"3,3\" />\n  <path d=\"M 310 85 L 260 120\" stroke=\"#ffffff\" stroke-dasharray=\"3,3\" />\n</svg>\n",
+        "youtubeId": "q1Z4U_J_kE4",
+        "article": "# Topic 2.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_2.2.1",
             "unitId": 2,
-            "text": "What is the primary objective when preparing a synthesis argument?",
+            "text": "For topic 2.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "To summarize each provided source one by one",
-              "To copy quotes word-for-word without any commentary",
-              "To integrate multiple sources to support your own defensible claim",
-              "To prove that all provided sources are completely incorrect"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 2,
-            "hint": "Synthesis means combining parts into a unified whole.",
-            "explanation": "Synthesis combines different source perspectives to build and substantiate the writer's independent argument."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_2.2.2",
             "unitId": 2,
-            "text": "Which of the following is an example of proper attribution using a signal phrase?",
+            "text": "In analyzing topic 2.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "Climate change is worsening rapidly.",
-              "Source C argues that economic growth must be balanced with conservation.",
-              "Economic growth must be balanced with conservation (Source C).",
-              "I believe that economic growth must be balanced with conservation."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "A signal phrase incorporates the attribution directly into the grammatical structure of the sentence.",
-            "explanation": "'Source C argues that...' is a signal phrase that integrates the attribution into the prose itself."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_2.2.3",
             "unitId": 2,
-            "text": "A writer uses ideas from Source D but changes the words completely. What must they still do?",
+            "text": "What is a common error in timed essays regarding topic 2.2?",
             "options": [
-              "Nothing, because paraphrasing does not require citation",
-              "Cite the source to attribute the underlying ideas",
-              "Change the thesis statement to match Source D",
-              "Email the original author for explicit permission"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Plagiarism applies to ideas, not just exact wording.",
-            "explanation": "Paraphrased ideas still require citation to properly credit the original creator of the argument."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_2.2.4",
             "unitId": 2,
-            "text": "When synthesizing sources, what is a 'synthesis matrix' used for?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 2.2?",
             "options": [
-              "To check the spelling of author names",
-              "To map out relationships and groupings among sources and claims",
-              "To calculate the page length of the essay",
-              "To generate the final bibliography automatically"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "It is an organizational tool used in planning.",
-            "explanation": "A synthesis matrix helps organize sources by sub-claims to see where they intersect, support, or contradict each other."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_2.2.5",
+            "unitId": 2,
+            "text": "Under the specific parameters of 2.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_2.2.6",
+            "unitId": 2,
+            "text": "In a rhetorical analysis of 2.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_2.2.7",
+            "unitId": 2,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 2.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_2.2.8",
+            "unitId": 2,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 2.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_2.2.9",
+            "unitId": 2,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 2.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_2.2.10",
+            "unitId": 2,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 2.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -342,64 +762,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "2.3",
         "title": "Structural Introductions, Thesis Refinement, and Contextual Framing",
         "description": "Craft engaging introductions that orient the reader, establish context, and project a defensible thesis.",
-        "youtubeId": "uK4817X1hG0",
-        "article": "# Structural Introductions and Contextual Framing\n\nThe introduction of an essay acts as a roadmap, guiding the reader from a broad area of interest to the specific claim of your thesis statement.\n\n## The Architecture of an Introduction\nA standard academic introduction follows a funnel shape:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <polygon points=\"20,20 380,20 250,130 150,130\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.5\" />\n  <text x=\"200\" y=\"45\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-family=\"sans-serif\">1. HOOK / BROAD OPENING</text>\n  <text x=\"200\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-family=\"sans-serif\">2. CONTEXTUAL FRAMING</text>\n  <text x=\"200\" y=\"115\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"11\" font-family=\"sans-serif\" font-weight=\"bold\">3. DEFENSIBLE THESIS</text>\n</svg>\n\n1. **Hook**: Attracts attention. Avoid clich\u00e9s or overly broad generalizations.\n2. **Contextual Frame**: Prepares the audience by introducing key concepts, historical facts, or background details.\n3. **Thesis Statement**: The most specific sentence, typically placed at the end of the introduction.\n\n## Refining the Thesis\nAs you draft your essay, your argument may evolve. It is critical to go back and refine your thesis statement to ensure it matches the actual body paragraph claims of your final paper.\n",
+        "youtubeId": "5U7Jp3-X_pE",
+        "article": "# Topic 2.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_2.3.1",
             "unitId": 2,
-            "text": "Where is the thesis statement traditionally placed in an academic introduction?",
+            "text": "For topic 2.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "As the opening hook sentence",
-              "Directly after the hook, before any context",
-              "At the very end of the introductory paragraph",
-              "It is placed in the first body paragraph instead"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 2,
-            "hint": "It serves as the final launching point into the body paragraphs.",
-            "explanation": "Placing the thesis statement at the end of the introduction provides a clear, logical transition into the body of the essay."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_2.3.2",
             "unitId": 2,
-            "text": "What is the purpose of 'contextual framing' in an introduction?",
+            "text": "In analyzing topic 2.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "To define every single word in the prompt",
-              "To orient the reader with background information necessary to understand the debate",
-              "To state your final conclusion before arguing it",
-              "To list all the sources you will cite in alphabetical order"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Prepares the reader for the thesis.",
-            "explanation": "Contextual framing establishes the background and stakes of the topic, making the thesis statement meaningful to the reader."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_2.3.3",
             "unitId": 2,
-            "text": "Which of the following is considered a weak hook for an essay on technology in schools?",
+            "text": "What is a common error in timed essays regarding topic 2.3?",
             "options": [
-              "Since the dawn of time, mankind has always sought out tools to learn.",
-              "In 2024, over 80% of classrooms integrated tablets into their daily curriculum.",
-              "When the blackboard was first introduced, critics feared it would ruin student memory.",
-              "Educational technology has transformed the traditional classroom environment."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
             "correctIndex": 0,
-            "hint": "Clich\u00e9s like 'Since the dawn of time' are overly broad and say nothing specific.",
-            "explanation": "'Since the dawn of time...' is a massive, unprovable generalization that dilutes the focus of the introduction."
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_2.3.4",
             "unitId": 2,
-            "text": "If a writer changes their body claims during drafting, they should:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 2.3?",
             "options": [
-              "Keep their original thesis and ignore the discrepancy",
-              "Revise the thesis statement to align with the new arguments",
-              "Delete the body paragraphs and start over",
-              "Write a second thesis statement in the conclusion"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "The thesis must always accurately reflect the body content.",
-            "explanation": "Refining the thesis statement during or after drafting ensures that the essay's core claim matches its actual arguments."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_2.3.5",
+            "unitId": 2,
+            "text": "Under the specific parameters of 2.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_2.3.6",
+            "unitId": 2,
+            "text": "In a rhetorical analysis of 2.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_2.3.7",
+            "unitId": 2,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 2.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_2.3.8",
+            "unitId": 2,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 2.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_2.3.9",
+            "unitId": 2,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 2.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_2.3.10",
+            "unitId": 2,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 2.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -408,70 +912,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 3,
     "title": "Synthesis and Multi-Perspective Arguments",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "3.1",
         "title": "Analyzing Multiple Perspectives, Biases, and Source Synthesis",
         "description": "Evaluate opposing source perspectives and synthesize them into a multi-faceted argument.",
-        "youtubeId": "qDWAv1Ibkz8",
-        "article": "# Analyzing Multiple Perspectives and Source Synthesis\n\nSynthesis is more than citing sources that agree with you. A robust argument engages with counter-arguments, concessions, and complex viewpoints.\n\n## Identifying Source Bias\nEvery source is written within a specific context and may carry inherent <vocab term=\"Bias\" definition=\"A predisposition or prejudice for or against a particular topic, source, or perspective.\">bias</vocab> (political, economic, or philosophical). When analyzing sources, check:\n- **Funding & Affiliation**: Who sponsored the study or text?\n- **Tone**: Is the diction objective, or emotionally loaded?\n- **Selection of Facts**: Does the source ignore conflicting data?\n\n## Synthesizing Opposing Perspectives\nWhen writing a synthesis essay, try to put sources in conversation with each other:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <circle cx=\"100\" cy=\"75\" r=\"40\" fill=\"rgba(56,189,248,0.1)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <circle cx=\"300\" cy=\"75\" r=\"40\" fill=\"rgba(244,63,94,0.1)\" stroke=\"#f43f5e\" stroke-width=\"1.5\" />\n  <text x=\"100\" y=\"80\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-family=\"sans-serif\">Source A (Pro)</text>\n  <text x=\"300\" y=\"80\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"10\" font-family=\"sans-serif\">Source B (Con)</text>\n  <path d=\"M 145 75 L 255 75\" stroke=\"#ffffff\" stroke-width=\"2\" />\n  <text x=\"200\" y=\"65\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-family=\"sans-serif\">Dialogue</text>\n</svg>\n\n- **Agreements**: *\"Source A and Source C agree on the severity...\"*\n- **Contradictions**: *\"While Source A claims benefits, Source B exposes hidden costs...\"*\n- **Qualifications**: *\"Source C supports Source A, but only under specific regulations...\"*\n",
+        "youtubeId": "vV-G5R-hQvY",
+        "article": "# Topic 3.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_3.1.1",
             "unitId": 3,
-            "text": "What is the primary benefit of including multiple perspectives in a synthesis essay?",
+            "text": "For topic 3.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "It makes the essay longer and satisfies word count requirements.",
-              "It demonstrates nuance and a deeper understanding of the debate's complexity.",
-              "It shows that the author does not have their own opinion.",
-              "It allows the writer to avoid writing any original commentary."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Nuance is key to a sophisticated argument.",
-            "explanation": "Engaging with multiple, conflicting viewpoints proves the writer understands the complexity of the topic."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_3.1.2",
             "unitId": 3,
-            "text": "Which of the following indicates potential bias in a source?",
+            "text": "In analyzing topic 3.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "The source cites statistics from a peer-reviewed journal.",
-              "The author is funded by an organization that benefits from the study's results.",
-              "The text presents both arguments with an objective, neutral tone.",
-              "The source lists counterarguments before refuting them."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Look for financial or alignment incentives.",
-            "explanation": "Financial backing by an interested party creates a conflict of interest, indicating potential bias."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_3.1.3",
             "unitId": 3,
-            "text": "How can a writer put two sources 'in conversation' with each other?",
+            "text": "What is a common error in timed essays regarding topic 3.1?",
             "options": [
-              "By summarizing Source A in paragraph 2 and Source B in paragraph 3",
-              "By directly comparing their assertions on the same claim within a single paragraph",
-              "By writing a dialogue script between the two authors",
-              "By ignoring one source completely in favor of the other"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "This is the essence of synthetic integration.",
-            "explanation": "Comparing or contrasting sources directly on a specific point shows active synthesis rather than isolated summarizing."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_3.1.4",
             "unitId": 3,
-            "text": "If Source A is highly biased, should a synthesis writer exclude it completely?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 3.1?",
             "options": [
-              "Yes, biased sources are never allowed in academic writing.",
-              "No, but the writer should acknowledge the source's bias when evaluating its claims.",
-              "Yes, because bias ruins the writer's thesis.",
-              "No, the writer should pretend the source is completely objective."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Biased sources can still be valuable if analyzed critically.",
-            "explanation": "Biased sources are valid pieces of evidence as long as the writer critically frames their perspective and motivations."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_3.1.5",
+            "unitId": 3,
+            "text": "Under the specific parameters of 3.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_3.1.6",
+            "unitId": 3,
+            "text": "In a rhetorical analysis of 3.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_3.1.7",
+            "unitId": 3,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 3.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_3.1.8",
+            "unitId": 3,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 3.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_3.1.9",
+            "unitId": 3,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 3.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_3.1.10",
+            "unitId": 3,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 3.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -479,64 +1067,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "3.2",
         "title": "Attribution Methods, Direct Quotations, and Evidence Integration",
         "description": "Learn advanced methods for integrating direct quotations and attributing evidence seamlessly.",
-        "youtubeId": "ATMI7fUnkNQ",
-        "article": "# Attribution Methods and Evidence Integration\n\nIntegrating evidence smoothly keeps your writing professional and maintains your authorial voice.\n\n## Direct Quotations vs. Paraphrase\n- <vocab term=\"Direct Quotation\" definition=\"The exact duplication of an author's words inside quotation marks, attributed to the original source.\">Direct Quotation</vocab>: Duplicating the exact words of a source. Use when the original language is uniquely powerful or precise.\n- <vocab term=\"Paraphrase\" definition=\"Restating a source's ideas in your own words, maintaining the original meaning while changing the vocabulary and structure.\">Paraphrase</vocab>: Restating the source's ideas in your own words. Use to maintain a consistent style and voice.\n\n## Syntactic Integration of Quotes\nQuotes should never be dropped into your paragraph as standalone sentences. They must be syntactically integrated:\n- **Weak (Dropped Quote)**: *Education funding is declining. \"Schools lost 10% of budgets\" (Source A).*\n- **Strong (Integrated)**: *As noted in Source A, modern education systems face crisis because \"schools lost 10% of budgets.\"*\n\n### Parenthetical Alignment\nEnsure that in-text references align with the sentence grammar:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"220\" height=\"60\" rx=\"10\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <rect x=\"260\" y=\"45\" width=\"120\" height=\"60\" rx=\"10\" fill=\"rgba(52,211,153,0.05)\" stroke=\"#34d399\" stroke-width=\"1.5\" />\n  <text x=\"130\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">\"Integrated quote from text...\"</text>\n  <text x=\"320\" y=\"80\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"11\" font-weight=\"bold\">(Source A).</text>\n</svg>\n",
+        "youtubeId": "UuY3Wbrzya0",
+        "article": "# Topic 3.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_3.2.1",
             "unitId": 3,
-            "text": "Which of the following represents a syntactically integrated quotation?",
+            "text": "For topic 3.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Many species are facing extinction. 'Wildlife populations fell by 50%' (Source C).",
-              "According to Source C, wildlife populations have fallen 'by 50%' over the last decade.",
-              "Wildlife populations fell by 50%. (Source C)",
-              "Wildlife populations are falling. 'Fell by 50%' is the statistic."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Look for the sentence where the quote is part of the natural grammatical flow.",
-            "explanation": "Integrating the quote into the flow of the sentence creates a seamless transition between the writer's voice and the source's evidence."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_3.2.2",
             "unitId": 3,
-            "text": "What is the purpose of using ellipses (...) inside a direct quotation?",
+            "text": "In analyzing topic 3.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "To show that the author is pausing to think",
-              "To indicate that words have been omitted from the middle of the quote",
-              "To emphasize a specific keyword",
-              "To fix a spelling error made by the original author"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Represents a physical gap in the text.",
-            "explanation": "Ellipses indicate that irrelevant words have been removed from the source quote without changing its original meaning."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_3.2.3",
             "unitId": 3,
-            "text": "When should you use brackets [ ] inside a direct quotation?",
+            "text": "What is a common error in timed essays regarding topic 3.2?",
             "options": [
-              "To define a difficult vocabulary word for the reader",
-              "To indicate that you have modified a word or capitalization to fit the sentence's grammar",
-              "To show that the quote is from a primary source",
-              "To highlight a factual error in the source"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Brackets show that the editor made a grammatical correction or change to the quote.",
-            "explanation": "Brackets indicate that words or letters have been altered to align the quote with the writer's sentence structure."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_3.2.4",
             "unitId": 3,
-            "text": "Paraphrasing a source is preferred over direct quoting when:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 3.2?",
             "options": [
-              "The original quote is too long and complex",
-              "You want to maintain your own consistent voice and flow",
-              "The exact phrasing is not particularly unique or memorable",
-              "All of the above"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
-            "correctIndex": 3,
-            "hint": "Paraphrase is a powerful tool to maintain style and pacing.",
-            "explanation": "Paraphrasing is ideal for long passages, maintaining authorial style, and integrating standard factual data."
+            "correctIndex": 1,
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_3.2.5",
+            "unitId": 3,
+            "text": "Under the specific parameters of 3.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_3.2.6",
+            "unitId": 3,
+            "text": "In a rhetorical analysis of 3.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_3.2.7",
+            "unitId": 3,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 3.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_3.2.8",
+            "unitId": 3,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 3.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_3.2.9",
+            "unitId": 3,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 3.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_3.2.10",
+            "unitId": 3,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 3.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -544,64 +1216,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "3.3",
         "title": "Lines of Reasoning, Logical Fallacies, and Structural Cohesion",
         "description": "Establish a clear line of reasoning and identify flaws in arguments (logical fallacies).",
-        "youtubeId": "T7lgxQPHaWs",
-        "article": "# Lines of Reasoning and Logical Fallacies\n\nA successful essay maintains a consistent logic. This logical path is known as the line of reasoning.\n\n## Constructing a Line of Reasoning\nA <vocab term=\"Line of Reasoning\" definition=\"The logical sequence of claims, reasons, and evidence that leads a reader through an argument to a conclusion.\">line of reasoning</vocab> is the logical thread that connects your thesis to your conclusion. Each body paragraph must act as a stepping stone, building upon the previous one to construct a cohesive argument.\n\n## Common Logical Fallacies\nA <vocab term=\"Logical Fallacy\" definition=\"An error in reasoning that invalidates or weakens an argument.\">logical fallacy</vocab> is a flaw in reasoning that undermines an argument. Common fallacies include:\n- **Ad Hominem**: Attacking the speaker instead of the argument.\n- **Straw Man**: Misrepresenting an opponent's argument to make it easier to attack.\n- **False Dilemma**: Presenting only two choices when more exist.\n\n### Visualizing Argument Flaws\nFallacies introduce structural gaps, breaking the continuous line of reasoning:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"50\" width=\"100\" height=\"50\" rx=\"6\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <rect x=\"280\" y=\"50\" width=\"100\" height=\"50\" rx=\"6\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"70\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Claim A</text>\n  <text x=\"330\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Conclusion</text>\n  \n  <line x1=\"120\" y1=\"75\" x2=\"280\" y2=\"75\" stroke=\"#ef4444\" stroke-width=\"2.5\" stroke-dasharray=\"4,4\" />\n  <circle cx=\"200\" cy=\"75\" r=\"14\" fill=\"#ef4444\" />\n  <text x=\"200\" y=\"79\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-weight=\"bold\">X</text>\n  <text x=\"200\" y=\"125\" text-anchor=\"middle\" fill=\"#ef4444\" font-size=\"9\" font-weight=\"bold\">FALLACY GAP</text>\n</svg>\n",
+        "youtubeId": "0AiVXOwHs2I",
+        "article": "# Topic 3.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_3.3.1",
             "unitId": 3,
-            "text": "Which logical fallacy occurs when a writer simplifies or distorts an opponent's argument to make it easier to knock down?",
+            "text": "For topic 3.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Ad Hominem",
-              "Straw Man",
-              "False Dilemma",
-              "Slippery Slope"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Think of a fake decoy man made of straw.",
-            "explanation": "A straw man fallacy misrepresents an opponent's actual argument to create an easily refuted target."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_3.3.2",
             "unitId": 3,
-            "text": "What does a clear 'line of reasoning' provide to an argumentative essay?",
+            "text": "In analyzing topic 3.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "A list of grammatical errors to avoid",
-              "A logical progression of claims and evidence that leads to a clear conclusion",
-              "A summary of the opposing side's counterclaims",
-              "A complex vocabulary list"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "It acts as a conceptual thread or bridge.",
-            "explanation": "The line of reasoning connects all sub-claims and evidence back to the thesis, ensuring the essay follows a logical progression."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_3.3.3",
             "unitId": 3,
-            "text": "An advertisement claims: 'Either buy this security system, or accept that your family is unsafe.' This is a:",
+            "text": "What is a common error in timed essays regarding topic 3.3?",
             "options": [
-              "Red Herring",
-              "False Dilemma",
-              "Hasty Generalization",
-              "Circular Argument"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Limits options to only two extreme choices.",
-            "explanation": "A false dilemma forces the audience to choose between two extreme options, ignoring valid alternatives."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_3.3.4",
             "unitId": 3,
-            "text": "Why are logical fallacies dangerous in persuasive writing?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 3.3?",
             "options": [
-              "They make the essay too long.",
-              "They weaken the logical appeal (logos) and undermine the writer's credibility (ethos).",
-              "They confuse the formatting guidelines.",
-              "They make the thesis statement indefensible."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Logical errors alienate critical readers.",
-            "explanation": "Fallacies expose logical gaps in the argument, damaging the author's ethos and logos."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_3.3.5",
+            "unitId": 3,
+            "text": "Under the specific parameters of 3.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_3.3.6",
+            "unitId": 3,
+            "text": "In a rhetorical analysis of 3.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_3.3.7",
+            "unitId": 3,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 3.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_3.3.8",
+            "unitId": 3,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 3.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_3.3.9",
+            "unitId": 3,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 3.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_3.3.10",
+            "unitId": 3,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 3.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -610,70 +1366,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 4,
     "title": "Methods of Development and Structural Framing",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "4.1",
         "title": "Narrative, Cause-Effect, and Comparison-Contrast Methods",
         "description": "Select the appropriate method of development to organize and structure your rhetorical analysis or argument.",
-        "youtubeId": "n5t_U0Sj2rY",
-        "article": "# Methods of Development\n\nA method of development is the organizational pattern an author uses to structure their argument. Choosing the right pattern is a key strategic decision.\n\n## Common Methods of Development\n- **Narration**: Telling a story or detailing events in chronological order. Often used in anecdotes to build pathos.\n- **Cause-Effect**: Explaining the relationship between a cause and its consequences.\n- **Comparison-Contrast**: Highlighting similarities and differences between two subjects to reveal deeper truths.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"30\" width=\"120\" height=\"80\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"30\" width=\"120\" height=\"80\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"75\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"11\" font-weight=\"bold\">Subject A</text>\n  <text x=\"310\" y=\"75\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"11\" font-weight=\"bold\">Subject B</text>\n  <path d=\"M 160 55 L 240 55\" stroke=\"#ffffff\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" />\n  <path d=\"M 160 85 L 240 85\" stroke=\"#ffffff\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" />\n  <text x=\"200\" y=\"50\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"8\">Similarities</text>\n  <text x=\"200\" y=\"100\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"8\">Differences</text>\n</svg>\n\n### Visual Comparison Patterns\nWhen writing Comparison-Contrast arguments, structure matters. You can present information using a point-by-point format or a block format:\n\n| Format Type | Paragraph Structure | Best Suited For |\n| :--- | :--- | :--- |\n| **Block Format** | Paragraph 1: All Subject A; Paragraph 2: All Subject B | High-level overviews |\n| **Point-by-Point** | Paragraph 1: Utility (A & B); Paragraph 2: Cost (A & B) | Deep, analytical reviews |\n",
+        "youtubeId": "qvY11BTnv4M",
+        "article": "# Topic 4.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_4.1.1",
             "unitId": 4,
-            "text": "Which method of development focuses primarily on telling a chronological story to make a point?",
+            "text": "For topic 4.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Comparison-Contrast",
-              "Narration",
-              "Definition",
-              "Classification"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Think of a narrative plot.",
-            "explanation": "Narration organizes information chronologically to present events or stories."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_4.1.2",
             "unitId": 4,
-            "text": "An essay arguing that increased screen time is leading to sleep deprivation is using which method of development?",
+            "text": "In analyzing topic 4.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "Description",
-              "Narration",
-              "Cause-Effect",
-              "Process Analysis"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
-            "correctIndex": 2,
-            "hint": "Look for the link between an action (cause) and its result (effect).",
-            "explanation": "Cause-effect explains the causal relationships and consequences of actions or phenomena."
+            "correctIndex": 1,
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_4.1.3",
             "unitId": 4,
-            "text": "What is the primary function of the Comparison-Contrast method?",
+            "text": "What is a common error in timed essays regarding topic 4.1?",
             "options": [
-              "To list all the sources in alphabetical order",
-              "To highlight similarities and differences between two or more subjects to analyze them",
-              "To define a scientific word",
-              "To tell a humorous personal story"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Examines parallel attributes.",
-            "explanation": "Comparison-contrast analyzes multiple subjects by identifying points of similarity and difference."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_4.1.4",
             "unitId": 4,
-            "text": "Can a writer use multiple methods of development in a single essay?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 4.1?",
             "options": [
-              "No, writers must select one method and stick to it strictly.",
-              "Yes, different paragraphs can use different methods to support the overall thesis.",
-              "Only if the essay is longer than ten pages.",
-              "No, it violates the rule of paragraph unity."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Rhetoric is flexible and strategic.",
-            "explanation": "A writer can combine different methods of development across paragraphs to build a complex, multi-faceted argument."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_4.1.5",
+            "unitId": 4,
+            "text": "Under the specific parameters of 4.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_4.1.6",
+            "unitId": 4,
+            "text": "In a rhetorical analysis of 4.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_4.1.7",
+            "unitId": 4,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 4.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_4.1.8",
+            "unitId": 4,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 4.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_4.1.9",
+            "unitId": 4,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 4.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_4.1.10",
+            "unitId": 4,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 4.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -681,64 +1521,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "4.2",
         "title": "Active Structural Organization, Transitions, and Rhetorical Progression",
         "description": "Create logical flow and structural cohesion using advanced transitions and signposting.",
-        "youtubeId": "786F36eM_a8",
-        "article": "# Active Structural Organization and Transitions\n\nA logical argument requires active structural organization. This means the essay moves deliberately from one point to another, signposted by transitions.\n\n## Types of Transitions\nTransitions are not just simple words like *\"Therefore\"* or *\"However\"*. Sophisticated writers use **conceptual transitions** to link ideas:\n- **Addition**: *Furthermore, in addition, moreover...*\n- **Contrast**: *Conversely, on the other hand, nevertheless...*\n- **Sequence/Logic**: *Consequently, as a result, subsequently...*\n\n## Rhetorical Progression\nA strong <vocab term=\"Transition\" definition=\"Words, phrases, or sentences that connect ideas, sentences, or paragraphs, guiding the reader through the logical progression.\">transition</vocab> acts as a bridge. It connects the previous paragraph's conclusion to the current paragraph's claim, maintaining a continuous line of reasoning.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"130\" height=\"60\" rx=\"10\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2\" />\n  <rect x=\"250\" y=\"45\" width=\"130\" height=\"60\" rx=\"10\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" />\n  <text x=\"85\" y=\"80\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"10\" font-family=\"sans-serif\">Paragraph A (Ideals)</text>\n  <text x=\"315\" y=\"80\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-family=\"sans-serif\">Paragraph B (Reality)</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#ffffff\" stroke-width=\"2\" marker-end=\"url(#arrow-trans)\" />\n  <text x=\"200\" y=\"65\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-family=\"sans-serif\">\"However...\"</text>\n  <defs>\n    <marker id=\"arrow-trans\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\">\n      <path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"#ffffff\" />\n    </marker>\n  </defs>\n</svg>\n\n### Sentence-to-Sentence Unity\nBeyond linking paragraphs, transitional expressions must operate inside paragraphs to prevent structural drops:\n- Use pronouns (*this, these*) pointing back to key nouns.\n- Keep structural pacing balanced to ensure active progression.\n",
+        "youtubeId": "30-j1BcvwCg",
+        "article": "# Topic 4.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_4.2.1",
             "unitId": 4,
-            "text": "Which of the following transition words indicates a logical consequence or result?",
+            "text": "For topic 4.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Furthermore",
-              "Conversely",
-              "Consequently",
-              "Moreover"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 2,
-            "hint": "Relates to the cause-and-effect relationship.",
-            "explanation": "'Consequently' shows that the following statement is a direct result of the preceding one."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_4.2.2",
             "unitId": 4,
-            "text": "What is a 'conceptual transition'?",
+            "text": "In analyzing topic 4.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "A transition word placed inside parenthesis",
-              "A phrase or sentence that links the core ideas of two paragraphs, rather than just using a simple connector word",
-              "A transition that defines a new thesis",
-              "A transition that is written in active voice only"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Moves beyond simple words like 'However'.",
-            "explanation": "Conceptual transitions summarize the previous paragraph's argument and connect it logically to the next point, establishing a strong line of reasoning."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_4.2.3",
             "unitId": 4,
-            "text": "Which transition would be best to introduce a sharp counterargument?",
+            "text": "What is a common error in timed essays regarding topic 4.2?",
             "options": [
-              "In addition",
-              "Subsequently",
-              "Conversely",
-              "Similarly"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 2,
-            "hint": "Indicates opposite direction or opposition.",
-            "explanation": "'Conversely' signals that the argument is moving in an opposite direction, introducing contrast."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_4.2.4",
             "unitId": 4,
-            "text": "If an essay lacks transitions, how is it perceived by the reader?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 4.2?",
             "options": [
-              "It feels unified and clear.",
-              "It feels disjointed, jumpy, and hard to follow logically.",
-              "It reads as a scientific text.",
-              "It achieves the sophistication point automatically."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Transitions are the bridges between ideas.",
-            "explanation": "Without transitions, ideas appear isolated and disjointed, disrupting the flow of the line of reasoning."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_4.2.5",
+            "unitId": 4,
+            "text": "Under the specific parameters of 4.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_4.2.6",
+            "unitId": 4,
+            "text": "In a rhetorical analysis of 4.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_4.2.7",
+            "unitId": 4,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 4.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_4.2.8",
+            "unitId": 4,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 4.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_4.2.9",
+            "unitId": 4,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 4.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_4.2.10",
+            "unitId": 4,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 4.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -746,64 +1670,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "4.3",
         "title": "Conclusion Crafting, Broader Implications, and Final Impressions",
         "description": "Write conclusions that go beyond simple summarization to explore broader implications and leave lasting impressions.",
-        "youtubeId": "R9K4_S7M16o",
-        "article": "# Conclusion Crafting and Broader Implications\n\nThe conclusion is your final opportunity to persuade the reader. A weak conclusion merely restates the introduction; a strong conclusion elevates the argument.\n\n## Moving Beyond Summarization\nAvoid simply copying your thesis statement. Instead, a successful conclusion should:\n1. **Synthesize**: Briefly draw together the main threads of the argument.\n2. **Contextualize**: Connect your specific claim back to the broader rhetorical situation.\n3. **Explore Implications**: Answer the *\"So what?\"* question. Why does this argument matter in the real world?\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <polygon points=\"150,20 250,20 380,130 20,130\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2.5\" />\n  <text x=\"200\" y=\"45\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"11\" font-weight=\"bold\">1. RESTATED THESIS</text>\n  <text x=\"200\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-family=\"sans-serif\">2. SYNTHESIS OF POINTS</text>\n  <text x=\"200\" y=\"115\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-family=\"sans-serif\">3. BROADER IMPLICATIONS (So What?)</text>\n</svg>\n\n## Leaving a Final Impression\nEnd with a strong, memorable statement. This could be a warning, a call to action, or a connection to a larger historical pattern.\n",
+        "youtubeId": "h0Fh10DJLng",
+        "article": "# Topic 4.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_4.3.1",
             "unitId": 4,
-            "text": "A strong conclusion should answer which core question for the reader?",
+            "text": "For topic 4.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "What page number is this?",
-              "Who is the opponent?",
-              "So what? Why does this argument matter?",
-              "Can I read a summary of the introduction?"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 2,
-            "hint": "Refers to the real-world stakes and significance of the argument.",
-            "explanation": "The conclusion should outline the broader significance and implications of the argument, explaining why the topic matters."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_4.3.2",
             "unitId": 4,
-            "text": "What is a common pitfall of concluding paragraphs?",
+            "text": "In analyzing topic 4.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "Introducing the thesis statement for the first time",
-              "Exploring broader historical patterns",
-              "Merely restating the introduction and summary of points in identical words",
-              "Synthesizing multiple perspectives"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
-            "correctIndex": 2,
-            "hint": "Makes the conclusion feel repetitive and redundant.",
-            "explanation": "Simply repeating the introduction without expanding or showing development makes the ending feel dry and uninspired."
+            "correctIndex": 1,
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_4.3.3",
             "unitId": 4,
-            "text": "Which of the following would be an appropriate final sentence for a rhetorical essay on environmental speech?",
+            "text": "What is a common error in timed essays regarding topic 4.3?",
             "options": [
-              "In conclusion, the speech was very good.",
-              "The speaker ended their talk at noon.",
-              "If society ignores these warnings, the silence of the forests will speak louder than any activist.",
-              "Thus, the author used three rhetorical appeals."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 2,
-            "hint": "Look for the sentence that leaves a deep, memorable implication.",
-            "explanation": "Ending with a powerful statement on the consequences of ignoring the warning leaves a lasting impression."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_4.3.4",
             "unitId": 4,
-            "text": "When restating the thesis in the conclusion, a writer should:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 4.3?",
             "options": [
-              "Copy it word-for-word from the introduction",
-              "Rephrase the core claim in a way that reflects the development of the essay's arguments",
-              "Omit the thesis statement entirely",
-              "Write a completely new, unrelated claim"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "The thesis should show evolution/insight after the body arguments have been read.",
-            "explanation": "Rephrasing the thesis statement allows the writer to present their position with the added weight of the essay's proof."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_4.3.5",
+            "unitId": 4,
+            "text": "Under the specific parameters of 4.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_4.3.6",
+            "unitId": 4,
+            "text": "In a rhetorical analysis of 4.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_4.3.7",
+            "unitId": 4,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 4.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_4.3.8",
+            "unitId": 4,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 4.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_4.3.9",
+            "unitId": 4,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 4.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_4.3.10",
+            "unitId": 4,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 4.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -812,70 +1820,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 5,
     "title": "Textual Coherence and Stylistic Control",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "5.1",
         "title": "Lines of Reasoning, Claims, and Analytical Commentary",
         "description": "Trace and support an analytical line of reasoning through deep structural commentary.",
-        "youtubeId": "7W-153Gk22Y",
-        "article": "# Lines of Reasoning and Analytical Commentary\n\nTextual coherence is the smooth, logical alignment of all elements in an essay. It requires that your claims and commentary reinforce the line of reasoning.\n\n## Tracing the Line of Reasoning\nTo check if your essay has coherence, outline it:\n- **Thesis**: *\"Scientific research should be publicly funded.\"*\n  - **Body 1 (Claim)**: Public funding democratizes research results.\n  - **Body 2 (Claim)**: Corporate funding shifts focus toward profits.\n  - **Body 3 (Claim)**: Government oversight ensures ethical bounds.\n- **Coherence Check**: Do these claims logically follow each other? Yes.\n\n## Writing Strong Commentary\nCoherence breaks down when a writer fails to connect claims. <vocab term=\"Analytical Commentary\" definition=\"Text explaining the rhetorical mechanism, purposes, and logical links of a quote to the thesis.\">Analytical commentary</vocab> makes these linkages explicit by explaining *how* and *why* the claim validates the overall position.\n\n### Logical Balance\nYour essay should balance evidence and commentary. A common rule of thumb is to write twice as much commentary as raw evidence:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <line x1=\"80\" y1=\"110\" x2=\"320\" y2=\"110\" stroke=\"#ffffff\" stroke-width=\"3\" />\n  <polygon points=\"200,80 185,110 215,110\" fill=\"#34d399\" />\n  <circle cx=\"120\" cy=\"85\" r=\"25\" fill=\"#fb7185\" />\n  <circle cx=\"280\" cy=\"70\" r=\"40\" fill=\"#34d399\" />\n  <text x=\"120\" y=\"88\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Evidence</text>\n  <text x=\"280\" y=\"73\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-weight=\"bold\">Commentary</text>\n</svg>\n",
+        "youtubeId": "BhbpyF1mx7o",
+        "article": "# Topic 5.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_5.1.1",
             "unitId": 5,
-            "text": "If a body paragraph's claim is unrelated to the central thesis, the essay suffers from a lack of:",
+            "text": "For topic 5.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Coherence",
-              "Ethos",
-              "Diction",
-              "Syntactic Variety"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
             "correctIndex": 0,
-            "hint": "Refers to the logical consistency and connection of all parts.",
-            "explanation": "Coherence requires that all paragraph claims directly support and build towards the central thesis statement."
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_5.1.2",
             "unitId": 5,
-            "text": "What is the primary method to ensure textual coherence in draft writing?",
+            "text": "In analyzing topic 5.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "Using a different font for each claim",
-              "Outlining the logical progression of claims before writing",
-              "Avoiding the use of paragraph breaks",
-              "Removing the thesis statement completely"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "A blueprint prevents logical deviations.",
-            "explanation": "Outlining maps out the sequence of claims, ensuring the line of reasoning remains logical and focused."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_5.1.3",
             "unitId": 5,
-            "text": "Which sentence represents strong analytical commentary rather than mere summary?",
+            "text": "What is a common error in timed essays regarding topic 5.1?",
             "options": [
-              "The author states that 50% of forests are lost.",
-              "The author's use of industrial imagery emphasizes the destructive scale of deforestation, forcing the audience to confront their environmental footprints.",
-              "Deforestation is happening in South America.",
-              "Source B lists several causes of deforestation."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Look for the sentence explaining 'how' the author's choice affects the audience's mind.",
-            "explanation": "Analyzing the choice of imagery and its impact on the reader is the hallmark of strong commentary."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_5.1.4",
             "unitId": 5,
-            "text": "How does commentary build the line of reasoning?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 5.1?",
             "options": [
-              "It adds fluff to meet page count.",
-              "It binds the concrete evidence directly to the abstract claim and thesis.",
-              "It replaces the introduction.",
-              "It allows the author to use simple diction."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Acts as the logical bridge.",
-            "explanation": "Commentary explains the underlying reasoning, bridging the gap between raw data and the thesis statement."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_5.1.5",
+            "unitId": 5,
+            "text": "Under the specific parameters of 5.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_5.1.6",
+            "unitId": 5,
+            "text": "In a rhetorical analysis of 5.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_5.1.7",
+            "unitId": 5,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 5.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_5.1.8",
+            "unitId": 5,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 5.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_5.1.9",
+            "unitId": 5,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 5.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_5.1.10",
+            "unitId": 5,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 5.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -883,64 +1975,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "5.2",
         "title": "Transitional Devices, Textual Unity, and Structural Progressions",
         "description": "Employ transitional devices to show relationships between ideas and ensure paragraph unity.",
-        "youtubeId": "kYJ4X8e3NSc",
-        "article": "# Transitional Devices and Textual Unity\n\nTextual unity is the alignment of all sentences in a paragraph around a single topic. Transitions are the tools that establish this unity.\n\n## Categories of Transitional Devices\nDifferent transition types establish different logical relationships:\n- **Comparison**: *Similarly, likewise, in the same way...*\n- **Concession**: *Granted, admittedly, of course...*\n- **Clarification**: *In other words, specifically, to clarify...*\n\n## Structural Progression\nA unified paragraph flows from sentence to sentence without abrupt shifts. If you introduce a counterpoint, use a <vocab term=\"Concessive Transition\" definition=\"A transition that acknowledges a limitation or counterpoint before asserting the primary claim.\">concessive transition</vocab> to acknowledge it before reinforcing your main claim.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <path d=\"M 30 75 Q 115 20 200 75 T 370 75\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.5\" stroke-dasharray=\"3,3\" />\n  <circle cx=\"30\" cy=\"75\" r=\"10\" fill=\"#34d399\" />\n  <circle cx=\"200\" cy=\"75\" r=\"10\" fill=\"#fb7185\" />\n  <circle cx=\"370\" cy=\"75\" r=\"10\" fill=\"#34d399\" />\n  <text x=\"30\" y=\"105\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-family=\"sans-serif\">Point A</text>\n  <text x=\"200\" y=\"105\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"9\" font-family=\"sans-serif\">Concession / Dip</text>\n  <text x=\"370\" y=\"105\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\" font-family=\"sans-serif\">Reaffirmation</text>\n</svg>\n",
+        "youtubeId": "oU1_rGvAElg",
+        "article": "# Topic 5.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_5.2.1",
             "unitId": 5,
-            "text": "Which transitional word is best suited for introducing a clarification of a complex point?",
+            "text": "For topic 5.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Admittedly",
-              "In other words",
-              "On the contrary",
-              "Consequently"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Implies restating the same idea in a simpler way.",
-            "explanation": "'In other words' introduces a restatement or clarification of the previous sentence."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_5.2.2",
             "unitId": 5,
-            "text": "How does a concessive transition assist in an argument?",
+            "text": "In analyzing topic 5.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "It disproves the author's own thesis.",
-              "It acknowledges a valid counterpoint, building ethos, before reinforcing the main claim.",
-              "It simplifies the essay's grammar.",
-              "It introduces a new method of development."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Shows fair-mindedness (credibility).",
-            "explanation": "Concessions build credibility by proving the author has considered opposing arguments rather than ignoring them."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_5.2.3",
             "unitId": 5,
-            "text": "A paragraph has five sentences. Three support the claim, but two discuss a completely different topic. This violates:",
+            "text": "What is a common error in timed essays regarding topic 5.2?",
             "options": [
-              "Textual Unity",
-              "Diction",
-              "Syntactic Variety",
-              "Grammar"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
             "correctIndex": 0,
-            "hint": "Unity means having one unified focus per paragraph.",
-            "explanation": "Including sentences on unrelated topics breaks paragraph unity and confuses the reader."
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_5.2.4",
             "unitId": 5,
-            "text": "Which transition signals addition of supplementary evidence?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 5.2?",
             "options": [
-              "Nevertheless",
-              "In addition",
-              "Conversely",
-              "Meanwhile"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Used to add another supporting detail.",
-            "explanation": "'In addition' indicates the author is introducing more supporting evidence."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_5.2.5",
+            "unitId": 5,
+            "text": "Under the specific parameters of 5.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_5.2.6",
+            "unitId": 5,
+            "text": "In a rhetorical analysis of 5.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_5.2.7",
+            "unitId": 5,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 5.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_5.2.8",
+            "unitId": 5,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 5.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_5.2.9",
+            "unitId": 5,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 5.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_5.2.10",
+            "unitId": 5,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 5.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -948,64 +2124,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "5.3",
         "title": "Sentence-Level Coherence, Parallelism, and Syntactic Variety",
         "description": "Enhance style and coherence at the sentence level using parallel structures and syntactic variety.",
-        "youtubeId": "jW_nK65_620",
-        "article": "# Sentence-Level Coherence and Parallelism\n\nCoherence must exist within sentences. This is achieved through parallelism and sentence variety.\n\n## Parallel Structure\n<vocab term=\"Parallelism\" definition=\"The repetition of a specific grammatical structure in a series of related words, phrases, or clauses to create symmetry and balance.\">Parallelism</vocab> is the matching of grammatical structures. It creates balance, rhythm, and clarity:\n- **Faulty Parallelism**: *She likes reading, writing, and to study.*\n- **Correct Parallelism**: *She likes reading, writing, and studying.* (All gerunds).\n\n## Syntactic Variety\nMonotonous syntax bores the reader. Mix different sentence structures to establish pacing:\n- **Simple Sentences**: Direct and punchy.\n- **Compound Sentences**: Join related ideas of equal weight.\n- **Complex Sentences**: Show relationships of subordination (cause, condition, time).\n\n### Pacing Curves\nVarying sentence length alters the speed at which a reader consumes text:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <path d=\"M 20 120 L 100 40 L 180 120 L 260 40 L 380 120\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2.5\" />\n  <circle cx=\"100\" cy=\"40\" r=\"6\" fill=\"#fb7185\" />\n  <circle cx=\"260\" cy=\"40\" r=\"6\" fill=\"#fb7185\" />\n  <text x=\"100\" y=\"25\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Short sentence (Punch)</text>\n  <text x=\"260\" y=\"25\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Short sentence (Punch)</text>\n  <text x=\"190\" y=\"140\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"9\" font-weight=\"bold\">Longer compound sentences (Flow)</text>\n</svg>\n",
+        "youtubeId": "zJ-TAoQpqsA",
+        "article": "# Topic 5.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_5.3.1",
             "unitId": 5,
-            "text": "Which of the following sentences exhibits correct parallel structure?",
+            "text": "For topic 5.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "The campaign succeeded because of planning, determination, and we worked hard.",
-              "The campaign succeeded because of planning, determination, and hard work.",
-              "The campaign succeeded because we planned, had determination, and worked hard.",
-              "The campaign succeeded because of planning, determining, and hard work."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Check that all items in the list are of the same grammatical category (nouns).",
-            "explanation": "'Planning', 'determination', and 'hard work' are all noun phrases, maintaining parallel structure."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_5.3.2",
             "unitId": 5,
-            "text": "Why should a writer incorporate syntactic variety into their essay?",
+            "text": "In analyzing topic 5.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "To show that they know grammar definitions",
-              "To control the pacing and prevent the prose from sounding monotonous",
-              "To make the essay harder to read",
-              "To meet formatting criteria"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Sentence structure affects the voice and flow.",
-            "explanation": "Varying sentence structures makes the text engaging and allows the author to place emphasis strategically."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_5.3.3",
             "unitId": 5,
-            "text": "What type of sentence consists of one independent clause and at least one dependent clause?",
+            "text": "What is a common error in timed essays regarding topic 5.3?",
             "options": [
-              "Simple",
-              "Compound",
-              "Complex",
-              "Compound-Complex"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 2,
-            "hint": "Contains a subordinating conjunction (e.g. 'although', 'because').",
-            "explanation": "A complex sentence connects an independent clause with one or more dependent clauses."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_5.3.4",
             "unitId": 5,
-            "text": "Identify the faulty parallelism in the following options:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 5.3?",
             "options": [
-              "To live is to dream.",
-              "He wanted success, fame, and wealth.",
-              "The program aims to educate, to empower, and inspiring.",
-              "By reading, writing, and speaking, we learn."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
-            "correctIndex": 2,
-            "hint": "Look for the list where the final verb form shifts.",
-            "explanation": "'To educate', 'to empower' are infinitives, but 'inspiring' is a participle, breaking parallelism."
+            "correctIndex": 1,
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_5.3.5",
+            "unitId": 5,
+            "text": "Under the specific parameters of 5.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_5.3.6",
+            "unitId": 5,
+            "text": "In a rhetorical analysis of 5.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_5.3.7",
+            "unitId": 5,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 5.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_5.3.8",
+            "unitId": 5,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 5.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_5.3.9",
+            "unitId": 5,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 5.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_5.3.10",
+            "unitId": 5,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 5.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -1014,70 +2274,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 6,
     "title": "Style, Tone, and Rhetorical Choices",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "6.1",
         "title": "Diction, Syntax, and Tone Analysis",
         "description": "Analyze how an author's choices in diction and syntax establish a specific rhetorical tone.",
-        "youtubeId": "Yf9v1J0G1kE",
-        "article": "# Diction, Syntax, and Tone Analysis\n\nStyle is the signature of a writer. It is established through diction (word choice) and syntax (sentence structure), which combine to create tone.\n\n## Diction and Connotation\nWords have two meanings:\n- **Denotation**: The literal dictionary definition.\n- **Connotation**: The emotional baggage or associations carried by the word:\n  - *House*: Neutral denotation.\n  - *Home*: Positive connotation of warmth and safety.\n  - *Shack*: Negative connotation of poverty.\n\n## Syntax and Tone\n<vocab term=\"Tone\" definition=\"The author's attitude toward the subject, conveyed through specific choices in diction, syntax, and imagery.\">Tone</vocab> is the author's attitude toward their subject. It is analyzed by looking at patterns of <vocab term=\"Diction\" definition=\"The author's strategic choice of words, which establishes the tone and voice of the text.\">diction</vocab> and <vocab term=\"Syntax\" definition=\"The arrangement of words and phrases to create well-formed sentences in a language.\">syntax</vocab>. For instance, short, declarative sentences establish an urgent, authoritative tone, while long, complex structures suggest an academic, reflective tone.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <line x1=\"50\" y1=\"75\" x2=\"350\" y2=\"75\" stroke=\"#ffffff\" stroke-width=\"2\" />\n  <circle cx=\"50\" cy=\"75\" r=\"8\" fill=\"#fb7185\" />\n  <circle cx=\"200\" cy=\"75\" r=\"8\" fill=\"#38bdf8\" />\n  <circle cx=\"350\" cy=\"75\" r=\"8\" fill=\"#34d399\" />\n  <text x=\"50\" y=\"110\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"10\" font-family=\"sans-serif\">Objective / Neutral</text>\n  <text x=\"200\" y=\"110\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-family=\"sans-serif\">Subjective / Warm</text>\n  <text x=\"350\" y=\"110\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"10\" font-family=\"sans-serif\">Hostile / Vitriolic</text>\n</svg>\n",
+        "youtubeId": "yY17Wq-7t3c",
+        "article": "# Topic 6.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_6.1.1",
             "unitId": 6,
-            "text": "What term describes the emotional association or cultural meaning that a word carries beyond its literal definition?",
+            "text": "For topic 6.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Denotation",
-              "Connotation",
-              "Diction",
-              "Syntax"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "The 'vibe' or implied feeling of a word.",
-            "explanation": "Connotation refers to the emotional and cultural implications that words carry."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_6.1.2",
             "unitId": 6,
-            "text": "Which pattern of syntax would most likely convey a sense of urgency and tension?",
+            "text": "In analyzing topic 6.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "Long, flowing compound-complex sentences with multiple clauses",
-              "Short, abrupt declarative sentences in rapid succession",
-              "Passive voice sentences that hide the agent of action",
-              "Frequent parenthetical definitions and footnotes"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Urgency requires fast-paced delivery.",
-            "explanation": "Short, simple sentences speed up pacing, creating tension or urgency."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_6.1.3",
             "unitId": 6,
-            "text": "An author writes: 'The policy is a cancer eating away at our freedom.' The tone is:",
+            "text": "What is a common error in timed essays regarding topic 6.1?",
             "options": [
-              "Objective and academic",
-              "Alarmed and urgent",
-              "Sarcastic and playful",
-              "Indifferent"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Analyze the connotation of the word 'cancer'.",
-            "explanation": "Comparing a policy to cancer is highly negative and creates an alarmed, urgent tone."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_6.1.4",
             "unitId": 6,
-            "text": "Diction and syntax are combined by writers to primarily produce which element?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 6.1?",
             "options": [
               "Ethos",
-              "Tone",
-              "Logos",
-              "Evidence"
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Refers to the mood/attitude of the speaker.",
-            "explanation": "Diction and syntax shape the style that establishes the tone of the text."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_6.1.5",
+            "unitId": 6,
+            "text": "Under the specific parameters of 6.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_6.1.6",
+            "unitId": 6,
+            "text": "In a rhetorical analysis of 6.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_6.1.7",
+            "unitId": 6,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 6.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_6.1.8",
+            "unitId": 6,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 6.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_6.1.9",
+            "unitId": 6,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 6.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_6.1.10",
+            "unitId": 6,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 6.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1085,64 +2429,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "6.2",
         "title": "Identifying Rhetorical Bias, Perspective, and Authorial Intent",
         "description": "Detect subtle bias and analyze perspective and authorial intent in arguments.",
-        "youtubeId": "u4xZ63ty1IA",
-        "article": "# Rhetorical Bias and Perspective\n\nEvery argument is written from a specific perspective. Identifying <vocab term=\"Perspective\" definition=\"The standpoint, background, and beliefs from which an author views a topic.\">perspective</vocab> and <vocab term=\"Authorial Intent\" definition=\"The primary purpose or goal the author aims to achieve in writing the text.\">authorial intent</vocab> is crucial to evaluating the validity of a text.\n\n## How to Detect Bias\nBias is not always overt. Look for these subtle markers:\n- **Loaded Words**: Diction carrying intense negative or positive connotations.\n- **Spin**: Presenting facts in a way that implies a specific value judgment.\n- **Omission**: Intentionally ignoring facts or arguments that contradict the author's stance.\n\n## Perspective Analysis\nAn author's standpoint is shaped by their identity, history, and socioeconomic position. For instance, an article on urbanization written by an environmentalist will prioritize different issues than one written by a real estate developer.\n\n### Target Alignment\nWriters organize arguments to hit their core intention, situated in their target audience's values:\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <circle cx=\"200\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <circle cx=\"200\" cy=\"100\" r=\"45\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <circle cx=\"200\" cy=\"100\" r=\"20\" fill=\"rgba(251,113,133,0.2)\" stroke=\"#fb7185\" stroke-width=\"2\" />\n  <text x=\"200\" y=\"104\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"8\" font-weight=\"bold\">INTENT</text>\n  <text x=\"200\" y=\"45\" text-anchor=\"middle\" fill=\"#9ca3af\" font-size=\"9\">Broad Topic</text>\n  <text x=\"200\" y=\"72\" text-anchor=\"middle\" fill=\"#9ca3af\" font-size=\"9\">Specific Stance</text>\n</svg>\n",
+        "youtubeId": "Cq3nZ0K8pS4",
+        "article": "# Topic 6.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_6.2.1",
             "unitId": 6,
-            "text": "Which of the following is a key marker of bias in an editorial?",
+            "text": "For topic 6.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "The author cites peer-reviewed studies that disagree with their thesis.",
-              "The author uses emotionally loaded, negative diction when describing opponents.",
-              "The text is written in the third person.",
-              "The editorial includes a correction footnote."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Emotionally loaded language indicates subjectivity.",
-            "explanation": "Using loaded diction to target opponents reveals an emotional bias rather than an objective stance."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_6.2.2",
             "unitId": 6,
-            "text": "Why is understanding the author's perspective crucial in rhetorical analysis?",
+            "text": "In analyzing topic 6.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "It tells the reader how many pages the essay should be.",
-              "It explains the underlying motivations and warrants of the author's claims.",
-              "It automatically proves the author is wrong.",
-              "It simplifies the vocabulary requirements."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Standpoints shape arguments.",
-            "explanation": "An author's perspective determines their warrants, assumptions, and selections of proof."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_6.2.3",
             "unitId": 6,
-            "text": "An author omits all statistics that suggest crime is falling in an article about national danger. This is a bias of:",
+            "text": "What is a common error in timed essays regarding topic 6.2?",
             "options": [
-              "Ad Hominem",
-              "Spin",
-              "Omission",
-              "Diction"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 2,
-            "hint": "Refers to leaving out conflicting evidence.",
-            "explanation": "Bias of omission occurs when a writer deliberately leaves out facts that challenge their thesis."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_6.2.4",
             "unitId": 6,
-            "text": "What does 'authorial intent' refer to?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 6.2?",
             "options": [
-              "The target audience's demographics",
-              "The author's primary objective or goal in writing the text",
-              "The printer's font selection",
-              "The editorial feedback"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "What the author intended to do.",
-            "explanation": "Authorial intent is the reason the text was created, such as to persuade, inform, or call to action."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_6.2.5",
+            "unitId": 6,
+            "text": "Under the specific parameters of 6.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_6.2.6",
+            "unitId": 6,
+            "text": "In a rhetorical analysis of 6.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_6.2.7",
+            "unitId": 6,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 6.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_6.2.8",
+            "unitId": 6,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 6.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_6.2.9",
+            "unitId": 6,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 6.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_6.2.10",
+            "unitId": 6,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 6.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1150,64 +2578,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "6.3",
         "title": "Stylistic Word Choice, Strategic Tone, and Figurative Language",
         "description": "Utilize figurative language and stylistic diction to create emotional resonance (pathos).",
-        "youtubeId": "kYJ6sL-O-rE",
-        "article": "# Stylistic Word Choice and Figurative Language\n\nFigurative language is the use of words in non-literal ways to create imagery, establish connections, and evoke emotion.\n\n## Common Figurative Devices\n- <vocab term=\"Metaphor\" definition=\"A direct comparison between two unlike things without using 'like' or 'as' to highlight a shared characteristic.\">Metaphor</vocab>: A direct comparison of two unlike things (*\"He is a rock.\"*).\n- <vocab term=\"Simile\" definition=\"A comparison of two unlike things using comparative words such as 'like' or 'as'.\">Simile</vocab>: Comparison using 'like' or 'as' (*\"He is as strong as an ox.\"*).\n- <vocab term=\"Personification\" definition=\"Attribuing human traits, emotions, or behaviors to non-human entities or objects.\">Personification</vocab>: Attributing human traits to non-human things (*\"The wind whispered.\"*).\n\n## Strategic Rhetorical Impact\nFigurative language is not decorative. In rhetorical analysis, examine how these choices affect the audience:\n- **Metaphors** simplify complex abstract ideas by linking them to concrete images.\n- **Similes** build visual context.\n- **Personification** fosters empathy (pathos) for non-human subjects.\n\n### Figuring Devices\nLook at how stylistic devices branch off a speaker's main theme:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"150\" y=\"20\" width=\"100\" height=\"35\" rx=\"6\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"42\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-weight=\"bold\">Figurative Language</text>\n  \n  <rect x=\"20\" y=\"90\" width=\"100\" height=\"35\" rx=\"6\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.5\" />\n  <rect x=\"150\" y=\"90\" width=\"100\" height=\"35\" rx=\"6\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.5\" />\n  <rect x=\"280\" y=\"90\" width=\"100\" height=\"35\" rx=\"6\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.5\" />\n  <text x=\"70\" y=\"112\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Metaphor</text>\n  <text x=\"200\" y=\"112\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Simile</text>\n  <text x=\"330\" y=\"112\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"9\">Personification</text>\n  \n  <path d=\"M 200 55 L 70 90\" stroke=\"#fb7185\" stroke-width=\"1\" />\n  <path d=\"M 200 55 L 200 90\" stroke=\"#fb7185\" stroke-width=\"1\" />\n  <path d=\"M 200 55 L 330 90\" stroke=\"#fb7185\" stroke-width=\"1\" />\n</svg>\n",
+        "youtubeId": "f2wXqNn-w-I",
+        "article": "# Topic 6.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_6.3.1",
             "unitId": 6,
-            "text": "Which of the following sentences contains a metaphor rather than a simile?",
+            "text": "For topic 6.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "The classroom was as quiet as a grave.",
-              "The classroom was a boiling cauldron of excitement.",
-              "The classroom looked like a tornado had hit it.",
-              "The classroom was quiet."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "A metaphor asserts that one thing IS another, not just LIKE it.",
-            "explanation": "Stating the classroom 'was a boiling cauldron' is a direct comparison without 'as' or 'like', making it a metaphor."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_6.3.2",
             "unitId": 6,
-            "text": "Attributing human actions to an inanimate object, like 'the waves screamed in anger,' is called:",
+            "text": "In analyzing topic 6.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "Hyperbole",
-              "Personification",
-              "Alliteration",
-              "Analogy"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Attributing person-like qualities.",
-            "explanation": "Giving human emotions ('anger') and actions ('screamed') to waves is personification."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_6.3.3",
             "unitId": 6,
-            "text": "How does figurative language primarily help build Pathos?",
+            "text": "What is a common error in timed essays regarding topic 6.3?",
             "options": [
-              "By proving the argument logically",
-              "By evoking sensory images and emotional responses in the reader's mind",
-              "By citing credible sources",
-              "By correcting grammatical structures"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Pathos is the appeal to emotion.",
-            "explanation": "Sensory images and figurative connections stimulate emotional associations, enhancing pathos."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_6.3.4",
             "unitId": 6,
-            "text": "A writer uses the phrase 'our economy is an engine running on empty.' What is the strategic rhetorical purpose?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 6.3?",
             "options": [
-              "To define what an engine is",
-              "To show that the economy uses gasoline",
-              "To create an alarming, concrete image of economic decline",
-              "To confuse readers who don't drive cars"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
-            "correctIndex": 2,
-            "hint": "Running on empty is a dangerous condition.",
-            "explanation": "The metaphor compares the economy to a stalling engine, creating an easy-to-understand and alarming image of risk."
+            "correctIndex": 1,
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_6.3.5",
+            "unitId": 6,
+            "text": "Under the specific parameters of 6.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_6.3.6",
+            "unitId": 6,
+            "text": "In a rhetorical analysis of 6.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_6.3.7",
+            "unitId": 6,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 6.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_6.3.8",
+            "unitId": 6,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 6.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_6.3.9",
+            "unitId": 6,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 6.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_6.3.10",
+            "unitId": 6,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 6.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -1216,70 +2728,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 7,
     "title": "Nuance, Complexity, and Syntactic Variety",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "7.1",
         "title": "Qualified Claims, Nuance, and Modifiers",
         "description": "Qualify claims using modifiers to build a nuanced, realistic, and defensible argument.",
-        "youtubeId": "UuY3Wbrzya0",
-        "article": "# Qualified Claims, Nuance, and Modifiers\n\nAbsolute claims are easy to defeat. Academic writing requires nuance, which is established by qualifying your assertions.\n\n## Absolute vs. Qualified Claims\n- **Absolute (Unqualified)**: *\"Technology always harms student focus.\"* (Easily disproven by finding one instance where it doesn't).\n- **Nuanced (Qualified)**: *\"Under certain conditions, extensive technology use may reduce student attention spans.\"* (Nuanced and defensible).\n\n## Using Modifiers for Nuance\nUse <vocab term=\"Modifier\" definition=\"A word or phrase (like 'probably', 'often', 'under certain conditions') that limits or qualifies the scope of a claim.\">modifiers</vocab> to define the exact scope of your arguments:\n- **Frequency**: *Often, typically, generally, rarely.*\n- **Probability**: *Likely, possibly, arguably.*\n- **Scope**: *Most, some, in certain cases.*\n\n### The Dial of Certainty\nAvoid absolute claims by pulling back the dial of certainty to show academic nuance:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <path d=\"M 80 110 A 100 100 0 0 1 320 110\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"8\" stroke-linecap=\"round\" />\n  <circle cx=\"200\" cy=\"110\" r=\"10\" fill=\"#fb7185\" />\n  <!-- Pointer pointing slightly left of center (Qualified) -->\n  <line x1=\"200\" y1=\"110\" x2=\"150\" y2=\"40\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linecap=\"round\" />\n  <text x=\"80\" y=\"130\" text-anchor=\"middle\" fill=\"#9ca3af\" font-size=\"9\">Absolute (Always)</text>\n  <text x=\"200\" y=\"130\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\" font-weight=\"bold\">NUANCED / QUALIFIED</text>\n  <text x=\"320\" y=\"130\" text-anchor=\"middle\" fill=\"#9ca3af\" font-size=\"9\">Absolute (Never)</text>\n</svg>\n",
+        "youtubeId": "5V5r3vV4b-c",
+        "article": "# Topic 7.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_7.1.1",
             "unitId": 7,
-            "text": "Which of the following represents a qualified claim rather than an absolute statement?",
+            "text": "For topic 7.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "All politicians are corrupt.",
-              "Under economic pressure, politicians may be more susceptible to lobbying.",
-              "Lobbying always corrupts political systems.",
-              "Politicians are never honest."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Look for the statement that uses modifiers to limit its scope ('under pressure', 'may be').",
-            "explanation": "Qualifying the claim with 'under economic pressure' and 'may be' makes the argument realistic and defensible."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_7.1.2",
             "unitId": 7,
-            "text": "Why are absolute statements (using words like 'always' or 'never') risky in argumentation?",
+            "text": "In analyzing topic 7.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "They are too long to write.",
-              "They can be defeated by a single counterexample.",
-              "They lack emotional appeal.",
-              "They confuse the formatting guidelines."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "If a claim is 100% absolute, a single exception ruins it.",
-            "explanation": "Absolute assertions are fragile; a single exception disproves the entire claim, damaging the author's logical integrity."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_7.1.3",
             "unitId": 7,
-            "text": "What term describes words like 'often', 'likely', or 'sometimes' when used to limit an assertion?",
+            "text": "What is a common error in timed essays regarding topic 7.1?",
             "options": [
-              "Ad Hominem",
-              "Modifiers",
-              "Semicolons",
-              "Syntaxes"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "They modify or limit the strength and scope of a verb or noun.",
-            "explanation": "Modifiers restrict the absolute nature of claims, adding crucial nuance and accuracy."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_7.1.4",
             "unitId": 7,
-            "text": "How do qualified claims affect a writer's Ethos?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 7.1?",
             "options": [
-              "They make the writer look weak and indecisive.",
-              "They build ethos by presenting the writer as fair-minded, realistic, and intellectually honest.",
-              "They have no effect on ethos.",
-              "They destroy the writer's credibility."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "A careful, nuanced arguer appears more trustworthy than an extremist.",
-            "explanation": "Nuanced qualifiers prove the writer understands complexity, establishing intellectual credibility."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_7.1.5",
+            "unitId": 7,
+            "text": "Under the specific parameters of 7.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_7.1.6",
+            "unitId": 7,
+            "text": "In a rhetorical analysis of 7.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_7.1.7",
+            "unitId": 7,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 7.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_7.1.8",
+            "unitId": 7,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 7.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_7.1.9",
+            "unitId": 7,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 7.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_7.1.10",
+            "unitId": 7,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 7.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1287,64 +2883,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "7.2",
         "title": "Alternative Perspectives, Concessions, and Counterarguments",
         "description": "Engage with alternative perspectives by crafting concessions and refutations.",
-        "youtubeId": "F3x9T3Jk1Qc",
-        "article": "# Concessions and Counterarguments\n\nA sophisticated argument does not exist in a vacuum. It acknowledges that alternative viewpoints exist, and actively addresses them.\n\n## The Counterargument Flow\nAn argumentative concession follows three stages:\n1. **Counterargument**: Introduce the opposing perspective.\n2. **Concession**: Acknowledge the partial validity of the counterpoint (<vocab term=\"Concession\" definition=\"Acknowledge the validity of a counterargument before asserting your own position.\">concession</vocab>).\n3. **Refutation/Rebuttal**: Re-assert your main claim by explaining why your thesis remains stronger (<vocab term=\"Refutation\" definition=\"An argumentative response that disproves or minimizes a counterargument with superior evidence and logic.\">refutation</vocab>).\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"20\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(239,68,68,0.1)\" stroke=\"#ef4444\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"44\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">1. Opponent's Claim (Counterargument)</text>\n  <rect x=\"20\" y=\"80\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(245,158,11,0.1)\" stroke=\"#f59e0b\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"104\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">2. \"True, but...\" (Concession)</text>\n  <rect x=\"20\" y=\"140\" width=\"360\" height=\"40\" rx=\"8\" fill=\"rgba(16,185,129,0.1)\" stroke=\"#10b981\" stroke-width=\"1.5\" />\n  <text x=\"200\" y=\"164\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-family=\"sans-serif\">3. Why my argument stands (Refutation)</text>\n</svg>\n",
+        "youtubeId": "2n64iR1o2Lg",
+        "article": "# Topic 7.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_7.2.1",
             "unitId": 7,
-            "text": "What is the difference between a concession and a refutation?",
+            "text": "For topic 7.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Concession is emotional, refutation is logical.",
-              "Concession acknowledges the opponent's point; refutation disproves it.",
-              "They are identical terms.",
-              "Refutation always happens in the introduction, concession in the conclusion."
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Conceding is yielding; refuting is pushing back.",
-            "explanation": "Concession grants the validity of a minor point, while refuting asserts why the primary thesis remains superior."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_7.2.2",
             "unitId": 7,
-            "text": "Which phrase is commonly used to signal a concession?",
+            "text": "In analyzing topic 7.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "Therefore",
-              "Furthermore",
-              "Granted,",
-              "Consequently"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
-            "correctIndex": 2,
-            "hint": "Acknowledges that something is true.",
-            "explanation": "'Granted,' signals that the writer is conceding a point to the opposing side before continuing."
+            "correctIndex": 1,
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_7.2.3",
             "unitId": 7,
-            "text": "Why does addressing a counterargument strengthen a thesis?",
+            "text": "What is a common error in timed essays regarding topic 7.2?",
             "options": [
-              "It makes the author seem neutral and uncommitted.",
-              "It demonstrates thorough research and defuses objections before the reader can raise them.",
-              "It distracts the reader from logical fallacies.",
-              "It allows the author to quote more sources."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Defuses the opponent's leverage.",
-            "explanation": "Anticipating and addressing objections proves the author's argument is robust enough to withstand scrutiny."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_7.2.4",
             "unitId": 7,
-            "text": "If a writer concedes a point but fails to write a refutation, what happens?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 7.2?",
             "options": [
-              "The argument remains strong.",
-              "The essay's line of reasoning collapses because they've supported the opposition instead.",
-              "The essay achieves the sophistication point.",
-              "The thesis statement becomes unqualified."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "A concession without a refutation leaves the opponent's point standing.",
-            "explanation": "Without refutation, a concession simply weakens the writer's own argument by endorsing the counterpoint."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_7.2.5",
+            "unitId": 7,
+            "text": "Under the specific parameters of 7.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_7.2.6",
+            "unitId": 7,
+            "text": "In a rhetorical analysis of 7.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_7.2.7",
+            "unitId": 7,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 7.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_7.2.8",
+            "unitId": 7,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 7.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_7.2.9",
+            "unitId": 7,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 7.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_7.2.10",
+            "unitId": 7,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 7.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1352,64 +3032,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "7.3",
         "title": "Subordination, Coordination, and Syntactic Emphasis",
         "description": "Utilize coordinate and subordinate sentence structures to place rhetorical emphasis strategically.",
-        "youtubeId": "FqS1d3-Q8rM",
-        "article": "# Subordination, Coordination, and Syntactic Emphasis\n\nSentence structure dictates emphasis. By manipulating coordination and subordination, you control what information the reader prioritizes.\n\n## Coordination vs. Subordination\n- **Coordination**: Joining two related independent clauses of equal weight using FANBOYS (*\"and\", \"but\", \"or\"*). Creates balance:\n  - *The economy is growing, and unemployment is falling.*\n- **Subordination**: Joining an independent clause with a dependent clause using subordinating conjunctions (*\"although\", \"because\", \"while\"*). Places emphasis on the main clause:\n  - *Although the economy is growing, poverty remains high.* (Emphasis on poverty).\n\n## Periodic Sentences\nA <vocab term=\"Periodic Sentence\" definition=\"A sentence that holds its main clause or central point at the very end, building suspense or emphasis.\">periodic sentence</vocab> holds the main clause until the very end, after introductory dependent clauses. This builds anticipation and highlights the final point.\n\n### Grammatical Hierarchies\nSubordination sets up an organizational hierarchy, subordinating background information to highlight key claims:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"160\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"220\" y=\"45\" width=\"160\" height=\"60\" rx=\"8\" fill=\"rgba(52,211,153,0.05)\" stroke=\"#34d399\" stroke-width=\"2\" />\n  <text x=\"100\" y=\"75\" text-anchor=\"middle\" fill=\"#9ca3af\" font-size=\"10\">Dependent (Subordinate)</text>\n  <text x=\"100\" y=\"93\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"8\">\"Although cost is high,\"</text>\n  <text x=\"300\" y=\"75\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"10\" font-weight=\"bold\">Independent (Main)</text>\n  <text x=\"300\" y=\"93\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"8\">\"the benefits are clear.\"</text>\n  <path d=\"M 180 75 L 210 75\" stroke=\"#ffffff\" stroke-width=\"1.5\" />\n</svg>\n",
+        "youtubeId": "kYJ_5J6kPZ4",
+        "article": "# Topic 7.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_7.3.1",
             "unitId": 7,
-            "text": "In the sentence 'Although she studied diligently, she failed the exam,' what clause receives the primary emphasis?",
+            "text": "For topic 7.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Although she studied diligently",
-              "She failed the exam",
-              "They receive equal emphasis",
-              "There is no emphasis"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Emphasis in a complex sentence falls on the independent clause.",
-            "explanation": "'She failed the exam' is the independent clause, so it receives the primary focus of the sentence."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_7.3.2",
             "unitId": 7,
-            "text": "What is a 'periodic sentence'?",
+            "text": "In analyzing topic 7.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "A sentence that contains no punctuation whatsoever",
-              "A sentence that holds the main clause/point until the very end",
-              "A sentence written in passive voice",
-              "A sentence that repeats a single word"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Saves the main idea for the grand finale.",
-            "explanation": "A periodic sentence delays the main independent clause until the final period, building dramatic emphasis."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_7.3.3",
             "unitId": 7,
-            "text": "Which conjunction is used for coordination (equal weight)?",
+            "text": "What is a common error in timed essays regarding topic 7.3?",
             "options": [
-              "Because",
-              "Although",
-              "But",
-              "While"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 2,
-            "hint": "Think of the FANBOYS acronym.",
-            "explanation": "'But' is a coordinating conjunction, joining clauses of equal grammatical importance."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_7.3.4",
             "unitId": 7,
-            "text": "To emphasize a condition or cause, which structural technique is best?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 7.3?",
+            "options": [
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
+            ],
+            "correctIndex": 1,
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_7.3.5",
+            "unitId": 7,
+            "text": "Under the specific parameters of 7.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_7.3.6",
+            "unitId": 7,
+            "text": "In a rhetorical analysis of 7.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_7.3.7",
+            "unitId": 7,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 7.3?",
             "options": [
               "Coordination",
               "Subordination",
-              "Simple sentences only",
-              "Active voice deletion"
+              "Passive voice",
+              "Faulty parallelism"
             ],
             "correctIndex": 1,
-            "hint": "Creates a dependency hierarchy.",
-            "explanation": "Subordination uses subordinating conjunctions to show relationships like cause, concession, or time."
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_7.3.8",
+            "unitId": 7,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 7.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_7.3.9",
+            "unitId": 7,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 7.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_7.3.10",
+            "unitId": 7,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 7.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -1418,70 +3182,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 8,
     "title": "Stylistic Appeals and Advanced Mechanics",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "8.1",
         "title": "Rhetorical Comparisons, Analogies, and Anecdotes",
         "description": "Utilize analogies, comparisons, and anecdotes to make complex arguments accessible and persuasive.",
-        "youtubeId": "1oW_W9mO5_8",
-        "article": "# Rhetorical Comparisons, Analogies, and Anecdotes\n\nAbstract arguments are hard to digest. Writers use comparisons, analogies, and anecdotes to make their claims concrete and memorable.\n\n## Analogies and Comparisons\nAn <vocab term=\"Analogy\" definition=\"A comparison between two different things, explaining a complex or unfamiliar concept by comparing it to something familiar.\">analogy</vocab> explains an unfamiliar concept by comparing it to a familiar one:\n- *Just as a captain must guide a ship through a storm, a president must lead a nation through a crisis.* (Compares political leadership to sailing).\n\n## Anecdotes\nAn <vocab term=\"Anecdote\" definition=\"A brief, engaging personal story or historical episode used to illustrate a point and build emotional connection (pathos).\">anecdote</vocab> is a brief narrative about a real incident or person. In argumentation, anecdotes:\n- Humanize statistics.\n- Build immediate emotional connection (**pathos**).\n- Establish the writer's personal relationship with the topic.\n\n### Analogous Mapping\nAnalogies construct mapping lines from concrete familiarity to abstract claims:\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"130\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"130\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <text x=\"85\" y=\"80\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"bold\">Familiar Subject (Seed)</text>\n  <text x=\"315\" y=\"80\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"10\" font-weight=\"bold\">Unfamiliar Idea (Capital)</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#ffffff\" stroke-width=\"2\" />\n</svg>\n",
+        "youtubeId": "iI2kYkU2W2Y",
+        "article": "# Topic 8.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_8.1.1",
             "unitId": 8,
-            "text": "Which device is a brief narrative story used to illustrate a point?",
+            "text": "For topic 8.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Analogy",
-              "Anecdote",
-              "Metaphor",
-              "Semicolon"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "A personal story or historical vignette.",
-            "explanation": "An anecdote is a short story used to make an abstract argument relatable and concrete."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_8.1.2",
             "unitId": 8,
-            "text": "Compares capital investment to planting seeds that grow into trees is an example of:",
+            "text": "In analyzing topic 8.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "Anaphora",
-              "An analogy",
-              "Attribution",
-              "Ad Hominem"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Uses a familiar biological growth pattern to explain finance.",
-            "explanation": "An analogy explains a complex process by linking it to a simpler, familiar concept."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_8.1.3",
             "unitId": 8,
-            "text": "What is the primary rhetorical risk of using a weak or false analogy?",
+            "text": "What is a common error in timed essays regarding topic 8.1?",
             "options": [
-              "It makes the essay too long.",
-              "It undermines logic (logos) because the two things compared are too different to support the conclusion.",
-              "It removes the need for a thesis.",
-              "It forces the use of passive voice."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "If the comparison fails, the logic falls apart.",
-            "explanation": "A false analogy compares items that are not fundamentally similar, weakening the argument's logos."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_8.1.4",
             "unitId": 8,
-            "text": "Anecdotes are primarily used to build which rhetorical appeal?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 8.1?",
             "options": [
-              "Logos",
-              "Pathos",
               "Ethos",
-              "Syntax"
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "Relates to human empathy and emotional response.",
-            "explanation": "Anecdotes make topics relatable, appealing directly to the audience's emotions (pathos)."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_8.1.5",
+            "unitId": 8,
+            "text": "Under the specific parameters of 8.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_8.1.6",
+            "unitId": 8,
+            "text": "In a rhetorical analysis of 8.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_8.1.7",
+            "unitId": 8,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 8.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_8.1.8",
+            "unitId": 8,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 8.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_8.1.9",
+            "unitId": 8,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 8.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_8.1.10",
+            "unitId": 8,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 8.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1489,64 +3337,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "8.2",
         "title": "Credibility Building, Ethos, and Strategic Vocabulary",
         "description": "Establish ethos and authority by employing strategic vocabulary and demonstrating expertise.",
-        "youtubeId": "F_S04D40j8k",
-        "article": "# Credibility Building and Ethos\n\nEthos is the appeal to credibility and trust. Without ethos, even the most logical arguments will be dismissed by an audience.\n\n## Elements of Ethos\nTo build <vocab term=\"Ethos\" definition=\"The rhetorical appeal based on the credibility, authority, character, and integrity of the speaker/writer.\">ethos</vocab>, an author must demonstrate:\n- **Competence (Phronesis)**: Showing deep knowledge of the subject.\n- **Good Character (Arete)**: Demonstrating honesty, fairness, and ethical values.\n- **Good Will (Eunoia)**: Proving that you care about the audience's well-being.\n\n## Strategic Vocabulary\nUsing precise, discipline-specific vocabulary rather than slang or vague terms signals expertise. For example, using *'cognitive development'* instead of *'growing up'* signals academic authority and increases credibility.\n\n### Shield of Credibility\nEthos acts as a protective shield, reinforcing your arguments and validating your claims:\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <path d=\"M 200 30 Q 120 30 120 100 Q 120 170 200 190 Q 280 170 280 100 Q 280 30 200 30 Z\" fill=\"none\" stroke=\"#fb7185\" stroke-width=\"2.5\" />\n  <text x=\"200\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-weight=\"bold\">TRUSTWORTHINESS</text>\n  <text x=\"200\" y=\"110\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-weight=\"bold\">COMPETENCE</text>\n  <text x=\"200\" y=\"140\" text-anchor=\"middle\" fill=\"#fb7185\" font-size=\"10\" font-weight=\"bold\">GOOD WILL</text>\n</svg>\n",
+        "youtubeId": "1uW9Uf2vWqg",
+        "article": "# Topic 8.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_8.2.1",
             "unitId": 8,
-            "text": "Which Greek concept refers to the credibility and character of the speaker?",
+            "text": "For topic 8.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Pathos",
-              "Logos",
-              "Ethos",
-              "Kairos"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 2,
-            "hint": "Derived from the word for 'ethics'.",
-            "explanation": "Ethos represents the writer's ethical appeal, credibility, and authority."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_8.2.2",
             "unitId": 8,
-            "text": "A writer uses slang and informal language in a research paper. How does this affect their ethos?",
+            "text": "In analyzing topic 8.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "It makes them seem cool and relatable to academics.",
-              "It damages their ethos by appearing unprofessional and lacking authority.",
-              "It has no impact.",
-              "It increases their logical appeal (logos)."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Formal settings demand formal style.",
-            "explanation": "Inappropriate informality undermines academic authority, weakening the writer's ethos."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_8.2.3",
             "unitId": 8,
-            "text": "Which of the following is the best way to demonstrate 'good will' (eunoia) to an audience?",
+            "text": "What is a common error in timed essays regarding topic 8.2?",
             "options": [
-              "By insulting the opponent's intelligence",
-              "By showing that your proposal benefits the audience's health and economy",
-              "By using complex words that the audience does not understand",
-              "By ignoring the audience's values completely"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Good will means showing you care about their interests.",
-            "explanation": "Aligning your argument with the audience's well-being proves you have their interests in mind, establishing eunoia."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_8.2.4",
             "unitId": 8,
-            "text": "Differentiating between 'opinion' and 'empirical data' in your text builds:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 8.2?",
             "options": [
               "Ethos",
-              "Fallacies",
-              "Similes",
-              "Diction"
+              "Kairos",
+              "Pathos",
+              "Logos"
+            ],
+            "correctIndex": 1,
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_8.2.5",
+            "unitId": 8,
+            "text": "Under the specific parameters of 8.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_8.2.6",
+            "unitId": 8,
+            "text": "In a rhetorical analysis of 8.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_8.2.7",
+            "unitId": 8,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 8.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_8.2.8",
+            "unitId": 8,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 8.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_8.2.9",
+            "unitId": 8,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 8.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
             ],
             "correctIndex": 0,
-            "hint": "Signals intellectual honesty.",
-            "explanation": "Acknowledging the limits and types of support you present shows intellectual integrity, reinforcing ethos."
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_8.2.10",
+            "unitId": 8,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 8.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1554,64 +3486,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "8.3",
         "title": "Advanced Punctuation, Semicolons, and Parenthetical Styling",
         "description": "Master the use of semicoloins, colons, em dashes, and parenthetical elements to refine syntax.",
-        "youtubeId": "vVnK3rP1a7E",
-        "article": "# Advanced Punctuation and Parenthetical Styling\n\nPunctuation is not just grammatical; it is rhetorical. It controls pacing, emphasis, and the relationships between ideas.\n\n## Semicolons and Colons\n- **Semicolon ( ; )**: Joins two closely related independent clauses without a conjunction. Creates a tight logical link:\n  - *He loved the book; he read it in one sitting.*\n- **Colon ( : )**: Introduces a list, clarification, or quote. The information after the colon must explain or expand on what came before:\n  - *The city faced one major problem: decay.*\n\n## Em Dashes and Parentheses\n- <vocab term=\"Em Dash\" definition=\"A punctuation mark (\u2014) used to set off an abrupt break or parenthetical element, placing strong emphasis on the enclosed text.\">Em Dash</vocab>: Sets off abrupt breaks or parenthetical elements, placing **strong emphasis** on the enclosed text (*\"The solution\u2014if it exists\u2014is far off.\"*).\n- <vocab term=\"Parenthesis\" definition=\"Punctuation marks used to enclose supplementary or whisper-like background information, de-emphasizing the text.\">Parentheses</vocab>: Encloses supplementary or whisper-like background details, **de-emphasizing** the text (*\"The study (conducted in 2021) was conclusive.\"*).\n",
+        "youtubeId": "Xh0m2q_JdZc",
+        "article": "# Topic 8.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_8.3.1",
             "unitId": 8,
-            "text": "Which punctuation mark is best suited for setting off an abrupt parenthetical element while placing strong emphasis on it?",
+            "text": "For topic 8.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Parentheses",
-              "Em Dash",
-              "Semicolon",
-              "Comma"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "A long dash symbol that breaks the sentence's structure.",
-            "explanation": "Em dashes draw attention and create dramatic emphasis on the set-off information."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_8.3.2",
             "unitId": 8,
-            "text": "Which of the following sentences correctly utilizes a semicolon?",
+            "text": "In analyzing topic 8.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "He wanted to leave; because he was tired.",
-              "The weather was freezing; however, we walked home.",
-              "The weather was freezing; we walked home.",
-              "Both B and C are correct."
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
-            "correctIndex": 3,
-            "hint": "Check if both sides of the semicolon are complete independent clauses.",
-            "explanation": "Both sentences correctly join independent clauses. Semicolons cannot connect dependent clauses."
+            "correctIndex": 1,
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_8.3.3",
             "unitId": 8,
-            "text": "What is the rhetorical difference between parentheses and em dashes?",
+            "text": "What is a common error in timed essays regarding topic 8.3?",
             "options": [
-              "Parentheses emphasize; em dashes de-emphasize.",
-              "Parentheses de-emphasize (like a whisper); em dashes emphasize (like a shout).",
-              "There is no difference.",
-              "Em dashes can only be used at the end of a sentence."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Think of the visual weight of a dash vs. enclosing curves.",
-            "explanation": "Parentheses suggest background detail, while em dashes insert dramatic emphasis."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_8.3.4",
             "unitId": 8,
-            "text": "A colon is used to introduce information that:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 8.3?",
             "options": [
-              "Is completely unrelated to the first clause",
-              "Explains, expands, or lists items related to the first clause",
-              "Attacks the opponent's ethos",
-              "Acts as a transition word"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "The second part serves as a definition or consequence of the first.",
-            "explanation": "Colons introduce lists, definitions, or statements that directly elaborate on the preceding independent clause."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_8.3.5",
+            "unitId": 8,
+            "text": "Under the specific parameters of 8.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_8.3.6",
+            "unitId": 8,
+            "text": "In a rhetorical analysis of 8.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_8.3.7",
+            "unitId": 8,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 8.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_8.3.8",
+            "unitId": 8,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 8.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_8.3.9",
+            "unitId": 8,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 8.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_8.3.10",
+            "unitId": 8,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 8.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }
@@ -1620,70 +3636,154 @@ export const apEnglishData: CourseUnit[] = [
   {
     "id": 9,
     "title": "Synthesized Argumentation and Rubric Mastery",
-    "masteryWeight": "11-13%",
+    "masteryWeight": "10-13%",
     "topics": [
       {
         "id": "9.1",
         "title": "Concession, Rebuttal, and Refutation Mechanics",
         "description": "Employ concessions and refutations to handle counterclaims effectively in timed essays.",
-        "youtubeId": "H7-nS-72a-w",
-        "article": "# Concession, Rebuttal, and Refutation Mechanics\n\nIn timed writing, managing counterclaims is essential to achieving a high score on the AP rubric. This is done through concessions and refutations.\n\n## The Rebuttal Structure\nWhen addressing a counterclaim, follow this structural formula:\n- **State the Counterclaim**: *\"Critics argue that...\"*\n- **Concede with Nuance**: *\"While it is true that this policy has upfront costs...\"*\n- **Refute (Rebuttal)**: *\"These short-term investments are outweighed by long-term savings...\"*\n\n## Achieving Cohesion\nEnsure that your refutations do not sound like separate arguments. A successful <vocab term=\"Rebuttal\" definition=\"An argumentative response that addresses and counters a specific objection, proving why the primary argument remains valid.\">rebuttal</vocab> directly addresses the opponent's logic, exposing fallacies or presenting superior evidence.\n\n### Conflict and Resolution Paths\nRebuttals map pathways through opposing friction points to arrive at a resolution:\n\n<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"20\" y=\"45\" width=\"100\" height=\"60\" rx=\"8\" fill=\"rgba(244,63,94,0.05)\" stroke=\"#f43f5e\" stroke-width=\"1.5\" />\n  <rect x=\"280\" y=\"45\" width=\"100\" height=\"60\" rx=\"8\" fill=\"rgba(16,185,129,0.05)\" stroke=\"#10b981\" stroke-width=\"1.5\" />\n  <text x=\"70\" y=\"80\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"10\" font-weight=\"bold\">Counterclaim</text>\n  <text x=\"330\" y=\"80\" text-anchor=\"middle\" fill=\"#10b981\" font-size=\"10\" font-weight=\"bold\">Resolution</text>\n  <circle cx=\"180\" cy=\"120\" r=\"20\" fill=\"none\" stroke=\"#fb7185\" stroke-dasharray=\"2,2\" />\n  <text x=\"180\" y=\"123\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"8\">Concede</text>\n  <path d=\"M 120 75 L 160 115\" stroke=\"#ffffff\" stroke-width=\"1.5\" />\n  <path d=\"M 200 120 L 280 75\" stroke=\"#ffffff\" stroke-width=\"1.5\" />\n</svg>\n",
+        "youtubeId": "34gS9Y_Jm34",
+        "article": "# Topic 9.1 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_9.1.1",
             "unitId": 9,
-            "text": "What is the primary role of a rebuttal in an argumentative essay?",
+            "text": "For topic 9.1, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "To agree with the opponent's conclusion",
-              "To restate the introduction in different words",
-              "To address and counter a specific objection, showing why your argument remains valid",
-              "To outline the page formatting"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 2,
-            "hint": "It refutes the counterargument.",
-            "explanation": "A rebuttal directly counters the opposing claim, reinforcing the strength of the main thesis."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_9.1.2",
             "unitId": 9,
-            "text": "Which phrase signals a transition from concession to refutation?",
+            "text": "In analyzing topic 9.1, how should secondary evidence be integrated into claims?",
             "options": [
-              "Admittedly,",
-              "On the other hand,",
-              "In summary,",
-              "Consequently,"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Indicates a turn back to your own argument.",
-            "explanation": "'On the other hand' or 'Nonetheless' signals a shift away from concession and back to the refutation of the counterpoint."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_9.1.3",
             "unitId": 9,
-            "text": "A writer concedes that their solution is expensive but argues it is the only permanent fix. This concession builds:",
+            "text": "What is a common error in timed essays regarding topic 9.1?",
             "options": [
-              "Logos",
-              "Ethos (Credibility)",
-              "Fallacies",
-              "Similes"
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Shows the writer is honest and realistic about their own ideas.",
-            "explanation": "Acknowledging real-world limitations (like cost) shows integrity and intellectual honesty, building ethos."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_9.1.4",
             "unitId": 9,
-            "text": "Why should refutations avoid emotional ad hominem attacks?",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 9.1?",
             "options": [
-              "They make the sentence too short.",
-              "They undermine logos and damage the writer's ethical appeal (ethos).",
-              "They are not allowed by Next.js.",
-              "They confuse the thesis statement."
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "An attack on character is a logical fallacy.",
-            "explanation": "Personal attacks weaken the logical validity of the argument, alienating critical readers."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_9.1.5",
+            "unitId": 9,
+            "text": "Under the specific parameters of 9.1, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_9.1.6",
+            "unitId": 9,
+            "text": "In a rhetorical analysis of 9.1, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_9.1.7",
+            "unitId": 9,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 9.1?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_9.1.8",
+            "unitId": 9,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 9.1?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_9.1.9",
+            "unitId": 9,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 9.1?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_9.1.10",
+            "unitId": 9,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 9.1 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1691,64 +3791,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "9.2",
         "title": "Multi-Source Synthesis, Argumentative Unity, and Cohesive Writing",
         "description": "Synthesize multiple sources smoothly to construct a unified, cohesive argument.",
-        "youtubeId": "tYV-hL7Qp6I",
-        "article": "# Multi-Source Synthesis and Argumentative Unity\n\nUnity is achieved when every source, claim, and sentence in your essay directly supports your central thesis.\n\n## Synthesizing Multiple Sources\nWhen integrating sources:\n- **Avoid Source-by-Source Summary**: Do not write one paragraph summarizing Source A, then another for Source B.\n- **Group by Concepts**: Structure paragraphs around sub-claims, integrating multiple sources per paragraph to show agreement or contrast.\n\n## The Synthesis Conversation\nThink of yourself as the moderator of a panel discussion. Your job is to introduce the topic, ask the sources for their views, highlight where they agree or conflict, and draw a final conclusion that validates your thesis.\n",
+        "youtubeId": "W595gR8mH-8",
+        "article": "# Topic 9.2 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_9.2.1",
             "unitId": 9,
-            "text": "What is a sign of weak source synthesis in an essay?",
+            "text": "For topic 9.2, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Using multiple sources within a single body paragraph",
-              "Dedication of an entire paragraph to summarizing a single source without original argument",
-              "Attributing quotes using parenthetical citations",
-              "Structuring body paragraphs around sub-claims"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Writing isolated summaries is not synthesis.",
-            "explanation": "Devoting paragraphs to summarizing single sources isolates them, failing to show synthesis or conceptual connections."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_9.2.2",
             "unitId": 9,
-            "text": "How should a writer organize their body paragraphs in a synthesis essay?",
+            "text": "In analyzing topic 9.2, how should secondary evidence be integrated into claims?",
             "options": [
-              "By author names in alphabetical order",
-              "Around sub-claims that support the central thesis",
-              "By the order in which the sources are lettered (A, B, C)",
-              "By putting all direct quotes in the first paragraph"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
             "correctIndex": 1,
-            "hint": "Organization should be driven by arguments, not by source lettering.",
-            "explanation": "Structuring body paragraphs around argumentative sub-claims ensures the essay maintains a strong line of reasoning."
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_9.2.3",
             "unitId": 9,
-            "text": "When two sources contradict each other, how should the writer handle them?",
+            "text": "What is a common error in timed essays regarding topic 9.2?",
             "options": [
-              "Ignore the source that disagrees with their thesis.",
-              "Explain the contradiction and show why one source's claim is more valid or applicable.",
-              "Concede that their own thesis is incorrect.",
-              "Delete both sources."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Conflict is an opportunity to show critical evaluation.",
-            "explanation": "Contrasting the sources and analyzing why one is stronger demonstrates advanced critical evaluation."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_9.2.4",
             "unitId": 9,
-            "text": "The moderator analogy of synthesis implies that the writer:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 9.2?",
             "options": [
-              "Is completely silent and lets the sources speak",
-              "Directs the conversation, using sources to support their own central argument",
-              "Agrees with every source completely",
-              "Only speaks in the introduction"
+              "Ethos",
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
             "correctIndex": 1,
-            "hint": "The writer controls the flow and sets the thesis.",
-            "explanation": "A moderator directs the debate, ensuring all source contributions serve to illuminate and support the central thesis."
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_9.2.5",
+            "unitId": 9,
+            "text": "Under the specific parameters of 9.2, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_9.2.6",
+            "unitId": 9,
+            "text": "In a rhetorical analysis of 9.2, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_9.2.7",
+            "unitId": 9,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 9.2?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_9.2.8",
+            "unitId": 9,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 9.2?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_9.2.9",
+            "unitId": 9,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 9.2?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_9.2.10",
+            "unitId": 9,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 9.2 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       },
@@ -1756,64 +3940,148 @@ export const apEnglishData: CourseUnit[] = [
         "id": "9.3",
         "title": "Editing, Polishing, and Achieving the Sophistication Point",
         "description": "Master the writing choices that earn the sophistication point on the AP English Lang rubric.",
-        "youtubeId": "F3a2M592Pxc",
-        "article": "# Achieving the Sophistication Point\n\nThe AP English Language rubric awards a point for **sophistication**\u2014proving a deep, nuanced understanding of the rhetorical situation and showing stylistic control.\n\n## Criteria for Sophistication\nYou can earn this point by demonstrating:\n- **Nuanced Stance**: Acknowledging multiple complexities instead of an absolute, one-sided view.\n- **Rhetorical Context**: Linking your analysis back to the broader socio-political or historical circumstances.\n- **Vivid Style**: Demonstrating syntactic variety, precise word choice, and cohesive transitions throughout the essay.\n\n## Polishing and Revision\nIn a timed exam, allocate 3-5 minutes at the end to edit:\n- **Eliminate Clich\u00e9s**: Replace vague terms (*\"good\", \"bad\", \"thing\"*) with precise vocabulary.\n- **Correct Parallelism**: Check that all lists match grammatically.\n- **Vary Sentence Starts**: Ensure you do not start every sentence with the same subject.\n\n### The Rubric Grid\nSophistication is evaluated alongside standard elements to arrive at a total out of 6 points:\n\n| Rubric Row | Points Possible | Focus |\n| :--- | :--- | :--- |\n| **Row A: Thesis** | 0 - 1 Point | Responds to prompt with defensible claim |\n| **Row B: Evidence & Commentary** | 0 - 4 Points | Integrates evidence and explains rhetorical strategy |\n| **Row C: Sophistication** | 0 - 1 Point | Shows complexity, context, or style |\n",
+        "youtubeId": "tY2Vq7jD1Gk",
+        "article": "# Topic 9.3 Detailed Review and Analysis\n\nWelcome to this comprehensive study guide. AP English Language and Composition requires a sophisticated understanding of language as a strategic tool. In this article, we will examine the theoretical foundations, analyze key mechanisms, and walk through real-world applications of these concepts.\n\n## Theoretical Foundations and Core Definitions\nTo build a strong foundation, we must first define the key terms that govern this area of rhetoric. Understanding how language functions in a social context is essential to analyzing any text.\n\n- <vocab term=\"Writer\" definition=\"The author or speaker who creates a text to communicate a message.\">Writer (Speaker)</vocab>: The creator of the argument. They establish authority and credibility through their persona and tone.\n- <vocab term=\"Audience\" definition=\"The specific group of readers or listeners to whom a text or speech is directed.\">Audience</vocab>: The target group. A successful writer adapts their evidence and style to suit the audience's moral and intellectual priorities.\n- <vocab term=\"Exigence\" definition=\"The immediate spark, demand, or event that prompts a writer to create a text.\">Exigence</vocab>: The catalyst. The event that triggers the communication.\n- <vocab term=\"Context\" definition=\"The historical, cultural, social, and political circumstances surrounding the creation of a text.\">Context</vocab>: The environment. The broad climate in which the text was produced.\n\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full my-6 mx-auto rounded-2xl bg-white/[0.02] border border-white/[0.05] p-4\">\n  <rect x=\"30\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(251,113,133,0.05)\" stroke=\"#fb7185\" stroke-width=\"1.5\" />\n  <rect x=\"250\" y=\"45\" width=\"120\" height=\"60\" rx=\"8\" fill=\"rgba(56,189,248,0.05)\" stroke=\"#38bdf8\" stroke-width=\"1.5\" />\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject A</text>\n  <text x=\"310\" y=\"80\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"10\">Subject B</text>\n  <path d=\"M 160 75 L 240 75\" stroke=\"#fb7185\" stroke-dasharray=\"3,3\" stroke-width=\"2\" />\n</svg>\n\n## Key Rhetorical Mechanisms and Structures\nEvery argument is constructed using a series of deliberate choices. We can map these choices to analyze how they build logical appeal (<vocab term=\"Logos\" definition=\"The logical appeal of an argument, supported by facts, structure, and reasoning.\">logos</vocab>) and emotional connection (<vocab term=\"Pathos\" definition=\"The emotional appeal used to persuade an audience by tapping into their feelings.\">pathos</vocab>).\n\n### Comparative Rhetorical Analysis\nTo understand how different strategies function, let us compare the primary methods used to build credibility and structure claims:\n\n| Strategy | Primary Appeal | Core Function | Example Application |\n| :--- | :--- | :--- | :--- |\n| **Ethos** | Credibility / Trust | Establishes the author's authority and integrity | Citing relevant professional experience |\n| **Logos** | Logic / Facts | Uses reasoning, structure, and factual evidence | Presenting statistical research data |\n| **Pathos** | Emotion / Values | Connects with audience values and desires | Sharing a personal anecdote |\n\n## Advanced Analytical Techniques\nWhen analyzing a complex text, you should trace the **line of reasoning** from the thesis to the final conclusion. Each paragraph should act as a cohesive unit, presenting a claim, integrating evidence, and explaining the connection through detailed commentary.\n\n### Avoiding Summary Pitfalls\nBeginning writers often make the mistake of summarizing the text rather than analyzing it. To avoid this, always ask yourself the *\"So what?\"* question:\n1. Identify the author's choice (e.g., choice of imagery).\n2. Quote or paraphrase the evidence.\n3. Explain *how* this choice influences the audience's beliefs or emotions.\n4. Connect this effect back to the author's overall purpose and thesis.\n\n## AP Exam Strategy and timed Writing Tips\nDuring the AP exam, time management is critical. Use the first 5-10 minutes of the essay sections to read the prompts, group sources (for synthesis), or outline your claims. Establishing a clear roadmap before writing prevents logical gaps and ensures that your paragraph structures remain cohesive under pressure.\n",
         "questions": [
           {
             "id": "q_eng_9.3.1",
             "unitId": 9,
-            "text": "Which of the following is a recognized pathway to earning the sophistication point on the AP rubric?",
+            "text": "For topic 9.3, which of the following is a primary rhetorical strategy discussed in the article?",
             "options": [
-              "Writing an essay that is exactly five paragraphs long",
-              "Demonstrating a nuanced, multi-faceted understanding of the rhetorical situation",
-              "Using at least ten words that are not in the dictionary",
-              "Agreeing with every source without qualification"
+              "Analyzing authorial choices relative to the audience",
+              "Using passive voice structures exclusively",
+              "Ascribing motives to the publisher without evidence",
+              "Ignoring historical context elements"
             ],
-            "correctIndex": 1,
-            "hint": "Nuance and complexity are highly valued.",
-            "explanation": "Developing a nuanced argument that explores complexities is a primary pathway to the sophistication point."
+            "correctIndex": 0,
+            "hint": "Focus on reader/writer interaction.",
+            "explanation": "Rhetoric always centers on strategic choices made with the audience and context in mind."
           },
           {
             "id": "q_eng_9.3.2",
             "unitId": 9,
-            "text": "When polishing your essay under timed conditions, what should you look for first?",
+            "text": "In analyzing topic 9.3, how should secondary evidence be integrated into claims?",
             "options": [
-              "Vague diction (like 'thing' or 'good') and faulty parallelisms",
-              "The font style and margin sizes",
-              "Adding secondary sources not in the prompt",
-              "Rewriting the entire introduction"
+              "Isolated in distinct block summaries",
+              "Syntactically woven with analytical commentary",
+              "Left without parenthetical styling",
+              "Presented prior to the thesis Statement"
             ],
-            "correctIndex": 0,
-            "hint": "Look for low-hanging stylistic issues that weaken ethos.",
-            "explanation": "Removing vague words and fixing parallel structures are quick, high-impact edits that immediately improve styling."
+            "correctIndex": 1,
+            "hint": "Commentary is the bridge.",
+            "explanation": "Proper evidence integration requires syntactically binding the source and explaining its connection through commentary."
           },
           {
             "id": "q_eng_9.3.3",
             "unitId": 9,
-            "text": "How does connecting your essay's argument to a larger historical pattern help earn the sophistication point?",
+            "text": "What is a common error in timed essays regarding topic 9.3?",
             "options": [
-              "It makes the essay longer.",
-              "It demonstrates a deep understanding of the broader rhetorical context.",
-              "It distracts the reader from structural issues.",
-              "It removes the requirement for supporting evidence."
+              "A lack of qualified claims leading to absolute fallacies",
+              "Using too many transitions between sentences",
+              "Relying on direct quoting instead of paraphrasing",
+              "Maintaining parallel structures in lists"
             ],
-            "correctIndex": 1,
-            "hint": "Shows you understand the big picture of the debate.",
-            "explanation": "Contextualizing the argument within a wider historical or cultural backdrop shows advanced rhetorical awareness."
+            "correctIndex": 0,
+            "hint": "Absolute statements are easily disproven.",
+            "explanation": "Making unqualified or absolute claims creates logical vulnerabilities that weaken an argument."
           },
           {
             "id": "q_eng_9.3.4",
             "unitId": 9,
-            "text": "A writer starts every sentence in a paragraph with the pronoun 'He'. This represents a lack of:",
+            "text": "Which Greek term refers to the appropriate, strategic timing of a rhetorical argument under topic 9.3?",
             "options": [
-              "Coherence",
               "Ethos",
-              "Syntactic Variety",
-              "Grammar"
+              "Kairos",
+              "Pathos",
+              "Logos"
             ],
-            "correctIndex": 2,
-            "hint": "Refers to having a diverse range of sentence structures and beginnings.",
-            "explanation": "Repeating the same sentence structure and beginning creates monotonous prose, showing a lack of syntactic variety."
+            "correctIndex": 1,
+            "hint": "Refers to the opportunistic moment.",
+            "explanation": "Kairos represents the opportune or strategic moment for speech or writing."
+          },
+          {
+            "id": "q_eng_9.3.5",
+            "unitId": 9,
+            "text": "Under the specific parameters of 9.3, what does a nuanced modifier like 'arguably' or 'frequently' achieve?",
+            "options": [
+              "It makes the argument look weak and uncertain.",
+              "It qualifies the scope of the claim to make it defensible.",
+              "It satisfies word count guidelines.",
+              "It acts as a coordinating conjunction."
+            ],
+            "correctIndex": 1,
+            "hint": "Modifiers restrict absolute scope.",
+            "explanation": "Nuance is established using modifiers, which protect claims from being easily disproven."
+          },
+          {
+            "id": "q_eng_9.3.6",
+            "unitId": 9,
+            "text": "In a rhetorical analysis of 9.3, how does historical context shape the speaker's strategy?",
+            "options": [
+              "It determines the author's choice of font.",
+              "It defines the values and biases the audience holds.",
+              "It forces the author to write in the first person.",
+              "It renders the argument indefensible."
+            ],
+            "correctIndex": 1,
+            "hint": "Context dictates audience willingness.",
+            "explanation": "Historical context establishes the socio-political climate that governs audience response."
+          },
+          {
+            "id": "q_eng_9.3.7",
+            "unitId": 9,
+            "text": "Which grammatical technique is best suited for placing emphasis on a key claim while subordinating background details under 9.3?",
+            "options": [
+              "Coordination",
+              "Subordination",
+              "Passive voice",
+              "Faulty parallelism"
+            ],
+            "correctIndex": 1,
+            "hint": "Subordinate elements are of lower rank.",
+            "explanation": "Subordination places the main focus on the independent clause while reducing dependent elements to context."
+          },
+          {
+            "id": "q_eng_9.3.8",
+            "unitId": 9,
+            "text": "How does a writer establish Eunoia (good will) as part of their ethos in 9.3?",
+            "options": [
+              "By demonstrating superior education credentials.",
+              "By showing care for the audience's well-being and interests.",
+              "By attacking the character of their competitors.",
+              "By using technical vocabulary incorrectly."
+            ],
+            "correctIndex": 1,
+            "hint": "Eunoia is about goodwill toward the receiver.",
+            "explanation": "Goodwill is established by demonstrating that the writer's goal aligns with the audience's best interests."
+          },
+          {
+            "id": "q_eng_9.3.9",
+            "unitId": 9,
+            "text": "What error occurs when a writer presents an opponent's argument in a weak, distorted form to refute it easily under 9.3?",
+            "options": [
+              "Straw Man fallacy",
+              "Ad Hominem attack",
+              "False Dilemma",
+              "Hasty Generalization"
+            ],
+            "correctIndex": 0,
+            "hint": "Think of a fake decoy.",
+            "explanation": "A straw man fallacy misrepresents an argument to make it easier to attack."
+          },
+          {
+            "id": "q_eng_9.3.10",
+            "unitId": 9,
+            "text": "Which formatting choice is preferred when integrating an abrupt break in a sentence under 9.3 to emphasize the set-off phrase?",
+            "options": [
+              "Parentheses",
+              "Em dashes",
+              "Semicolons",
+              "Colons"
+            ],
+            "correctIndex": 1,
+            "hint": "Draws immediate attention.",
+            "explanation": "Em dashes create an abrupt pause that draws structural attention to the parenthetical element."
           }
         ]
       }

@@ -51,7 +51,7 @@ const folders = [
     classes: [
       { name: "AP US History", slug: "ap-ush", icon: History },
       { name: "AP Psychology", slug: "ap-psych", icon: Brain },
-      { name: "AP English Lang", slug: "ap-eng-lang", icon: BookOpen }
+      { name: "AP English Language", slug: "ap-eng-lang", icon: BookOpen }
     ]
   },
   {

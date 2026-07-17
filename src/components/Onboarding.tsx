@@ -169,7 +169,7 @@ const classes = [
   { name: "AP Physics C", slug: "ap-physics-c", category: "STEM & Sciences" },
   { name: "AP US History", slug: "ap-ush", category: "Humanities & Arts" },
   { name: "AP Psychology", slug: "ap-psych", category: "Humanities & Arts" },
-  { name: "AP English Lang", slug: "ap-eng-lang", category: "Humanities & Arts" },
+  { name: "AP English Language", slug: "ap-eng-lang", category: "Humanities & Arts" },
   { name: "AP Calculus BC", slug: "ap-calc-bc", category: "Mathematical Logic" },
   { name: "AP Statistics", slug: "ap-stats", category: "Mathematical Logic" },
   { name: "AP Comp Sci A", slug: "ap-csa", category: "Mathematical Logic" }

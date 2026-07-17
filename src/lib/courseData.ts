@@ -75,7 +75,7 @@ export const courses: APSubject[] = [
     image: "/courses/ap_psych_bg.png"
   },
   {
-    name: "AP English Lang",
+    name: "AP English Language",
     slug: "ap-eng-lang",
     icon: BookOpen,
     color: "text-rose-400",

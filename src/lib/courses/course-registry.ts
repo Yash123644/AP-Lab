@@ -649,7 +649,7 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-eng-lang": {
     slug: "ap-eng-lang",
-    name: "AP English Lang",
+    name: "AP English Language",
     category: "Humanities & Arts",
     accentColor: "#fb7185",
     glowColor: "rgba(251, 113, 133, 0.2)",
