@@ -229,6 +229,9 @@ export default function VerifyEmailPage() {
               <p className="text-white/50 text-sm leading-relaxed mb-10 text-center text-balance">
                 Enter the 5-digit code sent to <br />
                 <span className="text-white font-medium select-text">{currentUser.email}</span>
+                <span className="block text-[11px] text-neutral-500 mt-2">
+                  (If you don't see it, please check your spam section)
+                </span>
               </p>
 
               {/* OTP Form Inputs */}
