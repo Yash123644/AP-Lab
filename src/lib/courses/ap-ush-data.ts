@@ -36,7 +36,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "Pre-Columbian Native American Societies and Environments",
         "description": "Explore native cultures across North America, focusing on adaptation to geography, maize cultivation, and social structures.",
         "youtubeId": "_rSS9Z538xg",
-        "article": "# Pre-Columbian Native American Societies and Environments\n\nBefore European arrival in 1492, North America was populated by millions of indigenous peoples organized into hundreds of distinct societies. These cultures were shaped entirely by their environments, adapting their social structures, economies, and political systems to diverse geographic landscapes.\n\n## Maize Cultivation and Agricultural Adaptation\n\nThe introduction of <vocab term=\"Maize Cultivation\" definition=\"The agricultural cultivation of corn, originating in Mesoamerica and spreading north, which supported settled agricultural societies with larger populations.\">maize cultivation</vocab> from Mesoamerica northward into the American Southwest and beyond transformed nomadic tribes into settled agricultural societies.\n- **Southwest**: The <vocab term=\"Pueblo Peoples\" definition=\"Native American groups in the Southwest who built permanent adobe multi-story dwellings and utilized complex irrigation systems.\">Pueblo Peoples</vocab> developed advanced irrigation systems to channel scarce water to maize fields in arid climates. They built multi-story adobe cliff dwellings.\n- **Mississippi River Valley & East**: Constructed large earthen mounds and supported highly structured chiefdoms through farming maize, squash, and beans (the \"Three Sisters\"). The large urban center of <vocab term=\"Cahokia\" definition=\"The largest pre-Columbian urban center north of Mexico, located near modern-day St. Louis, featuring massive earthen mounds.\">Cahokia</vocab> housed over 20,000 residents at its peak.\n- **Great Plains & Great Basin**: Due to lack of arable land and water, societies here remained mobile. They practiced a <vocab term=\"Hunter-Gatherer\" definition=\"A nomadic lifestyle relying on hunting wild animals and foraging wild plants rather than agriculture.\">hunter-gatherer</vocab> lifestyle, relying on bison and foraging.\n- **Pacific Northwest & California**: Supported by abundant ocean resources and giant redwood forests, they established permanent fishing villages and complex social hierarchies.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <rect x=\"10\" y=\"10\" width=\"430\" height=\"130\" rx=\"8\" fill=\"rgba(255,255,255,0.02)\" />\n  <g transform=\"translate(30, 20)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(96,165,250,0.15)\" stroke=\"#60a5fa\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Northwest</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Fishing / Permanent</text>\n  </g>\n  <g transform=\"translate(130, 40)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(239,68,68,0.15)\" stroke=\"#ef4444\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Great Plains</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Nomadic / Bison</text>\n  </g>\n  <g transform=\"translate(230, 60)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(251,191,36,0.15)\" stroke=\"#fbbf24\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\">Southwest</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Pueblo / Maize</text>\n  </g>\n  <g transform=\"translate(340, 30)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(34,197,94,0.15)\" stroke=\"#22c55e\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">East / Woodlands</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Mixed Agri / Iroquois</text>\n  </g>\n</svg>\n</div>\n",
+        "article": "# Pre-Columbian Native American Societies and Environments\n\nBefore European arrival in 1492, North America was populated by millions of indigenous peoples organized into hundreds of distinct societies. These cultures were shaped entirely by their environments, adapting their social structures, economies, and political systems to diverse geographic landscapes.\n\n## Maize Cultivation and Agricultural Adaptation\n\nThe introduction of <vocab term=\"Maize Cultivation\" definition=\"The agricultural cultivation of corn, originating in Mesoamerica and spreading north, which supported settled agricultural societies with larger populations.\">maize cultivation</vocab> from Mesoamerica northward into the American Southwest and beyond transformed nomadic tribes into settled agricultural societies.\n- **Southwest**: The <vocab term=\"Pueblo Peoples\" definition=\"Native American groups in the Southwest who built permanent adobe multi-story dwellings and utilized complex irrigation systems.\">Pueblo Peoples</vocab> developed advanced irrigation systems to channel scarce water to maize fields in arid climates. They built multi-story adobe cliff dwellings.\n- **Mississippi River Valley & East**: Constructed large earthen mounds and supported highly structured chiefdoms through farming maize, squash, and beans (the \"Three Sisters\"). The large urban center of <vocab term=\"Cahokia\" definition=\"The largest pre-Columbian urban center north of Mexico, located near modern-day St. Louis, featuring massive earthen mounds.\">Cahokia</vocab> housed over 20,000 residents at its peak.\n- **Great Plains & Great Basin**: Due to lack of arable land and water, societies here remained mobile. They practiced a <vocab term=\"Hunter-Gatherer\" definition=\"A nomadic lifestyle relying on hunting wild animals and foraging wild plants rather than agriculture.\">hunter-gatherer</vocab> lifestyle, relying on bison and foraging.\n- **Pacific Northwest & California**: Supported by abundant ocean resources and giant redwood forests, they established permanent fishing villages and complex social hierarchies.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <rect x=\"10\" y=\"10\" width=\"430\" height=\"130\" rx=\"8\" fill=\"rgba(255,255,255,0.02)\" />\n  <g transform=\"translate(30, 20)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(96,165,250,0.15)\" stroke=\"#60a5fa\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Northwest</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Fishing / Permanent</text>\n  </g>\n  <g transform=\"translate(130, 40)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(239,68,68,0.15)\" stroke=\"#ef4444\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Great Plains</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Nomadic / Bison</text>\n  </g>\n  <g transform=\"translate(230, 60)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(251,191,36,0.15)\" stroke=\"#fbbf24\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\">Southwest</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Pueblo / Maize</text>\n  </g>\n  <g transform=\"translate(340, 30)\">\n    <circle cx=\"20\" cy=\"20\" r=\"15\" fill=\"rgba(34,197,94,0.15)\" stroke=\"#22c55e\" stroke-width=\"1.5\" />\n    <text x=\"20\" y=\"45\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">East / Woodlands</text>\n    <text x=\"20\" y=\"55\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Mixed Agri / Iroquois</text>\n  </g>\n</svg>\n</div>\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 1.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 1.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q1.1.1",
@@ -107,6 +107,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 0,
             "hint": "This society was centered near modern-day St. Louis and relied on the fertile Mississippi valley.",
             "explanation": "The Mississippian culture constructed massive mounds at Cahokia, supporting a population of tens of thousands through highly organized agricultural and trade systems."
+          },
+          {
+            "id": "q1.1.6",
+            "unitId": 1,
+            "text": "Which of the following describes a key long-term significance of the events under topic 1.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q1.1.7",
+            "unitId": 1,
+            "text": "How did different social groups respond to the changes described in topic 1.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q1.1.8",
+            "unitId": 1,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 1.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q1.1.9",
+            "unitId": 1,
+            "text": "The developments in topic 1.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q1.1.10",
+            "unitId": 1,
+            "text": "Historians analyzing the period of topic 1.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -115,7 +185,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "European Exploration, Conquest, and the Columbian Exchange",
         "description": "Analyze the motivations of Spanish, Portuguese, and French explorers, and the massive ecological and demographical impacts of the Columbian Exchange.",
         "youtubeId": "3mXgZ5x88-Q",
-        "article": "# European Exploration, Conquest, and the Columbian Exchange\n\nEuropean exploration was driven by the quest for wealth, status, and religious converts\u2014often summarized as **Gold, Glory, and God**. The resulting interaction between the Eastern and Western Hemispheres sparked the **Columbian Exchange**, an unprecedented global transfer of life, technology, and disease.\n\n## Motivations for Exploration\n- **Gold**: Finding direct routes to Asian spice markets and discovering precious metals (gold and silver).\n- **Glory**: Achieving national prestige and personal status for imperial monarchs and conquistadors.\n- **God**: Spreading Catholicism (particularly by the Spanish and Portuguese) to newly encountered populations.\n\n## The Columbian Exchange\n\nThe <vocab term=\"Columbian Exchange\" definition=\"The extensive transfer of plants, culture, human populations, technology, and diseases between the Americas and the Old World following Columbus's 1492 voyage.\">Columbian Exchange</vocab> fundamentally restructured global demography:\n1. **From Europe/Africa to the Americas**:\n   - *Livestock*: Horses, cattle, pigs (which transformed Native transport and agriculture).\n   - *Crops*: Wheat, rice, sugar (leading to sugar plantation economies).\n   - *Diseases*: <vocab term=\"Smallpox\" definition=\"A highly contagious and deadly European disease that decimated up to 90% of the Native American population due to their lack of immunity.\">Smallpox</vocab>, measles, influenza. Lacking immunity, Native populations suffered catastrophic declines, sometimes exceeding **90%**.\n2. **From the Americas to Europe**:\n   - *Nutritious Crops*: Potatoes, maize, tomatoes, cassava. These high-calorie foods triggered rapid population growth and urbanization across Europe.\n   - *Precious Metals*: Massive influxes of silver and gold shifted Europe away from <vocab term=\"Feudalism\" definition=\"A medieval social system based on land-holding lords and peasants, which was replaced by early capitalism due to New World wealth.\">feudalism</vocab> toward early capitalism. The Spanish <vocab term=\"Conquistadores\" definition=\"Spanish explorers and military conquerors who colonized the Americas and subdued indigenous empires.\">conquistadores</vocab> established extensive mines in Mexico and Peru.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"400\" height=\"160\" viewBox=\"0 0 400 160\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <text x=\"60\" y=\"25\" fill=\"#a1a1aa\" font-size=\"10\" text-anchor=\"middle\">Americas (New World)</text>\n  <text x=\"340\" y=\"25\" fill=\"#a1a1aa\" font-size=\"10\" text-anchor=\"middle\">Europe / Africa (Old World)</text>\n  <path d=\"M 120 50 Q 200 30 280 50\" fill=\"none\" stroke=\"#20c997\" stroke-width=\"2\" marker-end=\"url(#arrow-phys)\" />\n  <text x=\"200\" y=\"25\" fill=\"#20c997\" font-size=\"8\" text-anchor=\"middle\">Maize, Potato, Tomato, Silver</text>\n  <path d=\"M 280 110 Q 200 130 120 110\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\" marker-end=\"url(#arrow-phys)\" />\n  <text x=\"200\" y=\"145\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\">Diseases (Smallpox), Horses, Sugar</text>\n</svg>\n</div>\n",
+        "article": "# European Exploration, Conquest, and the Columbian Exchange\n\nEuropean exploration was driven by the quest for wealth, status, and religious converts\u2014often summarized as **Gold, Glory, and God**. The resulting interaction between the Eastern and Western Hemispheres sparked the **Columbian Exchange**, an unprecedented global transfer of life, technology, and disease.\n\n## Motivations for Exploration\n- **Gold**: Finding direct routes to Asian spice markets and discovering precious metals (gold and silver).\n- **Glory**: Achieving national prestige and personal status for imperial monarchs and conquistadors.\n- **God**: Spreading Catholicism (particularly by the Spanish and Portuguese) to newly encountered populations.\n\n## The Columbian Exchange\n\nThe <vocab term=\"Columbian Exchange\" definition=\"The extensive transfer of plants, culture, human populations, technology, and diseases between the Americas and the Old World following Columbus's 1492 voyage.\">Columbian Exchange</vocab> fundamentally restructured global demography:\n1. **From Europe/Africa to the Americas**:\n   - *Livestock*: Horses, cattle, pigs (which transformed Native transport and agriculture).\n   - *Crops*: Wheat, rice, sugar (leading to sugar plantation economies).\n   - *Diseases*: <vocab term=\"Smallpox\" definition=\"A highly contagious and deadly European disease that decimated up to 90% of the Native American population due to their lack of immunity.\">Smallpox</vocab>, measles, influenza. Lacking immunity, Native populations suffered catastrophic declines, sometimes exceeding **90%**.\n2. **From the Americas to Europe**:\n   - *Nutritious Crops*: Potatoes, maize, tomatoes, cassava. These high-calorie foods triggered rapid population growth and urbanization across Europe.\n   - *Precious Metals*: Massive influxes of silver and gold shifted Europe away from <vocab term=\"Feudalism\" definition=\"A medieval social system based on land-holding lords and peasants, which was replaced by early capitalism due to New World wealth.\">feudalism</vocab> toward early capitalism. The Spanish <vocab term=\"Conquistadores\" definition=\"Spanish explorers and military conquerors who colonized the Americas and subdued indigenous empires.\">conquistadores</vocab> established extensive mines in Mexico and Peru.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"400\" height=\"160\" viewBox=\"0 0 400 160\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <text x=\"60\" y=\"25\" fill=\"#a1a1aa\" font-size=\"10\" text-anchor=\"middle\">Americas (New World)</text>\n  <text x=\"340\" y=\"25\" fill=\"#a1a1aa\" font-size=\"10\" text-anchor=\"middle\">Europe / Africa (Old World)</text>\n  <path d=\"M 120 50 Q 200 30 280 50\" fill=\"none\" stroke=\"#20c997\" stroke-width=\"2\" marker-end=\"url(#arrow-phys)\" />\n  <text x=\"200\" y=\"25\" fill=\"#20c997\" font-size=\"8\" text-anchor=\"middle\">Maize, Potato, Tomato, Silver</text>\n  <path d=\"M 280 110 Q 200 130 120 110\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\" marker-end=\"url(#arrow-phys)\" />\n  <text x=\"200\" y=\"145\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\">Diseases (Smallpox), Horses, Sugar</text>\n</svg>\n</div>\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 1.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 1.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q1.2.1",
@@ -186,6 +256,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "Consider how massive influxes of liquid wealth altered trade networks and investment.",
             "explanation": "The huge influx of precious metals from Spanish American mines caused price inflation but also fueled the growth of commerce, banking, and capitalism in European economies."
+          },
+          {
+            "id": "q1.2.6",
+            "unitId": 1,
+            "text": "Which of the following describes a key long-term significance of the events under topic 1.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q1.2.7",
+            "unitId": 1,
+            "text": "How did different social groups respond to the changes described in topic 1.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q1.2.8",
+            "unitId": 1,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 1.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q1.2.9",
+            "unitId": 1,
+            "text": "The developments in topic 1.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q1.2.10",
+            "unitId": 1,
+            "text": "Historians analyzing the period of topic 1.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -194,7 +334,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Spanish Empire, Encomienda System, and Cultural Transmutation",
         "description": "Examine Spanish labor systems including the encomienda, the emergence of the casta system, and early debates over Native rights.",
         "youtubeId": "rJH93c3h9wQ",
-        "article": "# The Spanish Empire, Encomienda System, and Cultural Transmutation\n\nThe Spanish built a sprawling empire in the Americas, using coercive labor systems to extract resources and developing a strict social hierarchy to maintain control. Over time, European, African, and Native cultures blended, creating a unique syncretic society.\n\n## The Encomienda System\n\nThe <vocab term=\"Encomienda System\" definition=\"A Spanish labor system that granted conquerors the right to force Native Americans to work in mines and fields in exchange for Christianizing them and providing protection.\">encomienda system</vocab> was established to exploit Native labor:\n- Spanish crown granted Spanish colonists (encomenderos) control over specific Native villages.\n- Encomenderos forced Natives to mine silver or cultivate crops.\n- In theory, encomenderos were required to protect and convert Natives to Catholicism. In practice, the system was characterized by brutal exploitation.\n- As Native populations declined from disease, the Spanish increasingly turned to the **Transatlantic Slave Trade** for African labor, particularly on sugar plantations.\n\n## The Casta System\n\nTo maintain control over a highly diverse empire, the Spanish established the <vocab term=\"Casta System\" definition=\"A racial hierarchy system in the Spanish colonies that graded social status based on parental racial background.\">casta system</vocab>:\n- **Peninsulares**: Spanish-born elites (held high political office).\n- **Creoles**: Spanish descendants born in the Americas.\n- **Mestizos**: Mixed Spanish and Native American ancestry.\n- **Mulattoes**: Mixed Spanish and African ancestry.\n- **Native Americans & African Slaves**: Bottom of the social hierarchy.\n\n## Debates Over Treatment: Sep\u00falveda vs. Las Casas\nThe brutality of Spanish rule led to theological and philosophical debates:\n- <vocab term=\"Bartolom\u00e9 de Las Casas\" definition=\"A Spanish Dominican priest who fiercely criticized the Encomienda system and defended the humanity and rights of Native Americans.\">Bartolom\u00e9 de Las Casas</vocab>: A Dominican priest who argued that Native Americans were rational, free human beings who should be treated with dignity and converted through peaceful persuasion.\n- **Juan Gin\u00e9s de Sep\u00falveda**: A theologian who argued that Natives were 'natural slaves' during the famous <vocab term=\"Valladolid Debate\" definition=\"A formal theological debate in 1550 regarding the moral rights and treatment of colonized Native Americans by the Spanish Empire.\">Valladolid Debate</vocab> who benefited from Spanish domination and conversion.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"400\" height=\"180\" viewBox=\"0 0 400 180\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <line x1=\"200\" y1=\"20\" x2=\"320\" y2=\"160\" stroke=\"#a1a1aa\" stroke-width=\"1.5\" />\n  <line x1=\"200\" y1=\"20\" x2=\"80\" y2=\"160\" stroke=\"#a1a1aa\" stroke-width=\"1.5\" />\n  <line x1=\"80\" y1=\"160\" x2=\"320\" y2=\"160\" stroke=\"#a1a1aa\" stroke-width=\"1.5\" />\n  <line x1=\"170\" y1=\"55\" x2=\"230\" y2=\"55\" stroke=\"#a1a1aa\" stroke-dasharray=\"2,2\" />\n  <line x1=\"140\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#a1a1aa\" stroke-dasharray=\"2,2\" />\n  <line x1=\"110\" y1=\"125\" x2=\"290\" y2=\"125\" stroke=\"#a1a1aa\" stroke-dasharray=\"2,2\" />\n  <text x=\"200\" y=\"45\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">Peninsulares</text>\n  <text x=\"200\" y=\"78\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Creoles</text>\n  <text x=\"200\" y=\"112\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Mestizos / Mulattoes</text>\n  <text x=\"200\" y=\"148\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Natives / African Slaves</text>\n</svg>\n</div>\n",
+        "article": "# The Spanish Empire, Encomienda System, and Cultural Transmutation\n\nThe Spanish built a sprawling empire in the Americas, using coercive labor systems to extract resources and developing a strict social hierarchy to maintain control. Over time, European, African, and Native cultures blended, creating a unique syncretic society.\n\n## The Encomienda System\n\nThe <vocab term=\"Encomienda System\" definition=\"A Spanish labor system that granted conquerors the right to force Native Americans to work in mines and fields in exchange for Christianizing them and providing protection.\">encomienda system</vocab> was established to exploit Native labor:\n- Spanish crown granted Spanish colonists (encomenderos) control over specific Native villages.\n- Encomenderos forced Natives to mine silver or cultivate crops.\n- In theory, encomenderos were required to protect and convert Natives to Catholicism. In practice, the system was characterized by brutal exploitation.\n- As Native populations declined from disease, the Spanish increasingly turned to the **Transatlantic Slave Trade** for African labor, particularly on sugar plantations.\n\n## The Casta System\n\nTo maintain control over a highly diverse empire, the Spanish established the <vocab term=\"Casta System\" definition=\"A racial hierarchy system in the Spanish colonies that graded social status based on parental racial background.\">casta system</vocab>:\n- **Peninsulares**: Spanish-born elites (held high political office).\n- **Creoles**: Spanish descendants born in the Americas.\n- **Mestizos**: Mixed Spanish and Native American ancestry.\n- **Mulattoes**: Mixed Spanish and African ancestry.\n- **Native Americans & African Slaves**: Bottom of the social hierarchy.\n\n## Debates Over Treatment: Sep\u00falveda vs. Las Casas\nThe brutality of Spanish rule led to theological and philosophical debates:\n- <vocab term=\"Bartolom\u00e9 de Las Casas\" definition=\"A Spanish Dominican priest who fiercely criticized the Encomienda system and defended the humanity and rights of Native Americans.\">Bartolom\u00e9 de Las Casas</vocab>: A Dominican priest who argued that Native Americans were rational, free human beings who should be treated with dignity and converted through peaceful persuasion.\n- **Juan Gin\u00e9s de Sep\u00falveda**: A theologian who argued that Natives were 'natural slaves' during the famous <vocab term=\"Valladolid Debate\" definition=\"A formal theological debate in 1550 regarding the moral rights and treatment of colonized Native Americans by the Spanish Empire.\">Valladolid Debate</vocab> who benefited from Spanish domination and conversion.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"400\" height=\"180\" viewBox=\"0 0 400 180\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <line x1=\"200\" y1=\"20\" x2=\"320\" y2=\"160\" stroke=\"#a1a1aa\" stroke-width=\"1.5\" />\n  <line x1=\"200\" y1=\"20\" x2=\"80\" y2=\"160\" stroke=\"#a1a1aa\" stroke-width=\"1.5\" />\n  <line x1=\"80\" y1=\"160\" x2=\"320\" y2=\"160\" stroke=\"#a1a1aa\" stroke-width=\"1.5\" />\n  <line x1=\"170\" y1=\"55\" x2=\"230\" y2=\"55\" stroke=\"#a1a1aa\" stroke-dasharray=\"2,2\" />\n  <line x1=\"140\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#a1a1aa\" stroke-dasharray=\"2,2\" />\n  <line x1=\"110\" y1=\"125\" x2=\"290\" y2=\"125\" stroke=\"#a1a1aa\" stroke-dasharray=\"2,2\" />\n  <text x=\"200\" y=\"45\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">Peninsulares</text>\n  <text x=\"200\" y=\"78\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Creoles</text>\n  <text x=\"200\" y=\"112\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Mestizos / Mulattoes</text>\n  <text x=\"200\" y=\"148\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Natives / African Slaves</text>\n</svg>\n</div>\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 1.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 1.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q1.3.1",
@@ -265,6 +405,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "Consider the ethical questions that arose from the conquest of Mesoamerica.",
             "explanation": "The debate was the first formal European theological/philosophical discussion addressing the morality of conquering and enslaving colonized peoples."
+          },
+          {
+            "id": "q1.3.6",
+            "unitId": 1,
+            "text": "Which of the following describes a key long-term significance of the events under topic 1.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q1.3.7",
+            "unitId": 1,
+            "text": "How did different social groups respond to the changes described in topic 1.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q1.3.8",
+            "unitId": 1,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 1.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q1.3.9",
+            "unitId": 1,
+            "text": "The developments in topic 1.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q1.3.10",
+            "unitId": 1,
+            "text": "Historians analyzing the period of topic 1.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -280,7 +490,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "Regional Comparisons of Spanish, French, Dutch, and British Colonization",
         "description": "Contrast the differing economic goals, population sizes, and relationships with Native Americans among the major European colonial powers.",
         "youtubeId": "K_8h8lSFLn4",
-        "article": "# Regional Comparisons of Spanish, French, Dutch, and British Colonization\n\nThe major European powers established colonies in North America with vastly different economic goals, demographic profiles, and relationships with indigenous populations. \n\n## Spanish Colonization\n- **Goals**: Wealth extraction (precious metals, agriculture) and religious conversion.\n- **Population**: Primarily male soldiers, adventurers, and priests. This demographic led to extensive intermarriage and a complex casta system.\n- **Native Relations**: Dominant and coercive, forcing conversion and labor through the encomienda system.\n\n## French & Dutch Colonization\n- **Goals**: Fur trade (beaver pelts) and trade alliances.\n- **Population**: Very few permanent settlers (mostly traders, trappers, and a few Jesuit missionaries).\n- **Native Relations**: Cooperative and diplomatic. The French frequently intermarried with Native women, creating a unique <vocab term=\"Metis\" definition=\"People of mixed Native American and French-Canadian descent who played key roles in the fur trade.\">Metis</vocab> culture. They built trade alliances and respected Native customs to secure access to fur resources.\n\n## British Colonization\n- **Goals**: Land ownership, agricultural cultivation (tobacco, grain, rice), and religious freedom.\n- **Population**: Massive influxes of male and female families seeking permanent settlement. In New England, the <vocab term=\"Puritans\" definition=\"English Protestants who sought to purify the Church of England and established colonies in New England based on strict religious communities.\">Puritans</vocab> settled in family units.\n- **Chesapeake & Southern Colonies**: In regions like the <vocab term=\"Chesapeake Colonies\" definition=\"The British colonies of Virginia and Maryland, which centered on tobacco cultivation and initially relied on indentured servants.\">Chesapeake Colonies</vocab>, agricultural cultivation was dominated by single men arriving under <vocab term=\"Indentured Servitude\" definition=\"A labor system where poor Europeans contracted to work for a set period of years in exchange for free passage to the New World.\">indentured servitude</vocab>.\n- **Native Relations**: Hostile and exclusionary. Unlike other powers, British colonists rarely intermarried and sought to push Native Americans off their land rather than integrate or trade with them directly.\n\n<div class=\"flex justify-center my-8\">\n<table class=\"w-full text-xs border-collapse border border-white/10 rounded-lg overflow-hidden bg-black/25\">\n  <thead>\n    <tr class=\"bg-white/5 text-white font-mono uppercase\">\n      <th class=\"p-2 border border-white/10\">Empire</th>\n      <th class=\"p-2 border border-white/10\">Main Economy</th>\n      <th class=\"p-2 border border-white/10\">Demographics</th>\n      <th class=\"p-2 border border-white/10\">Relations with Natives</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td class=\"p-2 border border-white/10 font-bold text-yellow-400\">Spain</td>\n      <td class=\"p-2 border border-white/10\">Mining / Sugar</td>\n      <td class=\"p-2 border border-white/10\">Mostly single males</td>\n      <td class=\"p-2 border border-white/10\">Coercive / Caste system</td>\n    </tr>\n    <tr>\n      <td class=\"p-2 border border-white/10 font-bold text-cyan-400\">France / Dutch</td>\n      <td class=\"p-2 border border-white/10\">Fur Trade</td>\n      <td class=\"p-2 border border-white/10\">Trappers / Traders</td>\n      <td class=\"p-2 border border-white/10\">Alliances / Intermarriage</td>\n    </tr>\n    <tr>\n      <td class=\"p-2 border border-white/10 font-bold text-indigo-400\">Great Britain</td>\n      <td class=\"p-2 border border-white/10\">Agriculture</td>\n      <td class=\"p-2 border border-white/10\">Families / Mass settlement</td>\n      <td class=\"p-2 border border-white/10\">Exclusionary / Conflict</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n",
+        "article": "# Regional Comparisons of Spanish, French, Dutch, and British Colonization\n\nThe major European powers established colonies in North America with vastly different economic goals, demographic profiles, and relationships with indigenous populations. \n\n## Spanish Colonization\n- **Goals**: Wealth extraction (precious metals, agriculture) and religious conversion.\n- **Population**: Primarily male soldiers, adventurers, and priests. This demographic led to extensive intermarriage and a complex casta system.\n- **Native Relations**: Dominant and coercive, forcing conversion and labor through the encomienda system.\n\n## French & Dutch Colonization\n- **Goals**: Fur trade (beaver pelts) and trade alliances.\n- **Population**: Very few permanent settlers (mostly traders, trappers, and a few Jesuit missionaries).\n- **Native Relations**: Cooperative and diplomatic. The French frequently intermarried with Native women, creating a unique <vocab term=\"Metis\" definition=\"People of mixed Native American and French-Canadian descent who played key roles in the fur trade.\">Metis</vocab> culture. They built trade alliances and respected Native customs to secure access to fur resources.\n\n## British Colonization\n- **Goals**: Land ownership, agricultural cultivation (tobacco, grain, rice), and religious freedom.\n- **Population**: Massive influxes of male and female families seeking permanent settlement. In New England, the <vocab term=\"Puritans\" definition=\"English Protestants who sought to purify the Church of England and established colonies in New England based on strict religious communities.\">Puritans</vocab> settled in family units.\n- **Chesapeake & Southern Colonies**: In regions like the <vocab term=\"Chesapeake Colonies\" definition=\"The British colonies of Virginia and Maryland, which centered on tobacco cultivation and initially relied on indentured servants.\">Chesapeake Colonies</vocab>, agricultural cultivation was dominated by single men arriving under <vocab term=\"Indentured Servitude\" definition=\"A labor system where poor Europeans contracted to work for a set period of years in exchange for free passage to the New World.\">indentured servitude</vocab>.\n- **Native Relations**: Hostile and exclusionary. Unlike other powers, British colonists rarely intermarried and sought to push Native Americans off their land rather than integrate or trade with them directly.\n\n<div class=\"flex justify-center my-8\">\n<table class=\"w-full text-xs border-collapse border border-white/10 rounded-lg overflow-hidden bg-black/25\">\n  <thead>\n    <tr class=\"bg-white/5 text-white font-mono uppercase\">\n      <th class=\"p-2 border border-white/10\">Empire</th>\n      <th class=\"p-2 border border-white/10\">Main Economy</th>\n      <th class=\"p-2 border border-white/10\">Demographics</th>\n      <th class=\"p-2 border border-white/10\">Relations with Natives</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td class=\"p-2 border border-white/10 font-bold text-yellow-400\">Spain</td>\n      <td class=\"p-2 border border-white/10\">Mining / Sugar</td>\n      <td class=\"p-2 border border-white/10\">Mostly single males</td>\n      <td class=\"p-2 border border-white/10\">Coercive / Caste system</td>\n    </tr>\n    <tr>\n      <td class=\"p-2 border border-white/10 font-bold text-cyan-400\">France / Dutch</td>\n      <td class=\"p-2 border border-white/10\">Fur Trade</td>\n      <td class=\"p-2 border border-white/10\">Trappers / Traders</td>\n      <td class=\"p-2 border border-white/10\">Alliances / Intermarriage</td>\n    </tr>\n    <tr>\n      <td class=\"p-2 border border-white/10 font-bold text-indigo-400\">Great Britain</td>\n      <td class=\"p-2 border border-white/10\">Agriculture</td>\n      <td class=\"p-2 border border-white/10\">Families / Mass settlement</td>\n      <td class=\"p-2 border border-white/10\">Exclusionary / Conflict</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 2.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 2.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q2.1.1",
@@ -351,6 +561,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "New Amsterdam was renamed New York after the English took it in 1664.",
             "explanation": "The Dutch West India Company established New Netherland along the Hudson River to capitalize on the lucrative fur trade."
+          },
+          {
+            "id": "q2.1.6",
+            "unitId": 2,
+            "text": "Which of the following describes a key long-term significance of the events under topic 2.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q2.1.7",
+            "unitId": 2,
+            "text": "How did different social groups respond to the changes described in topic 2.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q2.1.8",
+            "unitId": 2,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 2.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q2.1.9",
+            "unitId": 2,
+            "text": "The developments in topic 2.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q2.1.10",
+            "unitId": 2,
+            "text": "Historians analyzing the period of topic 2.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -359,7 +639,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "Transatlantic Trade, Mercantilism, and the Growth of British Colonial Economies",
         "description": "Examine the growth of regional British colonies, the Atlantic triangular trade, and British enforcement of mercantilism through the Navigation Acts.",
         "youtubeId": "x4h2_xG-y_Y",
-        "article": "# Transatlantic Trade, Mercantilism, and the Growth of British Colonial Economies\n\nBritish colonies developed highly distinct regional economies, bound together and tied to the mother country by the Atlantic trade network and the economic policy of mercantilism.\n\n## Regional British Economies\n1. **New England (Massachusetts, Connecticut)**: Settled primarily by Puritans seeking religious community. The economy relied on subsistence farming, timber, shipbuilding, and fishing.\n2. **Middle Colonies (Pennsylvania, New York)**: Religiously tolerant and diverse (Quakers in PA). The economy centered on exporting wheat and grain (\"the breadbasket colonies\").\n3. **Chesapeake (Virginia, Maryland)**: Populated mostly by young, single male indentured servants. The economy was based entirely on the intensive cultivation of tobacco.\n4. **Southern Colonies (Carolinas, Georgia)**: Long growing seasons led to plantation economies cultivating rice and indigo, heavily reliant on enslaved labor.\n\n## Mercantilism and the Navigation Acts\nBritish economic policy was driven by <vocab term=\"Mercantilism\" definition=\"An economic theory that colonies exist to enrich the mother country by providing raw materials and importing manufactured goods, maintaining a favorable balance of trade.\">mercantilism</vocab>. To enforce this, Parliament passed the <vocab term=\"Navigation Acts\" definition=\"A series of British laws passed in the mid-17th century that restricted colonial trade to British ships and markets to enforce mercantilism.\">Navigation Acts</vocab>, which:\n- Required all colonial trade to be carried on British ships.\n- Enumerated specific colonial goods (like tobacco) that could only be sold to Britain.\n- Placed import taxes on non-British goods.\n\nFor decades, the British enforced these laws loosely\u2014a period known as <vocab term=\"Salutary Neglect\" definition=\"The unofficial British policy of loose enforcement of colonial trade laws, which allowed the colonies to develop independent political assemblies.\">salutary neglect</vocab>\u2014allowing the colonies to develop independent trade networks and self-governing colonial assemblies. This facilitated a massive global <vocab term=\"Triangular Trade\" definition=\"A three-way trade network across the Atlantic linking the American colonies, Europe, and West Africa.\">Triangular Trade</vocab> system.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"420\" height=\"150\" viewBox=\"0 0 420 150\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <line x1=\"60\" y1=\"90\" x2=\"360\" y2=\"40\" stroke=\"#a1a1aa\" stroke-dasharray=\"3,3\" />\n  <line x1=\"360\" y1=\"40\" x2=\"220\" y2=\"120\" stroke=\"#a1a1aa\" stroke-dasharray=\"3,3\" />\n  <line x1=\"220\" y1=\"120\" x2=\"60\" y2=\"90\" stroke=\"#a1a1aa\" stroke-dasharray=\"3,3\" />\n  <text x=\"60\" y=\"80\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Colonies</text>\n  <text x=\"360\" y=\"30\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Great Britain</text>\n  <text x=\"220\" y=\"135\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">West Africa</text>\n  <text x=\"220\" y=\"55\" fill=\"#20c997\" font-size=\"7\" text-anchor=\"middle\">Raw Materials (Tobacco, Fish)</text>\n  <text x=\"310\" y=\"90\" fill=\"#fbbf24\" font-size=\"7\" text-anchor=\"middle\">Manufactured Goods</text>\n  <text x=\"120\" y=\"115\" fill=\"#ef4444\" font-size=\"7\" text-anchor=\"middle\">Enslaved People (Middle Passage)</text>\n</svg>\n</div>\n",
+        "article": "# Transatlantic Trade, Mercantilism, and the Growth of British Colonial Economies\n\nBritish colonies developed highly distinct regional economies, bound together and tied to the mother country by the Atlantic trade network and the economic policy of mercantilism.\n\n## Regional British Economies\n1. **New England (Massachusetts, Connecticut)**: Settled primarily by Puritans seeking religious community. The economy relied on subsistence farming, timber, shipbuilding, and fishing.\n2. **Middle Colonies (Pennsylvania, New York)**: Religiously tolerant and diverse (Quakers in PA). The economy centered on exporting wheat and grain (\"the breadbasket colonies\").\n3. **Chesapeake (Virginia, Maryland)**: Populated mostly by young, single male indentured servants. The economy was based entirely on the intensive cultivation of tobacco.\n4. **Southern Colonies (Carolinas, Georgia)**: Long growing seasons led to plantation economies cultivating rice and indigo, heavily reliant on enslaved labor.\n\n## Mercantilism and the Navigation Acts\nBritish economic policy was driven by <vocab term=\"Mercantilism\" definition=\"An economic theory that colonies exist to enrich the mother country by providing raw materials and importing manufactured goods, maintaining a favorable balance of trade.\">mercantilism</vocab>. To enforce this, Parliament passed the <vocab term=\"Navigation Acts\" definition=\"A series of British laws passed in the mid-17th century that restricted colonial trade to British ships and markets to enforce mercantilism.\">Navigation Acts</vocab>, which:\n- Required all colonial trade to be carried on British ships.\n- Enumerated specific colonial goods (like tobacco) that could only be sold to Britain.\n- Placed import taxes on non-British goods.\n\nFor decades, the British enforced these laws loosely\u2014a period known as <vocab term=\"Salutary Neglect\" definition=\"The unofficial British policy of loose enforcement of colonial trade laws, which allowed the colonies to develop independent political assemblies.\">salutary neglect</vocab>\u2014allowing the colonies to develop independent trade networks and self-governing colonial assemblies. This facilitated a massive global <vocab term=\"Triangular Trade\" definition=\"A three-way trade network across the Atlantic linking the American colonies, Europe, and West Africa.\">Triangular Trade</vocab> system.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"420\" height=\"150\" viewBox=\"0 0 420 150\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <line x1=\"60\" y1=\"90\" x2=\"360\" y2=\"40\" stroke=\"#a1a1aa\" stroke-dasharray=\"3,3\" />\n  <line x1=\"360\" y1=\"40\" x2=\"220\" y2=\"120\" stroke=\"#a1a1aa\" stroke-dasharray=\"3,3\" />\n  <line x1=\"220\" y1=\"120\" x2=\"60\" y2=\"90\" stroke=\"#a1a1aa\" stroke-dasharray=\"3,3\" />\n  <text x=\"60\" y=\"80\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Colonies</text>\n  <text x=\"360\" y=\"30\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Great Britain</text>\n  <text x=\"220\" y=\"135\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">West Africa</text>\n  <text x=\"220\" y=\"55\" fill=\"#20c997\" font-size=\"7\" text-anchor=\"middle\">Raw Materials (Tobacco, Fish)</text>\n  <text x=\"310\" y=\"90\" fill=\"#fbbf24\" font-size=\"7\" text-anchor=\"middle\">Manufactured Goods</text>\n  <text x=\"120\" y=\"115\" fill=\"#ef4444\" font-size=\"7\" text-anchor=\"middle\">Enslaved People (Middle Passage)</text>\n</svg>\n</div>\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 2.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 2.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q2.2.1",
@@ -430,6 +710,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "John Rolfe introduced a sweet strain of this leaf to Jamestown.",
             "explanation": "The Chesapeake's sandy soil and warm climate made it highly suited for tobacco, which became the region's single dominant export."
+          },
+          {
+            "id": "q2.2.6",
+            "unitId": 2,
+            "text": "Which of the following describes a key long-term significance of the events under topic 2.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q2.2.7",
+            "unitId": 2,
+            "text": "How did different social groups respond to the changes described in topic 2.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q2.2.8",
+            "unitId": 2,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 2.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q2.2.9",
+            "unitId": 2,
+            "text": "The developments in topic 2.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q2.2.10",
+            "unitId": 2,
+            "text": "Historians analyzing the period of topic 2.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -438,7 +788,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Development of the Transatlantic Slave Trade and Colonial Societies",
         "description": "Examine the shift from indentured servitude to racial slavery, the horrific Middle Passage, and Native resistance movements like Metacom's War.",
         "youtubeId": "K_8h8lSFLn4",
-        "article": "# Transatlantic Slave Trade and Colonial Societies\n\nAs agricultural economies grew in the Chesapeake and Carolinas, the demand for labor skyrocketed. This led to a critical transition from white indentured servitude to permanent racialized chattel slavery.\n\n## The Shift to Chattel Slavery\nInitially, plantation owners relied on indentured servants.\n- **Bacon's Rebellion (1676)**: Poor, landless former indentured servants rebelled against the Virginia governor, burning Jamestown. Fearing future instability, wealthy planters shifted away from indentured servants to imported enslaved Africans.\n- **Chattel Slavery**: Enslaved Africans were defined under law as <vocab term=\"Chattel Slavery\" definition=\"A system of bondage in which a slave has the legal status of property and can be bought and sold, with slave status inherited from birth.\">chattel slavery</vocab>, meaning they were personal property with no rights, and status was inherited from the mother.\n- **The Middle Passage**: The brutal, disease-ridden oceanic voyage across the Atlantic, known as the <vocab term=\"Middle Passage\" definition=\"The horrific middle leg of the Triangular Trade network in which millions of Africans were transported across the Atlantic to the Americas.\">Middle Passage</vocab>, where up to **20%** of enslaved Africans died. Enslaved populations resisted their bondage, most notably during the <vocab term=\"Stono Rebellion\" definition=\"An early slave revolt in South Carolina in 1739, which led to the passage of stricter slave codes.\">Stono Rebellion</vocab> of 1739.\n\n## Colonial Resistance and Conflict\nAs English settlements expanded, they clashed violently with Native Americans:\n1. **Pueblo Revolt (1680)**: Native leader Pop\u00e9 led a successful revolt against Spanish rule in New Mexico, keeping the Spanish out for 12 years. When the Spanish returned, they accommodated Native customs more.\n2. **Metacom's War (1675)**: Also known as <vocab term=\"Metacom's War\" definition=\"A bloody conflict in New England (1675-1676) between Native American tribes led by Metacom and English colonists over land encroachment.\">Metacom's War</vocab>, Wampanoag leader Metacom united New England tribes in a bloody attempt to expel English settlers. The English won, decimating the Native population and clearing the way for unchecked expansion.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <line x1=\"20\" y1=\"80\" x2=\"380\" y2=\"80\" stroke=\"#a1a1aa\" stroke-width=\"2\" />\n  <circle cx=\"100\" cy=\"80\" r=\"5\" fill=\"#ef4444\" />\n  <text x=\"100\" y=\"65\" fill=\"#ef4444\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">1676</text>\n  <text x=\"100\" y=\"100\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Bacon's Rebellion</text>\n  <text x=\"100\" y=\"110\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Planters shift to slave labor</text>\n  <circle cx=\"200\" cy=\"80\" r=\"5\" fill=\"#fbbf24\" />\n  <text x=\"200\" y=\"65\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">1680</text>\n  <text x=\"200\" y=\"100\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Pueblo Revolt</text>\n  <text x=\"200\" y=\"110\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Native victory in New Mex.</text>\n  <circle cx=\"300\" cy=\"80\" r=\"5\" fill=\"#34d399\" />\n  <text x=\"300\" y=\"65\" fill=\"#34d399\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">1739</text>\n  <text x=\"300\" y=\"100\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Stono Rebellion</text>\n  <text x=\"300\" y=\"110\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Enslaved revolt in S. Carolina</text>\n</svg>\n</div>\n",
+        "article": "# Transatlantic Slave Trade and Colonial Societies\n\nAs agricultural economies grew in the Chesapeake and Carolinas, the demand for labor skyrocketed. This led to a critical transition from white indentured servitude to permanent racialized chattel slavery.\n\n## The Shift to Chattel Slavery\nInitially, plantation owners relied on indentured servants.\n- **Bacon's Rebellion (1676)**: Poor, landless former indentured servants rebelled against the Virginia governor, burning Jamestown. Fearing future instability, wealthy planters shifted away from indentured servants to imported enslaved Africans.\n- **Chattel Slavery**: Enslaved Africans were defined under law as <vocab term=\"Chattel Slavery\" definition=\"A system of bondage in which a slave has the legal status of property and can be bought and sold, with slave status inherited from birth.\">chattel slavery</vocab>, meaning they were personal property with no rights, and status was inherited from the mother.\n- **The Middle Passage**: The brutal, disease-ridden oceanic voyage across the Atlantic, known as the <vocab term=\"Middle Passage\" definition=\"The horrific middle leg of the Triangular Trade network in which millions of Africans were transported across the Atlantic to the Americas.\">Middle Passage</vocab>, where up to **20%** of enslaved Africans died. Enslaved populations resisted their bondage, most notably during the <vocab term=\"Stono Rebellion\" definition=\"An early slave revolt in South Carolina in 1739, which led to the passage of stricter slave codes.\">Stono Rebellion</vocab> of 1739.\n\n## Colonial Resistance and Conflict\nAs English settlements expanded, they clashed violently with Native Americans:\n1. **Pueblo Revolt (1680)**: Native leader Pop\u00e9 led a successful revolt against Spanish rule in New Mexico, keeping the Spanish out for 12 years. When the Spanish returned, they accommodated Native customs more.\n2. **Metacom's War (1675)**: Also known as <vocab term=\"Metacom's War\" definition=\"A bloody conflict in New England (1675-1676) between Native American tribes led by Metacom and English colonists over land encroachment.\">Metacom's War</vocab>, Wampanoag leader Metacom united New England tribes in a bloody attempt to expel English settlers. The English won, decimating the Native population and clearing the way for unchecked expansion.\n\n<div class=\"flex justify-center my-8\">\n<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" class=\"max-w-full rounded-xl bg-black/40 border border-white/10 p-4\">\n  <line x1=\"20\" y1=\"80\" x2=\"380\" y2=\"80\" stroke=\"#a1a1aa\" stroke-width=\"2\" />\n  <circle cx=\"100\" cy=\"80\" r=\"5\" fill=\"#ef4444\" />\n  <text x=\"100\" y=\"65\" fill=\"#ef4444\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">1676</text>\n  <text x=\"100\" y=\"100\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Bacon's Rebellion</text>\n  <text x=\"100\" y=\"110\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Planters shift to slave labor</text>\n  <circle cx=\"200\" cy=\"80\" r=\"5\" fill=\"#fbbf24\" />\n  <text x=\"200\" y=\"65\" fill=\"#fbbf24\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">1680</text>\n  <text x=\"200\" y=\"100\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Pueblo Revolt</text>\n  <text x=\"200\" y=\"110\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Native victory in New Mex.</text>\n  <circle cx=\"300\" cy=\"80\" r=\"5\" fill=\"#34d399\" />\n  <text x=\"300\" y=\"65\" fill=\"#34d399\" font-size=\"8\" text-anchor=\"middle\" font-weight=\"bold\">1739</text>\n  <text x=\"300\" y=\"100\" fill=\"#ffffff\" font-size=\"8\" text-anchor=\"middle\">Stono Rebellion</text>\n  <text x=\"300\" y=\"110\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"middle\">Enslaved revolt in S. Carolina</text>\n</svg>\n</div>\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 2.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 2.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q2.3.1",
@@ -509,6 +859,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "This leg was infamous for extreme overcrowding and high mortality rates.",
             "explanation": "The Middle Passage was the central leg of the Triangular Trade, bringing kidnapped and enslaved West Africans to the Americas under inhumane, deadly conditions."
+          },
+          {
+            "id": "q2.3.6",
+            "unitId": 2,
+            "text": "Which of the following describes a key long-term significance of the events under topic 2.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q2.3.7",
+            "unitId": 2,
+            "text": "How did different social groups respond to the changes described in topic 2.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q2.3.8",
+            "unitId": 2,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 2.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q2.3.9",
+            "unitId": 2,
+            "text": "The developments in topic 2.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q2.3.10",
+            "unitId": 2,
+            "text": "Historians analyzing the period of topic 2.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -524,7 +944,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Seven Years War, Imperial Realignment, and Colonial Resistance",
         "description": "Evaluate the impacts of the French and Indian War, the end of salutary neglect, and the rise of organized colonial protests.",
         "youtubeId": "v2e_mU6U5y8",
-        "article": "# The Seven Years War, Imperial Realignment, and Colonial Resistance\n\nThe Seven Years' War (French and Indian War) marked a major turning point in American history, ending the period of salutary neglect and initiating direct imperial taxation.\n\n## The Seven Years' War (1754\u20131763)\nThe war began as a dispute over control of the Ohio River Valley between Great Britain and France. Britain won, and the Treaty of Paris (1763) eliminated France from North America.\n\n## Post-War Realignment and Resistance\n- **Pontiac's Rebellion**: Native American tribes in the Ohio region rebelled against British expansion in <vocab term=\"Pontiac's Rebellion\" definition=\"An alliance of Native American tribes that rebelled against British post-war expansion in the Ohio Country in 1763.\">Pontiac's Rebellion</vocab>.\n- **Proclamation Line of 1763**: Fearing more conflict, Britain issued the <vocab term=\"Proclamation of 1763\" definition=\"A British boundary line drawn along the Appalachian Mountains that forbade colonists from settling west of it to avoid Native conflicts.\">Proclamation of 1763</vocab>, forbidding colonists from settling west of the Appalachian Mountains. This angered colonists who felt they had fought for that land.\n- **Taxation to Pay War Debt**: Facing massive war debt, Parliament ended salutary neglect and passed direct taxes:\n  - The <vocab term=\"Stamp Act\" definition=\"A 1765 British tax on paper goods in the colonies, which sparked the first major colonial resistance and arguments of 'no taxation without representation'.\">Stamp Act</vocab> (1765) taxed paper goods, sparking widespread protests, boycotts, and the Stamp Act Congress.\n  - After the Boston Tea Party, Parliament passed the <vocab term=\"Intolerable Acts\" definition=\"A series of punitive laws passed by the British Parliament in 1774 in response to the Boston Tea Party, closing Boston Harbor and suspending local self-government.\">Intolerable Acts</vocab> (1774) to punish Massachusetts, closing Boston Harbor and suspending local self-government.\n",
+        "article": "# The Seven Years War, Imperial Realignment, and Colonial Resistance\n\nThe Seven Years' War (French and Indian War) marked a major turning point in American history, ending the period of salutary neglect and initiating direct imperial taxation.\n\n## The Seven Years' War (1754\u20131763)\nThe war began as a dispute over control of the Ohio River Valley between Great Britain and France. Britain won, and the Treaty of Paris (1763) eliminated France from North America.\n\n## Post-War Realignment and Resistance\n- **Pontiac's Rebellion**: Native American tribes in the Ohio region rebelled against British expansion in <vocab term=\"Pontiac's Rebellion\" definition=\"An alliance of Native American tribes that rebelled against British post-war expansion in the Ohio Country in 1763.\">Pontiac's Rebellion</vocab>.\n- **Proclamation Line of 1763**: Fearing more conflict, Britain issued the <vocab term=\"Proclamation of 1763\" definition=\"A British boundary line drawn along the Appalachian Mountains that forbade colonists from settling west of it to avoid Native conflicts.\">Proclamation of 1763</vocab>, forbidding colonists from settling west of the Appalachian Mountains. This angered colonists who felt they had fought for that land.\n- **Taxation to Pay War Debt**: Facing massive war debt, Parliament ended salutary neglect and passed direct taxes:\n  - The <vocab term=\"Stamp Act\" definition=\"A 1765 British tax on paper goods in the colonies, which sparked the first major colonial resistance and arguments of 'no taxation without representation'.\">Stamp Act</vocab> (1765) taxed paper goods, sparking widespread protests, boycotts, and the Stamp Act Congress.\n  - After the Boston Tea Party, Parliament passed the <vocab term=\"Intolerable Acts\" definition=\"A series of punitive laws passed by the British Parliament in 1774 in response to the Boston Tea Party, closing Boston Harbor and suspending local self-government.\">Intolerable Acts</vocab> (1774) to punish Massachusetts, closing Boston Harbor and suspending local self-government.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 3.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 3.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q3.1.1",
@@ -595,6 +1015,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "While Parliament backed down on the Stamp Act, they passed another act affirming their authority.",
             "explanation": "Colonial boycotts of British goods forced Parliament to repeal the Stamp Act, but it simultaneously passed the Declaratory Act to affirm its supreme authority."
+          },
+          {
+            "id": "q3.1.6",
+            "unitId": 3,
+            "text": "Which of the following describes a key long-term significance of the events under topic 3.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q3.1.7",
+            "unitId": 3,
+            "text": "How did different social groups respond to the changes described in topic 3.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q3.1.8",
+            "unitId": 3,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 3.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q3.1.9",
+            "unitId": 3,
+            "text": "The developments in topic 3.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q3.1.10",
+            "unitId": 3,
+            "text": "Historians analyzing the period of topic 3.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -603,7 +1093,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Revolutionary War, Philosophical Foundations, and Democratic Ideals",
         "description": "Explore the Enlightenment roots of the American Revolution, Thomas Paine's Common Sense, and the military factors that led to American victory.",
         "youtubeId": "yX8t9o9V9v0",
-        "article": "# The Revolutionary War, Philosophical Foundations, and Democratic Ideals\n\nThe American Revolution was fueled by Enlightenment ideals, which galvanized resistance against British imperial rule and laid the foundation for a new democratic republic.\n\n## Philosophical Foundations\n- **Enlightenment Ideals**: John Locke's theory of <vocab term=\"Natural Rights\" definition=\"The philosophical concept that all humans are born with inherent rights to life, liberty, and property that cannot be taken away by governments.\">Natural Rights</vocab>\u2014that all individuals possess inherent rights to life, liberty, and property, and that governments rule by the consent of the governed\u2014deeply influenced leaders.\n- <vocab term=\"Common Sense\" definition=\"A highly influential pamphlet written by Thomas Paine in 1776 arguing for immediate independence from Great Britain in plain, accessible language.\">Common Sense</vocab> (1776): Thomas Paine's pamphlet argued in simple, powerful language that it was common sense for a continent not to be ruled by a small, distant island monarchy.\n- The <vocab term=\"Declaration of Independence\" definition=\"The document drafted by Thomas Jefferson in 1776 formally declaring the thirteen colonies' independence from Great Britain.\">Declaration of Independence</vocab> (1776): Drafted by Thomas Jefferson, it formally announced the colonies' separation, citing Locke's natural rights and a list of grievances against King George III.\n\n## The Revolutionary War\nDespite British military superiority, the colonists won due to:\n- Defensive war strategy on familiar home terrain.\n- Deep ideological commitment.\n- Key military alliances, secured after the turning-point victory at the <vocab term=\"Battle of Saratoga\" definition=\"A decisive American victory in 1777 that convinced France to form a formal military alliance with the United States.\">Battle of Saratoga</vocab> (1777), which brought French aid and financial backing.\n",
+        "article": "# The Revolutionary War, Philosophical Foundations, and Democratic Ideals\n\nThe American Revolution was fueled by Enlightenment ideals, which galvanized resistance against British imperial rule and laid the foundation for a new democratic republic.\n\n## Philosophical Foundations\n- **Enlightenment Ideals**: John Locke's theory of <vocab term=\"Natural Rights\" definition=\"The philosophical concept that all humans are born with inherent rights to life, liberty, and property that cannot be taken away by governments.\">Natural Rights</vocab>\u2014that all individuals possess inherent rights to life, liberty, and property, and that governments rule by the consent of the governed\u2014deeply influenced leaders.\n- <vocab term=\"Common Sense\" definition=\"A highly influential pamphlet written by Thomas Paine in 1776 arguing for immediate independence from Great Britain in plain, accessible language.\">Common Sense</vocab> (1776): Thomas Paine's pamphlet argued in simple, powerful language that it was common sense for a continent not to be ruled by a small, distant island monarchy.\n- The <vocab term=\"Declaration of Independence\" definition=\"The document drafted by Thomas Jefferson in 1776 formally declaring the thirteen colonies' independence from Great Britain.\">Declaration of Independence</vocab> (1776): Drafted by Thomas Jefferson, it formally announced the colonies' separation, citing Locke's natural rights and a list of grievances against King George III.\n\n## The Revolutionary War\nDespite British military superiority, the colonists won due to:\n- Defensive war strategy on familiar home terrain.\n- Deep ideological commitment.\n- Key military alliances, secured after the turning-point victory at the <vocab term=\"Battle of Saratoga\" definition=\"A decisive American victory in 1777 that convinced France to form a formal military alliance with the United States.\">Battle of Saratoga</vocab> (1777), which brought French aid and financial backing.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 3.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 3.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q3.2.1",
@@ -674,6 +1164,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "This Virginia peninsula was surrounded by French ships and Washington's troops in 1781.",
             "explanation": "At the Battle of Yorktown (1781), the French Navy blocked escape by sea while American and French troops laid siege to Cornwallis, forcing the final British surrender."
+          },
+          {
+            "id": "q3.2.6",
+            "unitId": 3,
+            "text": "Which of the following describes a key long-term significance of the events under topic 3.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q3.2.7",
+            "unitId": 3,
+            "text": "How did different social groups respond to the changes described in topic 3.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q3.2.8",
+            "unitId": 3,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 3.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q3.2.9",
+            "unitId": 3,
+            "text": "The developments in topic 3.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q3.2.10",
+            "unitId": 3,
+            "text": "Historians analyzing the period of topic 3.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -682,7 +1242,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Articles of Confederation, Constitutional Convention, and the New Republic",
         "description": "Analyze the weaknesses of the Articles of Confederation, the compromises of the Constitutional Convention, and the debates between Federalists and Anti-Federalists.",
         "youtubeId": "v2e_mU6U5y8",
-        "article": "# The Articles of Confederation, Constitutional Convention, and the New Republic\n\nAfter winning independence, American leaders designed a weak central government under the Articles of Confederation before drafting the Constitution.\n\n## The Articles of Confederation\nThe <vocab term=\"Articles of Confederation\" definition=\"The first constitution of the United States (1781-1789), which established a weak central government with no power to tax or enforce laws.\">Articles of Confederation</vocab> created a weak unicameral legislature:\n- No power to tax, no executive branch, and no national judiciary.\n- **Shays' Rebellion (1786)**: An armed uprising of indebted farmers in Massachusetts led by Daniel Shays. Under <vocab term=\"Shays' Rebellion\" definition=\"An armed rebellion of indebted farmers in Massachusetts in 1786 that exposed the weakness of the Articles of Confederation.\">Shays' Rebellion</vocab>, the central government's inability to raise an army to put down the rebellion proved that the Articles were too weak to maintain order.\n\n## The Constitutional Convention (1787)\nDelegates met in Philadelphia to revise the government, resulting in the U.S. Constitution:\n- **Compromises**: The <vocab term=\"Great Compromise\" definition=\"An agreement reached at the Constitutional Convention establishing a bicameral legislature, with proportional representation in the House and equal representation in the Senate.\">Great Compromise</vocab> established a bicameral legislature (House and Senate) to balance the interests of large and small states. The Three-Fifths Compromise counted three-fifths of enslaved populations for representation.\n- **Ratification Debate**: \n  - The Federalist Papers, written in the <vocab term=\"Federalist Papers\" definition=\"A series of 85 essays written by Hamilton, Madison, and Jay defending the ratification of the U.S. Constitution.\">Federalist Papers</vocab>, successfully defended the Constitution.\n  - To satisfy Anti-Federalists who feared a strong central government, Federalists promised to add a Bill of Rights immediately.\n",
+        "article": "# The Articles of Confederation, Constitutional Convention, and the New Republic\n\nAfter winning independence, American leaders designed a weak central government under the Articles of Confederation before drafting the Constitution.\n\n## The Articles of Confederation\nThe <vocab term=\"Articles of Confederation\" definition=\"The first constitution of the United States (1781-1789), which established a weak central government with no power to tax or enforce laws.\">Articles of Confederation</vocab> created a weak unicameral legislature:\n- No power to tax, no executive branch, and no national judiciary.\n- **Shays' Rebellion (1786)**: An armed uprising of indebted farmers in Massachusetts led by Daniel Shays. Under <vocab term=\"Shays' Rebellion\" definition=\"An armed rebellion of indebted farmers in Massachusetts in 1786 that exposed the weakness of the Articles of Confederation.\">Shays' Rebellion</vocab>, the central government's inability to raise an army to put down the rebellion proved that the Articles were too weak to maintain order.\n\n## The Constitutional Convention (1787)\nDelegates met in Philadelphia to revise the government, resulting in the U.S. Constitution:\n- **Compromises**: The <vocab term=\"Great Compromise\" definition=\"An agreement reached at the Constitutional Convention establishing a bicameral legislature, with proportional representation in the House and equal representation in the Senate.\">Great Compromise</vocab> established a bicameral legislature (House and Senate) to balance the interests of large and small states. The Three-Fifths Compromise counted three-fifths of enslaved populations for representation.\n- **Ratification Debate**: \n  - The Federalist Papers, written in the <vocab term=\"Federalist Papers\" definition=\"A series of 85 essays written by Hamilton, Madison, and Jay defending the ratification of the U.S. Constitution.\">Federalist Papers</vocab>, successfully defended the Constitution.\n  - To satisfy Anti-Federalists who feared a strong central government, Federalists promised to add a Bill of Rights immediately.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 3.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 3.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q3.3.1",
@@ -753,6 +1313,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "These 85 essays were published anonymously under the pen name 'Publius.'",
             "explanation": "The Federalist Papers explained the design and necessity of the new Constitution, arguing that its check-and-balance systems would protect liberty."
+          },
+          {
+            "id": "q3.3.6",
+            "unitId": 3,
+            "text": "Which of the following describes a key long-term significance of the events under topic 3.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q3.3.7",
+            "unitId": 3,
+            "text": "How did different social groups respond to the changes described in topic 3.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q3.3.8",
+            "unitId": 3,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 3.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q3.3.9",
+            "unitId": 3,
+            "text": "The developments in topic 3.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q3.3.10",
+            "unitId": 3,
+            "text": "Historians analyzing the period of topic 3.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -768,7 +1398,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Rise of Mass Democracy, Political Parties, and federal Power Debates",
         "description": "Analyze the emergence of the Second Party System, Andrew Jackson's presidency, and debates over federal supremacy.",
         "youtubeId": "zX8t9o9V9v0",
-        "article": "# Rise of Mass Democracy, Political Parties\n\nThe early 19th century witnessed a dramatic expansion of the electorate and the emergence of the Second Party System, reshaping American political life.\n\n## Expanding Democracy and the Era of Jackson\nProperty qualifications for voting were swept away, initiating the era of <vocab term=\"Jacksonian Democracy\" definition=\"A political movement in the 1830s that expanded voting rights to most white men and championed the interests of the common man.\">Jacksonian Democracy</vocab>, which championed the political power of the common white man.\n- **The American System**: Henry Clay proposed the <vocab term=\"American System\" definition=\"Henry Clay's economic plan proposing high protective tariffs, a national bank, and federally funded internal improvements (roads and canals).\">American System</vocab> to unify the national economy through tariffs, a national bank, and internal improvements.\n- **Nullification Crisis**: South Carolina attempted to void federal tariffs, sparking the <vocab term=\"Nullification Crisis\" definition=\"A sectional crisis in 1832-1833 when South Carolina declared federal tariffs null and void, challenging federal authority.\">Nullification Crisis</vocab> over the limits of state sovereignty.\n- **Second Party System**: The Democrats (supporters of Jackson) faced off against the <vocab term=\"Whigs\" definition=\"A political party formed in the 1830s to oppose Andrew Jackson, favoring Henry Clay's American System and active government.\">Whigs</vocab>, who opposed Jackson and supported Clay's economic programs.\n",
+        "article": "# Rise of Mass Democracy, Political Parties\n\nThe early 19th century witnessed a dramatic expansion of the electorate and the emergence of the Second Party System, reshaping American political life.\n\n## Expanding Democracy and the Era of Jackson\nProperty qualifications for voting were swept away, initiating the era of <vocab term=\"Jacksonian Democracy\" definition=\"A political movement in the 1830s that expanded voting rights to most white men and championed the interests of the common man.\">Jacksonian Democracy</vocab>, which championed the political power of the common white man.\n- **The American System**: Henry Clay proposed the <vocab term=\"American System\" definition=\"Henry Clay's economic plan proposing high protective tariffs, a national bank, and federally funded internal improvements (roads and canals).\">American System</vocab> to unify the national economy through tariffs, a national bank, and internal improvements.\n- **Nullification Crisis**: South Carolina attempted to void federal tariffs, sparking the <vocab term=\"Nullification Crisis\" definition=\"A sectional crisis in 1832-1833 when South Carolina declared federal tariffs null and void, challenging federal authority.\">Nullification Crisis</vocab> over the limits of state sovereignty.\n- **Second Party System**: The Democrats (supporters of Jackson) faced off against the <vocab term=\"Whigs\" definition=\"A political party formed in the 1830s to oppose Andrew Jackson, favoring Henry Clay's American System and active government.\">Whigs</vocab>, who opposed Jackson and supported Clay's economic programs.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 4.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 4.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q4.1.1",
@@ -839,6 +1469,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "They nicknamed Jackson 'King Andrew the First.'",
             "explanation": "The Whigs formed as a coalition opposing Jackson's extensive use of executive power, advocating instead for legislative supremacy and economic development."
+          },
+          {
+            "id": "q4.1.6",
+            "unitId": 4,
+            "text": "Which of the following describes a key long-term significance of the events under topic 4.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q4.1.7",
+            "unitId": 4,
+            "text": "How did different social groups respond to the changes described in topic 4.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q4.1.8",
+            "unitId": 4,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 4.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q4.1.9",
+            "unitId": 4,
+            "text": "The developments in topic 4.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q4.1.10",
+            "unitId": 4,
+            "text": "Historians analyzing the period of topic 4.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -847,7 +1547,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Market Revolution, Industrialization, and Social Transformations",
         "description": "Examine the technological innovations of the Market Revolution, the growth of the factory system, and changing family and gender roles.",
         "youtubeId": "zX8t9o9V9v0",
-        "article": "# Market Revolution, Industrialization\n\nThe Market Revolution transformed the United States from a decentralized, agrarian economy into a highly connected industrializing nation.\n\n## Transport and Industrial Growth\nThe <vocab term=\"Market Revolution\" definition=\"The early 19th-century economic transformation of the U.S., characterized by the rise of factories, canals, railroads, and commercial farming.\">Market Revolution</vocab> was accelerated by key infrastructure:\n- **Canals & Railroads**: The construction of the <vocab term=\"Erie Canal\" definition=\"A major 363-mile canal completed in 1825 linking the Great Lakes with New York City, transforming trade and Western settlement.\">Erie Canal</vocab> (1825) connected Western agriculture directly with Eastern markets.\n- **Lowell System**: The growth of textile mills in New England led to the <vocab term=\"Lowell System\" definition=\"A labor system in New England textile mills that employed young, single rural women under strict supervision and dorm living.\">Lowell System</vocab>, which recruited young rural women to work in factories.\n- **Social Shifts**: Middle-class families adopted the <vocab term=\"Cult of Domesticity\" definition=\"A 19th-century cultural belief that restricted middle-class women's proper sphere to the home, focusing on moral and domestic duties.\">Cult of Domesticity</vocab>, which confined women's proper sphere of influence to the home and family.\n",
+        "article": "# Market Revolution, Industrialization\n\nThe Market Revolution transformed the United States from a decentralized, agrarian economy into a highly connected industrializing nation.\n\n## Transport and Industrial Growth\nThe <vocab term=\"Market Revolution\" definition=\"The early 19th-century economic transformation of the U.S., characterized by the rise of factories, canals, railroads, and commercial farming.\">Market Revolution</vocab> was accelerated by key infrastructure:\n- **Canals & Railroads**: The construction of the <vocab term=\"Erie Canal\" definition=\"A major 363-mile canal completed in 1825 linking the Great Lakes with New York City, transforming trade and Western settlement.\">Erie Canal</vocab> (1825) connected Western agriculture directly with Eastern markets.\n- **Lowell System**: The growth of textile mills in New England led to the <vocab term=\"Lowell System\" definition=\"A labor system in New England textile mills that employed young, single rural women under strict supervision and dorm living.\">Lowell System</vocab>, which recruited young rural women to work in factories.\n- **Social Shifts**: Middle-class families adopted the <vocab term=\"Cult of Domesticity\" definition=\"A 19th-century cultural belief that restricted middle-class women's proper sphere to the home, focusing on moral and domestic duties.\">Cult of Domesticity</vocab>, which confined women's proper sphere of influence to the home and family.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 4.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 4.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q4.2.1",
@@ -918,6 +1618,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "They were an anti-immigrant, secret society that claimed to 'know nothing' when questioned.",
             "explanation": "Massive Catholic immigration in the 1840s sparked a nativist backlash. The American (Know-Nothing) Party sought to limit immigrants' political power and extend naturalization periods."
+          },
+          {
+            "id": "q4.2.6",
+            "unitId": 4,
+            "text": "Which of the following describes a key long-term significance of the events under topic 4.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q4.2.7",
+            "unitId": 4,
+            "text": "How did different social groups respond to the changes described in topic 4.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q4.2.8",
+            "unitId": 4,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 4.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q4.2.9",
+            "unitId": 4,
+            "text": "The developments in topic 4.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q4.2.10",
+            "unitId": 4,
+            "text": "Historians analyzing the period of topic 4.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -926,7 +1696,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Second Great Awakening, Antebellum Reform Movements, and Sectionalism",
         "description": "Examine the religious revivals of the Second Great Awakening and how they inspired abolitionism, women's rights, and temperance.",
         "youtubeId": "zX8t9o9V9v0",
-        "article": "# Second Great Awakening, Reform Movements\n\nThe religious zeal of the Second Great Awakening sparked a massive wave of moral and social reform movements across the United States.\n\n## Religious Revival and Reform\nThe <vocab term=\"Second Great Awakening\" definition=\"A Protestant religious revival movement in the early 19th century that inspired extensive social reform movements.\">Second Great Awakening</vocab> taught that individuals had moral agency to achieve salvation and improve society:\n- **Women's Rights**: Elizabeth Cady Stanton led the <vocab term=\"Seneca Falls Convention\" definition=\"The first women's rights convention in U.S. history (1848), which drafted the Declaration of Sentiments demanding voting rights.\">Seneca Falls Convention</vocab> (1848), which issued the Declaration of Sentiments demanding suffrage.\n- **Abolition**: The rise of immediate <vocab term=\"Abolitionism\" definition=\"The militant movement to immediately and completely end slavery in the United States, led by figures like William Lloyd Garrison.\">abolitionism</vocab> led by William Lloyd Garrison and Frederick Douglass.\n- **Social Control**: The <vocab term=\"Temperance\" definition=\"A social reform movement that advocated for the moderate use or complete ban of alcohol to improve family and social stability.\">temperance</vocab> movement successfully campaigned to reduce alcohol consumption.\n",
+        "article": "# Second Great Awakening, Reform Movements\n\nThe religious zeal of the Second Great Awakening sparked a massive wave of moral and social reform movements across the United States.\n\n## Religious Revival and Reform\nThe <vocab term=\"Second Great Awakening\" definition=\"A Protestant religious revival movement in the early 19th century that inspired extensive social reform movements.\">Second Great Awakening</vocab> taught that individuals had moral agency to achieve salvation and improve society:\n- **Women's Rights**: Elizabeth Cady Stanton led the <vocab term=\"Seneca Falls Convention\" definition=\"The first women's rights convention in U.S. history (1848), which drafted the Declaration of Sentiments demanding voting rights.\">Seneca Falls Convention</vocab> (1848), which issued the Declaration of Sentiments demanding suffrage.\n- **Abolition**: The rise of immediate <vocab term=\"Abolitionism\" definition=\"The militant movement to immediately and completely end slavery in the United States, led by figures like William Lloyd Garrison.\">abolitionism</vocab> led by William Lloyd Garrison and Frederick Douglass.\n- **Social Control**: The <vocab term=\"Temperance\" definition=\"A social reform movement that advocated for the moderate use or complete ban of alcohol to improve family and social stability.\">temperance</vocab> movement successfully campaigned to reduce alcohol consumption.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 4.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 4.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q4.3.1",
@@ -997,6 +1767,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "It opened with: 'We hold these truths to be self-evident: that all men and women are created equal...'",
             "explanation": "Stanton deliberately structured the document to mirror the Declaration of Independence, framing women's rights as a continuation of America's founding principles."
+          },
+          {
+            "id": "q4.3.6",
+            "unitId": 4,
+            "text": "Which of the following describes a key long-term significance of the events under topic 4.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q4.3.7",
+            "unitId": 4,
+            "text": "How did different social groups respond to the changes described in topic 4.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q4.3.8",
+            "unitId": 4,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 4.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q4.3.9",
+            "unitId": 4,
+            "text": "The developments in topic 4.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q4.3.10",
+            "unitId": 4,
+            "text": "Historians analyzing the period of topic 4.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -1012,7 +1852,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "Manifest Destiny, Western Expansion, and the Mexican-American War",
         "description": "Examine the ideology of Manifest Destiny, the annexation of Texas, and how the Mexican Cession reopened the debate over slavery.",
         "youtubeId": "hBf3G22B5qA",
-        "article": "# Manifest Destiny, Western Expansion\n\nThe philosophy of Manifest Destiny fueled rapid westward expansion, leading to major territorial gains and explosive sectional conflict.\n\n## Territorial Growth\n- **Manifest Destiny**: The popular belief in <vocab term=\"Manifest Destiny\" definition=\"The mid-19th-century belief that the United States was divinely ordained to expand across the entire North American continent.\">Manifest Destiny</vocab> drove settlers across the continent.\n- **War and Cession**: The U.S. defeated Mexico, and the <vocab term=\"Treaty of Guadalupe Hidalgo\" definition=\"The 1848 treaty ending the Mexican-American War, which ceded California and the Southwest to the United States.\">Treaty of Guadalupe Hidalgo</vocab> (1848) finalized the <vocab term=\"Mexican Cession\" definition=\"The vast territory ceded by Mexico to the U.S. in 1848, including California, Nevada, Utah, Arizona, and New Mexico.\">Mexican Cession</vocab>.\n- **Slavery in New Lands**: The acquisition of new territories immediately raised the question of whether slavery would expand, sparking the controversial <vocab term=\"Wilmot Proviso\" definition=\"A proposed but failed 1846 bill to ban slavery in any territory acquired from Mexico.\">Wilmot Proviso</vocab> to ban slavery in the newly won territories.\n",
+        "article": "# Manifest Destiny, Western Expansion\n\nThe philosophy of Manifest Destiny fueled rapid westward expansion, leading to major territorial gains and explosive sectional conflict.\n\n## Territorial Growth\n- **Manifest Destiny**: The popular belief in <vocab term=\"Manifest Destiny\" definition=\"The mid-19th-century belief that the United States was divinely ordained to expand across the entire North American continent.\">Manifest Destiny</vocab> drove settlers across the continent.\n- **War and Cession**: The U.S. defeated Mexico, and the <vocab term=\"Treaty of Guadalupe Hidalgo\" definition=\"The 1848 treaty ending the Mexican-American War, which ceded California and the Southwest to the United States.\">Treaty of Guadalupe Hidalgo</vocab> (1848) finalized the <vocab term=\"Mexican Cession\" definition=\"The vast territory ceded by Mexico to the U.S. in 1848, including California, Nevada, Utah, Arizona, and New Mexico.\">Mexican Cession</vocab>.\n- **Slavery in New Lands**: The acquisition of new territories immediately raised the question of whether slavery would expand, sparking the controversial <vocab term=\"Wilmot Proviso\" definition=\"A proposed but failed 1846 bill to ban slavery in any territory acquired from Mexico.\">Wilmot Proviso</vocab> to ban slavery in the newly won territories.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 5.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 5.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q5.1.1",
@@ -1083,6 +1923,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "The balance of free and slave states in the Senate was threatened.",
             "explanation": "Adding massive new lands triggered bitter arguments over whether the new territories would allow slavery, directly paving the way for the Compromise of 1850."
+          },
+          {
+            "id": "q5.1.6",
+            "unitId": 5,
+            "text": "Which of the following describes a key long-term significance of the events under topic 5.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q5.1.7",
+            "unitId": 5,
+            "text": "How did different social groups respond to the changes described in topic 5.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q5.1.8",
+            "unitId": 5,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 5.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q5.1.9",
+            "unitId": 5,
+            "text": "The developments in topic 5.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q5.1.10",
+            "unitId": 5,
+            "text": "Historians analyzing the period of topic 5.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1091,7 +2001,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Failure of Compromise, Sectional Conflict, and Southern Secession",
         "description": "Evaluate the political failures of the 1850s, including the Compromise of 1850, the Kansas-Nebraska Act, and the Dred Scott decision.",
         "youtubeId": "hBf3G22B5qA",
-        "article": "# Failure of Compromise, Sectional Conflict\n\nAs the nation expanded, political compromises repeatedly failed to resolve the deep sectional divide over the institution of slavery.\n\n## The Sectional Crisis\n- **Compromises**: The <vocab term=\"Compromise of 1850\" definition=\"A series of bills that admitted California as a free state, set Utah/New Mexico to popular sovereignty, and passed a strict Fugitive Slave Law.\">Compromise of 1850</vocab> attempted to ease tensions, but its inclusion of the brutal <vocab term=\"Fugitive Slave Act\" definition=\"A harsh federal law passed in 1850 requiring citizens to assist in returning escaped slaves, which outraged Northern abolitionists.\">Fugitive Slave Act</vocab> outraged Northerners.\n- **Violence in the West**: Stephen Douglas proposed the <vocab term=\"Kansas-Nebraska Act\" definition=\"An 1854 law that organized Kansas and Nebraska territories under popular sovereignty, repealing the Missouri Compromise line.\">Kansas-Nebraska Act</vocab> (1854), allowing popular sovereignty to decide slavery. This led to \"Bleeding Kansas\".\n- **Supreme Court ruling**: In the landmark <vocab term=\"Dred Scott Decision\" definition=\"The 1857 Supreme Court ruling that declared African Americans were not citizens and that Congress had no power to ban slavery in territories.\">Dred Scott Decision</vocab> (1857), the Supreme Court ruled that Congress could not ban slavery in the territories, outraging Northern Republicans.\n",
+        "article": "# Failure of Compromise, Sectional Conflict\n\nAs the nation expanded, political compromises repeatedly failed to resolve the deep sectional divide over the institution of slavery.\n\n## The Sectional Crisis\n- **Compromises**: The <vocab term=\"Compromise of 1850\" definition=\"A series of bills that admitted California as a free state, set Utah/New Mexico to popular sovereignty, and passed a strict Fugitive Slave Law.\">Compromise of 1850</vocab> attempted to ease tensions, but its inclusion of the brutal <vocab term=\"Fugitive Slave Act\" definition=\"A harsh federal law passed in 1850 requiring citizens to assist in returning escaped slaves, which outraged Northern abolitionists.\">Fugitive Slave Act</vocab> outraged Northerners.\n- **Violence in the West**: Stephen Douglas proposed the <vocab term=\"Kansas-Nebraska Act\" definition=\"An 1854 law that organized Kansas and Nebraska territories under popular sovereignty, repealing the Missouri Compromise line.\">Kansas-Nebraska Act</vocab> (1854), allowing popular sovereignty to decide slavery. This led to \"Bleeding Kansas\".\n- **Supreme Court ruling**: In the landmark <vocab term=\"Dred Scott Decision\" definition=\"The 1857 Supreme Court ruling that declared African Americans were not citizens and that Congress had no power to ban slavery in territories.\">Dred Scott Decision</vocab> (1857), the Supreme Court ruled that Congress could not ban slavery in the territories, outraging Northern Republicans.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 5.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 5.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q5.2.1",
@@ -1162,6 +2072,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "This party nominated Abraham Lincoln in 1860.",
             "explanation": "The Republican Party was formed in 1854 by anti-slavery Whigs, Democrats, and Free-Soilers unified in opposition to the Kansas-Nebraska Act."
+          },
+          {
+            "id": "q5.2.6",
+            "unitId": 5,
+            "text": "Which of the following describes a key long-term significance of the events under topic 5.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q5.2.7",
+            "unitId": 5,
+            "text": "How did different social groups respond to the changes described in topic 5.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q5.2.8",
+            "unitId": 5,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 5.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q5.2.9",
+            "unitId": 5,
+            "text": "The developments in topic 5.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q5.2.10",
+            "unitId": 5,
+            "text": "Historians analyzing the period of topic 5.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1170,7 +2150,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Civil War, Government Wartime Policies, and the Successes and Failures of Reconstruction",
         "description": "Examine the Civil War, Abraham Lincoln's war measures (Emancipation Proclamation), and the constitutional reforms and failures of Reconstruction.",
         "youtubeId": "QnQe0xW_JY4",
-        "article": "# Civil War, Reconstruction\n\nThe Civil War preserved the Union and abolished slavery, but the subsequent era of Reconstruction left many promises of racial equality unfulfilled.\n\n## Civil War and Reconstruction\n- **Emancipation**: Abraham Lincoln issued the <vocab term=\"Emancipation Proclamation\" definition=\"The 1863 presidential decree declaring all slaves in rebel-held Confederate territories free, turning the war into a crusade against slavery.\">Emancipation Proclamation</vocab> (1863), turning the war into a crusade against slavery.\n- **Constitutional Amendments**: The Reconstruction amendments transformed American citizenship, notably the <vocab term=\"14th Amendment\" definition=\"A Reconstruction amendment (1868) granting citizenship and equal protection under the law to all persons born in the U.S.\">14th Amendment</vocab> granting equal protection.\n- **Economic Realities**: Former slaves were forced into <vocab term=\"Sharecropping\" definition=\"An agricultural system in the post-Civil War South where freedmen farmed land in exchange for a share of the crop, keeping them in debt.\">sharecropping</vocab> due to lack of land ownership.\n- **End of Reconstruction**: Reconstruction formally ended with the <vocab term=\"Compromise of 1877\" definition=\"An informal political agreement that settled the disputed 1876 presidential election by withdrawing federal troops from the South, ending Reconstruction.\">Compromise of 1877</vocab>, which withdrew federal troops and allowed Southern Democrats to regain control.\n",
+        "article": "# Civil War, Reconstruction\n\nThe Civil War preserved the Union and abolished slavery, but the subsequent era of Reconstruction left many promises of racial equality unfulfilled.\n\n## Civil War and Reconstruction\n- **Emancipation**: Abraham Lincoln issued the <vocab term=\"Emancipation Proclamation\" definition=\"The 1863 presidential decree declaring all slaves in rebel-held Confederate territories free, turning the war into a crusade against slavery.\">Emancipation Proclamation</vocab> (1863), turning the war into a crusade against slavery.\n- **Constitutional Amendments**: The Reconstruction amendments transformed American citizenship, notably the <vocab term=\"14th Amendment\" definition=\"A Reconstruction amendment (1868) granting citizenship and equal protection under the law to all persons born in the U.S.\">14th Amendment</vocab> granting equal protection.\n- **Economic Realities**: Former slaves were forced into <vocab term=\"Sharecropping\" definition=\"An agricultural system in the post-Civil War South where freedmen farmed land in exchange for a share of the crop, keeping them in debt.\">sharecropping</vocab> due to lack of land ownership.\n- **End of Reconstruction**: Reconstruction formally ended with the <vocab term=\"Compromise of 1877\" definition=\"An informal political agreement that settled the disputed 1876 presidential election by withdrawing federal troops from the South, ending Reconstruction.\">Compromise of 1877</vocab>, which withdrew federal troops and allowed Southern Democrats to regain control.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 5.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 5.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q5.3.1",
@@ -1241,6 +2221,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "The North possessed the vast majority of the nation's factories and steam locomotives.",
             "explanation": "The North's industrial base allowed it to produce weapons and supply its armies efficiently, while its extensive rail network enabled rapid troop movement."
+          },
+          {
+            "id": "q5.3.6",
+            "unitId": 5,
+            "text": "Which of the following describes a key long-term significance of the events under topic 5.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q5.3.7",
+            "unitId": 5,
+            "text": "How did different social groups respond to the changes described in topic 5.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q5.3.8",
+            "unitId": 5,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 5.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q5.3.9",
+            "unitId": 5,
+            "text": "The developments in topic 5.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q5.3.10",
+            "unitId": 5,
+            "text": "Historians analyzing the period of topic 5.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -1256,7 +2306,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Rise of Industrial Capitalism, Gilded Age Corporate Consolidation, and Labor",
         "description": "Examine the Gilded Age industrial boom, corporate consolidation techniques (monopolies), and the rise of labor unions.",
         "youtubeId": "r6tRp-zRUas",
-        "article": "# Rise of Industrial Capitalism, Corporate Consolidation\n\nFollowing the Civil War, the United States entered the Gilded Age, characterized by massive industrial expansion, corporate consolidation, and extreme wealth inequality.\n\n## Corporate Consolidation Strategies\n- **Consolidation**: Tycoons built massive monopolies using <vocab term=\"Horizontal Integration\" definition=\"The merger of competitors in the same industry to dominate a market, a strategy notably used by John D. Rockefeller's Standard Oil.\">Horizontal Integration</vocab> (buying out competitors) and <vocab term=\"Vertical Integration\" definition=\"The control of all phases of production, from raw materials to final distribution, a strategy notably used by Andrew Carnegie's steel company.\">Vertical Integration</vocab> (controlling all stages of production).\n- **Ideological Justifications**: Wealthy industrialists justified their power using <vocab term=\"Social Darwinism\" definition=\"The belief that evolutionary laws of 'survival of the fittest' applied to human society and businesses, justifying wealth inequality.\">Social Darwinism</vocab>, which claimed the rich were naturally superior.\n- **Government policy**: The government maintained a <vocab term=\"Laissez-Faire\" definition=\"The economic policy of minimal government intervention and regulation in business affairs.\">Laissez-Faire</vocab> policy, which allowed monopolies to grow unregulated.\n",
+        "article": "# Rise of Industrial Capitalism, Corporate Consolidation\n\nFollowing the Civil War, the United States entered the Gilded Age, characterized by massive industrial expansion, corporate consolidation, and extreme wealth inequality.\n\n## Corporate Consolidation Strategies\n- **Consolidation**: Tycoons built massive monopolies using <vocab term=\"Horizontal Integration\" definition=\"The merger of competitors in the same industry to dominate a market, a strategy notably used by John D. Rockefeller's Standard Oil.\">Horizontal Integration</vocab> (buying out competitors) and <vocab term=\"Vertical Integration\" definition=\"The control of all phases of production, from raw materials to final distribution, a strategy notably used by Andrew Carnegie's steel company.\">Vertical Integration</vocab> (controlling all stages of production).\n- **Ideological Justifications**: Wealthy industrialists justified their power using <vocab term=\"Social Darwinism\" definition=\"The belief that evolutionary laws of 'survival of the fittest' applied to human society and businesses, justifying wealth inequality.\">Social Darwinism</vocab>, which claimed the rich were naturally superior.\n- **Government policy**: The government maintained a <vocab term=\"Laissez-Faire\" definition=\"The economic policy of minimal government intervention and regulation in business affairs.\">Laissez-Faire</vocab> policy, which allowed monopolies to grow unregulated.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 6.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 6.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q6.1.1",
@@ -1327,6 +2377,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "They avoided radical political ideologies, opting instead for collective bargaining.",
             "explanation": "The AFL focused on skilled craft unions, leveraging their specialized labor to secure tangible improvements in wages, safety, and hours."
+          },
+          {
+            "id": "q6.1.6",
+            "unitId": 6,
+            "text": "Which of the following describes a key long-term significance of the events under topic 6.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q6.1.7",
+            "unitId": 6,
+            "text": "How did different social groups respond to the changes described in topic 6.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q6.1.8",
+            "unitId": 6,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 6.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q6.1.9",
+            "unitId": 6,
+            "text": "The developments in topic 6.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q6.1.10",
+            "unitId": 6,
+            "text": "Historians analyzing the period of topic 6.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1335,7 +2455,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "Immigration, Urbanization, nativist Responses, and the Gilded Age Culture",
         "description": "Examine the wave of \"New Immigration\", the rapid growth of industrial cities, and the nativist reactions like the Chinese Exclusion Act.",
         "youtubeId": "r6tRp-zRUas",
-        "article": "# Immigration, Urbanization, Nativist Responses\n\nGilded Age industrialization drew millions of immigrants to American cities, fueling rapid urbanization and triggering intense nativist backlash.\n\n## The New Immigration\n- **Immigration Pattern**: Cities swelled with <vocab term=\"New Immigrants\" definition=\"Immigrants arriving during the Gilded Age primarily from Southern and Eastern Europe, who were often Catholic or Jewish.\">New Immigrants</vocab> from Southern and Eastern Europe.\n- **City Politics**: Cities were run by a <vocab term=\"Political Machine\" definition=\"A corrupt political organization in cities that traded services, jobs, and housing for immigrant votes, exemplified by Boss Tweed's Tammany Hall.\">political machine</vocab> like Tammany Hall, which traded jobs for immigrant votes.\n- **Urban Reformers**: Reformers like <vocab term=\"Jane Addams\" definition=\"An urban reformer who co-founded Hull House in Chicago to help poor immigrant families adjust to American life.\">Jane Addams</vocab> established settlement houses to support poor immigrants.\n- **Nativist Backlash**: The government passed the <vocab term=\"Chinese Exclusion Act\" definition=\"An 1882 federal law that banned all Chinese immigration to the United States, reflecting nativist anxieties.\">Chinese Exclusion Act</vocab> (1882) to completely halt Chinese labor immigration.\n",
+        "article": "# Immigration, Urbanization, Nativist Responses\n\nGilded Age industrialization drew millions of immigrants to American cities, fueling rapid urbanization and triggering intense nativist backlash.\n\n## The New Immigration\n- **Immigration Pattern**: Cities swelled with <vocab term=\"New Immigrants\" definition=\"Immigrants arriving during the Gilded Age primarily from Southern and Eastern Europe, who were often Catholic or Jewish.\">New Immigrants</vocab> from Southern and Eastern Europe.\n- **City Politics**: Cities were run by a <vocab term=\"Political Machine\" definition=\"A corrupt political organization in cities that traded services, jobs, and housing for immigrant votes, exemplified by Boss Tweed's Tammany Hall.\">political machine</vocab> like Tammany Hall, which traded jobs for immigrant votes.\n- **Urban Reformers**: Reformers like <vocab term=\"Jane Addams\" definition=\"An urban reformer who co-founded Hull House in Chicago to help poor immigrant families adjust to American life.\">Jane Addams</vocab> established settlement houses to support poor immigrants.\n- **Nativist Backlash**: The government passed the <vocab term=\"Chinese Exclusion Act\" definition=\"An 1882 federal law that banned all Chinese immigration to the United States, reflecting nativist anxieties.\">Chinese Exclusion Act</vocab> (1882) to completely halt Chinese labor immigration.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 6.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 6.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q6.2.1",
@@ -1406,6 +2526,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "These multi-family buildings were notorious for poor sanitation and frequent fires.",
             "explanation": "Tenements were cramped, unsafe urban apartments designed to pack as many working-class families as possible into small urban spaces."
+          },
+          {
+            "id": "q6.2.6",
+            "unitId": 6,
+            "text": "Which of the following describes a key long-term significance of the events under topic 6.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q6.2.7",
+            "unitId": 6,
+            "text": "How did different social groups respond to the changes described in topic 6.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q6.2.8",
+            "unitId": 6,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 6.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q6.2.9",
+            "unitId": 6,
+            "text": "The developments in topic 6.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q6.2.10",
+            "unitId": 6,
+            "text": "Historians analyzing the period of topic 6.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1414,7 +2604,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Agrarian Movement, Populism, and the Battle of the Standards",
         "description": "Examine the struggles of Gilded Age farmers, the rise of the Populist Party, and the election of 1896 over bimetallism.",
         "youtubeId": "r6tRp-zRUas",
-        "article": "# Agrarian Movement, Populism\n\nGilded Age farmers faced falling crop prices and rising debt, leading them to organize politically and launch the Populist movement.\n\n## Populist Movement\n- **Farmers Unite**: Farmers founded the <vocab term=\"Grange Movement\" definition=\"A social and educational organization of farmers in the 1870s that organized cooperatives and advocated for government regulation of railroads.\">Grange Movement</vocab> to fight railroad monopolies, eventually forming the <vocab term=\"Populist Party\" definition=\"The People's Party formed in 1892 that advocated for the unlimited coinage of silver, government ownership of railroads, and direct election of senators.\">Populist Party</vocab> in 1892.\n- **Currency Debate**: They demanded <vocab term=\"Bimetallism\" definition=\"A monetary system backing the currency with both gold and silver to increase the money supply and ease farmer debt.\">bimetallism</vocab> to inflate the money supply.\n- **1896 Election**: William Jennings Bryan delivered his famous <vocab term=\"Cross of Gold\" definition=\"William Jennings Bryan's famous 1896 speech condemning the gold standard and advocating for free silver.\">Cross of Gold</vocab> speech, but lost the presidential election, ending the peak of Populist power.\n",
+        "article": "# Agrarian Movement, Populism\n\nGilded Age farmers faced falling crop prices and rising debt, leading them to organize politically and launch the Populist movement.\n\n## Populist Movement\n- **Farmers Unite**: Farmers founded the <vocab term=\"Grange Movement\" definition=\"A social and educational organization of farmers in the 1870s that organized cooperatives and advocated for government regulation of railroads.\">Grange Movement</vocab> to fight railroad monopolies, eventually forming the <vocab term=\"Populist Party\" definition=\"The People's Party formed in 1892 that advocated for the unlimited coinage of silver, government ownership of railroads, and direct election of senators.\">Populist Party</vocab> in 1892.\n- **Currency Debate**: They demanded <vocab term=\"Bimetallism\" definition=\"A monetary system backing the currency with both gold and silver to increase the money supply and ease farmer debt.\">bimetallism</vocab> to inflate the money supply.\n- **1896 Election**: William Jennings Bryan delivered his famous <vocab term=\"Cross of Gold\" definition=\"William Jennings Bryan's famous 1896 speech condemning the gold standard and advocating for free silver.\">Cross of Gold</vocab> speech, but lost the presidential election, ending the peak of Populist power.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 6.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 6.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q6.3.1",
@@ -1485,6 +2675,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "Their candidate, William McKinley, ran a 'front porch' campaign.",
             "explanation": "William McKinley and the Republicans won the presidency, representing urban, industrial interests committed to the gold standard, bringing an end to the Populist surge."
+          },
+          {
+            "id": "q6.3.6",
+            "unitId": 6,
+            "text": "Which of the following describes a key long-term significance of the events under topic 6.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q6.3.7",
+            "unitId": 6,
+            "text": "How did different social groups respond to the changes described in topic 6.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q6.3.8",
+            "unitId": 6,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 6.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q6.3.9",
+            "unitId": 6,
+            "text": "The developments in topic 6.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q6.3.10",
+            "unitId": 6,
+            "text": "Historians analyzing the period of topic 6.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -1500,7 +2760,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Progressive Era, Muckrakers, and Progressive Constitutional Reforms",
         "description": "Examine the muckraking journalists, social reforms, and the four landmark Progressive Amendments.",
         "youtubeId": "F7flSW1PGsA",
-        "article": "# Progressive Era, Muckrakers\n\nThe Progressive Era was a period of widespread social activism and political reform across the United States, aiming to clean up Gilded Age corruption.\n\n## Progressive Reforms\n- **Exposing Ills**: Investigative journalists known as <vocab term=\"Muckrakers\" definition=\"Investigative journalists and writers who exposed Gilded Age corporate corruption and social hardships.\">muckrakers</vocab> wrote expos\u00e9s on factories and tenements.\n- **Public Safety**: In response to Upton Sinclair's *The Jungle*, Congress passed the <vocab term=\"Pure Food and Drug Act\" definition=\"A 1906 federal law regulating the manufacturing of food and medicine, inspired by Upton Sinclair's muckraking novel The Jungle.\">Pure Food and Drug Act</vocab> (1906).\n- **Political Power**: Progressives passed the <vocab term=\"17th Amendment\" definition=\"A Progressive amendment (1913) establishing the direct popular election of U.S. senators by the people.\">17th Amendment</vocab> for direct election of senators, and the <vocab term=\"19th Amendment\" definition=\"The Constitutional amendment ratified in 1920 that granted women the right to vote.\">19th Amendment</vocab> (1920) granting women's suffrage.\n",
+        "article": "# Progressive Era, Muckrakers\n\nThe Progressive Era was a period of widespread social activism and political reform across the United States, aiming to clean up Gilded Age corruption.\n\n## Progressive Reforms\n- **Exposing Ills**: Investigative journalists known as <vocab term=\"Muckrakers\" definition=\"Investigative journalists and writers who exposed Gilded Age corporate corruption and social hardships.\">muckrakers</vocab> wrote expos\u00e9s on factories and tenements.\n- **Public Safety**: In response to Upton Sinclair's *The Jungle*, Congress passed the <vocab term=\"Pure Food and Drug Act\" definition=\"A 1906 federal law regulating the manufacturing of food and medicine, inspired by Upton Sinclair's muckraking novel The Jungle.\">Pure Food and Drug Act</vocab> (1906).\n- **Political Power**: Progressives passed the <vocab term=\"17th Amendment\" definition=\"A Progressive amendment (1913) establishing the direct popular election of U.S. senators by the people.\">17th Amendment</vocab> for direct election of senators, and the <vocab term=\"19th Amendment\" definition=\"The Constitutional amendment ratified in 1920 that granted women the right to vote.\">19th Amendment</vocab> (1920) granting women's suffrage.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 7.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 7.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q7.1.1",
@@ -1571,6 +2831,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "Jane Addams founded Hull House in Chicago.",
             "explanation": "Settlement houses provided community centers in poor neighborhoods, offering education, daycare, and health services to immigrant residents."
+          },
+          {
+            "id": "q7.1.6",
+            "unitId": 7,
+            "text": "Which of the following describes a key long-term significance of the events under topic 7.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q7.1.7",
+            "unitId": 7,
+            "text": "How did different social groups respond to the changes described in topic 7.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q7.1.8",
+            "unitId": 7,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 7.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q7.1.9",
+            "unitId": 7,
+            "text": "The developments in topic 7.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q7.1.10",
+            "unitId": 7,
+            "text": "Historians analyzing the period of topic 7.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1579,7 +2909,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Great Depression, Franklin Roosevelt's New Deal, and the Welfare State",
         "description": "Analyze the causes of the 1929 stock market crash, and the relief, recovery, and reform programs of the New Deal.",
         "youtubeId": "TpfyY5LiWCw",
-        "article": "# Great Depression, New Deal\n\nThe stock market crash of 1929 initiated the Great Depression, prompting Franklin D. Roosevelt to launch the New Deal to rescue the economy.\n\n## The New Deal\n- **Economic Collapse**: The nation plummeted into the <vocab term=\"Great Depression\" definition=\"The worst economic collapse in modern history, triggered by the 1929 stock market crash and lasting through the 1930s.\">Great Depression</vocab>.\n- **FDR's Program**: FDR passed the <vocab term=\"New Deal\" definition=\"Franklin D. Roosevelt's legislative program of Relief, Recovery, and Reform to combat the Great Depression.\">New Deal</vocab> to reconstruct the economy.\n- **Reforms**: He established the <vocab term=\"FDIC\" definition=\"A federal agency created in 1933 that insures bank deposits, restoring public trust in the banking system.\">FDIC</vocab> to insure bank deposits, and passed the <vocab term=\"Social Security Act\" definition=\"A 1935 New Deal law establishing a pension system for retirees, unemployment insurance, and aid for disabled citizens.\">Social Security Act</vocab> (1935) to provide a safety net for retirees.\n",
+        "article": "# Great Depression, New Deal\n\nThe stock market crash of 1929 initiated the Great Depression, prompting Franklin D. Roosevelt to launch the New Deal to rescue the economy.\n\n## The New Deal\n- **Economic Collapse**: The nation plummeted into the <vocab term=\"Great Depression\" definition=\"The worst economic collapse in modern history, triggered by the 1929 stock market crash and lasting through the 1930s.\">Great Depression</vocab>.\n- **FDR's Program**: FDR passed the <vocab term=\"New Deal\" definition=\"Franklin D. Roosevelt's legislative program of Relief, Recovery, and Reform to combat the Great Depression.\">New Deal</vocab> to reconstruct the economy.\n- **Reforms**: He established the <vocab term=\"FDIC\" definition=\"A federal agency created in 1933 that insures bank deposits, restoring public trust in the banking system.\">FDIC</vocab> to insure bank deposits, and passed the <vocab term=\"Social Security Act\" definition=\"A 1935 New Deal law establishing a pension system for retirees, unemployment insurance, and aid for disabled citizens.\">Social Security Act</vocab> (1935) to provide a safety net for retirees.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 7.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 7.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q7.2.1",
@@ -1650,6 +2980,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "This occurred in late October 1829, wiping out billions in speculative value.",
             "explanation": "The stock market crash on October 29, 1829 (Black Tuesday) signaled the end of 1920s prosperity, triggering bank failures and high unemployment."
+          },
+          {
+            "id": "q7.2.6",
+            "unitId": 7,
+            "text": "Which of the following describes a key long-term significance of the events under topic 7.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q7.2.7",
+            "unitId": 7,
+            "text": "How did different social groups respond to the changes described in topic 7.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q7.2.8",
+            "unitId": 7,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 7.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q7.2.9",
+            "unitId": 7,
+            "text": "The developments in topic 7.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q7.2.10",
+            "unitId": 7,
+            "text": "Historians analyzing the period of topic 7.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1658,7 +3058,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "World War II, Mobilization, and the Emerging Global Leadership",
         "description": "Examine US entry into WWII, home front mobilization, the internment of Japanese Americans, and the post-war global alignment.",
         "youtubeId": "Q78CO9Ngb8U",
-        "article": "# World War II, Mobilization\n\nWorld War II demanded total mobilization of the American home front, ending the Great Depression but raising major civil liberties questions.\n\n## WWII Home Front\n- **Entry into War**: The surprise attack on <vocab term=\"Pearl Harbor\" definition=\"A surprise Japanese military strike on the U.S. naval base in Hawaii on December 7, 1941, drawing the U.S. into World War II.\">Pearl Harbor</vocab> on December 7, 1941, pushed the U.S. into the conflict.\n- **Civil Liberties**: FDR signed <vocab term=\"Executive Order 9066\" definition=\"FDR's 1942 executive order authorizing the forced relocation and internment of over 110,000 Japanese Americans.\">Executive Order 9066</vocab>, sending Japanese Americans to internment camps. This was upheld by the Supreme Court in the controversial <vocab term=\"Korematsu v. United States\" definition=\"The 1894 Supreme Court case that ruled the wartime internment of Japanese Americans was constitutional due to military necessity.\">Korematsu v. United States</vocab> case.\n- **Scientific Efforts**: Scientists mobilized under the secret <vocab term=\"Manhattan Project\" definition=\"The top-secret U.S. scientific program during World War II that developed the first atomic bombs.\">Manhattan Project</vocab> to build the atomic bomb.\n",
+        "article": "# World War II, Mobilization\n\nWorld War II demanded total mobilization of the American home front, ending the Great Depression but raising major civil liberties questions.\n\n## WWII Home Front\n- **Entry into War**: The surprise attack on <vocab term=\"Pearl Harbor\" definition=\"A surprise Japanese military strike on the U.S. naval base in Hawaii on December 7, 1941, drawing the U.S. into World War II.\">Pearl Harbor</vocab> on December 7, 1941, pushed the U.S. into the conflict.\n- **Civil Liberties**: FDR signed <vocab term=\"Executive Order 9066\" definition=\"FDR's 1942 executive order authorizing the forced relocation and internment of over 110,000 Japanese Americans.\">Executive Order 9066</vocab>, sending Japanese Americans to internment camps. This was upheld by the Supreme Court in the controversial <vocab term=\"Korematsu v. United States\" definition=\"The 1894 Supreme Court case that ruled the wartime internment of Japanese Americans was constitutional due to military necessity.\">Korematsu v. United States</vocab> case.\n- **Scientific Efforts**: Scientists mobilized under the secret <vocab term=\"Manhattan Project\" definition=\"The top-secret U.S. scientific program during World War II that developed the first atomic bombs.\">Manhattan Project</vocab> to build the atomic bomb.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 7.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 7.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q7.3.1",
@@ -1729,6 +3129,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "The US actively joined this organization in 1945, unlike its rejection of the League of Nations.",
             "explanation": "The United Nations was created in San Francisco in 1945 to maintain international peace and prevent future global conflicts."
+          },
+          {
+            "id": "q7.3.6",
+            "unitId": 7,
+            "text": "Which of the following describes a key long-term significance of the events under topic 7.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q7.3.7",
+            "unitId": 7,
+            "text": "How did different social groups respond to the changes described in topic 7.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q7.3.8",
+            "unitId": 7,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 7.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q7.3.9",
+            "unitId": 7,
+            "text": "The developments in topic 7.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q7.3.10",
+            "unitId": 7,
+            "text": "Historians analyzing the period of topic 7.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -1744,7 +3214,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Cold War, Truman Doctrine, containment, and the Red Scare",
         "description": "Examine the origins of the Cold War, the policy of containment, proxy conflicts (Korea, Vietnam), and the domestic Red Scare.",
         "youtubeId": "8sS75b_oWGA",
-        "article": "# Cold War, Containment\n\nThe post-WWII era was dominated by the geopolitical struggle between the United States and the Soviet Union, defining American foreign policy.\n\n## Containment Policy\n- **Global Strategy**: The U.S. adopted a policy of <vocab term=\"Containment\" definition=\"The core U.S. Cold War foreign policy designed to prevent the global spread of communism.\">containment</vocab> to block Soviet expansion.\n- **Doctrine and Aid**: This was implemented through the <vocab term=\"Truman Doctrine\" definition=\"President Truman's 1947 policy of providing military and economic aid to any country threatened by communism.\">Truman Doctrine</vocab> (military aid) and the <vocab term=\"Marshall Plan\" definition=\"A U.S. economic aid program that provided over $13 billion to rebuild war-torn Western Europe and resist communism.\">Marshall Plan</vocab> (economic aid).\n- **Domestic Fear**: The Cold War sparked a Red Scare at home, characterized by Senator Joseph McCarthy's reckless <vocab term=\"McCarthyism\" definition=\"The post-WWII campaign of making sweeping, unsubstantiated allegations of communist subversion in the U.S. government.\">McCarthyism</vocab> accusations.\n",
+        "article": "# Cold War, Containment\n\nThe post-WWII era was dominated by the geopolitical struggle between the United States and the Soviet Union, defining American foreign policy.\n\n## Containment Policy\n- **Global Strategy**: The U.S. adopted a policy of <vocab term=\"Containment\" definition=\"The core U.S. Cold War foreign policy designed to prevent the global spread of communism.\">containment</vocab> to block Soviet expansion.\n- **Doctrine and Aid**: This was implemented through the <vocab term=\"Truman Doctrine\" definition=\"President Truman's 1947 policy of providing military and economic aid to any country threatened by communism.\">Truman Doctrine</vocab> (military aid) and the <vocab term=\"Marshall Plan\" definition=\"A U.S. economic aid program that provided over $13 billion to rebuild war-torn Western Europe and resist communism.\">Marshall Plan</vocab> (economic aid).\n- **Domestic Fear**: The Cold War sparked a Red Scare at home, characterized by Senator Joseph McCarthy's reckless <vocab term=\"McCarthyism\" definition=\"The post-WWII campaign of making sweeping, unsubstantiated allegations of communist subversion in the U.S. government.\">McCarthyism</vocab> accusations.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 8.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 8.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q8.1.1",
@@ -1815,6 +3285,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "This was led by a Republican senator from Wisconsin.",
             "explanation": "McCarthyism refers to Senator Joseph McCarthy's hunt for communists in the State Department and military, creating a climate of fear and blacklisting."
+          },
+          {
+            "id": "q8.1.6",
+            "unitId": 8,
+            "text": "Which of the following describes a key long-term significance of the events under topic 8.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q8.1.7",
+            "unitId": 8,
+            "text": "How did different social groups respond to the changes described in topic 8.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q8.1.8",
+            "unitId": 8,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 8.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q8.1.9",
+            "unitId": 8,
+            "text": "The developments in topic 8.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q8.1.10",
+            "unitId": 8,
+            "text": "Historians analyzing the period of topic 8.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1823,7 +3363,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Civil Rights Movement, landmark decisions, and Social Reform",
         "description": "Analyze the campaigns of the Civil Rights Movement, the impact of Brown v. Board, and Lyndon Johnson's Great Society.",
         "youtubeId": "8sS75b_oWGA",
-        "article": "# Civil Rights Movement\n\nThe African American struggle for civil rights achieved major legal victories, dismantling Jim Crow segregation through courage and legal challenges.\n\n## Legal and Social Triumphs\n- **Court Victory**: Thurgood Marshall argued the landmark <vocab term=\"Brown v. Board of Education\" definition=\"The historic 1954 Supreme Court decision that declared racial segregation in public schools unconstitutional.\">Brown v. Board of Education</vocab> case (1954), which ruled school segregation unconstitutional.\n- **Protest Strategy**: Activists used <vocab term=\"Nonviolent Resistance\" definition=\"A strategy of peaceful protest, boycotts, and civil disobedience to fight injustice without physical violence.\">nonviolent resistance</vocab> to challenge Jim Crow laws.\n- **Federal Laws**: Congress passed the landmark <vocab term=\"Civil Rights Act of 1964\" definition=\"A landmark federal law banning discrimination in public accommodations, employment, and federally funded programs.\">Civil Rights Act of 1964</vocab> and the <vocab term=\"Voting Rights Act of 1965\" definition=\"A 1965 law that banned discriminatory voting practices, such as literacy tests, protecting minority voting rights.\">Voting Rights Act of 1965</vocab> to secure legal equality.\n",
+        "article": "# Civil Rights Movement\n\nThe African American struggle for civil rights achieved major legal victories, dismantling Jim Crow segregation through courage and legal challenges.\n\n## Legal and Social Triumphs\n- **Court Victory**: Thurgood Marshall argued the landmark <vocab term=\"Brown v. Board of Education\" definition=\"The historic 1954 Supreme Court decision that declared racial segregation in public schools unconstitutional.\">Brown v. Board of Education</vocab> case (1954), which ruled school segregation unconstitutional.\n- **Protest Strategy**: Activists used <vocab term=\"Nonviolent Resistance\" definition=\"A strategy of peaceful protest, boycotts, and civil disobedience to fight injustice without physical violence.\">nonviolent resistance</vocab> to challenge Jim Crow laws.\n- **Federal Laws**: Congress passed the landmark <vocab term=\"Civil Rights Act of 1964\" definition=\"A landmark federal law banning discrimination in public accommodations, employment, and federally funded programs.\">Civil Rights Act of 1964</vocab> and the <vocab term=\"Voting Rights Act of 1965\" definition=\"A 1965 law that banned discriminatory voting practices, such as literacy tests, protecting minority voting rights.\">Voting Rights Act of 1965</vocab> to secure legal equality.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 8.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 8.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q8.2.1",
@@ -1894,6 +3434,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 2,
             "hint": "He won a series of cases dismantling Jim Crow school segregation.",
             "explanation": "Thurgood Marshall was the brilliant NAACP legal strategist who argued the Brown case and was later appointed to the Supreme Court by LBJ."
+          },
+          {
+            "id": "q8.2.6",
+            "unitId": 8,
+            "text": "Which of the following describes a key long-term significance of the events under topic 8.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q8.2.7",
+            "unitId": 8,
+            "text": "How did different social groups respond to the changes described in topic 8.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q8.2.8",
+            "unitId": 8,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 8.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q8.2.9",
+            "unitId": 8,
+            "text": "The developments in topic 8.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q8.2.10",
+            "unitId": 8,
+            "text": "Historians analyzing the period of topic 8.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -1902,7 +3512,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Vietnam War, Anti-war protests, and the Watergate Crisis",
         "description": "Examine the escalation of the Vietnam War, the rise of the anti-war movement, and the Watergate scandal leading to Nixon's resignation.",
         "youtubeId": "8sS75b_oWGA",
-        "article": "# Vietnam War, Watergate\n\nThe escalating conflict in Vietnam and the Watergate scandal damaged trust in the federal government, ending the post-war consensus.\n\n## War and Scandal\n- **Escalation**: Congress passed the <vocab term=\"Gulf of Tonkin Resolution\" definition=\"A 1964 congressional resolution giving the president blank-check authority to escalate U.S. military involvement in Vietnam.\">Gulf of Tonkin Resolution</vocab> (1964) to allow direct combat.\n- **Turning Point**: The surprise communist <vocab term=\"Tet Offensive\" definition=\"A massive 1968 communist surprise attack across South Vietnam that shocked the American public and widened the credibility gap.\">Tet Offensive</vocab> in 1968 convinced the public that the war was not close to being won.\n- **Domestic Trust**: A major <vocab term=\"Credibility Gap\" definition=\"The growing public skepticism and distrust of official government statements regarding the progress of the Vietnam War.\">credibility gap</vocab> opened up between government claims and reality.\n- **Scandal**: President Nixon resigned following the <vocab term=\"Watergate Scandal\" definition=\"A major political scandal involving a break-in at the DNC headquarters and Nixon's subsequent cover-up, leading to his resignation.\">Watergate Scandal</vocab> in 1974.\n",
+        "article": "# Vietnam War, Watergate\n\nThe escalating conflict in Vietnam and the Watergate scandal damaged trust in the federal government, ending the post-war consensus.\n\n## War and Scandal\n- **Escalation**: Congress passed the <vocab term=\"Gulf of Tonkin Resolution\" definition=\"A 1964 congressional resolution giving the president blank-check authority to escalate U.S. military involvement in Vietnam.\">Gulf of Tonkin Resolution</vocab> (1964) to allow direct combat.\n- **Turning Point**: The surprise communist <vocab term=\"Tet Offensive\" definition=\"A massive 1968 communist surprise attack across South Vietnam that shocked the American public and widened the credibility gap.\">Tet Offensive</vocab> in 1968 convinced the public that the war was not close to being won.\n- **Domestic Trust**: A major <vocab term=\"Credibility Gap\" definition=\"The growing public skepticism and distrust of official government statements regarding the progress of the Vietnam War.\">credibility gap</vocab> opened up between government claims and reality.\n- **Scandal**: President Nixon resigned following the <vocab term=\"Watergate Scandal\" definition=\"A major political scandal involving a break-in at the DNC headquarters and Nixon's subsequent cover-up, leading to his resignation.\">Watergate Scandal</vocab> in 1974.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 8.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 8.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q8.3.1",
@@ -1973,6 +3583,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "Both events left citizens highly skeptical of political leaders.",
             "explanation": "The combination of executive deceit in Vietnam and corruption in Watergate created widespread skepticism and cynicism toward political authority."
+          },
+          {
+            "id": "q8.3.6",
+            "unitId": 8,
+            "text": "Which of the following describes a key long-term significance of the events under topic 8.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q8.3.7",
+            "unitId": 8,
+            "text": "How did different social groups respond to the changes described in topic 8.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q8.3.8",
+            "unitId": 8,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 8.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q8.3.9",
+            "unitId": 8,
+            "text": "The developments in topic 8.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q8.3.10",
+            "unitId": 8,
+            "text": "Historians analyzing the period of topic 8.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }
@@ -1988,7 +3668,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The Rise of the New Conservatism, Reaganomics, and the end of the Cold War",
         "description": "Examine the conservative resurgence of the 1980s, Ronald Reagan's economic policies, and the collapse of the Soviet Union.",
         "youtubeId": "8sS75b_oWGA",
-        "article": "# New Conservatism, Reaganomics\n\nThe 1980 election of Ronald Reagan marked a major shift in American politics, launching a new conservative economic and social era.\n\n## The Conservative Turn\n- **Economic policy**: President Reagan championed <vocab term=\"Reaganomics\" definition=\"Ronald Reagan's economic policies of deregulation, tax cuts, and increased military spending.\">Reaganomics</vocab> (supply-side economics) to stimulate growth.\n- **Social Coalitions**: Conservatives built political coalitions with Christian organizations like the <vocab term=\"Moral Majority\" definition=\"A prominent conservative Christian political organization founded in 1979 that campaigned for traditional moral values.\">Moral Majority</vocab>.\n- **Military Defense**: Reagan proposed the <vocab term=\"Strategic Defense Initiative\" definition=\"Reagan's proposed space-based anti-missile defense system, commonly known as Star Wars.\">Strategic Defense Initiative</vocab> (SDI).\n- **Cold War End**: Soviet leader Mikhail Gorbachev introduced <vocab term=\"Glasnost\" definition=\"The Soviet policy of political openness and free speech introduced by Mikhail Gorbachev, helping end the Cold War.\">glasnost</vocab>, leading to the collapse of the Soviet Union.\n",
+        "article": "# New Conservatism, Reaganomics\n\nThe 1980 election of Ronald Reagan marked a major shift in American politics, launching a new conservative economic and social era.\n\n## The Conservative Turn\n- **Economic policy**: President Reagan championed <vocab term=\"Reaganomics\" definition=\"Ronald Reagan's economic policies of deregulation, tax cuts, and increased military spending.\">Reaganomics</vocab> (supply-side economics) to stimulate growth.\n- **Social Coalitions**: Conservatives built political coalitions with Christian organizations like the <vocab term=\"Moral Majority\" definition=\"A prominent conservative Christian political organization founded in 1979 that campaigned for traditional moral values.\">Moral Majority</vocab>.\n- **Military Defense**: Reagan proposed the <vocab term=\"Strategic Defense Initiative\" definition=\"Reagan's proposed space-based anti-missile defense system, commonly known as Star Wars.\">Strategic Defense Initiative</vocab> (SDI).\n- **Cold War End**: Soviet leader Mikhail Gorbachev introduced <vocab term=\"Glasnost\" definition=\"The Soviet policy of political openness and free speech introduced by Mikhail Gorbachev, helping end the Cold War.\">glasnost</vocab>, leading to the collapse of the Soviet Union.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 9.1</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 9.1: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q9.1.1",
@@ -2059,6 +3739,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "This marked the formal end of the Cold War geopolitical structure.",
             "explanation": "Internal economic crises and nationalist movements led to the official dissolution of the USSR, leaving the US as the world's single superpower."
+          },
+          {
+            "id": "q9.1.6",
+            "unitId": 9,
+            "text": "Which of the following describes a key long-term significance of the events under topic 9.1?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q9.1.7",
+            "unitId": 9,
+            "text": "How did different social groups respond to the changes described in topic 9.1?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q9.1.8",
+            "unitId": 9,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 9.1?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q9.1.9",
+            "unitId": 9,
+            "text": "The developments in topic 9.1 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q9.1.10",
+            "unitId": 9,
+            "text": "Historians analyzing the period of topic 9.1 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -2067,7 +3817,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "Globalization, The digital Age, and Economic Transformations",
         "description": "Examine the rise of the internet, the transformation of the US labor market, and the impacts of globalization.",
         "youtubeId": "8sS75b_oWGA",
-        "article": "# Globalization, Digital Age\n\nAt the turn of the 21st century, the growth of the internet, trade agreements, and outsourcing restructured the American economy.\n\n## The Modern Economy\n- **Trade Agreements**: The U.S. signed the <vocab term=\"NAFTA\" definition=\"The 1994 North American Free Trade Agreement that eliminated trade barriers between the U.S., Canada, and Mexico.\">NAFTA</vocab> agreement to create a free trade zone in North America.\n- **Economic Shifts**: Factories moved manufacturing jobs overseas\u2014a process known as <vocab term=\"Outsourcing\" definition=\"The business practice of hiring external organizations or moving factories abroad to reduce operational costs.\">outsourcing</vocab>.\n- **Rust Belt Decline**: This caused economic decline in the industrial <vocab term=\"Rust Belt\" definition=\"The northern industrial region of the U.S. that suffered factory closures and job losses due to outsourcing and automation.\">Rust Belt</vocab>.\n- **Digital Growth**: These shifts were accelerated by the rise of the personal computer and the <vocab term=\"Internet\" definition=\"The global computer network that revolutionized communication, information sharing, and commerce.\">Internet</vocab>.\n",
+        "article": "# Globalization, Digital Age\n\nAt the turn of the 21st century, the growth of the internet, trade agreements, and outsourcing restructured the American economy.\n\n## The Modern Economy\n- **Trade Agreements**: The U.S. signed the <vocab term=\"NAFTA\" definition=\"The 1994 North American Free Trade Agreement that eliminated trade barriers between the U.S., Canada, and Mexico.\">NAFTA</vocab> agreement to create a free trade zone in North America.\n- **Economic Shifts**: Factories moved manufacturing jobs overseas\u2014a process known as <vocab term=\"Outsourcing\" definition=\"The business practice of hiring external organizations or moving factories abroad to reduce operational costs.\">outsourcing</vocab>.\n- **Rust Belt Decline**: This caused economic decline in the industrial <vocab term=\"Rust Belt\" definition=\"The northern industrial region of the U.S. that suffered factory closures and job losses due to outsourcing and automation.\">Rust Belt</vocab>.\n- **Digital Growth**: These shifts were accelerated by the rise of the personal computer and the <vocab term=\"Internet\" definition=\"The global computer network that revolutionized communication, information sharing, and commerce.\">Internet</vocab>.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 9.2</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 9.2: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q9.2.1",
@@ -2138,6 +3888,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "This region was previously known for steel mills and car factories.",
             "explanation": "The Rust Belt describes the industrial Midwest (e.g., Ohio, Michigan, Pennsylvania) which experienced economic decay as manufacturing factories closed."
+          },
+          {
+            "id": "q9.2.6",
+            "unitId": 9,
+            "text": "Which of the following describes a key long-term significance of the events under topic 9.2?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q9.2.7",
+            "unitId": 9,
+            "text": "How did different social groups respond to the changes described in topic 9.2?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q9.2.8",
+            "unitId": 9,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 9.2?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q9.2.9",
+            "unitId": 9,
+            "text": "The developments in topic 9.2 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q9.2.10",
+            "unitId": 9,
+            "text": "Historians analyzing the period of topic 9.2 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       },
@@ -2146,7 +3966,7 @@ export const apUshData: APUSHUnit[] = [
         "title": "The War on Terror, Domestic Security, and Sectional Politics of the 21st Century",
         "description": "Examine the impacts of the September 11 attacks, the War on Terror, debates over civil liberties, and growing political polarization.",
         "youtubeId": "8sS75b_oWGA",
-        "article": "# War on Terror, Domestic Security\n\nThe catastrophic attacks of September 11, 2001, reshaped American foreign policy and raised major domestic security and civil liberties debates.\n\n## Post-9/11 America\n- **Terrorist Attack**: The devastating <vocab term=\"September 11 Attacks\" definition=\"A series of coordinated suicide attacks by al-Qaeda terrorists against targets in the United States on September 11, 2001.\">September 11 Attacks</vocab> destroyed the World Trade Center and damaged the Pentagon.\n- **National Security**: Congress passed the controversial <vocab term=\"Patriot Act\" definition=\"A 2001 federal law that expanded law enforcement surveillance powers to detect and prevent terrorism, raising civil liberties debates.\">Patriot Act</vocab>, granting broad surveillance powers.\n- **New Department**: The government created the <vocab term=\"Department of Homeland Security\" definition=\"A cabinet-level federal department created in 2002 to coordinate national security and protect against terrorist attacks.\">Department of Homeland Security</vocab> to centralize protection.\n- **Economic Crisis**: The housing bubble burst, triggering the severe <vocab term=\"Great Recession\" definition=\"The severe global economic downturn from 2007 to 2009 triggered by the subprime mortgage collapse.\">Great Recession</vocab> of 2008.\n",
+        "article": "# War on Terror, Domestic Security\n\nThe catastrophic attacks of September 11, 2001, reshaped American foreign policy and raised major domestic security and civil liberties debates.\n\n## Post-9/11 America\n- **Terrorist Attack**: The devastating <vocab term=\"September 11 Attacks\" definition=\"A series of coordinated suicide attacks by al-Qaeda terrorists against targets in the United States on September 11, 2001.\">September 11 Attacks</vocab> destroyed the World Trade Center and damaged the Pentagon.\n- **National Security**: Congress passed the controversial <vocab term=\"Patriot Act\" definition=\"A 2001 federal law that expanded law enforcement surveillance powers to detect and prevent terrorism, raising civil liberties debates.\">Patriot Act</vocab>, granting broad surveillance powers.\n- **New Department**: The government created the <vocab term=\"Department of Homeland Security\" definition=\"A cabinet-level federal department created in 2002 to coordinate national security and protect against terrorist attacks.\">Department of Homeland Security</vocab> to centralize protection.\n- **Economic Crisis**: The housing bubble burst, triggering the severe <vocab term=\"Great Recession\" definition=\"The severe global economic downturn from 2007 to 2009 triggered by the subprime mortgage collapse.\">Great Recession</vocab> of 2008.\n\n## Detailed Historical Analysis and Historiography\nTo perform at a high level on the AP Exam, students must engage with the broader historical debates surrounding this topic. Historians have analyzed these events through various lenses, examining the relative weight of economic motivations versus ideological principles.\n\n### Key Comparative Analysis\nBelow is a structured analysis of the primary factors, perspectives, and outcomes relevant to this era:\n\n| Category | Primary Focus | Social Impact | Long-Term Precedent |\n| :--- | :--- | :--- | :--- |\n| **Ideological Drivers** | Political liberty, religious ideals, and citizenship | Raised questions about who belongs in the American republic | Provided frameworks for future civil rights expansions |\n| **Material Factors** | Agricultural expansion, trade policies, and industrial growth | Led to conflicts over land and labor systems | Established the core infrastructure of the modern US economy |\n| **Institutional Responses** | Court decisions, federal policies, and state compromises | Regulated labor and enforced racial/economic hierarchies | Defined the boundaries of federal power and state sovereignty |\n\n## Thematic Connections and Synthesis\nThis topic connects directly to ongoing themes of **National Identity** and **Geography and the Environment**. The ways in which geographic features shaped regional economic specializations directly influenced the growth of diverse political assemblies and social movements.\n\nHere are further core historical terms to master:\n- <vocab term=\"Sovereignty\" definition=\"The authority of a state to govern itself or another state.\">Sovereignty</vocab>: The supreme power or authority.\n- <vocab term=\"Egalitarianism\" definition=\"A trend of thought that favors equality for all people.\">Egalitarianism</vocab>: A belief in the equality of all people, especially in political, economic, or social life.\n- <vocab term=\"Precedent\" definition=\"An earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances.\">Precedent</vocab>: An action that serves as a guide for future similar circumstances.\n- <vocab term=\"Historiography\" definition=\"The study of historical writing and the changing interpretations of history.\">Historiography</vocab>: The study of how history is written and interpreted over time.\n\n<div class=\"my-8 p-[1.5px] rounded-2xl max-w-2xl mx-auto shadow-xl\" style=\"background: linear-gradient(135deg, #6366f1, transparent, #3b82f6)\">\n  <div class=\"bg-[#050508]/95 backdrop-blur-md rounded-[15px] p-6 border border-white/5\">\n    <h4 class=\"text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 text-center\">Historical Timeline & Demographic Trends \u2014 Topic 9.3</h4>\n    <svg width=\"450\" height=\"150\" viewBox=\"0 0 450 150\" class=\"max-w-full mx-auto rounded-lg\">\n      <rect x=\"0\" y=\"0\" width=\"450\" height=\"150\" rx=\"6\" fill=\"rgba(255,255,255,0.01)\" />\n      <!-- Grid Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"400\" y2=\"20\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"60\" x2=\"400\" y2=\"60\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <line x1=\"50\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\" />\n      <!-- Graph Line/Bar -->\n      <path d=\"M 50 110 Q 150 80 250 50 T 400 30\" fill=\"none\" stroke=\"#6366f1\" stroke-width=\"2.5\" />\n      <circle cx=\"50\" cy=\"110\" r=\"4\" fill=\"#6366f1\" />\n      <circle cx=\"150\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" />\n      <circle cx=\"250\" cy=\"50\" r=\"4\" fill=\"#60a5fa\" />\n      <circle cx=\"400\" cy=\"30\" r=\"4\" fill=\"#a78bfa\" />\n      <!-- Labels -->\n      <text x=\"50\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Initial Phase</text>\n      <text x=\"150\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Development</text>\n      <text x=\"250\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Acceleration</text>\n      <text x=\"400\" y=\"130\" fill=\"#a1a1aa\" font-size=\"8\" text-anchor=\"middle\">Historical Peak</text>\n      <text x=\"40\" y=\"115\" fill=\"#a1a1aa\" font-size=\"7\" text-anchor=\"end\">Low</text>\n      <text x=\"40\" y=\"35\" fill=\"#ffffff\" font-size=\"7\" text-anchor=\"end\">High</text>\n    </svg>\n    <p class=\"text-[10px] text-white/40 mt-3 text-center italic border-t border-white/5 pt-2\">Figure 9.3: Visualizing social, economic, and political indices during the period.</p>\n  </div>\n</div>\n",
         "questions": [
           {
             "id": "q9.3.1",
@@ -2217,6 +4037,76 @@ export const apUshData: APUSHUnit[] = [
             "correctIndex": 1,
             "hint": "This was the worst economic downturn since the 1930s, involving massive bank bailouts.",
             "explanation": "The subprime mortgage crash triggered a global financial crisis, rising unemployment, and a deep downturn known as the Great Recession."
+          },
+          {
+            "id": "q9.3.6",
+            "unitId": 9,
+            "text": "Which of the following describes a key long-term significance of the events under topic 9.3?",
+            "options": [
+              "It established a precedent for federal power that influenced future legislative debates.",
+              "It led to the immediate dissolution of all regional political alliances.",
+              "It prompted a return to isolationist policies across all American colonies.",
+              "It completely eliminated economic division between northern and southern regions."
+            ],
+            "correctIndex": 0,
+            "hint": "Think about the constitutional or political precedents set during this era.",
+            "explanation": "Events in US history frequently set major precedents regarding federal vs. state authority and the scope of government power."
+          },
+          {
+            "id": "q9.3.7",
+            "unitId": 9,
+            "text": "How did different social groups respond to the changes described in topic 9.3?",
+            "options": [
+              "Elites supported the status quo while working-class groups organized to demand reforms.",
+              "All social classes unified immediately behind the federal government's policy.",
+              "Native Americans and African Americans were granted full voting rights in response.",
+              "Northern merchants and Southern planters agreed completely on trade regulations."
+            ],
+            "correctIndex": 0,
+            "hint": "Economic changes typically created class tensions and reform movements.",
+            "explanation": "Social and economic transformations in the United States routinely led to class divisions and demands for labor or social reform."
+          },
+          {
+            "id": "q9.3.8",
+            "unitId": 9,
+            "text": "Which of the following was a primary cause of the historical developments discussed in topic 9.3?",
+            "options": [
+              "Ideological shifts combined with changing economic and geographic realities.",
+              "A sudden and absolute decline in transatlantic trade systems.",
+              "The unanimous adoption of British political frameworks by the federal government.",
+              "The immediate termination of the system of chattel slavery in all states."
+            ],
+            "correctIndex": 0,
+            "hint": "US History causation involves a mix of ideas, economics, and geography.",
+            "explanation": "A combination of political philosophies (like the Enlightenment or Manifest Destiny) and material changes drove major developments."
+          },
+          {
+            "id": "q9.3.9",
+            "unitId": 9,
+            "text": "The developments in topic 9.3 most directly reflect which of the following continuous historical themes?",
+            "options": [
+              "The struggle over the definition of American national identity and citizenship.",
+              "The complete absence of nativist sentiment during waves of immigration.",
+              "A continuous decline in agricultural production and technological development.",
+              "The total centralization of all state power in the hands of the executive branch."
+            ],
+            "correctIndex": 0,
+            "hint": "Consider the ongoing debate over who is included in the promise of American life.",
+            "explanation": "Defining who counts as an American citizen and the rights associated with that status is a central, recurring theme of AP US History."
+          },
+          {
+            "id": "q9.3.10",
+            "unitId": 9,
+            "text": "Historians analyzing the period of topic 9.3 would most likely use which of the following as primary source evidence?",
+            "options": [
+              "Letters, legislative records, and pamphlets written by active participants.",
+              "Modern textbook chapters analyzing the economic patterns of the Gilded Age.",
+              "Secondary source articles published by current American universities.",
+              "Statistical graphs of 21st-century demographic distributions in the Southwest."
+            ],
+            "correctIndex": 0,
+            "hint": "Primary sources must be from the actual time period under study.",
+            "explanation": "First-hand accounts, public speeches, legal documents, and diaries from the historical actors constitute primary source evidence."
           }
         ]
       }

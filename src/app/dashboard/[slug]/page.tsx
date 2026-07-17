@@ -1967,6 +1967,16 @@ export default function APDynamicCoursePage() {
                         const fullSection = isFirst ? section : `## ${section}`;
                         const isExample = fullSection.toLowerCase().includes("example problem") || fullSection.toLowerCase().includes("example");
                         
+                        const cleanHeader = (children: any): any => {
+                          if (typeof children === 'string') {
+                            return children.replace(/^[#\s\u00A0]+/, '').trim();
+                          }
+                          if (Array.isArray(children)) {
+                            return children.map(c => cleanHeader(c));
+                          }
+                          return children;
+                        };
+
                         return (
                           <div 
                             key={idx}
@@ -1986,6 +1996,12 @@ export default function APDynamicCoursePage() {
                                 remarkPlugins={[remarkMath, remarkGfm]} 
                                 rehypePlugins={[rehypeKatex, rehypeRaw]}
                                 components={{
+                                  h1: ({ node, children, ...props }: any) => <h1 {...props}>{cleanHeader(children)}</h1>,
+                                  h2: ({ node, children, ...props }: any) => <h2 {...props}>{cleanHeader(children)}</h2>,
+                                  h3: ({ node, children, ...props }: any) => <h3 {...props}>{cleanHeader(children)}</h3>,
+                                  h4: ({ node, children, ...props }: any) => <h4 {...props}>{cleanHeader(children)}</h4>,
+                                  h5: ({ node, children, ...props }: any) => <h5 {...props}>{cleanHeader(children)}</h5>,
+                                  h6: ({ node, children, ...props }: any) => <h6 {...props}>{cleanHeader(children)}</h6>,
                                   // Custom vocab component handler in react-markdown
                                   // @ts-ignore
                                   vocab: ({ node, children, ...props }) => {
@@ -2107,7 +2123,7 @@ export default function APDynamicCoursePage() {
                       <PracticeSystem 
                         topicId={activeTopic.id}
                         masteryKey={masteryKey}
-                        questions={activeTopic.questions.slice(0, 5)} 
+                        questions={activeTopic.questions.slice(0, 4)} 
                         accentColor={course.accentColor}
                         onComplete={(score) => completeTopic(masteryKey, score)}
                       />
