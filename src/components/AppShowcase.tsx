@@ -228,6 +228,9 @@ export function AppShowcase() {
             <div className="text-center relative z-10 flex flex-col items-center">
               <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">24/7 AI TUTOR</span>
               <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">Your 24/7 Context-Aware Academic Partner.</h3>
+              <p className="text-neutral-500 font-inter text-xs max-w-sm mt-2 leading-relaxed">
+                Get instant, personalized explanations and Socratic guidance on any complex AP topic, active 24/7.
+              </p>
             </div>
 
             {/* Chat conversation box detailing cellular respiration */}
@@ -311,22 +314,22 @@ export function AppShowcase() {
             </div>
 
             {/* Activity Calendar Display */}
-            <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-4 z-10 flex-1 min-h-[240px] shrink-0">
-              <div className="flex items-center space-x-2 mb-3.5 text-emerald-400 shrink-0">
+            <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-2.5 z-10 flex-1 min-h-[210px] shrink-0">
+              <div className="flex items-center space-x-2 mb-2 text-emerald-400 shrink-0">
                 <Calendar className="w-5 h-5" />
                 <span className="text-[12px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
               </div>
               
               <div className="flex-1 flex flex-col justify-center">
                 {/* Weekdays */}
-                <div className="grid grid-cols-7 gap-1.5 text-center w-full max-w-[285px] mx-auto text-[9px] font-mono text-white/30 font-bold uppercase mb-2 shrink-0">
+                <div className="grid grid-cols-7 gap-1 text-center w-full max-w-[250px] mx-auto text-[9px] font-mono text-white/30 font-bold uppercase mb-1.5 shrink-0">
                   {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
                     <div key={idx}>{day}</div>
                   ))}
                 </div>
                 
                 {/* Calendar Days */}
-                <div className="grid grid-cols-7 gap-1.5 w-full max-w-[285px] mx-auto">
+                <div className="grid grid-cols-7 gap-1 w-full max-w-[250px] mx-auto">
                   {Array.from({ length: 28 }).map((_, idx) => {
                     const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
                     const isValid = dayNum > 0 && dayNum <= 25;
