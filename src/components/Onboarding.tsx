@@ -415,7 +415,7 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
       </div>
 
       {/* Steps Content Area */}
-      <div className="flex-1 overflow-y-auto w-full px-6 py-10 md:px-12">
+      <div data-lenis-prevent className="flex-1 overflow-y-auto w-full px-6 py-10 md:px-12">
         <div className="min-h-full max-w-5xl mx-auto w-full flex flex-col items-center">
           <div className="flex-grow" />
           <div className="w-full flex flex-col items-center justify-center py-4 shrink-0">
