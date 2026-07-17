@@ -3,6 +3,7 @@ import { apBiologyData } from "./ap-biology-data";
 import { apPhysicsData } from "./ap-physics-data";
 import { apUshData } from "./ap-ush-data";
 import { apPsychData } from "./ap-psychology-data";
+import { apEnglishData } from "./ap-english-data";
 
 export interface CourseQuestion {
   id: string;
@@ -139,105 +140,7 @@ const apUshUnits: CourseUnit[] = apUshData.map((unit) => ({
 
 const apPsychUnits: CourseUnit[] = apPsychData;
 
-const apEngLangUnits: CourseUnit[] = [
-  {
-    id: 1,
-    title: "Rhetorical Analysis",
-    masteryWeight: "33%",
-    topics: [
-      {
-        id: "1.1",
-        title: "The Rhetorical Situation",
-        description: "Analyze how writers create messages for specific audiences and contexts.",
-        youtubeId: "vo4pMVb0R6M",
-        article: `
-# The Rhetorical Situation
-
-A writer's choices are guided by the Rhetorical Situation:
-- **Exigence**: The immediate catalyst or trigger for the speech/text.
-- **Audience**: The targeted group of readers or listeners.
-- **Purpose**: What the author wants to achieve.
-- **Context**: The historical and cultural backdrop.
-`,
-        questions: [
-          {
-            id: "q_eng_1.1.1",
-            unitId: 1,
-            text: "What term describes the urgent need or spark that prompts an author to write or speak?",
-            options: ["Purpose", "Exigence", "Ethos", "Context"],
-            correctIndex: 1,
-            hint: "Derived from Latin meaning 'demand'.",
-            explanation: "Exigence is the event, problem, or issue that inspires or stimulates a writer to create a message."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Argumentation & Synthesis",
-    masteryWeight: "33%",
-    topics: [
-      {
-        id: "2.1",
-        title: "Structuring Logical Claims",
-        description: "Evaluate source evidence and construct coherent synthesis essays.",
-        youtubeId: "pM70cPYnsQs",
-        article: `
-# Argumentation and Synthesis
-
-Strong academic writing relies on structured claims supported by evidence:
-- **Thesis Statement**: A defensible opinion or position that establishes the essay's path.
-- **Synthesis**: Integrating perspectives from multiple sources to support a central argument.
-- **Logical Fallacies**: Errors in reasoning that weaken arguments (e.g. straw man, ad hominem).
-`,
-        questions: [
-          {
-            id: "q_eng_2.1.1",
-            unitId: 2,
-            text: "Which fallacy attacks the character of an opponent rather than address the substance of their argument?",
-            options: ["Straw Man", "Ad Hominem", "Slippery Slope", "False Dilemma"],
-            correctIndex: 1,
-            hint: "Latin for 'to the person'.",
-            explanation: "An ad hominem fallacy directly attacks the arguer personally rather than addressing their actual point."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Style and Rhetorical Choice",
-    masteryWeight: "34%",
-    topics: [
-      {
-        id: "3.1",
-        title: "Tone, Diction, and Syntax",
-        description: "Analyze stylistic strategies used to affect reader responses.",
-        youtubeId: "vo4pMVb0R6M",
-        article: `
-# Tone, Diction, and Syntax
-
-Stylistic strategies allow authors to refine their rhetorical impact:
-- **Diction**: Choice of words to establish precise connotations.
-- **Syntax**: Sentence structures (e.g., parallelisms, periodic sentences) that guide pacing.
-- **Tone**: The writer's attitude toward the subject, expressed through diction.
-`,
-        questions: [
-          {
-            id: "q_eng_3.1.1",
-            unitId: 3,
-            text: "Which syntactic device involves the repetition of a chosen grammatical pattern across sentences?",
-            options: ["Anaphora", "Parallelism", "Asyndeton", "Hyperbole"],
-            correctIndex: 1,
-            hint: "Creates balance, rhythm, and clarity in prose.",
-            explanation: "Parallelism is the use of matching structures in series to create a balanced, rhythmic delivery."
-          }
-        ]
-      }
-    ]
-  }
-];
+const apEngLangUnits: CourseUnit[] = apEnglishData;
 
 const apCalcUnits: CourseUnit[] = [
   {
