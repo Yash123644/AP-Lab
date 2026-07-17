@@ -415,9 +415,10 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
       </div>
 
       {/* Steps Content Area */}
-      <div className="flex-1 overflow-y-auto w-full">
-        <div className="min-h-full max-w-5xl mx-auto w-full flex flex-col items-center justify-start px-6 py-10 md:px-12">
-          <div className="my-auto w-full flex flex-col items-center justify-center py-4">
+      <div className="flex-1 overflow-y-auto w-full px-6 py-10 md:px-12">
+        <div className="min-h-full max-w-5xl mx-auto w-full flex flex-col items-center">
+          <div className="flex-grow" />
+          <div className="w-full flex flex-col items-center justify-center py-4 shrink-0">
             <AnimatePresence mode="wait">
           {step === 1 && (
             <motion.div
@@ -994,6 +995,7 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
           )}
         </AnimatePresence>
           </div>
+          <div className="flex-grow" />
         </div>
       </div>
     </div>
