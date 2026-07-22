@@ -8,7 +8,7 @@ interface PixelCourseBackgroundProps {
 }
 
 export function PixelCourseBackground({
-  opacity = 0.12, // Reduced symbol opacity for subtle, sleek ambient background
+  opacity = 0.22, // Increased visibility
   pixelSize = 8,
 }: PixelCourseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -21,7 +21,6 @@ export function PixelCourseBackground({
     if (!ctx) return;
 
     const renderCanvas = () => {
-      // Calculate full document height so canvas spans the entire scrollable area
       const width = Math.max(window.innerWidth, document.documentElement.clientWidth);
       const height = Math.max(
         document.body.scrollHeight,
@@ -37,7 +36,7 @@ export function PixelCourseBackground({
       ctx.fillStyle = "#03040a";
       ctx.fillRect(0, 0, width, height);
 
-      // 2. Draw Soft White Dot Matrix Pattern (Kept clean at 0.16 opacity)
+      // 2. Draw Soft White Dot Matrix Pattern
       const dotSpacing = 32;
       ctx.fillStyle = "rgba(255, 255, 255, 0.16)";
       for (let x = dotSpacing / 2; x < width; x += dotSpacing) {
@@ -46,192 +45,277 @@ export function PixelCourseBackground({
         }
       }
 
-      // Helper: Draw non-overlapping solid pixel rect at uniform alpha
+      // Single, uniform bright light-grey color for ALL icons
+      const iconColor = "#e2e8f0"; // Slate-200 (Crisp, uniform light-grey)
       const p = pixelSize;
-      const iconColor = "#cbd5e1"; // Muted Slate/Light Grey
 
-      const drawPixel = (px: number, py: number, w = p, h = p) => {
-        ctx.fillRect(Math.floor(px), Math.floor(py), Math.floor(w), Math.floor(h));
-      };
+      // Setup clean crisp stroke styling
+      ctx.strokeStyle = iconColor;
+      ctx.fillStyle = iconColor;
+      ctx.lineWidth = p * 0.5;
+      ctx.lineCap = "square";
+      ctx.lineJoin = "miter";
 
       // -----------------------------------------------------------------------
-      // Clean, Non-Overlapping Uniform Minimalist Symbol Drawers
+      // Solid, Fully Connected Pixelated Symbol Drawers
       // -----------------------------------------------------------------------
 
-      // 1. DNA Helix
+      // 1. DNA Double Helix (Connected continuous strands + base rungs)
       const drawDNA = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        for (let i = -4; i <= 4; i++) {
-          const py = cy + i * p * 1.4;
-          const span = Math.sin(i * 0.5) * p * 3.2;
-          drawPixel(cx - span - p * 0.5, py, p * 1.1, p * 1.1);
-          drawPixel(cx + span - p * 0.5, py, p * 1.1, p * 1.1);
-          if (Math.abs(span) > p * 0.8) {
-            drawPixel(cx - Math.abs(span) + p * 0.5, py + p * 0.3, (Math.abs(span) - p * 0.5) * 2, p * 0.4);
-          }
+        ctx.beginPath();
+        for (let y = -p * 4; y <= p * 4; y += p * 0.5) {
+          const span = Math.sin(y * 0.25) * p * 2.8;
+          if (y === -p * 4) ctx.moveTo(cx - span, cy + y);
+          else ctx.lineTo(cx - span, cy + y);
+        }
+        ctx.stroke();
+
+        ctx.beginPath();
+        for (let y = -p * 4; y <= p * 4; y += p * 0.5) {
+          const span = Math.sin(y * 0.25) * p * 2.8;
+          if (y === -p * 4) ctx.moveTo(cx + span, cy + y);
+          else ctx.lineTo(cx + span, cy + y);
+        }
+        ctx.stroke();
+
+        // Connecting rungs
+        for (let i = -3; i <= 3; i += 2) {
+          const py = cy + i * p * 1.1;
+          const span = Math.sin((i * p * 1.1) * 0.25) * p * 2.8;
+          ctx.beginPath();
+          ctx.moveTo(cx - span, py);
+          ctx.lineTo(cx + span, py);
+          ctx.stroke();
         }
       };
 
-      // 2. Erlenmeyer Beaker
+      // 2. Erlenmeyer Beaker (Solid connected outline)
       const drawBeaker = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        drawPixel(cx - p * 1.5, cy - p * 3, p * 3, p * 0.8);
-        drawPixel(cx - p * 0.8, cy - p * 2.2, p * 1.6, p * 1.5);
-        drawPixel(cx - p * 2.5, cy - p * 0.7, p * 5, p * 3.5);
+        ctx.beginPath();
+        // Top Rim
+        ctx.moveTo(cx - p * 1.5, cy - p * 3);
+        ctx.lineTo(cx + p * 1.5, cy - p * 3);
+        // Neck
+        ctx.moveTo(cx - p * 0.8, cy - p * 3);
+        ctx.lineTo(cx - p * 0.8, cy - p * 1.5);
+        ctx.lineTo(cx - p * 2.8, cy + p * 2.5);
+        ctx.lineTo(cx + p * 2.8, cy + p * 2.5);
+        ctx.lineTo(cx + p * 0.8, cy - p * 1.5);
+        ctx.lineTo(cx + p * 0.8, cy - p * 3);
+        ctx.stroke();
+
+        // Liquid Level
+        ctx.beginPath();
+        ctx.moveTo(cx - p * 2, cy + p * 0.5);
+        ctx.lineTo(cx + p * 2, cy + p * 0.5);
+        ctx.stroke();
       };
 
-      // 3. Atom Orbit
+      // 3. Atom Orbit (Nucleus + connected oval orbital ring)
       const drawAtom = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        drawPixel(cx - p * 0.8, cy - p * 0.8, p * 1.6, p * 1.6);
-        const r1 = p * 4;
-        for (let a = 0; a < Math.PI * 2; a += Math.PI / 4) {
-          drawPixel(cx + Math.cos(a) * r1 - p * 0.4, cy + Math.sin(a) * r1 - p * 0.4, p * 0.8, p * 0.8);
-        }
+        // Solid nucleus
+        ctx.fillRect(cx - p * 0.8, cy - p * 0.8, p * 1.6, p * 1.6);
+
+        // Connected Orbital Ring 1
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, p * 3.8, p * 1.8, Math.PI / 4, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Connected Orbital Ring 2
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, p * 3.8, p * 1.8, -Math.PI / 4, 0, Math.PI * 2);
+        ctx.stroke();
       };
 
-      // 4. Integral ∫
+      // 4. Integral ∫ (Connected smooth S-curve stroke)
       const drawIntegral = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        const pixels = [[2, -4], [3, -4], [1, -3], [1, -2], [1, -1], [1, 0], [1, 1], [1, 2], [1, 3], [0, 4], [-1, 4]];
-        pixels.forEach(([dx, dy]) => {
-          drawPixel(cx + dx * p * 0.8, cy + dy * p * 0.8, p * 0.9, p * 0.9);
-        });
+        ctx.beginPath();
+        ctx.moveTo(cx + p * 1.8, cy - p * 3.5);
+        ctx.bezierCurveTo(
+          cx - p * 1.5, cy - p * 3.5,
+          cx + p * 1.5, cy + p * 3.5,
+          cx - p * 1.8, cy + p * 3.5
+        );
+        ctx.stroke();
       };
 
-      // 5. Summation Σ (Discrete grid points - zero overlap)
+      // 5. Summation Σ (Connected 4-segment stroke)
       const drawSummation = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        const sigmaPixels = [
-          [-3, -4], [-2, -4], [-1, -4], [0, -4], [1, -4], [2, -4],
-          [-2, -3], [-1, -2], [0, -1], [-1, 0], [-2, 1],
-          [-3, 2], [-2, 3], [-1, 4], [0, 4], [1, 4], [2, 4]
-        ];
-        sigmaPixels.forEach(([dx, dy]) => {
-          drawPixel(cx + dx * p * 0.75, cy + dy * p * 0.75, p * 0.9, p * 0.9);
-        });
+        ctx.beginPath();
+        ctx.moveTo(cx + p * 2.2, cy - p * 3.2);
+        ctx.lineTo(cx - p * 1.8, cy - p * 3.2);
+        ctx.lineTo(cx + p * 0.4, cy);
+        ctx.lineTo(cx - p * 1.8, cy + p * 3.2);
+        ctx.lineTo(cx + p * 2.2, cy + p * 3.2);
+        ctx.stroke();
       };
 
-      // 6. 3-Bar Histogram
+      // 6. 3-Bar Histogram (Connected baseline + solid bars)
       const drawGraphBar = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        const heights = [3, 5, 4];
+        const heights = [2.2, 4.5, 3.2];
         const barW = p * 1.2;
-        const gap = p * 0.6;
-        drawPixel(cx - p * 2.5, cy + p * 2.5, heights.length * (barW + gap), p * 0.6);
+        const gap = p * 0.5;
+        const startX = cx - (heights.length * (barW + gap)) / 2;
+        const baseY = cy + p * 2.5;
+
+        // Baseline
+        ctx.beginPath();
+        ctx.moveTo(startX - p * 0.5, baseY);
+        ctx.lineTo(startX + heights.length * (barW + gap) + p * 0.5, baseY);
+        ctx.stroke();
+
+        // Solid connected bars
         heights.forEach((h, idx) => {
-          const bx = cx - p * 2.5 + idx * (barW + gap);
-          drawPixel(bx, cy + p * 2.5 - p * h, barW, p * h);
+          const bx = startX + idx * (barW + gap);
+          ctx.strokeRect(bx, baseY - p * h, barW, p * h);
         });
       };
 
-      // 7. Sine Wave Curve
+      // 7. Sine Wave Curve (Connected continuous wave line)
       const drawGraphCurve = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        for (let i = -5; i <= 5; i++) {
-          const x = i * p * 0.8;
-          const normY = Math.sin(i * 0.5) * p * 2.5;
-          drawPixel(cx + x, cy - normY, p, p);
+        ctx.beginPath();
+        for (let x = -p * 3.5; x <= p * 3.5; x += p * 0.4) {
+          const y = Math.sin((x / p) * 0.8) * p * 2.2;
+          if (x === -p * 3.5) ctx.moveTo(cx + x, cy - y);
+          else ctx.lineTo(cx + x, cy - y);
         }
+        ctx.stroke();
       };
 
-      // 8. Code Brackets { }
+      // 8. Code Brackets { } (Connected continuous curly brackets)
       const drawCodeBrackets = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        const leftB = [[1, -3], [0, -2], [0, -1], [-1, 0], [0, 1], [0, 2], [1, 3]];
-        leftB.forEach(([dx, dy]) => {
-          drawPixel(cx - p * 2.2 + dx * p * 0.8, cy + dy * p * 0.8, p * 0.9, p * 0.9);
-        });
-        const rightB = [[-1, -3], [0, -2], [0, -1], [1, 0], [0, 1], [0, 2], [-1, 3]];
-        rightB.forEach(([dx, dy]) => {
-          drawPixel(cx + p * 2.2 + dx * p * 0.8, cy + dy * p * 0.8, p * 0.9, p * 0.9);
-        });
+        // Left {
+        ctx.beginPath();
+        ctx.moveTo(cx - p * 1.5, cy - p * 3);
+        ctx.lineTo(cx - p * 2.2, cy - p * 3);
+        ctx.lineTo(cx - p * 2.2, cy - p * 0.8);
+        ctx.lineTo(cx - p * 3.0, cy);
+        ctx.lineTo(cx - p * 2.2, cy + p * 0.8);
+        ctx.lineTo(cx - p * 2.2, cy + p * 3);
+        ctx.lineTo(cx - p * 1.5, cy + p * 3);
+        ctx.stroke();
+
+        // Right }
+        ctx.beginPath();
+        ctx.moveTo(cx + p * 1.5, cy - p * 3);
+        ctx.lineTo(cx + p * 2.2, cy - p * 3);
+        ctx.lineTo(cx + p * 2.2, cy - p * 0.8);
+        ctx.lineTo(cx + p * 3.0, cy);
+        ctx.lineTo(cx + p * 2.2, cy + p * 0.8);
+        ctx.lineTo(cx + p * 2.2, cy + p * 3);
+        ctx.lineTo(cx + p * 1.5, cy + p * 3);
+        ctx.stroke();
       };
 
-      // 9. Neural Network Nodes
+      // 9. Neural Network (Connected nodes + continuous connection lines)
       const drawNeural = (cx: number, cy: number) => {
-        ctx.strokeStyle = "rgba(203, 213, 225, 0.4)";
-        ctx.lineWidth = p * 0.4;
-        const nodes = [{ x: -p * 2.5, y: -p * 1.5 }, { x: p * 2.5, y: -p * 1 }, { x: 0, y: p * 2 }];
+        const nodes = [
+          { x: -p * 2.5, y: -p * 1.8 },
+          { x: p * 2.5, y: -p * 1.2 },
+          { x: 0, y: p * 2.2 },
+        ];
+
+        // Connection lines
         ctx.beginPath();
         ctx.moveTo(cx + nodes[0].x, cy + nodes[0].y);
         ctx.lineTo(cx + nodes[2].x, cy + nodes[2].y);
         ctx.lineTo(cx + nodes[1].x, cy + nodes[1].y);
         ctx.stroke();
 
-        ctx.fillStyle = iconColor;
+        // Solid connected node dots
         nodes.forEach((n) => {
-          drawPixel(cx + n.x - p * 0.5, cy + n.y - p * 0.5, p, p);
+          ctx.beginPath();
+          ctx.arc(cx + n.x, cy + n.y, p * 0.6, 0, Math.PI * 2);
+          ctx.fill();
         });
       };
 
-      // 10. Redesigned Clean Open Book Icon (New & Minimalist)
+      // 10. Redesigned Connected Open Book (Clean connected geometry)
       const drawBook = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        // Spine center
-        drawPixel(cx - p * 0.3, cy - p * 2.5, p * 0.6, p * 5);
-        // Left page curves
-        drawPixel(cx - p * 3, cy - p * 2, p * 2.6, p * 0.6);
-        drawPixel(cx - p * 3.5, cy - p * 1.5, p * 0.6, p * 3.5);
-        drawPixel(cx - p * 3, cy + p * 2, p * 2.6, p * 0.6);
-        // Right page curves
-        drawPixel(cx + p * 0.4, cy - p * 2, p * 2.6, p * 0.6);
-        drawPixel(cx + p * 2.9, cy - p * 1.5, p * 0.6, p * 3.5);
-        drawPixel(cx + p * 0.4, cy + p * 2, p * 2.6, p * 0.6);
+        ctx.beginPath();
+        // Left page curve
+        ctx.moveTo(cx, cy - p * 1.8);
+        ctx.quadraticCurveTo(cx - p * 1.5, cy - p * 2.8, cx - p * 3.2, cy - p * 2.2);
+        ctx.lineTo(cx - p * 3.2, cy + p * 2.2);
+        ctx.quadraticCurveTo(cx - p * 1.5, cy + p * 1.6, cx, cy + p * 2.4);
+
+        // Right page curve
+        ctx.quadraticCurveTo(cx + p * 1.5, cy + p * 1.6, cx + p * 3.2, cy + p * 2.2);
+        ctx.lineTo(cx + p * 3.2, cy - p * 2.2);
+        ctx.quadraticCurveTo(cx + p * 1.5, cy - p * 2.8, cx, cy - p * 1.8);
+        ctx.stroke();
+
+        // Spine Line
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - p * 1.8);
+        ctx.lineTo(cx, cy + p * 2.4);
+        ctx.stroke();
       };
 
-      // 11. New Clean Dollar Sign ($)
+      // 11. Connected Dollar Sign ($)
       const drawDollar = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        // Vertical center line
-        drawPixel(cx - p * 0.3, cy - p * 3.2, p * 0.6, p * 6.4);
-        // S curves
-        const sPixels = [
-          [-1.5, -2.5], [0, -2.5], [1.5, -2.5],
-          [-1.5, -1.5],
-          [-1.5, -0.5], [0, -0.5], [1.5, -0.5],
-          [1.5, 0.5],
-          [-1.5, 1.5], [0, 1.5], [1.5, 1.5]
-        ];
-        sPixels.forEach(([dx, dy]) => {
-          drawPixel(cx + dx * p * 0.8, cy + dy * p * 0.8, p * 0.8, p * 0.8);
-        });
+        // Vertical line
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - p * 3.2);
+        ctx.lineTo(cx, cy + p * 3.2);
+        ctx.stroke();
+
+        // S-curve stroke
+        ctx.beginPath();
+        ctx.moveTo(cx + p * 1.8, cy - p * 2.0);
+        ctx.quadraticCurveTo(cx, cy - p * 2.8, cx - p * 1.8, cy - p * 1.5);
+        ctx.quadraticCurveTo(cx, cy, cx + p * 1.8, cy + p * 1.5);
+        ctx.quadraticCurveTo(cx, cy + p * 2.8, cx - p * 1.8, cy + p * 2.0);
+        ctx.stroke();
       };
 
-      // 12. New Clean Judge Gavel / Hammer
+      // 12. Connected Judge Gavel / Hammer
       const drawGavel = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        // Hammer head (angled block)
-        drawPixel(cx - p * 2.5, cy - p * 2.5, p * 4.5, p * 1.6);
-        // Handle
-        drawPixel(cx - p * 0.4, cy - p * 1, p * 0.8, p * 4.5);
-        // Sounding board base
-        drawPixel(cx - p * 3, cy + p * 3, p * 6, p * 0.8);
+        // Hammer head (rectangle outline)
+        ctx.strokeRect(cx - p * 2.2, cy - p * 2.8, p * 4.4, p * 1.5);
+        // Handle line
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - p * 1.3);
+        ctx.lineTo(cx, cy + p * 2.2);
+        ctx.stroke();
+        // Sounding Base
+        ctx.beginPath();
+        ctx.moveTo(cx - p * 2.8, cy + p * 2.8);
+        ctx.lineTo(cx + p * 2.8, cy + p * 2.8);
+        ctx.stroke();
       };
 
-      // 13. Temple Pillar Column
+      // 13. Connected Temple Pillar Column
       const drawPillar = (cx: number, cy: number) => {
-        ctx.fillStyle = iconColor;
-        drawPixel(cx - p * 2, cy - p * 3, p * 4, p * 0.8);
-        drawPixel(cx - p * 1.2, cy - p * 2, p * 0.6, p * 4);
-        drawPixel(cx + p * 0.6, cy - p * 2, p * 0.6, p * 4);
-        drawPixel(cx - p * 2, cy + p * 2, p * 4, p * 0.8);
+        // Capital Top
+        ctx.strokeRect(cx - p * 2.2, cy - p * 3.0, p * 4.4, p * 0.8);
+        // Fluted Columns
+        ctx.beginPath();
+        ctx.moveTo(cx - p * 1.4, cy - p * 2.2);
+        ctx.lineTo(cx - p * 1.4, cy + p * 2.2);
+        ctx.moveTo(cx, cy - p * 2.2);
+        ctx.lineTo(cx, cy + p * 2.2);
+        ctx.moveTo(cx + p * 1.4, cy - p * 2.2);
+        ctx.lineTo(cx + p * 1.4, cy + p * 2.2);
+        ctx.stroke();
+        // Base Bottom
+        ctx.strokeRect(cx - p * 2.2, cy + p * 2.2, p * 4.4, p * 0.8);
       };
 
-      // Array of curated clean minimalist symbol drawers
+      // Symbol drawers array
       const symbolDrawers = [
         drawDNA, drawBeaker, drawAtom, drawIntegral, drawSummation,
         drawGraphBar, drawGraphCurve, drawCodeBrackets, drawNeural,
         drawBook, drawDollar, drawGavel, drawPillar
       ];
 
-      // 3. Render Evenly Distributed Grid of Symbols with UNIFORM ALPHA
+      // 3. Render Evenly Distributed Grid of Connected Symbols
       const cols = 6;
       const rows = Math.ceil(height / (window.innerHeight / 4));
       const cellW = width / cols;
       const cellH = height / rows;
 
-      ctx.globalAlpha = opacity; // Set single uniform opacity for all symbols (no overlapping alpha artifacts!)
+      ctx.globalAlpha = opacity; // High-visibility single uniform alpha pass
 
       let drawerIdx = 0;
       for (let r = 0; r < rows; r++) {
