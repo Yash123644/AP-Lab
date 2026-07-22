@@ -66,7 +66,7 @@ export default function CommunityImpactPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-48 pb-20 px-6 md:px-[120px] z-10">
+      <section className="relative pt-32 sm:pt-36 md:pt-40 pb-14 px-6 md:px-[120px] z-10">
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
           <LiveUserCounter />
 

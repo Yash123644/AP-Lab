@@ -51,11 +51,9 @@ export function Navbar() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex items-center space-x-2.5 cursor-pointer group"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-              <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-white animate-pulse" />
-            </div>
+            <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-white/80 transition-colors" />
             <span className="font-manrope font-bold text-white tracking-tight text-base sm:text-lg">AP Lab</span>
           </Link>
         </div>

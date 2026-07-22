@@ -504,10 +504,8 @@ export default function Dashboard() {
           ? "top-4 py-3 bg-black/35 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] shadow-inner" 
           : "top-6 py-4 bg-black/95 border border-white/15 shadow-2xl"
       )}>
-        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-            <Activity className="w-5 h-5 text-white animate-pulse" />
-          </div>
+        <Link href="/" className="flex items-center space-x-2.5 cursor-pointer group">
+          <Activity className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />
           <span className="font-manrope font-bold text-white tracking-tight hidden sm:block">AP Lab</span>
         </Link>
 
