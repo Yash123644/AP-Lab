@@ -8,8 +8,8 @@ interface PixelCourseBackgroundProps {
 }
 
 export function PixelCourseBackground({
-  opacity = 0.22, // Increased visibility
-  pixelSize = 8,
+  opacity = 0.14, // Faint, sleek background opacity
+  pixelSize = 7,  // Sharp, authentic pixel grid size
 }: PixelCourseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -21,6 +21,7 @@ export function PixelCourseBackground({
     if (!ctx) return;
 
     const renderCanvas = () => {
+      // Calculate full document height so canvas spans the entire scrollable area
       const width = Math.max(window.innerWidth, document.documentElement.clientWidth);
       const height = Math.max(
         document.body.scrollHeight,
@@ -36,7 +37,7 @@ export function PixelCourseBackground({
       ctx.fillStyle = "#03040a";
       ctx.fillRect(0, 0, width, height);
 
-      // 2. Draw Soft White Dot Matrix Pattern
+      // 2. Draw Soft White Dot Matrix Pattern (Clean 0.16 opacity)
       const dotSpacing = 32;
       ctx.fillStyle = "rgba(255, 255, 255, 0.16)";
       for (let x = dotSpacing / 2; x < width; x += dotSpacing) {
@@ -45,286 +46,210 @@ export function PixelCourseBackground({
         }
       }
 
-      // Single, uniform bright light-grey color for ALL icons
-      const iconColor = "#e2e8f0"; // Slate-200 (Crisp, uniform light-grey)
+      // Single, uniform light-grey color for ALL icons
+      const iconColor = "#cbd5e1"; // Muted Slate/Light Grey
       const p = pixelSize;
 
-      // Setup clean crisp stroke styling
-      ctx.strokeStyle = iconColor;
-      ctx.fillStyle = iconColor;
-      ctx.lineWidth = p * 0.5;
-      ctx.lineCap = "square";
-      ctx.lineJoin = "miter";
-
       // -----------------------------------------------------------------------
-      // Solid, Fully Connected Pixelated Symbol Drawers
+      // Authentic, Connected Pixel-Art Symbol Drawers (No vector paths / No overlap)
       // -----------------------------------------------------------------------
 
-      // 1. DNA Double Helix (Connected continuous strands + base rungs)
+      // Helper: Draw crisp pixel block relative to center (cx, cy)
+      const drawPx = (cx: number, cy: number, dx: number, dy: number, w = 1, h = 1) => {
+        ctx.fillRect(Math.floor(cx + dx * p), Math.floor(cy + dy * p), Math.floor(w * p), Math.floor(h * p));
+      };
+
+      // 1. Authentic Pixel Art DNA Helix
       const drawDNA = (cx: number, cy: number) => {
-        ctx.beginPath();
-        for (let y = -p * 4; y <= p * 4; y += p * 0.5) {
-          const span = Math.sin(y * 0.25) * p * 2.8;
-          if (y === -p * 4) ctx.moveTo(cx - span, cy + y);
-          else ctx.lineTo(cx - span, cy + y);
-        }
-        ctx.stroke();
-
-        ctx.beginPath();
-        for (let y = -p * 4; y <= p * 4; y += p * 0.5) {
-          const span = Math.sin(y * 0.25) * p * 2.8;
-          if (y === -p * 4) ctx.moveTo(cx + span, cy + y);
-          else ctx.lineTo(cx + span, cy + y);
-        }
-        ctx.stroke();
-
-        // Connecting rungs
-        for (let i = -3; i <= 3; i += 2) {
-          const py = cy + i * p * 1.1;
-          const span = Math.sin((i * p * 1.1) * 0.25) * p * 2.8;
-          ctx.beginPath();
-          ctx.moveTo(cx - span, py);
-          ctx.lineTo(cx + span, py);
-          ctx.stroke();
-        }
+        const strand = [
+          [-3, -4], [3, -4],
+          [-2, -3], [2, -3],
+          [-1, -2], [1, -2],
+          [0, -1],
+          [1, 0], [-1, 0],
+          [2, 1], [-2, 1],
+          [3, 2], [-3, 2],
+          [2, 3], [-2, 3],
+          [1, 4], [-1, 4]
+        ];
+        strand.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
+        // Cross rungs
+        drawPx(cx, cy, -2, -3, 4, 0.8);
+        drawPx(cx, cy, -2, 3, 4, 0.8);
       };
 
-      // 2. Erlenmeyer Beaker (Solid connected outline)
+      // 2. Authentic Pixel Art Erlenmeyer Beaker
       const drawBeaker = (cx: number, cy: number) => {
-        ctx.beginPath();
-        // Top Rim
-        ctx.moveTo(cx - p * 1.5, cy - p * 3);
-        ctx.lineTo(cx + p * 1.5, cy - p * 3);
-        // Neck
-        ctx.moveTo(cx - p * 0.8, cy - p * 3);
-        ctx.lineTo(cx - p * 0.8, cy - p * 1.5);
-        ctx.lineTo(cx - p * 2.8, cy + p * 2.5);
-        ctx.lineTo(cx + p * 2.8, cy + p * 2.5);
-        ctx.lineTo(cx + p * 0.8, cy - p * 1.5);
-        ctx.lineTo(cx + p * 0.8, cy - p * 3);
-        ctx.stroke();
-
-        // Liquid Level
-        ctx.beginPath();
-        ctx.moveTo(cx - p * 2, cy + p * 0.5);
-        ctx.lineTo(cx + p * 2, cy + p * 0.5);
-        ctx.stroke();
+        // Rim & Neck
+        drawPx(cx, cy, -1.5, -3.5, 3, 0.8);
+        drawPx(cx, cy, -0.8, -2.7, 1.6, 1.2);
+        // Flared body
+        drawPx(cx, cy, -1.5, -1.5, 3, 0.8);
+        drawPx(cx, cy, -2.2, -0.7, 4.4, 0.8);
+        drawPx(cx, cy, -3.0, 0.1, 6, 2.5);
+        // Base rim
+        drawPx(cx, cy, -3.2, 2.6, 6.4, 0.8);
       };
 
-      // 3. Atom Orbit (Nucleus + connected oval orbital ring)
+      // 3. Authentic Pixel Art Atom Orbit
       const drawAtom = (cx: number, cy: number) => {
-        // Solid nucleus
-        ctx.fillRect(cx - p * 0.8, cy - p * 0.8, p * 1.6, p * 1.6);
-
-        // Connected Orbital Ring 1
-        ctx.beginPath();
-        ctx.ellipse(cx, cy, p * 3.8, p * 1.8, Math.PI / 4, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Connected Orbital Ring 2
-        ctx.beginPath();
-        ctx.ellipse(cx, cy, p * 3.8, p * 1.8, -Math.PI / 4, 0, Math.PI * 2);
-        ctx.stroke();
+        // Nucleus
+        drawPx(cx, cy, -1, -1, 2, 2);
+        // Orbit ring pixels
+        const ring = [
+          [0, -4], [1, -4], [-1, -4],
+          [3, -3], [-3, -3],
+          [4, -1], [-4, -1], [4, 0], [-4, 0], [4, 1], [-4, 1],
+          [3, 3], [-3, 3],
+          [0, 4], [1, 4], [-1, 4]
+        ];
+        ring.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
       };
 
-      // 4. Integral ∫ (Connected smooth S-curve stroke)
+      // 4. Authentic Pixel Art Integral ∫
       const drawIntegral = (cx: number, cy: number) => {
-        ctx.beginPath();
-        ctx.moveTo(cx + p * 1.8, cy - p * 3.5);
-        ctx.bezierCurveTo(
-          cx - p * 1.5, cy - p * 3.5,
-          cx + p * 1.5, cy + p * 3.5,
-          cx - p * 1.8, cy + p * 3.5
-        );
-        ctx.stroke();
+        const pixels = [
+          [1, -4], [2, -4], [3, -4],
+          [1, -3],
+          [1, -2],
+          [0, -1],
+          [0, 0],
+          [0, 1],
+          [-1, 2],
+          [-1, 3],
+          [-3, 4], [-2, 4], [-1, 4]
+        ];
+        pixels.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
       };
 
-      // 5. Summation Σ (Connected 4-segment stroke)
+      // 5. Authentic Pixel Art Summation Σ
       const drawSummation = (cx: number, cy: number) => {
-        ctx.beginPath();
-        ctx.moveTo(cx + p * 2.2, cy - p * 3.2);
-        ctx.lineTo(cx - p * 1.8, cy - p * 3.2);
-        ctx.lineTo(cx + p * 0.4, cy);
-        ctx.lineTo(cx - p * 1.8, cy + p * 3.2);
-        ctx.lineTo(cx + p * 2.2, cy + p * 3.2);
-        ctx.stroke();
+        const pixels = [
+          [-3, -4], [-2, -4], [-1, -4], [0, -4], [1, -4], [2, -4], [3, -4],
+          [-2, -3],
+          [-1, -2],
+          [0, -1],
+          [-1, 0],
+          [-2, 1],
+          [-3, 2],
+          [-3, 4], [-2, 4], [-1, 4], [0, 4], [1, 4], [2, 4], [3, 4]
+        ];
+        pixels.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
       };
 
-      // 6. 3-Bar Histogram (Connected baseline + solid bars)
+      // 6. Authentic Pixel Art 3-Bar Histogram
       const drawGraphBar = (cx: number, cy: number) => {
-        const heights = [2.2, 4.5, 3.2];
-        const barW = p * 1.2;
-        const gap = p * 0.5;
-        const startX = cx - (heights.length * (barW + gap)) / 2;
-        const baseY = cy + p * 2.5;
-
         // Baseline
-        ctx.beginPath();
-        ctx.moveTo(startX - p * 0.5, baseY);
-        ctx.lineTo(startX + heights.length * (barW + gap) + p * 0.5, baseY);
-        ctx.stroke();
-
-        // Solid connected bars
-        heights.forEach((h, idx) => {
-          const bx = startX + idx * (barW + gap);
-          ctx.strokeRect(bx, baseY - p * h, barW, p * h);
-        });
+        drawPx(cx, cy, -3.5, 3.2, 7, 0.8);
+        // Bar 1
+        drawPx(cx, cy, -3, 0, 1.6, 3.2);
+        // Bar 2
+        drawPx(cx, cy, -0.8, -2.5, 1.6, 5.7);
+        // Bar 3
+        drawPx(cx, cy, 1.4, -1, 1.6, 4.2);
       };
 
-      // 7. Sine Wave Curve (Connected continuous wave line)
+      // 7. Authentic Pixel Art Sine Wave Curve
       const drawGraphCurve = (cx: number, cy: number) => {
-        ctx.beginPath();
-        for (let x = -p * 3.5; x <= p * 3.5; x += p * 0.4) {
-          const y = Math.sin((x / p) * 0.8) * p * 2.2;
-          if (x === -p * 3.5) ctx.moveTo(cx + x, cy - y);
-          else ctx.lineTo(cx + x, cy - y);
-        }
-        ctx.stroke();
+        const wave = [
+          [-4, 2], [-3, 1], [-2, 0], [-1, -1], [0, -2],
+          [1, -1], [2, 0], [3, 1], [4, 2]
+        ];
+        wave.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1.2, 1.2));
       };
 
-      // 8. Code Brackets { } (Connected continuous curly brackets)
+      // 8. Authentic Pixel Art Code Brackets { }
       const drawCodeBrackets = (cx: number, cy: number) => {
         // Left {
-        ctx.beginPath();
-        ctx.moveTo(cx - p * 1.5, cy - p * 3);
-        ctx.lineTo(cx - p * 2.2, cy - p * 3);
-        ctx.lineTo(cx - p * 2.2, cy - p * 0.8);
-        ctx.lineTo(cx - p * 3.0, cy);
-        ctx.lineTo(cx - p * 2.2, cy + p * 0.8);
-        ctx.lineTo(cx - p * 2.2, cy + p * 3);
-        ctx.lineTo(cx - p * 1.5, cy + p * 3);
-        ctx.stroke();
-
+        const leftB = [[0, -3.5], [-1, -2.5], [-1, -1.5], [-2, -0.5], [-1, 0.5], [-1, 1.5], [0, 2.5]];
+        leftB.forEach(([dx, dy]) => drawPx(cx, cy, -2 + dx, dy, 1, 1));
         // Right }
-        ctx.beginPath();
-        ctx.moveTo(cx + p * 1.5, cy - p * 3);
-        ctx.lineTo(cx + p * 2.2, cy - p * 3);
-        ctx.lineTo(cx + p * 2.2, cy - p * 0.8);
-        ctx.lineTo(cx + p * 3.0, cy);
-        ctx.lineTo(cx + p * 2.2, cy + p * 0.8);
-        ctx.lineTo(cx + p * 2.2, cy + p * 3);
-        ctx.lineTo(cx + p * 1.5, cy + p * 3);
-        ctx.stroke();
+        const rightB = [[0, -3.5], [1, -2.5], [1, -1.5], [2, -0.5], [1, 0.5], [1, 1.5], [0, 2.5]];
+        rightB.forEach(([dx, dy]) => drawPx(cx, cy, 2 + dx, dy, 1, 1));
       };
 
-      // 9. Neural Network (Connected nodes + continuous connection lines)
+      // 9. Authentic Pixel Art Neural Synapse
       const drawNeural = (cx: number, cy: number) => {
-        const nodes = [
-          { x: -p * 2.5, y: -p * 1.8 },
-          { x: p * 2.5, y: -p * 1.2 },
-          { x: 0, y: p * 2.2 },
-        ];
-
-        // Connection lines
-        ctx.beginPath();
-        ctx.moveTo(cx + nodes[0].x, cy + nodes[0].y);
-        ctx.lineTo(cx + nodes[2].x, cy + nodes[2].y);
-        ctx.lineTo(cx + nodes[1].x, cy + nodes[1].y);
-        ctx.stroke();
-
-        // Solid connected node dots
-        nodes.forEach((n) => {
-          ctx.beginPath();
-          ctx.arc(cx + n.x, cy + n.y, p * 0.6, 0, Math.PI * 2);
-          ctx.fill();
-        });
+        // Nodes
+        drawPx(cx, cy, -3, -2, 1.8, 1.8);
+        drawPx(cx, cy, 2, -1.5, 1.8, 1.8);
+        drawPx(cx, cy, -0.5, 2, 1.8, 1.8);
+        // Connectors
+        drawPx(cx, cy, -2, -1, 2, 1);
+        drawPx(cx, cy, 0.5, 0, 1.5, 1.5);
       };
 
-      // 10. Redesigned Connected Open Book (Clean connected geometry)
+      // 10. Authentic Pixel Art Open Book
       const drawBook = (cx: number, cy: number) => {
-        ctx.beginPath();
-        // Left page curve
-        ctx.moveTo(cx, cy - p * 1.8);
-        ctx.quadraticCurveTo(cx - p * 1.5, cy - p * 2.8, cx - p * 3.2, cy - p * 2.2);
-        ctx.lineTo(cx - p * 3.2, cy + p * 2.2);
-        ctx.quadraticCurveTo(cx - p * 1.5, cy + p * 1.6, cx, cy + p * 2.4);
-
-        // Right page curve
-        ctx.quadraticCurveTo(cx + p * 1.5, cy + p * 1.6, cx + p * 3.2, cy + p * 2.2);
-        ctx.lineTo(cx + p * 3.2, cy - p * 2.2);
-        ctx.quadraticCurveTo(cx + p * 1.5, cy - p * 2.8, cx, cy - p * 1.8);
-        ctx.stroke();
-
-        // Spine Line
-        ctx.beginPath();
-        ctx.moveTo(cx, cy - p * 1.8);
-        ctx.lineTo(cx, cy + p * 2.4);
-        ctx.stroke();
+        // Center spine
+        drawPx(cx, cy, -0.4, -2.5, 0.8, 5);
+        // Left page top/bottom
+        drawPx(cx, cy, -3.2, -2.2, 2.8, 0.8);
+        drawPx(cx, cy, -3.5, -1.4, 0.8, 3.2);
+        drawPx(cx, cy, -3.2, 1.8, 2.8, 0.8);
+        // Right page top/bottom
+        drawPx(cx, cy, 0.4, -2.2, 2.8, 0.8);
+        drawPx(cx, cy, 2.7, -1.4, 0.8, 3.2);
+        drawPx(cx, cy, 0.4, 1.8, 2.8, 0.8);
       };
 
-      // 11. Connected Dollar Sign ($)
+      // 11. Authentic Pixel Art Dollar Sign ($)
       const drawDollar = (cx: number, cy: number) => {
-        // Vertical line
-        ctx.beginPath();
-        ctx.moveTo(cx, cy - p * 3.2);
-        ctx.lineTo(cx, cy + p * 3.2);
-        ctx.stroke();
-
-        // S-curve stroke
-        ctx.beginPath();
-        ctx.moveTo(cx + p * 1.8, cy - p * 2.0);
-        ctx.quadraticCurveTo(cx, cy - p * 2.8, cx - p * 1.8, cy - p * 1.5);
-        ctx.quadraticCurveTo(cx, cy, cx + p * 1.8, cy + p * 1.5);
-        ctx.quadraticCurveTo(cx, cy + p * 2.8, cx - p * 1.8, cy + p * 2.0);
-        ctx.stroke();
+        drawPx(cx, cy, -0.4, -3.5, 0.8, 7);
+        const sPixels = [
+          [-1.8, -2.5], [-0.8, -2.5], [0.2, -2.5], [1.2, -2.5],
+          [-1.8, -1.5],
+          [-1.8, -0.5], [-0.8, -0.5], [0.2, -0.5], [1.2, -0.5],
+          [1.2, 0.5],
+          [-1.8, 1.5], [-0.8, 1.5], [0.2, 1.5], [1.2, 1.5]
+        ];
+        sPixels.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 0.9, 0.9));
       };
 
-      // 12. Connected Judge Gavel / Hammer
+      // 12. Authentic Pixel Art Judge Gavel
       const drawGavel = (cx: number, cy: number) => {
-        // Hammer head (rectangle outline)
-        ctx.strokeRect(cx - p * 2.2, cy - p * 2.8, p * 4.4, p * 1.5);
-        // Handle line
-        ctx.beginPath();
-        ctx.moveTo(cx, cy - p * 1.3);
-        ctx.lineTo(cx, cy + p * 2.2);
-        ctx.stroke();
-        // Sounding Base
-        ctx.beginPath();
-        ctx.moveTo(cx - p * 2.8, cy + p * 2.8);
-        ctx.lineTo(cx + p * 2.8, cy + p * 2.8);
-        ctx.stroke();
+        // Head
+        drawPx(cx, cy, -2.5, -2.5, 5, 1.5);
+        // Handle
+        drawPx(cx, cy, -0.4, -1, 0.8, 4);
+        // Sounding base block
+        drawPx(cx, cy, -3, 3, 6, 0.8);
       };
 
-      // 13. Connected Temple Pillar Column
+      // 13. Authentic Pixel Art Temple Pillar
       const drawPillar = (cx: number, cy: number) => {
-        // Capital Top
-        ctx.strokeRect(cx - p * 2.2, cy - p * 3.0, p * 4.4, p * 0.8);
-        // Fluted Columns
-        ctx.beginPath();
-        ctx.moveTo(cx - p * 1.4, cy - p * 2.2);
-        ctx.lineTo(cx - p * 1.4, cy + p * 2.2);
-        ctx.moveTo(cx, cy - p * 2.2);
-        ctx.lineTo(cx, cy + p * 2.2);
-        ctx.moveTo(cx + p * 1.4, cy - p * 2.2);
-        ctx.lineTo(cx + p * 1.4, cy + p * 2.2);
-        ctx.stroke();
-        // Base Bottom
-        ctx.strokeRect(cx - p * 2.2, cy + p * 2.2, p * 4.4, p * 0.8);
+        drawPx(cx, cy, -2.5, -3, 5, 0.8);
+        drawPx(cx, cy, -1.8, -2.2, 3.6, 0.6);
+        drawPx(cx, cy, -1.4, -1.6, 0.7, 3.8);
+        drawPx(cx, cy, -0.35, -1.6, 0.7, 3.8);
+        drawPx(cx, cy, 0.7, -1.6, 0.7, 3.8);
+        drawPx(cx, cy, -2.5, 2.2, 5, 0.8);
       };
 
-      // Symbol drawers array
+      // Array of curated authentic pixel drawers
       const symbolDrawers = [
         drawDNA, drawBeaker, drawAtom, drawIntegral, drawSummation,
         drawGraphBar, drawGraphCurve, drawCodeBrackets, drawNeural,
         drawBook, drawDollar, drawGavel, drawPillar
       ];
 
-      // 3. Render Evenly Distributed Grid of Connected Symbols
+      // 3. Render Deterministic Grid of Pixel-Art Symbols (Zero Reload Flicker / 100% Static Layout)
       const cols = 6;
       const rows = Math.ceil(height / (window.innerHeight / 4));
       const cellW = width / cols;
       const cellH = height / rows;
 
-      ctx.globalAlpha = opacity; // High-visibility single uniform alpha pass
+      ctx.fillStyle = iconColor;
+      ctx.globalAlpha = opacity; // Faint, sleek uniform opacity pass
 
-      let drawerIdx = 0;
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
           const cx = c * cellW + cellW * 0.5;
           const cy = r * cellH + cellH * 0.5;
-          const drawer = symbolDrawers[drawerIdx % symbolDrawers.length];
+          // Deterministic slot mapping (no Math.random on render!)
+          const drawerIdx = (r * 5 + c * 3) % symbolDrawers.length;
+          const drawer = symbolDrawers[drawerIdx];
           drawer(cx, cy);
-          drawerIdx++;
         }
       }
 
