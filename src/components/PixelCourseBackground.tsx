@@ -32,6 +32,8 @@ type SymbolType =
 interface SymbolObject {
   x: number;
   y: number;
+  homeX: number;
+  homeY: number;
   vx: number;
   vy: number;
   radius: number;
@@ -41,7 +43,7 @@ interface SymbolObject {
 }
 
 export function PixelCourseBackground({
-  opacity = 0.55,
+  opacity = 0.35,
   pixelSize = 8,
 }: PixelCourseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -68,10 +70,10 @@ export function PixelCourseBackground({
       if (!dotCtx) return;
 
       const dotSpacing = 32;
-      dotCtx.fillStyle = "rgba(255, 255, 255, 0.45)"; // Higher dot opacity
+      dotCtx.fillStyle = "rgba(255, 255, 255, 0.18)"; // Soft, clean dot opacity
       for (let x = dotSpacing / 2; x < w; x += dotSpacing) {
         for (let y = dotSpacing / 2; y < h; y += dotSpacing) {
-          dotCtx.fillRect(Math.floor(x), Math.floor(y), 2, 2);
+          dotCtx.fillRect(Math.floor(x), Math.floor(y), 1.8, 1.8);
         }
       }
     };
@@ -129,15 +131,20 @@ export function PixelCourseBackground({
 
       const cfg = shuffledConfigs[i % shuffledConfigs.length];
 
-      const cx = col * cellW + cellW * 0.5 + (Math.random() - 0.5) * (cellW * 0.35);
-      const cy = row * cellH + cellH * 0.5 + (Math.random() - 0.5) * (cellH * 0.35);
+      const homeX = col * cellW + cellW * 0.5;
+      const homeY = row * cellH + cellH * 0.5;
+
+      const cx = homeX + (Math.random() - 0.5) * (cellW * 0.4);
+      const cy = homeY + (Math.random() - 0.5) * (cellH * 0.4);
 
       const angle = Math.random() * Math.PI * 2;
-      const speed = 0.2 + Math.random() * 0.2;
+      const speed = 0.15 + Math.random() * 0.15;
 
       symbols.push({
         x: cx,
         y: cy,
+        homeX,
+        homeY,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         radius: 60,
@@ -455,7 +462,7 @@ export function PixelCourseBackground({
     };
 
     // Optimized Animation Loop
-    const minDistanceSq = 135 * 135;
+    const minDistanceSq = 120 * 120;
 
     const draw = () => {
       if (!inView) return;
@@ -468,7 +475,7 @@ export function PixelCourseBackground({
         ctx.drawImage(dotCanvas, 0, 0);
       }
 
-      // 2. High-Performance Anti-Overlap Spatial Engine (Squared Distance Checks)
+      // 2. High-Performance Anti-Overlap Spatial Engine
       const len = symbols.length;
       for (let i = 0; i < len; i++) {
         const s1 = symbols[i];
@@ -481,44 +488,45 @@ export function PixelCourseBackground({
 
           if (distSq < minDistanceSq && distSq > 0) {
             const dist = Math.sqrt(distSq);
-            const overlap = (135 - dist) * 0.5;
+            const overlap = (120 - dist) * 0.5;
             const nx = dx / dist;
             const ny = dy / dist;
 
-            s1.x -= nx * overlap * 0.05;
-            s1.y -= ny * overlap * 0.05;
-            s2.x += nx * overlap * 0.05;
-            s2.y += ny * overlap * 0.05;
+            s1.x -= nx * overlap * 0.04;
+            s1.y -= ny * overlap * 0.04;
+            s2.x += nx * overlap * 0.04;
+            s2.y += ny * overlap * 0.04;
 
-            s1.vx -= nx * 0.02;
-            s1.vy -= ny * 0.02;
-            s2.vx += nx * 0.02;
-            s2.vy += ny * 0.02;
+            s1.vx -= nx * 0.015;
+            s1.vy -= ny * 0.015;
+            s2.vx += nx * 0.015;
+            s2.vy += ny * 0.015;
           }
         }
       }
 
-      // 3. Move and Render Symbols
+      // 3. Move, Soft Home Grid Tethering & Render Symbols (Guarantees Perfectly Balanced Screen Distribution)
       for (let i = 0; i < len; i++) {
         const s = symbols[i];
+
+        // Soft tethering force toward designated cell center
+        const homeDx = s.homeX - s.x;
+        const homeDy = s.homeY - s.y;
+        s.vx += homeDx * 0.00015;
+        s.vy += homeDy * 0.00015;
+
         s.x += s.vx;
         s.y += s.vy;
 
-        const margin = 80;
-        if (s.x < -margin) s.x = width + margin;
-        if (s.x > width + margin) s.x = -margin;
-        if (s.y < -margin) s.y = height + margin;
-        if (s.y > height + margin) s.y = -margin;
+        // Soft velocity damping for ultra-smooth floating
+        s.vx *= 0.992;
+        s.vy *= 0.992;
 
         const speedSq = s.vx * s.vx + s.vy * s.vy;
-        if (speedSq > 0.2025) { // 0.45^2 = 0.2025
+        if (speedSq > 0.16) { // 0.4^2 = 0.16
           const speed = Math.sqrt(speedSq);
-          s.vx = (s.vx / speed) * 0.45;
-          s.vy = (s.vy / speed) * 0.45;
-        } else if (speedSq < 0.0225) { // 0.15^2 = 0.0225
-          const speed = Math.sqrt(speedSq);
-          s.vx = (s.vx / speed) * 0.15;
-          s.vy = (s.vy / speed) * 0.15;
+          s.vx = (s.vx / speed) * 0.4;
+          s.vy = (s.vy / speed) * 0.4;
         }
 
         drawSymbol(s);
