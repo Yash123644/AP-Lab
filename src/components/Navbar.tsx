@@ -35,10 +35,10 @@ export function Navbar() {
   return (
     <>
       <nav className={cn(
-        "fixed top-0 left-0 right-0 z-50 px-6 md:px-[120px] transition-[background-color,border-color,padding,box-shadow,backdrop-filter] duration-500 flex items-center justify-between",
+        "fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-[120px] transition-[background-color,border-color,padding,box-shadow,backdrop-filter] duration-500 flex items-center justify-between",
         isScrolled 
-          ? "bg-black/60 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg" 
-          : "bg-transparent border-b border-transparent py-6"
+          ? "bg-black/60 backdrop-blur-xl border-b border-white/10 py-3.5 shadow-lg" 
+          : "bg-transparent border-b border-transparent py-5 sm:py-6"
       )}>
         {/* Left Container */}
         <div className="flex-1 flex justify-start">
@@ -53,15 +53,15 @@ export function Navbar() {
             }}
             className="flex items-center space-x-3 cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-              <Activity className="w-5 h-5 text-white animate-pulse" />
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
+              <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-white animate-pulse" />
             </div>
-            <span className="font-manrope font-bold text-white tracking-tight text-lg">AP Lab</span>
+            <span className="font-manrope font-bold text-white tracking-tight text-base sm:text-lg">AP Lab</span>
           </Link>
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-10">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-10">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (

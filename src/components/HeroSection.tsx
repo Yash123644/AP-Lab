@@ -8,7 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useUI } from "@/context/UIContext";
 
 const DNAIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <path d="M30 15 Q50 50 70 85" strokeWidth="2.5"/>
     <path d="M70 15 Q50 50 30 85" strokeWidth="2.5"/>
     <line x1="36" y1="25" x2="64" y2="25" />
@@ -25,7 +25,7 @@ const DNAIcon = () => (
 );
 
 const MoleculeIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <circle cx="50" cy="50" r="8" fill="currentColor" />
     <circle cx="20" cy="30" r="6" fill="currentColor" />
     <circle cx="80" cy="30" r="6" fill="currentColor" />
@@ -39,7 +39,7 @@ const MoleculeIcon = () => (
 );
 
 const MathGraphIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <line x1="15" y1="10" x2="15" y2="85" strokeWidth="2.5" />
     <line x1="15" y1="85" x2="90" y2="85" strokeWidth="2.5" />
     <line x1="15" y1="35" x2="90" y2="35" strokeDasharray="2 4" />
@@ -53,7 +53,7 @@ const MathGraphIcon = () => (
 );
 
 const BooksIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <rect x="20" y="60" width="60" height="15" rx="2" strokeWidth="2" />
     <line x1="28" y1="60" x2="28" y2="75" strokeWidth="2" />
     <rect x="25" y="42" width="50" height="15" rx="2" strokeWidth="2" />
@@ -64,7 +64,7 @@ const BooksIcon = () => (
 );
 
 const MicroscopeIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <path d="M30 85h40M50 85V75M35 75h30" />
     <path d="M65 75 C 65 50, 55 38, 50 22" />
     <rect x="42" y="15" width="16" height="30" rx="3" transform="rotate(-25 50 30)" />
@@ -73,7 +73,7 @@ const MicroscopeIcon = () => (
 );
 
 const AtomIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <circle cx="50" cy="50" r="7" fill="currentColor" />
     <ellipse cx="50" cy="50" rx="40" ry="14" transform="rotate(30 50 50)" />
     <ellipse cx="50" cy="50" rx="40" ry="14" transform="rotate(90 50 50)" />
@@ -82,7 +82,7 @@ const AtomIcon = () => (
 );
 
 const CapIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <polygon points="50,20 85,35 50,50 15,35" />
     <path d="M30 42v18c0 10 9 15 20 15s20-5 20-15V42" />
     <path d="M85 35v25" strokeWidth="1.5" />
@@ -91,7 +91,7 @@ const CapIcon = () => (
 );
 
 const BrainIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16 md:w-20 md:h-20">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
     <path d="M48 20 C35 20, 25 30, 25 45 C25 55, 30 65, 40 70 C42 72, 45 76, 45 80" />
     <path d="M52 20 C65 20, 75 30, 75 45 C75 55, 70 65, 60 70 C58 72, 55 76, 55 80" />
     <circle cx="38" cy="35" r="3" fill="currentColor" />
@@ -109,7 +109,7 @@ const BrainIcon = () => (
 );
 
 const FlaskIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14 md:w-16 md:h-16">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10 lg:w-14 lg:h-14">
     <path d="M38 20v28L20 72a6 6 0 0 0 5 10h50a6 6 0 0 0 5-10L62 48V20" strokeWidth="2.5" />
     <line x1="34" y1="20" x2="66" y2="20" strokeWidth="2.5" />
     <circle cx="38" cy="72" r="4" fill="currentColor" />
@@ -119,14 +119,13 @@ const FlaskIcon = () => (
 );
 
 const SigmaIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14 md:w-16 md:h-16">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10 lg:w-14 lg:h-14">
     <path d="M72 18H28l24 32-24 32h44" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
   <svg viewBox="0 0 24 24" fill="none" className="w-[20px] h-[20px] text-black">
-    {/* Door Frame Bracket */}
     <path 
       d="M12 5H8.5C7.67 5 7 5.67 7 6.5v11c0 .83.67 1.5 1.5 1.5H12" 
       stroke="currentColor" 
@@ -135,7 +134,6 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
       strokeLinejoin="round" 
     />
     
-    {/* Door Leaf (Swinging/Morphing) - Rendered BEFORE the arrow so arrow is drawn on top */}
     <motion.path 
       d={isHovered 
         ? "M12 3 L16 5 L16 19 L12 21 Z" 
@@ -148,7 +146,6 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
     />
 
-    {/* Thicker White Arrow Outline (for contrast when overlapping black door) */}
     <motion.path 
       d="M2 12h9.5M8.5 9l3 3-3 3" 
       stroke="white" 
@@ -159,7 +156,6 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     />
     
-    {/* Black Arrow */}
     <motion.path 
       d="M2 12h9.5M8.5 9l3 3-3 3" 
       stroke="currentColor" 
@@ -173,7 +169,7 @@ const DoorIcon = ({ isHovered }: { isHovered: boolean }) => (
 );
 
 const RulerIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14 md:w-16 md:h-16">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10 lg:w-14 lg:h-14">
     <rect x="15" y="35" width="70" height="30" rx="3" strokeWidth="2" />
     <line x1="25" y1="35" x2="25" y2="50" strokeWidth="2" />
     <line x1="35" y1="35" x2="35" y2="45" strokeWidth="1.5" />
@@ -185,7 +181,7 @@ const RulerIcon = () => (
 );
 
 const PeriodicIcon = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14 md:w-16 md:h-16">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10 lg:w-14 lg:h-14">
     <rect x="10" y="10" width="22" height="22" rx="3" />
     <rect x="37" y="10" width="22" height="22" rx="3" />
     <rect x="64" y="10" width="22" height="22" rx="3" />
@@ -226,7 +222,7 @@ const charVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.9,
-      ease: [0.16, 1, 0.3, 1] as [number, number, number, number], // easeOutExpo
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
       delay: 0.45 + index * 0.03,
     },
   }),
@@ -236,7 +232,7 @@ const charVariants: Variants = {
     y: -15,
     transition: {
       duration: 0.75,
-      ease: [0.4, 0, 1, 1] as [number, number, number, number], // easeIn
+      ease: [0.4, 0, 1, 1] as [number, number, number, number],
       delay: index * 0.025,
     },
   }),
@@ -263,12 +259,11 @@ function MousePushedWrapper({ children, className, style, animate, transition }:
       const dx = elemX - e.clientX;
       const dy = elemY - e.clientY;
       const distance = Math.sqrt(dx * dx + dy * dy);
-      const pushRadius = 240; // pixel proximity range
+      const pushRadius = 240;
 
       if (distance < pushRadius) {
-        // Smooth cursor push displacement
         const force = (pushRadius - distance) / pushRadius;
-        const pushAmount = force * 50; // max push of 50px
+        const pushAmount = force * 50;
         const angle = Math.atan2(dy, dx);
         x.set(Math.cos(angle) * pushAmount);
         y.set(Math.sin(angle) * pushAmount);
@@ -299,7 +294,6 @@ export function HeroSection() {
   const { currentUser } = useAuth();
   const { openAuthModal } = useUI();
   const { scrollY } = useScroll();
-  const scrollIndicatorOpacity = useTransform(scrollY, [0, 200], [0.55, 0]);
   const isPaused = false;
 
   const words = ["learning", "discovery", "mastery", "science", "medicine", "knowledge"];
@@ -315,26 +309,23 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 pb-32 px-6 md:px-12 overflow-hidden text-center z-10">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-20 md:pb-28 px-4 sm:px-6 md:px-12 overflow-hidden text-center z-10">
       {/* Animated Cursor Reactive Lines Background */}
       <CursorLinesBackground isPaused={isPaused} />
 
-      {/* Background Floating Study Assets
-           Each icon has mix-blend-mode:difference applied DIRECTLY (not on a wrapper)
-           so it blends against the coloured lines canvas below it correctly.
-           A radial CSS mask makes icons invisible near center and visible at edges. */}
+      {/* Background Floating Study Assets (Positional adjustments for clean non-overlapping layout on all screen sizes) */}
       <div
         className="absolute inset-0 pointer-events-none z-[1] select-none"
         style={{
           mixBlendMode: "difference",
           opacity: 0.65,
-          WebkitMaskImage: "radial-gradient(ellipse 55% 55% at 50% 50%, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 55%, black 80%)",
-          maskImage: "radial-gradient(ellipse 55% 55% at 50% 50%, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 55%, black 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 60% 60% at 50% 50%, transparent 0%, transparent 35%, rgba(0,0,0,0.3) 60%, black 85%)",
+          maskImage: "radial-gradient(ellipse 60% 60% at 50% 50%, transparent 0%, transparent 35%, rgba(0,0,0,0.3) 60%, black 85%)",
         }}
       >
         {/* DNA: top-left */}
         <MousePushedWrapper 
-          className="absolute top-[14%] left-[10%] text-white"
+          className="absolute top-[18%] left-[3%] sm:left-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -12, 0], rotate: [0, 8, -8, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -344,7 +335,7 @@ export function HeroSection() {
 
         {/* Molecule: top-right */}
         <MousePushedWrapper 
-          className="absolute top-[14%] right-[10%] text-white"
+          className="absolute top-[18%] right-[3%] sm:right-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -15, 0], rotate: [0, -12, 12, 0] }}
           transition={{ duration: 9.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -354,7 +345,7 @@ export function HeroSection() {
 
         {/* Math Graph: bottom-left */}
         <MousePushedWrapper 
-          className="absolute bottom-[20%] left-[8%] text-white"
+          className="absolute bottom-[18%] left-[3%] sm:left-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
@@ -364,7 +355,7 @@ export function HeroSection() {
 
         {/* Stacked Books: mid-left */}
         <MousePushedWrapper 
-          className="absolute top-[32%] left-[6%] text-white"
+          className="absolute top-[36%] left-[2%] sm:left-[4%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -11, 0], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
@@ -374,7 +365,7 @@ export function HeroSection() {
 
         {/* Graduation Cap: mid-right */}
         <MousePushedWrapper 
-          className="absolute top-[32%] right-[6%] text-white"
+          className="absolute top-[36%] right-[2%] sm:right-[4%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -13, 0], rotate: [0, 7, -7, 0] }}
           transition={{ duration: 8.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
@@ -384,7 +375,7 @@ export function HeroSection() {
 
         {/* Microscope: bottom-right */}
         <MousePushedWrapper 
-          className="absolute bottom-[20%] right-[8%] text-white"
+          className="absolute bottom-[18%] right-[3%] sm:right-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -14, 0], rotate: [0, -8, 8, 0] }}
           transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
@@ -394,7 +385,7 @@ export function HeroSection() {
 
         {/* Atom: lower-mid-right */}
         <MousePushedWrapper 
-          className="absolute top-[55%] right-[5%] text-white"
+          className="absolute top-[58%] right-[2%] sm:right-[4%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -9, 0], rotate: [0, 15, -15, 0] }}
           transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
@@ -404,7 +395,7 @@ export function HeroSection() {
 
         {/* Brain: lower-mid-left */}
         <MousePushedWrapper 
-          className="absolute top-[55%] left-[5%] text-white"
+          className="absolute top-[58%] left-[2%] sm:left-[4%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -12, 0], rotate: [0, -5, 5, 0] }}
           transition={{ duration: 8.0, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
@@ -412,9 +403,9 @@ export function HeroSection() {
           <BrainIcon />
         </MousePushedWrapper>
 
-        {/* Flask: top-center-left */}
+        {/* Flask: top-center-left (Only on large displays to prevent title overlap) */}
         <MousePushedWrapper 
-          className="absolute top-[10%] left-[22%] text-white"
+          className="hidden xl:block absolute top-[14%] left-[16%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -10, 0], rotate: [0, -6, 6, 0] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -422,9 +413,9 @@ export function HeroSection() {
           <FlaskIcon />
         </MousePushedWrapper>
 
-        {/* Sigma: top-center-right */}
+        {/* Sigma: top-center-right (Only on large displays to prevent title overlap) */}
         <MousePushedWrapper 
-          className="absolute top-[10%] right-[22%] text-white"
+          className="hidden xl:block absolute top-[14%] right-[16%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
           transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 3 }}
@@ -434,7 +425,7 @@ export function HeroSection() {
 
         {/* Ruler: bottom-center-left */}
         <MousePushedWrapper 
-          className="absolute bottom-[12%] left-[20%] text-white"
+          className="hidden lg:block absolute bottom-[10%] left-[14%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -11, 0], rotate: [0, 4, -4, 0] }}
           transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
@@ -444,7 +435,7 @@ export function HeroSection() {
 
         {/* Periodic Table: bottom-center-right */}
         <MousePushedWrapper 
-          className="absolute bottom-[12%] right-[20%] text-white"
+          className="hidden lg:block absolute bottom-[10%] right-[14%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -9, 0], rotate: [0, -7, 7, 0] }}
           transition={{ duration: 9.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
@@ -453,30 +444,30 @@ export function HeroSection() {
         </MousePushedWrapper>
       </div>
 
-      {/* Seamless Fade Transition at bottom to transition to deep-navy sections */}
-      <div className="absolute bottom-0 left-0 right-0 h-[300px] bg-gradient-to-t from-deep-navy via-deep-navy/60 to-transparent z-10 pointer-events-none" />
+      {/* Seamless Fade Transition at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-[250px] bg-gradient-to-t from-deep-navy via-deep-navy/60 to-transparent z-10 pointer-events-none" />
 
       {/* Hero Content Container */}
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col items-center justify-center w-full max-w-6xl -mt-12 relative"
+        className="flex flex-col items-center justify-center w-full max-w-6xl mt-2 sm:mt-4 md:mt-6 relative z-10"
       >
-        {/* Glassmorphic Capsule Header (Unclickable) */}
-        <div className="mb-8 block select-none">
-          <div className="liquid-glass-badge px-6 py-2.5 rounded-full flex items-center justify-center text-center">
-            <span className="relative z-10 font-sans font-extrabold text-[10px] sm:text-xs text-white/90 uppercase tracking-wider flex items-center justify-center gap-2">
+        {/* Glassmorphic Capsule Header */}
+        <div className="mb-6 sm:mb-8 block select-none">
+          <div className="liquid-glass-badge px-4 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center text-center">
+            <span className="relative z-10 font-sans font-extrabold text-[9px] sm:text-xs text-white/90 uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2">
               SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
-              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-white/60 stroke-[2.5]" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/60 stroke-[2.5]" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </div>
         </div>
 
-        {/* Massive Headline */}
-        <h1 className="font-inter font-bold text-white text-5xl sm:text-6xl md:text-[96px] leading-[1.05] mb-8 tracking-tight max-w-5xl text-center select-none mix-blend-difference">
+        {/* Massive Headline (Fully responsive sizing for laptop & mobile screens) */}
+        <h1 className="font-inter font-bold text-white text-4xl sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[96px] leading-[1.08] mb-6 sm:mb-8 tracking-tight max-w-5xl text-center select-none mix-blend-difference">
           For the love <br />
           <motion.span 
             layout="position" 
@@ -518,8 +509,8 @@ export function HeroSection() {
           </motion.span>
         </h1>
 
-        {/* Subtitle formatted like Apple Music's subtext */}
-        <p className="font-inter font-medium text-[16px] md:text-[20px] text-white/80 max-w-[820px] mb-12 text-center leading-relaxed text-balance px-4 select-none">
+        {/* Subtitle */}
+        <p className="font-inter font-medium text-sm sm:text-base md:text-lg lg:text-[20px] text-white/80 max-w-3xl mb-8 sm:mb-12 text-center leading-relaxed text-balance px-4 select-none">
           Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.{" "}
           <span className="whitespace-nowrap">
             <strong className="font-extrabold text-medical-teal animate-free-badge">100% Free</strong>
@@ -527,18 +518,18 @@ export function HeroSection() {
               <img 
                 src="/images/verified-badge.png" 
                 alt="Verified Badge" 
-                className="w-[34px] h-[34px] shrink-0 aspect-square select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
+                className="w-[28px] h-[28px] sm:w-[34px] sm:h-[34px] shrink-0 aspect-square select-none transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_6px_rgba(32,201,151,0.3)]" 
               />
             </span>
           </span>
         </p>
 
         {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-6 mt-2 relative z-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-6 mt-2 relative z-10">
           {currentUser ? (
             <Link href="/dashboard">
               <button 
-                className="pb-ai-button"
+                className="pb-ai-button w-full sm:w-auto"
                 onMouseEnter={() => setIsHoveredDashboard(true)}
                 onMouseLeave={() => setIsHoveredDashboard(false)}
               >
@@ -551,7 +542,7 @@ export function HeroSection() {
           ) : (
             <button 
               onClick={() => openAuthModal("signin")}
-              className="pb-ai-button"
+              className="pb-ai-button w-full sm:w-auto"
               onMouseEnter={() => setIsHoveredSignIn(true)}
               onMouseLeave={() => setIsHoveredSignIn(false)}
             >
@@ -566,8 +557,9 @@ export function HeroSection() {
             href="https://discord.com/invite/dUSaevPETd" 
             target="_blank" 
             rel="noopener noreferrer"
+            className="w-full sm:w-auto"
           >
-            <button className="pb-ai-button-inverted">
+            <button className="pb-ai-button-inverted w-full sm:w-auto">
               <span className="pb-ai-sparkle flex items-center justify-center">
                 <DiscordLogoIcon className="w-5 h-5" />
               </span>
@@ -576,32 +568,6 @@ export function HeroSection() {
           </a>
         </div>
       </motion.div>
-
-      {/* Animated Scroll Indicator (Smoothly animated white down arrow) */}
-      <motion.div 
-        style={{ opacity: scrollIndicatorOpacity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 pointer-events-none"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.0, repeat: Infinity, ease: "easeInOut" }}
-          className="text-white/40"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </motion.div>
-      </motion.div>
-
-      {/* Inline SVG Filter definitions for retro glowing borders */}
-      <svg style={{ position: "absolute", width: 0, height: 0, pointerEvents: "none" }} width="0" height="0">
-        <defs>
-          <filter id="unopaq">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" />
-          </filter>
-        </defs>
-      </svg>
     </section>
   );
 }
-
