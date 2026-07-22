@@ -494,9 +494,9 @@ export default function Dashboard() {
       {/* Clean Pixelated Animated Background (DNA, Graphs, Atoms, Math, Binary) */}
       <PixelCourseBackground />
 
-      {/* Volumetric Dark Vignette Overlay & Backdrop Blur */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#020308]/90 via-transparent to-[#020308] backdrop-blur-[2.5px] pointer-events-none" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_30%,#020308_95%)] pointer-events-none" />
+      {/* Volumetric Subtle Vignette Overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#020308]/20 via-transparent to-[#020308]/70 pointer-events-none" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_40%,#020308_95%)] pointer-events-none" />
       
       {/* Floating Navbar Pill */}
       <nav className={cn(
@@ -512,7 +512,8 @@ export default function Dashboard() {
           <span className="font-manrope font-bold text-white tracking-tight hidden sm:block">AP Lab</span>
         </Link>
 
-        <div className="font-cabin font-bold text-white/50 tracking-widest uppercase text-sm">
+        {/* Centered Dashboard Text */}
+        <div className="absolute left-1/2 -translate-x-1/2 font-cabin font-bold text-white/50 tracking-widest uppercase text-sm pointer-events-none">
           Dashboard
         </div>
 
@@ -556,19 +557,11 @@ export default function Dashboard() {
             </span>
             <LevelBadge level={level} className="normal-case tracking-normal shrink-0 translate-y-[1px]" />
           </motion.div>
-          <motion.h1 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="font-inter font-extrabold text-white text-3xl md:text-5xl tracking-tight mb-4"
-          >
-            Included Workspace
-          </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed"
+            transition={{ delay: 0.15 }}
+            className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed mt-1"
           >
             Navigate your folders or search for a course below.
           </motion.p>

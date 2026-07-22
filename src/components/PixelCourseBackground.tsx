@@ -7,12 +7,38 @@ interface PixelCourseBackgroundProps {
   pixelSize?: number;
 }
 
+type SymbolType =
+  | "dna"
+  | "molecule"
+  | "cell"
+  | "beaker"
+  | "atom"
+  | "vectors"
+  | "integral"
+  | "summation"
+  | "graph_bar"
+  | "graph_curve"
+  | "code_brackets"
+  | "binary_bits"
+  | "neural"
+  | "pillar";
+
+interface SymbolObject {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  type: SymbolType;
+  color: string;
+  phase: number;
+}
+
 export function PixelCourseBackground({
   opacity = 0.85,
   pixelSize = 8,
 }: PixelCourseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -36,209 +62,310 @@ export function PixelCourseBackground({
     resize();
     window.addEventListener("resize", resize);
 
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    const handleMouseLeave = () => {
-      mouseRef.current = { x: -1000, y: -1000 };
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
-
-    // Initialize course element particle objects
-    const elementsCount = 28;
-    const elements: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      type: "dna" | "graph" | "atom" | "math" | "code" | "neural" | "beaker" | "history";
-      color: string;
-      scale: number;
-      rotation: number;
-      rotSpeed: number;
-      extraData?: any;
-    }> = [];
-
-    const types: Array<{ type: any; color: string }> = [
-      { type: "dna", color: "#00f2ff" },       // Bio - Cyan
-      { type: "beaker", color: "#38bdf8" },    // Chem - Sky
-      { type: "atom", color: "#60a5fa" },      // Phys - Blue
-      { type: "math", color: "#34d399" },      // Calc - Emerald
-      { type: "graph", color: "#10b981" },     // Stats - Teal
-      { type: "code", color: "#818cf8" },      // CS - Indigo
-      { type: "neural", color: "#a78bfa" },    // Psych - Purple
-      { type: "history", color: "#f59e0b" },   // USH - Amber
+    // List of 14 distinct AP course symbol definitions with dedicated neon colors
+    const symbolConfigs: Array<{ type: SymbolType; color: string }> = [
+      { type: "dna", color: "#00f2ff" },           // AP Bio - Electric Teal
+      { type: "molecule", color: "#38bdf8" },      // AP Chem - Cyan
+      { type: "cell", color: "#34d399" },          // AP Bio - Emerald
+      { type: "beaker", color: "#60a5fa" },        // AP Chem - Sky Blue
+      { type: "atom", color: "#818cf8" },          // AP Physics - Indigo
+      { type: "vectors", color: "#38bdf8" },       // AP Physics - Light Blue
+      { type: "integral", color: "#a78bfa" },      // AP Calc - Purple
+      { type: "summation", color: "#c084fc" },     // AP Calc - Violet
+      { type: "graph_bar", color: "#10b981" },     // AP Stats - Green
+      { type: "graph_curve", color: "#4ade80" },   // AP Stats - Lime Green
+      { type: "code_brackets", color: "#6366f1" }, // AP CS A - Deep Indigo
+      { type: "binary_bits", color: "#0ea5e9" },   // AP CS A - Ocean Blue
+      { type: "neural", color: "#e879f9" },        // AP Psych - Pink Purple
+      { type: "pillar", color: "#fbbf24" },        // AP USH / History - Amber Gold
     ];
 
-    for (let i = 0; i < elementsCount; i++) {
-      const t = types[i % types.length];
-      elements.push({
-        x: Math.random() * (width || 1200),
-        y: Math.random() * (height || 800),
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        type: t.type,
-        color: t.color,
-        scale: 1.8 + Math.random() * 0.8,
-        rotation: 0,
-        rotSpeed: (Math.random() - 0.5) * 0.02,
-        extraData: Math.random() * 100,
+    // Grid-based initial placement to strictly prevent initial overlap
+    const cols = 5;
+    const rows = 3;
+    const totalSlots = cols * rows;
+    const symbols: SymbolObject[] = [];
+
+    // Shuffle symbol configs to distribute randomly
+    const shuffledConfigs = [...symbolConfigs].sort(() => Math.random() - 0.5);
+
+    const cellW = (width || 1200) / cols;
+    const cellH = (height || 800) / rows;
+
+    for (let i = 0; i < totalSlots; i++) {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+
+      const cfg = shuffledConfigs[i % shuffledConfigs.length];
+
+      // Place in center of grid cell with slight random jitter
+      const cx = col * cellW + cellW * 0.5 + (Math.random() - 0.5) * (cellW * 0.4);
+      const cy = row * cellH + cellH * 0.5 + (Math.random() - 0.5) * (cellH * 0.4);
+
+      // Low velocity for smooth motion
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.2 + Math.random() * 0.25;
+
+      symbols.push({
+        x: cx,
+        y: cy,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        radius: 65, // Safety collision radius around symbols
+        type: cfg.type,
+        color: cfg.color,
+        phase: Math.random() * Math.PI * 2,
       });
     }
 
     let time = 0;
     let inView = true;
 
-    // Pixel drawing helpers
-    const drawPixelRect = (px: number, py: number, w: number, h: number, color: string) => {
+    // Helper: Draw solid pixel rectangle
+    const drawPixelRect = (px: number, py: number, w: number, h: number, color: string, alpha = 1.0) => {
       ctx.fillStyle = color;
+      ctx.globalAlpha = alpha;
       ctx.fillRect(Math.floor(px), Math.floor(py), Math.floor(w), Math.floor(h));
+      ctx.globalAlpha = 1.0;
     };
 
-    // Draw Pixel Art DNA Strand
-    const drawPixelDNA = (cx: number, cy: number, color: string, t: number) => {
+    // 1. AP Bio: Pixel DNA Double Helix
+    const drawDNA = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      const heightBars = 6;
-      for (let i = -heightBars; i <= heightBars; i++) {
-        const offset = i * p * 1.5;
-        const angle = t * 2 + i * 0.4;
-        const widthSpan = Math.sin(angle) * p * 4;
-        const opacity = Math.abs(Math.cos(angle)) * 0.8 + 0.2;
+      const nodes = 7;
+      for (let i = -nodes; i <= nodes; i++) {
+        const py = cy + i * p * 1.4;
+        const angle = t * 1.8 + i * 0.45;
+        const span = Math.sin(angle) * p * 4;
+        const opacity = Math.abs(Math.cos(angle)) * 0.7 + 0.3;
 
-        // Left & Right Strand Nodes
-        drawPixelRect(cx - widthSpan - p, cy + offset, p * 1.2, p * 1.2, color);
-        drawPixelRect(cx + widthSpan, cy + offset, p * 1.2, p * 1.2, color);
+        drawPixelRect(cx - span - p * 0.6, py, p * 1.2, p * 1.2, color);
+        drawPixelRect(cx + span - p * 0.6, py, p * 1.2, p * 1.2, color);
 
-        // Connecting Rung
-        if (Math.abs(widthSpan) > p * 0.8) {
-          ctx.fillStyle = color;
-          ctx.globalAlpha = opacity * 0.4;
-          ctx.fillRect(cx - Math.abs(widthSpan), cy + offset + p * 0.3, Math.abs(widthSpan) * 2, p * 0.6);
-          ctx.globalAlpha = 1.0;
+        if (Math.abs(span) > p * 0.8) {
+          drawPixelRect(cx - Math.abs(span), py + p * 0.3, Math.abs(span) * 2, p * 0.5, color, opacity * 0.35);
         }
       }
     };
 
-    // Draw Pixel Art Bar Chart / Graph
-    const drawPixelGraph = (cx: number, cy: number, color: string, t: number) => {
+    // 2. AP Chem: Pixel Molecule / Benzene Ring
+    const drawMolecule = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      const bars = [4, 7, 3, 9, 6];
-      const barW = p * 1.5;
-      const gap = p * 0.8;
+      const r = p * 4;
+      const nodeCount = 6;
+      for (let i = 0; i < nodeCount; i++) {
+        const a1 = (i * Math.PI * 2) / nodeCount + t * 0.3;
+        const a2 = ((i + 1) * Math.PI * 2) / nodeCount + t * 0.3;
 
-      // Axes
-      drawPixelRect(cx - p, cy + p * 6, bars.length * (barW + gap) + p * 2, p * 0.8, `${color}88`);
-      drawPixelRect(cx - p, cy - p * 4, p * 0.8, p * 10, `${color}88`);
+        const x1 = cx + Math.cos(a1) * r;
+        const y1 = cy + Math.sin(a1) * r;
+        const x2 = cx + Math.cos(a2) * r;
+        const y2 = cy + Math.sin(a2) * r;
 
-      // Pulsing Bars
-      bars.forEach((bHeight, idx) => {
-        const dynamicH = p * (bHeight + Math.sin(t * 3 + idx) * 1.5);
-        const bx = cx + idx * (barW + gap);
-        const by = cy + p * 6 - dynamicH;
-        drawPixelRect(bx, by, barW, dynamicH, color);
-      });
+        // Bond lines
+        ctx.strokeStyle = `${color}66`;
+        ctx.lineWidth = p * 0.6;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
 
-      // Line Graph Curve Trend
-      ctx.strokeStyle = "#ffffff";
-      ctx.lineWidth = p * 0.6;
-      ctx.beginPath();
-      bars.forEach((bHeight, idx) => {
-        const dynamicH = p * (bHeight + Math.sin(t * 3 + idx) * 1.5);
-        const bx = cx + idx * (barW + gap) + barW / 2;
-        const by = cy + p * 6 - dynamicH;
-        if (idx === 0) ctx.moveTo(bx, by);
-        else ctx.lineTo(bx, by);
-      });
-      ctx.stroke();
+        // Atom nodes
+        drawPixelRect(x1 - p * 0.8, y1 - p * 0.8, p * 1.6, p * 1.6, color);
+      }
+      // Core atom
+      drawPixelRect(cx - p, cy - p, p * 2, p * 2, "#ffffff");
     };
 
-    // Draw Pixel Atom / Orbit
-    const drawPixelAtom = (cx: number, cy: number, color: string, t: number) => {
+    // 3. AP Bio: Pixel Cell Membrane & Nucleus
+    const drawCell = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      const r = p * 4.5;
+      // Membrane boundary dots
+      for (let a = 0; a < Math.PI * 2; a += Math.PI / 6) {
+        const waveR = r + Math.sin(t * 2 + a * 3) * p * 0.6;
+        const px = cx + Math.cos(a) * waveR;
+        const py = cy + Math.sin(a) * waveR;
+        drawPixelRect(px - p * 0.5, py - p * 0.5, p, p, color);
+      }
+      // Nucleus core
+      drawPixelRect(cx - p * 1.5, cy - p * 1.5, p * 3, p * 3, `${color}88`);
+      drawPixelRect(cx - p * 0.6, cy - p * 0.6, p * 1.2, p * 1.2, "#ffffff");
+    };
+
+    // 4. AP Chem: Pixel Erlenmeyer Beaker
+    const drawBeaker = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      // Rim
+      drawPixelRect(cx - p * 2.5, cy - p * 4, p * 5, p, color);
+      // Neck
+      drawPixelRect(cx - p * 1.2, cy - p * 3, p * 2.4, p * 2, color);
+      // Flared Body
+      drawPixelRect(cx - p * 3.5, cy - p * 1, p * 7, p * 5, color, 0.8);
+
+      // Liquid level inside
+      const fillH = p * (2.5 + Math.sin(t * 3) * 0.4);
+      drawPixelRect(cx - p * 3, cy + p * 4 - fillH, p * 6, fillH, color, 0.4);
+
+      // Bubbles
+      const b1Y = cy + p * 2 - ((t * 20) % (p * 5));
+      const b2Y = cy + p * 3 - (((t + 0.8) * 16) % (p * 6));
+      drawPixelRect(cx - p * 1, b1Y, p, p, "#ffffff");
+      drawPixelRect(cx + p * 1, b2Y, p, p, "#ffffff");
+    };
+
+    // 5. AP Physics: Pixel Atomic Orbit
+    const drawAtom = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
       // Nucleus
-      drawPixelRect(cx - p, cy - p, p * 2, p * 2, color);
+      drawPixelRect(cx - p, cy - p, p * 2, p * 2, "#ffffff");
 
       // Orbit 1
       const r1 = p * 4.5;
-      const a1 = t * 2;
-      drawPixelRect(cx + Math.cos(a1) * r1 - p / 2, cy + Math.sin(a1) * r1 - p / 2, p, p, "#ffffff");
+      const a1 = t * 2.2;
+      drawPixelRect(cx + Math.cos(a1) * r1 - p * 0.5, cy + Math.sin(a1) * r1 - p * 0.5, p * 1.2, p * 1.2, color);
 
       // Orbit 2 (Tilted)
       const r2 = p * 5.5;
-      const a2 = -t * 1.8;
-      drawPixelRect(cx + Math.cos(a2) * r2 - p / 2, cy + Math.sin(a2) * (r2 * 0.4) - p / 2, p, p, color);
+      const a2 = -t * 1.9;
+      drawPixelRect(cx + Math.cos(a2) * r2 - p * 0.5, cy + Math.sin(a2) * (r2 * 0.45) - p * 0.5, p * 1.2, p * 1.2, color);
 
-      // Orbital Rings (Pixel dotted)
-      for (let angle = 0; angle < Math.PI * 2; angle += Math.PI / 4) {
-        drawPixelRect(cx + Math.cos(angle) * r1, cy + Math.sin(angle) * r1, p * 0.5, p * 0.5, `${color}44`);
+      // Dotted orbital path rings
+      for (let a = 0; a < Math.PI * 2; a += Math.PI / 4) {
+        drawPixelRect(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1, p * 0.5, p * 0.5, `${color}44`);
       }
     };
 
-    // Draw Pixel Math Symbol (Integral & Sigma)
-    const drawPixelMath = (cx: number, cy: number, color: string, t: number) => {
+    // 6. AP Physics: Vector Arrows & Wave
+    const drawVectors = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // Pixelated Integral Symbol
-      const pixels = [
-        [2, 0], [3, 0], [1, 1],
-        [1, 2], [1, 3], [1, 4], [1, 5],
-        [1, 6], [0, 7], [0, 8]
-      ];
-      pixels.forEach(([dx, dy]) => {
-        drawPixelRect(cx + dx * p, cy + dy * p - p * 4, p, p, color);
-      });
+      // Main arrow shaft
+      drawPixelRect(cx - p * 4, cy, p * 8, p * 0.8, color);
+      // Arrow head
+      drawPixelRect(cx + p * 3, cy - p * 1.5, p * 1.2, p * 3.8, color);
+      drawPixelRect(cx + p * 4, cy - p * 0.8, p * 1.2, p * 2.4, color);
 
-      // Floating dx/dt text pixel dots
-      const wave = Math.sin(t * 2) * p * 2;
-      drawPixelRect(cx + p * 5, cy + wave, p * 1.5, p * 1.5, "#ffffff");
-      drawPixelRect(cx + p * 7, cy - wave, p * 1.5, p * 1.5, color);
-    };
-
-    // Draw Pixel Binary & Code Matrix
-    const drawPixelCode = (cx: number, cy: number, color: string, t: number) => {
-      const p = pixelSize;
-      // Draw pixelated curly brackets { }
-      const bracketLeft = [
-        [1, 0], [0, 1], [0, 2], [0, 3], [-1, 4], [0, 5], [0, 6], [0, 7], [1, 8]
-      ];
-      bracketLeft.forEach(([dx, dy]) => {
-        drawPixelRect(cx + dx * p - p * 3, cy + dy * p - p * 4, p, p, color);
-      });
-
-      const bracketRight = [
-        [-1, 0], [0, 1], [0, 2], [0, 3], [1, 4], [0, 5], [0, 6], [0, 7], [-1, 8]
-      ];
-      bracketRight.forEach(([dx, dy]) => {
-        drawPixelRect(cx + dx * p + p * 3, cy + dy * p - p * 4, p, p, color);
-      });
-
-      // Binary bit 1 / 0 inside
-      const bit = Math.floor(t * 3) % 2;
-      ctx.fillStyle = "#ffffff";
-      if (bit === 1) {
-        drawPixelRect(cx - p * 0.5, cy - p * 2, p, p * 4, "#ffffff");
-      } else {
-        drawPixelRect(cx - p, cy - p * 2, p * 2, p, "#ffffff");
-        drawPixelRect(cx - p, cy + p, p * 2, p, "#ffffff");
-        drawPixelRect(cx - p, cy - p, p, p * 2, "#ffffff");
-        drawPixelRect(cx + p * 0.5, cy - p, p, p * 2, "#ffffff");
+      // Sine wave pulse above vector
+      for (let x = -p * 4; x <= p * 4; x += p) {
+        const wy = Math.sin(t * 3 + x * 0.2) * p * 1.5;
+        drawPixelRect(cx + x, cy - p * 4 + wy, p * 0.8, p * 0.8, `${color}99`);
       }
     };
 
-    // Draw Pixel Neural Node Network
-    const drawPixelNeural = (cx: number, cy: number, color: string, t: number) => {
+    // 7. AP Calculus: Integral Symbol ∫ dx
+    const drawIntegral = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      const integralPixels = [
+        [2, -4], [3, -4], [1, -3],
+        [1, -2], [1, -1], [1, 0], [1, 1], [1, 2], [1, 3],
+        [0, 4], [-1, 4]
+      ];
+      integralPixels.forEach(([dx, dy]) => {
+        drawPixelRect(cx + dx * p, cy + dy * p, p * 1.2, p * 1.2, color);
+      });
+
+      // Floating bounds (a & b)
+      const pulse = Math.sin(t * 2) * p * 0.5;
+      drawPixelRect(cx + p * 3, cy - p * 3 + pulse, p, p, "#ffffff");
+      drawPixelRect(cx + p * 3, cy + p * 3 - pulse, p, p, color);
+    };
+
+    // 8. AP Calculus: Summation Sigma ∑
+    const drawSummation = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      const sigmaPixels = [
+        [-3, -4], [-2, -4], [-1, -4], [0, -4], [1, -4], [2, -4],
+        [-2, -3], [-1, -2], [0, -1], [-1, 0], [-2, 1],
+        [-3, 2], [-2, 3], [-1, 4], [0, 4], [1, 4], [2, 4]
+      ];
+      sigmaPixels.forEach(([dx, dy]) => {
+        drawPixelRect(cx + dx * p * 0.8, cy + dy * p * 0.8, p, p, color);
+      });
+    };
+
+    // 9. AP Stats: Bar Histogram
+    const drawGraphBar = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      const heights = [3, 6, 4, 8, 5];
+      const barW = p * 1.4;
+      const gap = p * 0.6;
+
+      // X-Axis
+      drawPixelRect(cx - p * 4, cy + p * 4, heights.length * (barW + gap) + p, p * 0.6, `${color}66`);
+
+      heights.forEach((h, idx) => {
+        const dynH = p * (h + Math.sin(t * 3 + idx) * 1.2);
+        const bx = cx - p * 4 + idx * (barW + gap);
+        const by = cy + p * 4 - dynH;
+        drawPixelRect(bx, by, barW, dynH, color);
+      });
+    };
+
+    // 10. AP Stats: Bell Curve / Normal Distribution
+    const drawGraphCurve = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      // Plot Gaussian curve points
+      const pointsCount = 12;
+      for (let i = -6; i <= 6; i++) {
+        const x = i * p * 0.9;
+        const normY = Math.exp(-(i * i) / 8) * p * 5;
+        drawPixelRect(cx + x, cy + p * 3 - normY, p * 1.1, p * 1.1, color);
+      }
+      // Dotted Mean Line
+      for (let y = -p * 2; y <= p * 3; y += p) {
+        drawPixelRect(cx, cy + y, p * 0.6, p * 0.6, "#ffffff", 0.7);
+      }
+    };
+
+    // 11. AP CS: Code Brackets { }
+    const drawCodeBrackets = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      // Left bracket {
+      const leftB = [[1, -4], [0, -3], [0, -2], [-1, -1], [0, 0], [0, 1], [0, 2], [1, 3]];
+      leftB.forEach(([dx, dy]) => {
+        drawPixelRect(cx - p * 3 + dx * p, cy + dy * p, p, p, color);
+      });
+      // Right bracket }
+      const rightB = [[-1, -4], [0, -3], [0, -2], [1, -1], [0, 0], [0, 1], [0, 2], [-1, 3]];
+      rightB.forEach(([dx, dy]) => {
+        drawPixelRect(cx + p * 3 + dx * p, cy + dy * p, p, p, color);
+      });
+
+      // Blinking cursor dot inside
+      const cursorVisible = Math.floor(t * 3) % 2 === 0;
+      if (cursorVisible) {
+        drawPixelRect(cx - p * 0.5, cy - p * 0.5, p, p * 2, "#ffffff");
+      }
+    };
+
+    // 12. AP CS: Binary Bits Matrix 1 0
+    const drawBinaryBits = (cx: number, cy: number, color: string, t: number) => {
+      const p = pixelSize;
+      const bitCycle = Math.floor(t * 2.5) % 4;
+
+      // Draw '1'
+      drawPixelRect(cx - p * 2.5, cy - p * 3, p * 0.8, p * 6, color);
+      drawPixelRect(cx - p * 3.3, cy - p * 2, p * 0.8, p * 0.8, color);
+
+      // Draw '0'
+      drawPixelRect(cx + p * 1.5, cy - p * 3, p * 2.2, p * 0.8, color);
+      drawPixelRect(cx + p * 1.5, cy + p * 2.2, p * 2.2, p * 0.8, color);
+      drawPixelRect(cx + p * 1.5, cy - p * 2.2, p * 0.8, p * 4.4, color);
+      drawPixelRect(cx + p * 2.9, cy - p * 2.2, p * 0.8, p * 4.4, color);
+    };
+
+    // 13. AP Psych: Neural Synapse Network
+    const drawNeural = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
       const nodes = [
-        { x: -p * 3, y: -p * 2 },
-        { x: p * 3, y: -p * 3 },
-        { x: 0, y: p * 2 },
+        { x: -p * 3.5, y: -p * 2.5 },
+        { x: p * 3.5, y: -p * 2 },
+        { x: 0, y: p * 2.5 },
         { x: -p * 4, y: p * 3 },
-        { x: p * 4, y: p * 2 },
+        { x: p * 4, y: p * 3 }
       ];
 
-      // Draw Connection lines
+      // Lines
       ctx.strokeStyle = `${color}55`;
       ctx.lineWidth = p * 0.5;
       ctx.beginPath();
@@ -250,7 +377,6 @@ export function PixelCourseBackground({
       ctx.lineTo(cx + nodes[3].x, cy + nodes[3].y);
       ctx.stroke();
 
-      // Draw Nodes
       nodes.forEach((n, i) => {
         const pulse = (Math.sin(t * 4 + i) + 1) * 0.5;
         const nSize = p * (1.2 + pulse * 0.6);
@@ -258,123 +384,144 @@ export function PixelCourseBackground({
       });
     };
 
-    // Draw Pixel Beaker / Flask
-    const drawPixelBeaker = (cx: number, cy: number, color: string, t: number) => {
+    // 14. AP History: Classical Pillar / Scroll
+    const drawPillar = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // Rim
-      drawPixelRect(cx - p * 2, cy - p * 4, p * 4, p, color);
-      // Neck
-      drawPixelRect(cx - p * 1, cy - p * 3, p * 2, p * 2, color);
-      // Base
-      drawPixelRect(cx - p * 3, cy - p * 1, p * 6, p * 5, color);
-
-      // Bubbles rising
-      const b1 = (cy + p * 3 - (t * 20) % (p * 7));
-      const b2 = (cy + p * 2 - ((t + 1) * 15) % (p * 6));
-      drawPixelRect(cx - p * 1, b1, p, p, "#ffffff");
-      drawPixelRect(cx + p * 1, b2, p, p, color);
-    };
-
-    // Draw Pixel Historical Pillar / Scroll
-    const drawPixelHistory = (cx: number, cy: number, color: string, t: number) => {
-      const p = pixelSize;
-      // Pillar top
+      // Capital Top
       drawPixelRect(cx - p * 3, cy - p * 4, p * 6, p, color);
       drawPixelRect(cx - p * 2, cy - p * 3, p * 4, p, color);
-      // Columns
-      drawPixelRect(cx - p * 2, cy - p * 2, p, p * 6, color);
-      drawPixelRect(cx, cy - p * 2, p, p * 6, color);
-      drawPixelRect(cx + p * 2, cy - p * 2, p, p * 6, color);
-      // Base
-      drawPixelRect(cx - p * 3, cy + p * 4, p * 6, p, color);
+      // Shafts
+      drawPixelRect(cx - p * 2, cy - p * 2, p * 0.8, p * 5.5, color);
+      drawPixelRect(cx - p * 0.4, cy - p * 2, p * 0.8, p * 5.5, color);
+      drawPixelRect(cx + p * 1.2, cy - p * 2, p * 0.8, p * 5.5, color);
+      // Base Bottom
+      drawPixelRect(cx - p * 3, cy + p * 3.5, p * 6, p, color);
     };
 
+    // Dispatcher mapping symbol type to drawing function
+    const drawSymbol = (s: SymbolObject) => {
+      ctx.save();
+      ctx.globalAlpha = opacity;
+
+      switch (s.type) {
+        case "dna":
+          drawDNA(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "molecule":
+          drawMolecule(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "cell":
+          drawCell(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "beaker":
+          drawBeaker(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "atom":
+          drawAtom(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "vectors":
+          drawVectors(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "integral":
+          drawIntegral(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "summation":
+          drawSummation(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "graph_bar":
+          drawGraphBar(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "graph_curve":
+          drawGraphCurve(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "code_brackets":
+          drawCodeBrackets(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "binary_bits":
+          drawBinaryBits(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "neural":
+          drawNeural(s.x, s.y, s.color, time + s.phase);
+          break;
+        case "pillar":
+          drawPillar(s.x, s.y, s.color, time + s.phase);
+          break;
+      }
+
+      ctx.restore();
+    };
+
+    // Main Animation Loop
     const draw = () => {
       if (!inView) return;
       time += 0.016;
 
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Draw Subtle Retro Pixel Grid Background
-      const gridStep = pixelSize * 4;
-      const mouseX = mouseRef.current.x;
-      const mouseY = mouseRef.current.y;
+      // 1. Draw Clean Subtle Background Pixel Grid Dots
+      const gridStep = pixelSize * 6;
+      ctx.fillStyle = "rgba(255, 255, 255, 0.03)";
+      for (let x = gridStep / 2; x < width; x += gridStep) {
+        for (let y = gridStep / 2; y < height; y += gridStep) {
+          ctx.fillRect(x, y, pixelSize * 0.6, pixelSize * 0.6);
+        }
+      }
 
-      ctx.fillStyle = "rgba(255, 255, 255, 0.02)";
-      for (let x = 0; x < width; x += gridStep) {
-        for (let y = 0; y < height; y += gridStep) {
-          const dx = x - mouseX;
-          const dy = y - mouseY;
+      // 2. Anti-Overlap Spatial Collision Engine (Nudge symbols apart if they get within 130px)
+      const minDistance = 140;
+
+      for (let i = 0; i < symbols.length; i++) {
+        for (let j = i + 1; j < symbols.length; j++) {
+          const s1 = symbols[i];
+          const s2 = symbols[j];
+
+          const dx = s2.x - s1.x;
+          const dy = s2.y - s1.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 180) {
-            const factor = 1 - dist / 180;
-            ctx.fillStyle = `rgba(0, 242, 255, ${0.03 + factor * 0.15})`;
-            ctx.fillRect(x, y, pixelSize * 0.8, pixelSize * 0.8);
-            ctx.fillStyle = "rgba(255, 255, 255, 0.02)";
-          } else if ((x + y) % (gridStep * 3) === 0) {
-            ctx.fillRect(x, y, pixelSize * 0.5, pixelSize * 0.5);
+          if (dist < minDistance && dist > 0) {
+            const overlap = (minDistance - dist) * 0.5;
+            const nx = dx / dist;
+            const ny = dy / dist;
+
+            // Separate positions to prevent overlapping
+            s1.x -= nx * overlap * 0.05;
+            s1.y -= ny * overlap * 0.05;
+            s2.x += nx * overlap * 0.05;
+            s2.y += ny * overlap * 0.05;
+
+            // Gently exchange velocity vectors (elastic separation)
+            s1.vx -= nx * 0.02;
+            s1.vy -= ny * 0.02;
+            s2.vx += nx * 0.02;
+            s2.vy += ny * 0.02;
           }
         }
       }
 
-      // 2. Draw Floating Course Elements
-      elements.forEach((el) => {
-        // Move element
-        el.x += el.vx;
-        el.y += el.vy;
-        el.rotation += el.rotSpeed;
+      // 3. Move and Draw Symbols
+      symbols.forEach((s) => {
+        s.x += s.vx;
+        s.y += s.vy;
 
-        // Wrap around boundaries
-        if (el.x < -60) el.x = width + 60;
-        if (el.x > width + 60) el.x = -60;
-        if (el.y < -60) el.y = height + 60;
-        if (el.y > height + 60) el.y = -60;
+        // Wrap around screen boundaries with safety margin
+        const margin = 80;
+        if (s.x < -margin) s.x = width + margin;
+        if (s.x > width + margin) s.x = -margin;
+        if (s.y < -margin) s.y = height + margin;
+        if (s.y > height + margin) s.y = -margin;
 
-        // Calculate proximity to mouse cursor for interactive repulsion/glow
-        const dx = el.x - mouseX;
-        const dy = el.y - mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        let currentOpacity = opacity * 0.45;
-
-        if (dist < 220) {
-          const factor = 1 - dist / 220;
-          currentOpacity = opacity * (0.45 + factor * 0.5);
-          el.x += (dx / dist) * factor * 1.5;
-          el.y += (dy / dist) * factor * 1.5;
+        // Speed limit clamp to keep motion ultra-smooth & elegant
+        const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
+        if (speed > 0.45) {
+          s.vx = (s.vx / speed) * 0.45;
+          s.vy = (s.vy / speed) * 0.45;
+        } else if (speed < 0.15) {
+          s.vx = (s.vx / speed) * 0.15;
+          s.vy = (s.vy / speed) * 0.15;
         }
 
-        ctx.save();
-        ctx.globalAlpha = currentOpacity;
-
-        switch (el.type) {
-          case "dna":
-            drawPixelDNA(el.x, el.y, el.color, time);
-            break;
-          case "graph":
-            drawPixelGraph(el.x, el.y, el.color, time);
-            break;
-          case "atom":
-            drawPixelAtom(el.x, el.y, el.color, time);
-            break;
-          case "math":
-            drawPixelMath(el.x, el.y, el.color, time);
-            break;
-          case "code":
-            drawPixelCode(el.x, el.y, el.color, time);
-            break;
-          case "neural":
-            drawPixelNeural(el.x, el.y, el.color, time);
-            break;
-          case "beaker":
-            drawPixelBeaker(el.x, el.y, el.color, time);
-            break;
-          case "history":
-            drawPixelHistory(el.x, el.y, el.color, time);
-            break;
-        }
-
-        ctx.restore();
+        drawSymbol(s);
       });
 
       animationFrameId = requestAnimationFrame(draw);
@@ -397,8 +544,6 @@ export function PixelCourseBackground({
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, [opacity, pixelSize]);
