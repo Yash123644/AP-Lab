@@ -177,36 +177,39 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
 
 function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progressData, bgGradient }: typeof folders[0] & { progressData: Record<string, number> }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   return (
     <div 
-      className="relative w-full h-[250px] select-none group"
+      className="relative w-full mt-8 select-none group transition-transform duration-300 hover:-translate-y-1"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Apple-Style Top Folder Tab Notch */}
+      {/* Enlarged Top-Left Folder Tab Notch with Icon & Title */}
       <div 
-        className="absolute -top-[12px] left-6 h-5 w-28 rounded-t-[12px] rounded-tr-[16px] border-t border-x transition-colors duration-300 z-0"
+        className="absolute -top-[34px] left-0 h-9 px-4.5 rounded-t-[14px] rounded-tr-[18px] border-t border-x transition-all duration-300 flex items-center space-x-2.5 z-20 shadow-md"
         style={{ 
-          backgroundColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.08)",
-          borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.12)"
+          backgroundColor: isHovered ? "#141724" : "#0d0f18",
+          borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
+          boxShadow: isHovered ? `0 -4px 15px ${accent}20` : "none"
         }}
-      />
+      >
+        <Icon className="w-4 h-4 text-white shrink-0" style={{ color: accent }} />
+        <span className="font-manrope font-extrabold text-xs sm:text-sm text-white tracking-tight whitespace-nowrap">
+          {title}
+        </span>
+      </div>
 
-      {/* Main Folder Base (Holding Subject Cards) */}
-      <div className="absolute inset-0 rounded-[24px] border border-white/10 bg-[#0a0b12]/95 p-4 flex flex-col justify-center shadow-xl overflow-hidden z-10">
+      {/* Main Folder Body Base holding Subject Cards */}
+      <div 
+        className="relative w-full rounded-b-[24px] rounded-r-[24px] rounded-tl-none border bg-[#0a0b12]/95 p-4 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
+        style={{
+          borderColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.12)"
+        }}
+      >
         {/* Inside Folder Glow */}
         <div 
-          className="absolute inset-0 opacity-10 blur-2xl pointer-events-none -z-10"
-          style={{ backgroundColor: accent }}
+          className="absolute inset-0 opacity-10 blur-2xl pointer-events-none -z-10 transition-opacity duration-300"
+          style={{ backgroundColor: accent, opacity: isHovered ? 0.18 : 0.08 }}
         />
 
         {/* Clickable Course Subject Cards */}
@@ -258,32 +261,6 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
           })}
         </div>
       </div>
-
-      {/* Silky-Smooth Apple Glass Front Cover */}
-      <motion.div
-        className="absolute inset-0 rounded-[24px] border border-white/12 bg-[#0e0f18]/95 backdrop-blur-2xl flex flex-col items-center justify-center p-6 z-30 pointer-events-none shadow-2xl"
-        animate={{ 
-          y: (isHovered || isMobile) ? "102%" : "0%",
-          opacity: (isHovered || isMobile) ? 0 : 1
-        }}
-        transition={{ type: "spring", stiffness: 220, damping: 26 }}
-      >
-        {/* Subtle glass reflection highlight */}
-        <div className="absolute inset-0 rounded-[24px] bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent pointer-events-none" />
-
-        {/* Cover Contents (Icon & Title - No badge!) */}
-        <div className="flex flex-col items-center justify-center space-y-3.5 relative z-10">
-          <div 
-            className="w-14 h-14 rounded-2xl bg-white/[0.06] border border-white/10 flex items-center justify-center shadow-lg backdrop-blur-md"
-            style={{ borderColor: `${accent}40` }}
-          >
-            <Icon className="w-7 h-7 text-white" style={{ color: accent }} />
-          </div>
-          <h3 className="text-xl font-manrope font-extrabold text-white tracking-tight text-center">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
     </div>
   );
 }

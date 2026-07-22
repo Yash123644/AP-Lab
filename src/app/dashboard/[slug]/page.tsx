@@ -20,8 +20,44 @@ import {
   Mail,
   X,
   Check,
-  BarChart2
+  BarChart2,
+  Beaker,
+  Dna,
+  Leaf,
+  Atom,
+  Calculator,
+  BarChart3,
+  Code,
+  Globe,
+  History,
+  BookOpen,
+  TrendingUp
 } from "lucide-react";
+
+function getCourseIcon(slug: string) {
+  switch (slug) {
+    case "ap-biology": return Dna;
+    case "ap-chemistry": return Beaker;
+    case "ap-environmental-science":
+    case "ap-environmental": return Leaf;
+    case "ap-physics-1": return Atom;
+    case "ap-calculus-bc":
+    case "ap-calc-bc": return Calculator;
+    case "ap-statistics":
+    case "ap-stats": return BarChart3;
+    case "ap-computer-science-a":
+    case "ap-csa": return Code;
+    case "ap-world-history": return Globe;
+    case "ap-us-history":
+    case "ap-ush": return History;
+    case "ap-psychology":
+    case "ap-psych": return Brain;
+    case "ap-lang":
+    case "ap-eng-lang": return BookOpen;
+    case "ap-macroeconomics": return TrendingUp;
+    default: return BookOpen;
+  }
+}
 import { DashboardContextMenu } from "@/components/DashboardContextMenu";
 import Link from "next/link";
 import { courseRegistry, CourseUnit, CourseTopic } from "@/lib/courses/course-registry";
@@ -1699,17 +1735,28 @@ export default function APDynamicCoursePage() {
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div className="h-4 w-[1px] bg-white/10" />
-          <div className="flex flex-col items-start">
-            <h1 className="font-instrument text-lg md:text-xl text-white tracking-tight leading-tight">
-              {course.name}
-            </h1>
-            <button 
-              onClick={() => setIsMobileSyllabusOpen(true)}
-              className="lg:hidden text-[10px] text-white/50 hover:text-white font-manrope font-bold uppercase tracking-wider flex items-center gap-1 mt-0.5"
+          <div className="flex items-center space-x-3">
+            <div 
+              className="w-8 h-8 rounded-xl bg-white/10 border flex items-center justify-center shrink-0 shadow-sm"
+              style={{ borderColor: `${course.accentColor}40` }}
             >
-              <span>Topic {activeTopic?.id || "1.1"} (Change)</span>
-              <ChevronDown className="w-3 h-3" />
-            </button>
+              {(() => {
+                const IconComp = getCourseIcon(course.slug);
+                return <IconComp className="w-4 h-4 text-white" style={{ color: course.accentColor }} />;
+              })()}
+            </div>
+            <div className="flex flex-col items-start">
+              <h1 className="font-instrument text-lg md:text-xl text-white tracking-tight leading-tight">
+                {course.name}
+              </h1>
+              <button 
+                onClick={() => setIsMobileSyllabusOpen(true)}
+                className="lg:hidden text-[10px] text-white/50 hover:text-white font-manrope font-bold uppercase tracking-wider flex items-center gap-1 mt-0.5"
+              >
+                <span>Topic {activeTopic?.id || "1.1"} (Change)</span>
+                <ChevronDown className="w-3 h-3" />
+              </button>
+            </div>
           </div>
         </div>
         <div className="flex items-center space-x-4">
