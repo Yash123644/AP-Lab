@@ -491,12 +491,8 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col relative z-0 overflow-x-hidden transition-colors duration-500 selection:bg-primary-purple selection:text-white">
       
-      {/* Clean Pixelated Animated Background (DNA, Graphs, Atoms, Math, Binary) */}
+      {/* Static White Background with Black Dot Pattern and Black Pixelated Symbols */}
       <PixelCourseBackground />
-
-      {/* Volumetric Subtle Vignette Overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#020308]/20 via-transparent to-[#020308]/70 pointer-events-none" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_40%,#020308_95%)] pointer-events-none" />
       
       {/* Floating Navbar Pill */}
       <nav className={cn(
