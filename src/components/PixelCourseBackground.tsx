@@ -32,8 +32,6 @@ type SymbolType =
 interface SymbolObject {
   x: number;
   y: number;
-  homeX: number;
-  homeY: number;
   vx: number;
   vy: number;
   radius: number;
@@ -43,7 +41,7 @@ interface SymbolObject {
 }
 
 export function PixelCourseBackground({
-  opacity = 0.35,
+  opacity = 0.16,
   pixelSize = 8,
 }: PixelCourseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -70,7 +68,7 @@ export function PixelCourseBackground({
       if (!dotCtx) return;
 
       const dotSpacing = 32;
-      dotCtx.fillStyle = "rgba(255, 255, 255, 0.18)"; // Soft, clean dot opacity
+      dotCtx.fillStyle = "rgba(255, 255, 255, 0.16)"; // Soft dot grid opacity
       for (let x = dotSpacing / 2; x < w; x += dotSpacing) {
         for (let y = dotSpacing / 2; y < h; y += dotSpacing) {
           dotCtx.fillRect(Math.floor(x), Math.floor(y), 1.8, 1.8);
@@ -90,31 +88,41 @@ export function PixelCourseBackground({
     resize();
     window.addEventListener("resize", resize);
 
-    // List of 20 distinct AP course symbol definitions with dedicated vibrant colors
-    const symbolConfigs: Array<{ type: SymbolType; color: string }> = [
-      { type: "dna", color: "#00f2ff" },           // AP Bio - Electric Teal
-      { type: "molecule", color: "#38bdf8" },      // AP Chem - Cyan
-      { type: "cell", color: "#34d399" },          // AP Bio - Emerald
-      { type: "beaker", color: "#60a5fa" },        // AP Chem - Sky Blue
-      { type: "atom", color: "#818cf8" },          // AP Physics - Indigo
-      { type: "vectors", color: "#38bdf8" },       // AP Physics - Light Blue
-      { type: "integral", color: "#a78bfa" },      // AP Calc - Purple
-      { type: "summation", color: "#c084fc" },     // AP Calc - Violet
-      { type: "graph_bar", color: "#10b981" },     // AP Stats - Green
-      { type: "graph_curve", color: "#4ade80" },   // AP Stats - Lime Green
-      { type: "code_brackets", color: "#6366f1" }, // AP CS A - Deep Indigo
-      { type: "binary_bits", color: "#0ea5e9" },   // AP CS A - Ocean Blue
-      { type: "neural", color: "#e879f9" },        // AP Psych - Pink Purple
-      { type: "pillar", color: "#fbbf24" },        // AP USH - Amber Gold
-      { type: "book_quill", color: "#f472b6" },    // AP Eng Lit - Pink
-      { type: "econ_trend", color: "#22c55e" },    // AP Econ - Green
-      { type: "rna_loop", color: "#2dd4bf" },      // AP Bio - Teal
-      { type: "magnet", color: "#ef4444" },        // AP Phys C - Red
-      { type: "brain_spark", color: "#f43f5e" },   // AP Psych - Rose
-      { type: "scales", color: "#eab308" },        // AP Gov - Yellow
+    // Muted, neutral, bland slate & zinc colors for clean ambient look
+    const mutedColors = [
+      "#94a3b8", // Slate 400
+      "#cbd5e1", // Slate 300
+      "#64748b", // Slate 500
+      "#a1a1aa", // Zinc 400
+      "#71717a", // Zinc 500
+      "#e2e8f0", // Slate 200
+      "#475569", // Slate 600
     ];
 
-    // Grid-based initial placement (6 cols x 4 rows = 24 active symbols)
+    const symbolConfigs: Array<{ type: SymbolType; color: string }> = [
+      { type: "dna", color: mutedColors[0] },
+      { type: "molecule", color: mutedColors[1] },
+      { type: "cell", color: mutedColors[2] },
+      { type: "beaker", color: mutedColors[3] },
+      { type: "atom", color: mutedColors[4] },
+      { type: "vectors", color: mutedColors[5] },
+      { type: "integral", color: mutedColors[0] },
+      { type: "summation", color: mutedColors[1] },
+      { type: "graph_bar", color: mutedColors[2] },
+      { type: "graph_curve", color: mutedColors[3] },
+      { type: "code_brackets", color: mutedColors[4] },
+      { type: "binary_bits", color: mutedColors[5] },
+      { type: "neural", color: "#64748b" },
+      { type: "pillar", color: "#94a3b8" },
+      { type: "book_quill", color: "#cbd5e1" },
+      { type: "econ_trend", color: "#a1a1aa" },
+      { type: "rna_loop", color: "#71717a" },
+      { type: "magnet", color: "#94a3b8" },
+      { type: "brain_spark", color: "#cbd5e1" },
+      { type: "scales", color: "#64748b" },
+    ];
+
+    // Grid placement for initial spread (6 cols x 4 rows = 24 active symbols)
     const cols = 6;
     const rows = 4;
     const totalSlots = cols * rows;
@@ -131,20 +139,16 @@ export function PixelCourseBackground({
 
       const cfg = shuffledConfigs[i % shuffledConfigs.length];
 
-      const homeX = col * cellW + cellW * 0.5;
-      const homeY = row * cellH + cellH * 0.5;
+      const cx = col * cellW + cellW * 0.5 + (Math.random() - 0.5) * (cellW * 0.4);
+      const cy = row * cellH + cellH * 0.5 + (Math.random() - 0.5) * (cellH * 0.4);
 
-      const cx = homeX + (Math.random() - 0.5) * (cellW * 0.4);
-      const cy = homeY + (Math.random() - 0.5) * (cellH * 0.4);
-
+      // Higher initial drift speed for active motion
       const angle = Math.random() * Math.PI * 2;
-      const speed = 0.15 + Math.random() * 0.15;
+      const speed = 0.45 + Math.random() * 0.4;
 
       symbols.push({
         x: cx,
         y: cy,
-        homeX,
-        homeY,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         radius: 60,
@@ -171,7 +175,7 @@ export function PixelCourseBackground({
       const nodes = 6;
       for (let i = -nodes; i <= nodes; i++) {
         const py = cy + i * p * 1.4;
-        const angle = t * 1.8 + i * 0.45;
+        const angle = t * 2.2 + i * 0.45;
         const span = Math.sin(angle) * p * 3.8;
         const op = Math.abs(Math.cos(angle)) * 0.7 + 0.3;
 
@@ -190,15 +194,15 @@ export function PixelCourseBackground({
       const r = p * 3.8;
       const nodeCount = 6;
       for (let i = 0; i < nodeCount; i++) {
-        const a1 = (i * Math.PI * 2) / nodeCount + t * 0.3;
-        const a2 = ((i + 1) * Math.PI * 2) / nodeCount + t * 0.3;
+        const a1 = (i * Math.PI * 2) / nodeCount + t * 0.5;
+        const a2 = ((i + 1) * Math.PI * 2) / nodeCount + t * 0.5;
 
         const x1 = cx + Math.cos(a1) * r;
         const y1 = cy + Math.sin(a1) * r;
         const x2 = cx + Math.cos(a2) * r;
         const y2 = cy + Math.sin(a2) * r;
 
-        ctx.strokeStyle = `${color}66`;
+        ctx.strokeStyle = `${color}44`;
         ctx.lineWidth = p * 0.6;
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -207,7 +211,7 @@ export function PixelCourseBackground({
 
         drawPixelRect(x1 - p * 0.7, y1 - p * 0.7, p * 1.4, p * 1.4, color);
       }
-      drawPixelRect(cx - p, cy - p, p * 2, p * 2, "#ffffff");
+      drawPixelRect(cx - p, cy - p, p * 2, p * 2, "#94a3b8");
     };
 
     // 3. AP Bio: Cell Membrane
@@ -215,13 +219,13 @@ export function PixelCourseBackground({
       const p = pixelSize;
       const r = p * 4;
       for (let a = 0; a < Math.PI * 2; a += Math.PI / 6) {
-        const waveR = r + Math.sin(t * 2 + a * 3) * p * 0.5;
+        const waveR = r + Math.sin(t * 2.5 + a * 3) * p * 0.5;
         const px = cx + Math.cos(a) * waveR;
         const py = cy + Math.sin(a) * waveR;
         drawPixelRect(px - p * 0.5, py - p * 0.5, p, p, color);
       }
       drawPixelRect(cx - p * 1.2, cy - p * 1.2, p * 2.4, p * 2.4, `${color}88`);
-      drawPixelRect(cx - p * 0.5, cy - p * 0.5, p, p, "#ffffff");
+      drawPixelRect(cx - p * 0.5, cy - p * 0.5, p, p, "#cbd5e1");
     };
 
     // 4. AP Chem: Beaker
@@ -231,24 +235,24 @@ export function PixelCourseBackground({
       drawPixelRect(cx - p * 1.1, cy - p * 2.5, p * 2.2, p * 1.8, color);
       drawPixelRect(cx - p * 3, cy - p * 0.7, p * 6, p * 4.5, color, 0.8);
 
-      const fillH = p * (2.2 + Math.sin(t * 3) * 0.4);
+      const fillH = p * (2.2 + Math.sin(t * 3.5) * 0.4);
       drawPixelRect(cx - p * 2.6, cy + p * 3.8 - fillH, p * 5.2, fillH, color, 0.4);
 
-      const b1Y = cy + p * 2 - ((t * 20) % (p * 5));
-      drawPixelRect(cx - p * 0.8, b1Y, p, p, "#ffffff");
+      const b1Y = cy + p * 2 - ((t * 25) % (p * 5));
+      drawPixelRect(cx - p * 0.8, b1Y, p, p, "#cbd5e1");
     };
 
     // 5. AP Physics: Atom Orbit
     const drawAtom = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      drawPixelRect(cx - p, cy - p, p * 2, p * 2, "#ffffff");
+      drawPixelRect(cx - p, cy - p, p * 2, p * 2, "#cbd5e1");
 
       const r1 = p * 4.2;
-      const a1 = t * 2.2;
+      const a1 = t * 2.8;
       drawPixelRect(cx + Math.cos(a1) * r1 - p * 0.5, cy + Math.sin(a1) * r1 - p * 0.5, p * 1.1, p * 1.1, color);
 
       const r2 = p * 5;
-      const a2 = -t * 1.9;
+      const a2 = -t * 2.4;
       drawPixelRect(cx + Math.cos(a2) * r2 - p * 0.5, cy + Math.sin(a2) * (r2 * 0.45) - p * 0.5, p * 1.1, p * 1.1, color);
     };
 
@@ -259,8 +263,8 @@ export function PixelCourseBackground({
       drawPixelRect(cx + p * 2.5, cy - p * 1.2, p * 1.2, p * 3.2, color);
 
       for (let x = -p * 3.5; x <= p * 3.5; x += p) {
-        const wy = Math.sin(t * 3 + x * 0.2) * p * 1.4;
-        drawPixelRect(cx + x, cy - p * 3.5 + wy, p * 0.8, p * 0.8, `${color}99`);
+        const wy = Math.sin(t * 3.5 + x * 0.2) * p * 1.4;
+        drawPixelRect(cx + x, cy - p * 3.5 + wy, p * 0.8, p * 0.8, `${color}88`);
       }
     };
 
@@ -271,8 +275,8 @@ export function PixelCourseBackground({
       pixels.forEach(([dx, dy]) => {
         drawPixelRect(cx + dx * p * 0.9, cy + dy * p * 0.9, p, p, color);
       });
-      const pulse = Math.sin(t * 2) * p * 0.5;
-      drawPixelRect(cx + p * 2.8, cy - p * 2.8 + pulse, p, p, "#ffffff");
+      const pulse = Math.sin(t * 2.5) * p * 0.5;
+      drawPixelRect(cx + p * 2.8, cy - p * 2.8 + pulse, p, p, "#cbd5e1");
     };
 
     // 8. AP Calculus: Summation Sigma
@@ -291,9 +295,9 @@ export function PixelCourseBackground({
       const barW = p * 1.2;
       const gap = p * 0.5;
 
-      drawPixelRect(cx - p * 3.5, cy + p * 3.5, heights.length * (barW + gap), p * 0.6, `${color}66`);
+      drawPixelRect(cx - p * 3.5, cy + p * 3.5, heights.length * (barW + gap), p * 0.6, `${color}55`);
       heights.forEach((h, idx) => {
-        const dynH = p * (h + Math.sin(t * 3 + idx) * 1.1);
+        const dynH = p * (h + Math.sin(t * 3.5 + idx) * 1.1);
         const bx = cx - p * 3.5 + idx * (barW + gap);
         drawPixelRect(bx, cy + p * 3.5 - dynH, barW, dynH, color);
       });
@@ -336,7 +340,7 @@ export function PixelCourseBackground({
     const drawNeural = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
       const nodes = [{ x: -p * 3, y: -p * 2 }, { x: p * 3, y: -p * 1.5 }, { x: 0, y: p * 2 }, { x: -p * 3.5, y: p * 2.5 }];
-      ctx.strokeStyle = `${color}55`;
+      ctx.strokeStyle = `${color}44`;
       ctx.lineWidth = p * 0.5;
       ctx.beginPath();
       ctx.moveTo(cx + nodes[0].x, cy + nodes[0].y);
@@ -344,7 +348,7 @@ export function PixelCourseBackground({
       ctx.lineTo(cx + nodes[1].x, cy + nodes[1].y);
       ctx.stroke();
       nodes.forEach((n, i) => {
-        const pulse = (Math.sin(t * 4 + i) + 1) * 0.4;
+        const pulse = (Math.sin(t * 4.5 + i) + 1) * 0.4;
         const nSize = p * (1.1 + pulse * 0.5);
         drawPixelRect(cx + n.x - nSize / 2, cy + n.y - nSize / 2, nSize, nSize, color);
       });
@@ -364,10 +368,10 @@ export function PixelCourseBackground({
       const p = pixelSize;
       drawPixelRect(cx - p * 3.5, cy - p * 1.5, p * 3, p * 3.5, color, 0.7);
       drawPixelRect(cx + p * 0.5, cy - p * 1.5, p * 3, p * 3.5, color, 0.7);
-      drawPixelRect(cx - p * 0.3, cy - p * 1.8, p * 0.6, p * 4, "#ffffff");
-      const qy = Math.sin(t * 2.5) * p * 1.2;
+      drawPixelRect(cx - p * 0.3, cy - p * 1.8, p * 0.6, p * 4, "#cbd5e1");
+      const qy = Math.sin(t * 3) * p * 1.2;
       drawPixelRect(cx + p * 2, cy - p * 4 + qy, p * 0.8, p * 3, color);
-      drawPixelRect(cx + p * 2.8, cy - p * 4.8 + qy, p * 1.2, p * 1.2, "#ffffff");
+      drawPixelRect(cx + p * 2.8, cy - p * 4.8 + qy, p * 1.2, p * 1.2, "#cbd5e1");
     };
 
     // 16. AP Econ: Dollar $ & Trend Line
@@ -379,9 +383,9 @@ export function PixelCourseBackground({
       });
       drawPixelRect(cx - p * 2, cy - p * 3.2, p * 0.6, p * 5.4, color);
 
-      drawPixelRect(cx + p * 1, cy + p * 2, p * 0.8, p * 0.8, "#ffffff");
-      drawPixelRect(cx + p * 2, cy + p * 0.5, p * 0.8, p * 0.8, "#ffffff");
-      drawPixelRect(cx + p * 3, cy - p * 1, p * 0.8, p * 0.8, "#ffffff");
+      drawPixelRect(cx + p * 1, cy + p * 2, p * 0.8, p * 0.8, "#cbd5e1");
+      drawPixelRect(cx + p * 2, cy + p * 0.5, p * 0.8, p * 0.8, "#cbd5e1");
+      drawPixelRect(cx + p * 3, cy - p * 1, p * 0.8, p * 0.8, "#cbd5e1");
       drawPixelRect(cx + p * 4, cy - p * 2.5, p * 1.6, p * 1.6, color);
     };
 
@@ -390,10 +394,10 @@ export function PixelCourseBackground({
       const p = pixelSize;
       for (let i = -5; i <= 5; i++) {
         const py = cy + i * p * 1.2;
-        const rx = Math.sin(t * 2 + i * 0.5) * p * 3;
+        const rx = Math.sin(t * 2.5 + i * 0.5) * p * 3;
         drawPixelRect(cx + rx, py, p * 1.1, p * 1.1, color);
         if (i % 2 === 0) {
-          drawPixelRect(cx + rx - p * 1.2, py + p * 0.2, p * 1.2, p * 0.6, "#ffffff", 0.6);
+          drawPixelRect(cx + rx - p * 1.2, py + p * 0.2, p * 1.2, p * 0.6, "#cbd5e1", 0.5);
         }
       }
     };
@@ -404,7 +408,7 @@ export function PixelCourseBackground({
       drawPixelRect(cx - p * 2.5, cy - p * 3, p * 1.2, p * 5, color);
       drawPixelRect(cx + p * 1.3, cy - p * 3, p * 1.2, p * 5, color);
       drawPixelRect(cx - p * 2.5, cy + p * 2, p * 5, p * 1.2, color);
-      drawPixelRect(cx - p * 2.5, cy - p * 3, p * 1.2, p * 1.5, "#ffffff");
+      drawPixelRect(cx - p * 2.5, cy - p * 3, p * 1.2, p * 1.5, "#cbd5e1");
       drawPixelRect(cx + p * 1.3, cy - p * 3, p * 1.2, p * 1.5, `${color}88`);
     };
 
@@ -415,7 +419,7 @@ export function PixelCourseBackground({
       drawPixelRect(cx - p * 3, cy, p, p * 2, color, 0.8);
       drawPixelRect(cx + p * 2, cy, p, p * 2, color, 0.8);
       const pulse = (Math.sin(t * 4) + 1) * 0.5 * p;
-      drawPixelRect(cx - p * 0.5, cy - p * 3.5 - pulse, p, p * 1.5, "#ffffff");
+      drawPixelRect(cx - p * 0.5, cy - p * 3.5 - pulse, p, p * 1.5, "#cbd5e1");
     };
 
     // 20. AP Gov: Scales of Justice
@@ -425,9 +429,9 @@ export function PixelCourseBackground({
       drawPixelRect(cx - p * 3, cy - p * 2.5, p * 6, p * 0.8, color);
       drawPixelRect(cx - p * 2, cy + p * 3, p * 4, p * 0.8, color);
 
-      const tilt = Math.sin(t * 2) * p * 0.6;
-      drawPixelRect(cx - p * 3.2, cy + tilt, p * 1.6, p * 0.6, "#ffffff");
-      drawPixelRect(cx + p * 1.6, cy - tilt, p * 1.6, p * 0.6, "#ffffff");
+      const tilt = Math.sin(t * 2.5) * p * 0.6;
+      drawPixelRect(cx - p * 3.2, cy + tilt, p * 1.6, p * 0.6, "#cbd5e1");
+      drawPixelRect(cx + p * 1.6, cy - tilt, p * 1.6, p * 0.6, "#cbd5e1");
     };
 
     // Dispatcher mapping symbol type to drawing function
@@ -461,8 +465,8 @@ export function PixelCourseBackground({
       ctx.restore();
     };
 
-    // Optimized Animation Loop
-    const minDistanceSq = 120 * 120;
+    // Optimized Active Motion Loop
+    const minDistanceSq = 110 * 110;
 
     const draw = () => {
       if (!inView) return;
@@ -475,7 +479,7 @@ export function PixelCourseBackground({
         ctx.drawImage(dotCanvas, 0, 0);
       }
 
-      // 2. High-Performance Anti-Overlap Spatial Engine
+      // 2. High-Performance Pair Separation Engine
       const len = symbols.length;
       for (let i = 0; i < len; i++) {
         const s1 = symbols[i];
@@ -488,45 +492,49 @@ export function PixelCourseBackground({
 
           if (distSq < minDistanceSq && distSq > 0) {
             const dist = Math.sqrt(distSq);
-            const overlap = (120 - dist) * 0.5;
+            const overlap = (110 - dist) * 0.5;
             const nx = dx / dist;
             const ny = dy / dist;
 
-            s1.x -= nx * overlap * 0.04;
-            s1.y -= ny * overlap * 0.04;
-            s2.x += nx * overlap * 0.04;
-            s2.y += ny * overlap * 0.04;
+            s1.x -= nx * overlap * 0.05;
+            s1.y -= ny * overlap * 0.05;
+            s2.x += nx * overlap * 0.05;
+            s2.y += ny * overlap * 0.05;
 
-            s1.vx -= nx * 0.015;
-            s1.vy -= ny * 0.015;
-            s2.vx += nx * 0.015;
-            s2.vy += ny * 0.015;
+            s1.vx -= nx * 0.02;
+            s1.vy -= ny * 0.02;
+            s2.vx += nx * 0.02;
+            s2.vy += ny * 0.02;
           }
         }
       }
 
-      // 3. Move, Soft Home Grid Tethering & Render Symbols (Guarantees Perfectly Balanced Screen Distribution)
+      // 3. Move Symbols with Continuous Dynamic Floating & Boundary Wrap
+      const margin = 70;
       for (let i = 0; i < len; i++) {
         const s = symbols[i];
-
-        // Soft tethering force toward designated cell center
-        const homeDx = s.homeX - s.x;
-        const homeDy = s.homeY - s.y;
-        s.vx += homeDx * 0.00015;
-        s.vy += homeDy * 0.00015;
 
         s.x += s.vx;
         s.y += s.vy;
 
-        // Soft velocity damping for ultra-smooth floating
-        s.vx *= 0.992;
-        s.vy *= 0.992;
+        // Screen edge wrap-around for endless motion
+        if (s.x < -margin) s.x = width + margin;
+        if (s.x > width + margin) s.x = -margin;
+        if (s.y < -margin) s.y = height + margin;
+        if (s.y > height + margin) s.y = -margin;
 
+        // Keep velocity steadily active between 0.45 and 0.8
         const speedSq = s.vx * s.vx + s.vy * s.vy;
-        if (speedSq > 0.16) { // 0.4^2 = 0.16
+        if (speedSq > 0.64) { // 0.8^2
           const speed = Math.sqrt(speedSq);
-          s.vx = (s.vx / speed) * 0.4;
-          s.vy = (s.vy / speed) * 0.4;
+          s.vx = (s.vx / speed) * 0.8;
+          s.vy = (s.vy / speed) * 0.8;
+        } else if (speedSq < 0.16) { // 0.4^2
+          const speed = Math.sqrt(speedSq);
+          if (speed > 0) {
+            s.vx = (s.vx / speed) * 0.45;
+            s.vy = (s.vy / speed) * 0.45;
+          }
         }
 
         drawSymbol(s);
