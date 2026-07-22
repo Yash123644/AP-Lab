@@ -188,135 +188,130 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
 
   return (
     <div 
-      className="relative w-full h-[250px] transition-all duration-500 ease-out select-none group"
+      className="relative w-full h-[260px] select-none group"
+      style={{ perspective: "1000px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        transform: (isHovered && !isMobile) ? "translateY(-6px)" : "translateY(0px)"
-      }}
     >
-      {/* Folder Notch Tab (sloped top notch tab) */}
+      {/* Authentic macOS Top Folder Tab Notch */}
       <div 
-        className="absolute -top-[10px] left-6 h-5 w-24 rounded-t-[10px] transition-all duration-500 z-0"
+        className="absolute -top-[14px] left-4 h-6 w-32 rounded-t-[14px] rounded-tr-[18px] border-t border-x border-white/20 transition-all duration-300 z-0"
         style={{ 
           background: isHovered 
-            ? `linear-gradient(to right, ${accent}, ${accent}dd)` 
-            : `linear-gradient(to right, ${accent}dd, ${accent}aa)`
+            ? `linear-gradient(to right, ${accent}dd, ${accent}aa)`
+            : `linear-gradient(to right, ${accent}99, ${accent}55)`,
+          borderColor: isHovered ? `${accent}60` : "rgba(255,255,255,0.15)"
         }}
       />
 
-      {/* Colored Back Flap (Background card) */}
-      <div 
-        className={cn(
-          "absolute inset-0 rounded-[20px] bg-gradient-to-br p-[1.5px] shadow-2xl transition-all duration-500 z-10",
-          bgGradient
-        )}
-        style={{
-          boxShadow: isHovered 
-            ? `0 20px 40px -10px ${accent}25` 
-            : `0 10px 30px -15px rgba(0,0,0,0.7)`
-        }}
-      >
-        {/* Inner solid flap background */}
-        <div className="w-full h-full rounded-[19px] bg-[#09090f]/95 flex flex-col justify-center relative overflow-hidden">
-          
-          {/* Accent glow inside the folder */}
-          <div 
-            className="absolute inset-0 opacity-10 blur-2xl pointer-events-none -z-10"
-            style={{ backgroundColor: accent }}
-          />
+      {/* Main Folder Back Body Base */}
+      <div className="absolute inset-0 rounded-b-[24px] rounded-tr-[24px] rounded-tl-[4px] border border-white/15 bg-gradient-to-b from-[#121522] via-[#090b14] to-[#04050a] p-4 flex flex-col justify-center shadow-2xl overflow-hidden z-10">
+        {/* Inside Folder Accent Glow */}
+        <div 
+          className="absolute inset-0 opacity-15 blur-3xl pointer-events-none -z-10"
+          style={{ backgroundColor: accent }}
+        />
 
-          {/* Reveal area container with overflow-hidden */}
-          <div className="relative w-full h-full overflow-hidden">
-            {/* Clickable classes inside (fully visible when cover slides down) */}
-            <div className="absolute inset-0 flex flex-col justify-center space-y-2.5 p-5 z-10">
-              {classes.map((subject) => {
-                const progressPercent = Math.round(progressData[subject.slug] || 0);
-                const isCompleted = progressPercent === 100;
-                return (
-                  <Link 
-                    key={subject.name}
-                    href={`/dashboard/${subject.slug}`}
-                    className={cn(
-                      "flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group/item w-full relative overflow-hidden",
-                      isCompleted && "border-amber-500/35 bg-amber-500/[0.02] shadow-[0_0_12px_rgba(245,158,11,0.08)]"
-                    )}
-                  >
-                    {isCompleted && (
-                      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl z-0">
-                        {/* Beautiful golden animated shimmer overlay */}
-                        <div className="absolute inset-0 animate-shimmer-gold" />
-                      </div>
-                    )}
- 
-                    <div className="flex items-center flex-1 mr-4 overflow-hidden relative z-10">
-                      <subject.icon 
-                        className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" 
-                        style={{ color: isCompleted ? "#fbbf24" : accent }} 
+        {/* Clickable Class Subject Cards inside folder */}
+        <div className="flex flex-col space-y-2.5 z-10 pt-2">
+          {classes.map((subject) => {
+            const progressPercent = Math.round(progressData[subject.slug] || 0);
+            const isCompleted = progressPercent === 100;
+            return (
+              <Link 
+                key={subject.name}
+                href={`/dashboard/${subject.slug}`}
+                className={cn(
+                  "flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.1] hover:border-white/20 transition-all duration-300 group/item w-full relative overflow-hidden shadow-sm",
+                  isCompleted && "border-amber-500/40 bg-amber-500/[0.04] shadow-[0_0_15px_rgba(245,158,11,0.12)]"
+                )}
+              >
+                {isCompleted && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl z-0">
+                    <div className="absolute inset-0 animate-shimmer-gold" />
+                  </div>
+                )}
+
+                <div className="flex items-center flex-1 mr-3 overflow-hidden relative z-10">
+                  <subject.icon 
+                    className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" 
+                    style={{ color: isCompleted ? "#fbbf24" : accent }} 
+                  />
+                  <div className="flex-1 flex flex-col items-start ml-3 min-w-0">
+                    <span className={cn(
+                      "text-xs font-manrope font-bold text-white/90 group-hover/item:text-white transition-colors truncate w-full text-left",
+                      isCompleted && "text-yellow-400 group-hover/item:text-yellow-300 font-extrabold"
+                    )}>
+                      {subject.name}
+                    </span>
+                    <div className={cn(
+                      "w-full h-1 bg-white/10 rounded-full mt-1.5 overflow-hidden",
+                      isCompleted && "bg-yellow-500/20"
+                    )}>
+                      <div 
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{ 
+                          width: `${progressPercent}%`,
+                          backgroundColor: isCompleted ? "#fbbf24" : accent 
+                        }}
                       />
-                      <div className="flex-1 flex flex-col items-start ml-3 min-w-0">
-                        <span className={cn(
-                          "text-xs font-manrope font-semibold text-white/80 group-hover/item:text-white transition-colors truncate w-full text-left",
-                          isCompleted && "text-yellow-400 group-hover/item:text-yellow-300 font-extrabold"
-                        )}>
-                          {subject.name}
-                        </span>
-                        {/* Premium micro progress bar */}
-                        <div className={cn(
-                          "w-full h-0.5 bg-white/10 rounded-full mt-1.5 overflow-hidden",
-                          isCompleted && "bg-yellow-500/20"
-                        )}>
-                          <div 
-                            className="h-full rounded-full transition-all duration-500"
-                            style={{ 
-                              width: `${progressPercent}%`,
-                              backgroundColor: isCompleted ? "#fbbf24" : accent 
-                            }}
-                          />
-                        </div>
-                      </div>
                     </div>
-                    
-                    <div className="flex items-center space-x-2 shrink-0 relative z-10">
-                      <span className={cn(
-                        "text-[10px] font-mono font-medium text-white/40 group-hover/item:text-white/70 transition-colors flex items-center gap-1",
-                        isCompleted && "text-yellow-400 font-bold group-hover/item:text-yellow-300"
-                      )}>
-                        {progressPercent}%
-                      </span>
-                      <ChevronRight className={cn(
-                        "w-3.5 h-3.5 text-white/20 group-hover/item:text-white/60 transition-colors",
-                        isCompleted && "text-yellow-400/50 group-hover/item:text-yellow-400"
-                      )} />
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-
-            <motion.div
-              className="absolute inset-0 z-20 bg-white/[0.05] backdrop-blur-xl border border-white/10 rounded-[19px] shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] flex flex-col items-center justify-center p-6"
-              animate={{ y: (isHovered || isMobile) ? "105%" : "0%" }}
-              transition={{ type: "spring", stiffness: 120, damping: 18 }}
-            >
-              {/* Glossy glass reflection gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.06] rounded-[19px] pointer-events-none" />
-              
-              {/* Cover Contents */}
-              <div className="flex flex-col items-center justify-center space-y-3 pointer-events-none">
-                <div 
-                  className="w-12 h-12 rounded-xl bg-white/[0.04] border flex items-center justify-center shadow-inner"
-                  style={{ borderColor: `${accent}30` }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: accent }} />
+                  </div>
                 </div>
-                <h3 className="text-lg font-manrope font-bold text-white tracking-tight text-center">{title}</h3>
-              </div>
-            </motion.div>
-          </div>
-
+                
+                <div className="flex items-center space-x-2 shrink-0 relative z-10">
+                  <span className={cn(
+                    "text-[10px] font-mono font-bold text-white/50 group-hover/item:text-white transition-colors",
+                    isCompleted && "text-yellow-400 font-extrabold group-hover/item:text-yellow-300"
+                  )}>
+                    {progressPercent}%
+                  </span>
+                  <ChevronRight className={cn(
+                    "w-3.5 h-3.5 text-white/30 group-hover/item:text-white transition-colors",
+                    isCompleted && "text-yellow-400 group-hover/item:text-yellow-300"
+                  )} />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
+
+      {/* 3D Folding Front Glass Cover Flap */}
+      <motion.div
+        className="absolute inset-0 rounded-[24px] border border-white/20 backdrop-blur-2xl flex flex-col items-center justify-center p-6 z-30 pointer-events-none shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
+        style={{ 
+          transformOrigin: "bottom center",
+          background: `linear-gradient(135deg, ${accent}30 0%, ${accent}10 40%, rgba(8, 10, 18, 0.95) 100%)`,
+          boxShadow: isHovered ? `0 25px 50px -10px ${accent}35` : `0 10px 30px -10px rgba(0,0,0,0.8)`
+        }}
+        animate={{ 
+          rotateX: (isHovered || isMobile) ? -75 : 0,
+          scaleY: (isHovered || isMobile) ? 0.94 : 1,
+          y: (isHovered || isMobile) ? 22 : 0,
+          opacity: (isHovered || isMobile) ? 0.88 : 1
+        }}
+        transition={{ type: "spring", stiffness: 140, damping: 17 }}
+      >
+        {/* Glossy glass reflection sheen */}
+        <div className="absolute inset-0 rounded-[24px] bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-50 pointer-events-none" />
+
+        {/* Front Cover Contents */}
+        <div className="flex flex-col items-center justify-center space-y-3 relative z-10">
+          <div 
+            className="w-14 h-14 rounded-2xl bg-white/10 border flex items-center justify-center shadow-2xl backdrop-blur-md"
+            style={{ borderColor: `${accent}50` }}
+          >
+            <Icon className="w-7 h-7 text-white drop-shadow-md" style={{ color: accent }} />
+          </div>
+          <h3 className="text-xl font-manrope font-extrabold text-white tracking-tight text-center drop-shadow-md">
+            {title}
+          </h3>
+          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-white/60 bg-black/40 border border-white/10 px-3 py-1 rounded-full shadow-inner">
+            {classes.length} Courses Inside
+          </span>
+        </div>
+      </motion.div>
     </div>
   );
 }
