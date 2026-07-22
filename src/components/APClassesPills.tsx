@@ -131,10 +131,15 @@ export function APClassesPills() {
                   {ap.name}
                 </span>
 
-                {/* Clean Modern Upcoming Tag */}
+                {/* Clean Modern Upcoming Timer Icon Tag matching uploaded image */}
                 {ap.upcoming && (
-                  <span className="text-[9px] font-mono font-bold tracking-wider text-amber-300/90 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded-full uppercase ml-0.5 shrink-0">
-                    Soon
+                  <span className="flex items-center justify-center ml-0.5 shrink-0" title="Coming Soon">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 text-white fill-none stroke-white stroke-[2.2]" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="13" r="7.5" />
+                      <path d="M12 9v4l2.5 2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M10 2h4" strokeLinecap="round" />
+                      <path d="M18.5 5.5L20 4" strokeLinecap="round" />
+                    </svg>
                   </span>
                 )}
               </motion.button>

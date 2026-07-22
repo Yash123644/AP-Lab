@@ -482,32 +482,6 @@ export default function Dashboard() {
       color: "border-green-500/30 bg-green-500/5 text-green-400"
     },
     {
-      name: "AP Physics 1",
-      slug: "ap-physics-1",
-      category: "Physical Sciences",
-      videos: 44,
-      articles: 32,
-      topics: 10,
-      subtopics: 36,
-      estTime: "30 Hours",
-      questions: "780+ Items",
-      difficulty: "Advanced",
-      color: "border-purple-500/30 bg-purple-500/5 text-purple-400"
-    },
-    {
-      name: "AP Physics C: Mechanics",
-      slug: "ap-physics-c-mechanics",
-      category: "Physical Sciences",
-      videos: 40,
-      articles: 28,
-      topics: 8,
-      subtopics: 28,
-      estTime: "26 Hours",
-      questions: "710+ Items",
-      difficulty: "Expert",
-      color: "border-indigo-500/30 bg-indigo-500/5 text-indigo-400"
-    },
-    {
       name: "AP Calculus BC",
       slug: "ap-calculus-bc",
       category: "Mathematics",
@@ -519,6 +493,32 @@ export default function Dashboard() {
       questions: "1,050+ Items",
       difficulty: "Expert",
       color: "border-amber-500/30 bg-amber-500/5 text-amber-400"
+    },
+    {
+      name: "AP Statistics",
+      slug: "ap-statistics",
+      category: "Mathematics",
+      videos: 38,
+      articles: 30,
+      topics: 10,
+      subtopics: 34,
+      estTime: "25 Hours",
+      questions: "720+ Items",
+      difficulty: "Intermediate",
+      color: "border-pink-500/30 bg-pink-500/5 text-pink-400"
+    },
+    {
+      name: "AP Computer Science A",
+      slug: "ap-computer-science-a",
+      category: "Technology",
+      videos: 42,
+      articles: 34,
+      topics: 11,
+      subtopics: 38,
+      estTime: "28 Hours",
+      questions: "800+ Items",
+      difficulty: "Advanced",
+      color: "border-blue-500/30 bg-blue-500/5 text-blue-400"
     },
     {
       name: "AP Psychology",
@@ -544,7 +544,7 @@ export default function Dashboard() {
       estTime: "18 Hours",
       questions: "520+ Items",
       difficulty: "Intermediate",
-      color: "border-blue-500/30 bg-blue-500/5 text-blue-400"
+      color: "border-teal-500/30 bg-teal-500/5 text-teal-400"
     },
     {
       name: "AP US History",
@@ -691,7 +691,7 @@ export default function Dashboard() {
         <SearchBar onSelect={handleSearchSelect} />
 
         {/* View Mode Segmented Tab Selector */}
-        <div className="flex items-center justify-center p-1.5 rounded-full bg-[#0c0d12]/90 border border-white/10 mt-10 mb-8 shadow-2xl backdrop-blur-xl gap-1.5 sm:gap-2 select-none z-10">
+        <div className="flex items-center justify-center p-1.5 rounded-full bg-[#0c0d12]/90 border border-white/10 mt-4 sm:mt-5 mb-8 shadow-2xl backdrop-blur-xl gap-1.5 sm:gap-2 select-none z-10">
           <button
             onClick={() => setDashboardTab("courses")}
             className={cn(
