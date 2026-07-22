@@ -575,7 +575,7 @@ export function HeroSection() {
         style={{ opacity: scrollIndicatorOpacity }}
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 cursor-pointer z-20"
         onClick={() => {
           window.scrollTo({ top: window.innerHeight - 50, behavior: "smooth" });
         }}
