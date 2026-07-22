@@ -159,7 +159,7 @@ export default function CommunityImpactPage() {
                <Clock className="w-5 h-5 text-yellow-400" />
              </div>
               <div>
-                <div className="text-5xl font-instrument mb-2 text-white">24m</div>
+                <div className="text-5xl font-instrument mb-2 text-white">56m</div>
                 <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Avg. Study Session</span>
               </div>
           </motion.div>
@@ -214,7 +214,7 @@ export default function CommunityImpactPage() {
                  </div>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-cyan-400">total site visits</span>
                </div>
-                <div className="text-6xl font-instrument text-white tracking-tighter">3.4K</div>
+                <div className="text-6xl font-instrument text-white tracking-tighter">22.4K</div>
              </div>
              <div className="absolute right-0 bottom-0 top-0 w-1/2 opacity-20 flex items-end justify-between px-6 pb-6">
                {[40, 70, 45, 90, 60, 100, 80, 120].map((h, i) => (
@@ -236,8 +236,8 @@ export default function CommunityImpactPage() {
         <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-16 relative z-10">
           <div className="max-w-xl">
             <div className="inline-flex items-center space-x-2 bg-white/[0.03] border border-white/10 px-4 py-2 rounded-full mb-8">
-              <MapPin className="w-4 h-4 text-medical-teal" />
-              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-medical-teal">National Infrastructure</span>
+              <MapPin className="w-4 h-4 text-white" />
+              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-white">National Infrastructure</span>
             </div>
             <h2 className="font-instrument text-5xl md:text-7xl mb-8 leading-[0.9]">
               Reach across <br /><span className="italic text-white/50">state lines.</span>
@@ -271,16 +271,14 @@ export default function CommunityImpactPage() {
           Enter the <span className="italic text-medical-teal">Ecosystem</span>.
         </h2>
         
-        <Link href="/dashboard">
+        <Link href="/dashboard" className="inline-block relative z-10">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative liquid-glass-strong px-12 py-6 rounded-full border border-medical-teal/40 hover:bg-medical-teal hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(32,201,151,0.2)]"
+            className="px-10 py-5 rounded-full bg-white text-black font-manrope font-bold text-sm tracking-wide shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:bg-white/90 transition-all flex items-center space-x-3"
           >
-            <span className="font-mono text-xs font-bold uppercase tracking-[0.3em] flex items-center space-x-4">
-              <span>Go to Dashboard</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-            </span>
+            <span>Go to Dashboard</span>
+            <ArrowRight className="w-4 h-4" />
           </motion.button>
         </Link>
       </section>

@@ -313,7 +313,7 @@ export function HeroSection() {
       {/* Animated Cursor Reactive Lines Background */}
       <CursorLinesBackground isPaused={isPaused} />
 
-      {/* Background Floating Study Assets (Positional adjustments for clean non-overlapping layout on all screen sizes) */}
+      {/* Background Floating Study Assets */}
       <div
         className="absolute inset-0 pointer-events-none z-[1] select-none"
         style={{
@@ -325,7 +325,7 @@ export function HeroSection() {
       >
         {/* DNA: top-left */}
         <MousePushedWrapper 
-          className="absolute top-[18%] left-[3%] sm:left-[5%] text-white"
+          className="absolute top-[12%] left-[4%] lg:left-[6%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -12, 0], rotate: [0, 8, -8, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -335,7 +335,7 @@ export function HeroSection() {
 
         {/* Molecule: top-right */}
         <MousePushedWrapper 
-          className="absolute top-[18%] right-[3%] sm:right-[5%] text-white"
+          className="absolute top-[12%] right-[4%] lg:right-[6%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -15, 0], rotate: [0, -12, 12, 0] }}
           transition={{ duration: 9.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -343,19 +343,29 @@ export function HeroSection() {
           <MoleculeIcon />
         </MousePushedWrapper>
 
-        {/* Math Graph: bottom-left */}
+        {/* Flask: top-center-left */}
         <MousePushedWrapper 
-          className="absolute bottom-[18%] left-[3%] sm:left-[5%] text-white"
+          className="absolute top-[10%] left-[18%] lg:left-[22%] text-white"
           style={{ mixBlendMode: "difference" }}
-          animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          animate={{ y: [0, -10, 0], rotate: [0, -6, 6, 0] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
-          <MathGraphIcon />
+          <FlaskIcon />
+        </MousePushedWrapper>
+
+        {/* Sigma: top-center-right */}
+        <MousePushedWrapper 
+          className="absolute top-[10%] right-[18%] lg:right-[22%] text-white"
+          style={{ mixBlendMode: "difference" }}
+          animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        >
+          <SigmaIcon />
         </MousePushedWrapper>
 
         {/* Stacked Books: mid-left */}
         <MousePushedWrapper 
-          className="absolute top-[36%] left-[2%] sm:left-[4%] text-white"
+          className="absolute top-[34%] left-[3%] lg:left-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -11, 0], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
@@ -365,7 +375,7 @@ export function HeroSection() {
 
         {/* Graduation Cap: mid-right */}
         <MousePushedWrapper 
-          className="absolute top-[36%] right-[2%] sm:right-[4%] text-white"
+          className="absolute top-[34%] right-[3%] lg:right-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -13, 0], rotate: [0, 7, -7, 0] }}
           transition={{ duration: 8.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
@@ -373,29 +383,9 @@ export function HeroSection() {
           <CapIcon />
         </MousePushedWrapper>
 
-        {/* Microscope: bottom-right */}
-        <MousePushedWrapper 
-          className="absolute bottom-[18%] right-[3%] sm:right-[5%] text-white"
-          style={{ mixBlendMode: "difference" }}
-          animate={{ y: [0, -14, 0], rotate: [0, -8, 8, 0] }}
-          transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-        >
-          <MicroscopeIcon />
-        </MousePushedWrapper>
-
-        {/* Atom: lower-mid-right */}
-        <MousePushedWrapper 
-          className="absolute top-[58%] right-[2%] sm:right-[4%] text-white"
-          style={{ mixBlendMode: "difference" }}
-          animate={{ y: [0, -9, 0], rotate: [0, 15, -15, 0] }}
-          transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
-        >
-          <AtomIcon />
-        </MousePushedWrapper>
-
         {/* Brain: lower-mid-left */}
         <MousePushedWrapper 
-          className="absolute top-[58%] left-[2%] sm:left-[4%] text-white"
+          className="absolute top-[56%] left-[3%] lg:left-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -12, 0], rotate: [0, -5, 5, 0] }}
           transition={{ duration: 8.0, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
@@ -403,29 +393,39 @@ export function HeroSection() {
           <BrainIcon />
         </MousePushedWrapper>
 
-        {/* Flask: top-center-left (Only on large displays to prevent title overlap) */}
+        {/* Atom: lower-mid-right */}
         <MousePushedWrapper 
-          className="hidden xl:block absolute top-[14%] left-[16%] text-white"
+          className="absolute top-[56%] right-[3%] lg:right-[5%] text-white"
           style={{ mixBlendMode: "difference" }}
-          animate={{ y: [0, -10, 0], rotate: [0, -6, 6, 0] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          animate={{ y: [0, -9, 0], rotate: [0, 15, -15, 0] }}
+          transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
         >
-          <FlaskIcon />
+          <AtomIcon />
         </MousePushedWrapper>
 
-        {/* Sigma: top-center-right (Only on large displays to prevent title overlap) */}
+        {/* Math Graph: bottom-left */}
         <MousePushedWrapper 
-          className="hidden xl:block absolute top-[14%] right-[16%] text-white"
+          className="absolute bottom-[12%] left-[6%] lg:left-[10%] text-white"
           style={{ mixBlendMode: "difference" }}
-          animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
-          transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         >
-          <SigmaIcon />
+          <MathGraphIcon />
+        </MousePushedWrapper>
+
+        {/* Microscope: bottom-right */}
+        <MousePushedWrapper 
+          className="absolute bottom-[12%] right-[6%] lg:right-[10%] text-white"
+          style={{ mixBlendMode: "difference" }}
+          animate={{ y: [0, -14, 0], rotate: [0, -8, 8, 0] }}
+          transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+        >
+          <MicroscopeIcon />
         </MousePushedWrapper>
 
         {/* Ruler: bottom-center-left */}
         <MousePushedWrapper 
-          className="hidden lg:block absolute bottom-[10%] left-[14%] text-white"
+          className="hidden lg:block absolute bottom-[8%] left-[20%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -11, 0], rotate: [0, 4, -4, 0] }}
           transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
@@ -435,7 +435,7 @@ export function HeroSection() {
 
         {/* Periodic Table: bottom-center-right */}
         <MousePushedWrapper 
-          className="hidden lg:block absolute bottom-[10%] right-[14%] text-white"
+          className="hidden lg:block absolute bottom-[8%] right-[20%] text-white"
           style={{ mixBlendMode: "difference" }}
           animate={{ y: [0, -9, 0], rotate: [0, -7, 7, 0] }}
           transition={{ duration: 9.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
@@ -567,6 +567,20 @@ export function HeroSection() {
             </button>
           </a>
         </div>
+      </motion.div>
+
+      {/* Animated Scroll Indicator (Smoothly animated white down arrow) */}
+      <motion.div 
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 cursor-pointer z-20"
+        onClick={() => {
+          window.scrollTo({ top: window.innerHeight - 50, behavior: "smooth" });
+        }}
+      >
+        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-white/60 stroke-[2]" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </motion.div>
     </section>
   );

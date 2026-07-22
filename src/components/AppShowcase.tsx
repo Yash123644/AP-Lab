@@ -314,22 +314,22 @@ export function AppShowcase() {
             </div>
 
             {/* Activity Calendar Display */}
-            <div className="bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-2.5 z-10 flex-1 min-h-[210px] shrink-0">
-              <div className="flex items-center space-x-2 mb-2 text-emerald-400 shrink-0">
+            <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-2.5 z-10 flex-1 min-h-[220px] shrink-0">
+              <div className="flex items-center space-x-2 mb-3 text-emerald-400 shrink-0">
                 <Calendar className="w-5 h-5" />
-                <span className="text-[12px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
+                <span className="text-[13px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
               </div>
               
-              <div className="flex-1 flex flex-col justify-center">
+              <div className="flex-1 flex flex-col justify-around w-full">
                 {/* Weekdays */}
-                <div className="grid grid-cols-7 gap-1 text-center w-full max-w-[250px] mx-auto text-[9px] font-mono text-white/30 font-bold uppercase mb-1.5 shrink-0">
+                <div className="grid grid-cols-7 gap-2 text-center w-full text-[11px] font-mono text-white/40 font-bold uppercase mb-2 shrink-0">
                   {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
                     <div key={idx}>{day}</div>
                   ))}
                 </div>
                 
                 {/* Calendar Days */}
-                <div className="grid grid-cols-7 gap-1 w-full max-w-[250px] mx-auto">
+                <div className="grid grid-cols-7 gap-2 w-full">
                   {Array.from({ length: 28 }).map((_, idx) => {
                     const dayNum = idx - 2; // July 1st starts on Wednesday (offset by 2)
                     const isValid = dayNum > 0 && dayNum <= 25;
@@ -340,44 +340,46 @@ export function AppShowcase() {
                     
                     if (isValid) {
                       const activeDays = {
-                        1: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 50 },
-                        2: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 150 },
-                        4: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 450 },
-                        5: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 350 },
-                        8: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 75 },
-                        9: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 200 },
-                        14: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 400 },
-                        15: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 300 },
-                        16: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 180 },
-                        20: { bg: "bg-emerald-950/20 border-emerald-500/20 text-emerald-400", xp: 60 },
-                        21: { bg: "bg-emerald-900/30 border-emerald-500/30 text-emerald-300", xp: 120 },
-                        22: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 420 },
-                        23: { bg: "bg-emerald-500/15 border-emerald-500/50 text-emerald-100", xp: 380 }
-                      } as Record<number, { bg: string, xp: number }>;
-                      
-                      const dayInfo = activeDays[dayNum];
-                      bgClass = dayInfo ? `${dayInfo.bg} cursor-pointer hover:scale-[1.05] transition-transform` : "bg-white/[0.02] border-white/5 text-white/50 cursor-pointer hover:bg-white/[0.04]";
-                      displayDay = String(dayNum);
-                      xpGained = dayInfo ? dayInfo.xp : 0;
+                        1: { bg: "bg-emerald-950/40 border-emerald-500/30 text-emerald-400", xp: 50 },
+                        2: { bg: "bg-emerald-900/50 border-emerald-500/40 text-emerald-300", xp: 150 },
+                        4: { bg: "bg-emerald-500/25 border-emerald-500/60 text-emerald-100 font-black", xp: 450 },
+                        5: { bg: "bg-emerald-500/25 border-emerald-500/60 text-emerald-100 font-black", xp: 350 },
+                        8: { bg: "bg-emerald-950/40 border-emerald-500/30 text-emerald-400", xp: 75 },
+                        9: { bg: "bg-emerald-900/50 border-emerald-500/40 text-emerald-300", xp: 200 },
+                        14: { bg: "bg-emerald-500/25 border-emerald-500/60 text-emerald-100 font-black", xp: 400 },
+                        15: { bg: "bg-emerald-500/25 border-emerald-500/60 text-emerald-100 font-black", xp: 300 },
+                        16: { bg: "bg-emerald-900/50 border-emerald-500/40 text-emerald-300", xp: 180 },
+                        20: { bg: "bg-emerald-950/40 border-emerald-500/30 text-emerald-400", xp: 90 },
+                        21: { bg: "bg-emerald-900/50 border-emerald-500/40 text-emerald-300", xp: 220 },
+                        22: { bg: "bg-emerald-500/25 border-emerald-500/60 text-emerald-100 font-black", xp: 500 },
+                        23: { bg: "bg-emerald-900/50 border-emerald-500/40 text-emerald-300", xp: 140 },
+                      };
+
+                      displayDay = dayNum.toString();
+                      const dayInfo = (activeDays as any)[dayNum];
+                      if (dayInfo) {
+                        bgClass = `${dayInfo.bg} shadow-[0_0_10px_rgba(16,185,129,0.15)] cursor-pointer hover:scale-105 transition-transform`;
+                        xpGained = dayInfo.xp;
+                      } else {
+                        bgClass = "bg-white/[0.04] border-white/10 text-white/40 hover:bg-white/10 cursor-pointer";
+                      }
+                    } else if (dayNum <= 0) {
+                      displayDay = (28 + dayNum).toString();
                     } else {
-                      // Padding days (show grey boxes with mock day numbers for June padding)
-                      displayDay = String(28 + idx);
+                      displayDay = (dayNum - 25).toString();
                     }
 
                     return (
-                      <div 
+                      <div
                         key={idx}
-                        className={`group/cell relative aspect-square rounded-md border flex items-center justify-center text-[10px] font-mono ${bgClass}`}
+                        className={`h-8 sm:h-9 rounded-lg border flex flex-col items-center justify-center text-[12px] font-bold font-mono transition-all relative group/day ${bgClass}`}
                       >
-                        {displayDay}
-                        
-                        {/* Tooltip */}
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/cell:flex flex-col items-center z-30 pointer-events-none">
-                          <div className="bg-neutral-900/95 border border-white/15 backdrop-blur-md px-2 py-1 rounded-md text-[8.5px] font-mono text-white whitespace-nowrap shadow-2xl leading-none">
-                            {isValid ? `${xpGained} XP Gained` : "No Activity"}
+                        <span>{displayDay}</span>
+                        {xpGained > 0 && (
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-1.5 py-0.5 bg-neutral-900 border border-emerald-500/30 rounded text-[9px] text-emerald-300 opacity-0 group-hover/day:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-20">
+                            +{xpGained} XP
                           </div>
-                          <div className="w-1.5 h-1.5 bg-neutral-900 border-r border-b border-white/15 rotate-45 -mt-1" />
-                        </div>
+                        )}
                       </div>
                     );
                   })}

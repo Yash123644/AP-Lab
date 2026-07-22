@@ -21,7 +21,7 @@ export default function LandingPage() {
       <Navbar />
       <div className="flex flex-col">
         <HeroSection />
-        <div className="relative z-20 -mt-20">
+        <div className="relative z-20">
           <APClassesPills />
         </div>
         <ScrollVideoSection />
