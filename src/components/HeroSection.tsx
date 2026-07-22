@@ -309,7 +309,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-20 md:pb-28 px-4 sm:px-6 md:px-12 overflow-hidden text-center z-10">
+    <section className="relative flex flex-col items-center justify-center pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 overflow-hidden text-center z-10">
       {/* Animated Cursor Reactive Lines Background */}
       <CursorLinesBackground isPaused={isPaused} />
 
