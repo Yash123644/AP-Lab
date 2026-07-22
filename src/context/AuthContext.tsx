@@ -21,6 +21,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!auth || !auth.config) {
+      console.warn("Firebase Auth is not fully configured. Please set NEXT_PUBLIC_FIREBASE_API_KEY in .env.local.");
+      setLoading(false);
+      return;
+    }
+
     // Catch Microsoft or other provider redirect sign-ins
     getRedirectResult(auth)
       .then((result) => {

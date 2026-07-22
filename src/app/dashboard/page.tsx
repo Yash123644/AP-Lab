@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
-import MuxPlayer from "@mux/mux-player-react";
+import { PixelCourseBackground } from "@/components/PixelCourseBackground";
 import { auth, db } from "@/lib/firebase";
 import { signOut, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -337,7 +337,6 @@ export default function Dashboard() {
   const [showSignOutConfirm, setShowSignOutConfirm] = useState(false);
   const [showAccountPopup, setShowAccountPopup] = useState(false);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [onboardCompleted, setOnboardCompleted] = useState(false);
@@ -492,34 +491,8 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col relative z-0 overflow-x-hidden transition-colors duration-500 selection:bg-primary-purple selection:text-white">
       
-      {/* Video Background */}
-      <div className="absolute inset-0 -z-20 w-full h-full overflow-hidden pointer-events-none bg-[#020308]">
-        <div
-          className={cn(
-            "w-full h-full transition-opacity duration-1000 ease-out",
-            videoLoaded ? "opacity-100" : "opacity-0"
-          )}
-        >
-          <MuxPlayer
-            playbackId="4IMYGcL01xjs7ek5ANO17JC4VQVUTsojZlnw4fXzwSxc"
-            autoPlay="muted"
-            loop
-            muted
-            playsInline
-            onPlaying={() => setVideoLoaded(true)}
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            style={{ 
-              position: "absolute", 
-              top: 0, 
-              left: 0, 
-              width: "100%", 
-              height: "100%", 
-              "--media-object-fit": "cover",
-              opacity: 0.38 
-            } as any}
-          />
-        </div>
-      </div>
+      {/* Clean Pixelated Animated Background (DNA, Graphs, Atoms, Math, Binary) */}
+      <PixelCourseBackground />
 
       {/* Volumetric Dark Vignette Overlay & Backdrop Blur */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#020308]/90 via-transparent to-[#020308] backdrop-blur-[2.5px] pointer-events-none" />

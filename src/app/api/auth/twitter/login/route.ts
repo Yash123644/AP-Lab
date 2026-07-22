@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { generateState, generateCodeVerifier, generateCodeChallenge } from "@/lib/pkce";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request) {
   try {
     const clientId = process.env.TWITTER_CLIENT_ID || "Y1NnSWtLdlhYN1g2ZTdHM2FUUmY6MTpjaQ";

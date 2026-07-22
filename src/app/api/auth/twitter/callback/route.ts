@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { getAdminAuth } from "@/lib/firebaseAdmin";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request) {
   const adminAuth = getAdminAuth();
   const requestUrl = new URL(request.url);
