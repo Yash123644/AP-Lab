@@ -310,7 +310,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-between pt-24 sm:pt-28 md:pt-32 pb-6 px-4 sm:px-6 md:px-12 overflow-hidden text-center z-10">
+    <section className="relative min-h-screen flex flex-col items-center justify-between pt-16 sm:pt-20 md:pt-24 pb-8 px-4 sm:px-6 md:px-12 overflow-hidden text-center z-10">
       {/* Animated Cursor Reactive Lines Background */}
       <CursorLinesBackground isPaused={isPaused} />
 
@@ -575,7 +575,7 @@ export function HeroSection() {
         style={{ opacity: scrollIndicatorOpacity }}
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 cursor-pointer z-20"
         onClick={() => {
           window.scrollTo({ top: window.innerHeight - 50, behavior: "smooth" });
         }}

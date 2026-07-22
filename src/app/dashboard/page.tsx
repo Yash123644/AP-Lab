@@ -8,7 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
-  ChevronRight, Activity, Star, User, Mail, X, BarChart2, Upload
+  ChevronRight, Activity, Star, User, Mail, X, BarChart2, Upload,
+  Folder, Eye, Trophy, Video, FileText, Layers, Clock, ArrowUpRight
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
@@ -438,6 +439,128 @@ export default function Dashboard() {
     );
   }
 
+  const [dashboardTab, setDashboardTab] = useState<"courses" | "previews" | "leaderboard">("courses");
+
+  const coursePreviewsData = [
+    {
+      name: "AP Biology",
+      slug: "ap-biology",
+      category: "Life Sciences",
+      videos: 48,
+      articles: 36,
+      topics: 12,
+      subtopics: 42,
+      estTime: "32 Hours",
+      questions: "850+ Items",
+      difficulty: "Advanced",
+      color: "border-emerald-500/30 bg-emerald-500/5 text-emerald-400"
+    },
+    {
+      name: "AP Chemistry",
+      slug: "ap-chemistry",
+      category: "Physical Sciences",
+      videos: 52,
+      articles: 40,
+      topics: 14,
+      subtopics: 48,
+      estTime: "38 Hours",
+      questions: "920+ Items",
+      difficulty: "Expert",
+      color: "border-cyan-500/30 bg-cyan-500/5 text-cyan-400"
+    },
+    {
+      name: "AP Environmental Science",
+      slug: "ap-environmental-science",
+      category: "Life Sciences",
+      videos: 32,
+      articles: 28,
+      topics: 9,
+      subtopics: 30,
+      estTime: "22 Hours",
+      questions: "640+ Items",
+      difficulty: "Intermediate",
+      color: "border-green-500/30 bg-green-500/5 text-green-400"
+    },
+    {
+      name: "AP Physics 1",
+      slug: "ap-physics-1",
+      category: "Physical Sciences",
+      videos: 44,
+      articles: 32,
+      topics: 10,
+      subtopics: 36,
+      estTime: "30 Hours",
+      questions: "780+ Items",
+      difficulty: "Advanced",
+      color: "border-purple-500/30 bg-purple-500/5 text-purple-400"
+    },
+    {
+      name: "AP Physics C: Mechanics",
+      slug: "ap-physics-c-mechanics",
+      category: "Physical Sciences",
+      videos: 40,
+      articles: 28,
+      topics: 8,
+      subtopics: 28,
+      estTime: "26 Hours",
+      questions: "710+ Items",
+      difficulty: "Expert",
+      color: "border-indigo-500/30 bg-indigo-500/5 text-indigo-400"
+    },
+    {
+      name: "AP Calculus BC",
+      slug: "ap-calculus-bc",
+      category: "Mathematics",
+      videos: 60,
+      articles: 45,
+      topics: 15,
+      subtopics: 54,
+      estTime: "42 Hours",
+      questions: "1,050+ Items",
+      difficulty: "Expert",
+      color: "border-amber-500/30 bg-amber-500/5 text-amber-400"
+    },
+    {
+      name: "AP Psychology",
+      slug: "ap-psychology",
+      category: "Social Sciences",
+      videos: 36,
+      articles: 30,
+      topics: 9,
+      subtopics: 32,
+      estTime: "24 Hours",
+      questions: "680+ Items",
+      difficulty: "Intermediate",
+      color: "border-rose-500/30 bg-rose-500/5 text-rose-400"
+    },
+    {
+      name: "AP Macroeconomics",
+      slug: "ap-macroeconomics",
+      category: "Social Sciences",
+      videos: 28,
+      articles: 24,
+      topics: 7,
+      subtopics: 24,
+      estTime: "18 Hours",
+      questions: "520+ Items",
+      difficulty: "Intermediate",
+      color: "border-blue-500/30 bg-blue-500/5 text-blue-400"
+    },
+    {
+      name: "AP US History",
+      slug: "ap-us-history",
+      category: "History & Social",
+      videos: 56,
+      articles: 48,
+      topics: 14,
+      subtopics: 50,
+      estTime: "40 Hours",
+      questions: "980+ Items",
+      difficulty: "Advanced",
+      color: "border-red-500/30 bg-red-500/5 text-red-400"
+    }
+  ];
+
   const handleSignOut = () => {
     setShowSignOutConfirm(true);
   };
@@ -567,31 +690,161 @@ export default function Dashboard() {
         {/* Search Bar */}
         <SearchBar onSelect={handleSearchSelect} />
 
-        {/* Universal Wings Bento Grid - 3D Folders Grid */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mt-24 mb-48"
-        >
-          {folders.map((folder) => (
-            <FolderCard 
-              key={folder.title} 
-              {...folder} 
-              progressData={classProgressMap}
-            />
-          ))}
-        </motion.div>
+        {/* View Mode Segmented Tab Selector */}
+        <div className="flex items-center justify-center p-1.5 rounded-full bg-[#0c0d12]/90 border border-white/10 mt-10 mb-8 shadow-2xl backdrop-blur-xl gap-1.5 sm:gap-2 select-none z-10">
+          <button
+            onClick={() => setDashboardTab("courses")}
+            className={cn(
+              "flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm transition-all duration-300",
+              dashboardTab === "courses"
+                ? "bg-white text-black shadow-lg scale-[1.02]"
+                : "text-white/60 hover:text-white hover:bg-white/5"
+            )}
+          >
+            <Folder className="w-4 h-4" />
+            <span>Courses</span>
+          </button>
 
-        {/* Level Leaderboard Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="w-full max-w-4xl"
-        >
-          <LevelLeaderboard />
-        </motion.div>
+          <button
+            onClick={() => setDashboardTab("previews")}
+            className={cn(
+              "flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm transition-all duration-300",
+              dashboardTab === "previews"
+                ? "bg-white text-black shadow-lg scale-[1.02]"
+                : "text-white/60 hover:text-white hover:bg-white/5"
+            )}
+          >
+            <Eye className="w-4 h-4" />
+            <span>Previews</span>
+          </button>
+
+          <button
+            onClick={() => setDashboardTab("leaderboard")}
+            className={cn(
+              "flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm transition-all duration-300",
+              dashboardTab === "leaderboard"
+                ? "bg-white text-black shadow-lg scale-[1.02]"
+                : "text-white/60 hover:text-white hover:bg-white/5"
+            )}
+          >
+            <Trophy className="w-4 h-4" />
+            <span>Leaderboard</span>
+          </button>
+        </div>
+
+        {/* Tab 1: Universal Wings Bento Grid - 3D Folders Grid */}
+        {dashboardTab === "courses" && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mt-12 mb-36"
+          >
+            {folders.map((folder) => (
+              <FolderCard 
+                key={folder.title} 
+                {...folder} 
+                progressData={classProgressMap}
+              />
+            ))}
+          </motion.div>
+        )}
+
+        {/* Tab 2: Course Statistics Previews Grid */}
+        {dashboardTab === "previews" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mt-8 mb-36"
+          >
+            {coursePreviewsData.map((course) => (
+              <div 
+                key={course.slug}
+                className={cn(
+                  "bg-[#08090e]/90 border rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 shadow-xl backdrop-blur-md",
+                  course.color
+                )}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">
+                      {course.category}
+                    </span>
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/10 text-white/90">
+                      {course.difficulty}
+                    </span>
+                  </div>
+
+                  <h3 className="font-manrope font-extrabold text-2xl text-white mb-6 tracking-tight">
+                    {course.name}
+                  </h3>
+
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                        <Video className="w-4 h-4 text-white/80" />
+                      </div>
+                      <div>
+                        <div className="font-manrope font-bold text-white text-sm">{course.videos}</div>
+                        <div className="font-mono text-[9px] text-white/40 uppercase">Videos</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                        <FileText className="w-4 h-4 text-white/80" />
+                      </div>
+                      <div>
+                        <div className="font-manrope font-bold text-white text-sm">{course.articles}</div>
+                        <div className="font-mono text-[9px] text-white/40 uppercase">Articles</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                        <Layers className="w-4 h-4 text-white/80" />
+                      </div>
+                      <div>
+                        <div className="font-manrope font-bold text-white text-sm">{course.topics} / {course.subtopics}</div>
+                        <div className="font-mono text-[9px] text-white/40 uppercase">Topics / Subs</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                        <Clock className="w-4 h-4 text-white/80" />
+                      </div>
+                      <div>
+                        <div className="font-manrope font-bold text-white text-sm">{course.estTime}</div>
+                        <div className="font-mono text-[9px] text-white/40 uppercase">Est. Duration</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <Link href={`/dashboard/${course.slug}`}>
+                  <button className="w-full py-3 rounded-2xl bg-white/10 hover:bg-white text-white hover:text-black font-manrope font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center space-x-2 border border-white/10">
+                    <span>Enter Course</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        )}
+
+        {/* Tab 3: Level Leaderboard Section */}
+        {dashboardTab === "leaderboard" && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="w-full max-w-4xl mt-8 mb-36"
+          >
+            <LevelLeaderboard />
+          </motion.div>
+        )}
 
       </main>
 
