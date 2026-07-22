@@ -41,7 +41,7 @@ interface SymbolObject {
 }
 
 export function PixelCourseBackground({
-  opacity = 0.88,
+  opacity = 0.55,
   pixelSize = 8,
 }: PixelCourseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -57,12 +57,32 @@ export function PixelCourseBackground({
     let width = 0;
     let height = 0;
 
+    // Offscreen cached canvas for static dot grid background optimization
+    let dotCanvas: HTMLCanvasElement | null = null;
+
+    const renderDotGridCache = (w: number, h: number) => {
+      dotCanvas = document.createElement("canvas");
+      dotCanvas.width = w;
+      dotCanvas.height = h;
+      const dotCtx = dotCanvas.getContext("2d");
+      if (!dotCtx) return;
+
+      const dotSpacing = 32;
+      dotCtx.fillStyle = "rgba(255, 255, 255, 0.45)"; // Higher dot opacity
+      for (let x = dotSpacing / 2; x < w; x += dotSpacing) {
+        for (let y = dotSpacing / 2; y < h; y += dotSpacing) {
+          dotCtx.fillRect(Math.floor(x), Math.floor(y), 2, 2);
+        }
+      }
+    };
+
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
       ctx.imageSmoothingEnabled = false;
+      renderDotGridCache(width, height);
     };
 
     resize();
@@ -98,7 +118,6 @@ export function PixelCourseBackground({
     const totalSlots = cols * rows;
     const symbols: SymbolObject[] = [];
 
-    // Shuffle symbol configs
     const shuffledConfigs = [...symbolConfigs, ...symbolConfigs].sort(() => Math.random() - 0.5);
 
     const cellW = (width || 1200) / cols;
@@ -147,13 +166,13 @@ export function PixelCourseBackground({
         const py = cy + i * p * 1.4;
         const angle = t * 1.8 + i * 0.45;
         const span = Math.sin(angle) * p * 3.8;
-        const opacity = Math.abs(Math.cos(angle)) * 0.7 + 0.3;
+        const op = Math.abs(Math.cos(angle)) * 0.7 + 0.3;
 
         drawPixelRect(cx - span - p * 0.6, py, p * 1.2, p * 1.2, color);
         drawPixelRect(cx + span - p * 0.6, py, p * 1.2, p * 1.2, color);
 
         if (Math.abs(span) > p * 0.8) {
-          drawPixelRect(cx - Math.abs(span), py + p * 0.3, Math.abs(span) * 2, p * 0.5, color, opacity * 0.35);
+          drawPixelRect(cx - Math.abs(span), py + p * 0.3, Math.abs(span) * 2, p * 0.5, color, op * 0.35);
         }
       }
     };
@@ -333,84 +352,72 @@ export function PixelCourseBackground({
       drawPixelRect(cx - p * 2.5, cy + p * 2.8, p * 5, p, color);
     };
 
-    // NEW 15. AP Lit: Book & Quill
+    // 15. AP Lit: Book & Quill
     const drawBookQuill = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // Open Book pages
       drawPixelRect(cx - p * 3.5, cy - p * 1.5, p * 3, p * 3.5, color, 0.7);
       drawPixelRect(cx + p * 0.5, cy - p * 1.5, p * 3, p * 3.5, color, 0.7);
       drawPixelRect(cx - p * 0.3, cy - p * 1.8, p * 0.6, p * 4, "#ffffff");
-      // Floating Quill Pen tip
       const qy = Math.sin(t * 2.5) * p * 1.2;
       drawPixelRect(cx + p * 2, cy - p * 4 + qy, p * 0.8, p * 3, color);
       drawPixelRect(cx + p * 2.8, cy - p * 4.8 + qy, p * 1.2, p * 1.2, "#ffffff");
     };
 
-    // NEW 16. AP Econ: Dollar $ & Trend Line
+    // 16. AP Econ: Dollar $ & Trend Line
     const drawEconTrend = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // Dollar $
       const dollar = [[-1, -3], [0, -3], [1, -3], [-1, -2], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [-1, 2], [0, 2], [1, 2]];
       dollar.forEach(([dx, dy]) => {
         drawPixelRect(cx - p * 2 + dx * p * 0.8, cy + dy * p * 0.8, p * 0.9, p * 0.9, color);
       });
-      // Vertical line for $
       drawPixelRect(cx - p * 2, cy - p * 3.2, p * 0.6, p * 5.4, color);
 
-      // Rising Trend Arrow
       drawPixelRect(cx + p * 1, cy + p * 2, p * 0.8, p * 0.8, "#ffffff");
       drawPixelRect(cx + p * 2, cy + p * 0.5, p * 0.8, p * 0.8, "#ffffff");
       drawPixelRect(cx + p * 3, cy - p * 1, p * 0.8, p * 0.8, "#ffffff");
       drawPixelRect(cx + p * 4, cy - p * 2.5, p * 1.6, p * 1.6, color);
     };
 
-    // NEW 17. AP Bio: RNA Strand
+    // 17. AP Bio: RNA Strand
     const drawRNALoop = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
       for (let i = -5; i <= 5; i++) {
         const py = cy + i * p * 1.2;
         const rx = Math.sin(t * 2 + i * 0.5) * p * 3;
         drawPixelRect(cx + rx, py, p * 1.1, p * 1.1, color);
-        // Base pins
         if (i % 2 === 0) {
           drawPixelRect(cx + rx - p * 1.2, py + p * 0.2, p * 1.2, p * 0.6, "#ffffff", 0.6);
         }
       }
     };
 
-    // NEW 18. AP Phys C: Magnet
+    // 18. AP Phys C: Magnet
     const drawMagnet = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // U-Shape
       drawPixelRect(cx - p * 2.5, cy - p * 3, p * 1.2, p * 5, color);
       drawPixelRect(cx + p * 1.3, cy - p * 3, p * 1.2, p * 5, color);
       drawPixelRect(cx - p * 2.5, cy + p * 2, p * 5, p * 1.2, color);
-      // North / South Poles
       drawPixelRect(cx - p * 2.5, cy - p * 3, p * 1.2, p * 1.5, "#ffffff");
       drawPixelRect(cx + p * 1.3, cy - p * 3, p * 1.2, p * 1.5, `${color}88`);
     };
 
-    // NEW 19. AP Psych: Brain Spark / Thought Bubble
+    // 19. AP Psych: Brain Spark
     const drawBrainSpark = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // Thought bubble dots
       drawPixelRect(cx - p * 2, cy - p * 1, p * 4, p * 3, color, 0.8);
       drawPixelRect(cx - p * 3, cy, p, p * 2, color, 0.8);
       drawPixelRect(cx + p * 2, cy, p, p * 2, color, 0.8);
-      // Spark pulse
       const pulse = (Math.sin(t * 4) + 1) * 0.5 * p;
       drawPixelRect(cx - p * 0.5, cy - p * 3.5 - pulse, p, p * 1.5, "#ffffff");
     };
 
-    // NEW 20. AP Gov: Scales of Justice
+    // 20. AP Gov: Scales of Justice
     const drawScales = (cx: number, cy: number, color: string, t: number) => {
       const p = pixelSize;
-      // Center Beam & Base
       drawPixelRect(cx - p * 0.4, cy - p * 3, p * 0.8, p * 6, color);
       drawPixelRect(cx - p * 3, cy - p * 2.5, p * 6, p * 0.8, color);
       drawPixelRect(cx - p * 2, cy + p * 3, p * 4, p * 0.8, color);
 
-      // Pans oscillating
       const tilt = Math.sin(t * 2) * p * 0.6;
       drawPixelRect(cx - p * 3.2, cy + tilt, p * 1.6, p * 0.6, "#ffffff");
       drawPixelRect(cx + p * 1.6, cy - tilt, p * 1.6, p * 0.6, "#ffffff");
@@ -447,35 +454,34 @@ export function PixelCourseBackground({
       ctx.restore();
     };
 
-    // Main Animation Loop
+    // Optimized Animation Loop
+    const minDistanceSq = 135 * 135;
+
     const draw = () => {
       if (!inView) return;
       time += 0.016;
 
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Draw Light-Colored Dot Matrix Background (Matching User Attached Image)
-      const dotSpacing = 32;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.22)";
-      for (let x = dotSpacing / 2; x < width; x += dotSpacing) {
-        for (let y = dotSpacing / 2; y < height; y += dotSpacing) {
-          ctx.fillRect(x, y, 1.8, 1.8);
-        }
+      // 1. Draw Hardware-Accelerated Cached Dot Matrix Grid Background
+      if (dotCanvas) {
+        ctx.drawImage(dotCanvas, 0, 0);
       }
 
-      // 2. Anti-Overlap Spatial Separation Engine
-      const minDistance = 135;
-      for (let i = 0; i < symbols.length; i++) {
-        for (let j = i + 1; j < symbols.length; j++) {
-          const s1 = symbols[i];
+      // 2. High-Performance Anti-Overlap Spatial Engine (Squared Distance Checks)
+      const len = symbols.length;
+      for (let i = 0; i < len; i++) {
+        const s1 = symbols[i];
+        for (let j = i + 1; j < len; j++) {
           const s2 = symbols[j];
 
           const dx = s2.x - s1.x;
           const dy = s2.y - s1.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < minDistance && dist > 0) {
-            const overlap = (minDistance - dist) * 0.5;
+          if (distSq < minDistanceSq && distSq > 0) {
+            const dist = Math.sqrt(distSq);
+            const overlap = (135 - dist) * 0.5;
             const nx = dx / dist;
             const ny = dy / dist;
 
@@ -493,7 +499,8 @@ export function PixelCourseBackground({
       }
 
       // 3. Move and Render Symbols
-      symbols.forEach((s) => {
+      for (let i = 0; i < len; i++) {
+        const s = symbols[i];
         s.x += s.vx;
         s.y += s.vy;
 
@@ -503,17 +510,19 @@ export function PixelCourseBackground({
         if (s.y < -margin) s.y = height + margin;
         if (s.y > height + margin) s.y = -margin;
 
-        const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
-        if (speed > 0.45) {
+        const speedSq = s.vx * s.vx + s.vy * s.vy;
+        if (speedSq > 0.2025) { // 0.45^2 = 0.2025
+          const speed = Math.sqrt(speedSq);
           s.vx = (s.vx / speed) * 0.45;
           s.vy = (s.vy / speed) * 0.45;
-        } else if (speed < 0.15) {
+        } else if (speedSq < 0.0225) { // 0.15^2 = 0.0225
+          const speed = Math.sqrt(speedSq);
           s.vx = (s.vx / speed) * 0.15;
           s.vy = (s.vy / speed) * 0.15;
         }
 
         drawSymbol(s);
-      });
+      }
 
       animationFrameId = requestAnimationFrame(draw);
     };
@@ -542,7 +551,7 @@ export function PixelCourseBackground({
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none -z-20 image-rendering-pixelated bg-[#03040a] blur-[1.2px]"
+      className="fixed inset-0 w-full h-full pointer-events-none -z-20 image-rendering-pixelated bg-[#03040a] blur-[0.5px]"
       style={{ display: "block" }}
     />
   );
