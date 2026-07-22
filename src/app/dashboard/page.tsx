@@ -491,8 +491,12 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col relative z-0 overflow-x-hidden transition-colors duration-500 selection:bg-primary-purple selection:text-white">
       
-      {/* Static White Background with Black Dot Pattern and Black Pixelated Symbols */}
+      {/* Static Dark Background with White/Light-Grey Dot Matrix Pattern & Minimalist Icons */}
       <PixelCourseBackground />
+
+      {/* Volumetric Dark Vignette Overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#03040a]/30 via-transparent to-[#03040a]/70 pointer-events-none" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_50%,#03040a_95%)] pointer-events-none" />
       
       {/* Floating Navbar Pill */}
       <nav className={cn(
