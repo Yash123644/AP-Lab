@@ -165,15 +165,26 @@ export function PixelCourseBackground({
         drawPx(cx, cy, 0.5, 0, 1.5, 1.5);
       };
 
-      // 10. Open Book
+      // 10. Authentic Open Book Pixel Art
       const drawBook = (cx: number, cy: number) => {
-        drawPx(cx, cy, -0.4, -2.5, 0.8, 5);
-        drawPx(cx, cy, -3.2, -2.2, 2.8, 1);
-        drawPx(cx, cy, -3.5, -1.4, 1, 3);
-        drawPx(cx, cy, -3.2, 1.8, 2.8, 1);
-        drawPx(cx, cy, 0.4, -2.2, 2.8, 1);
-        drawPx(cx, cy, 2.5, -1.4, 1, 3);
-        drawPx(cx, cy, 0.4, 1.8, 2.8, 1);
+        // Spine
+        drawPx(cx, cy, -0.5, -4, 1, 8.5);
+        
+        // Left Page
+        drawPx(cx, cy, -4.5, -4, 4, 1);    // top edge
+        drawPx(cx, cy, -4.5, -4, 1, 7.5);  // outer edge
+        drawPx(cx, cy, -4.5, 3.5, 4, 1);   // bottom edge
+        // Left text lines
+        drawPx(cx, cy, -3.2, -2, 2.2, 0.8);
+        drawPx(cx, cy, -3.2, 0, 2.2, 0.8);
+
+        // Right Page
+        drawPx(cx, cy, 0.5, -4, 4, 1);     // top edge
+        drawPx(cx, cy, 3.5, -4, 1, 7.5);   // outer edge
+        drawPx(cx, cy, 0.5, 3.5, 4, 1);    // bottom edge
+        // Right text lines
+        drawPx(cx, cy, 1.0, -2, 2.2, 0.8);
+        drawPx(cx, cy, 1.0, 0, 2.2, 0.8);
       };
 
       // 11. Dollar Sign ($)

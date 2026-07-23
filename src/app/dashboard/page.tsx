@@ -9,7 +9,7 @@ import {
   LogOut, Microscope, Library, Calculator, 
   Search, Dna, Beaker, Atom, History, Brain, BookOpen, Sigma, BarChart3, Binary,
   ChevronRight, Activity, Star, User, Mail, X, BarChart2, Upload,
-  Folder, Eye, Trophy, Video, FileText, Layers, Clock, ArrowUpRight
+  Folder, Eye, Trophy, Video, FileText, Layers, Clock, ArrowUpRight, Leaf
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
@@ -37,9 +37,9 @@ const folders = [
     accent: "#0088ff",
     bgGradient: "from-[#0088ff] to-[#0044cc]",
     classes: [
-      { name: "AP Biology", slug: "ap-biology", icon: Dna },
-      { name: "AP Chemistry", slug: "ap-chemistry", icon: Beaker },
-      { name: "AP Physics C", slug: "ap-physics-c", icon: Atom }
+      { name: "AP Biology", slug: "ap-biology", icon: Dna, accent: "#10b981" },
+      { name: "AP Chemistry", slug: "ap-chemistry", icon: Beaker, accent: "#00f2ff" },
+      { name: "AP Environmental Science", slug: "ap-environmental-science", icon: Leaf, accent: "#10b981" }
     ]
   },
   {
@@ -50,9 +50,9 @@ const folders = [
     accent: "#a484d7",
     bgGradient: "from-[#8b5cf6] to-[#5b21b6]",
     classes: [
-      { name: "AP US History", slug: "ap-ush", icon: History },
-      { name: "AP Psychology", slug: "ap-psych", icon: Brain },
-      { name: "AP English Language", slug: "ap-eng-lang", icon: BookOpen }
+      { name: "AP US History", slug: "ap-ush", icon: History, accent: "#ef4444" },
+      { name: "AP Psychology", slug: "ap-psych", icon: Brain, accent: "#a855f7" },
+      { name: "AP English Language", slug: "ap-eng-lang", icon: BookOpen, accent: "#ec4899" }
     ]
   },
   {
@@ -63,9 +63,9 @@ const folders = [
     accent: "#34d399",
     bgGradient: "from-[#10b981] to-[#047857]",
     classes: [
-      { name: "AP Calculus BC", slug: "ap-calc-bc", icon: Sigma },
-      { name: "AP Statistics", slug: "ap-stats", icon: BarChart3 },
-      { name: "AP Comp Sci A", slug: "ap-csa", icon: Binary }
+      { name: "AP Calculus BC", slug: "ap-calc-bc", icon: Sigma, accent: "#f59e0b" },
+      { name: "AP Statistics", slug: "ap-stats", icon: BarChart3, accent: "#ec4899" },
+      { name: "AP Comp Sci A", slug: "ap-csa", icon: Binary, accent: "#3b82f6" }
     ]
   },
 ];
@@ -73,11 +73,20 @@ const folders = [
 function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   
-  const allClassList = folders.flatMap(f => f.classes.map(c => ({ ...c, category: f.title, color: f.color })));
-  const filtered = query === "" ? [] : allClassList.filter(c => 
-    c.name.toLowerCase().includes(query.toLowerCase())
-  );
+  const allClassList = folders.flatMap(f => f.classes.map(c => ({ 
+    ...c, 
+    category: f.title, 
+    folderAccent: f.accent 
+  })));
+
+  const filtered = query === "" 
+    ? allClassList 
+    : allClassList.filter(c => 
+        c.name.toLowerCase().includes(query.toLowerCase()) || 
+        c.category.toLowerCase().includes(query.toLowerCase())
+      );
 
   return (
     <div className="relative w-full max-w-3xl mb-24 z-[60] group">
@@ -87,87 +96,124 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
           50% { transform: translateY(-4px) translateX(12px); opacity: 0.7; }
           100% { transform: translateY(0px) translateX(24px); opacity: 0.1; }
         }
-        .dust-mote {
-          animation: float-dust 4s infinite ease-in-out;
-        }
-        @keyframes gradient-flow {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
-        }
         .gradient-cycle-effect {
           background: linear-gradient(90deg, #1d4ed8, #2563eb, #3b82f6, #60a5fa, #3b82f6, #2563eb, #1d4ed8);
           background-size: 200% auto;
           animation: gradient-flow 6s linear infinite;
         }
+        @keyframes gradient-flow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
       `}</style>
       
       {/* Smooth Cycling Ambient Glow */}
-      <div 
-        className="absolute -inset-[12px] rounded-full blur-[24px] opacity-70 pointer-events-none z-0 gradient-cycle-effect"
-      />
-
-      {/* Cycling Outer Border (thick premium gradient ring) */}
-      <div 
-        className="absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3),_inset_0_1px_3px_rgba(255,255,255,0.2)]"
-      />
+      <div className="absolute -inset-[12px] rounded-full blur-[24px] opacity-70 pointer-events-none z-0 gradient-cycle-effect" />
+      <div className="absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3)]" />
 
       {/* Search Bar Container */}
-      <div className="relative bg-[#050508]/95 rounded-full flex items-center p-1 backdrop-blur-3xl border border-white/10 z-20">
+      <div className="relative bg-[#050508]/95 rounded-full flex items-center p-1 backdrop-blur-3xl border border-white/10 z-20 shadow-2xl">
         <div className="flex-1 flex items-center px-6 relative overflow-hidden">
           <Search className="w-5 h-5 text-white/80 mr-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
-          <div className="relative flex-1 flex items-center">
-            <input
-              type="text"
-              placeholder="Search for an AP Course..."
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setIsOpen(true);
-              }}
-              onFocus={() => {
-                setIsOpen(true);
-              }}
-              onBlur={() => {
-                setTimeout(() => {
-                  setIsOpen(false);
-                }, 200);
-              }}
-              className="w-full bg-transparent py-4.5 text-white placeholder-white/20 focus:outline-none text-xl font-manrope font-medium"
-            />
-          </div>
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Search for an AP Course..."
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setIsOpen(true);
+            }}
+            onFocus={() => setIsOpen(true)}
+            onBlur={() => {
+              setTimeout(() => setIsOpen(false), 220);
+            }}
+            className="w-full bg-transparent py-4.5 text-white placeholder-white/30 focus:outline-none text-xl font-manrope font-semibold"
+          />
+          {query && (
+            <button 
+              onClick={() => setQuery("")} 
+              className="p-1.5 text-white/40 hover:text-white rounded-full bg-white/5 hover:bg-white/15 transition-all mr-2"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
 
+      {/* Universal Search Menu */}
       <AnimatePresence>
-        {isOpen && filtered.length > 0 && (
+        {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute top-full mt-3 w-full bg-[#0a0a0f]/90 backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[70]"
+            initial={{ opacity: 0, y: 12, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 12, scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute top-full mt-3 w-full bg-[#0c0d16]/95 backdrop-blur-3xl border border-white/15 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-[70] p-3 space-y-2"
           >
-            {filtered.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  onSelect(item.slug);
-                  setQuery("");
-                  setIsOpen(false);
-                }}
-                className="w-full flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors border-b border-white/5 last:border-none group text-left"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                    <item.icon className={cn("w-5 h-5", item.color)} />
-                  </div>
-                  <div>
-                    <div className="text-white font-medium">{item.name}</div>
-                    <div className="text-white/30 text-xs uppercase tracking-widest">{item.category}</div>
-                  </div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-white/20 group-hover:text-white transition-colors" />
-              </button>
-            ))}
+            {/* Sub-label Header */}
+            <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
+              <span className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest">
+                {query ? `Search Results (${filtered.length})` : "Available AP Courses"}
+              </span>
+              <span className="text-[10px] font-mono font-medium text-white/30 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
+                Universal Command Menu
+              </span>
+            </div>
+
+            {filtered.length === 0 ? (
+              <div className="py-8 text-center text-white/40 font-manrope text-sm">
+                No matching AP courses found.
+              </div>
+            ) : (
+              <div className="max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 pr-1">
+                {filtered.map((item) => {
+                  const courseColor = item.accent || item.folderAccent || "#3b82f6";
+                  return (
+                    <button
+                      key={item.name}
+                      onMouseDown={() => {
+                        onSelect(item.slug);
+                        setQuery("");
+                        setIsOpen(false);
+                      }}
+                      className="w-full flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-white/[0.08] transition-all border border-transparent hover:border-white/10 group text-left relative overflow-hidden"
+                    >
+                      <div className="flex items-center space-x-3.5">
+                        {/* Course Icon matching exact folder color */}
+                        <div 
+                          className="w-10 h-10 rounded-xl bg-white/[0.06] border flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 shadow-inner"
+                          style={{ borderColor: `${courseColor}40` }}
+                        >
+                          <item.icon className="w-5 h-5" style={{ color: courseColor }} />
+                        </div>
+                        <div>
+                          <div className="text-white font-manrope font-bold text-sm sm:text-base group-hover:text-white transition-colors flex items-center gap-2">
+                            <span>{item.name}</span>
+                          </div>
+                          <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase mt-0.5">
+                            {item.category}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-2 text-white/40 group-hover:text-white transition-colors">
+                        <span className="text-xs font-manrope font-medium text-white/40 group-hover:text-white/80 hidden sm:inline-block">
+                          Open Course
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" style={{ color: courseColor }} />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Footer hints */}
+            <div className="flex items-center justify-between px-4 py-2 border-t border-white/5 text-[10px] font-mono text-white/30">
+              <span>Press <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">↵ Enter</kbd> or click to open</span>
+              <span>AP LAB Course Registry</span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -180,28 +226,33 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
 
   return (
     <div 
-      className="relative w-full mt-8 select-none group transition-transform duration-300 hover:-translate-y-1"
+      className="relative w-full mt-10 select-none group transition-transform duration-300 hover:-translate-y-1"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Enlarged Top-Left Folder Tab Notch with Icon & Title */}
+      {/* Expanded & Comfortable Top-Left Folder Tab Flap */}
       <div 
-        className="absolute -top-[34px] left-0 h-9 px-4.5 rounded-t-[14px] rounded-tr-[18px] border-t border-x transition-all duration-300 flex items-center space-x-2.5 z-20 shadow-md"
+        className="absolute -top-[42px] left-0 h-11 px-6 sm:px-7 min-w-[210px] rounded-t-[16px] rounded-tr-[22px] border-t border-x transition-all duration-300 flex items-center space-x-3 z-20 shadow-md"
         style={{ 
           backgroundColor: isHovered ? "#141724" : "#0d0f18",
           borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
           boxShadow: isHovered ? `0 -4px 15px ${accent}20` : "none"
         }}
       >
-        <Icon className="w-4 h-4 text-white shrink-0" style={{ color: accent }} />
-        <span className="font-manrope font-extrabold text-xs sm:text-sm text-white tracking-tight whitespace-nowrap">
+        <div 
+          className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/10"
+          style={{ color: accent }}
+        >
+          <Icon className="w-3.5 h-3.5" />
+        </div>
+        <span className="font-manrope font-extrabold text-sm sm:text-base text-white tracking-tight whitespace-nowrap">
           {title}
         </span>
       </div>
 
       {/* Main Folder Body Base holding Subject Cards */}
       <div 
-        className="relative w-full rounded-b-[24px] rounded-r-[24px] rounded-tl-none border bg-[#0a0b12]/95 p-4 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
+        className="relative w-full rounded-b-[24px] rounded-r-[24px] rounded-tl-none border bg-[#0a0b12]/95 p-4 sm:p-5 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
         style={{
           borderColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.12)"
         }}
@@ -217,6 +268,7 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
           {classes.map((subject) => {
             const progressPercent = Math.round(progressData[subject.slug] || 0);
             const isCompleted = progressPercent === 100;
+            const itemAccent = subject.accent || accent;
             return (
               <Link 
                 key={subject.name}
@@ -229,11 +281,11 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
                 <div className="flex items-center flex-1 mr-3 overflow-hidden relative z-10">
                   <subject.icon 
                     className="w-4 h-4 text-white/70 group-hover/item:text-white transition-colors shrink-0" 
-                    style={{ color: isCompleted ? "#fbbf24" : accent }} 
+                    style={{ color: isCompleted ? "#fbbf24" : itemAccent }} 
                   />
                   <div className="flex-1 flex flex-col items-start ml-3 min-w-0">
                     <span className={cn(
-                      "text-xs font-manrope font-bold text-white/90 group-hover/item:text-white transition-colors truncate w-full text-left",
+                      "text-xs sm:text-sm font-manrope font-bold text-white/90 group-hover/item:text-white transition-colors truncate w-full text-left",
                       isCompleted && "text-yellow-400 font-extrabold"
                     )}>
                       {subject.name}
@@ -243,7 +295,7 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
                         className="h-full rounded-full transition-all duration-500"
                         style={{ 
                           width: `${progressPercent}%`,
-                          backgroundColor: isCompleted ? "#fbbf24" : accent 
+                          backgroundColor: isCompleted ? "#fbbf24" : itemAccent 
                         }}
                       />
                     </div>
