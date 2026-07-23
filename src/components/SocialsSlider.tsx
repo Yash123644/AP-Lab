@@ -122,9 +122,7 @@ function SocialCard({ social }: { social: typeof socialLinks[0] }) {
           </div>
           <div className="text-center" style={{ transform: "translateZ(30px)" }}>
             <p className="font-cabin font-bold text-2xl text-white tracking-tight">{social.name}</p>
-            <p className="text-[10px] font-manrope font-black text-white/40 group-hover:text-emerald-400 uppercase tracking-[0.2em] mt-2 transition-colors">
-              {social.name === "Discord" ? "50+ Members" : "Join Lab"}
-            </p>
+            <p className="text-[10px] font-manrope font-black text-white/30 uppercase tracking-[0.2em] mt-2">Join Lab</p>
           </div>
         </div>
 
@@ -150,13 +148,13 @@ function SocialCard({ social }: { social: typeof socialLinks[0] }) {
 
 export function SocialsSlider() {
   return (
-    <section className="relative w-full py-40 px-6 overflow-hidden bg-deep-navy">
+    <section className="relative w-full py-20 sm:py-28 px-6 overflow-hidden bg-deep-navy">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-6 sm:mb-8"
         >
           <h2 className="font-inter font-extrabold text-5xl md:text-7xl text-white mb-6">
             The Lab <span>Community</span>

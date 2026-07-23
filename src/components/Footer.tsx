@@ -125,7 +125,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                title={social.name === "Discord" ? "Discord — 50+ Members" : social.name}
+                title={social.name}
                 className="w-9 h-9 rounded-[10px] bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/60 hover:text-white hover:bg-white/[0.12] hover:border-white/20 transition-all duration-200 hover:scale-105 active:scale-95 group relative"
               >
                 <social.Icon className="w-4 h-4" />
