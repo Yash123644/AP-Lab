@@ -5,6 +5,7 @@ import { LevelBadge } from "@/components/LevelBadge";
 import { Trophy, Crown, Award, User, MoreHorizontal } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useProgress } from "@/context/ProgressContext";
+import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
 
 interface LeaderboardUser {
@@ -19,11 +20,13 @@ export function LevelLeaderboard() {
   const [users, setUsers] = useState<LeaderboardUser[]>([]);
   const [loading, setLoading] = useState(true);
   const { progress } = useProgress();
+  const { currentUser } = useAuth();
 
   const fetchLeaderboard = async (showLoading = false) => {
     if (showLoading) setLoading(true);
     try {
-      const res = await fetch(`/api/leaderboard?uid=${progress?.uid || ""}&t=${Date.now()}`, { cache: "no-store" });
+      const activeUid = progress?.uid || currentUser?.uid || "";
+      const res = await fetch(`/api/leaderboard?uid=${activeUid}&t=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error || `Server responded with status ${res.status}`);
@@ -44,7 +47,7 @@ export function LevelLeaderboard() {
     // Poll every 10 seconds to keep it fresh
     const interval = setInterval(() => fetchLeaderboard(false), 10000);
     return () => clearInterval(interval);
-  }, [progress?.uid, progress?.xp, progress?.photoURL, progress?.displayName]);
+  }, [progress?.uid, progress?.xp, progress?.photoURL, progress?.displayName, currentUser?.uid]);
 
   const getRankStyle = (index: number) => {
     switch (index) {
@@ -80,23 +83,42 @@ export function LevelLeaderboard() {
   };
 
   const top10 = users.slice(0, 10);
-  const currentUserIndex = users.findIndex((u) => u.uid === progress?.uid);
-  const currentUserObj = currentUserIndex !== -1 ? users[currentUserIndex] : null;
-  const showUserBelow = currentUserObj && currentUserIndex >= 10;
+  const activeUid = progress?.uid || currentUser?.uid || "current-user";
+  
+  let currentUserIndex = users.findIndex((u) => u.uid === activeUid);
+  let currentUserObj: LeaderboardUser;
 
-  const renderRow = (user: LeaderboardUser, actualRankIndex: number) => {
+  if (currentUserIndex !== -1) {
+    currentUserObj = users[currentUserIndex];
+  } else {
+    // Calculate user position based on XP
+    const userXp = progress?.xp || 0;
+    const rankAbove = users.filter((u) => (u.xp || 0) > userXp).length;
+    currentUserIndex = rankAbove;
+    currentUserObj = {
+      uid: activeUid,
+      displayName: currentUser?.displayName || progress?.displayName || "Yash Patil",
+      photoURL: currentUser?.photoURL || progress?.photoURL || "/images/yash-patil.png",
+      xp: userXp,
+      level: progress?.level || 1,
+    };
+  }
+
+  const isUserInTop10 = currentUserIndex < 10;
+
+  const renderRow = (user: LeaderboardUser, actualRankIndex: number, forceCurrentUser: boolean = false) => {
     const rankInfo = getRankStyle(actualRankIndex);
     const initials = user.displayName
       ? user.displayName.split(" ").map((n) => n[0]).join("").toUpperCase().substring(0, 2)
       : "AP";
-    const isCurrentUser = user.uid === progress?.uid;
+    const isCurrentUser = forceCurrentUser || user.uid === activeUid;
 
     return (
       <motion.div
-        key={user.uid}
+        key={`${user.uid}-${actualRankIndex}`}
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: actualRankIndex * 0.04 }}
+        transition={{ delay: Math.min(actualRankIndex * 0.04, 0.4) }}
         className={cn(
           "flex items-center justify-between p-4 md:px-6 rounded-2xl border transition-all duration-300",
           isCurrentUser 
@@ -201,15 +223,15 @@ export function LevelLeaderboard() {
       ) : (
         <div className="space-y-3.5">
           <AnimatePresence>
-            {top10.map((user, index) => renderRow(user, index))}
+            {top10.map((user, index) => renderRow(user, index, user.uid === activeUid))}
 
-            {/* If user is below rank 10, render separator & user's personal row */}
-            {showUserBelow && currentUserObj && (
+            {/* If user is below rank 10, ALWAYS render separator & user's personal row */}
+            {!isUserInTop10 && (
               <React.Fragment key="user-below-rank-10">
                 <div className="flex items-center justify-center py-2 space-x-2 text-white/30">
                   <MoreHorizontal className="w-5 h-5 animate-pulse" />
                 </div>
-                {renderRow(currentUserObj, currentUserIndex)}
+                {renderRow(currentUserObj, currentUserIndex, true)}
               </React.Fragment>
             )}
           </AnimatePresence>

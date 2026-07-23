@@ -4,7 +4,7 @@ import { LevelBadge } from "@/components/LevelBadge";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import { Flame, Play, Calendar } from "lucide-react";
+import { Flame, Play, Calendar, Calculator, Minus, X, GripHorizontal } from "lucide-react";
 
 const showcaseImages = [
   "/images/dashboard-live.webp",
@@ -223,40 +223,48 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[480px] flex flex-col justify-between p-6 sm:p-8 relative overflow-hidden group shadow-2xl"
           >
-            <div className="text-center relative z-10 flex flex-col items-center">
+            <div className="text-center relative z-10 flex flex-col items-center shrink-0">
               <span className="text-[10px] font-mono tracking-widest text-emerald-600 font-extrabold uppercase mb-1">EMBEDDED CALCULATOR</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">Built-in Desmos® Graphing Calculator.</h3>
-              <p className="text-neutral-500 font-inter text-xs max-w-sm mt-2 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-inter font-bold text-black tracking-tight mb-1.5">Built-in Desmos® Graphing Calculator.</h3>
+              <p className="text-neutral-500 font-inter text-xs max-w-sm leading-relaxed">
                 Seamlessly plot functions, solve equations, and analyze datasets with an integrated, floating Desmos graphing window during practice and mock exams.
               </p>
             </div>
 
-            {/* Desmos Floating Window Graphic */}
-            <div className="w-[90%] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.02] -translate-y-2">
-              <div className="bg-[#0c0d16] border border-neutral-800 rounded-2xl p-4 shadow-2xl text-[11px] font-sans space-y-3">
-                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+            {/* Authentic Desmos Calculator Floating Window Graphic */}
+            <div className="w-full max-w-[420px] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.03] mt-2 shrink-0">
+              <div className="bg-[#0c0d16] border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden text-left font-sans">
+                {/* Authentic Custom Window Menu Bar matching website calculator modal */}
+                <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#131524] border-b border-white/10 select-none">
                   <div className="flex items-center space-x-2">
+                    <GripHorizontal className="w-3.5 h-3.5 text-white/40" />
                     <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
-                      <span className="text-emerald-400 font-bold text-[9px]">f(x)</span>
+                      <Calculator className="w-3 h-3 text-emerald-400" />
                     </div>
-                    <span className="font-manrope font-bold text-xs text-white">Desmos® Graphing Calculator</span>
+                    <span className="font-manrope font-bold text-[11px] text-white tracking-wide">
+                      Desmos® Graphing Calculator
+                    </span>
                   </div>
-                  <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">ACTIVE</span>
+
+                  <div className="flex items-center space-x-1">
+                    <div className="w-4 h-4 rounded flex items-center justify-center text-white/40 hover:text-white">
+                      <Minus className="w-3 h-3" />
+                    </div>
+                    <div className="w-4 h-4 rounded flex items-center justify-center text-white/40 hover:text-white">
+                      <X className="w-3 h-3" />
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-[#181926] rounded-xl p-3 space-y-2 border border-white/5">
-                  <div className="flex items-center justify-between text-white/80 font-mono text-[10px]">
-                    <span className="text-emerald-400 font-bold">y = sin(x) + 0.5x</span>
-                    <span className="text-white/40">[-2π, 2π]</span>
-                  </div>
-                  <div className="w-full h-16 relative overflow-hidden rounded bg-[#0b0c14] border border-white/10 flex items-center justify-center">
-                    <svg className="w-full h-full text-emerald-400" viewBox="0 0 100 40" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <line x1="0" y1="20" x2="100" y2="20" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
-                      <line x1="50" y1="0" x2="50" y2="40" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
-                      <path d="M 0 35 Q 25 5, 50 20 T 100 5" stroke="#34d399" strokeWidth="1.8" />
-                    </svg>
-                  </div>
+
+                {/* EXACT Desmos Calculator Screenshot */}
+                <div className="relative w-full h-[190px] overflow-hidden bg-[#1a1a1a]">
+                  <img 
+                    src="/images/desmos-showcase.png" 
+                    alt="Desmos Graphing Calculator" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
