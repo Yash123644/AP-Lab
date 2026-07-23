@@ -4,34 +4,36 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export function Preloader() {
-  const [shouldShow, setShouldShow] = useState(false);
+  // Default to true so preloader covers screen on frame 1 with ZERO flash of page content
+  const [shouldShow, setShouldShow] = useState(true);
   const [isOpening, setIsOpening] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     // Check if the tab has opened before
     const hasSeenInTab = sessionStorage.getItem("aplab_tab_opened");
-    if (!hasSeenInTab) {
-      sessionStorage.setItem("aplab_tab_opened", "true");
-      setShouldShow(true);
-
-      // 0.4s: Start cutout separation
-      const openTimer = setTimeout(() => {
-        setIsOpening(true);
-      }, 420);
-
-      // 1.0s: Remove preloader from DOM
-      const finishTimer = setTimeout(() => {
-        setIsFinished(true);
-      }, 1020);
-
-      return () => {
-        clearTimeout(openTimer);
-        clearTimeout(finishTimer);
-      };
-    } else {
+    if (hasSeenInTab) {
+      setShouldShow(false);
       setIsFinished(true);
+      return;
     }
+
+    sessionStorage.setItem("aplab_tab_opened", "true");
+
+    // 0.42s: Start cutout separation
+    const openTimer = setTimeout(() => {
+      setIsOpening(true);
+    }, 420);
+
+    // 1.02s: Remove preloader from DOM
+    const finishTimer = setTimeout(() => {
+      setIsFinished(true);
+    }, 1020);
+
+    return () => {
+      clearTimeout(openTimer);
+      clearTimeout(finishTimer);
+    };
   }, []);
 
   if (!shouldShow || isFinished) return null;

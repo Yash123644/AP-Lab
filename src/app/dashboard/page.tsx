@@ -385,43 +385,30 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 20);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   useEffect(() => {
-    if (!authLoading) {
+    if (!authLoading && !progressLoading) {
       if (!currentUser) {
         router.push("/");
       } else if (!currentUser.emailVerified) {
         router.push("/verify-email");
+      } else if (progress && !progress.isOnboarded && !onboardCompleted) {
+        router.push("/onboarding");
       }
     }
-  }, [currentUser, authLoading, router]);
+  }, [currentUser, authLoading, progressLoading, progress, onboardCompleted, router]);
 
-  if (authLoading || progressLoading) {
+  if (authLoading || progressLoading || !currentUser || !currentUser.emailVerified || (progress && !progress.isOnboarded && !onboardCompleted)) {
     return (
       <div className="min-h-screen bg-[#03040a]">
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
-  if (!currentUser) {
-    return (
-      <div className="min-h-screen bg-[#03040a]">
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
-  if (progress && !progress.isOnboarded && !onboardCompleted) {
-    router.push("/onboarding");
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-deep-navy">
         <LoadingSpinner />
       </div>
     );
