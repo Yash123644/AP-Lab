@@ -566,13 +566,11 @@ export function HeroSection() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto relative group"
           >
-            {/* Subtle floating 50+ members popup on hover */}
-            <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 pointer-events-none transition-all duration-300 z-30 whitespace-nowrap">
-              <div className="px-3 py-1 rounded-full bg-[#0d0f1a]/95 border border-[#5865F2]/50 backdrop-blur-md text-white text-[11px] font-manrope font-bold flex items-center space-x-1.5 shadow-[0_6px_20px_rgba(88,101,242,0.35)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>50+ members</span>
+            {/* Plain and simple 50+ members popup on hover */}
+            <div className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 pointer-events-none transition-all duration-200 z-30 whitespace-nowrap">
+              <div className="px-2.5 py-1 rounded-md bg-[#121422] border border-white/10 text-white/80 text-[11px] font-manrope font-semibold shadow-md">
+                50+ members
               </div>
-              <div className="w-2 h-2 bg-[#0d0f1a] border-r border-b border-[#5865F2]/50 rotate-45 mx-auto -mt-1" />
             </div>
 
             <button className="pb-ai-button-inverted w-full sm:w-auto">

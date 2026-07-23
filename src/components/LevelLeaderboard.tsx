@@ -137,9 +137,8 @@ export function LevelLeaderboard() {
             <span className="font-manrope font-bold text-white text-sm md:text-base leading-tight flex items-center gap-2">
               <span>{user.displayName || "AP Scholar"}</span>
               {isCurrentUser && (
-                <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/35 text-[9px] font-manrope font-black tracking-widest uppercase shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>YOU</span>
+                <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/35 text-[9px] font-manrope font-black tracking-widest uppercase">
+                  YOU
                 </span>
               )}
             </span>

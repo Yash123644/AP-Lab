@@ -217,7 +217,7 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
-          {/* Box 3 (Bottom Left) - 24/7 AI TUTOR */}
+          {/* Box 3 (Bottom Left) - EMBEDDED GRAPHING CALCULATOR */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,31 +226,36 @@ export function AppShowcase() {
             className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center">
-              <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">24/7 AI TUTOR</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">Your 24/7 Context-Aware Academic Partner.</h3>
+              <span className="text-[10px] font-mono tracking-widest text-emerald-600 font-extrabold uppercase mb-1">EMBEDDED CALCULATOR</span>
+              <h3 className="text-2xl md:text-3xl font-inter font-bold text-black tracking-tight mb-2">Built-in Desmos® Graphing Calculator.</h3>
               <p className="text-neutral-500 font-inter text-xs max-w-sm mt-2 leading-relaxed">
-                Get instant, personalized explanations and Socratic guidance on any complex AP topic, active 24/7.
+                Seamlessly plot functions, solve equations, and analyze datasets with an integrated, floating Desmos graphing window during practice and mock exams.
               </p>
             </div>
 
-            {/* Chat conversation box detailing cellular respiration */}
+            {/* Desmos Floating Window Graphic */}
             <div className="w-[90%] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.02] -translate-y-2">
-              <div className="bg-neutral-50/90 border border-neutral-200/80 rounded-2xl p-4 shadow-lg text-[11px] font-sans space-y-3">
-                {/* User message */}
-                <div className="flex flex-col items-end">
-                  <div className="bg-neutral-200 text-neutral-800 rounded-2xl rounded-tr-sm px-3.5 py-1.5 max-w-[85%] font-medium">
-                    Explain cellular respiration simply.
-                  </div>
-                </div>
-                {/* AI message */}
-                <div className="flex flex-col items-start">
-                  <div className="bg-neutral-900 text-white rounded-2xl rounded-tl-sm px-3.5 py-2 max-w-[90%] leading-relaxed">
-                    It converts glucose into energy (ATP) in 3 stages:
-                    <div className="mt-1.5 font-mono text-[9px] text-neutral-400 space-y-0.5">
-                      <div>1. Glycolysis (Cytoplasm)</div>
-                      <div>2. Krebs Cycle (Mitochondria)</div>
-                      <div>3. Electron Transport (Membrane)</div>
+              <div className="bg-[#0c0d16] border border-neutral-800 rounded-2xl p-4 shadow-2xl text-[11px] font-sans space-y-3">
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                      <span className="text-emerald-400 font-bold text-[9px]">f(x)</span>
                     </div>
+                    <span className="font-manrope font-bold text-xs text-white">Desmos® Graphing Calculator</span>
+                  </div>
+                  <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">ACTIVE</span>
+                </div>
+                <div className="bg-[#181926] rounded-xl p-3 space-y-2 border border-white/5">
+                  <div className="flex items-center justify-between text-white/80 font-mono text-[10px]">
+                    <span className="text-emerald-400 font-bold">y = sin(x) + 0.5x</span>
+                    <span className="text-white/40">[-2π, 2π]</span>
+                  </div>
+                  <div className="w-full h-16 relative overflow-hidden rounded bg-[#0b0c14] border border-white/10 flex items-center justify-center">
+                    <svg className="w-full h-full text-emerald-400" viewBox="0 0 100 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <line x1="0" y1="20" x2="100" y2="20" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+                      <line x1="50" y1="0" x2="50" y2="40" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+                      <path d="M 0 35 Q 25 5, 50 20 T 100 5" stroke="#34d399" strokeWidth="1.8" />
+                    </svg>
                   </div>
                 </div>
               </div>

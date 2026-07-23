@@ -1,7 +1,58 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminDb } from "@/lib/firebaseAdmin";
+import { getLevelForXp } from "@/lib/xpProgression";
 
 export const dynamic = "force-dynamic";
+
+// Generator for 1000 realistic student accounts between 1650 and 10 XP
+function generatePlaceholderAccounts() {
+  const firstNames = [
+    "Ethan", "Olivia", "Lucas", "Emma", "Noah", "Ava", "Liam", "Sophia", "Mason", "Isabella",
+    "Oliver", "Mia", "Elijah", "Charlotte", "James", "Amelia", "Benjamin", "Harper", "William", "Evelyn",
+    "Alexander", "Abigail", "Henry", "Emily", "Jacob", "Camila", "Michael", "Ella", "Daniel", "Elizabeth",
+    "Logan", "Sofia", "Jackson", "Avery", "Sebastian", "Scarlett", "Jack", "Grace", "Aiden", "Chloe",
+    "Owen", "Victoria", "Samuel", "Riley", "Matthew", "Aria", "Joseph", "Lily", "Levi", "Aubrey",
+    "David", "Zoey", "John", "Penelope", "Wyatt", "Hannah", "Carter", "Layla", "Julian", "Addison",
+    "Luke", "Eleanor", "Grayson", "Natalie", "Isaac", "Luna", "Jayden", "Savannah", "Theodore", "Brooklyn",
+    "Gabriel", "Leah", "Anthony", "Zoe", "Dylan", "Stella", "Leo", "Hazel", "Lincoln", "Ellie",
+    "Jaxon", "Paisley", "Asher", "Audrey", "Christopher", "Skylar", "Josiah", "Violet", "Andrew", "Claire"
+  ];
+
+  const lastNames = [
+    "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez",
+    "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin",
+    "Lee", "Perez", "Thompson", "White", "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson",
+    "Walker", "Young", "Allen", "King", "Wright", "Scott", "Torres", "Nguyen", "Hill", "Flores",
+    "Green", "Adams", "Nelson", "Baker", "Hall", "Rivera", "Campbell", "Mitchell", "Carter", "Roberts",
+    "Gomez", "Phillips", "Evans", "Turner", "Diaz", "Parker", "Cruz", "Edwards", "Collins", "Reyes",
+    "Stewart", "Morris", "Morales", "Murphy", "Cook", "Rogers", "Gutierrez", "Ortiz", "Morgan", "Cooper",
+    "Peterson", "Bailey", "Reed", "Kelly", "Howard", "Ramos", "Kim", "Cox", "Ward", "Richardson"
+  ];
+
+  const list: any[] = [];
+  const total = 1000;
+
+  for (let i = 0; i < total; i++) {
+    const fn = firstNames[i % firstNames.length];
+    const ln = lastNames[(i * 7) % lastNames.length];
+    const name = `${fn} ${ln}`;
+    // Generate smooth descending XP between 1620 and 15
+    const xp = Math.max(15, Math.floor(1620 - (i * 1.61) + ((i % 5) * 3)));
+    const level = getLevelForXp(xp);
+
+    list.push({
+      uid: `placeholder-${i + 1}`,
+      displayName: name,
+      photoURL: "",
+      xp,
+      level,
+    });
+  }
+
+  return list;
+}
+
+const PLACEHOLDER_ACCOUNTS = generatePlaceholderAccounts();
 
 export async function GET(req: NextRequest) {
   try {
@@ -10,7 +61,7 @@ export async function GET(req: NextRequest) {
     const currentUid = searchParams.get("uid");
 
     // Top 10 global scholars
-    const bots = [
+    const topBots = [
       {
         uid: "bot-1",
         displayName: "Tyler Davis",
@@ -83,7 +134,7 @@ export async function GET(req: NextRequest) {
       },
     ];
 
-    const leaderList = [...bots];
+    const leaderList = [...topBots, ...PLACEHOLDER_ACCOUNTS];
 
     // Create a 4-second timeout promise
     const timeoutPromise = new Promise<never>((_, reject) =>
@@ -98,16 +149,18 @@ export async function GET(req: NextRequest) {
         
         if (userDoc.exists) {
           const data = userDoc.data();
-          // Prevent duplicate entry
-          if (!leaderList.some((b) => b.uid === currentUid)) {
-            leaderList.push({
-              uid: currentUid,
-              displayName: data.displayName || "AP Scholar",
-              photoURL: data.photoURL || "",
-              xp: data.xp || 0,
-              level: data.level || 1,
-            });
+          // Remove duplicate if placeholder exists
+          const existingIdx = leaderList.findIndex((b) => b.uid === currentUid);
+          if (existingIdx !== -1) {
+            leaderList.splice(existingIdx, 1);
           }
+          leaderList.push({
+            uid: currentUid,
+            displayName: data.displayName || "AP Scholar",
+            photoURL: data.photoURL || "",
+            xp: data.xp || 0,
+            level: data.level || 1,
+          });
         }
       } catch (dbError) {
         console.error("Firestore user fetch error, falling back to bots only:", dbError);
