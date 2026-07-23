@@ -21,10 +21,11 @@ export function DesmosCalculatorModal({ isOpen, onClose }: DesmosCalculatorModal
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9, y: 20 }}
-      className="fixed bottom-8 right-8 z-[99990] w-[92vw] max-w-[540px] bg-[#0c0d16] border border-white/20 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.9)] overflow-hidden select-none"
+      className="fixed bottom-8 right-8 z-[99999] bg-[#0c0d16] border border-white/20 rounded-2xl shadow-[0_25px_80px_rgba(0,0,0,0.95)] overflow-hidden select-none flex flex-col resize min-w-[360px] max-w-[90vw] min-h-[380px] max-h-[85vh] w-[540px] h-[500px]"
+      style={{ resize: isMinimized ? "none" : "both" }}
     >
       {/* Draggable Header Bar */}
-      <div className="flex items-center justify-between px-4 py-3 bg-[#131524] border-b border-white/10 cursor-grab active:cursor-grabbing">
+      <div className="flex items-center justify-between px-4 py-3 bg-[#131524] border-b border-white/10 cursor-grab active:cursor-grabbing shrink-0 select-none">
         <div className="flex items-center space-x-2.5">
           <GripHorizontal className="w-4 h-4 text-white/40" />
           <div className="w-6 h-6 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
@@ -53,9 +54,9 @@ export function DesmosCalculatorModal({ isOpen, onClose }: DesmosCalculatorModal
         </div>
       </div>
 
-      {/* Embedded Desmos Calculator Iframe */}
+      {/* Resizable Embedded Desmos Calculator Iframe */}
       {!isMinimized && (
-        <div className="w-full h-[440px] bg-[#1a1a1a]">
+        <div className="w-full flex-1 bg-[#1a1a1a] relative overflow-hidden">
           <iframe
             src="https://www.desmos.com/calculator"
             className="w-full h-full border-0"

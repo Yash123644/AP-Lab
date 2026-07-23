@@ -180,13 +180,15 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <button
-                  onClick={() => setIsCalcOpen(!isCalcOpen)}
-                  className="flex items-center space-x-2 px-4 py-2.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 font-manrope font-bold text-xs transition-all shadow-md"
-                >
-                  <Calculator className="w-4 h-4" />
-                  <span>Desmos Calculator</span>
-                </button>
+                {/biology|chemistry|physics|calculus|stats|statistics|comp sci/i.test(subjectName) && (
+                  <button
+                    onClick={() => setIsCalcOpen(!isCalcOpen)}
+                    className="w-11 h-11 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-400 flex items-center justify-center transition-all shadow-md active:scale-95 group"
+                    title="Open Desmos Graphing Calculator"
+                  >
+                    <Calculator className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  </button>
+                )}
                 <button 
                   onClick={handleFinish}
                   className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-bold transition-all"

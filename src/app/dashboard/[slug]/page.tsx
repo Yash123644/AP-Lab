@@ -2194,6 +2194,7 @@ export default function APDynamicCoursePage() {
                         masteryKey={masteryKey}
                         questions={activeTopic.questions.slice(0, 4)} 
                         accentColor={course.accentColor}
+                        courseSlug={slug as string}
                         onComplete={(score) => completeTopic(masteryKey, score)}
                       />
                     </motion.div>
@@ -2346,10 +2347,11 @@ interface PracticeProps {
   masteryKey: string;
   questions: any[];
   accentColor: string;
+  courseSlug?: string;
   onComplete: (score: number) => void;
 }
 
-function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplete }: PracticeProps) {
+function PracticeSystem({ topicId, masteryKey, questions, accentColor, courseSlug, onComplete }: PracticeProps) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
@@ -2585,13 +2587,15 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
           <p className="text-xs font-manrope font-bold uppercase tracking-[0.2em] subject-accent-text">Question {currentIdx + 1} of {activeQuestions.length}</p>
         </div>
         <div className="flex items-center space-x-3">
-          <button
-            onClick={() => setIsCalcOpen(!isCalcOpen)}
-            className="flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 text-xs font-manrope font-bold transition-all shadow-md"
-          >
-            <Calculator className="w-3.5 h-3.5" />
-            <span>Desmos Calculator</span>
-          </button>
+          {(!courseSlug || /biology|chemistry|physics|calc|stats|csa/i.test(courseSlug)) && (
+            <button
+              onClick={() => setIsCalcOpen(!isCalcOpen)}
+              className="w-10 h-10 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-400 flex items-center justify-center transition-all shadow-md active:scale-95 group"
+              title="Open Desmos Graphing Calculator"
+            >
+              <Calculator className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </button>
+          )}
           <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
             <span className="text-xs font-bold text-white/40">{Math.round(((currentIdx) / activeQuestions.length) * 100)}%</span>
           </div>
