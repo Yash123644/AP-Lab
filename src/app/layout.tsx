@@ -79,6 +79,7 @@ export default function RootLayout({
         <AuthProvider>
           <ProgressProvider>
             <UIProvider>
+              <Preloader />
               <SmoothScroll>
                 {children}
               </SmoothScroll>
