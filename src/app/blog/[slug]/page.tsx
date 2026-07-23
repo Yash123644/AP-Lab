@@ -1,19 +1,33 @@
 "use client";
 
-import { use } from "react";
+import React, { use } from "react";
 import { BLOG_POSTS } from "@/data/blogs";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { ChevronLeft, Calendar, Clock, ArrowLeft } from "lucide-react";
-import { notFound } from "next/navigation";
 
-export default function SingleBlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
+export default function SingleBlogPostPage({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
+  // Safely unwrap params whether passed synchronously or as a Promise
+  const resolvedParams = params && typeof (params as any).then === "function" ? use(params as Promise<{ slug: string }>) : (params as { slug: string });
+  const slug = resolvedParams?.slug;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) {
-    notFound();
+    return (
+      <main className="min-h-screen bg-[#03040a] text-white flex flex-col items-center justify-center p-6 font-manrope">
+        <Navbar />
+        <div className="text-center py-40 space-y-4">
+          <h1 className="text-4xl font-bold">Article Not Found</h1>
+          <p className="text-white/60 text-sm">The article you are looking for does not exist or has been moved.</p>
+          <Link href="/blog" className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold transition-all">
+            <ArrowLeft className="w-4 h-4" />
+            <span>Return to Blogs</span>
+          </Link>
+        </div>
+        <Footer />
+      </main>
+    );
   }
 
   return (
@@ -45,7 +59,7 @@ export default function SingleBlogPostPage({ params }: { params: Promise<{ slug:
             {post.title}
           </h1>
 
-          {/* Meta Info & Author Badge (Matching Image 3 Reference) */}
+          {/* Meta Info & Author Badge */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between py-6 border-y border-white/10 mb-10 gap-4">
             
             {/* Author Badge */}
