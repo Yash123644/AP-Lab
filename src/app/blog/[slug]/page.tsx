@@ -115,20 +115,7 @@ export default function SingleBlogPostPage({ params }: { params: { slug: string 
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          {/* Bottom Hashtags Display */}
-          {post.tags && post.tags.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap items-center gap-3">
-              <span className="text-xs font-mono text-white/40 uppercase tracking-widest mr-2">Topics:</span>
-              {post.tags.map((tag) => (
-                <span 
-                  key={tag} 
-                  className="px-4 py-2 rounded-full bg-[#0e1628] border border-[#1d2d4a] text-[#8ab4f8] text-xs font-mono font-bold tracking-wider hover:border-[#3b82f6] transition-all cursor-pointer"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
+
 
           {/* Back to Blogs Footer CTA */}
           <div className="mt-16 pt-8 border-t border-white/10 flex justify-between items-center">

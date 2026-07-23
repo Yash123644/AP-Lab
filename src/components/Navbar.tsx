@@ -87,7 +87,7 @@ export function Navbar() {
           {/* Center Container: Desktop Navigation Links with Hover & Active Icons */}
           <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.href === "/blog" && pathname.startsWith("/blog/"));
               const isHovered = hoveredHref === link.href;
               const showIcon = isActive || isHovered;
               const Icon = link.icon;

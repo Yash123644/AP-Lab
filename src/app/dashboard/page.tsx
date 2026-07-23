@@ -97,13 +97,14 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
-            className="fixed inset-0 bg-black/65 backdrop-blur-md z-[9990] pointer-events-auto"
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 bg-black/40 backdrop-blur-md z-[9990] pointer-events-auto"
             onClick={() => setIsOpen(false)}
           />
         )}
       </AnimatePresence>
 
-      <div className={cn("relative w-full max-w-3xl mb-24 transition-all duration-300 group", isOpen ? "z-[9999]" : "z-[60]")}>
+      <div className="relative w-full max-w-3xl mb-24 z-[9999] group">
         <style>{`
           @keyframes float-dust {
             0% { transform: translateY(0px) translateX(0px); opacity: 0.1; }
@@ -225,44 +226,37 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
 
   return (
     <div 
-      className="relative w-full mt-12 select-none group transition-all duration-300 hover:-translate-y-1.5"
+      className="relative w-full mt-6 select-none group transition-all duration-300 hover:-translate-y-1.5"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* 3D Physical Folder Backing Plate Flap */}
-      <div 
-        className="absolute -top-10 left-0 h-12 px-7 rounded-t-[18px] rounded-tr-[28px] border-t border-x transition-all duration-300 flex items-center space-x-3 z-0 shadow-lg"
-        style={{ 
-          backgroundColor: isHovered ? "#141726" : "#0c0e18",
-          borderColor: isHovered ? `${accent}60` : "rgba(255, 255, 255, 0.18)",
-          boxShadow: isHovered ? `0 -6px 20px ${accent}25` : "0 -2px 10px rgba(0,0,0,0.5)"
-        }}
-      >
+      {/* 3D Physical Folder Tab Badge Header */}
+      <div className="relative w-full">
         <div 
-          className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/10 shadow-inner"
-          style={{ color: accent }}
+          className="inline-flex items-center space-x-3 px-6 py-2.5 rounded-t-2xl border-t border-x transition-all duration-300 relative z-10"
+          style={{ 
+            backgroundColor: isHovered ? "#121424" : "#0a0c16",
+            borderColor: isHovered ? `${accent}60` : "rgba(255, 255, 255, 0.18)",
+            boxShadow: isHovered ? `0 -6px 20px ${accent}20` : "none"
+          }}
         >
-          <Icon className="w-3.5 h-3.5" />
+          <div 
+            className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/10 shadow-inner"
+            style={{ color: accent }}
+          >
+            <Icon className="w-3.5 h-3.5" />
+          </div>
+          <span className="font-manrope font-extrabold text-sm sm:text-base text-white tracking-tight whitespace-nowrap">
+            {title}
+          </span>
         </div>
-        <span className="font-manrope font-extrabold text-sm sm:text-base text-white tracking-tight whitespace-nowrap">
-          {title}
-        </span>
       </div>
-
-      {/* Top Right Folder Contour Shoulder Notch */}
-      <div 
-        className="absolute -top-3 right-0 left-[210px] h-4 rounded-tr-[20px] border-t border-r transition-all duration-300 pointer-events-none"
-        style={{ 
-          backgroundColor: isHovered ? "#121422" : "#090a12",
-          borderColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.12)"
-        }}
-      />
 
       {/* Main Folder Front Body & Pocket Base */}
       <div 
-        className="relative w-full rounded-b-[28px] rounded-r-[28px] rounded-tl-[4px] border bg-[#090b14]/95 backdrop-blur-2xl p-5 sm:p-6 flex flex-col justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden z-10 transition-all duration-300"
+        className="relative w-full rounded-b-[24px] rounded-tr-[24px] rounded-tl-none border bg-[#090b14]/95 backdrop-blur-2xl p-5 sm:p-6 flex flex-col justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden z-20 transition-all duration-300"
         style={{
-          borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
+          borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.16)",
           boxShadow: isHovered ? `0 25px 60px ${accent}20` : "0 20px 50px rgba(0,0,0,0.6)"
         }}
       >
