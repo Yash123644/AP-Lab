@@ -402,9 +402,17 @@ export default function Dashboard() {
     }
   }, [currentUser, authLoading, router]);
 
-  if (authLoading || progressLoading || !currentUser || !currentUser.emailVerified) {
+  if (authLoading || progressLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-deep-navy">
+      <div className="min-h-screen bg-[#03040a]">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (!currentUser) {
+    return (
+      <div className="min-h-screen bg-[#03040a]">
         <LoadingSpinner />
       </div>
     );
@@ -551,11 +559,11 @@ export default function Dashboard() {
 
   const firstName = currentUser?.displayName?.split(' ')[0] || 'Scholar';
 
-  const totalAnswered = progress.totalQuestionsAnswered || 0;
-  const totalCorrect = progress.totalQuestionsCorrect || 0;
+  const totalAnswered = progress?.totalQuestionsAnswered || 0;
+  const totalCorrect = progress?.totalQuestionsCorrect || 0;
   const accuracyRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
   
-  const xp = progress.xp || 0;
+  const xp = progress?.xp || 0;
   const level = getLevelForXp(xp);
   const currentLevelThreshold = getXpThresholdForLevel(level);
   const nextLevelThreshold = getXpThresholdForLevel(level + 1);
@@ -566,7 +574,7 @@ export default function Dashboard() {
   // Calculate Progress for each class
   const calculateCourseProgress = (slug: string) => {
     const course = courseRegistry[slug];
-    if (!course) return 0;
+    if (!course || !progress?.completedTopics) return 0;
 
     let totalTopics = 0;
     let completedInCourse = 0;

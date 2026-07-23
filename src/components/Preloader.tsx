@@ -8,10 +8,10 @@ export function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Snappy 0.9s luxury preloading sequence
+    // Ultra-fast < 0.95s vital pulse logo preloader
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 950);
+    }, 900);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,32 +23,30 @@ export function Preloader() {
           key="aplab-preloader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] bg-[#03040a] flex flex-col items-center justify-center select-none overflow-hidden"
         >
-          {/* Subtle Ambient Radial Glow */}
-          <div className="absolute w-80 h-80 rounded-full bg-white/[0.03] blur-3xl pointer-events-none" />
+          {/* Subtle Ambient Glow */}
+          <div className="absolute w-64 h-64 rounded-full bg-white/[0.04] blur-3xl pointer-events-none" />
 
-          {/* Centered AP Lab Logo Container */}
-          <div className="relative flex items-center space-x-3.5 px-6 py-3 rounded-full overflow-hidden">
+          {/* AP Lab Logo Symbol Container (No Text) */}
+          <div className="relative w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shadow-[0_0_25px_rgba(255,255,255,0.15)] overflow-hidden">
             
-            {/* Left to Right Animated Pulse Shine Sheen Sweep */}
+            {/* Smooth Vital Pulse Sheen Sweep moving Left to Right */}
             <motion.div
-              initial={{ x: "-120%" }}
-              animate={{ x: "220%" }}
-              transition={{ duration: 0.75, ease: "easeInOut" }}
-              className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] pointer-events-none z-20"
+              initial={{ x: "-100%" }}
+              animate={{ x: "200%" }}
+              transition={{ duration: 0.75, ease: [0.25, 1, 0.5, 1] }}
+              className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-20deg] pointer-events-none z-20"
             />
 
-            {/* Activity Icon */}
-            <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.15)] relative z-10">
-              <Activity className="w-5 h-5 text-white" />
-            </div>
-
-            {/* AP Lab Text Logo */}
-            <span className="font-manrope font-extrabold text-3xl tracking-tight text-white drop-shadow-md relative z-10">
-              AP Lab
-            </span>
+            {/* Vital Pulse Icon Animation */}
+            <motion.div
+              animate={{ scale: [0.9, 1.15, 0.95, 1.08, 1] }}
+              transition={{ duration: 0.75, ease: "easeInOut" }}
+            >
+              <Activity className="w-8 h-8 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] relative z-10" />
+            </motion.div>
           </div>
         </motion.div>
       )}
