@@ -6,6 +6,7 @@ import { Search, User, Calendar, LogOut, Compass, BookOpen } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
+import { cn } from "@/lib/utils";
 
 interface ContextMenuProps {
   onOpenProfile: () => void;
@@ -261,124 +262,104 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
       {/* Command Palette Search Modal */}
       <AnimatePresence>
         {searchOpen && (
-          <div className="fixed inset-0 z-[9999999] flex items-start justify-center pt-[12vh] px-4">
+          <div className="fixed inset-0 z-[9999999] flex items-start justify-center pt-[15vh] px-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSearchOpen(false)}
-              className="absolute inset-0 bg-black/85 backdrop-blur-md"
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
             />
 
-            {/* Modal Box */}
+            {/* Floating Container */}
             <motion.div
-              initial={{ opacity: 0, y: -16, scale: 0.98 }}
+              initial={{ opacity: 0, y: -20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -16, scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 260, damping: 24 }}
-              className="relative w-full max-w-3xl bg-[#0a0b14]/95 backdrop-blur-3xl border border-white/15 rounded-3xl overflow-hidden shadow-[0_32px_100px_rgba(0,0,0,0.9),_inset_0_1px_1px_rgba(255,255,255,0.1)] flex flex-col max-h-[70vh] text-white"
+              exit={{ opacity: 0, y: -20, scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 350, damping: 28 }}
+              className="relative w-full max-w-xl flex flex-col space-y-3 z-10"
             >
-              {/* Subtle top glowing accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 pointer-events-none z-10" />
-
-              {/* Header Search Input */}
-              <div className="flex items-center px-6 py-4.5 border-b border-white/10 relative bg-white/[0.02]">
-                <Search className="w-5 h-5 text-blue-400 mr-4 shrink-0 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+              {/* Simplistic White Capsule Search Bar matching uploaded image */}
+              <div className="relative w-full bg-white rounded-full shadow-[0_25px_70px_rgba(0,0,0,0.6)] flex items-center px-6 py-4">
+                <Search className="w-5 h-5 text-neutral-400 mr-3.5 shrink-0" />
                 <input
                   ref={searchInputRef}
                   type="text"
-                  placeholder="Search AP topics, pages, and account actions..."
+                  placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
                     setSelectedIndex(0);
                   }}
                   onKeyDown={handleSearchKeyDown}
-                  className="w-full bg-transparent border-0 outline-none text-white text-lg font-manrope font-semibold placeholder-white/30 focus:ring-0"
+                  className="w-full bg-transparent border-0 outline-none text-black text-lg font-manrope font-medium placeholder-neutral-400 focus:ring-0"
                 />
                 <button
                   onClick={() => setSearchOpen(false)}
-                  className="text-[10px] font-mono tracking-widest text-white/50 bg-white/10 hover:bg-white/20 border border-white/15 px-2.5 py-1 rounded-lg transition-all shrink-0 shadow-sm"
+                  className="text-[10px] font-mono font-bold tracking-widest text-neutral-400 hover:text-black bg-neutral-100 hover:bg-neutral-200 px-2.5 py-1 rounded-full transition-all shrink-0 ml-2"
                 >
                   ESC
                 </button>
               </div>
 
-              {/* Scrollable List */}
-              <div 
-                data-lenis-prevent
-                className="flex-1 overflow-y-auto p-3 space-y-1.5 scrollbar-hide"
-                style={{
-                  scrollbarWidth: "none",
-                  msOverflowStyle: "none"
-                }}
-              >
-                {filteredPages.length === 0 ? (
-                  <div className="py-16 text-center text-white/40">
-                    <Compass className="w-10 h-10 mx-auto mb-3 opacity-30 text-blue-400 animate-pulse" />
-                    <p className="text-sm font-manrope font-medium">No results found matching "{searchQuery}"</p>
-                  </div>
-                ) : (
-                  filteredPages.map((page, index) => {
-                    const isSelected = index === selectedIndex;
-                    const categoryColors: Record<string, { bg: string; text: string; border: string; iconColor: string }> = {
-                      Core: { bg: "bg-blue-500/10", text: "text-blue-400", border: "border-blue-500/30", iconColor: "#3b82f6" },
-                      Classes: { bg: "bg-purple-500/10", text: "text-purple-400", border: "border-purple-500/30", iconColor: "#a855f7" },
-                      General: { bg: "bg-emerald-500/10", text: "text-emerald-400", border: "border-emerald-500/30", iconColor: "#10b981" }
-                    };
-                    const colorStyle = categoryColors[page.category] || categoryColors.General;
-
-                    return (
-                      <button
-                        key={page.url}
-                        onClick={() => {
-                          router.push(page.url);
-                          setSearchOpen(false);
-                        }}
-                        onMouseEnter={() => setSelectedIndex(index)}
-                        className={`w-full flex items-center justify-between text-left px-5 py-3.5 rounded-2xl transition-all duration-150 border ${
-                          isSelected
-                            ? "bg-white/[0.08] border-white/20 text-white shadow-lg scale-[1.008]"
-                            : "bg-transparent border-transparent text-white/70 hover:bg-white/[0.04]"
-                        }`}
-                      >
-                        <div className="flex items-center space-x-4 min-w-0 mr-4">
-                          <div 
-                            className={`flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border shrink-0 transition-all ${
-                              isSelected ? "border-white/25 bg-white/10 shadow-md" : "border-white/10"
-                            }`}
-                            style={{ borderColor: isSelected ? colorStyle.iconColor : "rgba(255,255,255,0.1)" }}
-                          >
-                            {page.category === "Classes" ? (
-                              <BookOpen className="w-4.5 h-4.5" style={{ color: colorStyle.iconColor }} />
-                            ) : (
-                              <Compass className="w-4.5 h-4.5" style={{ color: colorStyle.iconColor }} />
-                            )}
+              {/* Minimalist Floating Results Dropdown */}
+              {searchQuery.trim() !== "" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  className="w-full bg-[#0c0d14]/95 backdrop-blur-2xl border border-white/12 rounded-3xl overflow-hidden shadow-2xl p-2 max-h-[50vh] overflow-y-auto custom-scrollbar space-y-1"
+                >
+                  {filteredPages.length === 0 ? (
+                    <div className="py-8 text-center text-white/40 font-manrope text-sm">
+                      No matching results found.
+                    </div>
+                  ) : (
+                    filteredPages.map((page, index) => {
+                      const isSelected = index === selectedIndex;
+                      return (
+                        <button
+                          key={page.url}
+                          onClick={() => {
+                            router.push(page.url);
+                            setSearchOpen(false);
+                          }}
+                          onMouseEnter={() => setSelectedIndex(index)}
+                          className={cn(
+                            "w-full flex items-center justify-between px-5 py-3.5 rounded-2xl transition-all text-left",
+                            isSelected 
+                              ? "bg-white text-black shadow-md font-semibold" 
+                              : "text-white/70 hover:bg-white/5 hover:text-white"
+                          )}
+                        >
+                          <div className="flex items-center space-x-3.5 min-w-0 mr-3">
+                            <div className={cn(
+                              "w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border transition-colors",
+                              isSelected ? "bg-black/5 border-black/10 text-black" : "bg-white/5 border-white/10 text-white/60"
+                            )}>
+                              {page.category === "Classes" ? <BookOpen className="w-4 h-4" /> : <Compass className="w-4 h-4" />}
+                            </div>
+                            <div className="min-w-0">
+                              <span className="text-sm font-manrope block leading-tight truncate">{page.name}</span>
+                              <span className={cn(
+                                "text-xs block mt-0.5 truncate font-medium",
+                                isSelected ? "text-neutral-600" : "text-white/40"
+                              )}>{page.desc}</span>
+                            </div>
                           </div>
-                          <div className="min-w-0">
-                            <span className="font-manrope font-bold text-sm sm:text-base block leading-snug text-white">{page.name}</span>
-                            <span className="text-xs text-white/40 block mt-0.5 truncate font-medium">{page.desc}</span>
-                          </div>
-                        </div>
-                        
-                        <span className={`text-[10px] font-mono tracking-widest px-2.5 py-1 rounded-full uppercase shrink-0 font-bold border ${colorStyle.bg} ${colorStyle.text} ${colorStyle.border}`}>
-                          {page.category}
-                        </span>
-                      </button>
-                    );
-                  })
-                )}
-              </div>
-
-              {/* Footer status bar */}
-              <div className="flex items-center justify-between px-6 py-3 border-t border-white/10 bg-white/[0.02] text-[11px] font-mono text-white/40">
-                <div className="flex items-center space-x-4">
-                  <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/80">↑</kbd> <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/80">↓</kbd> Navigate</span>
-                  <span><kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/80">↵</kbd> Select</span>
-                </div>
-                <span>AP LAB Universal Search</span>
-              </div>
+                          <span className={cn(
+                            "text-[10px] font-mono tracking-widest uppercase shrink-0 font-bold px-2.5 py-1 rounded-full border",
+                            isSelected ? "bg-black/10 border-black/20 text-black" : "bg-white/5 border-white/10 text-white/40"
+                          )}>
+                            {page.category}
+                          </span>
+                        </button>
+                      );
+                    })
+                  )}
+                </motion.div>
+              )}
             </motion.div>
           </div>
         )}

@@ -39,7 +39,7 @@ const folders = [
     classes: [
       { name: "AP Biology", slug: "ap-biology", icon: Dna, accent: "#0088ff" },
       { name: "AP Chemistry", slug: "ap-chemistry", icon: Beaker, accent: "#0088ff" },
-      { name: "AP Environmental Science", slug: "ap-environmental-science", icon: Leaf, accent: "#0088ff" }
+      { name: "AP Physics C", slug: "ap-physics-c", icon: Atom, accent: "#0088ff" }
     ]
   },
   {
@@ -141,7 +141,7 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
         </div>
       </div>
 
-      {/* Course Search Dropdown Menu */}
+      {/* Clean Course Search Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -149,21 +149,14 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full mt-3 w-full bg-[#0c0d16]/95 backdrop-blur-3xl border border-white/15 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-[70] p-3 space-y-2"
+            className="absolute top-full mt-3 w-full bg-[#0c0d16]/95 backdrop-blur-3xl border border-white/15 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-[70] p-2"
           >
-            {/* Sub-label Header */}
-            <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
-              <span className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest">
-                {query ? `Search Results (${filtered.length})` : "Available AP Courses"}
-              </span>
-            </div>
-
             {filtered.length === 0 ? (
               <div className="py-8 text-center text-white/40 font-manrope text-sm">
                 No matching AP courses found.
               </div>
             ) : (
-              <div className="max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 pr-1">
+              <div className="max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 p-1">
                 {filtered.map((item) => {
                   const courseColor = item.folderAccent || item.accent || "#3b82f6";
                   return (
@@ -205,12 +198,6 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
                 })}
               </div>
             )}
-
-            {/* Footer hints */}
-            <div className="flex items-center justify-between px-4 py-2 border-t border-white/5 text-[10px] font-mono text-white/30">
-              <span>Press <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white/70">↵ Enter</kbd> or click to open</span>
-              <span>AP LAB Course Registry</span>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -227,9 +214,9 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Centered Top Folder Tab Flap */}
+      {/* Top Left Folder Tab Flap */}
       <div 
-        className="absolute -top-[42px] left-1/2 -translate-x-1/2 h-11 px-7 sm:px-8 min-w-[220px] rounded-t-[16px] rounded-tr-[22px] rounded-tl-[22px] border-t border-x transition-all duration-300 flex items-center justify-center space-x-3 z-20 shadow-md text-center"
+        className="absolute -top-[42px] left-0 h-11 px-6 sm:px-7 min-w-[210px] rounded-t-[16px] rounded-tr-[22px] rounded-tl-none border-t border-x transition-all duration-300 flex items-center space-x-3 z-20 shadow-md"
         style={{ 
           backgroundColor: isHovered ? "#141724" : "#0d0f18",
           borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
@@ -249,7 +236,7 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
 
       {/* Main Folder Body Base holding Subject Cards */}
       <div 
-        className="relative w-full rounded-[24px] border bg-[#0a0b12]/95 p-4 sm:p-5 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
+        className="relative w-full rounded-b-[24px] rounded-r-[24px] rounded-tl-none border bg-[#0a0b12]/95 p-4 sm:p-5 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
         style={{
           borderColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.12)"
         }}
@@ -462,21 +449,21 @@ export default function Dashboard() {
       color: "border-cyan-500/30 bg-cyan-500/5 text-cyan-400"
     },
     {
-      name: "AP Environmental Science",
-      slug: "ap-environmental-science",
-      category: "Life Sciences",
-      videos: 32,
-      articles: 28,
-      topics: 9,
-      subtopics: 30,
-      estTime: "22 Hours",
-      questions: "640+ Items",
-      difficulty: "Intermediate",
-      color: "border-green-500/30 bg-green-500/5 text-green-400"
+      name: "AP Physics C",
+      slug: "ap-physics-c",
+      category: "Physical Sciences",
+      videos: 45,
+      articles: 35,
+      topics: 11,
+      subtopics: 38,
+      estTime: "30 Hours",
+      questions: "800+ Items",
+      difficulty: "Expert",
+      color: "border-blue-500/30 bg-blue-500/5 text-blue-400"
     },
     {
       name: "AP Calculus BC",
-      slug: "ap-calculus-bc",
+      slug: "ap-calc-bc",
       category: "Mathematics",
       videos: 60,
       articles: 45,
@@ -489,7 +476,7 @@ export default function Dashboard() {
     },
     {
       name: "AP Statistics",
-      slug: "ap-statistics",
+      slug: "ap-stats",
       category: "Mathematics",
       videos: 38,
       articles: 30,
@@ -502,7 +489,7 @@ export default function Dashboard() {
     },
     {
       name: "AP Computer Science A",
-      slug: "ap-computer-science-a",
+      slug: "ap-csa",
       category: "Technology",
       videos: 42,
       articles: 34,
@@ -515,7 +502,7 @@ export default function Dashboard() {
     },
     {
       name: "AP Psychology",
-      slug: "ap-psychology",
+      slug: "ap-psych",
       category: "Social Sciences",
       videos: 36,
       articles: 30,
@@ -541,7 +528,7 @@ export default function Dashboard() {
     },
     {
       name: "AP US History",
-      slug: "ap-us-history",
+      slug: "ap-ush",
       category: "History & Social",
       videos: 56,
       articles: 48,
