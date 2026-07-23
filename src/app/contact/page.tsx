@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
 
 export default function ContactPage() {
+  useEffect(() => {
+    document.title = "Contact Us | AP Lab";
+  }, []);
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({

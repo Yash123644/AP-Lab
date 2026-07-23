@@ -385,6 +385,7 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
+    document.title = "Dashboard | AP Lab";
     if (typeof window !== "undefined") {
       const handleScroll = () => {
         setIsScrolled(window.scrollY > 20);

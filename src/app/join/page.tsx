@@ -84,6 +84,10 @@ function CountUp({ end, suffix = "", delay = 0 }: { end: number; duration?: numb
 }
 
 export default function JoinPage() {
+  useEffect(() => {
+    document.title = "Join | AP Lab";
+  }, []);
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({

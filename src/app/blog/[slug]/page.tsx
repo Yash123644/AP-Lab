@@ -1,17 +1,23 @@
 "use client";
 
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { BLOG_POSTS } from "@/data/blogs";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
-import { ChevronLeft, Calendar, Clock, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 export default function SingleBlogPostPage({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
   // Safely unwrap params whether passed synchronously or as a Promise
   const resolvedParams = params && typeof (params as any).then === "function" ? use(params as Promise<{ slug: string }>) : (params as { slug: string });
   const slug = resolvedParams?.slug;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
+
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | AP Lab`;
+    }
+  }, [post]);
 
   if (!post) {
     return (
@@ -40,54 +46,42 @@ export default function SingleBlogPostPage({ params }: { params: { slug: string 
 
       <Navbar />
 
-      {/* Article Hero Container */}
+      {/* Article Hero Container matching Turbo AI reference layout */}
       <article className="relative pt-36 sm:pt-40 md:pt-44 pb-24 px-6 md:px-[120px] z-10">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           
-          {/* Breadcrumb Navigation */}
-          <div className="flex items-center space-x-2 text-xs font-mono text-white/40 mb-8">
-            <Link href="/blog" className="hover:text-emerald-400 transition-colors flex items-center space-x-1">
-              <ChevronLeft className="w-3.5 h-3.5" />
-              <span>Blog</span>
-            </Link>
-            <span>/</span>
-            <span className="text-white/70">{post.category}</span>
+          {/* Top Breadcrumb & Meta Header Row */}
+          <div className="flex items-center justify-between text-sm font-mono text-white/40 mb-6">
+            <div className="flex items-center space-x-2">
+              <Link href="/blog" className="text-white/50 hover:text-emerald-400 transition-colors font-medium">
+                Blog
+              </Link>
+              <span>/</span>
+              <span className="text-purple-400 font-semibold">{post.category}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-xs">
+              <span>{post.date}</span>
+              <span>•</span>
+              <span>{post.readTime}</span>
+            </div>
           </div>
 
           {/* Article Header Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.15]">
             {post.title}
           </h1>
 
-          {/* Meta Info & Author Badge */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between py-6 border-y border-white/10 mb-10 gap-4">
-            
-            {/* Author Badge */}
-            <div className="flex items-center space-x-3.5">
-              <img 
-                src={post.author.avatar} 
-                alt={post.author.name} 
-                className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-              />
-              <div className="flex flex-col">
-                <span className="font-bold text-white text-base">{post.author.name}</span>
-                <span className="text-xs text-white/50">{post.author.role}</span>
-              </div>
+          {/* Author Badge matching Turbo AI reference */}
+          <div className="flex items-center space-x-4 pb-10 border-b border-white/10 mb-10">
+            <img 
+              src={post.author.avatar} 
+              alt={post.author.name} 
+              className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+            />
+            <div className="flex flex-col">
+              <span className="font-bold text-white text-base">{post.author.name}</span>
+              <span className="text-xs text-white/50">{post.author.role}</span>
             </div>
-
-            {/* Date & Read Time */}
-            <div className="flex items-center space-x-4 text-xs font-mono text-white/40">
-              <div className="flex items-center space-x-1.5">
-                <Calendar className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{post.date}</span>
-              </div>
-              <span>•</span>
-              <div className="flex items-center space-x-1.5">
-                <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{post.readTime}</span>
-              </div>
-            </div>
-
           </div>
 
           {/* Cover Image */}
@@ -99,9 +93,9 @@ export default function SingleBlogPostPage({ params }: { params: { slug: string 
             />
           </div>
 
-          {/* Article HTML Body */}
+          {/* Article HTML Body matching Turbo AI reading typography */}
           <div 
-            className="prose prose-invert prose-emerald max-w-none font-inter text-white/80 leading-relaxed space-y-6"
+            className="prose prose-invert max-w-none font-inter text-[17px] text-white/80 leading-[1.8] space-y-6"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

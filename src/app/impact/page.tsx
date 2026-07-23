@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Users, Star, Trophy, Activity, MapPin, ArrowRight, Clock } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { USMap } from "@/components/USMap";
 import { LiveUserCounter } from "@/components/LiveUserCounter";
 
@@ -52,6 +52,10 @@ const SeamlessVideo = ({ src, className }: { src: string; className: string }) =
 };
 
 export default function ImpactPage() {
+  useEffect(() => {
+    document.title = "Impact | AP Lab";
+  }, []);
+
   return (
     <main className="min-h-screen bg-transparent text-white selection:bg-medical-teal selection:text-black overflow-hidden relative">
       {/* Background Video */}

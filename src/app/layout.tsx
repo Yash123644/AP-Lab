@@ -30,7 +30,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "AP Lab",
+  title: "AP Lab | Free AP Course Prep",
   description: "Over 10 subjects, always free. The highest prep quality with comprehensive practice questions and mock exams. Track your progress with dynamic analytics and study smarter with our AI assistant. This is everything learning was meant to be.",
   icons: {
     icon: [
