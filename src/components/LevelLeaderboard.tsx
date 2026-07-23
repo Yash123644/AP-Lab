@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { LevelBadge } from "@/components/LevelBadge";
-import { Trophy, Crown, Award, User } from "lucide-react";
+import { Trophy, Crown, Award, User, MoreHorizontal } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useProgress } from "@/context/ProgressContext";
 import { cn } from "@/lib/utils";
@@ -79,6 +79,87 @@ export function LevelLeaderboard() {
     }
   };
 
+  const top10 = users.slice(0, 10);
+  const currentUserIndex = users.findIndex((u) => u.uid === progress?.uid);
+  const currentUserObj = currentUserIndex !== -1 ? users[currentUserIndex] : null;
+  const showUserBelow = currentUserObj && currentUserIndex >= 10;
+
+  const renderRow = (user: LeaderboardUser, actualRankIndex: number) => {
+    const rankInfo = getRankStyle(actualRankIndex);
+    const initials = user.displayName
+      ? user.displayName.split(" ").map((n) => n[0]).join("").toUpperCase().substring(0, 2)
+      : "AP";
+    const isCurrentUser = user.uid === progress?.uid;
+
+    return (
+      <motion.div
+        key={user.uid}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: actualRankIndex * 0.04 }}
+        className={cn(
+          "flex items-center justify-between p-4 md:px-6 rounded-2xl border transition-all duration-300",
+          isCurrentUser 
+            ? "border-emerald-500/40 bg-emerald-950/25 shadow-[0_0_25px_rgba(16,185,129,0.18)]"
+            : rankInfo.rowClass,
+          !isCurrentUser && rankInfo.glowClass
+        )}
+      >
+        <div className="flex items-center space-x-4">
+          {/* Rank Indicator */}
+          <div className="w-8 flex items-center justify-center shrink-0">
+            {rankInfo.icon ? (
+              rankInfo.icon
+            ) : (
+              <span className="font-mono text-xs sm:text-sm font-bold text-white/50">
+                #{actualRankIndex + 1}
+              </span>
+            )}
+          </div>
+
+          {/* Avatar */}
+          <div className="relative shrink-0">
+            {user.photoURL ? (
+              <img
+                src={user.photoURL}
+                alt={user.displayName}
+                className="w-10 h-10 rounded-xl object-cover border border-white/15"
+              />
+            ) : (
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 font-semibold text-xs font-mono">
+                {initials}
+              </div>
+            )}
+          </div>
+
+          {/* User Name & Level Badge */}
+          <div className="flex flex-col md:flex-row md:items-center space-y-1.5 md:space-y-0 md:space-x-3">
+            <span className="font-manrope font-bold text-white text-sm md:text-base leading-tight flex items-center gap-2">
+              <span>{user.displayName || "AP Scholar"}</span>
+              {isCurrentUser && (
+                <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/35 text-[9px] font-manrope font-black tracking-widest uppercase shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>YOU</span>
+                </span>
+              )}
+            </span>
+            <LevelBadge level={user.level || 1} />
+          </div>
+        </div>
+
+        {/* XP display */}
+        <div className="text-right">
+          <span className="font-instrument italic font-bold text-base md:text-xl text-white block">
+            {user.xp?.toLocaleString()}
+          </span>
+          <span className="text-[9px] font-mono font-bold text-white/30 uppercase tracking-widest block">
+            TOTAL XP
+          </span>
+        </div>
+      </motion.div>
+    );
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto liquid-glass rounded-[32px] p-6 md:p-10 border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl relative overflow-hidden">
       {/* Visual background glows */}
@@ -96,7 +177,7 @@ export function LevelLeaderboard() {
 
       {loading ? (
         <div className="space-y-3.5 py-2 animate-pulse">
-          {[1, 2, 3].map((i) => (
+          {[1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="flex items-center justify-between p-4 md:px-6 rounded-2xl border border-white/5 bg-white/[0.01]">
               <div className="flex items-center space-x-4">
                 <div className="w-8 h-5 bg-white/5 rounded" />
@@ -121,80 +202,17 @@ export function LevelLeaderboard() {
       ) : (
         <div className="space-y-3.5">
           <AnimatePresence>
-            {users.map((user, index) => {
-              const rankInfo = getRankStyle(index);
-              const initials = user.displayName
-                ? user.displayName.split(" ").map(n => n[0]).join("").toUpperCase().substring(0, 2)
-                : "AP";
-              const isCurrentUser = user.uid === progress?.uid;
+            {top10.map((user, index) => renderRow(user, index))}
 
-              return (
-                <motion.div
-                  key={user.uid}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className={cn(
-                    "flex items-center justify-between p-4 md:px-6 rounded-2xl border transition-all duration-300",
-                    isCurrentUser 
-                      ? "border-cyan-500/40 bg-cyan-950/25 shadow-[0_0_20px_rgba(6,182,212,0.15)]"
-                      : rankInfo.rowClass,
-                    !isCurrentUser && rankInfo.glowClass
-                  )}
-                >
-                  <div className="flex items-center space-x-4">
-                    {/* Rank Indicator */}
-                    <div className="w-8 flex items-center justify-center shrink-0">
-                      {rankInfo.icon ? (
-                        rankInfo.icon
-                      ) : (
-                        <span className="font-mono text-sm font-bold text-white/40">
-                          #{index + 1}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Avatar */}
-                    <div className="relative shrink-0">
-                      {user.photoURL ? (
-                        <img
-                          src={user.photoURL}
-                          alt={user.displayName}
-                          className="w-10 h-10 rounded-xl object-cover border border-white/15"
-                        />
-                      ) : (
-                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 font-semibold text-xs font-mono">
-                          {initials}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* User Name & Level Badge */}
-                    <div className="flex flex-col md:flex-row md:items-center space-y-1.5 md:space-y-0 md:space-x-3">
-                      <span className="font-manrope font-bold text-white text-sm md:text-base leading-tight flex items-center gap-1.5">
-                        {user.displayName || "AP Scholar"}
-                        {isCurrentUser && (
-                          <span className="text-[9px] bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-1.5 py-0.5 rounded-full uppercase tracking-widest font-mono font-bold">
-                            You
-                          </span>
-                        )}
-                      </span>
-                      <LevelBadge level={user.level || 1} />
-                    </div>
-                  </div>
-
-                  {/* XP display */}
-                  <div className="text-right">
-                    <span className="font-instrument italic font-bold text-base md:text-xl text-white block">
-                      {user.xp?.toLocaleString()}
-                    </span>
-                    <span className="text-[9px] font-mono font-bold text-white/30 uppercase tracking-widest block">
-                      TOTAL XP
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {/* If user is below rank 10, render separator & user's personal row */}
+            {showUserBelow && currentUserObj && (
+              <React.Fragment key="user-below-rank-10">
+                <div className="flex items-center justify-center py-2 space-x-2 text-white/30">
+                  <MoreHorizontal className="w-5 h-5 animate-pulse" />
+                </div>
+                {renderRow(currentUserObj, currentUserIndex)}
+              </React.Fragment>
+            )}
           </AnimatePresence>
         </div>
       )}

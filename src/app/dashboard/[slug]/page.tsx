@@ -80,6 +80,7 @@ import { SelectionAIPopover } from "@/components/SelectionAIPopover";
 import { VocabularyPopover } from "@/components/VocabularyPopover";
 import { DiagramContainer } from "@/components/DiagramContainer";
 import { playSuccessSound, playFailureSound } from "@/lib/sounds";
+import { DesmosCalculatorModal } from "@/components/DesmosCalculatorModal";
 
 function MagneticButton({ children, className, onClick, disabled, accentColor }: { children: React.ReactNode, className?: string, onClick?: () => void, disabled?: boolean, accentColor: string }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -2358,6 +2359,7 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   const [isFinished, setIsFinished] = useState(false);
   const [hasRewarded, setHasRewarded] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState<any[]>([]);
+  const [isCalcOpen, setIsCalcOpen] = useState(false);
   const lastTopicIdRef = useRef<string | number | null>(null);
 
   useEffect(() => {
@@ -2575,14 +2577,24 @@ function PracticeSystem({ topicId, masteryKey, questions, accentColor, onComplet
   }
 
   return (
-    <div className="liquid-glass-strong rounded-[32px] p-8 md:p-12 border border-white/10 space-y-8">
+    <div className="liquid-glass-strong rounded-[32px] p-8 md:p-12 border border-white/10 space-y-8 relative">
+      <DesmosCalculatorModal isOpen={isCalcOpen} onClose={() => setIsCalcOpen(false)} />
       <div className="flex items-center justify-between">
         <div className="space-y-1">
           <h3 className="font-instrument text-3xl text-white">Check Understanding</h3>
           <p className="text-xs font-manrope font-bold uppercase tracking-[0.2em] subject-accent-text">Question {currentIdx + 1} of {activeQuestions.length}</p>
         </div>
-        <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
-          <span className="text-xs font-bold text-white/40">{Math.round(((currentIdx) / activeQuestions.length) * 100)}%</span>
+        <div className="flex items-center space-x-3">
+          <button
+            onClick={() => setIsCalcOpen(!isCalcOpen)}
+            className="flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 text-xs font-manrope font-bold transition-all shadow-md"
+          >
+            <Calculator className="w-3.5 h-3.5" />
+            <span>Desmos Calculator</span>
+          </button>
+          <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
+            <span className="text-xs font-bold text-white/40">{Math.round(((currentIdx) / activeQuestions.length) * 100)}%</span>
+          </div>
         </div>
       </div>
 

@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Timer, AlertCircle, CheckCircle2, ChevronRight, Trophy, BarChart3, RotateCcw, Brain } from "lucide-react";
+import { Timer, AlertCircle, CheckCircle2, ChevronRight, Trophy, BarChart3, RotateCcw, Brain, Calculator } from "lucide-react";
 import { CourseUnit, CourseQuestion } from "@/lib/courses/course-registry";
 import { cn } from "@/lib/utils";
 import confetti from "canvas-confetti";
 import { InlineMath } from "react-katex";
 import { useProgress } from "@/context/ProgressContext";
+import { DesmosCalculatorModal } from "./DesmosCalculatorModal";
 
 interface Props {
   units: CourseUnit[];
@@ -24,6 +25,7 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
   const [timeLeft, setTimeLeft] = useState(90 * 60); // 90 minutes
   const [isPaused, setIsPaused] = useState(false);
+  const [isCalcOpen, setIsCalcOpen] = useState(false);
 
   // Initialize Exam
   const startExam = useCallback(() => {
@@ -177,13 +179,24 @@ export function MockExam({ units, subjectName, accentColor, onClose }: Props) {
                   <span className="font-mono font-bold text-lg">{formatTime(timeLeft)}</span>
                 </div>
               </div>
-              <button 
-                onClick={handleFinish}
-                className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-bold transition-all"
-              >
-                Submit Exam
-              </button>
+              <div className="flex items-center space-x-3">
+                <button
+                  onClick={() => setIsCalcOpen(!isCalcOpen)}
+                  className="flex items-center space-x-2 px-4 py-2.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 font-manrope font-bold text-xs transition-all shadow-md"
+                >
+                  <Calculator className="w-4 h-4" />
+                  <span>Desmos Calculator</span>
+                </button>
+                <button 
+                  onClick={handleFinish}
+                  className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-bold transition-all"
+                >
+                  Submit Exam
+                </button>
+              </div>
             </div>
+
+            <DesmosCalculatorModal isOpen={isCalcOpen} onClose={() => setIsCalcOpen(false)} />
 
             {/* Question Body */}
             <div className="flex-1 grid lg:grid-cols-12 gap-8 overflow-hidden">
