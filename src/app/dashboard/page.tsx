@@ -216,7 +216,7 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
     >
       {/* Top Left Folder Tab Flap */}
       <div 
-        className="absolute -top-[42px] left-0 h-11 px-6 sm:px-7 min-w-[210px] rounded-t-[16px] rounded-tr-[22px] rounded-tl-none border-t border-x transition-all duration-300 flex items-center space-x-3 z-20 shadow-md"
+        className="absolute -top-[42px] left-0 h-11 px-6 sm:px-7 min-w-[210px] rounded-t-[16px] rounded-tr-[22px] rounded-tl-[16px] border-t border-x transition-all duration-300 flex items-center space-x-3 z-20 shadow-md"
         style={{ 
           backgroundColor: isHovered ? "#141724" : "#0d0f18",
           borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
@@ -594,16 +594,6 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col relative z-0 overflow-x-hidden bg-[#03040a] selection:bg-primary-purple selection:text-white">
       
-      {/* Top Header Region Background: White/Light-Grey Dot Matrix Pattern */}
-      <div className="absolute top-0 left-0 right-0 h-[480px] overflow-hidden pointer-events-none -z-10">
-        <PixelCourseBackground />
-        {/* Soft Fade at bottom of dot matrix header region */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#03040a] to-transparent" />
-      </div>
-
-      {/* Volumetric Vignette Overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-[#03040a]/80 pointer-events-none" />
-      
       {/* Floating Navbar Pill */}
       <nav className={cn(
         "fixed left-1/2 -translate-x-1/2 w-[95%] max-w-6xl rounded-full px-6 md:px-8 flex items-center justify-between z-50 transition-all duration-500 ease-in-out",
@@ -646,72 +636,80 @@ export default function Dashboard() {
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="flex-1 pt-40 pb-24 z-10 flex flex-col items-center w-full">
+      {/* Main Content Container */}
+      <main className="flex-1 w-full flex flex-col items-center z-10">
         
-        {/* Header Section */}
-        <div className="text-center mb-10 flex flex-col items-center justify-center px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-3 mb-3 w-fit mx-auto"
-          >
-            <span className="text-sm md:text-base uppercase tracking-[0.3em] font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              WELCOME BACK, {firstName.toUpperCase()}
-            </span>
-            <LevelBadge level={level} className="normal-case tracking-normal shrink-0 translate-y-[1px]" />
-          </motion.div>
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed mt-1"
-          >
-            Navigate your folders or search for a course below.
-          </motion.p>
+        {/* UPPER REGION: Header, Search Bar & Tab Bar with Pixel Dot Matrix Background */}
+        <div className="relative w-full flex flex-col items-center pt-40 pb-8 px-6 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none -z-10">
+            <PixelCourseBackground />
+            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#03040a] via-[#03040a]/80 to-transparent z-10" />
+          </div>
+
+          {/* Header Section */}
+          <div className="text-center mb-10 flex flex-col items-center justify-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center justify-center gap-3 mb-3 w-fit mx-auto"
+            >
+              <span className="text-sm md:text-base uppercase tracking-[0.3em] font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                WELCOME BACK, {firstName.toUpperCase()}
+              </span>
+              <LevelBadge level={level} className="normal-case tracking-normal shrink-0 translate-y-[1px]" />
+            </motion.div>
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="font-inter text-white/50 text-sm md:text-base max-w-lg mx-auto leading-relaxed mt-1"
+            >
+              Navigate your folders or search for a course below.
+            </motion.p>
+          </div>
+
+          {/* Search Bar */}
+          <div className="w-full flex justify-center">
+            <SearchBar onSelect={handleSearchSelect} />
+          </div>
+
+          {/* Apple Liquid Glass Segmented Tab Selector */}
+          <div className="flex items-center justify-center p-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-2xl mt-6 shadow-2xl gap-1.5 sm:gap-2 select-none z-10 relative">
+            {[
+              { id: "courses", label: "Courses", icon: Folder },
+              { id: "previews", label: "Previews", icon: Eye },
+              { id: "leaderboard", label: "Leaderboard", icon: Trophy }
+            ].map((tab) => {
+              const isActive = dashboardTab === tab.id;
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setDashboardTab(tab.id as any)}
+                  className="relative flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm cursor-pointer transition-colors duration-300 z-10 select-none"
+                >
+                  {/* Apple Liquid Glass Reflective Capsule Oval */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeDashboardTabOval"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      className="absolute inset-0 rounded-full bg-gradient-to-b from-white/35 via-white/15 to-white/5 border border-white/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.7),0_4px_20px_rgba(0,0,0,0.5)] backdrop-blur-md z-0"
+                    />
+                  )}
+                  
+                  <Icon className={cn("w-4 h-4 relative z-10 transition-colors duration-300", isActive ? "text-white" : "text-white/50")} />
+                  <span className={cn("relative z-10 transition-colors duration-300", isActive ? "text-white font-extrabold" : "text-white/60 hover:text-white")}>
+                    {tab.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="px-6 w-full flex justify-center">
-          <SearchBar onSelect={handleSearchSelect} />
-        </div>
-
-        {/* Apple Liquid Glass Segmented Tab Selector with Smooth Sliding Oval */}
-        <div className="flex items-center justify-center p-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-2xl mt-5 mb-8 shadow-2xl gap-1.5 sm:gap-2 select-none z-10 relative">
-          {[
-            { id: "courses", label: "Courses", icon: Folder },
-            { id: "previews", label: "Previews", icon: Eye },
-            { id: "leaderboard", label: "Leaderboard", icon: Trophy }
-          ].map((tab) => {
-            const isActive = dashboardTab === tab.id;
-            const Icon = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setDashboardTab(tab.id as any)}
-                className="relative flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm cursor-pointer transition-colors duration-300 z-10 select-none"
-              >
-                {/* Apple Liquid Glass Reflective Capsule Oval */}
-                {isActive && (
-                  <motion.div
-                    layoutId="activeDashboardTabOval"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    className="absolute inset-0 rounded-full bg-gradient-to-b from-white/35 via-white/15 to-white/5 border border-white/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.7),0_4px_20px_rgba(0,0,0,0.5)] backdrop-blur-md z-0"
-                  />
-                )}
-                
-                <Icon className={cn("w-4 h-4 relative z-10 transition-colors duration-300", isActive ? "text-white" : "text-white/50")} />
-                <span className={cn("relative z-10 transition-colors duration-300", isActive ? "text-white font-extrabold" : "text-white/60 hover:text-white")}>
-                  {tab.label}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Below Tab Selector Region: Grid Pattern Background */}
+        {/* LOWER REGION: Folders Grid / Previews Grid / Leaderboard with Grid Background Pattern */}
         <div 
-          className="w-full relative z-10 flex flex-col items-center pt-8 px-6 md:px-12"
+          className="w-full flex-1 relative z-10 flex flex-col items-center pt-8 pb-32 px-6 md:px-12 border-t border-white/[0.08]"
           style={{
             backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)",
             backgroundSize: "32px 32px"
