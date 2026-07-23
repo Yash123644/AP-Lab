@@ -641,13 +641,12 @@ export default function Dashboard() {
         
         {/* UPPER REGION: Header, Search Bar & Tab Bar with Pixel Dot Matrix Background */}
         <div className="relative w-full flex flex-col items-center pt-40 pb-8 px-6 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none -z-10">
+          <div className="absolute inset-0 pointer-events-none z-0">
             <PixelCourseBackground />
-            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#03040a] via-[#03040a]/80 to-transparent z-10" />
           </div>
 
           {/* Header Section */}
-          <div className="text-center mb-10 flex flex-col items-center justify-center">
+          <div className="text-center mb-10 flex flex-col items-center justify-center relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -669,11 +668,11 @@ export default function Dashboard() {
           </div>
 
           {/* Search Bar */}
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center relative z-10">
             <SearchBar onSelect={handleSearchSelect} />
           </div>
 
-          {/* Apple Liquid Glass Segmented Tab Selector */}
+          {/* Segmented Tab Selector with Solid White Sliding Oval */}
           <div className="flex items-center justify-center p-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-2xl mt-6 shadow-2xl gap-1.5 sm:gap-2 select-none z-10 relative">
             {[
               { id: "courses", label: "Courses", icon: Folder },
@@ -688,17 +687,17 @@ export default function Dashboard() {
                   onClick={() => setDashboardTab(tab.id as any)}
                   className="relative flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm cursor-pointer transition-colors duration-300 z-10 select-none"
                 >
-                  {/* Apple Liquid Glass Reflective Capsule Oval */}
+                  {/* Regular White Capsule Oval */}
                   {isActive && (
                     <motion.div
                       layoutId="activeDashboardTabOval"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      className="absolute inset-0 rounded-full bg-gradient-to-b from-white/35 via-white/15 to-white/5 border border-white/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.7),0_4px_20px_rgba(0,0,0,0.5)] backdrop-blur-md z-0"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      className="absolute inset-0 rounded-full bg-white shadow-lg z-0"
                     />
                   )}
                   
-                  <Icon className={cn("w-4 h-4 relative z-10 transition-colors duration-300", isActive ? "text-white" : "text-white/50")} />
-                  <span className={cn("relative z-10 transition-colors duration-300", isActive ? "text-white font-extrabold" : "text-white/60 hover:text-white")}>
+                  <Icon className={cn("w-4 h-4 relative z-10 transition-colors duration-300", isActive ? "text-black" : "text-white/60")} />
+                  <span className={cn("relative z-10 transition-colors duration-300", isActive ? "text-black font-extrabold" : "text-white/60 hover:text-white")}>
                     {tab.label}
                   </span>
                 </button>
@@ -709,10 +708,10 @@ export default function Dashboard() {
 
         {/* LOWER REGION: Folders Grid / Previews Grid / Leaderboard with Grid Background Pattern */}
         <div 
-          className="w-full flex-1 relative z-10 flex flex-col items-center pt-8 pb-32 px-6 md:px-12 border-t border-white/[0.08]"
+          className="w-full flex-1 relative z-20 flex flex-col items-center pt-10 pb-32 px-6 md:px-12 border-t border-white/10 bg-[#060712]"
           style={{
-            backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)",
-            backgroundSize: "32px 32px"
+            backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
+            backgroundSize: "36px 36px"
           }}
         >
           {/* Tab 1: Universal Wings Bento Grid - 3D Folders Grid */}

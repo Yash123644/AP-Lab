@@ -21,10 +21,11 @@ export function PixelCourseBackground({
     if (!ctx) return;
 
     const renderCanvas = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      const parent = canvas.parentElement;
+      const width = parent ? parent.offsetWidth : window.innerWidth;
+      const height = parent ? parent.offsetHeight : window.innerHeight;
 
-      // Lock canvas dimensions to exact viewport pixel resolution
+      // Lock canvas dimensions to exact parent container resolution
       canvas.width = width;
       canvas.height = height;
       ctx.imageSmoothingEnabled = false;
