@@ -1,55 +1,92 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Activity } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Preloader() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isOpening, setIsOpening] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    // Ultra-fast < 0.95s vital pulse logo preloader
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 900);
+    // 0.4s: Trigger top and bottom panel split reveal
+    const openTimer = setTimeout(() => {
+      setIsOpening(true);
+    }, 420);
 
-    return () => clearTimeout(timer);
+    // 1.0s: Remove preloader from DOM
+    const finishTimer = setTimeout(() => {
+      setIsFinished(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(openTimer);
+      clearTimeout(finishTimer);
+    };
   }, []);
 
+  if (isFinished) return null;
+
   return (
-    <AnimatePresence>
-      {isLoading && (
-        <motion.div
-          key="aplab-preloader"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] bg-[#03040a] flex flex-col items-center justify-center select-none overflow-hidden"
-        >
-          {/* Subtle Ambient Glow */}
-          <div className="absolute w-64 h-64 rounded-full bg-white/[0.04] blur-3xl pointer-events-none" />
+    <div className="fixed inset-0 z-[9999] pointer-events-none select-none overflow-hidden">
+      
+      {/* Top Cutout Panel (Slides UP) */}
+      <motion.div
+        initial={{ y: "0%" }}
+        animate={{ y: isOpening ? "-100%" : "0%" }}
+        transition={{ duration: 0.58, ease: [0.76, 0, 0.24, 1] }}
+        className="absolute top-0 left-0 right-0 h-[50vh] bg-[#03040a] border-b border-white/10 z-10"
+      />
 
-          {/* AP Lab Logo Symbol Container (No Text) */}
-          <div className="relative w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shadow-[0_0_25px_rgba(255,255,255,0.15)] overflow-hidden">
-            
-            {/* Smooth Vital Pulse Sheen Sweep moving Left to Right */}
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: "200%" }}
-              transition={{ duration: 0.75, ease: [0.25, 1, 0.5, 1] }}
-              className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-20deg] pointer-events-none z-20"
+      {/* Bottom Cutout Panel (Slides DOWN) */}
+      <motion.div
+        initial={{ y: "0%" }}
+        animate={{ y: isOpening ? "100%" : "0%" }}
+        transition={{ duration: 0.58, ease: [0.76, 0, 0.24, 1] }}
+        className="absolute bottom-0 left-0 right-0 h-[50vh] bg-[#03040a] border-t border-white/10 z-10"
+      />
+
+      {/* HUGE AP LAB Logo Outline Spanning Across the Screen */}
+      <motion.div
+        initial={{ scale: 0.95, opacity: 1 }}
+        animate={{ 
+          scale: isOpening ? 1.08 : 1,
+          opacity: isOpening ? 0 : 1
+        }}
+        transition={{ duration: 0.45, ease: "easeInOut" }}
+        className="absolute inset-0 z-20 flex items-center justify-center px-4"
+      >
+        <div className="w-full max-w-5xl flex items-center justify-center">
+          <svg 
+            viewBox="0 0 900 160" 
+            className="w-full h-auto text-white stroke-current fill-none"
+          >
+            {/* EKG Pulse Line Outline Icon */}
+            <path 
+              d="M30 80 H140 L165 20 L195 140 L225 40 L255 110 L280 80 H360" 
+              strokeWidth="5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
             />
-
-            {/* Vital Pulse Icon Animation */}
-            <motion.div
-              animate={{ scale: [0.9, 1.15, 0.95, 1.08, 1] }}
-              transition={{ duration: 0.75, ease: "easeInOut" }}
+            {/* Huge Bold AP LAB Text Outline */}
+            <text 
+              x="390" 
+              y="112" 
+              fill="none" 
+              stroke="white" 
+              strokeWidth="4" 
+              fontSize="108" 
+              fontWeight="900" 
+              fontFamily="Manrope, system-ui, sans-serif" 
+              letterSpacing="-2"
+              className="drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
             >
-              <Activity className="w-8 h-8 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] relative z-10" />
-            </motion.div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+              AP LAB
+            </text>
+          </svg>
+        </div>
+      </motion.div>
+
+    </div>
   );
 }
