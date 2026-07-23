@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
       {
         uid: "bot-8",
         displayName: "Chloe Zhang",
-        photoURL: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=100&auto=format&fit=crop&q=80",
+        photoURL: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=100&auto=format&fit=crop&q=80",
         xp: 1140,
         level: 8,
       },

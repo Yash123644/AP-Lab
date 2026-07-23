@@ -11,7 +11,7 @@ interface ComparisonModalProps {
 
 const COMPARISON_DATA = [
   {
-    feature: "AI Socratic Tutor",
+    feature: "AI Assistant",
     apLab: "check",
     khan: "cross",
     fiveable: "cross",
@@ -56,13 +56,13 @@ const COMPARISON_DATA = [
     brilliant: "check"
   },
   {
-    feature: "Spaced Repetition & Vocab Flashcards",
+    feature: "Formula & Concept Study Guides",
     apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
+    khan: "check",
+    fiveable: "check",
     knowt: "check",
-    quizlet: "check",
-    brilliant: "cross"
+    quizlet: "cross",
+    brilliant: "check"
   },
   {
     feature: "Gamified XP Leaderboard & Streaks",
@@ -99,27 +99,27 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
   const renderCellContent = (value: string, isApLab = false) => {
     if (value === "check") {
       return (
-        <div className={`w-7 h-7 rounded-full flex items-center justify-center mx-auto ${isApLab ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.3)]" : "bg-emerald-500/10 text-emerald-400/80"}`}>
-          <Check className="w-4 h-4 stroke-[2.5]" />
+        <div className={`w-6.5 h-6.5 rounded-full flex items-center justify-center mx-auto ${isApLab ? "bg-white/20 text-white border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.3)]" : "bg-emerald-500/10 text-emerald-400/80"}`}>
+          <Check className="w-3.5 h-3.5 stroke-[2.5]" />
         </div>
       );
     }
     if (value === "cross") {
       return (
-        <div className="w-7 h-7 rounded-full flex items-center justify-center mx-auto bg-white/[0.04] text-white/20">
-          <X className="w-4 h-4" />
+        <div className="w-6.5 h-6.5 rounded-full flex items-center justify-center mx-auto bg-white/[0.04] text-white/20">
+          <X className="w-3.5 h-3.5" />
         </div>
       );
     }
     if (value === "paid") {
       return (
-        <div className="w-7 h-7 rounded-full flex items-center justify-center mx-auto bg-amber-500/10 text-amber-400 border border-amber-500/20">
-          <DollarSign className="w-4 h-4" />
+        <div className="w-6.5 h-6.5 rounded-full flex items-center justify-center mx-auto bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          <DollarSign className="w-3.5 h-3.5" />
         </div>
       );
     }
     return (
-      <span className={`text-xs font-mono font-bold ${isApLab ? "text-emerald-400 font-extrabold text-sm" : "text-white/60"}`}>
+      <span className={`text-xs font-mono font-bold ${isApLab ? "text-white font-extrabold text-sm" : "text-white/60"}`}>
         {value}
       </span>
     );
@@ -129,7 +129,7 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
     <AnimatePresence>
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[9999999] bg-[#030409] overflow-y-auto select-none flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-[9999999] bg-[#030409] overflow-y-auto select-none flex items-center justify-center p-3 sm:p-5"
           data-lenis-prevent="true"
           onWheel={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
@@ -146,89 +146,89 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
             }
           `}</style>
 
-          {/* Modal Content Box */}
+          {/* Modal Content Box with Smooth Slide-Up / Drag Down Animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 15 }}
-            transition={{ type: "spring", stiffness: 340, damping: 28 }}
-            className="relative w-full max-w-6xl bg-[#080914] border border-white/15 rounded-3xl overflow-hidden shadow-[0_32px_120px_rgba(0,0,0,1)] z-10 flex flex-col max-h-[92vh] my-auto"
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100vh", opacity: 0 }}
+            transition={{ type: "spring", damping: 32, stiffness: 280 }}
+            className="relative w-full max-w-6xl bg-[#080914] border border-white/15 rounded-3xl overflow-hidden shadow-[0_32px_120px_rgba(0,0,0,1)] z-10 flex flex-col max-h-[95vh] my-auto"
           >
             {/* Header Bar */}
-            <div className="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-white/10 bg-white/[0.02]">
+            <div className="flex items-center justify-between px-6 sm:px-8 py-4 border-b border-white/10 bg-white/[0.02]">
               <div>
-                <h2 className="text-xl sm:text-2xl font-extrabold font-manrope text-white tracking-tight">
+                <h2 className="text-lg sm:text-2xl font-extrabold font-manrope text-white tracking-tight">
                   Why AP Lab is Superior
                 </h2>
               </div>
 
               <button
                 onClick={onClose}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white/70 hover:text-white transition-all cursor-pointer"
+                className="p-2 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white/70 hover:text-white transition-all cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Scrollable Matrix Table */}
+            {/* Matrix Table - Single page view on desktop, scrollable on small screens */}
             <div 
               data-lenis-prevent="true"
-              className="flex-1 overflow-x-auto overflow-y-auto p-4 sm:p-6 custom-scrollbar"
+              className="flex-1 overflow-x-auto overflow-y-auto p-3 sm:p-5 custom-scrollbar"
             >
               <table className="w-full text-left border-collapse min-w-[840px]">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="py-5 px-4 text-xs font-mono uppercase tracking-wider text-white/40 font-bold w-[26%]">
+                    <th className="py-3 px-4 text-xs font-mono uppercase tracking-wider text-white/40 font-bold w-[26%]">
                       Feature Comparison
                     </th>
 
-                    {/* AP Lab Column (Highlighted) */}
-                    <th className="py-5 px-4 text-center bg-blue-600/15 border-x border-t border-blue-500/40 rounded-t-2xl">
-                      <div className="flex flex-col items-center justify-center space-y-1.5">
+                    {/* AP Lab Column (Highlighted in White) */}
+                    <th className="py-3 px-4 text-center bg-white/[0.06] border-x border-t border-white/20 rounded-t-2xl">
+                      <div className="flex flex-col items-center justify-center space-y-1">
                         <div className="flex items-center space-x-2">
-                          <Activity className="w-5 h-5 text-blue-400" />
-                          <span className="text-sm font-extrabold text-blue-400 tracking-tight font-manrope">
+                          <Activity className="w-5 h-5 text-white" />
+                          <span className="text-sm font-extrabold text-white tracking-tight font-manrope">
                             AP Lab
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                        <span className="text-[10px] font-mono text-white font-bold uppercase tracking-wider bg-white/10 px-2 py-0.5 rounded-full border border-white/20">
                           100% Free
                         </span>
                       </div>
                     </th>
 
                     {/* Khan Academy Header Logo */}
-                    <th className="py-5 px-4 text-center">
-                      <div className="flex items-center justify-center h-9">
-                        <img src="/images/logos/khan.png" alt="Khan Academy" className="h-6 sm:h-7 object-contain max-w-[130px] filter brightness-110" />
+                    <th className="py-3 px-4 text-center">
+                      <div className="flex items-center justify-center h-8">
+                        <img src="/images/logos/khan.png" alt="Khan Academy" className="h-6 object-contain max-w-[120px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Fiveable Header Logo */}
-                    <th className="py-5 px-4 text-center">
-                      <div className="flex items-center justify-center h-9">
-                        <img src="/images/logos/fiveable.png" alt="Fiveable" className="h-6 sm:h-7 object-contain max-w-[120px] filter brightness-110" />
+                    <th className="py-3 px-4 text-center">
+                      <div className="flex items-center justify-center h-8">
+                        <img src="/images/logos/fiveable.png" alt="Fiveable" className="h-6 object-contain max-w-[110px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Knowt Header Logo */}
-                    <th className="py-5 px-4 text-center">
-                      <div className="flex items-center justify-center h-9">
-                        <img src="/images/logos/knowt.png" alt="Knowt" className="h-6 sm:h-7 object-contain max-w-[110px] filter brightness-110" />
+                    <th className="py-3 px-4 text-center">
+                      <div className="flex items-center justify-center h-8">
+                        <img src="/images/logos/knowt.png" alt="Knowt" className="h-6 object-contain max-w-[100px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Quizlet Header Logo */}
-                    <th className="py-5 px-4 text-center">
-                      <div className="flex items-center justify-center h-9">
-                        <img src="/images/logos/quizlet.png" alt="Quizlet" className="h-6 sm:h-7 object-contain max-w-[120px] filter brightness-110" />
+                    <th className="py-3 px-4 text-center">
+                      <div className="flex items-center justify-center h-8">
+                        <img src="/images/logos/quizlet.png" alt="Quizlet" className="h-6 object-contain max-w-[110px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Brilliant Header Logo */}
-                    <th className="py-5 px-4 text-center">
-                      <div className="flex items-center justify-center h-9">
-                        <img src="/images/logos/brilliant.png" alt="Brilliant" className="h-6 sm:h-7 object-contain max-w-[130px] filter invert brightness-200" />
+                    <th className="py-3 px-4 text-center">
+                      <div className="flex items-center justify-center h-8">
+                        <img src="/images/logos/brilliant.png" alt="Brilliant" className="h-6 object-contain max-w-[120px] filter invert brightness-200" />
                       </div>
                     </th>
                   </tr>
@@ -242,28 +242,28 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
                         key={row.feature} 
                         className={`hover:bg-white/[0.02] transition-colors ${isLastRow ? "bg-white/[0.04] font-bold" : ""}`}
                       >
-                        <td className="py-4 px-4 text-xs sm:text-sm font-manrope font-semibold text-white/90">
+                        <td className="py-3 px-4 text-xs sm:text-sm font-manrope font-semibold text-white/90">
                           {row.feature}
                         </td>
 
                         {/* AP Lab Highlight Cell */}
-                        <td className={`py-4 px-4 text-center bg-blue-600/10 border-x border-blue-500/30 ${isLastRow ? "border-b rounded-b-2xl" : ""}`}>
+                        <td className={`py-3 px-4 text-center bg-white/[0.04] border-x border-white/15 ${isLastRow ? "border-b rounded-b-2xl" : ""}`}>
                           {renderCellContent(row.apLab, true)}
                         </td>
 
-                        <td className="py-4 px-4 text-center">
+                        <td className="py-3 px-4 text-center">
                           {renderCellContent(row.khan)}
                         </td>
-                        <td className="py-4 px-4 text-center">
+                        <td className="py-3 px-4 text-center">
                           {renderCellContent(row.fiveable)}
                         </td>
-                        <td className="py-4 px-4 text-center">
+                        <td className="py-3 px-4 text-center">
                           {renderCellContent(row.knowt)}
                         </td>
-                        <td className="py-4 px-4 text-center">
+                        <td className="py-3 px-4 text-center">
                           {renderCellContent(row.quizlet)}
                         </td>
-                        <td className="py-4 px-4 text-center">
+                        <td className="py-3 px-4 text-center">
                           {renderCellContent(row.brilliant)}
                         </td>
                       </tr>

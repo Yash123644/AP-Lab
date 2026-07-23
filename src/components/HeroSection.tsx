@@ -466,7 +466,7 @@ export function HeroSection() {
           >
             <span className="relative z-10 font-sans font-extrabold text-[9px] sm:text-xs text-white/90 group-hover:text-white uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-colors duration-300">
               SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
-              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/70 group-hover:stroke-cyan-400 stroke-[2.5] group-hover:translate-x-0.5 transition-all duration-300" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/80 group-hover:stroke-white stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
