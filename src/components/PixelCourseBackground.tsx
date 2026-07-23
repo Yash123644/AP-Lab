@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export function PixelCourseBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none bg-[#03040a]">
@@ -12,96 +14,148 @@ export function PixelCourseBackground() {
         }}
       />
 
-      {/* High-Precision, Evenly Spread Academic Symbols */}
+      {/* 8-Bit Pixel Art Academic Symbols Floating & Rotating */}
       <div className="absolute inset-0 pointer-events-none">
         
-        {/* 1. Clean Biological Cell - Top Left Outer Buffer */}
-        <div className="absolute top-10 left-[4%] opacity-35">
-          <svg viewBox="0 0 32 32" className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <circle cx="16" cy="16" r="12" strokeDasharray="4 2" />
-            <circle cx="16" cy="16" r="5" fill="currentColor" fillOpacity="0.2" />
-            <circle cx="16" cy="16" r="2" fill="currentColor" />
-            <circle cx="9" cy="12" r="1.5" fill="currentColor" />
-            <circle cx="23" cy="18" r="1.5" fill="currentColor" />
+        {/* 1. Pixel Pi Symbol (π) - Top Left */}
+        <motion.div 
+          animate={{ y: [0, -12, 0], rotate: [-6, 6, -6] }}
+          transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-10 left-[5%] opacity-40 text-white/90"
+        >
+          <svg viewBox="0 0 16 16" className="w-12 h-12" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="2" y="3" width="12" height="2" />
+            <rect x="1" y="4" width="2" height="2" />
+            <rect x="13" y="4" width="2" height="2" />
+            <rect x="4" y="5" width="2" height="8" />
+            <rect x="3" y="12" width="2" height="2" />
+            <rect x="10" y="5" width="2" height="7" />
+            <rect x="11" y="11" width="2" height="2" />
+            <rect x="12" y="10" width="2" height="2" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 2. Sleek Chemistry Flask - Top Right Outer Buffer */}
-        <div className="absolute top-10 right-[4%] opacity-35">
-          <svg viewBox="0 0 32 32" className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 4h8" />
-            <path d="M14 4v6l-7 12a2 2 0 0 0 1.7 3h14.6a2 2 0 0 0 1.7-3L18 10V4" />
-            <path d="M9.5 17c2.5-1 5 1 7.5 0s5-1 7.5 0" strokeDasharray="2 1" />
-            <circle cx="16" cy="13" r="1" fill="currentColor" />
-            <circle cx="18" cy="9" r="0.8" fill="currentColor" />
+        {/* 2. Pixel Atom Orbit - Top Right */}
+        <motion.div 
+          animate={{ y: [0, -14, 0], rotate: [6, -6, 6] }}
+          transition={{ duration: 8.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+          className="absolute top-10 right-[5%] opacity-40 text-white/90"
+        >
+          <svg viewBox="0 0 16 16" className="w-12 h-12" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="7" y="7" width="2" height="2" />
+            <rect x="4" y="4" width="8" height="1" />
+            <rect x="4" y="11" width="8" height="1" />
+            <rect x="4" y="4" width="1" height="8" />
+            <rect x="11" y="4" width="1" height="8" />
+            <rect x="2" y="2" width="2" height="2" />
+            <rect x="12" y="2" width="2" height="2" />
+            <rect x="2" y="12" width="2" height="2" />
+            <rect x="12" y="12" width="2" height="2" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 3. Clearly Recognizable DNA Double Helix - Moved Down to Mid-Hero Left */}
-        <div className="absolute top-[36%] left-[12%] opacity-40">
-          <svg viewBox="0 0 32 32" className="w-14 h-14 text-white/90" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            {/* Strand A Wave */}
-            <path d="M8 4 C16 10, 16 22, 24 28" />
-            {/* Strand B Wave */}
-            <path d="M24 4 C16 10, 16 22, 8 28" />
-            {/* Base Pairs (rungs) */}
-            <line x1="10" y1="6" x2="22" y2="6" strokeWidth="1.5" />
-            <line x1="12" y1="10" x2="20" y2="10" strokeWidth="1.5" />
-            <line x1="15" y1="14" x2="17" y2="14" strokeWidth="1.5" />
-            <line x1="15" y1="18" x2="17" y2="18" strokeWidth="1.5" />
-            <line x1="12" y1="22" x2="20" y2="22" strokeWidth="1.5" />
-            <line x1="10" y1="26" x2="22" y2="26" strokeWidth="1.5" />
+        {/* 3. Pixel Chemistry Flask - Mid-Hero Left */}
+        <motion.div 
+          animate={{ y: [0, -10, 0], rotate: [-8, 8, -8] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+          className="absolute top-[34%] left-[10%] opacity-45 text-white/95"
+        >
+          <svg viewBox="0 0 16 16" className="w-14 h-14" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="6" y="2" width="4" height="1" />
+            <rect x="7" y="3" width="2" height="4" />
+            <rect x="6" y="7" width="4" height="2" />
+            <rect x="5" y="9" width="6" height="2" />
+            <rect x="4" y="11" width="8" height="2" />
+            <rect x="3" y="13" width="10" height="2" />
+            <rect x="7" y="10" width="1" height="1" fill="#03040a" />
+            <rect x="9" y="12" width="1" height="1" fill="#03040a" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 4. Optical Microscope - Moved Down to Mid-Hero Right */}
-        <div className="absolute top-[36%] right-[12%] opacity-40">
-          <svg viewBox="0 0 32 32" className="w-14 h-14 text-white/90" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="13" y="4" width="6" height="8" rx="1" fill="currentColor" fillOpacity="0.2" />
-            <path d="M16 12v6" />
-            <path d="M10 18h12" />
-            <path d="M20 18c0 5-4 8-9 8" />
-            <rect x="7" y="26" width="16" height="2.5" rx="1" fill="currentColor" fillOpacity="0.4" />
-            <circle cx="16" cy="8" r="1.5" fill="currentColor" />
+        {/* 4. Pixel DNA Helix Ladder - Mid-Hero Right */}
+        <motion.div 
+          animate={{ y: [0, -15, 0], rotate: [8, -8, 8] }}
+          transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+          className="absolute top-[34%] right-[10%] opacity-45 text-white/95"
+        >
+          <svg viewBox="0 0 16 16" className="w-14 h-14" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="3" y="2" width="2" height="2" />
+            <rect x="5" y="4" width="2" height="2" />
+            <rect x="7" y="6" width="2" height="4" />
+            <rect x="5" y="10" width="2" height="2" />
+            <rect x="3" y="12" width="2" height="2" />
+            <rect x="11" y="2" width="2" height="2" />
+            <rect x="9" y="4" width="2" height="2" />
+            <rect x="7" y="6" width="2" height="4" />
+            <rect x="9" y="10" width="2" height="2" />
+            <rect x="11" y="12" width="2" height="2" />
+            <rect x="5" y="3" width="6" height="1" />
+            <rect x="7" y="5" width="2" height="1" />
+            <rect x="7" y="10" width="2" height="1" />
+            <rect x="5" y="12" width="6" height="1" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 5. Atom Orbit System - Middle Outer Left */}
-        <div className="absolute top-[52%] left-[4%] opacity-35">
-          <svg viewBox="0 0 24 24" className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" strokeWidth="1.6">
-            <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)" />
-            <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)" />
-            <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(90 12 12)" />
-            <circle cx="12" cy="12" r="2" fill="currentColor" />
+        {/* 5. Pixel Infinity Loop - Middle Outer Left */}
+        <motion.div 
+          animate={{ y: [0, -11, 0], rotate: [-5, 5, -5] }}
+          transition={{ duration: 7.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+          className="absolute top-[52%] left-[4%] opacity-35 text-white/80"
+        >
+          <svg viewBox="0 0 16 16" className="w-12 h-12" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="2" y="6" width="4" height="4" />
+            <rect x="10" y="6" width="4" height="4" />
+            <rect x="3" y="7" width="2" height="2" fill="#03040a" />
+            <rect x="11" y="7" width="2" height="2" fill="#03040a" />
+            <rect x="6" y="7" width="4" height="2" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 6. Graduation Mortarboard & Ribbon - Middle Outer Right */}
-        <div className="absolute top-[52%] right-[4%] opacity-35">
-          <svg viewBox="0 0 24 24" className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <path d="M22 10L12 5L2 10l10 5l10-5z" fill="currentColor" fillOpacity="0.2" />
-            <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
-            <path d="M20 10v7" />
+        {/* 6. Pixel Diamond Gem - Middle Outer Right */}
+        <motion.div 
+          animate={{ y: [0, -13, 0], rotate: [5, -5, 5] }}
+          transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+          className="absolute top-[52%] right-[4%] opacity-35 text-white/80"
+        >
+          <svg viewBox="0 0 16 16" className="w-12 h-12" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="5" y="3" width="6" height="2" />
+            <rect x="3" y="5" width="10" height="2" />
+            <rect x="4" y="7" width="8" height="2" />
+            <rect x="5" y="9" width="6" height="2" />
+            <rect x="6" y="11" width="4" height="2" />
+            <rect x="7" y="13" width="2" height="1" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 7. Astronomical Telescope - Lower Left */}
-        <div className="absolute top-[68%] left-[10%] opacity-30">
-          <svg viewBox="0 0 24 24" className="w-10 h-10 text-white/70" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <path d="M4 11l15-7 2 4-15 7z" fill="currentColor" fillOpacity="0.2" />
-            <line x1="12" y1="12" x2="8" y2="21" />
-            <line x1="12" y1="12" x2="16" y2="21" />
+        {/* 7. Pixel Key - Lower Left */}
+        <motion.div 
+          animate={{ y: [0, -10, 0], rotate: [-7, 7, -7] }}
+          transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 2.0 }}
+          className="absolute top-[68%] left-[8%] opacity-30 text-white/70"
+        >
+          <svg viewBox="0 0 16 16" className="w-11 h-11" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="6" y="2" width="4" height="4" />
+            <rect x="7" y="3" width="2" height="2" fill="#03040a" />
+            <rect x="7" y="6" width="2" height="8" />
+            <rect x="9" y="8" width="2" height="1" />
+            <rect x="9" y="11" width="2" height="1" />
           </svg>
-        </div>
+        </motion.div>
 
-        {/* 8. Idea Lightbulb - Lower Right */}
-        <div className="absolute top-[68%] right-[10%] opacity-30">
-          <svg viewBox="0 0 24 24" className="w-10 h-10 text-white/70" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <path d="M9 18h6" />
-            <path d="M10 22h4" />
-            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.59 2.96 1.5 4 .76.76 1.23 1.52 1.41 2.5h6.18z" fill="currentColor" fillOpacity="0.2" />
+        {/* 8. Pixel Globe - Lower Right */}
+        <motion.div 
+          animate={{ y: [0, -12, 0], rotate: [7, -7, 7] }}
+          transition={{ duration: 8.0, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
+          className="absolute top-[68%] right-[8%] opacity-30 text-white/70"
+        >
+          <svg viewBox="0 0 16 16" className="w-11 h-11" shapeRendering="crispEdges" fill="currentColor">
+            <rect x="5" y="2" width="6" height="12" />
+            <rect x="3" y="4" width="10" height="8" />
+            <rect x="2" y="5" width="12" height="6" />
+            <rect x="2" y="8" width="12" height="1" fill="#03040a" />
+            <rect x="8" y="2" width="1" height="12" fill="#03040a" />
           </svg>
-        </div>
+        </motion.div>
 
       </div>
     </div>

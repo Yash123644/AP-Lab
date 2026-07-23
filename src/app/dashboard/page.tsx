@@ -73,6 +73,7 @@ const folders = [
 function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   
   const allClassList = folders.flatMap(f => f.classes.map(c => ({ 
@@ -123,8 +124,14 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
         `}</style>
         
         {/* Smooth Cycling Ambient Glow */}
-        <div className="absolute -inset-[12px] rounded-full blur-[24px] opacity-70 pointer-events-none z-0 gradient-cycle-effect" />
-        <div className="absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3)]" />
+        <div className={cn(
+          "absolute -inset-[12px] rounded-full blur-[24px] pointer-events-none z-0 gradient-cycle-effect transition-opacity duration-300",
+          isFocused ? "opacity-75" : "opacity-35"
+        )} />
+        <div className={cn(
+          "absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3)] transition-opacity duration-300",
+          isFocused ? "opacity-75" : "opacity-35"
+        )} />
 
         {/* Search Bar Container */}
         <div className="relative bg-[#050508]/95 rounded-full flex items-center p-1 backdrop-blur-3xl border border-white/10 z-20 shadow-2xl">
@@ -139,8 +146,12 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
                 setQuery(e.target.value);
                 setIsOpen(true);
               }}
-              onFocus={() => setIsOpen(true)}
+              onFocus={() => {
+                setIsFocused(true);
+                setIsOpen(true);
+              }}
               onBlur={() => {
+                setIsFocused(false);
                 setTimeout(() => setIsOpen(false), 220);
               }}
               className="w-full bg-transparent py-4.5 text-white placeholder-white/30 focus:outline-none text-xl font-manrope font-semibold"
