@@ -80,16 +80,26 @@ export function PracticeQuizSection() {
   };
 
   return (
-    <section className="relative w-full py-[120px] md:py-[140px] px-6 md:px-12 bg-deep-navy overflow-hidden flex flex-col items-center z-20">
+    <section className="relative w-full py-[120px] md:py-[150px] px-6 md:px-12 bg-[#080a1d] border-y border-white/10 overflow-hidden flex flex-col items-center z-20">
       
-      {/* Seamless blend overlays */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-deep-navy to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-deep-navy to-transparent pointer-events-none z-10" />
+      {/* Background Dot Matrix Pattern */}
+      <div 
+        className="absolute inset-0 opacity-40 pointer-events-none z-0" 
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
+          backgroundSize: "28px 28px"
+        }}
+      />
       
-      {/* Background soft glows */}
+      {/* Ambient Gradient Overlays for Section Distinction */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-950/40 via-purple-950/20 to-indigo-950/40 pointer-events-none z-0" />
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#030712] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#030712] to-transparent pointer-events-none z-10" />
+      
+      {/* Illuminated Radial Spotlights */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/2 left-3/4 -translate-y-1/2 w-[600px] h-[600px] bg-primary-purple/5 blur-[150px] rounded-full" />
-        <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-medical-teal/5 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[650px] h-[650px] bg-blue-500/15 blur-[160px] rounded-full animate-pulse" />
+        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-[550px] h-[550px] bg-purple-500/15 blur-[140px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -150,11 +160,11 @@ export function PracticeQuizSection() {
           style={{ perspective: "1000px" }}
         >
           {/* Volumetric ambient glow behind card */}
-          <div className="absolute -inset-4 bg-primary-purple/5 blur-[50px] rounded-[36px] pointer-events-none -z-10" />
+          <div className="absolute -inset-6 bg-blue-500/20 blur-[60px] rounded-[40px] pointer-events-none -z-10" />
 
           {/* Outermost Card with 3D Tilt */}
           <motion.div 
-            className="w-full bg-[#05050a]/90 border border-white/5 rounded-[28px] p-6 shadow-[0_25px_60px_rgba(0,0,0,0.6)] backdrop-blur-3xl flex flex-col justify-between min-h-[440px]"
+            className="w-full bg-[#080b1e]/95 border border-white/15 rounded-[28px] p-6 sm:p-7 shadow-[0_30px_90px_rgba(0,0,0,0.8)] backdrop-blur-3xl flex flex-col justify-between min-h-[440px]"
             style={{
               transform: "rotateY(-6deg) rotateX(3deg) rotateZ(-0.5deg)",
               transformStyle: "preserve-3d"
