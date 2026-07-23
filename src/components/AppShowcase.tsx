@@ -3,24 +3,21 @@
 import { LevelBadge } from "@/components/LevelBadge";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Flame, Play, Calendar, Calculator, Minus, X, GripHorizontal } from "lucide-react";
 
-const showcaseImages = [
-  "/images/dashboard-live.webp",
-  "https://media.discordapp.net/attachments/1125466904966991872/1501074138180096060/Screenshot_2026-05-05_at_12.12.26_AM.png?ex=69fabfbb&is=69f96e3b&hm=44db7232dc77f74dd9a03d40feb08db2c32d75ab068d133a0f0db1ab47e7a10a&=&format=webp&quality=lossless&width=3172&height=1566",
-  "https://media.discordapp.net/attachments/1125466904966991872/1501074138809499678/Screenshot_2026-05-05_at_12.11.55_AM.png?ex=69fabfbb&is=69f96e3b&hm=a2bc24dcb606560d4af2b46ff50b90e6000dc24cdca460310792fc90f6dfff02&=&format=webp&quality=lossless&width=3096&height=1566"
-];
-
-const getColorForPercentage = (pct: number, opacity: number = 1) => {
-  const cleanPct = Math.max(0, Math.min(100, pct));
-  // Non-linear power scale to make orange colors more red
-  const hue = Math.pow(cleanPct / 100, 1.8) * 156;
-  return `hsla(${hue}, 72%, 52%, ${opacity})`;
-};
-
 export function AppShowcase() {
-  const [hoveredCard, setHoveredCard] = React.useState<number | null>(null);
+  const [isLeaderboardHovered, setIsLeaderboardHovered] = useState(false);
+
+  const leaderboardUsers = isLeaderboardHovered ? [
+    { id: "2", rank: 1, name: "Sofia Rodriguez", lvl: 29, xp: "12.8k XP" },
+    { id: "1", rank: 2, name: "Tyler Davis", lvl: 26, xp: "10.4k XP" },
+    { id: "3", rank: 3, name: "Alex Mercer", lvl: 25, xp: "8.0k XP" }
+  ] : [
+    { id: "1", rank: 1, name: "Tyler Davis", lvl: 29, xp: "10.4k XP" },
+    { id: "2", rank: 2, name: "Sofia Rodriguez", lvl: 26, xp: "8.6k XP" },
+    { id: "3", rank: 3, name: "Alex Mercer", lvl: 25, xp: "8.0k XP" }
+  ];
 
   return (
     <section className="relative w-full py-[160px] px-6 md:px-[120px] bg-transparent overflow-hidden">
@@ -57,13 +54,15 @@ export function AppShowcase() {
         {/* Apple-Style 2x2 Bento Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto mt-16">
           
-          {/* Box 1 (Top Left) - GAMIFICATION */}
+          {/* Box 1 (Top Left) - GAMIFICATION (Smooth Hover Swap Animation) */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            onMouseEnter={() => setIsLeaderboardHovered(true)}
+            onMouseLeave={() => setIsLeaderboardHovered(false)}
+            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl cursor-pointer"
           >
             {/* Typography & Call to Action */}
             <div className="text-center relative z-10 flex flex-col items-center">
@@ -74,15 +73,16 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Center Graphic: Mini Simplistic White Leaderboard */}
+            {/* Center Graphic: Mini Simplistic Leaderboard with Layout Animation */}
             <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2">
               <div className="flex flex-col space-y-2 bg-[#ffffff] border border-neutral-200 rounded-2xl p-4 w-full max-w-[300px] text-left shadow-lg group-hover:scale-[1.04] transition-transform duration-500 ease-out">
-                {[
-                  { rank: 1, name: "Tyler Davis", lvl: 29, xp: "10.4k XP" },
-                  { rank: 2, name: "Sofia Rodriguez", lvl: 26, xp: "8.6k XP" },
-                  { rank: 3, name: "Alex Mercer", lvl: 25, xp: "8.0k XP" }
-                ].map((user) => (
-                  <div key={user.rank} className="flex items-center justify-between bg-neutral-50 border border-neutral-100 rounded-xl px-3 py-2">
+                {leaderboardUsers.map((user) => (
+                  <motion.div 
+                    key={user.id} 
+                    layout
+                    transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                    className="flex items-center justify-between bg-neutral-50 border border-neutral-100 rounded-xl px-3 py-2"
+                  >
                     <div className="flex items-center space-x-2">
                       <span className="text-[10px] font-mono font-bold text-neutral-400 w-3">#{user.rank}</span>
                       <LevelBadge level={user.lvl} showLabel={false} size="sm" className="scale-75 origin-center shrink-0 -mx-1" />
@@ -92,7 +92,7 @@ export function AppShowcase() {
                       </div>
                     </div>
                     <span className="text-[9px] font-mono font-bold text-neutral-600 bg-neutral-200/50 px-2 py-0.5 rounded">{user.xp}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -114,13 +114,13 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Interactive Course Guide Display Image */}
-            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-3 px-1">
-              <div className="w-full max-w-[390px] h-[225px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 group-hover:scale-[1.03] transition-transform duration-500 bg-[#07080f]">
+            {/* Interactive Course Guide Display Image (Un-truncated with Drop Shadow) */}
+            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2 px-1">
+              <div className="w-full max-w-[400px] h-[235px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-neutral-800 group-hover:scale-[1.03] transition-transform duration-500 bg-[#07080f] p-1 flex items-center justify-center">
                 <img 
                   src="/images/interactive-lesson-showcase.png" 
                   alt="Interactive Course Guides" 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain rounded-xl"
                 />
               </div>
             </div>
@@ -143,8 +143,8 @@ export function AppShowcase() {
             </div>
 
             {/* Authentic Desmos Calculator Floating Window Graphic (Shifted UP) */}
-            <div className="w-full max-w-[420px] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.03] -mt-1 shrink-0">
-              <div className="bg-[#0c0d16] border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden text-left font-sans">
+            <div className="w-full max-w-[420px] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.03] -mt-5 shrink-0">
+              <div className="bg-[#0c0d16] border border-neutral-800 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden text-left font-sans">
                 {/* Authentic Custom Window Menu Bar matching website calculator modal */}
                 <div className="flex items-center justify-between px-3.5 py-2 bg-[#131524] border-b border-white/10 select-none">
                   <div className="flex items-center space-x-2">
@@ -195,9 +195,9 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Mock Exam Display Image */}
-            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2 px-1">
-              <div className="w-full max-w-[390px] h-[225px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:scale-[1.03] transition-transform duration-500 bg-[#07080f]">
+            {/* Larger Mock Exam Display Image */}
+            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-1 px-1">
+              <div className="w-full max-w-[420px] h-[240px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-white/10 group-hover:scale-[1.04] transition-transform duration-500 bg-[#07080f]">
                 <img 
                   src="/images/mock-exam-showcase.png" 
                   alt="Comprehensive Mock Diagnostics" 
@@ -207,6 +207,7 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
+          {/* Box 5 (Bottom Left) - PROGRESS TRACKING */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -223,11 +224,11 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Activity Calendar Display */}
+            {/* Activity Calendar Display (White Text & Symbol) */}
             <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex flex-col justify-between hover:border-white/10 transition-colors w-full mt-2.5 z-10 flex-1 min-h-[220px] shrink-0">
-              <div className="flex items-center space-x-2 mb-3 text-emerald-400 shrink-0">
-                <Calendar className="w-5 h-5" />
-                <span className="text-[13px] font-mono font-bold uppercase tracking-wider">Activity Calendar</span>
+              <div className="flex items-center space-x-2 mb-3 text-white shrink-0">
+                <Calendar className="w-5 h-5 text-white" />
+                <span className="text-[13px] font-mono font-bold uppercase tracking-wider text-white">Activity Calendar</span>
               </div>
               
               <div className="flex-1 flex flex-col justify-around w-full">
@@ -347,11 +348,6 @@ export function AppShowcase() {
                 <div className="flex flex-col">
                   <span className="text-white font-manrope font-extrabold text-[12px] leading-tight drop-shadow-md">Introduction to Cells</span>
                   <span className="text-[9px] text-white/70 mt-0.5 drop-shadow-sm">with the Amoeba Sisters</span>
-                </div>
-                
-                {/* YouTube Playback Progress Bar */}
-                <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden relative">
-                  <div className="bg-red-600 h-full w-[65%] rounded-full" />
                 </div>
               </div>
             </div>
