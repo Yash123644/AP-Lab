@@ -24,11 +24,11 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "May 2, 2026",
     readTime: "4 min read",
     coverImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop&q=80",
-    tags: ["#EXAMS", "#STRATEGY", "#STUDYING", "#ADVICE"],
+    tags: ["#EXAMS", "#STRATEGY", "#ADVICE"],
     author: {
       name: "Yash Patil",
       role: "Founder, AP Lab",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80"
+      avatar: "/images/yash-patil.png"
     },
     content: `
       <p className="text-lg text-white/80 leading-relaxed mb-6">After months of studying AP Biology, Calculus, Chemistry, and History, test day finally arrives. You've reviewed your flashcards, completed practice modules, and mastered key units. Yet every single year, exceptionally bright students walk out of the exam hall feeling defeated. Why?</p>

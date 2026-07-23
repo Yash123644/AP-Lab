@@ -225,21 +225,21 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
 
   return (
     <div 
-      className="relative w-full mt-10 select-none group transition-transform duration-300 hover:-translate-y-1"
+      className="relative w-full mt-12 select-none group transition-all duration-300 hover:-translate-y-1.5"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Top Left Folder Tab Flap */}
+      {/* 3D Physical Folder Backing Plate Flap */}
       <div 
-        className="absolute -top-[42px] left-0 h-11 px-6 sm:px-7 min-w-[210px] rounded-t-[16px] rounded-tr-[22px] rounded-tl-[16px] border-t border-x transition-all duration-300 flex items-center space-x-3 z-20 shadow-md"
+        className="absolute -top-10 left-0 h-12 px-7 rounded-t-[18px] rounded-tr-[28px] border-t border-x transition-all duration-300 flex items-center space-x-3 z-0 shadow-lg"
         style={{ 
-          backgroundColor: isHovered ? "#141724" : "#0d0f18",
-          borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
-          boxShadow: isHovered ? `0 -4px 15px ${accent}20` : "none"
+          backgroundColor: isHovered ? "#141726" : "#0c0e18",
+          borderColor: isHovered ? `${accent}60` : "rgba(255, 255, 255, 0.18)",
+          boxShadow: isHovered ? `0 -6px 20px ${accent}25` : "0 -2px 10px rgba(0,0,0,0.5)"
         }}
       >
         <div 
-          className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/10"
+          className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/10 shadow-inner"
           style={{ color: accent }}
         >
           <Icon className="w-3.5 h-3.5" />
@@ -249,17 +249,33 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
         </span>
       </div>
 
-      {/* Main Folder Body Base holding Subject Cards */}
+      {/* Top Right Folder Contour Shoulder Notch */}
       <div 
-        className="relative w-full rounded-b-[24px] rounded-r-[24px] rounded-tl-none border bg-[#0a0b12]/95 p-4 sm:p-5 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
-        style={{
+        className="absolute -top-3 right-0 left-[210px] h-4 rounded-tr-[20px] border-t border-r transition-all duration-300 pointer-events-none"
+        style={{ 
+          backgroundColor: isHovered ? "#121422" : "#090a12",
           borderColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.12)"
         }}
+      />
+
+      {/* Main Folder Front Body & Pocket Base */}
+      <div 
+        className="relative w-full rounded-b-[28px] rounded-r-[28px] rounded-tl-[4px] border bg-[#090b14]/95 backdrop-blur-2xl p-5 sm:p-6 flex flex-col justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden z-10 transition-all duration-300"
+        style={{
+          borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
+          boxShadow: isHovered ? `0 25px 60px ${accent}20` : "0 20px 50px rgba(0,0,0,0.6)"
+        }}
       >
+        {/* Top Folder Rim Highlight Line */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-[2px] opacity-80 transition-opacity duration-300"
+          style={{ backgroundColor: accent }}
+        />
+
         {/* Inside Folder Glow */}
         <div 
-          className="absolute inset-0 opacity-10 blur-2xl pointer-events-none -z-10 transition-opacity duration-300"
-          style={{ backgroundColor: accent, opacity: isHovered ? 0.18 : 0.08 }}
+          className="absolute inset-0 opacity-10 blur-3xl pointer-events-none -z-10 transition-opacity duration-300"
+          style={{ backgroundColor: accent, opacity: isHovered ? 0.22 : 0.08 }}
         />
 
         {/* Clickable Course Subject Cards */}
@@ -651,8 +667,8 @@ export default function Dashboard() {
       <main className="flex-1 w-full flex flex-col items-center z-10">
         
         {/* UPPER REGION: Header & Search Bar (Dot Matrix Background) */}
-        <div className="relative w-full flex flex-col items-center pt-40 pb-6 px-6 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="relative w-full flex flex-col items-center pt-40 pb-6 px-6 z-40">
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <PixelCourseBackground />
           </div>
 
@@ -737,7 +753,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mb-8 sm:mb-12"
+              className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mt-10 sm:mt-16 mb-8 sm:mb-12"
             >
               {folders.map((folder) => (
                 <FolderCard 

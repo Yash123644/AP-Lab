@@ -1590,16 +1590,20 @@ export default function APDynamicCoursePage() {
   // Dynamic Browser Tab Title tracking course, unit number, and topic
   useEffect(() => {
     if (course) {
-      const cleanCourseTitle = course.title.replace(/^AP\s*/i, "");
+      const rawTitle = (course.title || course.name || "").replace(/^AP[®\s]*/i, "").trim();
+      const courseTitle = `AP® ${rawTitle}`;
       if (activeTopic) {
         const unit = course.units.find(u => u.topics.some(t => t.id === activeTopic.id));
         if (unit) {
-          document.title = `AP® ${cleanCourseTitle} - Unit ${unit.id}.${activeTopic.id}: ${activeTopic.title} | AP Lab`;
+          const topicNum = activeTopic.id.startsWith(`${unit.id}.`) 
+            ? activeTopic.id 
+            : `${unit.id}.${activeTopic.id}`;
+          document.title = `${courseTitle} - Unit ${topicNum}: ${activeTopic.title} | AP Lab`;
         } else {
-          document.title = `AP® ${cleanCourseTitle} | AP Lab`;
+          document.title = `${courseTitle} | AP Lab`;
         }
       } else {
-        document.title = `AP® ${cleanCourseTitle} | AP Lab`;
+        document.title = `${courseTitle} | AP Lab`;
       }
     }
   }, [course, activeTopic]);
