@@ -114,105 +114,14 @@ export function AppShowcase() {
               </p>
             </div>
 
-            {/* Mini Dashboard Visualization */}
-            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-6 px-2">
-              <div className="bg-[#05060b] border border-white/10 rounded-2xl w-full max-w-[390px] h-[225px] shadow-2xl flex flex-col overflow-hidden text-left font-sans relative group/dash hover:border-white/15 transition-all duration-300 p-4">
-                {/* Simulated Glass Highlight Reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] pointer-events-none" />
-                
-                {/* Article Header */}
-                <div className="flex justify-between items-center mb-2 pb-2 border-b border-white/10 shrink-0 relative z-10">
-                  <div className="flex items-center space-x-1.5">
-                    <span className="text-[6px] font-mono tracking-widest text-[#34d399] font-bold uppercase">NATURE COMMUN.</span>
-                    <span className="text-[5px] text-white/40">• 5 min read</span>
-                  </div>
-                  <span className="text-[5px] font-mono text-white/30">ARTICLE REF: VOL. 182</span>
-                </div>
-                
-                {/* Main Article Content */}
-                <div className="flex-1 flex gap-3 overflow-hidden relative z-10">
-                  {/* Text Column */}
-                  <div className="flex-1 flex flex-col justify-between overflow-hidden">
-                    <div className="space-y-1.5">
-                      <h4 className="text-[10px] font-manrope font-bold text-white leading-tight">
-                        Thermal Dynamics & Surface Tension
-                      </h4>
-                      <p className="text-[7px] text-white/50 leading-relaxed font-serif">
-                        Hydrogen bonds in liquid water constantly form and break. At lower temperatures, the thermal energy is insufficient to break these bonds, resulting in a highly structured molecular network with elevated surface tension. 
-                      </p>
-                      <p className="text-[7px] text-white/50 leading-relaxed font-serif hidden sm:block">
-                        As thermal energy increases, kinetic motion disrupts these networks, causing a steady decrease in cohesion, as illustrated in the adjacent dataset.
-                      </p>
-                    </div>
-                    {/* Caption */}
-                    <div className="text-[5.5px] text-white/35 italic mt-1 leading-tight border-l-2 border-[#34d399]/40 pl-1.5 shrink-0">
-                      Fig 4. Surface tension (mN/m) plotted against thermodynamic temperature.
-                    </div>
-                  </div>
-
-                  {/* Graph Column */}
-                  <div className="w-[45%] border border-white/5 bg-[#030305]/60 rounded-xl p-2 flex flex-col justify-between select-none shrink-0 relative overflow-hidden group-hover:scale-[1.04] transition-transform duration-500 ease-out">
-                    {/* Tiny grid background */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:10px_10px]" />
-                    
-                    {/* Y-axis values */}
-                    <div className="relative z-10 flex-1 flex flex-row items-stretch">
-                      {/* Y-axis Labels */}
-                      <div className="flex flex-col justify-between text-[5px] font-mono text-white/40 pr-1 select-none w-4 shrink-0 text-right">
-                        <span>76</span>
-                        <span>72</span>
-                        <span>68</span>
-                        <span>64</span>
-                      </div>
-                      {/* SVG Line Graph */}
-                      <div className="flex-1 relative min-h-[90px]">
-                        <svg className="w-full h-full overflow-visible" viewBox="0 0 100 80">
-                          {/* Y-Axis Line */}
-                          <line x1="0" y1="0" x2="0" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-                          {/* X-Axis Line */}
-                          <line x1="0" y1="80" x2="100" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-                          
-                          {/* Grid lines */}
-                          <line x1="0" y1="26.6" x2="100" y2="26.6" stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" strokeDasharray="1,1" />
-                          <line x1="0" y1="53.3" x2="100" y2="53.3" stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" strokeDasharray="1,1" />
-                          
-                          {/* Gradient Fill under the Curve */}
-                          <defs>
-                            <linearGradient id="graphGrad" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stopColor="#34d399" stopOpacity="0.25" />
-                              <stop offset="100%" stopColor="#34d399" stopOpacity="0.0" />
-                            </linearGradient>
-                          </defs>
-                          <path 
-                            d="M 0 10 Q 30 18, 60 42 T 100 70 L 100 80 L 0 80 Z" 
-                            fill="url(#graphGrad)" 
-                          />
-                          
-                          {/* Curve Line */}
-                          <path 
-                            d="M 0 10 Q 30 18, 60 42 T 100 70" 
-                            fill="none" 
-                            stroke="#34d399" 
-                            strokeWidth="1.5" 
-                          />
-
-                          {/* Data points */}
-                          <circle cx="0" cy="10" r="1.5" fill="#34d399" />
-                          <circle cx="35" cy="20.5" r="1.5" fill="#34d399" />
-                          <circle cx="65" cy="47.5" r="1.5" fill="#34d399" />
-                          <circle cx="100" cy="70" r="1.5" fill="#34d399" />
-                        </svg>
-                      </div>
-                    </div>
-                    
-                    {/* X-axis labels */}
-                    <div className="flex justify-between text-[5px] font-mono text-white/40 pl-5 pt-1 border-t border-white/5 relative z-10 shrink-0">
-                      <span>0°C</span>
-                      <span>50°C</span>
-                      <span>100°C</span>
-                    </div>
-                  </div>
-                </div>
+            {/* Interactive Course Guide Display Image */}
+            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-3 px-1">
+              <div className="w-full max-w-[390px] h-[225px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 group-hover:scale-[1.03] transition-transform duration-500 bg-[#07080f]">
+                <img 
+                  src="/images/interactive-lesson-showcase.png" 
+                  alt="Interactive Course Guides" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
           </motion.div>
@@ -223,21 +132,21 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[480px] flex flex-col justify-between p-6 sm:p-8 relative overflow-hidden group shadow-2xl"
+            className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[450px] flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group shadow-2xl"
           >
             <div className="text-center relative z-10 flex flex-col items-center shrink-0">
               <span className="text-[10px] font-mono tracking-widest text-emerald-600 font-extrabold uppercase mb-1">EMBEDDED CALCULATOR</span>
-              <h3 className="text-xl md:text-2xl font-inter font-bold text-black tracking-tight mb-1.5">Built-in Desmos® Graphing Calculator.</h3>
+              <h3 className="text-xl md:text-2xl font-inter font-bold text-black tracking-tight mb-1">Built-in Desmos® Graphing Calculator.</h3>
               <p className="text-neutral-500 font-inter text-xs max-w-sm leading-relaxed">
                 Seamlessly plot functions, solve equations, and analyze datasets with an integrated, floating Desmos graphing window during practice and mock exams.
               </p>
             </div>
 
-            {/* Authentic Desmos Calculator Floating Window Graphic */}
-            <div className="w-full max-w-[420px] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.03] mt-2 shrink-0">
+            {/* Authentic Desmos Calculator Floating Window Graphic (Shifted UP) */}
+            <div className="w-full max-w-[420px] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.03] -mt-1 shrink-0">
               <div className="bg-[#0c0d16] border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden text-left font-sans">
                 {/* Authentic Custom Window Menu Bar matching website calculator modal */}
-                <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#131524] border-b border-white/10 select-none">
+                <div className="flex items-center justify-between px-3.5 py-2 bg-[#131524] border-b border-white/10 select-none">
                   <div className="flex items-center space-x-2">
                     <GripHorizontal className="w-3.5 h-3.5 text-white/40" />
                     <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
@@ -259,7 +168,7 @@ export function AppShowcase() {
                 </div>
 
                 {/* EXACT Desmos Calculator Screenshot */}
-                <div className="relative w-full h-[190px] overflow-hidden bg-[#1a1a1a]">
+                <div className="relative w-full h-[195px] overflow-hidden bg-[#1a1a1a]">
                   <img 
                     src="/images/desmos-showcase.png" 
                     alt="Desmos Graphing Calculator" 
@@ -276,36 +185,24 @@ export function AppShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+            className="bg-[#000000] border border-white/10 rounded-[28px] h-[450px] flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group shadow-2xl"
           >
-            <div className="text-center relative z-10 flex flex-col items-center">
+            <div className="text-center relative z-10 flex flex-col items-center shrink-0">
               <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">EXAM SIMULATOR</span>
-              <h3 className="text-2xl md:text-3xl font-inter font-bold text-white tracking-tight mb-1">Comprehensive Mock Diagnostics.</h3>
-              <p className="text-white/50 font-inter text-xs max-w-sm mt-2 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-inter font-bold text-white tracking-tight mb-1">Comprehensive Mock Diagnostics.</h3>
+              <p className="text-white/50 font-inter text-xs max-w-sm leading-relaxed">
                 Full-length, timed diagnostic mock exams built to match the exact scoring weight of the actual test.
               </p>
             </div>
 
-            {/* Sleek typography layout showing multiple-choice chemistry or biology problem */}
-            <div className="w-[90%] mx-auto relative z-10 transition-all duration-300 group-hover:scale-[1.02] -translate-y-2">
-              <div className="bg-[#0c0d12]/90 border border-white/10 rounded-2xl p-4 shadow-2xl text-[11px] font-sans space-y-3 text-left">
-                <div className="flex items-center justify-between text-[9px] font-mono text-white/40 uppercase">
-                  <span>AP Chemistry Diagnostic</span>
-                  <span>Time: 1.5m</span>
-                </div>
-                <p className="text-white font-medium leading-relaxed">
-                  Which of the following describes why water has a higher boiling point than hydrogen sulfide (H₂S)?
-                </p>
-                <div className="space-y-1.5">
-                  <div className="flex items-center space-x-2.5 bg-white/5 p-2 rounded-lg border border-white/5 text-white/75">
-                    <span className="w-4 h-4 flex items-center justify-center rounded-full bg-white/10 text-white text-[9px] font-semibold">A</span>
-                    <span>H₂O has covalent bonds, H₂S does not.</span>
-                  </div>
-                  <div className="flex items-center space-x-2.5 bg-white/15 p-2 rounded-lg border border-white/25 text-white font-semibold">
-                    <span className="w-4 h-4 flex items-center justify-center rounded-full bg-white text-black text-[9px] font-bold">B</span>
-                    <span>H₂O forms strong intermolecular hydrogen bonds.</span>
-                  </div>
-                </div>
+            {/* Mock Exam Display Image */}
+            <div className="relative w-full flex-1 flex items-center justify-center z-10 mt-2 px-1">
+              <div className="w-full max-w-[390px] h-[225px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:scale-[1.03] transition-transform duration-500 bg-[#07080f]">
+                <img 
+                  src="/images/mock-exam-showcase.png" 
+                  alt="Comprehensive Mock Diagnostics" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
           </motion.div>
