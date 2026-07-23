@@ -31,8 +31,8 @@ const apClasses = [
   { name: "AP US History", icon: History, hex: "#ef4444", slug: "ap-us-history" },
   { name: "AP Psychology", icon: Brain, hex: "#a855f7", slug: "ap-psychology" },
   { name: "AP Lang", icon: BookOpen, hex: "#ec4899", slug: "ap-eng-lang" },
-  { name: "AP Macroeconomics", icon: TrendingUp, hex: "#10b981", slug: "ap-macroeconomics" },
-  { name: "AP Environmental", icon: Leaf, hex: "#10b981", slug: "ap-environmental-science" },
+  { name: "AP Macroeconomics", icon: TrendingUp, hex: "#10b981", slug: "ap-macroeconomics", upcoming: true },
+  { name: "AP Environmental", icon: Leaf, hex: "#10b981", slug: "ap-environmental-science", upcoming: true },
 ];
 
 export function APClassesPills() {
@@ -42,11 +42,7 @@ export function APClassesPills() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handlePillClick = (slug: string) => {
-    if (currentUser) {
-      router.push(`/dashboard/${slug}`);
-    } else {
-      openAuthModal("signin");
-    }
+    router.push(`/dashboard/${slug}`);
   };
 
   return (

@@ -639,8 +639,8 @@ export default function Dashboard() {
       {/* Main Content Container */}
       <main className="flex-1 w-full flex flex-col items-center z-10">
         
-        {/* UPPER REGION: Header, Search Bar & Tab Bar with Pixel Dot Matrix Background */}
-        <div className="relative w-full flex flex-col items-center pt-40 pb-8 px-6 overflow-hidden">
+        {/* UPPER REGION: Header & Search Bar (Dot Matrix Background) */}
+        <div className="relative w-full flex flex-col items-center pt-40 pb-6 px-6 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none z-0">
             <PixelCourseBackground />
           </div>
@@ -668,12 +668,18 @@ export default function Dashboard() {
           </div>
 
           {/* Search Bar */}
-          <div className="w-full flex justify-center relative z-10">
+          <div className="w-full flex justify-center relative z-10 mb-4">
             <SearchBar onSelect={handleSearchSelect} />
           </div>
+        </div>
 
-          {/* Segmented Tab Selector with Solid White Sliding Oval */}
-          <div className="flex items-center justify-center p-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-2xl mt-6 shadow-2xl gap-1.5 sm:gap-2 select-none z-10 relative">
+        {/* SEPARATION LINE PASSING DIRECTLY THROUGH THE VERTICAL MIDDLE OF THE SELECTION MENU */}
+        <div className="relative w-full flex justify-center z-30 my-0">
+          {/* Horizontal Separation Line intersecting the middle */}
+          <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/20 -translate-y-1/2 z-0 pointer-events-none" />
+
+          {/* Segmented Tab Selector sitting directly on top of the separation line */}
+          <div className="flex items-center justify-center p-1.5 rounded-full bg-[#0a0b12] border border-white/20 shadow-2xl gap-1.5 sm:gap-2 select-none z-10 relative">
             {[
               { id: "courses", label: "Courses", icon: Folder },
               { id: "previews", label: "Previews", icon: Eye },
@@ -708,7 +714,7 @@ export default function Dashboard() {
 
         {/* LOWER REGION: Folders Grid / Previews Grid / Leaderboard with Grid Background Pattern */}
         <div 
-          className="w-full flex-1 relative z-20 flex flex-col items-center pt-8 pb-12 px-6 md:px-12 border-t border-white/10 bg-[#060712]"
+          className="w-full flex-1 relative z-20 flex flex-col items-center pt-10 pb-12 px-6 md:px-12 bg-[#060712]"
           style={{
             backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
             backgroundSize: "36px 36px"
