@@ -6,6 +6,7 @@ import { CursorLinesBackground } from "./CursorLinesBackground";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { useUI } from "@/context/UIContext";
+import { ComparisonModal } from "./ComparisonModal";
 
 const DNAIcon = () => (
   <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20">
@@ -301,6 +302,7 @@ export function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
   const [isHoveredDashboard, setIsHoveredDashboard] = useState(false);
   const [isHoveredSignIn, setIsHoveredSignIn] = useState(false);
+  const [isComparisonOpen, setIsComparisonOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -457,14 +459,18 @@ export function HeroSection() {
       >
         {/* Glassmorphic Capsule Header */}
         <div className="mb-6 sm:mb-8 block select-none">
-          <div className="liquid-glass-badge px-4 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center text-center">
+          <button 
+            type="button"
+            onClick={() => setIsComparisonOpen(true)}
+            className="liquid-glass-badge px-4 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center text-center hover:scale-105 transition-transform cursor-pointer group"
+          >
             <span className="relative z-10 font-sans font-extrabold text-[9px] sm:text-xs text-white/90 uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2">
               SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
-              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/60 stroke-[2.5]" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/60 stroke-[2.5] group-hover:translate-x-0.5 transition-transform" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
-          </div>
+          </button>
         </div>
 
         {/* Massive Headline (Fully responsive sizing for laptop & mobile screens) */}
@@ -584,6 +590,12 @@ export function HeroSection() {
           <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </motion.div>
+
+      {/* Feature Comparison Matrix Modal */}
+      <ComparisonModal 
+        isOpen={isComparisonOpen} 
+        onClose={() => setIsComparisonOpen(false)} 
+      />
     </section>
   );
 }

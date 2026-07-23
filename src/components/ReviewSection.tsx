@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const reviews = [
-  { id: 1, name: "Sophia M.", role: "AP Bio Student", text: "The Live Diagnostics showed exactly where I was failing. Got a 5!" },
-  { id: 2, name: "Daniel K.", role: "AP Chem Student", text: "Socratic AI is literally a 24/7 tutor. Unbelievable platform." },
-  { id: 3, name: "Emily R.", role: "AP Calc Student", text: "I struggled with integrals until the Neural Recall system stepped in." },
-  { id: 4, name: "Liam T.", role: "AP Physics Student", text: "The mock exams are exactly like the real thing. Highly recommend." },
-  { id: 5, name: "Ava L.", role: "AP Lang Student", text: "Beautiful UI. Studying actually feels engaging now instead of a chore." },
-  { id: 6, name: "Noah W.", role: "AP Euro Student", text: "My teacher recommended this, and my DBQ scores skyrocketed." },
-  { id: 7, name: "Mia S.", role: "AP Psych Student", text: "The spaced repetition algorithm is absolute magic. Never forgetting vocab again." },
-  { id: 8, name: "Ethan H.", role: "AP US History", text: "Best $0 I've ever spent. The fact that this is free is insane." }
+  { id: 1, name: "Sophia M.", role: "AP Bio Student", text: "The Live Diagnostics showed exactly where I was failing. Got a 5!", avatar: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80" },
+  { id: 2, name: "Daniel K.", role: "AP Chem Student", text: "Socratic AI is literally a 24/7 tutor. Unbelievable platform.", avatar: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=150&q=80" },
+  { id: 3, name: "Emily R.", role: "AP Calc Student", text: "I struggled with integrals until the Neural Recall system stepped in.", avatar: "https://images.unsplash.com/photo-1614680376593-902f749f705b?auto=format&fit=crop&w=150&q=80" },
+  { id: 4, name: "Liam T.", role: "AP Physics Student", text: "The mock exams are exactly like the real thing. Highly recommend.", avatar: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=150&q=80" },
+  { id: 5, name: "Ava L.", role: "AP Lang Student", text: "Beautiful UI. Studying actually feels engaging now instead of a chore.", avatar: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=150&q=80" },
+  { id: 6, name: "Noah W.", role: "AP Euro Student", text: "My teacher recommended this, and my DBQ scores skyrocketed.", avatar: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=150&q=80" },
+  { id: 7, name: "Mia S.", role: "AP Psych Student", text: "The spaced repetition algorithm is absolute magic. Never forgetting vocab again.", avatar: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=150&q=80" },
+  { id: 8, name: "Ethan H.", role: "AP US History", text: "Best $0 I've ever spent. The fact that this is free is insane.", avatar: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80" }
 ];
 
 interface Review {
@@ -19,6 +19,7 @@ interface Review {
   name: string;
   role: string;
   text: string;
+  avatar: string;
 }
 
 const ReviewCard = ({ review }: { review: Review }) => (
@@ -35,8 +36,8 @@ const ReviewCard = ({ review }: { review: Review }) => (
     </p>
     
     <div className="flex items-center space-x-4">
-      <div className="w-11 h-11 rounded-full bg-neutral-200/50 flex items-center justify-center font-manrope font-bold text-neutral-800 text-[17px] select-none">
-        {review.name[0]}
+      <div className="w-11 h-11 rounded-full bg-neutral-200 overflow-hidden border border-neutral-200/80 shrink-0 select-none shadow-sm">
+        <img src={review.avatar} alt={review.name} className="w-full h-full object-cover" />
       </div>
       <div className="flex flex-col">
         <span className="font-inter font-semibold text-neutral-800 text-[15px] tracking-tight">{review.name}</span>

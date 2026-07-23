@@ -887,19 +887,44 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
               {/* Profile Avatar Selection */}
               <div className="flex flex-col items-center space-y-4">
                 <div className="relative group">
-                  <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-dashed border-white/20 flex items-center justify-center bg-neutral-900 relative">
-                    {photoDataUrl ? (
-                      <img src={photoDataUrl} alt="Avatar" className="w-full h-full object-cover" />
-                    ) : (
-                      <User className="w-10 h-10 text-neutral-600" />
-                    )}
+                  <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-emerald-500/40 flex items-center justify-center bg-neutral-900 relative shadow-[0_0_25px_rgba(16,185,129,0.2)]">
+                    <img 
+                      src={photoDataUrl || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=200&q=80"} 
+                      alt="Avatar" 
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                   <label className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center cursor-pointer shadow-lg transition-all border border-black hover:scale-105">
                     <Upload className="w-4 h-4" />
                     <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
                   </label>
                 </div>
-                <span className="text-[10px] uppercase font-mono tracking-widest text-neutral-500">Avatar Image</span>
+
+                {/* Miscellaneous Avatar Presets */}
+                <div className="flex flex-col items-center space-y-2">
+                  <span className="text-[10px] uppercase font-mono tracking-widest text-neutral-400 font-bold">Select Miscellaneous Avatar</span>
+                  <div className="flex items-center space-x-2.5">
+                    {[
+                      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=200&q=80",
+                      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=200&q=80",
+                      "https://images.unsplash.com/photo-1614680376593-902f749f705b?auto=format&fit=crop&w=200&q=80",
+                      "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=200&q=80",
+                      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=200&q=80",
+                      "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=200&q=80"
+                    ].map((imgUrl, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setPhotoDataUrl(imgUrl)}
+                        className={`w-9 h-9 rounded-full overflow-hidden border-2 transition-all hover:scale-110 ${
+                          photoDataUrl === imgUrl ? "border-emerald-400 scale-110 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "border-white/10 opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <img src={imgUrl} alt={`Avatar Preset ${i + 1}`} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Display Name Input */}

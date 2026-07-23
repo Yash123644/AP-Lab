@@ -303,63 +303,68 @@ export function DashboardContextMenu({ onOpenProfile }: ContextMenuProps) {
                 </button>
               </div>
 
-              {/* Minimalist Floating Results Dropdown */}
-              {searchQuery.trim() !== "" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  className="w-full bg-[#0c0d14]/95 backdrop-blur-2xl border border-white/12 rounded-3xl overflow-hidden shadow-2xl p-2 max-h-[50vh] overflow-y-auto custom-scrollbar space-y-1"
-                >
-                  {filteredPages.length === 0 ? (
-                    <div className="py-8 text-center text-white/40 font-manrope text-sm">
-                      No matching results found.
-                    </div>
-                  ) : (
-                    filteredPages.map((page, index) => {
-                      const isSelected = index === selectedIndex;
-                      return (
-                        <button
-                          key={page.url}
-                          onClick={() => {
-                            router.push(page.url);
-                            setSearchOpen(false);
-                          }}
-                          onMouseEnter={() => setSelectedIndex(index)}
-                          className={cn(
-                            "w-full flex items-center justify-between px-5 py-3.5 rounded-2xl transition-all text-left",
-                            isSelected 
-                              ? "bg-white text-black shadow-md font-semibold" 
-                              : "text-white/70 hover:bg-white/5 hover:text-white"
-                          )}
-                        >
-                          <div className="flex items-center space-x-3.5 min-w-0 mr-3">
-                            <div className={cn(
-                              "w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border transition-colors",
-                              isSelected ? "bg-black/5 border-black/10 text-black" : "bg-white/5 border-white/10 text-white/60"
-                            )}>
-                              {page.category === "Classes" ? <BookOpen className="w-4 h-4" /> : <Compass className="w-4 h-4" />}
-                            </div>
-                            <div className="min-w-0">
-                              <span className="text-sm font-manrope block leading-tight truncate">{page.name}</span>
-                              <span className={cn(
-                                "text-xs block mt-0.5 truncate font-medium",
-                                isSelected ? "text-neutral-600" : "text-white/40"
-                              )}>{page.desc}</span>
-                            </div>
-                          </div>
-                          <span className={cn(
-                            "text-[10px] font-mono tracking-widest uppercase shrink-0 font-bold px-2.5 py-1 rounded-full border",
-                            isSelected ? "bg-black/10 border-black/20 text-black" : "bg-white/5 border-white/10 text-white/40"
+              {/* Minimalist Floating Results Dropdown - Always Scrollable */}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                data-lenis-prevent="true"
+                tabIndex={0}
+                className="w-full bg-[#0c0d14]/95 backdrop-blur-2xl border border-white/12 rounded-3xl shadow-2xl p-2 max-h-[55vh] overflow-y-auto custom-scrollbar space-y-1 pointer-events-auto outline-none"
+              >
+                {filteredPages.length === 0 ? (
+                  <div className="py-8 text-center text-white/40 font-manrope text-sm">
+                    No matching results found.
+                  </div>
+                ) : (
+                  filteredPages.map((page, index) => {
+                    const isSelected = index === selectedIndex;
+                    return (
+                      <button
+                        key={page.url}
+                        ref={(el) => {
+                          if (isSelected && el) {
+                            el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+                          }
+                        }}
+                        onClick={() => {
+                          router.push(page.url);
+                          setSearchOpen(false);
+                        }}
+                        onMouseEnter={() => setSelectedIndex(index)}
+                        className={cn(
+                          "w-full flex items-center justify-between px-5 py-3.5 rounded-2xl transition-all text-left pointer-events-auto cursor-pointer",
+                          isSelected 
+                            ? "bg-white text-black shadow-md font-semibold scale-[1.005]" 
+                            : "text-white/70 hover:bg-white/5 hover:text-white"
+                        )}
+                      >
+                        <div className="flex items-center space-x-3.5 min-w-0 mr-3">
+                          <div className={cn(
+                            "w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border transition-colors",
+                            isSelected ? "bg-black/5 border-black/10 text-black" : "bg-white/5 border-white/10 text-white/60"
                           )}>
-                            {page.category}
-                          </span>
-                        </button>
-                      );
-                    })
-                  )}
-                </motion.div>
-              )}
+                            {page.category === "Classes" ? <BookOpen className="w-4 h-4" /> : <Compass className="w-4 h-4" />}
+                          </div>
+                          <div className="min-w-0">
+                            <span className="text-sm font-manrope block leading-tight truncate">{page.name}</span>
+                            <span className={cn(
+                              "text-xs block mt-0.5 truncate font-medium",
+                              isSelected ? "text-neutral-600" : "text-white/40"
+                            )}>{page.desc}</span>
+                          </div>
+                        </div>
+                        <span className={cn(
+                          "text-[10px] font-mono tracking-widest uppercase shrink-0 font-bold px-2.5 py-1 rounded-full border",
+                          isSelected ? "bg-black/10 border-black/20 text-black" : "bg-white/5 border-white/10 text-white/40"
+                        )}>
+                          {page.category}
+                        </span>
+                      </button>
+                    );
+                  })
+                )}
+              </motion.div>
             </motion.div>
           </div>
         )}
