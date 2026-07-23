@@ -462,11 +462,11 @@ export function HeroSection() {
           <button 
             type="button"
             onClick={() => setIsComparisonOpen(true)}
-            className="liquid-glass-badge px-4 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center text-center hover:scale-105 transition-transform cursor-pointer group"
+            className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center text-center cursor-pointer transition-all duration-300 bg-white/10 hover:bg-white border border-white/20 hover:border-white group shadow-lg"
           >
-            <span className="relative z-10 font-sans font-extrabold text-[9px] sm:text-xs text-white/90 uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2">
+            <span className="relative z-10 font-sans font-extrabold text-[9px] sm:text-xs text-white/90 group-hover:text-black uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-colors duration-300">
               SPECIALIZED FOR ADVANCED PLACEMENT CLASSES
-              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/60 stroke-[2.5] group-hover:translate-x-0.5 transition-transform" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-white/60 group-hover:stroke-black stroke-[2.5] transition-colors duration-300" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>

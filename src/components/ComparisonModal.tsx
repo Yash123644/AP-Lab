@@ -139,10 +139,21 @@ const COMPARISON_DATA = [
 ];
 
 export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const renderCellContent = (value: string, isApLab = false) => {
     if (value === "check") {
       return (
-        <div className={`w-7 h-7 rounded-full flex items-center justify-center mx-auto ${isApLab ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-emerald-500/10 text-emerald-400/80"}`}>
+        <div className={`w-7 h-7 rounded-full flex items-center justify-center mx-auto ${isApLab ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.3)]" : "bg-emerald-500/10 text-emerald-400/80"}`}>
           <Check className="w-4 h-4 stroke-[2.5]" />
         </div>
       );
@@ -171,7 +182,19 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto select-none">
+          {/* Global Style overrides to lock body scroll and hide top Navbar */}
+          <style>{`
+            body {
+              overflow: hidden !important;
+            }
+            header, nav {
+              opacity: 0 !important;
+              pointer-events: none !important;
+              transition: opacity 0.2s ease !important;
+            }
+          `}</style>
+
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -214,39 +237,89 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
               data-lenis-prevent="true"
               className="flex-1 overflow-x-auto overflow-y-auto p-4 sm:p-6 custom-scrollbar"
             >
-              <table className="w-full text-left border-collapse min-w-[760px]">
+              <table className="w-full text-left border-collapse min-w-[820px]">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="py-4 px-4 text-xs font-mono uppercase tracking-wider text-white/40 font-bold w-[30%]">
+                    <th className="py-4 px-4 text-xs font-mono uppercase tracking-wider text-white/40 font-bold w-[28%]">
                       Feature Comparison
                     </th>
 
                     {/* AP Lab Column (Highlighted) */}
-                    <th className="py-4 px-4 text-center bg-blue-500/10 border-x border-t border-blue-500/30 rounded-t-2xl">
-                      <div className="flex flex-col items-center justify-center">
-                        <span className="text-sm font-extrabold text-blue-400 tracking-wide font-manrope flex items-center gap-1.5">
-                          🚀 AP Lab
-                        </span>
-                        <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase mt-0.5">
-                          100% Free Forever
+                    <th className="py-4 px-4 text-center bg-blue-600/15 border-x border-t border-blue-500/40 rounded-t-2xl">
+                      <div className="flex flex-col items-center justify-center space-y-1">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-6 h-6 rounded-lg bg-blue-500/20 border border-blue-400/40 flex items-center justify-center p-1">
+                            <img src="/logo.png" alt="AP Lab" className="w-full h-full object-contain" />
+                          </div>
+                          <span className="text-sm font-extrabold text-blue-400 tracking-tight font-manrope">
+                            AP Lab
+                          </span>
+                        </div>
+                        <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                          100% Free
                         </span>
                       </div>
                     </th>
 
-                    <th className="py-4 px-4 text-center text-xs font-bold text-white/80 font-manrope">
-                      Khan Academy
+                    {/* Khan Academy Header Logo */}
+                    <th className="py-4 px-4 text-center">
+                      <div className="flex flex-col items-center justify-center space-y-1">
+                        <div className="flex items-center space-x-1.5">
+                          <svg className="w-5 h-5 text-[#0a85ea]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                          </svg>
+                          <span className="text-xs font-bold text-white/90 font-manrope">Khan Academy</span>
+                        </div>
+                      </div>
                     </th>
-                    <th className="py-4 px-4 text-center text-xs font-bold text-white/80 font-manrope">
-                      Fiveable
+
+                    {/* Fiveable Header Logo */}
+                    <th className="py-4 px-4 text-center">
+                      <div className="flex flex-col items-center justify-center space-y-1">
+                        <div className="flex items-center space-x-1.5">
+                          <div className="w-5 h-5 rounded-md bg-[#00c2cb]/20 border border-[#00c2cb]/40 flex items-center justify-center text-[#00c2cb] font-extrabold text-[10px]">
+                            5
+                          </div>
+                          <span className="text-xs font-bold text-white/90 font-manrope">Fiveable</span>
+                        </div>
+                      </div>
                     </th>
-                    <th className="py-4 px-4 text-center text-xs font-bold text-white/80 font-manrope">
-                      Knowt
+
+                    {/* Knowt Header Logo */}
+                    <th className="py-4 px-4 text-center">
+                      <div className="flex flex-col items-center justify-center space-y-1">
+                        <div className="flex items-center space-x-1.5">
+                          <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-bold text-xs">
+                            K
+                          </div>
+                          <span className="text-xs font-bold text-white/90 font-manrope">Knowt</span>
+                        </div>
+                      </div>
                     </th>
-                    <th className="py-4 px-4 text-center text-xs font-bold text-white/80 font-manrope">
-                      Brilliant
+
+                    {/* Brilliant Header Logo */}
+                    <th className="py-4 px-4 text-center">
+                      <div className="flex flex-col items-center justify-center space-y-1">
+                        <div className="flex items-center space-x-1.5">
+                          <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 3v18M3 12h18" />
+                          </svg>
+                          <span className="text-xs font-bold text-white/90 font-manrope">Brilliant</span>
+                        </div>
+                      </div>
                     </th>
-                    <th className="py-4 px-4 text-center text-xs font-bold text-white/80 font-manrope">
-                      AoPS Online
+
+                    {/* AoPS Online Header Logo */}
+                    <th className="py-4 px-4 text-center">
+                      <div className="flex flex-col items-center justify-center space-y-1">
+                        <div className="flex items-center space-x-1.5">
+                          <div className="w-5 h-5 rounded-md bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 font-extrabold text-[10px]">
+                            A
+                          </div>
+                          <span className="text-xs font-bold text-white/90 font-manrope">AoPS Online</span>
+                        </div>
+                      </div>
                     </th>
                   </tr>
                 </thead>
@@ -264,7 +337,7 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
                         </td>
 
                         {/* AP Lab Highlight Cell */}
-                        <td className={`py-3.5 px-4 text-center bg-blue-500/10 border-x border-blue-500/30 ${isLastRow ? "border-b rounded-b-2xl" : ""}`}>
+                        <td className={`py-3.5 px-4 text-center bg-blue-600/10 border-x border-blue-500/30 ${isLastRow ? "border-b rounded-b-2xl" : ""}`}>
                           {renderCellContent(row.apLab, true)}
                         </td>
 
@@ -290,14 +363,13 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
               </table>
             </div>
 
-            {/* Footer */}
+            {/* Footer without comparison text */}
             <div className="flex items-center justify-between px-6 py-4 border-t border-white/10 bg-white/[0.02] text-xs font-mono text-white/40">
-              <div className="flex items-center space-x-3">
-                <span className="flex items-center gap-1"><Check className="w-3.5 h-3.5 text-emerald-400" /> Included</span>
-                <span className="flex items-center gap-1"><DollarSign className="w-3.5 h-3.5 text-amber-400" /> Paid add-on</span>
-                <span className="flex items-center gap-1"><X className="w-3.5 h-3.5 text-white/30" /> Not Available</span>
+              <div className="flex items-center space-x-4">
+                <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" /> Included</span>
+                <span className="flex items-center gap-1.5"><DollarSign className="w-3.5 h-3.5 text-amber-400" /> Paid add-on</span>
+                <span className="flex items-center gap-1.5"><X className="w-3.5 h-3.5 text-white/30" /> Not Available</span>
               </div>
-              <span>AP LAB Comparison Matrix</span>
             </div>
           </motion.div>
         </div>
