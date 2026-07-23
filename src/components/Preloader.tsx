@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Activity } from "lucide-react";
 
 export function Preloader() {
   const [shouldShow, setShouldShow] = useState(false);
@@ -66,19 +65,25 @@ export function Preloader() {
         <div className="absolute inset-0 border-t border-white/30 pointer-events-none" />
       </motion.div>
 
-      {/* Official AP LAB Activity Logo Icon Centered on Seam */}
+      {/* Large White Outline of the AP LAB Activity Logo Spanning Across the Screen */}
       <motion.div
-        initial={{ opacity: 1, scale: 0.9 }}
+        initial={{ opacity: 1, scale: 1 }}
         animate={{ 
           opacity: isOpening ? 0 : 1,
-          scale: isOpening ? 1.15 : 1
+          scale: isOpening ? 1.05 : 1
         }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+        className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none px-4"
       >
-        <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/25 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.25)] backdrop-blur-md">
-          <Activity className="w-9 h-9 text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]" strokeWidth={2.5} />
-        </div>
+        <svg viewBox="0 0 1000 200" className="w-full max-w-6xl h-auto text-white stroke-current fill-none">
+          <path
+            d="M0 100 H430 L460 164 L520 36 L560 100 H1000"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+          />
+        </svg>
       </motion.div>
 
     </div>
