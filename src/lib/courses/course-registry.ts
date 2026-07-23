@@ -576,10 +576,11 @@ Inheritance establishes a superclass/subclass relationship ("is-a" relationship)
   }
 ];
 
-export const courseRegistry: Record<string, CourseMetadata> = {
+export const courseRegistry: Record<string, CourseMetadata & { title: string }> = {
   "ap-biology": {
     slug: "ap-biology",
-    name: "AP Biology",
+    name: "AP® Biology",
+    title: "AP® Biology",
     category: "STEM & Sciences",
     accentColor: "#22c55e",
     glowColor: "rgba(34, 197, 148, 0.2)",
@@ -593,7 +594,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-chemistry": {
     slug: "ap-chemistry",
-    name: "AP Chemistry",
+    name: "AP® Chemistry",
+    title: "AP® Chemistry",
     category: "STEM & Sciences",
     accentColor: "#00f2ff",
     glowColor: "rgba(0, 242, 255, 0.2)",
@@ -607,7 +609,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-physics-c": {
     slug: "ap-physics-c",
-    name: "AP Physics C",
+    name: "AP® Physics C",
+    title: "AP® Physics C",
     category: "STEM & Sciences",
     accentColor: "#818cf8",
     glowColor: "rgba(129, 140, 248, 0.2)",
@@ -621,7 +624,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-ush": {
     slug: "ap-ush",
-    name: "AP US History",
+    name: "AP® US History",
+    title: "AP® US History",
     category: "Humanities & Arts",
     accentColor: "#fbbf24",
     glowColor: "rgba(251, 191, 36, 0.2)",
@@ -635,7 +639,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-psych": {
     slug: "ap-psych",
-    name: "AP Psychology",
+    name: "AP® Psychology",
+    title: "AP® Psychology",
     category: "Humanities & Arts",
     accentColor: "#7b39fc",
     glowColor: "rgba(123, 57, 252, 0.2)",
@@ -649,7 +654,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-eng-lang": {
     slug: "ap-eng-lang",
-    name: "AP English Language",
+    name: "AP® English Language",
+    title: "AP® English Language",
     category: "Humanities & Arts",
     accentColor: "#fb7185",
     glowColor: "rgba(251, 113, 133, 0.2)",
@@ -663,7 +669,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-calc-bc": {
     slug: "ap-calc-bc",
-    name: "AP Calculus BC",
+    name: "AP® Calculus BC",
+    title: "AP® Calculus BC",
     category: "Mathematical Logic",
     accentColor: "#34d399",
     glowColor: "rgba(52, 211, 153, 0.2)",
@@ -677,7 +684,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-stats": {
     slug: "ap-stats",
-    name: "AP Statistics",
+    name: "AP® Statistics",
+    title: "AP® Statistics",
     category: "Mathematical Logic",
     accentColor: "#38bdf8",
     glowColor: "rgba(56, 189, 248, 0.2)",
@@ -691,7 +699,8 @@ export const courseRegistry: Record<string, CourseMetadata> = {
   },
   "ap-csa": {
     slug: "ap-csa",
-    name: "AP Comp Sci A",
+    name: "AP® Comp Sci A",
+    title: "AP® Comp Sci A",
     category: "Mathematical Logic",
     accentColor: "#a78bfa",
     glowColor: "rgba(167, 139, 250, 0.2)",

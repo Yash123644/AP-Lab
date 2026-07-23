@@ -1587,6 +1587,23 @@ export default function APDynamicCoursePage() {
     }
   }, [course]);
 
+  // Dynamic Browser Tab Title tracking course, unit number, and topic
+  useEffect(() => {
+    if (course) {
+      const cleanCourseTitle = course.title.replace(/^AP\s*/i, "");
+      if (activeTopic) {
+        const unit = course.units.find(u => u.topics.some(t => t.id === activeTopic.id));
+        if (unit) {
+          document.title = `AP® ${cleanCourseTitle} - Unit ${unit.id}.${activeTopic.id}: ${activeTopic.title} | AP Lab`;
+        } else {
+          document.title = `AP® ${cleanCourseTitle} | AP Lab`;
+        }
+      } else {
+        document.title = `AP® ${cleanCourseTitle} | AP Lab`;
+      }
+    }
+  }, [course, activeTopic]);
+
   // Redirect unverified logged-in users
   useEffect(() => {
     if (currentUser && !currentUser.emailVerified) {

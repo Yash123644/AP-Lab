@@ -71,17 +71,33 @@ export default function SingleBlogPostPage({ params }: { params: { slug: string 
             {post.title}
           </h1>
 
-          {/* Author Badge matching Turbo AI reference */}
-          <div className="flex items-center space-x-4 pb-10 border-b border-white/10 mb-10">
-            <img 
-              src={post.author.avatar} 
-              alt={post.author.name} 
-              className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-            />
-            <div className="flex flex-col">
-              <span className="font-bold text-white text-base">{post.author.name}</span>
-              <span className="text-xs text-white/50">{post.author.role}</span>
+          {/* Author Badge & Hashtags Header Row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-10 border-b border-white/10 mb-10">
+            <div className="flex items-center space-x-4">
+              <img 
+                src={post.author.avatar} 
+                alt={post.author.name} 
+                className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+              />
+              <div className="flex flex-col">
+                <span className="font-bold text-white text-base">{post.author.name}</span>
+                <span className="text-xs text-white/50">{post.author.role}</span>
+              </div>
             </div>
+
+            {/* Top Hashtag Pills (Right of Author) */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                {post.tags.map((tag) => (
+                  <span 
+                    key={tag} 
+                    className="px-4 py-1.5 rounded-full bg-[#0e1628] border border-[#1d2d4a] text-[#8ab4f8] text-xs font-mono font-semibold tracking-wider"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Cover Image */}
@@ -98,6 +114,21 @@ export default function SingleBlogPostPage({ params }: { params: { slug: string 
             className="prose prose-invert max-w-none font-inter text-[17px] text-white/80 leading-[1.8] space-y-6"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {/* Bottom Hashtags Display */}
+          {post.tags && post.tags.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap items-center gap-3">
+              <span className="text-xs font-mono text-white/40 uppercase tracking-widest mr-2">Topics:</span>
+              {post.tags.map((tag) => (
+                <span 
+                  key={tag} 
+                  className="px-4 py-2 rounded-full bg-[#0e1628] border border-[#1d2d4a] text-[#8ab4f8] text-xs font-mono font-bold tracking-wider hover:border-[#3b82f6] transition-all cursor-pointer"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
           {/* Back to Blogs Footer CTA */}
           <div className="mt-16 pt-8 border-t border-white/10 flex justify-between items-center">

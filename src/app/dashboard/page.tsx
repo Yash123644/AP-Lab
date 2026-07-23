@@ -89,119 +89,134 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
       );
 
   return (
-    <div className="relative w-full max-w-3xl mb-24 z-[60] group">
-      <style>{`
-        @keyframes float-dust {
-          0% { transform: translateY(0px) translateX(0px); opacity: 0.1; }
-          50% { transform: translateY(-4px) translateX(12px); opacity: 0.7; }
-          100% { transform: translateY(0px) translateX(24px); opacity: 0.1; }
-        }
-        .gradient-cycle-effect {
-          background: linear-gradient(90deg, #1d4ed8, #2563eb, #3b82f6, #60a5fa, #3b82f6, #2563eb, #1d4ed8);
-          background-size: 200% auto;
-          animation: gradient-flow 6s linear infinite;
-        }
-        @keyframes gradient-flow {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
-        }
-      `}</style>
-      
-      {/* Smooth Cycling Ambient Glow */}
-      <div className="absolute -inset-[12px] rounded-full blur-[24px] opacity-70 pointer-events-none z-0 gradient-cycle-effect" />
-      <div className="absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3)]" />
-
-      {/* Search Bar Container */}
-      <div className="relative bg-[#050508]/95 rounded-full flex items-center p-1 backdrop-blur-3xl border border-white/10 z-20 shadow-2xl">
-        <div className="flex-1 flex items-center px-6 relative overflow-hidden">
-          <Search className="w-5 h-5 text-white/80 mr-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Search for an AP Course..."
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setIsOpen(true);
-            }}
-            onFocus={() => setIsOpen(true)}
-            onBlur={() => {
-              setTimeout(() => setIsOpen(false), 220);
-            }}
-            className="w-full bg-transparent py-4.5 text-white placeholder-white/30 focus:outline-none text-xl font-manrope font-semibold"
-          />
-          {query && (
-            <button 
-              onClick={() => setQuery("")} 
-              className="p-1.5 text-white/40 hover:text-white rounded-full bg-white/5 hover:bg-white/15 transition-all mr-2"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Clean Course Search Dropdown Menu */}
+    <>
+      {/* Focused Backdrop Blur Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 12, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 12, scale: 0.98 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full mt-3 w-full bg-[#0c0d16]/95 backdrop-blur-3xl border border-white/15 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-[70] p-2"
-          >
-            {filtered.length === 0 ? (
-              <div className="py-8 text-center text-white/40 font-manrope text-sm">
-                No matching AP courses found.
-              </div>
-            ) : (
-              <div className="max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 p-1">
-                {filtered.map((item) => {
-                  const courseColor = item.folderAccent || item.accent || "#3b82f6";
-                  return (
-                    <button
-                      key={item.name}
-                      onMouseDown={() => {
-                        onSelect(item.slug);
-                        setQuery("");
-                        setIsOpen(false);
-                      }}
-                      className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-transparent hover:bg-white/[0.08] hover:border-white/10 border border-transparent transition-all group/item text-left relative overflow-hidden"
-                    >
-                      <div className="flex items-center space-x-3.5">
-                        {/* Course Icon matching category folder color */}
-                        <div 
-                          className="w-10 h-10 rounded-xl bg-white/[0.06] border flex items-center justify-center shrink-0 transition-transform group-hover/item:scale-105 shadow-inner"
-                          style={{ borderColor: `${courseColor}40` }}
-                        >
-                          <item.icon className="w-5 h-5" style={{ color: courseColor }} />
-                        </div>
-                        <div>
-                          <div className="text-white font-manrope font-bold text-sm sm:text-base group-hover/item:text-white transition-colors flex items-center gap-2">
-                            <span>{item.name}</span>
-                          </div>
-                          <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase mt-0.5">
-                            {item.category}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center space-x-2 text-white/40 group-hover/item:text-white transition-colors">
-                        <span className="text-xs font-manrope font-medium text-white/40 group-hover/item:text-white/80 hidden sm:inline-block">
-                          Open Course
-                        </span>
-                        <ArrowUpRight className="w-4 h-4 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5 transition-transform" style={{ color: courseColor }} />
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            className="fixed inset-0 bg-black/65 backdrop-blur-md z-[9990] pointer-events-auto"
+            onClick={() => setIsOpen(false)}
+          />
         )}
       </AnimatePresence>
-    </div>
+
+      <div className={cn("relative w-full max-w-3xl mb-24 transition-all duration-300 group", isOpen ? "z-[9999]" : "z-[60]")}>
+        <style>{`
+          @keyframes float-dust {
+            0% { transform: translateY(0px) translateX(0px); opacity: 0.1; }
+            50% { transform: translateY(-4px) translateX(12px); opacity: 0.7; }
+            100% { transform: translateY(0px) translateX(24px); opacity: 0.1; }
+          }
+          .gradient-cycle-effect {
+            background: linear-gradient(90deg, #1d4ed8, #2563eb, #3b82f6, #60a5fa, #3b82f6, #2563eb, #1d4ed8);
+            background-size: 200% auto;
+            animation: gradient-flow 6s linear infinite;
+          }
+          @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+          }
+        `}</style>
+        
+        {/* Smooth Cycling Ambient Glow */}
+        <div className="absolute -inset-[12px] rounded-full blur-[24px] opacity-70 pointer-events-none z-0 gradient-cycle-effect" />
+        <div className="absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3)]" />
+
+        {/* Search Bar Container */}
+        <div className="relative bg-[#050508]/95 rounded-full flex items-center p-1 backdrop-blur-3xl border border-white/10 z-20 shadow-2xl">
+          <div className="flex-1 flex items-center px-6 relative overflow-hidden">
+            <Search className="w-5 h-5 text-white/80 mr-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Search for an AP® Course..."
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setIsOpen(true);
+              }}
+              onFocus={() => setIsOpen(true)}
+              onBlur={() => {
+                setTimeout(() => setIsOpen(false), 220);
+              }}
+              className="w-full bg-transparent py-4.5 text-white placeholder-white/30 focus:outline-none text-xl font-manrope font-semibold"
+            />
+            {query && (
+              <button 
+                onClick={() => setQuery("")} 
+                className="p-1.5 text-white/40 hover:text-white rounded-full bg-white/5 hover:bg-white/15 transition-all mr-2"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Clean Course Search Dropdown Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 12, scale: 0.98 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute top-full mt-3 w-full bg-[#0c0d16]/95 backdrop-blur-3xl border border-white/15 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-[70] p-2"
+            >
+              {filtered.length === 0 ? (
+                <div className="py-8 text-center text-white/40 font-manrope text-sm">
+                  No matching AP® courses found.
+                </div>
+              ) : (
+                <div className="max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 p-1">
+                  {filtered.map((item) => {
+                    const courseColor = item.folderAccent || item.accent || "#3b82f6";
+                    return (
+                      <button
+                        key={item.name}
+                        onMouseDown={() => {
+                          onSelect(item.slug);
+                          setQuery("");
+                          setIsOpen(false);
+                        }}
+                        className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-transparent hover:bg-white/[0.08] hover:border-white/10 border border-transparent transition-all group/item text-left relative overflow-hidden"
+                      >
+                        <div className="flex items-center space-x-3.5">
+                          {/* Course Icon matching category folder color */}
+                          <div 
+                            className="w-10 h-10 rounded-xl bg-white/[0.06] border flex items-center justify-center shrink-0 transition-transform group-hover/item:scale-105 shadow-inner"
+                            style={{ borderColor: `${courseColor}40` }}
+                          >
+                            <item.icon className="w-5 h-5" style={{ color: courseColor }} />
+                          </div>
+                          <div>
+                            <div className="text-white font-manrope font-bold text-sm sm:text-base group-hover/item:text-white transition-colors flex items-center gap-2">
+                              <span>{item.name}</span>
+                            </div>
+                            <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase mt-0.5">
+                              {item.category}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center space-x-2 text-white/40 group-hover/item:text-white transition-colors">
+                          <span className="text-xs font-manrope font-medium text-white/40 group-hover/item:text-white/80 hidden sm:inline-block">
+                            Open Course
+                          </span>
+                          <ArrowUpRight className="w-4 h-4 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5 transition-transform" style={{ color: courseColor }} />
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 }
 
@@ -710,7 +725,7 @@ export default function Dashboard() {
 
         {/* LOWER REGION: Folders Grid / Previews Grid / Leaderboard with Grid Background Pattern */}
         <div 
-          className="w-full flex-1 relative z-20 flex flex-col items-center pt-10 pb-12 px-6 md:px-12 bg-[#060712]"
+          className="w-full flex-1 relative z-20 flex flex-col items-center -mt-7 pt-12 pb-12 px-6 md:px-12 bg-[#060712]"
           style={{
             backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
             backgroundSize: "36px 36px"

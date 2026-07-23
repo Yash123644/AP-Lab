@@ -87,7 +87,7 @@ export default function BlogIndexPage() {
                       </div>
 
                       {/* Title */}
-                      <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug">
+                      <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
                         {post.title}
                       </h2>
 
@@ -95,6 +95,20 @@ export default function BlogIndexPage() {
                       <p className="text-white/50 text-sm leading-relaxed line-clamp-3">
                         {post.excerpt}
                       </p>
+
+                      {/* Hashtag Pills matching reference screenshot */}
+                      {post.tags && post.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          {post.tags.map((tag) => (
+                            <span 
+                              key={tag} 
+                              className="px-3 py-1 rounded-full bg-[#0e1628] border border-[#1d2d4a] text-[#8ab4f8] text-[11px] font-mono font-semibold tracking-wide"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
 

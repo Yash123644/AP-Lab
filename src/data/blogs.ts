@@ -6,6 +6,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   coverImage: string;
+  tags: string[];
   author: {
     name: string;
     role: string;
@@ -23,6 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "May 2, 2026",
     readTime: "4 min read",
     coverImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop&q=80",
+    tags: ["#EXAMS", "#STRATEGY", "#STUDYING", "#ADVICE"],
     author: {
       name: "Yash Patil",
       role: "Founder, AP Lab",
