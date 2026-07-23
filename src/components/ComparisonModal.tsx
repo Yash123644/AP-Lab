@@ -99,7 +99,7 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
   const renderCellContent = (value: string, isApLab = false) => {
     if (value === "check") {
       return (
-        <div className={`w-7 h-7 rounded-full flex items-center justify-center mx-auto ${isApLab ? "bg-white/20 text-white border border-white/40 shadow-[0_0_12px_rgba(255,255,255,0.35)]" : "bg-emerald-500/15 text-emerald-400 border border-emerald-500/20"}`}>
+        <div className="w-7 h-7 rounded-full flex items-center justify-center mx-auto bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
           <Check className="w-4 h-4 stroke-[2.5]" />
         </div>
       );
@@ -119,7 +119,7 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
       );
     }
     return (
-      <span className={`text-xs font-mono font-bold ${isApLab ? "text-white font-extrabold text-sm tracking-wide" : "text-white/60"}`}>
+      <span className={`text-xs font-mono font-bold ${isApLab ? "text-emerald-400 font-extrabold text-sm tracking-wide" : "text-white/60"}`}>
         {value}
       </span>
     );
@@ -146,12 +146,12 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
             }
           `}</style>
 
-          {/* Modal Content Box with Smooth Slide-Up / Drag Down Animation */}
+          {/* Modal Content Box with Ultra-Smooth Slide-Up / Drag Down Transition */}
           <motion.div
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
-            transition={{ type: "spring", damping: 30, stiffness: 260 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full max-w-6xl bg-[#080914] border border-white/15 rounded-3xl overflow-hidden shadow-[0_32px_120px_rgba(0,0,0,1)] z-10 flex flex-col max-h-[90vh] my-auto"
           >
             {/* Header Bar */}
@@ -182,17 +182,12 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
                       Feature Comparison
                     </th>
 
-                    {/* AP Lab Column (Highlighted in White) */}
+                    {/* AP Lab Column Header */}
                     <th className="py-4 px-5 text-center bg-white/[0.06] border-x border-t border-white/20 rounded-t-2xl">
-                      <div className="flex flex-col items-center justify-center space-y-1.5">
-                        <div className="flex items-center space-x-2">
-                          <Activity className="w-5 h-5 text-white" />
-                          <span className="text-sm font-extrabold text-white tracking-tight font-manrope">
-                            AP Lab
-                          </span>
-                        </div>
-                        <span className="text-[10px] font-mono text-white font-bold uppercase tracking-wider bg-white/10 px-2.5 py-0.5 rounded-full border border-white/20">
-                          100% Free
+                      <div className="flex items-center justify-center space-x-2 py-1.5">
+                        <Activity className="w-5 h-5 text-white" />
+                        <span className="text-sm sm:text-base font-extrabold text-white tracking-tight font-manrope">
+                          AP Lab
                         </span>
                       </div>
                     </th>
