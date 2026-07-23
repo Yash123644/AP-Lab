@@ -11,13 +11,13 @@ interface ComparisonModalProps {
 
 const COMPARISON_DATA = [
   {
-    feature: "AI Assistant",
+    feature: "24/7 Socratic AI Assistant",
     apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
-    knowt: "cross",
-    quizlet: "cross",
-    brilliant: "cross"
+    khan: "paid",
+    fiveable: "paid",
+    knowt: "check",
+    quizlet: "paid",
+    brilliant: "paid"
   },
   {
     feature: "Comprehensive AP Practice Questions",
@@ -25,14 +25,14 @@ const COMPARISON_DATA = [
     khan: "check",
     fiveable: "paid",
     knowt: "check",
-    quizlet: "check",
-    brilliant: "check"
+    quizlet: "paid",
+    brilliant: "paid"
   },
   {
     feature: "Full-Length AP Mock Exams & Timer",
     apLab: "check",
     khan: "cross",
-    fiveable: "cross",
+    fiveable: "paid",
     knowt: "paid",
     quizlet: "cross",
     brilliant: "cross"
@@ -47,27 +47,27 @@ const COMPARISON_DATA = [
     brilliant: "check"
   },
   {
-    feature: "Interactive Unit Lessons & Formulas",
+    feature: "Interactive Unit Lessons & Guides",
     apLab: "check",
     khan: "check",
     fiveable: "check",
     knowt: "check",
     quizlet: "cross",
-    brilliant: "check"
+    brilliant: "paid"
   },
   {
-    feature: "Formulas & Vocabulary words",
+    feature: "Formulas & Vocabulary Flashcards",
     apLab: "check",
-    khan: "check",
+    khan: "cross",
     fiveable: "check",
     knowt: "check",
-    quizlet: "check",
+    quizlet: "paid",
     brilliant: "cross"
   },
   {
     feature: "Gamified XP Leaderboard & Streaks",
     apLab: "check",
-    khan: "check",
+    khan: "cross",
     fiveable: "cross",
     knowt: "check",
     quizlet: "cross",
@@ -78,7 +78,7 @@ const COMPARISON_DATA = [
     apLab: "Free $0.00",
     khan: "$4.00 (Khanmigo)",
     fiveable: "$27.00",
-    knowt: "$24.99",
+    knowt: "$24.99/yr",
     quizlet: "$35.99/yr",
     brilliant: "$27.99"
   }

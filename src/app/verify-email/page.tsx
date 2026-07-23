@@ -21,17 +21,10 @@ export default function VerifyEmailPage() {
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [isVerified, setIsVerified] = useState(false);
 
-  // Redirect if user is not logged in or already verified
+  // Redirect if user is verified or logged out completely
   useEffect(() => {
     if (loading) return;
     
-    // Give Firebase a small window to resolve the auth state on tab focus/refresh
-    const timeout = setTimeout(() => {
-      if (!auth.currentUser) {
-        router.push("/");
-      }
-    }, 1500);
-
     if (currentUser && currentUser.emailVerified) {
       setIsVerified(true);
       const timer = setTimeout(() => {
@@ -39,8 +32,6 @@ export default function VerifyEmailPage() {
       }, 1500);
       return () => clearTimeout(timer);
     }
-
-    return () => clearTimeout(timeout);
   }, [currentUser, loading, router]);
 
   // Handle resend cooldown countdown

@@ -80,7 +80,7 @@ export function PracticeQuizSection() {
   };
 
   return (
-    <section className="relative w-full py-[140px] md:py-[170px] px-6 md:px-12 bg-[#060710] overflow-hidden flex flex-col items-center z-20">
+    <section className="relative w-full py-[140px] md:py-[170px] px-6 md:px-12 bg-[#03040a] overflow-hidden flex flex-col items-center z-20">
       
       {/* 16px Pixel Grid Pattern */}
       <div 
@@ -92,8 +92,8 @@ export function PracticeQuizSection() {
       />
       
       {/* Seamless Top and Bottom Blend Overlays */}
-      <div className="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-[#030712] via-[#030712]/90 to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#030712] via-[#030712]/90 to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#03040a] via-[#03040a]/90 to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#03040a] via-[#03040a]/90 to-transparent pointer-events-none z-10" />
       
       {/* Rich Pixelated Academic Background Elements (Strictly Outer Margins) */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
