@@ -95,22 +95,22 @@ export function PracticeQuizSection() {
       <div className="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-[#030712] via-[#030712]/90 to-transparent pointer-events-none z-10" />
       <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#030712] via-[#030712]/90 to-transparent pointer-events-none z-10" />
       
-      {/* Subtle Light Pixelated Academic Background Elements */}
+      {/* Rich Pixelated Academic Background Elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
         
-        {/* Pixel Book - Top Left */}
-        <div className="absolute top-16 left-[8%] opacity-20 hover:opacity-40 transition-opacity">
-          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white" shapeRendering="crispEdges" fill="none">
+        {/* Pixel Book - Top Far Left */}
+        <div className="absolute top-12 left-[3%] opacity-40">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/70" shapeRendering="crispEdges" fill="none">
             <rect x="2" y="2" width="12" height="12" fill="currentColor" fillOpacity="0.3" />
-            <rect x="3" y="3" width="4" height="10" fill="currentColor" fillOpacity="0.5" />
-            <rect x="8" y="3" width="5" height="10" fill="currentColor" fillOpacity="0.4" />
+            <rect x="3" y="3" width="4" height="10" fill="currentColor" fillOpacity="0.6" />
+            <rect x="8" y="3" width="5" height="10" fill="currentColor" fillOpacity="0.5" />
             <rect x="7" y="2" width="1" height="12" fill="currentColor" />
           </svg>
         </div>
 
-        {/* Pixel Graduation Cap - Top Right */}
-        <div className="absolute top-20 right-[10%] opacity-20">
-          <svg viewBox="0 0 16 16" className="w-16 h-16 text-white" shapeRendering="crispEdges" fill="none">
+        {/* Pixel Graduation Cap - Top Inner Left */}
+        <div className="absolute top-20 left-[22%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/70" shapeRendering="crispEdges" fill="none">
             <rect x="1" y="5" width="14" height="2" fill="currentColor" />
             <rect x="7" y="3" width="2" height="2" fill="currentColor" />
             <rect x="4" y="7" width="8" height="4" fill="currentColor" fillOpacity="0.5" />
@@ -118,9 +118,9 @@ export function PracticeQuizSection() {
           </svg>
         </div>
 
-        {/* Pixel Atom Orbit - Bottom Left */}
-        <div className="absolute bottom-20 left-[12%] opacity-15">
-          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white" shapeRendering="crispEdges" fill="none">
+        {/* Pixel Atom Orbit - Top Center Right */}
+        <div className="absolute top-14 left-[58%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/70" shapeRendering="crispEdges" fill="none">
             <rect x="7" y="7" width="2" height="2" fill="currentColor" />
             <rect x="2" y="7" width="3" height="2" fill="currentColor" fillOpacity="0.6" />
             <rect x="11" y="7" width="3" height="2" fill="currentColor" fillOpacity="0.6" />
@@ -129,35 +129,134 @@ export function PracticeQuizSection() {
           </svg>
         </div>
 
-        {/* Pixel Chemistry Flask - Bottom Right */}
-        <div className="absolute bottom-24 right-[14%] opacity-20">
-          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white" shapeRendering="crispEdges" fill="none">
-            <rect x="6" y="2" width="4" height="1" fill="currentColor" />
-            <rect x="7" y="3" width="2" height="4" fill="currentColor" fillOpacity="0.6" />
-            <rect x="4" y="7" width="8" height="7" fill="currentColor" fillOpacity="0.4" />
-            <rect x="5" y="10" width="6" height="3" fill="currentColor" fillOpacity="0.8" />
+        {/* Pixel Mortarboard Cap - Top Far Right */}
+        <div className="absolute top-16 right-[4%] opacity-40">
+          <svg viewBox="0 0 16 16" className="w-16 h-16 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="1" y="5" width="14" height="2" fill="currentColor" />
+            <rect x="7" y="3" width="2" height="2" fill="currentColor" />
+            <rect x="4" y="7" width="8" height="4" fill="currentColor" fillOpacity="0.6" />
+            <rect x="13" y="7" width="1" height="5" fill="currentColor" />
           </svg>
         </div>
 
-        {/* Pixel Pi Math Symbol - Center Top */}
-        <div className="absolute top-10 left-[48%] -translate-x-1/2 opacity-15">
-          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white" shapeRendering="crispEdges" fill="none">
+        {/* Pixel Chemistry Flask - Middle Far Left */}
+        <div className="absolute top-[42%] left-[4%] opacity-40">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="6" y="2" width="4" height="1" fill="currentColor" />
+            <rect x="7" y="3" width="2" height="4" fill="currentColor" fillOpacity="0.6" />
+            <rect x="4" y="7" width="8" height="7" fill="currentColor" fillOpacity="0.4" />
+            <rect x="5" y="10" width="6" height="3" fill="currentColor" fillOpacity="0.9" />
+          </svg>
+        </div>
+
+        {/* Pixel Plus Cross - Middle Center Left */}
+        <div className="absolute top-[38%] left-[28%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="7" y="2" width="2" height="12" fill="currentColor" />
+            <rect x="2" y="7" width="12" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Pi Symbol - Top Center */}
+        <div className="absolute top-8 left-[42%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
             <rect x="2" y="3" width="12" height="2" fill="currentColor" />
             <rect x="4" y="5" width="2" height="8" fill="currentColor" />
             <rect x="9" y="5" width="2" height="8" fill="currentColor" />
           </svg>
         </div>
 
-        {/* Pixel Sparkles - Floating */}
-        <div className="absolute top-1/2 left-[5%] opacity-25">
-          <svg viewBox="0 0 16 16" className="w-8 h-8 text-white" shapeRendering="crispEdges" fill="none">
+        {/* Pixel Plus Cross - Middle Far Right */}
+        <div className="absolute top-[48%] right-[3%] opacity-40">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="7" y="2" width="2" height="12" fill="currentColor" />
+            <rect x="2" y="7" width="12" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Book - Center Right */}
+        <div className="absolute top-[32%] right-[22%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="2" y="2" width="12" height="12" fill="currentColor" fillOpacity="0.3" />
+            <rect x="3" y="3" width="4" height="10" fill="currentColor" fillOpacity="0.6" />
+            <rect x="8" y="3" width="5" height="10" fill="currentColor" fillOpacity="0.5" />
+            <rect x="7" y="2" width="1" height="12" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel DNA Helix - Bottom Far Left */}
+        <div className="absolute bottom-16 left-[5%] opacity-40">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="3" y="2" width="2" height="2" fill="currentColor" />
+            <rect x="11" y="2" width="2" height="2" fill="currentColor" />
+            <rect x="5" y="4" width="6" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="7" y="6" width="2" height="4" fill="currentColor" />
+            <rect x="5" y="10" width="6" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="3" y="12" width="2" height="2" fill="currentColor" />
+            <rect x="11" y="12" width="2" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Atom - Bottom Inner Left */}
+        <div className="absolute bottom-24 left-[24%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="7" y="7" width="2" height="2" fill="currentColor" />
+            <rect x="2" y="7" width="3" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="11" y="7" width="3" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="7" y="2" width="2" height="3" fill="currentColor" fillOpacity="0.6" />
+            <rect x="7" y="11" width="2" height="3" fill="currentColor" fillOpacity="0.6" />
+          </svg>
+        </div>
+
+        {/* Pixel Chemistry Flask - Bottom Center */}
+        <div className="absolute bottom-12 left-[46%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="6" y="2" width="4" height="1" fill="currentColor" />
+            <rect x="7" y="3" width="2" height="4" fill="currentColor" fillOpacity="0.6" />
+            <rect x="4" y="7" width="8" height="7" fill="currentColor" fillOpacity="0.4" />
+            <rect x="5" y="10" width="6" height="3" fill="currentColor" fillOpacity="0.9" />
+          </svg>
+        </div>
+
+        {/* Pixel Mortarboard Cap - Bottom Inner Right */}
+        <div className="absolute bottom-20 right-[25%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="1" y="5" width="14" height="2" fill="currentColor" />
+            <rect x="7" y="3" width="2" height="2" fill="currentColor" />
+            <rect x="4" y="7" width="8" height="4" fill="currentColor" fillOpacity="0.5" />
+            <rect x="13" y="7" width="1" height="5" fill="currentColor" fillOpacity="0.8" />
+          </svg>
+        </div>
+
+        {/* Pixel Book - Bottom Far Right */}
+        <div className="absolute bottom-14 right-[6%] opacity-40">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="2" y="2" width="12" height="12" fill="currentColor" fillOpacity="0.3" />
+            <rect x="3" y="3" width="4" height="10" fill="currentColor" fillOpacity="0.6" />
+            <rect x="8" y="3" width="5" height="10" fill="currentColor" fillOpacity="0.5" />
+            <rect x="7" y="2" width="1" height="12" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Sparkles - Floating Top Left */}
+        <div className="absolute top-[28%] left-[14%] opacity-45">
+          <svg viewBox="0 0 16 16" className="w-7 h-7 text-white/80" shapeRendering="crispEdges" fill="none">
             <rect x="7" y="4" width="2" height="8" fill="currentColor" />
             <rect x="4" y="7" width="8" height="2" fill="currentColor" />
           </svg>
         </div>
         
-        <div className="absolute top-2/3 right-[6%] opacity-25">
-          <svg viewBox="0 0 16 16" className="w-8 h-8 text-white" shapeRendering="crispEdges" fill="none">
+        {/* Pixel Sparkles - Floating Center */}
+        <div className="absolute top-[60%] left-[38%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-8 h-8 text-white/80" shapeRendering="crispEdges" fill="none">
+            <rect x="7" y="4" width="2" height="8" fill="currentColor" />
+            <rect x="4" y="7" width="8" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Sparkles - Floating Right */}
+        <div className="absolute top-[62%] right-[14%] opacity-45">
+          <svg viewBox="0 0 16 16" className="w-7 h-7 text-white/80" shapeRendering="crispEdges" fill="none">
             <rect x="7" y="4" width="2" height="8" fill="currentColor" />
             <rect x="4" y="7" width="8" height="2" fill="currentColor" />
           </svg>

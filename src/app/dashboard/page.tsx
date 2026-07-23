@@ -592,13 +592,17 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col relative z-0 overflow-x-hidden transition-colors duration-500 selection:bg-primary-purple selection:text-white">
+    <div className="min-h-screen flex flex-col relative z-0 overflow-x-hidden bg-[#03040a] selection:bg-primary-purple selection:text-white">
       
-      {/* Static Background with White/Light-Grey Dot Matrix Pattern & Minimalist Connected Icons */}
-      <PixelCourseBackground />
+      {/* Top Header Region Background: White/Light-Grey Dot Matrix Pattern */}
+      <div className="absolute top-0 left-0 right-0 h-[480px] overflow-hidden pointer-events-none -z-10">
+        <PixelCourseBackground />
+        {/* Soft Fade at bottom of dot matrix header region */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#03040a] to-transparent" />
+      </div>
 
-      {/* Volumetric Vignette Overlay (Clear Top for Maximum Icon Visibility) */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-[#03040a]/60 pointer-events-none" />
+      {/* Volumetric Vignette Overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-[#03040a]/80 pointer-events-none" />
       
       {/* Floating Navbar Pill */}
       <nav className={cn(
@@ -643,10 +647,10 @@ export default function Dashboard() {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1 pt-40 pb-24 px-6 md:px-12 z-10 flex flex-col items-center">
+      <main className="flex-1 pt-40 pb-24 z-10 flex flex-col items-center w-full">
         
         {/* Header Section */}
-        <div className="text-center mb-12 flex flex-col items-center justify-center">
+        <div className="text-center mb-10 flex flex-col items-center justify-center px-6">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -668,163 +672,165 @@ export default function Dashboard() {
         </div>
 
         {/* Search Bar */}
-        <SearchBar onSelect={handleSearchSelect} />
-
-        {/* View Mode Segmented Tab Selector */}
-        <div className="flex items-center justify-center p-1.5 rounded-full bg-[#0c0d12]/90 border border-white/10 mt-4 sm:mt-5 mb-8 shadow-2xl backdrop-blur-xl gap-1.5 sm:gap-2 select-none z-10">
-          <button
-            onClick={() => setDashboardTab("courses")}
-            className={cn(
-              "flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm transition-all duration-300",
-              dashboardTab === "courses"
-                ? "bg-white text-black shadow-lg scale-[1.02]"
-                : "text-white/60 hover:text-white hover:bg-white/5"
-            )}
-          >
-            <Folder className="w-4 h-4" />
-            <span>Courses</span>
-          </button>
-
-          <button
-            onClick={() => setDashboardTab("previews")}
-            className={cn(
-              "flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm transition-all duration-300",
-              dashboardTab === "previews"
-                ? "bg-white text-black shadow-lg scale-[1.02]"
-                : "text-white/60 hover:text-white hover:bg-white/5"
-            )}
-          >
-            <Eye className="w-4 h-4" />
-            <span>Previews</span>
-          </button>
-
-          <button
-            onClick={() => setDashboardTab("leaderboard")}
-            className={cn(
-              "flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm transition-all duration-300",
-              dashboardTab === "leaderboard"
-                ? "bg-white text-black shadow-lg scale-[1.02]"
-                : "text-white/60 hover:text-white hover:bg-white/5"
-            )}
-          >
-            <Trophy className="w-4 h-4" />
-            <span>Leaderboard</span>
-          </button>
+        <div className="px-6 w-full flex justify-center">
+          <SearchBar onSelect={handleSearchSelect} />
         </div>
 
-        {/* Tab 1: Universal Wings Bento Grid - 3D Folders Grid */}
-        {dashboardTab === "courses" && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mt-12 mb-36"
-          >
-            {folders.map((folder) => (
-              <FolderCard 
-                key={folder.title} 
-                {...folder} 
-                progressData={classProgressMap}
-              />
-            ))}
-          </motion.div>
-        )}
-
-        {/* Tab 2: Course Statistics Previews Grid */}
-        {dashboardTab === "previews" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mt-8 mb-36"
-          >
-            {coursePreviewsData.map((course) => (
-              <div 
-                key={course.slug}
-                className={cn(
-                  "bg-[#08090e]/90 border rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 shadow-xl backdrop-blur-md",
-                  course.color
-                )}
+        {/* Apple Liquid Glass Segmented Tab Selector with Smooth Sliding Oval */}
+        <div className="flex items-center justify-center p-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-2xl mt-5 mb-8 shadow-2xl gap-1.5 sm:gap-2 select-none z-10 relative">
+          {[
+            { id: "courses", label: "Courses", icon: Folder },
+            { id: "previews", label: "Previews", icon: Eye },
+            { id: "leaderboard", label: "Leaderboard", icon: Trophy }
+          ].map((tab) => {
+            const isActive = dashboardTab === tab.id;
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setDashboardTab(tab.id as any)}
+                className="relative flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-manrope font-bold text-xs sm:text-sm cursor-pointer transition-colors duration-300 z-10 select-none"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">
-                      {course.category}
-                    </span>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/10 text-white/90">
-                      {course.difficulty}
-                    </span>
+                {/* Apple Liquid Glass Reflective Capsule Oval */}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeDashboardTabOval"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute inset-0 rounded-full bg-gradient-to-b from-white/35 via-white/15 to-white/5 border border-white/40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.7),0_4px_20px_rgba(0,0,0,0.5)] backdrop-blur-md z-0"
+                  />
+                )}
+                
+                <Icon className={cn("w-4 h-4 relative z-10 transition-colors duration-300", isActive ? "text-white" : "text-white/50")} />
+                <span className={cn("relative z-10 transition-colors duration-300", isActive ? "text-white font-extrabold" : "text-white/60 hover:text-white")}>
+                  {tab.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Below Tab Selector Region: Grid Pattern Background */}
+        <div 
+          className="w-full relative z-10 flex flex-col items-center pt-8 px-6 md:px-12"
+          style={{
+            backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)",
+            backgroundSize: "32px 32px"
+          }}
+        >
+          {/* Tab 1: Universal Wings Bento Grid - 3D Folders Grid */}
+          {dashboardTab === "courses" && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mb-36"
+            >
+              {folders.map((folder) => (
+                <FolderCard 
+                  key={folder.title} 
+                  {...folder} 
+                  progressData={classProgressMap}
+                />
+              ))}
+            </motion.div>
+          )}
+
+          {/* Tab 2: Course Statistics Previews Grid */}
+          {dashboardTab === "previews" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mt-8 mb-36"
+            >
+              {coursePreviewsData.map((course) => (
+                <div 
+                  key={course.slug}
+                  className={cn(
+                    "bg-[#08090e]/90 border rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 shadow-xl backdrop-blur-md",
+                    course.color
+                  )}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">
+                        {course.category}
+                      </span>
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/10 text-white/90">
+                        {course.difficulty}
+                      </span>
+                    </div>
+
+                    <h3 className="font-manrope font-extrabold text-2xl text-white mb-6 tracking-tight">
+                      {course.name}
+                    </h3>
+
+                    <div className="grid grid-cols-2 gap-3 mb-6">
+                      <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                          <Video className="w-4 h-4 text-white/80" />
+                        </div>
+                        <div>
+                          <div className="font-manrope font-bold text-white text-sm">{course.videos}</div>
+                          <div className="font-mono text-[9px] text-white/40 uppercase">Videos</div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                          <FileText className="w-4 h-4 text-white/80" />
+                        </div>
+                        <div>
+                          <div className="font-manrope font-bold text-white text-sm">{course.articles}</div>
+                          <div className="font-mono text-[9px] text-white/40 uppercase">Articles</div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                          <Layers className="w-4 h-4 text-white/80" />
+                        </div>
+                        <div>
+                          <div className="font-manrope font-bold text-white text-sm">{course.topics} / {course.subtopics}</div>
+                          <div className="font-mono text-[9px] text-white/40 uppercase">Topics / Subs</div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                          <Clock className="w-4 h-4 text-white/80" />
+                        </div>
+                        <div>
+                          <div className="font-manrope font-bold text-white text-sm">{course.estTime}</div>
+                          <div className="font-mono text-[9px] text-white/40 uppercase">Est. Duration</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <h3 className="font-manrope font-extrabold text-2xl text-white mb-6 tracking-tight">
-                    {course.name}
-                  </h3>
-
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
-                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                        <Video className="w-4 h-4 text-white/80" />
-                      </div>
-                      <div>
-                        <div className="font-manrope font-bold text-white text-sm">{course.videos}</div>
-                        <div className="font-mono text-[9px] text-white/40 uppercase">Videos</div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
-                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                        <FileText className="w-4 h-4 text-white/80" />
-                      </div>
-                      <div>
-                        <div className="font-manrope font-bold text-white text-sm">{course.articles}</div>
-                        <div className="font-mono text-[9px] text-white/40 uppercase">Articles</div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
-                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                        <Layers className="w-4 h-4 text-white/80" />
-                      </div>
-                      <div>
-                        <div className="font-manrope font-bold text-white text-sm">{course.topics} / {course.subtopics}</div>
-                        <div className="font-mono text-[9px] text-white/40 uppercase">Topics / Subs</div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white/5 border border-white/5 rounded-2xl p-3 flex items-center space-x-3">
-                      <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                        <Clock className="w-4 h-4 text-white/80" />
-                      </div>
-                      <div>
-                        <div className="font-manrope font-bold text-white text-sm">{course.estTime}</div>
-                        <div className="font-mono text-[9px] text-white/40 uppercase">Est. Duration</div>
-                      </div>
-                    </div>
-                  </div>
+                  <Link href={`/dashboard/${course.slug}`}>
+                    <button className="w-full py-3 rounded-2xl bg-white/10 hover:bg-white text-white hover:text-black font-manrope font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center space-x-2 border border-white/10">
+                      <span>Enter Course</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </div>
+              ))}
+            </motion.div>
+          )}
 
-                <Link href={`/dashboard/${course.slug}`}>
-                  <button className="w-full py-3 rounded-2xl bg-white/10 hover:bg-white text-white hover:text-black font-manrope font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center space-x-2 border border-white/10">
-                    <span>Enter Course</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </Link>
-              </div>
-            ))}
-          </motion.div>
-        )}
-
-        {/* Tab 3: Level Leaderboard Section */}
-        {dashboardTab === "leaderboard" && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="w-full max-w-4xl mt-8 mb-36"
-          >
-            <LevelLeaderboard />
-          </motion.div>
-        )}
+          {/* Tab 3: Level Leaderboard Section */}
+          {dashboardTab === "leaderboard" && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="w-full max-w-4xl mt-8 mb-36"
+            >
+              <LevelLeaderboard />
+            </motion.div>
+          )}
+        </div>
 
       </main>
 
