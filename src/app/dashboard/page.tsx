@@ -346,6 +346,7 @@ export default function Dashboard() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [onboardCompleted, setOnboardCompleted] = useState(false);
+  const [dashboardTab, setDashboardTab] = useState<"courses" | "previews" | "leaderboard">("courses");
   const avatarInputRef = useRef<HTMLInputElement>(null);
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -439,8 +440,6 @@ export default function Dashboard() {
       </div>
     );
   }
-
-  const [dashboardTab, setDashboardTab] = useState<"courses" | "previews" | "leaderboard">("courses");
 
   const coursePreviewsData = [
     {

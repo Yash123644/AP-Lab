@@ -3,11 +3,11 @@
 export function PixelCourseBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none bg-[#03040a]">
-      {/* Crisp White Dot Matrix Grid Overlay */}
+      {/* Subtle White Dot Matrix Grid Overlay */}
       <div 
-        className="absolute inset-0 opacity-55 pointer-events-none"
+        className="absolute -top-10 -bottom-20 left-0 right-0 opacity-30 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.35) 1.5px, transparent 1.5px)",
+          backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.28) 1.4px, transparent 1.4px)",
           backgroundSize: "32px 32px"
         }}
       />

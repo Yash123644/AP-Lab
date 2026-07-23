@@ -122,7 +122,9 @@ function SocialCard({ social }: { social: typeof socialLinks[0] }) {
           </div>
           <div className="text-center" style={{ transform: "translateZ(30px)" }}>
             <p className="font-cabin font-bold text-2xl text-white tracking-tight">{social.name}</p>
-            <p className="text-[10px] font-manrope font-black text-white/30 uppercase tracking-[0.2em] mt-2">Join Lab</p>
+            <p className="text-[10px] font-manrope font-black text-white/40 group-hover:text-emerald-400 uppercase tracking-[0.2em] mt-2 transition-colors">
+              {social.name === "Discord" ? "50+ Members" : "Join Lab"}
+            </p>
           </div>
         </div>
 
