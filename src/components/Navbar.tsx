@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Activity, Globe, Users, Mail, LayoutDashboard, LogIn } from "lucide-react";
+import { Menu, X, Activity, Globe, Users, Mail, LayoutDashboard, LogIn, Newspaper } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,7 +47,8 @@ export function Navbar() {
   }, [lastScrollY]);
 
   const navLinks: NavLinkItem[] = [
-    { name: "Impact", href: "/community-impact", icon: Globe },
+    { name: "Impact", href: "/impact", icon: Globe },
+    { name: "Blog", href: "/blog", icon: Newspaper },
     { name: "Join", href: "/join", icon: Users },
     { name: "Contact Us", href: "/contact", icon: Mail },
   ];

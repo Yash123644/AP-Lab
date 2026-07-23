@@ -130,14 +130,14 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const reviews = [
-  { id: 1, name: "Sophia M.", role: "AP Bio Student", text: "The Live Diagnostics showed exactly where I was failing. Got a 5!", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" },
-  { id: 2, name: "Daniel K.", role: "AP Chem Student", text: "Socratic AI is literally a 24/7 tutor. Unbelievable platform.", avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80" },
-  { id: 3, name: "Emily R.", role: "AP Calc Student", text: "I struggled with integrals until the Neural Recall system stepped in.", avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80" },
-  { id: 4, name: "Liam T.", role: "AP Physics Student", text: "The mock exams are exactly like the real thing. Highly recommend.", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" },
-  { id: 5, name: "Ava L.", role: "AP Lang Student", text: "Beautiful UI. Studying actually feels engaging now instead of a chore.", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" },
-  { id: 6, name: "Noah W.", role: "AP Euro Student", text: "My teacher recommended this, and my DBQ scores skyrocketed.", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" },
-  { id: 7, name: "Mia S.", role: "AP Psych Student", text: "The spaced repetition algorithm is absolute magic. Never forgetting vocab again.", avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&auto=format&fit=crop&q=80" },
-  { id: 8, name: "Ethan H.", role: "AP US History", text: "Best $0 I've ever spent. The fact that this is free is insane.", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&auto=format&fit=crop&q=80" }
+  { id: 1, name: "Sophia M.", role: "AP Bio Student", text: "The Live Diagnostics showed exactly where I was failing. Got a 5!", avatar: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80" },
+  { id: 2, name: "Daniel K.", role: "AP Chem Student", text: "Socratic AI is literally a 24/7 tutor. Unbelievable platform.", avatar: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=150&q=80" },
+  { id: 3, name: "Emily R.", role: "AP Calc Student", text: "I struggled with integrals until the Neural Recall system stepped in.", avatar: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=150&q=80" },
+  { id: 4, name: "Liam T.", role: "AP Physics Student", text: "The mock exams are exactly like the real thing. Highly recommend.", avatar: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=150&q=80" },
+  { id: 5, name: "Ava L.", role: "AP Lang Student", text: "Beautiful UI. Studying actually feels engaging now instead of a chore.", avatar: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=150&q=80" },
+  { id: 6, name: "Noah W.", role: "AP Euro Student", text: "My teacher recommended this, and my DBQ scores skyrocketed.", avatar: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=150&q=80" },
+  { id: 7, name: "Mia S.", role: "AP Psych Student", text: "The spaced repetition algorithm is absolute magic. Never forgetting vocab again.", avatar: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=150&q=80" },
+  { id: 8, name: "Ethan H.", role: "AP US History", text: "Best $0 I've ever spent. The fact that this is free is insane.", avatar: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=150&q=80" }
 ];
 
 // referral list - restricted to exactly 6 rows (12 items) to stop cutoffs
@@ -904,12 +904,12 @@ export function Onboarding({ onComplete, userEmail, userId }: OnboardingProps) {
                   <span className="text-[10px] uppercase font-mono tracking-widest text-neutral-400 font-bold">Select Miscellaneous Avatar</span>
                   <div className="flex items-center space-x-2.5">
                     {[
-                      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=250&auto=format&fit=crop&q=80",
-                      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=250&auto=format&fit=crop&q=80",
-                      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=250&auto=format&fit=crop&q=80",
-                      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&auto=format&fit=crop&q=80",
-                      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=250&auto=format&fit=crop&q=80",
-                      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=250&auto=format&fit=crop&q=80"
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23ffffff'/><path d='M 28 44 Q 36 50 44 44' stroke='%23111827' stroke-width='6' stroke-linecap='round' fill='none'/><path d='M 56 44 Q 64 50 72 44' stroke='%23111827' stroke-width='6' stroke-linecap='round' fill='none'/><path d='M 40 60 Q 45 68 50 60 Q 55 68 60 60' stroke='%23111827' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>",
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23ffffff'/><circle cx='35' cy='42' r='6' fill='%23111827'/><circle cx='65' cy='42' r='6' fill='%23111827'/><path d='M 38 58 Q 50 72 62 58' stroke='%23111827' stroke-width='6' stroke-linecap='round' fill='none'/><circle cx='24' cy='52' r='5' fill='%23f472b6' opacity='0.5'/><circle cx='76' cy='52' r='5' fill='%23f472b6' opacity='0.5'/></svg>",
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23ffffff'/><rect x='22' y='35' width='24' height='16' rx='4' fill='%23111827'/><rect x='54' y='35' width='24' height='16' rx='4' fill='%23111827'/><line x1='46' y1='40' x2='54' y2='40' stroke='%23111827' stroke-width='4'/><path d='M 40 64 Q 50 70 60 64' stroke='%23111827' stroke-width='5' stroke-linecap='round' fill='none'/></svg>",
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23ffffff'/><circle cx='35' cy='42' r='13' stroke='%23111827' stroke-width='4.5' fill='none'/><circle cx='65' cy='42' r='13' stroke='%23111827' stroke-width='4.5' fill='none'/><line x1='48' y1='42' x2='52' y2='42' stroke='%23111827' stroke-width='4.5'/><circle cx='35' cy='42' r='4' fill='%23111827'/><circle cx='65' cy='42' r='4' fill='%23111827'/><path d='M 42 63 Q 50 68 58 63' stroke='%23111827' stroke-width='5' stroke-linecap='round' fill='none'/></svg>",
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23ffffff'/><circle cx='34' cy='40' r='8' fill='%23111827'/><circle cx='66' cy='40' r='8' fill='%23111827'/><circle cx='36' cy='38' r='2.5' fill='white'/><circle cx='68' cy='38' r='2.5' fill='white'/><circle cx='50' cy='63' r='7.5' fill='%23111827'/></svg>",
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23ffffff'/><path d='M 26 42 Q 34 48 42 42' stroke='%23111827' stroke-width='6' stroke-linecap='round' fill='none'/><circle cx='65' cy='42' r='6' fill='%23111827'/><path d='M 38 58 Q 50 72 62 58' stroke='%23111827' stroke-width='6' stroke-linecap='round' fill='none'/></svg>"
                     ].map((imgUrl, i) => (
                       <button
                         key={i}

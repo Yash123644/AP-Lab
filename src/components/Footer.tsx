@@ -85,13 +85,29 @@ export function Footer() {
           <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-4">
             Navigation:
           </span>
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap items-center gap-2">
             <Link href="/" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
               Home
             </Link>
             <span className="text-white/20">/</span>
             <Link href="/dashboard" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
-              The Dashboard
+              Dashboard
+            </Link>
+            <span className="text-white/20">/</span>
+            <Link href="/impact" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Impact
+            </Link>
+            <span className="text-white/20">/</span>
+            <Link href="/blog" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Blog
+            </Link>
+            <span className="text-white/20">/</span>
+            <Link href="/join" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Join
+            </Link>
+            <span className="text-white/20">/</span>
+            <Link href="/contact" className="font-mono text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">
+              Contact
             </Link>
           </div>
         </div>
