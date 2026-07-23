@@ -708,7 +708,7 @@ export default function Dashboard() {
 
         {/* LOWER REGION: Folders Grid / Previews Grid / Leaderboard with Grid Background Pattern */}
         <div 
-          className="w-full flex-1 relative z-20 flex flex-col items-center pt-10 pb-32 px-6 md:px-12 border-t border-white/10 bg-[#060712]"
+          className="w-full flex-1 relative z-20 flex flex-col items-center pt-8 pb-12 px-6 md:px-12 border-t border-white/10 bg-[#060712]"
           style={{
             backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
             backgroundSize: "36px 36px"
@@ -720,7 +720,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mb-36"
+              className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl mb-8 sm:mb-12"
             >
               {folders.map((folder) => (
                 <FolderCard 
@@ -738,7 +738,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mt-8 mb-36"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mt-8 mb-8 sm:mb-12"
             >
               {coursePreviewsData.map((course) => (
                 <div 
@@ -822,7 +822,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="w-full max-w-4xl mt-8 mb-36"
+              className="w-full max-w-4xl mt-8 mb-8 sm:mb-12"
             >
               <LevelLeaderboard />
             </motion.div>

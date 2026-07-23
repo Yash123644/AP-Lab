@@ -14,10 +14,12 @@ import { SocialsSlider } from "@/components/SocialsSlider";
 import { ScrollVideoSection } from "@/components/ScrollVideoSection";
 import { FAQSection } from "@/components/FAQSection";
 import { CollegesLogoWheel } from "@/components/CollegesLogoWheel";
+import { Preloader } from "@/components/Preloader";
 
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-deep-navy selection:bg-medical-teal selection:text-white">
+      <Preloader />
       <Navbar />
       <div className="flex flex-col">
         <HeroSection />

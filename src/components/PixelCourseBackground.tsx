@@ -1,264 +1,125 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-interface PixelCourseBackgroundProps {
-  opacity?: number;
-  pixelSize?: number;
-}
-
-export function PixelCourseBackground({
-  opacity = 0.14, // Faint, sleek background opacity
-  pixelSize = 7,  // 1:1 Square Pixel Block Size
-}: PixelCourseBackgroundProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const renderCanvas = () => {
-      const parent = canvas.parentElement;
-      const width = parent ? parent.offsetWidth : window.innerWidth;
-      const height = parent ? parent.offsetHeight : window.innerHeight;
-
-      // Lock canvas dimensions to exact parent container resolution
-      canvas.width = width;
-      canvas.height = height;
-      ctx.imageSmoothingEnabled = false;
-
-      // 1. Draw Deep Black Background Base
-      ctx.fillStyle = "#03040a";
-      ctx.fillRect(0, 0, width, height);
-
-      // 2. Draw Soft White Dot Matrix Pattern
-      const dotSpacing = 32;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.16)";
-      for (let x = dotSpacing / 2; x < width; x += dotSpacing) {
-        for (let y = dotSpacing / 2; y < height; y += dotSpacing) {
-          ctx.fillRect(Math.floor(x), Math.floor(y), 1.8, 1.8);
-        }
-      }
-
-      // Single, uniform light-grey color for ALL icons
-      const iconColor = "#cbd5e1"; // Muted Slate/Light Grey
-      const p = pixelSize;
-
-      // Helper: Draw crisp, 1:1 SQUARE pixel block (Guarantees zero horizontal stretching)
-      const drawPx = (cx: number, cy: number, dx: number, dy: number, w = 1, h = 1) => {
-        const px = Math.round(cx + dx * p);
-        const py = Math.round(cy + dy * p);
-        const pw = Math.round(w * p);
-        const ph = Math.round(h * p);
-        ctx.fillRect(px, py, pw, ph);
-      };
-
-      // -----------------------------------------------------------------------
-      // Authentic 1:1 Square Pixel-Art Symbol Drawers
-      // -----------------------------------------------------------------------
-
-      // 1. DNA Helix
-      const drawDNA = (cx: number, cy: number) => {
-        const strand = [
-          [-3, -4], [3, -4],
-          [-2, -3], [2, -3],
-          [-1, -2], [1, -2],
-          [0, -1],
-          [1, 0], [-1, 0],
-          [2, 1], [-2, 1],
-          [3, 2], [-3, 2],
-          [2, 3], [-2, 3],
-          [1, 4], [-1, 4]
-        ];
-        strand.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
-        drawPx(cx, cy, -2, -3, 4, 1);
-        drawPx(cx, cy, -2, 3, 4, 1);
-      };
-
-      // 2. Erlenmeyer Beaker
-      const drawBeaker = (cx: number, cy: number) => {
-        drawPx(cx, cy, -1.5, -3.5, 3, 1);
-        drawPx(cx, cy, -0.8, -2.5, 1.6, 1);
-        drawPx(cx, cy, -1.5, -1.5, 3, 1);
-        drawPx(cx, cy, -2.2, -0.5, 4.4, 1);
-        drawPx(cx, cy, -3.0, 0.5, 6, 2);
-        drawPx(cx, cy, -3.2, 2.5, 6.4, 1);
-      };
-
-      // 3. Atom Orbit
-      const drawAtom = (cx: number, cy: number) => {
-        drawPx(cx, cy, -1, -1, 2, 2);
-        const ring = [
-          [0, -4], [1, -4], [-1, -4],
-          [3, -3], [-3, -3],
-          [4, -1], [-4, -1], [4, 0], [-4, 0], [4, 1], [-4, 1],
-          [3, 3], [-3, 3],
-          [0, 4], [1, 4], [-1, 4]
-        ];
-        ring.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
-      };
-
-      // 4. Integral ∫
-      const drawIntegral = (cx: number, cy: number) => {
-        const pixels = [
-          [1, -4], [2, -4], [3, -4],
-          [1, -3],
-          [1, -2],
-          [0, -1],
-          [0, 0],
-          [0, 1],
-          [-1, 2],
-          [-1, 3],
-          [-3, 4], [-2, 4], [-1, 4]
-        ];
-        pixels.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
-      };
-
-      // 5. Summation Σ
-      const drawSummation = (cx: number, cy: number) => {
-        const pixels = [
-          [-3, -4], [-2, -4], [-1, -4], [0, -4], [1, -4], [2, -4], [3, -4],
-          [-2, -3],
-          [-1, -2],
-          [0, -1],
-          [-1, 0],
-          [-2, 1],
-          [-3, 2],
-          [-3, 4], [-2, 4], [-1, 4], [0, 4], [1, 4], [2, 4], [3, 4]
-        ];
-        pixels.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
-      };
-
-      // 6. 3-Bar Histogram
-      const drawGraphBar = (cx: number, cy: number) => {
-        drawPx(cx, cy, -3.5, 3, 7, 1);
-        drawPx(cx, cy, -3, 0, 1.6, 3);
-        drawPx(cx, cy, -0.8, -2.5, 1.6, 5.5);
-        drawPx(cx, cy, 1.4, -1, 1.6, 4);
-      };
-
-      // 7. Sine Wave Curve
-      const drawGraphCurve = (cx: number, cy: number) => {
-        const wave = [
-          [-4, 2], [-3, 1], [-2, 0], [-1, -1], [0, -2],
-          [1, -1], [2, 0], [3, 1], [4, 2]
-        ];
-        wave.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
-      };
-
-      // 8. Code Brackets { }
-      const drawCodeBrackets = (cx: number, cy: number) => {
-        const leftB = [[0, -3.5], [-1, -2.5], [-1, -1.5], [-2, -0.5], [-1, 0.5], [-1, 1.5], [0, 2.5]];
-        leftB.forEach(([dx, dy]) => drawPx(cx, cy, -2 + dx, dy, 1, 1));
-        const rightB = [[0, -3.5], [1, -2.5], [1, -1.5], [2, -0.5], [1, 0.5], [1, 1.5], [0, 2.5]];
-        rightB.forEach(([dx, dy]) => drawPx(cx, cy, 2 + dx, dy, 1, 1));
-      };
-
-      // 9. Neural Synapse
-      const drawNeural = (cx: number, cy: number) => {
-        drawPx(cx, cy, -3, -2, 1.8, 1.8);
-        drawPx(cx, cy, 2, -1.5, 1.8, 1.8);
-        drawPx(cx, cy, -0.5, 2, 1.8, 1.8);
-        drawPx(cx, cy, -2, -1, 2, 1);
-        drawPx(cx, cy, 0.5, 0, 1.5, 1.5);
-      };
-
-      // 10. Authentic Open Book Pixel Art
-      const drawBook = (cx: number, cy: number) => {
-        // Spine
-        drawPx(cx, cy, -0.5, -4, 1, 8.5);
-        
-        // Left Page
-        drawPx(cx, cy, -4.5, -4, 4, 1);    // top edge
-        drawPx(cx, cy, -4.5, -4, 1, 7.5);  // outer edge
-        drawPx(cx, cy, -4.5, 3.5, 4, 1);   // bottom edge
-        // Left text lines
-        drawPx(cx, cy, -3.2, -2, 2.2, 0.8);
-        drawPx(cx, cy, -3.2, 0, 2.2, 0.8);
-
-        // Right Page
-        drawPx(cx, cy, 0.5, -4, 4, 1);     // top edge
-        drawPx(cx, cy, 3.5, -4, 1, 7.5);   // outer edge
-        drawPx(cx, cy, 0.5, 3.5, 4, 1);    // bottom edge
-        // Right text lines
-        drawPx(cx, cy, 1.0, -2, 2.2, 0.8);
-        drawPx(cx, cy, 1.0, 0, 2.2, 0.8);
-      };
-
-      // 11. Dollar Sign ($)
-      const drawDollar = (cx: number, cy: number) => {
-        drawPx(cx, cy, -0.4, -3.5, 0.8, 7);
-        const sPixels = [
-          [-1.8, -2.5], [-0.8, -2.5], [0.2, -2.5], [1.2, -2.5],
-          [-1.8, -1.5],
-          [-1.8, -0.5], [-0.8, -0.5], [0.2, -0.5], [1.2, -0.5],
-          [1.2, 0.5],
-          [-1.8, 1.5], [-0.8, 1.5], [0.2, 1.5], [1.2, 1.5]
-        ];
-        sPixels.forEach(([dx, dy]) => drawPx(cx, cy, dx, dy, 1, 1));
-      };
-
-      // 12. Judge Gavel
-      const drawGavel = (cx: number, cy: number) => {
-        drawPx(cx, cy, -2.5, -2.5, 5, 1.5);
-        drawPx(cx, cy, -0.4, -1, 0.8, 4);
-        drawPx(cx, cy, -3, 3, 6, 1);
-      };
-
-      // 13. Temple Pillar
-      const drawPillar = (cx: number, cy: number) => {
-        drawPx(cx, cy, -2.5, -3, 5, 1);
-        drawPx(cx, cy, -1.8, -2, 3.6, 0.8);
-        drawPx(cx, cy, -1.4, -1.2, 0.8, 3.4);
-        drawPx(cx, cy, -0.4, -1.2, 0.8, 3.4);
-        drawPx(cx, cy, 0.6, -1.2, 0.8, 3.4);
-        drawPx(cx, cy, -2.5, 2.2, 5, 1);
-      };
-
-      const symbolDrawers = [
-        drawDNA, drawBeaker, drawAtom, drawIntegral, drawSummation,
-        drawGraphBar, drawGraphCurve, drawCodeBrackets, drawNeural,
-        drawBook, drawDollar, drawGavel, drawPillar
-      ];
-
-      // 3. Render Deterministic 1:1 Square Grid of Symbols
-      const cols = 6;
-      const rows = Math.ceil(height / (window.innerHeight / 4));
-      const cellW = width / cols;
-      const cellH = height / rows;
-
-      ctx.fillStyle = iconColor;
-      ctx.globalAlpha = opacity;
-
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          const cx = c * cellW + cellW * 0.5;
-          const cy = r * cellH + cellH * 0.5;
-          const drawerIdx = (r * 5 + c * 3) % symbolDrawers.length;
-          const drawer = symbolDrawers[drawerIdx];
-          drawer(cx, cy);
-        }
-      }
-
-      ctx.globalAlpha = 1.0;
-    };
-
-    renderCanvas();
-    window.addEventListener("resize", renderCanvas);
-
-    return () => {
-      window.removeEventListener("resize", renderCanvas);
-    };
-  }, [opacity, pixelSize]);
-
+export function PixelCourseBackground() {
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none -z-20 image-rendering-pixelated bg-[#03040a]"
-      style={{ display: "block" }}
-    />
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none bg-[#03040a]">
+      {/* Subtle Dot Matrix Pattern */}
+      <div 
+        className="absolute inset-0 opacity-40 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px)",
+          backgroundSize: "32px 32px"
+        }}
+      />
+
+      {/* Clean Crisp SVG Academic Symbols (Matching Practice Section Style) */}
+      <div className="absolute inset-0 pointer-events-none">
+        
+        {/* Pixel Book - Top Far Left */}
+        <div className="absolute top-10 left-[4%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/80" shapeRendering="crispEdges" fill="none">
+            <rect x="2" y="2" width="12" height="12" fill="currentColor" fillOpacity="0.3" />
+            <rect x="3" y="3" width="4" height="10" fill="currentColor" fillOpacity="0.6" />
+            <rect x="8" y="3" width="5" height="10" fill="currentColor" fillOpacity="0.5" />
+            <rect x="7" y="2" width="1" height="12" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Graduation Mortarboard - Top Outer Right */}
+        <div className="absolute top-12 right-[5%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-14 h-14 text-white/80" shapeRendering="crispEdges" fill="none">
+            <rect x="1" y="5" width="14" height="2" fill="currentColor" />
+            <rect x="7" y="3" width="2" height="2" fill="currentColor" />
+            <rect x="4" y="7" width="8" height="4" fill="currentColor" fillOpacity="0.6" />
+            <rect x="13" y="7" width="1" height="5" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Atom Orbit - Middle Outer Left */}
+        <div className="absolute top-[40%] left-[3%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/80" shapeRendering="crispEdges" fill="none">
+            <rect x="7" y="7" width="2" height="2" fill="currentColor" />
+            <rect x="2" y="7" width="3" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="11" y="7" width="3" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="7" y="2" width="2" height="3" fill="currentColor" fillOpacity="0.6" />
+            <rect x="7" y="11" width="2" height="3" fill="currentColor" fillOpacity="0.6" />
+          </svg>
+        </div>
+
+        {/* Pixel Chemistry Flask - Middle Outer Right */}
+        <div className="absolute top-[42%] right-[4%] opacity-35">
+          <svg viewBox="0 0 16 16" className="w-12 h-12 text-white/80" shapeRendering="crispEdges" fill="none">
+            <rect x="6" y="2" width="4" height="1" fill="currentColor" />
+            <rect x="7" y="3" width="2" height="4" fill="currentColor" fillOpacity="0.6" />
+            <rect x="4" y="7" width="8" height="7" fill="currentColor" fillOpacity="0.4" />
+            <rect x="5" y="10" width="6" height="3" fill="currentColor" fillOpacity="0.9" />
+          </svg>
+        </div>
+
+        {/* Pixel DNA Helix - Top Outer Center Left */}
+        <div className="absolute top-14 left-[20%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="3" y="2" width="2" height="2" fill="currentColor" />
+            <rect x="11" y="2" width="2" height="2" fill="currentColor" />
+            <rect x="5" y="4" width="6" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="7" y="6" width="2" height="4" fill="currentColor" />
+            <rect x="5" y="10" width="6" height="2" fill="currentColor" fillOpacity="0.6" />
+            <rect x="3" y="12" width="2" height="2" fill="currentColor" />
+            <rect x="11" y="12" width="2" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Lightbulb - Top Outer Center Right */}
+        <div className="absolute top-16 right-[20%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="6" y="2" width="4" height="2" fill="currentColor" />
+            <rect x="4" y="4" width="8" height="5" fill="currentColor" fillOpacity="0.5" />
+            <rect x="6" y="9" width="4" height="2" fill="currentColor" />
+            <rect x="7" y="11" width="2" height="2" fill="currentColor" fillOpacity="0.8" />
+          </svg>
+        </div>
+
+        {/* Pixel Certificate Diploma - Bottom Outer Left */}
+        <div className="absolute bottom-6 left-[8%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="3" y="3" width="10" height="10" fill="currentColor" fillOpacity="0.3" />
+            <rect x="5" y="5" width="6" height="1" fill="currentColor" />
+            <rect x="5" y="7" width="6" height="1" fill="currentColor" />
+            <rect x="5" y="9" width="4" height="1" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Microscope - Bottom Outer Right */}
+        <div className="absolute bottom-6 right-[8%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-10 h-10 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="6" y="2" width="4" height="3" fill="currentColor" />
+            <rect x="7" y="5" width="2" height="4" fill="currentColor" fillOpacity="0.6" />
+            <rect x="4" y="9" width="3" height="3" fill="currentColor" fillOpacity="0.8" />
+            <rect x="3" y="12" width="10" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Pi Symbol - Middle Center Left */}
+        <div className="absolute top-[52%] left-[12%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-9 h-9 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="2" y="3" width="12" height="2" fill="currentColor" />
+            <rect x="4" y="5" width="2" height="8" fill="currentColor" />
+            <rect x="9" y="5" width="2" height="8" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Pixel Sigma Symbol - Middle Center Right */}
+        <div className="absolute top-[55%] right-[12%] opacity-30">
+          <svg viewBox="0 0 16 16" className="w-9 h-9 text-white/70" shapeRendering="crispEdges" fill="none">
+            <rect x="3" y="2" width="10" height="2" fill="currentColor" />
+            <rect x="3" y="4" width="4" height="2" fill="currentColor" />
+            <rect x="6" y="6" width="3" height="2" fill="currentColor" />
+            <rect x="3" y="8" width="4" height="2" fill="currentColor" />
+            <rect x="3" y="10" width="10" height="2" fill="currentColor" />
+          </svg>
+        </div>
+
+      </div>
+    </div>
   );
 }
