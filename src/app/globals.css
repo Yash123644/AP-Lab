@@ -1048,17 +1048,18 @@ body {
   animation: discord-logo-shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
-/* Liquid glass glassmorphic capsule badge with background line gradient shifting */
+/* Liquid glass glassmorphic capsule badge with background line gradient shifting & unique shimmer hover */
 .liquid-glass-badge {
   position: relative;
-  background: rgba(6, 7, 12, 0.45);
+  background: rgba(6, 7, 12, 0.65);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 
     inset 0 1px 1px rgba(255, 255, 255, 0.1),
-    0 10px 40px rgba(0, 0, 0, 0.5);
+    0 10px 40px rgba(0, 0, 0, 0.6);
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .liquid-glass-badge::before {
@@ -1066,15 +1067,53 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* Shifting colors matching background lines: Pink/Crimson (#d946ef) -> Violet (#8b5cf6) -> Blue (#3b82f6) -> Cyan (#06b6d4) */
   background: linear-gradient(90deg, 
-    rgba(217, 70, 239, 0.06) 0%, 
-    rgba(139, 92, 246, 0.06) 35%, 
-    rgba(59, 130, 246, 0.06) 70%, 
-    rgba(6, 182, 212, 0.06) 100%
+    rgba(217, 70, 239, 0.08) 0%, 
+    rgba(139, 92, 246, 0.08) 35%, 
+    rgba(59, 130, 246, 0.08) 70%, 
+    rgba(6, 182, 212, 0.08) 100%
   );
   background-size: 300% 300%;
   animation: gradient-shift 6s ease infinite;
+}
+
+.liquid-glass-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.liquid-glass-badge:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 
+    0 0 25px rgba(59, 130, 246, 0.4),
+    0 0 50px rgba(139, 92, 246, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  background: rgba(12, 16, 28, 0.85);
+  transform: translateY(-1px);
+}
+
+.liquid-glass-badge:hover::after {
+  opacity: 1;
+  animation: badge-sheen-sweep 1.4s ease-in-out infinite;
+}
+
+@keyframes badge-sheen-sweep {
+  0% { left: -150%; }
+  100% { left: 150%; }
 }
 
 

@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Check, DollarSign } from "lucide-react";
+import { X, Check, DollarSign, Activity } from "lucide-react";
 
 interface ComparisonModalProps {
   isOpen: boolean;
@@ -11,121 +11,67 @@ interface ComparisonModalProps {
 
 const COMPARISON_DATA = [
   {
-    feature: "Infinite AI-Powered Practice",
+    feature: "AI Socratic Tutor",
     apLab: "check",
     khan: "cross",
     fiveable: "cross",
     knowt: "cross",
-    brilliant: "cross",
-    aops: "cross"
+    quizlet: "cross",
+    brilliant: "cross"
   },
   {
-    feature: "High Quality Practice Questions",
+    feature: "Comprehensive AP Practice Questions",
     apLab: "check",
     khan: "check",
     fiveable: "paid",
     knowt: "check",
-    brilliant: "check",
-    aops: "check"
+    quizlet: "check",
+    brilliant: "check"
   },
   {
-    feature: "High Quality Study Guides",
-    apLab: "check",
-    khan: "check",
-    fiveable: "paid",
-    knowt: "check",
-    brilliant: "check",
-    aops: "check"
-  },
-  {
-    feature: "Unlimited AP FRQ Practice",
-    apLab: "check",
-    khan: "cross",
-    fiveable: "paid",
-    knowt: "paid",
-    brilliant: "cross",
-    aops: "cross"
-  },
-  {
-    feature: "Full-Length AP Practice Exams",
+    feature: "Full-Length AP Mock Exams & Timer",
     apLab: "check",
     khan: "cross",
     fiveable: "cross",
     knowt: "paid",
-    brilliant: "cross",
-    aops: "cross"
+    quizlet: "cross",
+    brilliant: "cross"
   },
   {
-    feature: "Gamification and Streak",
+    feature: "Live Unit Diagnostic Analytics",
     apLab: "check",
     khan: "check",
     fiveable: "cross",
+    knowt: "cross",
+    quizlet: "cross",
+    brilliant: "check"
+  },
+  {
+    feature: "Interactive Unit Lessons & Formulas",
+    apLab: "check",
+    khan: "check",
+    fiveable: "check",
     knowt: "check",
-    brilliant: "check",
-    aops: "check"
+    quizlet: "cross",
+    brilliant: "check"
   },
   {
-    feature: "Visual-Based AI Assistant",
+    feature: "Spaced Repetition & Vocab Flashcards",
     apLab: "check",
     khan: "cross",
     fiveable: "cross",
-    knowt: "cross",
-    brilliant: "cross",
-    aops: "cross"
+    knowt: "check",
+    quizlet: "check",
+    brilliant: "cross"
   },
   {
-    feature: "Practice from Custom Notes and Flashcards",
+    feature: "Gamified XP Leaderboard & Streaks",
     apLab: "check",
-    khan: "cross",
+    khan: "check",
     fiveable: "cross",
-    knowt: "paid",
-    brilliant: "cross",
-    aops: "cross"
-  },
-  {
-    feature: "Interactive Lessons and Practice",
-    apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
-    knowt: "cross",
-    brilliant: "check",
-    aops: "cross"
-  },
-  {
-    feature: "Leaderboard",
-    apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
-    knowt: "cross",
-    brilliant: "cross",
-    aops: "check"
-  },
-  {
-    feature: "Authentic Competitive Math Questions",
-    apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
-    knowt: "cross",
-    brilliant: "cross",
-    aops: "check"
-  },
-  {
-    feature: "Intuitive Competitive Math Explanations",
-    apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
-    knowt: "cross",
-    brilliant: "cross",
-    aops: "check"
-  },
-  {
-    feature: "Competitive Math Visual Tracker",
-    apLab: "check",
-    khan: "cross",
-    fiveable: "cross",
-    knowt: "cross",
-    brilliant: "cross",
-    aops: "cross"
+    knowt: "check",
+    quizlet: "cross",
+    brilliant: "check"
   },
   {
     feature: "Price (per month)",
@@ -133,8 +79,8 @@ const COMPARISON_DATA = [
     khan: "$4.00 (Khanmigo)",
     fiveable: "$27.00",
     knowt: "$24.99",
-    brilliant: "$27.99",
-    aops: "~$40.00 (per Book)"
+    quizlet: "$35.99/yr",
+    brilliant: "$27.99"
   }
 ];
 
@@ -182,7 +128,12 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto select-none">
+        <div 
+          className="fixed inset-0 z-[9999999] bg-[#030409] overflow-y-auto select-none flex items-center justify-center p-4 sm:p-6"
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+        >
           {/* Global Style overrides to lock body scroll and hide top Navbar */}
           <style>{`
             body {
@@ -195,38 +146,25 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
             }
           `}</style>
 
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/90 backdrop-blur-xl"
-          />
-
           {/* Modal Content Box */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            initial={{ opacity: 0, scale: 0.96, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 15 }}
-            transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            className="relative w-full max-w-6xl bg-[#060813]/95 border border-white/15 rounded-3xl overflow-hidden shadow-[0_32px_100px_rgba(0,0,0,0.95)] z-10 flex flex-col max-h-[90vh]"
+            exit={{ opacity: 0, scale: 0.96, y: 15 }}
+            transition={{ type: "spring", stiffness: 340, damping: 28 }}
+            className="relative w-full max-w-6xl bg-[#080914] border border-white/15 rounded-3xl overflow-hidden shadow-[0_32px_120px_rgba(0,0,0,1)] z-10 flex flex-col max-h-[92vh] my-auto"
           >
             {/* Header Bar */}
             <div className="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-white/10 bg-white/[0.02]">
               <div>
-                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider mb-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Platform Feature Matrix</span>
-                </div>
-                <h2 className="text-xl sm:text-2xl font-bold font-manrope text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-extrabold font-manrope text-white tracking-tight">
                   Why AP Lab is Superior
                 </h2>
               </div>
 
               <button
                 onClick={onClose}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white/70 hover:text-white transition-all"
+                className="p-2.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white/70 hover:text-white transition-all cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -237,20 +175,18 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
               data-lenis-prevent="true"
               className="flex-1 overflow-x-auto overflow-y-auto p-4 sm:p-6 custom-scrollbar"
             >
-              <table className="w-full text-left border-collapse min-w-[820px]">
+              <table className="w-full text-left border-collapse min-w-[840px]">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="py-4 px-4 text-xs font-mono uppercase tracking-wider text-white/40 font-bold w-[28%]">
+                    <th className="py-5 px-4 text-xs font-mono uppercase tracking-wider text-white/40 font-bold w-[26%]">
                       Feature Comparison
                     </th>
 
                     {/* AP Lab Column (Highlighted) */}
-                    <th className="py-4 px-4 text-center bg-blue-600/15 border-x border-t border-blue-500/40 rounded-t-2xl">
-                      <div className="flex flex-col items-center justify-center space-y-1">
+                    <th className="py-5 px-4 text-center bg-blue-600/15 border-x border-t border-blue-500/40 rounded-t-2xl">
+                      <div className="flex flex-col items-center justify-center space-y-1.5">
                         <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 rounded-lg bg-blue-500/20 border border-blue-400/40 flex items-center justify-center p-1">
-                            <img src="/logo.png" alt="AP Lab" className="w-full h-full object-contain" />
-                          </div>
+                          <Activity className="w-5 h-5 text-blue-400" />
                           <span className="text-sm font-extrabold text-blue-400 tracking-tight font-manrope">
                             AP Lab
                           </span>
@@ -262,63 +198,37 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
                     </th>
 
                     {/* Khan Academy Header Logo */}
-                    <th className="py-4 px-4 text-center">
-                      <div className="flex flex-col items-center justify-center space-y-1">
-                        <div className="flex items-center space-x-1.5">
-                          <svg className="w-5 h-5 text-[#0a85ea]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                          </svg>
-                          <span className="text-xs font-bold text-white/90 font-manrope">Khan Academy</span>
-                        </div>
+                    <th className="py-5 px-4 text-center">
+                      <div className="flex items-center justify-center h-9">
+                        <img src="/images/logos/khan.png" alt="Khan Academy" className="h-6 sm:h-7 object-contain max-w-[130px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Fiveable Header Logo */}
-                    <th className="py-4 px-4 text-center">
-                      <div className="flex flex-col items-center justify-center space-y-1">
-                        <div className="flex items-center space-x-1.5">
-                          <div className="w-5 h-5 rounded-md bg-[#00c2cb]/20 border border-[#00c2cb]/40 flex items-center justify-center text-[#00c2cb] font-extrabold text-[10px]">
-                            5
-                          </div>
-                          <span className="text-xs font-bold text-white/90 font-manrope">Fiveable</span>
-                        </div>
+                    <th className="py-5 px-4 text-center">
+                      <div className="flex items-center justify-center h-9">
+                        <img src="/images/logos/fiveable.png" alt="Fiveable" className="h-6 sm:h-7 object-contain max-w-[120px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Knowt Header Logo */}
-                    <th className="py-4 px-4 text-center">
-                      <div className="flex flex-col items-center justify-center space-y-1">
-                        <div className="flex items-center space-x-1.5">
-                          <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-bold text-xs">
-                            K
-                          </div>
-                          <span className="text-xs font-bold text-white/90 font-manrope">Knowt</span>
-                        </div>
+                    <th className="py-5 px-4 text-center">
+                      <div className="flex items-center justify-center h-9">
+                        <img src="/images/logos/knowt.png" alt="Knowt" className="h-6 sm:h-7 object-contain max-w-[110px] filter brightness-110" />
+                      </div>
+                    </th>
+
+                    {/* Quizlet Header Logo */}
+                    <th className="py-5 px-4 text-center">
+                      <div className="flex items-center justify-center h-9">
+                        <img src="/images/logos/quizlet.png" alt="Quizlet" className="h-6 sm:h-7 object-contain max-w-[120px] filter brightness-110" />
                       </div>
                     </th>
 
                     {/* Brilliant Header Logo */}
-                    <th className="py-4 px-4 text-center">
-                      <div className="flex flex-col items-center justify-center space-y-1">
-                        <div className="flex items-center space-x-1.5">
-                          <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M12 3v18M3 12h18" />
-                          </svg>
-                          <span className="text-xs font-bold text-white/90 font-manrope">Brilliant</span>
-                        </div>
-                      </div>
-                    </th>
-
-                    {/* AoPS Online Header Logo */}
-                    <th className="py-4 px-4 text-center">
-                      <div className="flex flex-col items-center justify-center space-y-1">
-                        <div className="flex items-center space-x-1.5">
-                          <div className="w-5 h-5 rounded-md bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 font-extrabold text-[10px]">
-                            A
-                          </div>
-                          <span className="text-xs font-bold text-white/90 font-manrope">AoPS Online</span>
-                        </div>
+                    <th className="py-5 px-4 text-center">
+                      <div className="flex items-center justify-center h-9">
+                        <img src="/images/logos/brilliant.png" alt="Brilliant" className="h-6 sm:h-7 object-contain max-w-[130px] filter invert brightness-200" />
                       </div>
                     </th>
                   </tr>
@@ -332,44 +242,35 @@ export function ComparisonModal({ isOpen, onClose }: ComparisonModalProps) {
                         key={row.feature} 
                         className={`hover:bg-white/[0.02] transition-colors ${isLastRow ? "bg-white/[0.04] font-bold" : ""}`}
                       >
-                        <td className="py-3.5 px-4 text-xs sm:text-sm font-manrope font-semibold text-white/90">
+                        <td className="py-4 px-4 text-xs sm:text-sm font-manrope font-semibold text-white/90">
                           {row.feature}
                         </td>
 
                         {/* AP Lab Highlight Cell */}
-                        <td className={`py-3.5 px-4 text-center bg-blue-600/10 border-x border-blue-500/30 ${isLastRow ? "border-b rounded-b-2xl" : ""}`}>
+                        <td className={`py-4 px-4 text-center bg-blue-600/10 border-x border-blue-500/30 ${isLastRow ? "border-b rounded-b-2xl" : ""}`}>
                           {renderCellContent(row.apLab, true)}
                         </td>
 
-                        <td className="py-3.5 px-4 text-center">
+                        <td className="py-4 px-4 text-center">
                           {renderCellContent(row.khan)}
                         </td>
-                        <td className="py-3.5 px-4 text-center">
+                        <td className="py-4 px-4 text-center">
                           {renderCellContent(row.fiveable)}
                         </td>
-                        <td className="py-3.5 px-4 text-center">
+                        <td className="py-4 px-4 text-center">
                           {renderCellContent(row.knowt)}
                         </td>
-                        <td className="py-3.5 px-4 text-center">
-                          {renderCellContent(row.brilliant)}
+                        <td className="py-4 px-4 text-center">
+                          {renderCellContent(row.quizlet)}
                         </td>
-                        <td className="py-3.5 px-4 text-center">
-                          {renderCellContent(row.aops)}
+                        <td className="py-4 px-4 text-center">
+                          {renderCellContent(row.brilliant)}
                         </td>
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
-            </div>
-
-            {/* Footer without comparison text */}
-            <div className="flex items-center justify-between px-6 py-4 border-t border-white/10 bg-white/[0.02] text-xs font-mono text-white/40">
-              <div className="flex items-center space-x-4">
-                <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" /> Included</span>
-                <span className="flex items-center gap-1.5"><DollarSign className="w-3.5 h-3.5 text-amber-400" /> Paid add-on</span>
-                <span className="flex items-center gap-1.5"><X className="w-3.5 h-3.5 text-white/30" /> Not Available</span>
-              </div>
             </div>
           </motion.div>
         </div>
