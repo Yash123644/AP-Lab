@@ -37,9 +37,9 @@ const folders = [
     accent: "#0088ff",
     bgGradient: "from-[#0088ff] to-[#0044cc]",
     classes: [
-      { name: "AP Biology", slug: "ap-biology", icon: Dna, accent: "#10b981" },
-      { name: "AP Chemistry", slug: "ap-chemistry", icon: Beaker, accent: "#00f2ff" },
-      { name: "AP Environmental Science", slug: "ap-environmental-science", icon: Leaf, accent: "#10b981" }
+      { name: "AP Biology", slug: "ap-biology", icon: Dna, accent: "#0088ff" },
+      { name: "AP Chemistry", slug: "ap-chemistry", icon: Beaker, accent: "#0088ff" },
+      { name: "AP Environmental Science", slug: "ap-environmental-science", icon: Leaf, accent: "#0088ff" }
     ]
   },
   {
@@ -50,9 +50,9 @@ const folders = [
     accent: "#a484d7",
     bgGradient: "from-[#8b5cf6] to-[#5b21b6]",
     classes: [
-      { name: "AP US History", slug: "ap-ush", icon: History, accent: "#ef4444" },
-      { name: "AP Psychology", slug: "ap-psych", icon: Brain, accent: "#a855f7" },
-      { name: "AP English Language", slug: "ap-eng-lang", icon: BookOpen, accent: "#ec4899" }
+      { name: "AP US History", slug: "ap-ush", icon: History, accent: "#a484d7" },
+      { name: "AP Psychology", slug: "ap-psych", icon: Brain, accent: "#a484d7" },
+      { name: "AP English Language", slug: "ap-eng-lang", icon: BookOpen, accent: "#a484d7" }
     ]
   },
   {
@@ -63,9 +63,9 @@ const folders = [
     accent: "#34d399",
     bgGradient: "from-[#10b981] to-[#047857]",
     classes: [
-      { name: "AP Calculus BC", slug: "ap-calc-bc", icon: Sigma, accent: "#f59e0b" },
-      { name: "AP Statistics", slug: "ap-stats", icon: BarChart3, accent: "#ec4899" },
-      { name: "AP Comp Sci A", slug: "ap-csa", icon: Binary, accent: "#3b82f6" }
+      { name: "AP Calculus BC", slug: "ap-calc-bc", icon: Sigma, accent: "#34d399" },
+      { name: "AP Statistics", slug: "ap-stats", icon: BarChart3, accent: "#34d399" },
+      { name: "AP Comp Sci A", slug: "ap-csa", icon: Binary, accent: "#34d399" }
     ]
   },
 ];
@@ -78,7 +78,7 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
   const allClassList = folders.flatMap(f => f.classes.map(c => ({ 
     ...c, 
     category: f.title, 
-    folderAccent: f.accent 
+    folderAccent: c.accent || f.accent 
   })));
 
   const filtered = query === "" 
@@ -141,7 +141,7 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
         </div>
       </div>
 
-      {/* Universal Search Menu */}
+      {/* Course Search Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -156,9 +156,6 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
               <span className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest">
                 {query ? `Search Results (${filtered.length})` : "Available AP Courses"}
               </span>
-              <span className="text-[10px] font-mono font-medium text-white/30 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
-                Universal Command Menu
-              </span>
             </div>
 
             {filtered.length === 0 ? (
@@ -168,7 +165,7 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
             ) : (
               <div className="max-h-[340px] overflow-y-auto custom-scrollbar space-y-1.5 pr-1">
                 {filtered.map((item) => {
-                  const courseColor = item.accent || item.folderAccent || "#3b82f6";
+                  const courseColor = item.folderAccent || item.accent || "#3b82f6";
                   return (
                     <button
                       key={item.name}
@@ -177,18 +174,18 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
                         setQuery("");
                         setIsOpen(false);
                       }}
-                      className="w-full flex items-center justify-between px-4 py-3 rounded-2xl hover:bg-white/[0.08] transition-all border border-transparent hover:border-white/10 group text-left relative overflow-hidden"
+                      className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-transparent hover:bg-white/[0.08] hover:border-white/10 border border-transparent transition-all group/item text-left relative overflow-hidden"
                     >
                       <div className="flex items-center space-x-3.5">
-                        {/* Course Icon matching exact folder color */}
+                        {/* Course Icon matching category folder color */}
                         <div 
-                          className="w-10 h-10 rounded-xl bg-white/[0.06] border flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 shadow-inner"
+                          className="w-10 h-10 rounded-xl bg-white/[0.06] border flex items-center justify-center shrink-0 transition-transform group-hover/item:scale-105 shadow-inner"
                           style={{ borderColor: `${courseColor}40` }}
                         >
                           <item.icon className="w-5 h-5" style={{ color: courseColor }} />
                         </div>
                         <div>
-                          <div className="text-white font-manrope font-bold text-sm sm:text-base group-hover:text-white transition-colors flex items-center gap-2">
+                          <div className="text-white font-manrope font-bold text-sm sm:text-base group-hover/item:text-white transition-colors flex items-center gap-2">
                             <span>{item.name}</span>
                           </div>
                           <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase mt-0.5">
@@ -197,11 +194,11 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
                         </div>
                       </div>
 
-                      <div className="flex items-center space-x-2 text-white/40 group-hover:text-white transition-colors">
-                        <span className="text-xs font-manrope font-medium text-white/40 group-hover:text-white/80 hidden sm:inline-block">
+                      <div className="flex items-center space-x-2 text-white/40 group-hover/item:text-white transition-colors">
+                        <span className="text-xs font-manrope font-medium text-white/40 group-hover/item:text-white/80 hidden sm:inline-block">
                           Open Course
                         </span>
-                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" style={{ color: courseColor }} />
+                        <ArrowUpRight className="w-4 h-4 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5 transition-transform" style={{ color: courseColor }} />
                       </div>
                     </button>
                   );
@@ -230,9 +227,9 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Expanded & Comfortable Top-Left Folder Tab Flap */}
+      {/* Centered Top Folder Tab Flap */}
       <div 
-        className="absolute -top-[42px] left-0 h-11 px-6 sm:px-7 min-w-[210px] rounded-t-[16px] rounded-tr-[22px] border-t border-x transition-all duration-300 flex items-center space-x-3 z-20 shadow-md"
+        className="absolute -top-[42px] left-1/2 -translate-x-1/2 h-11 px-7 sm:px-8 min-w-[220px] rounded-t-[16px] rounded-tr-[22px] rounded-tl-[22px] border-t border-x transition-all duration-300 flex items-center justify-center space-x-3 z-20 shadow-md text-center"
         style={{ 
           backgroundColor: isHovered ? "#141724" : "#0d0f18",
           borderColor: isHovered ? `${accent}50` : "rgba(255, 255, 255, 0.15)",
@@ -252,7 +249,7 @@ function FolderCard({ title, icon: Icon, color, bgGlow, classes, accent, progres
 
       {/* Main Folder Body Base holding Subject Cards */}
       <div 
-        className="relative w-full rounded-b-[24px] rounded-r-[24px] rounded-tl-none border bg-[#0a0b12]/95 p-4 sm:p-5 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
+        className="relative w-full rounded-[24px] border bg-[#0a0b12]/95 p-4 sm:p-5 flex flex-col justify-center shadow-xl overflow-hidden z-10 transition-colors duration-300"
         style={{
           borderColor: isHovered ? `${accent}40` : "rgba(255, 255, 255, 0.12)"
         }}
