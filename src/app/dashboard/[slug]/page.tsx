@@ -1634,10 +1634,14 @@ export default function APDynamicCoursePage() {
 
   const masteryKey = `${course.masteryPrefix}-${activeTopic?.id}`;
   const masteryScore = progress.masteryScores[masteryKey] || 0;
+  const isLightMode = progress?.theme === "light";
 
   return (
     <div 
-      className="min-h-screen bg-deep-navy flex flex-col relative z-0 selection:bg-white selection:text-black"
+      className={cn(
+        "min-h-screen flex flex-col relative z-0 selection:bg-white selection:text-black transition-colors duration-300",
+        isLightMode ? "bg-slate-50 text-slate-900" : "bg-deep-navy text-white"
+      )}
       style={{
         // @ts-ignore
         "--theme-accent": course.accentColor,
@@ -1749,29 +1753,32 @@ export default function APDynamicCoursePage() {
       )}
 
       {/* Header */}
-      <header className="h-16 border-b border-white/5 backdrop-blur-xl bg-black/20 flex items-center justify-between px-6 sticky top-0 z-50">
+      <header className={cn(
+        "h-16 border-b flex items-center justify-between px-6 sticky top-0 z-50 backdrop-blur-xl transition-colors duration-300",
+        isLightMode ? "bg-white/90 border-slate-200 text-slate-900 shadow-sm" : "border-white/5 bg-black/20 text-white"
+      )}>
         <div className="flex items-center space-x-4">
-          <Link href="/dashboard" className="p-2 hover:bg-white/5 rounded-full transition-colors text-white/50 hover:text-white">
+          <Link href="/dashboard" className={cn("p-2 rounded-full transition-colors", isLightMode ? "text-slate-600 hover:text-slate-900 hover:bg-slate-100" : "text-white/50 hover:text-white hover:bg-white/5")}>
             <ArrowLeft className="w-5 h-5" />
           </Link>
-          <div className="h-4 w-[1px] bg-white/10" />
+          <div className={cn("h-4 w-[1px]", isLightMode ? "bg-slate-200" : "bg-white/10")} />
           <div className="flex items-center space-x-3">
             <div 
-              className="w-8 h-8 rounded-xl bg-white/10 border flex items-center justify-center shrink-0 shadow-sm"
+              className={cn("w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 shadow-sm", isLightMode ? "bg-slate-100" : "bg-white/10")}
               style={{ borderColor: `${course.accentColor}40` }}
             >
               {(() => {
                 const IconComp = getCourseIcon(course.slug);
-                return <IconComp className="w-4 h-4 text-white" style={{ color: course.accentColor }} />;
+                return <IconComp className="w-4 h-4" style={{ color: course.accentColor }} />;
               })()}
             </div>
             <div className="flex flex-col items-start">
-              <h1 className="font-instrument text-lg md:text-xl text-white tracking-tight leading-tight">
+              <h1 className={cn("font-instrument text-lg md:text-xl tracking-tight leading-tight", isLightMode ? "text-slate-900 font-semibold" : "text-white")}>
                 {course.name}
               </h1>
               <button 
                 onClick={() => setIsMobileSyllabusOpen(true)}
-                className="lg:hidden text-[10px] text-white/50 hover:text-white font-manrope font-bold uppercase tracking-wider flex items-center gap-1 mt-0.5"
+                className={cn("lg:hidden text-[10px] font-manrope font-bold uppercase tracking-wider flex items-center gap-1 mt-0.5", isLightMode ? "text-slate-500 hover:text-slate-900" : "text-white/50 hover:text-white")}
               >
                 <span>Topic {activeTopic?.id || "1.1"} (Change)</span>
                 <ChevronDown className="w-3 h-3" />
@@ -1779,12 +1786,15 @@ export default function APDynamicCoursePage() {
             </div>
           </div>
         </div>
-          <AccountNavbarWidget onOpenProfile={() => setShowAccountPopup(true)} />
+        <AccountNavbarWidget onOpenProfile={() => setShowAccountPopup(true)} />
       </header>
 
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar Navigation */}
-        <aside className="w-80 border-r border-white/5 bg-black/10 flex flex-col hidden lg:flex">
+        {/* Sidebar Navigation (With Backdrop Blur for Backgrounds) */}
+        <aside className={cn(
+          "w-80 border-r flex flex-col hidden lg:flex backdrop-blur-2xl transition-colors duration-300 z-10",
+          isLightMode ? "bg-white/80 border-slate-200 text-slate-900 shadow-sm" : "border-white/10 bg-black/40 text-white"
+        )}>
           <div className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-2">
             {course.units.map((unit) => {
               const isUnitCompleted = unit.topics.length > 0 && unit.topics.every(topic => 
@@ -1797,30 +1807,30 @@ export default function APDynamicCoursePage() {
                     onClick={() => toggleUnit(unit.id)}
                     className={cn(
                       "w-full flex items-center justify-between p-3 rounded-xl transition-all duration-300 relative overflow-hidden group",
-                      activeUnit === unit.id ? "bg-white/5" : "hover:bg-white/5"
+                      activeUnit === unit.id ? (isLightMode ? "bg-slate-200/60" : "bg-white/5") : (isLightMode ? "hover:bg-slate-100" : "hover:bg-white/5")
                     )}
                   >
                     <div className="flex flex-col items-start text-left relative z-10">
                       <span className="text-[10px] font-manrope font-black uppercase tracking-widest mb-1 subject-accent-text flex items-center gap-1.5">
                         <span>Unit {unit.id} • {unit.masteryWeight}</span>
                         {isUnitCompleted && (
-                          <span className="text-[8px] px-1.5 py-0.5 rounded bg-white/10 border border-white/15 text-white/90 font-black tracking-widest uppercase">
+                          <span className={cn("text-[8px] px-1.5 py-0.5 rounded border font-black tracking-widest uppercase", isLightMode ? "bg-emerald-100 border-emerald-300 text-emerald-800" : "bg-white/10 border-white/15 text-white/90")}>
                             ✓ Done
                           </span>
                         )}
                       </span>
                       <span className={cn(
                         "text-sm font-medium leading-tight",
-                        activeUnit === unit.id ? "text-white" : "text-white/60"
+                        activeUnit === unit.id ? (isLightMode ? "text-slate-900 font-bold" : "text-white") : (isLightMode ? "text-slate-700" : "text-white/60")
                       )}>
                         {unit.title}
                       </span>
                     </div>
                     <div className="flex items-center space-x-2 relative z-10">
                       {expandedUnits.includes(unit.id) ? (
-                        <ChevronDown className="w-4 h-4 text-white/40" />
+                        <ChevronDown className={cn("w-4 h-4", isLightMode ? "text-slate-400" : "text-white/40")} />
                       ) : (
-                        <ChevronRight className="w-4 h-4 text-white/40" />
+                        <ChevronRight className={cn("w-4 h-4", isLightMode ? "text-slate-400" : "text-white/40")} />
                       )}
                     </div>
 
@@ -1839,9 +1849,9 @@ export default function APDynamicCoursePage() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden pl-3"
+                      className="overflow-hidden space-y-1"
                     >
-                      <div className="border-l border-white/5 ml-2 mt-1 space-y-1">
+                      <div className={cn("pl-2 pt-1 border-l ml-4 space-y-1", isLightMode ? "border-slate-200" : "border-white/5")}>
                         {unit.topics.map((topic) => (
                           <button
                             key={topic.id}
@@ -1853,8 +1863,8 @@ export default function APDynamicCoursePage() {
                             className={cn(
                               "w-full text-left p-3 pl-6 text-xs transition-colors rounded-r-lg relative",
                               activeTopic?.id === topic.id 
-                                ? "bg-white/5 text-white" 
-                                : "text-white/40 hover:text-white/60 hover:bg-white/5"
+                                ? (isLightMode ? "bg-slate-200/80 font-bold text-slate-900" : "bg-white/5 text-white") 
+                                : (isLightMode ? "text-slate-600 hover:text-slate-900 hover:bg-slate-100" : "text-white/40 hover:text-white/60 hover:bg-white/5")
                             )}
                             style={{
                               color: activeTopic?.id === topic.id ? course.accentColor : undefined
@@ -1907,44 +1917,52 @@ export default function APDynamicCoursePage() {
           {activeTopic ? (
             <div className="max-w-5xl mx-auto p-6 md:p-12 space-y-8">
               {/* Unit Header Banner Card */}
-              <div className="relative w-full rounded-[24px] overflow-hidden border border-white/10 p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.5)] z-10">
-                {/* Pixel Background Banner */}
-                <div className="absolute inset-0 -z-10">
-                  <UnitBannerBackground slug={course.slug} unitId={activeUnit} accentColor={course.accentColor} />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-black/25" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
-                </div>
+              <div className={cn(
+                "relative w-full rounded-[24px] overflow-hidden p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 z-10 transition-colors duration-300",
+                isLightMode ? "bg-white border border-slate-200 text-slate-900 shadow-md" : "border border-white/10 bg-black/40 text-white shadow-[0_12px_40px_rgba(0,0,0,0.5)]"
+              )}>
+                {/* Pixel Background Banner (Only in Dark Mode) */}
+                {!isLightMode && (
+                  <div className="absolute inset-0 -z-10">
+                    <UnitBannerBackground slug={course.slug} unitId={activeUnit} accentColor={course.accentColor} />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-black/25" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
+                  </div>
+                )}
                 
                 {/* Left: Breadcrumbs + Title + Description */}
                 <div className="space-y-4 max-w-2xl relative z-20">
                   {/* Breadcrumbs */}
-                  <div className="flex items-center space-x-2 text-[10px] font-manrope font-black text-white/40 uppercase tracking-[0.2em]">
+                  <div className={cn("flex items-center space-x-2 text-[10px] font-manrope font-black uppercase tracking-[0.2em]", isLightMode ? "text-slate-500" : "text-white/40")}>
                     <span>{course.name}</span>
-                    <ChevronRight className="w-3 h-3 text-white/20" />
-                    <span className="text-white/60">Unit {activeUnit}</span>
-                    <ChevronRight className="w-3 h-3 text-white/20" />
+                    <ChevronRight className={cn("w-3 h-3", isLightMode ? "text-slate-400" : "text-white/20")} />
+                    <span className={isLightMode ? "text-slate-700" : "text-white/60"}>Unit {activeUnit}</span>
+                    <ChevronRight className={cn("w-3 h-3", isLightMode ? "text-slate-400" : "text-white/20")} />
                     <span className="subject-accent-text font-bold">Topic {activeTopic.id}</span>
                   </div>
                   
                   <div className="space-y-2">
-                    <h2 className="font-instrument text-3xl md:text-4xl text-white tracking-tight leading-tight">
+                    <h2 className={cn("font-instrument text-3xl md:text-4xl tracking-tight leading-tight", isLightMode ? "text-slate-900 font-semibold" : "text-white")}>
                       {activeTopic.title}
                     </h2>
-                    <p className="font-inter text-white/60 text-xs md:text-sm leading-relaxed">
+                    <p className={cn("font-inter text-xs md:text-sm leading-relaxed", isLightMode ? "text-slate-600 font-medium" : "text-white/60")}>
                       {activeTopic.description}
                     </p>
                   </div>
                 </div>
                 
                 {/* Right: Mastery Progress */}
-                <div className="w-full md:w-64 space-y-3 bg-black/50 p-4 rounded-xl border border-white/5 backdrop-blur-md shrink-0 relative z-20">
+                <div className={cn(
+                  "w-full md:w-64 space-y-3 p-4 rounded-xl border backdrop-blur-md shrink-0 relative z-20 transition-colors duration-300",
+                  isLightMode ? "bg-slate-100 border-slate-200 text-slate-900 shadow-inner" : "bg-black/50 border-white/5 text-white"
+                )}>
                   <div className="flex justify-between items-end">
-                    <span className="text-[10px] font-manrope font-black text-white/40 uppercase tracking-widest">Topic Mastery</span>
+                    <span className={cn("text-[10px] font-manrope font-black uppercase tracking-widest", isLightMode ? "text-slate-500" : "text-white/40")}>Topic Mastery</span>
                     <span className="text-sm font-instrument italic subject-accent-text font-bold">
                       {masteryScore}%
                     </span>
                   </div>
-                  <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div className={cn("h-2 w-full rounded-full overflow-hidden border", isLightMode ? "bg-slate-200 border-slate-300" : "bg-white/5 border-white/5")}>
                     <motion.div 
                       initial={{ width: 0 }}
                       animate={{ width: `${masteryScore}%` }}
@@ -1958,7 +1976,10 @@ export default function APDynamicCoursePage() {
               </div>
 
               {/* Tab System */}
-              <div className="flex items-center space-x-1 p-1 bg-black/20 backdrop-blur-md rounded-2xl w-fit border border-white/5">
+              <div className={cn(
+                "flex items-center space-x-1 p-1 backdrop-blur-md rounded-2xl w-fit border transition-colors duration-300",
+                isLightMode ? "bg-slate-200/80 border-slate-300 text-slate-800" : "bg-black/20 border-white/5 text-white"
+              )}>
                 {[
                   { id: "video", label: "Video", icon: Play },
                   { id: "article", label: "Article", icon: FileText },
@@ -1972,13 +1993,15 @@ export default function APDynamicCoursePage() {
                     }}
                     className={cn(
                       "flex items-center space-x-2 px-6 py-2.5 rounded-xl text-sm font-medium transition-all relative",
-                      activeTab === tab.id ? "text-white" : "text-white/40 hover:text-white/60"
+                      activeTab === tab.id 
+                        ? (isLightMode ? "text-slate-900 font-bold" : "text-white") 
+                        : (isLightMode ? "text-slate-600 hover:text-slate-900" : "text-white/40 hover:text-white/60")
                     )}
                   >
                     {activeTab === tab.id && (
                       <motion.div
                         layoutId={tabInteracted ? "activeTabDynamic" : undefined}
-                        className="absolute inset-0 bg-white/5 border border-white/10 shadow-xl rounded-xl"
+                        className={cn("absolute inset-0 border shadow-sm rounded-xl", isLightMode ? "bg-white border-slate-300" : "bg-white/5 border-white/10")}
                       />
                     )}
                     <tab.icon className="w-4 h-4 relative z-10" />
@@ -2037,17 +2060,20 @@ export default function APDynamicCoursePage() {
                           <div 
                             key={idx}
                             className={cn(
-                              "liquid-glass-strong rounded-[32px] p-8 md:p-12 border transition-all duration-500",
-                              isExample 
-                                ? "bg-white/[0.02] border-white/20 shadow-xl" 
-                                : "bg-white/5 border-white/10"
+                              "rounded-[32px] p-8 md:p-12 border transition-all duration-500",
+                              isLightMode 
+                                ? (isExample ? "bg-slate-100 border-slate-300 shadow-md text-slate-900" : "bg-white border-slate-200 shadow-sm text-slate-900")
+                                : (isExample ? "liquid-glass-strong bg-white/[0.02] border-white/20 shadow-xl text-white" : "liquid-glass-strong bg-white/5 border-white/10 text-white")
                             )}
                             style={isExample ? {
                               borderColor: `${course.accentColor}40`,
                               boxShadow: `0 0 50px ${course.accentColor}10`
                             } : undefined}
                           >
-                            <div className="prose prose-invert max-w-none prose-headings:font-instrument prose-headings:font-normal prose-h1:text-4xl prose-h2:text-2xl prose-p:font-inter prose-p:text-white/70 prose-p:leading-relaxed">
+                            <div className={cn(
+                              "max-w-none prose-headings:font-instrument prose-headings:font-normal prose-h1:text-4xl prose-h2:text-2xl prose-p:font-inter prose-p:leading-relaxed",
+                              isLightMode ? "prose prose-slate text-slate-900 prose-p:text-slate-800 prose-headings:text-slate-900" : "prose prose-invert text-white prose-p:text-white/70 prose-headings:text-white"
+                            )}>
                               <ReactMarkdown 
                                 remarkPlugins={[remarkMath, remarkGfm]} 
                                 rehypePlugins={[rehypeKatex, rehypeRaw]}

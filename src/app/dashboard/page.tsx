@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
-import { SandWaveBackground } from "@/components/SandWaveBackground";
+import { DashboardRainBackground } from "@/components/DashboardRainBackground";
 import { auth, db } from "@/lib/firebase";
 import { signOut, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -124,13 +124,13 @@ function SearchBar({ onSelect }: { onSelect: (slug: string) => void }) {
           }
         `}</style>
         
-        {/* Smooth Cycling Ambient Glow */}
+        {/* Smooth Cycling Ambient Glow (Increases glow on focus OR hover) */}
         <div className={cn(
-          "absolute -inset-[12px] rounded-full blur-[24px] pointer-events-none z-0 gradient-cycle-effect transition-opacity duration-300",
+          "absolute -inset-[12px] rounded-full blur-[24px] pointer-events-none z-0 gradient-cycle-effect transition-opacity duration-300 group-hover:opacity-75",
           isFocused ? "opacity-75" : "opacity-35"
         )} />
         <div className={cn(
-          "absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.3)] transition-opacity duration-300",
+          "absolute -inset-[6px] rounded-full pointer-events-none z-10 gradient-cycle-effect shadow-[0_12px_40px_rgba(37,99,235,0.4)] transition-opacity duration-300 group-hover:opacity-75",
           isFocused ? "opacity-75" : "opacity-35"
         )} />
 
@@ -668,7 +668,7 @@ export default function Dashboard() {
         {/* UPPER REGION: Header & Search Bar (Dot Matrix Background) */}
         <div className="relative w-full flex flex-col items-center pt-40 pb-6 px-6 z-40">
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-            <SandWaveBackground />
+            <DashboardRainBackground />
           </div>
 
           {/* Header Section */}

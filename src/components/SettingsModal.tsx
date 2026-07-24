@@ -130,7 +130,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 10 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="relative w-full max-w-lg bg-[#080910] border border-white/10 rounded-2xl p-6 sm:p-7 text-white z-10 overflow-hidden shadow-2xl"
+          className="relative w-full max-w-lg max-h-[90vh] flex flex-col bg-[#080910] border border-white/10 rounded-2xl p-6 sm:p-7 text-white z-10 overflow-y-auto custom-scrollbar shadow-2xl"
         >
           {/* Modal Header */}
           <div className="flex items-center justify-between pb-4 border-b border-white/10 relative z-10">
