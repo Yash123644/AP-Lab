@@ -225,19 +225,24 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                   </div>
                 </div>
 
-                {/* Apple-Style Minimal Toggle Switch */}
+                {/* Apple Toggle Switch */}
                 <button
                   type="button"
-                  onClick={() => handleThemeChange(selectedTheme === "light" ? "dark" : "light")}
-                  className={`w-12 h-6.5 rounded-full p-1 transition-colors duration-300 flex items-center cursor-pointer ${
-                    selectedTheme === "light" ? "bg-[#e9e9ea] justify-end" : "bg-white/20 justify-start"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const newTheme = selectedTheme === "light" ? "dark" : "light";
+                    handleThemeChange(newTheme);
+                  }}
+                  className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                    selectedTheme === "light" ? "bg-[#34c759]" : "bg-white/20"
                   }`}
                   aria-label="Toggle light/dark theme"
                 >
-                  <motion.div
-                    layout
-                    transition={{ type: "spring", stiffness: 600, damping: 35 }}
-                    className="w-4.5 h-4.5 rounded-full bg-white shadow-md"
+                  <span
+                    className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                      selectedTheme === "light" ? "translate-x-5" : "translate-x-0"
+                    }`}
                   />
                 </button>
               </div>

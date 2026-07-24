@@ -30,7 +30,7 @@ interface UserProgress {
   activityLogs?: { date: string; time: string; type: string; title: string; xp: number }[];
   studyTimeLogs?: Record<string, number>;
   isOnboarded?: boolean;
-  graduationYear?: number | null;
+  graduationYear?: number | string | null;
   referredBy?: string;
   goalScore?: number;
   usageIntents?: string[];
@@ -491,7 +491,9 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
           activityLogs: firestoreData.activityLogs || localProgress?.activityLogs || guestProgress?.activityLogs || [],
           studyTimeLogs: firestoreData.studyTimeLogs || localProgress?.studyTimeLogs || guestProgress?.studyTimeLogs || {},
           isOnboarded: firestoreData.isOnboarded || localProgress?.isOnboarded || false,
-          graduationYear: firestoreData.graduationYear !== undefined ? firestoreData.graduationYear : (localProgress?.graduationYear !== undefined ? localProgress.graduationYear : null),
+          graduationYear: firestoreData.graduationYear || localProgress?.graduationYear || guestProgress?.graduationYear || "2026",
+          theme: firestoreData.theme || localProgress?.theme || "dark",
+          courseBg: firestoreData.courseBg || localProgress?.courseBg || "dark-matrix",
           referredBy: firestoreData.referredBy || localProgress?.referredBy || "",
           goalScore: firestoreData.goalScore || localProgress?.goalScore || 5,
           usageIntents: firestoreData.usageIntents || localProgress?.usageIntents || [],
@@ -953,6 +955,7 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
   const updatePreferences = async (prefs: { theme?: "dark" | "light"; courseBg?: string; displayName?: string }) => {
     try {
+      // 1. Instant DOM sync
       if (prefs.theme) {
         if (prefs.theme === "light") {
           document.documentElement.classList.add("light-theme");
@@ -961,27 +964,27 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         }
       }
 
+      // 2. Instant React state update
       const updated = {
         ...progress,
         ...prefs,
       };
-
-      if (prefs.theme) {
-        if (prefs.theme === "light") {
-          document.documentElement.classList.add("light-theme");
-        } else {
-          document.documentElement.classList.remove("light-theme");
-        }
-      }
-
       setProgress(updated);
 
-      if (currentUser) {
-        const localKey = `ap-lab-progress-${currentUser.uid}`;
+      // 3. Instant LocalStorage sync
+      if (typeof window !== "undefined") {
         try {
-          localStorage.setItem(localKey, JSON.stringify(updated));
+          if (currentUser) {
+            const localKey = `ap-lab-progress-${currentUser.uid}`;
+            localStorage.setItem(localKey, JSON.stringify(updated));
+          }
+          localStorage.setItem("ap-lab-theme", prefs.theme || progress?.theme || "dark");
+          localStorage.setItem("ap-lab-course-bg", prefs.courseBg || progress?.courseBg || "dark-matrix");
         } catch (e) {}
+      }
 
+      // 4. Firestore sync
+      if (currentUser) {
         const docRef = doc(db, "userProgress", currentUser.uid);
         await setDoc(docRef, { ...prefs }, { merge: true });
       }

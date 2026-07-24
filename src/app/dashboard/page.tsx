@@ -455,7 +455,7 @@ export default function Dashboard() {
 
   const coursePreviewsData = [
     {
-      name: "AP Biology",
+      name: "AP® Biology",
       slug: "ap-biology",
       category: "Life Sciences",
       videos: 48,
@@ -468,7 +468,7 @@ export default function Dashboard() {
       color: "border-emerald-500/30 bg-emerald-500/5 text-emerald-400"
     },
     {
-      name: "AP Chemistry",
+      name: "AP® Chemistry",
       slug: "ap-chemistry",
       category: "Physical Sciences",
       videos: 52,
@@ -481,7 +481,7 @@ export default function Dashboard() {
       color: "border-cyan-500/30 bg-cyan-500/5 text-cyan-400"
     },
     {
-      name: "AP Physics C",
+      name: "AP® Physics C",
       slug: "ap-physics-c",
       category: "Physical Sciences",
       videos: 45,
@@ -494,7 +494,7 @@ export default function Dashboard() {
       color: "border-blue-500/30 bg-blue-500/5 text-blue-400"
     },
     {
-      name: "AP Calculus BC",
+      name: "AP® Calculus BC",
       slug: "ap-calc-bc",
       category: "Mathematics",
       videos: 60,
@@ -507,7 +507,7 @@ export default function Dashboard() {
       color: "border-amber-500/30 bg-amber-500/5 text-amber-400"
     },
     {
-      name: "AP Statistics",
+      name: "AP® Statistics",
       slug: "ap-stats",
       category: "Mathematics",
       videos: 38,
@@ -520,7 +520,7 @@ export default function Dashboard() {
       color: "border-pink-500/30 bg-pink-500/5 text-pink-400"
     },
     {
-      name: "AP Computer Science A",
+      name: "AP® Computer Science A",
       slug: "ap-csa",
       category: "Technology",
       videos: 42,
@@ -533,7 +533,7 @@ export default function Dashboard() {
       color: "border-blue-500/30 bg-blue-500/5 text-blue-400"
     },
     {
-      name: "AP Psychology",
+      name: "AP® Psychology",
       slug: "ap-psych",
       category: "Social Sciences",
       videos: 36,
@@ -546,7 +546,7 @@ export default function Dashboard() {
       color: "border-rose-500/30 bg-rose-500/5 text-rose-400"
     },
     {
-      name: "AP Macroeconomics",
+      name: "AP® Macroeconomics",
       slug: "ap-macroeconomics",
       category: "Social Sciences",
       videos: 28,
@@ -559,7 +559,7 @@ export default function Dashboard() {
       color: "border-teal-500/30 bg-teal-500/5 text-teal-400"
     },
     {
-      name: "AP US History",
+      name: "AP® US History",
       slug: "ap-ush",
       category: "History & Social",
       videos: 56,
@@ -670,7 +670,7 @@ export default function Dashboard() {
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <LightRays
               raysOrigin="top-center"
-              raysColor="#f0f9ff"
+              raysColor="#a5f3fc"
               raysSpeed={1.5}
               lightSpread={0.8}
               rayLength={1.2}
