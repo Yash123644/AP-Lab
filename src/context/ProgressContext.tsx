@@ -942,8 +942,25 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  // Instant synchronous Light/Dark theme class sync
+  useEffect(() => {
+    if (progress?.theme === "light") {
+      document.documentElement.classList.add("light-theme");
+    } else {
+      document.documentElement.classList.remove("light-theme");
+    }
+  }, [progress?.theme]);
+
   const updatePreferences = async (prefs: { theme?: "dark" | "light"; courseBg?: string; displayName?: string }) => {
     try {
+      if (prefs.theme) {
+        if (prefs.theme === "light") {
+          document.documentElement.classList.add("light-theme");
+        } else {
+          document.documentElement.classList.remove("light-theme");
+        }
+      }
+
       const updated = {
         ...progress,
         ...prefs,

@@ -7,25 +7,28 @@
   --foreground: #ededed;
 }
 
-html.light-theme {
+html.light-theme,
+html.light-theme body,
+html.light-theme main {
   --background: #f8fafc;
   --foreground: #0f172a;
-}
-html.light-theme body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
+
 html.light-theme header {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
   border-bottom-color: rgba(226, 232, 240, 0.9) !important;
   color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 html.light-theme header h1,
 html.light-theme header span {
   color: #0f172a !important;
 }
+
 html.light-theme aside {
-  background-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
   border-right-color: rgba(226, 232, 240, 0.9) !important;
   color: #0f172a !important;
 }
@@ -33,22 +36,42 @@ html.light-theme aside span,
 html.light-theme aside p {
   color: #334155 !important;
 }
+
 html.light-theme .liquid-glass,
 html.light-theme .liquid-glass-strong {
   background-color: #ffffff !important;
   border-color: rgba(226, 232, 240, 0.9) !important;
   color: #0f172a !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
-html.light-theme .prose {
-  color: #1e293b !important;
-}
+
+html.light-theme .prose,
 html.light-theme .prose p,
 html.light-theme .prose li,
 html.light-theme .prose h1,
 html.light-theme .prose h2,
-html.light-theme .prose h3 {
+html.light-theme .prose h3,
+html.light-theme .prose h4,
+html.light-theme .prose strong,
+html.light-theme h1,
+html.light-theme h2,
+html.light-theme h3,
+html.light-theme p {
   color: #0f172a !important;
+}
+
+html.light-theme .text-white,
+html.light-theme .text-white\/90,
+html.light-theme .text-white\/80,
+html.light-theme .text-white\/70,
+html.light-theme .text-white\/60 {
+  color: #1e293b !important;
+}
+
+html.light-theme .text-white\/50,
+html.light-theme .text-white\/40,
+html.light-theme .text-white\/30 {
+  color: #64748b !important;
 }
 
 html {

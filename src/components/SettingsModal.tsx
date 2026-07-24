@@ -158,54 +158,48 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
 
           <div className="space-y-6 py-5 relative z-10">
 
-            {/* 1. Theme Selector (Dark / Light) */}
+            {/* 1. Theme Selector (Dark / Light Toggle Switch) */}
             <div className="space-y-2.5">
               <label className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest flex items-center gap-1.5">
                 <Sun className="w-3.5 h-3.5 text-white/60" />
-                <span>Color Theme</span>
+                <span>Color Theme Mode</span>
               </label>
 
-              <div className="grid grid-cols-2 gap-2.5">
-                {/* Dark Mode */}
-                <button
-                  type="button"
-                  onClick={() => handleThemeChange("dark")}
-                  className={`flex items-center justify-between p-3.5 rounded-xl border transition-all duration-200 ${
-                    selectedTheme === "dark"
-                      ? "bg-white/10 border-white/30 text-white"
-                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] text-white/60"
-                  }`}
-                >
-                  <div className="flex items-center space-x-2.5">
-                    <Moon className="w-4 h-4" />
-                    <span className="font-manrope font-semibold text-xs">Dark Mode</span>
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
+                <div className="flex items-center space-x-3">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${selectedTheme === "light" ? "bg-amber-500/20 border border-amber-500/30 text-amber-400" : "bg-blue-500/20 border border-blue-500/30 text-blue-400"}`}>
+                    {selectedTheme === "light" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                   </div>
-                  {selectedTheme === "dark" && (
-                    <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black">
-                      <Check className="w-2.5 h-2.5 stroke-[3]" />
-                    </div>
-                  )}
-                </button>
+                  <div>
+                    <p className="font-manrope font-semibold text-xs text-white">
+                      {selectedTheme === "light" ? "Light Theme" : "Dark Theme"}
+                    </p>
+                    <p className="text-[10px] text-white/40 font-inter">
+                      {selectedTheme === "light" ? "Active bright contrast mode" : "Active dark obsidian mode"}
+                    </p>
+                  </div>
+                </div>
 
-                {/* Light Mode */}
+                {/* Sliding Toggle Switch */}
                 <button
                   type="button"
-                  onClick={() => handleThemeChange("light")}
-                  className={`flex items-center justify-between p-3.5 rounded-xl border transition-all duration-200 ${
-                    selectedTheme === "light"
-                      ? "bg-white/10 border-white/30 text-white"
-                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] text-white/60"
+                  onClick={() => handleThemeChange(selectedTheme === "light" ? "dark" : "light")}
+                  className={`w-12 h-6.5 rounded-full p-1 transition-colors duration-300 flex items-center cursor-pointer ${
+                    selectedTheme === "light" ? "bg-amber-400 justify-end" : "bg-white/20 justify-start"
                   }`}
+                  aria-label="Toggle light/dark theme"
                 >
-                  <div className="flex items-center space-x-2.5">
-                    <Sun className="w-4 h-4" />
-                    <span className="font-manrope font-semibold text-xs">Light Mode</span>
-                  </div>
-                  {selectedTheme === "light" && (
-                    <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black">
-                      <Check className="w-2.5 h-2.5 stroke-[3]" />
-                    </div>
-                  )}
+                  <motion.div
+                    layout
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    className="w-4.5 h-4.5 rounded-full bg-white shadow-md flex items-center justify-center"
+                  >
+                    {selectedTheme === "light" ? (
+                      <Sun className="w-3 h-3 text-amber-600" />
+                    ) : (
+                      <Moon className="w-3 h-3 text-slate-900" />
+                    )}
+                  </motion.div>
                 </button>
               </div>
             </div>
@@ -228,7 +222,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                 <button
                   type="submit"
                   disabled={savingName || !nameInput.trim()}
-                  className="px-4 py-2.5 rounded-xl bg-white text-black font-manrope font-bold text-xs hover:bg-neutral-200 transition-colors disabled:opacity-50 shrink-0"
+                  className="px-4 py-2.5 rounded-xl bg-white text-black font-manrope font-bold text-xs hover:bg-neutral-200 transition-colors disabled:opacity-50 shrink-0 cursor-pointer"
                 >
                   {savingName ? "Saving..." : savedSuccess ? "Saved" : "Save"}
                 </button>
@@ -250,7 +244,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                 <span>Note: Custom course background themes are applied during Dark Mode.</span>
               </div>
 
-              <div className="space-y-2 max-h-[190px] overflow-y-auto custom-scrollbar pr-1">
+              <div className="space-y-2 pt-1">
                 {COURSE_BG_THEMES.map((theme) => {
                   const isSelected = selectedBg === theme.id;
                   return (
@@ -258,9 +252,9 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                       key={theme.id}
                       type="button"
                       onClick={() => handleBgChange(theme.id)}
-                      className={`w-full flex items-center justify-between p-3 rounded-xl border transition-all duration-200 text-left ${
+                      className={`w-full flex items-center justify-between p-3 rounded-xl border transition-all duration-200 text-left cursor-pointer ${
                         isSelected
-                          ? "bg-white/10 border-white/30 text-white"
+                          ? "bg-white/10 border-white/30 text-white shadow-sm"
                           : "bg-white/[0.03] border-white/10 hover:bg-white/[0.06] text-white/70"
                       }`}
                     >

@@ -666,7 +666,7 @@ export default function Dashboard() {
       <main className="flex-1 w-full flex flex-col items-center z-10">
         
         {/* UPPER REGION: Header & Search Bar (Dot Matrix Background) */}
-        <div className="relative w-full flex flex-col items-center pt-40 pb-6 px-6 z-40">
+        <div className="relative w-full flex flex-col items-center pt-40 pb-12 px-6 z-40">
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <DashboardRainBackground />
           </div>

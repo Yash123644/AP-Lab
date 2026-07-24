@@ -4,14 +4,13 @@ import React from "react";
 
 export function DashboardRainBackground() {
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none opacity-40">
       <style jsx>{`
         .rain-bg-container::after {
           content: "";
           position: absolute;
           inset: 0;
           z-index: 1;
-          backdrop-filter: blur(1em) brightness(6);
           background-image: radial-gradient(
             circle at 50% 50%,
             #0000 0,
@@ -25,8 +24,9 @@ export function DashboardRainBackground() {
           position: relative;
           width: 100%;
           height: 100%;
-          --c: #09f;
-          background-color: #000;
+          --c: rgba(56, 140, 200, 0.6);
+          background-color: #03040a;
+          will-change: background-position;
           background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
             radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
             radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%),
@@ -100,7 +100,7 @@ export function DashboardRainBackground() {
             300px 210px,
             300px 210px,
             300px 210px;
-          animation: dashboard-rain-hi 150s linear infinite;
+          animation: dashboard-rain-hi 180s linear infinite;
         }
 
         @keyframes dashboard-rain-hi {
