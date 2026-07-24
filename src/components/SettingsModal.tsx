@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Moon, Sun, User, Palette, Check, Sparkles } from "lucide-react";
+import { X, Moon, Sun, User, Palette, Check, Settings, Info } from "lucide-react";
 import { useProgress } from "@/context/ProgressContext";
 import { useAuth } from "@/context/AuthContext";
 import { updateProfile } from "firebase/auth";
@@ -17,37 +17,37 @@ export const COURSE_BG_THEMES = [
   {
     id: "dark-matrix",
     name: "Dark Matrix (Default)",
-    desc: "Crisp dot matrix overlay with 8-bit academic symbols",
-    previewBg: "bg-[#03040a] border-emerald-500/40",
-    gradient: "from-blue-600/20 via-purple-600/10 to-emerald-500/20"
+    desc: "Crisp dot matrix overlay with floating 8-bit academic icons",
+    previewBg: "bg-[#03040a] border-white/20",
+    accentDot: "bg-blue-400"
   },
   {
     id: "cosmic-nebula",
     name: "Cosmic Nebula",
-    desc: "Deep indigo and glowing purple cosmic ambient light",
-    previewBg: "bg-[#09071a] border-purple-500/40",
-    gradient: "from-purple-900/40 via-indigo-900/30 to-pink-600/20"
+    desc: "Deep indigo & glowing purple cosmic dust ambient light",
+    previewBg: "bg-[#09071a] border-purple-500/30",
+    accentDot: "bg-purple-400"
   },
   {
     id: "cyber-grid",
     name: "Cyber Grid",
-    desc: "Futuristic cyan and emerald neon grid overlay",
-    previewBg: "bg-[#040d12] border-cyan-500/40",
-    gradient: "from-cyan-600/30 via-teal-600/20 to-emerald-600/30"
+    desc: "Futuristic cyan & emerald neon grid with laser scan beam",
+    previewBg: "bg-[#040d12] border-cyan-500/30",
+    accentDot: "bg-cyan-400"
   },
   {
     id: "minimal-slate",
     name: "Minimal Slate",
-    desc: "Ultra-sleek charcoal slate with clean monochrome tones",
-    previewBg: "bg-[#0d0e12] border-white/20",
-    gradient: "from-white/10 via-neutral-800/40 to-neutral-900/60"
+    desc: "Ultra-sleek charcoal slate with clean geometric lines",
+    previewBg: "bg-[#0d0e12] border-white/15",
+    accentDot: "bg-neutral-300"
   },
   {
     id: "golden-starlight",
     name: "Golden Starlight",
-    desc: "Warm starlight with rich amber and gold highlights",
-    previewBg: "bg-[#0f0b06] border-amber-500/40",
-    gradient: "from-amber-600/30 via-orange-600/20 to-yellow-600/20"
+    desc: "Warm dark amber & gold starlight particles drifting in 3D",
+    previewBg: "bg-[#0f0b06] border-amber-500/30",
+    accentDot: "bg-amber-400"
   }
 ];
 
@@ -121,74 +121,68 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/75 backdrop-blur-xl"
+          className="fixed inset-0 bg-black/80 backdrop-blur-md"
         />
 
         {/* Modal Container */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.94, y: 15 }}
+          initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.94, y: 15 }}
-          transition={{ type: "spring", stiffness: 350, damping: 28 }}
-          className="relative w-full max-w-xl bg-[#0a0c16]/95 border border-white/15 rounded-[32px] shadow-[0_25px_80px_rgba(0,0,0,0.85)] p-6 sm:p-8 text-white z-10 overflow-hidden"
+          exit={{ opacity: 0, scale: 0.96, y: 10 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="relative w-full max-w-lg bg-[#080910] border border-white/10 rounded-2xl p-6 sm:p-7 text-white z-10 overflow-hidden shadow-2xl"
         >
-          {/* Ambient Glow background */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary-purple/10 blur-[90px] rounded-full pointer-events-none" />
-
           {/* Modal Header */}
-          <div className="flex items-center justify-between pb-6 border-b border-white/10 relative z-10">
+          <div className="flex items-center justify-between pb-4 border-b border-white/10 relative z-10">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
-                <Sparkles className="w-5 h-5 text-emerald-400" />
+              <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80">
+                <Settings className="w-4.5 h-4.5" />
               </div>
               <div>
-                <h3 className="font-manrope font-extrabold text-xl sm:text-2xl text-white tracking-tight">
-                  Workspace Settings
+                <h3 className="font-manrope font-bold text-lg text-white tracking-tight">
+                  Settings
                 </h3>
-                <p className="text-white/50 text-xs font-inter mt-0.5">
-                  Customize your personal appearance & preferences
+                <p className="text-white/40 text-xs font-inter">
+                  Manage interface theme & account parameters
                 </p>
               </div>
             </div>
 
             <button
               onClick={onClose}
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all"
+              className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="space-y-6 py-6 relative z-10">
+          <div className="space-y-6 py-5 relative z-10">
 
             {/* 1. Theme Selector (Dark / Light) */}
-            <div className="space-y-3">
-              <label className="text-xs font-mono font-bold text-white/50 uppercase tracking-widest flex items-center gap-2">
-                <Sun className="w-3.5 h-3.5 text-amber-400" />
-                <span>Color Mode</span>
+            <div className="space-y-2.5">
+              <label className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest flex items-center gap-1.5">
+                <Sun className="w-3.5 h-3.5 text-white/60" />
+                <span>Color Theme</span>
               </label>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2.5">
                 {/* Dark Mode */}
                 <button
                   type="button"
                   onClick={() => handleThemeChange("dark")}
-                  className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 ${
+                  className={`flex items-center justify-between p-3.5 rounded-xl border transition-all duration-200 ${
                     selectedTheme === "dark"
-                      ? "bg-emerald-950/40 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.2)]"
-                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07]"
+                      ? "bg-white/10 border-white/30 text-white"
+                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] text-white/60"
                   }`}
                 >
-                  <div className="flex items-center space-x-3">
-                    <Moon className="w-5 h-5 text-emerald-400" />
-                    <div className="text-left">
-                      <p className="font-manrope font-bold text-sm text-white">Dark Mode</p>
-                      <p className="text-[10px] text-white/40 font-mono">High-contrast dark UI</p>
-                    </div>
+                  <div className="flex items-center space-x-2.5">
+                    <Moon className="w-4 h-4" />
+                    <span className="font-manrope font-semibold text-xs">Dark Mode</span>
                   </div>
                   {selectedTheme === "dark" && (
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-black">
-                      <Check className="w-3 h-3 stroke-[3]" />
+                    <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black">
+                      <Check className="w-2.5 h-2.5 stroke-[3]" />
                     </div>
                   )}
                 </button>
@@ -197,22 +191,19 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                 <button
                   type="button"
                   onClick={() => handleThemeChange("light")}
-                  className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 ${
+                  className={`flex items-center justify-between p-3.5 rounded-xl border transition-all duration-200 ${
                     selectedTheme === "light"
-                      ? "bg-emerald-950/40 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.2)]"
-                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07]"
+                      ? "bg-white/10 border-white/30 text-white"
+                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] text-white/60"
                   }`}
                 >
-                  <div className="flex items-center space-x-3">
-                    <Sun className="w-5 h-5 text-amber-400" />
-                    <div className="text-left">
-                      <p className="font-manrope font-bold text-sm text-white">Light Mode</p>
-                      <p className="text-[10px] text-white/40 font-mono">Clean bright theme</p>
-                    </div>
+                  <div className="flex items-center space-x-2.5">
+                    <Sun className="w-4 h-4" />
+                    <span className="font-manrope font-semibold text-xs">Light Mode</span>
                   </div>
                   {selectedTheme === "light" && (
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-black">
-                      <Check className="w-3 h-3 stroke-[3]" />
+                    <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black">
+                      <Check className="w-2.5 h-2.5 stroke-[3]" />
                     </div>
                   )}
                 </button>
@@ -220,10 +211,10 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
             </div>
 
             {/* 2. Display Name Editor */}
-            <form onSubmit={handleSaveName} className="space-y-3 pt-2">
-              <label className="text-xs font-mono font-bold text-white/50 uppercase tracking-widest flex items-center gap-2">
-                <User className="w-3.5 h-3.5 text-blue-400" />
-                <span>Display Name</span>
+            <form onSubmit={handleSaveName} className="space-y-2.5">
+              <label className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest flex items-center gap-1.5">
+                <User className="w-3.5 h-3.5 text-white/60" />
+                <span>Account Display Name</span>
               </label>
               
               <div className="flex items-center gap-2">
@@ -232,26 +223,34 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                   value={nameInput}
                   onChange={(e) => setNameInput(e.target.value)}
                   placeholder="Enter display name..."
-                  className="flex-1 bg-white/[0.05] border border-white/15 rounded-2xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-emerald-500/60 font-manrope font-semibold text-sm transition-colors"
+                  className="flex-1 bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-white/20 focus:outline-none focus:border-white/30 font-manrope font-medium text-xs transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={savingName || !nameInput.trim()}
-                  className="px-5 py-3 rounded-2xl bg-white text-black font-manrope font-extrabold text-xs hover:bg-neutral-200 transition-colors disabled:opacity-50 shrink-0 flex items-center gap-1.5"
+                  className="px-4 py-2.5 rounded-xl bg-white text-black font-manrope font-bold text-xs hover:bg-neutral-200 transition-colors disabled:opacity-50 shrink-0"
                 >
-                  {savingName ? "Saving..." : savedSuccess ? "Saved!" : "Save Name"}
+                  {savingName ? "Saving..." : savedSuccess ? "Saved" : "Save"}
                 </button>
               </div>
             </form>
 
             {/* 3. Course Page Background Image Theme */}
-            <div className="space-y-3 pt-2">
-              <label className="text-xs font-mono font-bold text-white/50 uppercase tracking-widest flex items-center gap-2">
-                <Palette className="w-3.5 h-3.5 text-purple-400" />
-                <span>Course Page Background Theme</span>
-              </label>
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between">
+                <label className="text-[11px] font-mono font-bold text-white/40 uppercase tracking-widest flex items-center gap-1.5">
+                  <Palette className="w-3.5 h-3.5 text-white/60" />
+                  <span>Course Page Background Theme</span>
+                </label>
+              </div>
 
-              <div className="space-y-2.5 max-h-[220px] overflow-y-auto custom-scrollbar pr-1">
+              {/* Disclaimer Notice */}
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[11px] font-inter">
+                <Info className="w-3.5 h-3.5 shrink-0 text-blue-400" />
+                <span>Note: Custom course background themes are applied during Dark Mode.</span>
+              </div>
+
+              <div className="space-y-2 max-h-[190px] overflow-y-auto custom-scrollbar pr-1">
                 {COURSE_BG_THEMES.map((theme) => {
                   const isSelected = selectedBg === theme.id;
                   return (
@@ -259,25 +258,23 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                       key={theme.id}
                       type="button"
                       onClick={() => handleBgChange(theme.id)}
-                      className={`w-full flex items-center justify-between p-3.5 rounded-2xl border transition-all duration-300 text-left ${
+                      className={`w-full flex items-center justify-between p-3 rounded-xl border transition-all duration-200 text-left ${
                         isSelected
-                          ? "bg-white/10 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.15)]"
-                          : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07]"
+                          ? "bg-white/10 border-white/30 text-white"
+                          : "bg-white/[0.03] border-white/10 hover:bg-white/[0.06] text-white/70"
                       }`}
                     >
-                      <div className="flex items-center space-x-3.5">
-                        <div className={`w-10 h-10 rounded-xl ${theme.previewBg} border flex items-center justify-center shadow-inner overflow-hidden relative`}>
-                          <div className={`absolute inset-0 bg-gradient-to-tr ${theme.gradient} opacity-80`} />
-                        </div>
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-3 h-3 rounded-full ${theme.accentDot} shrink-0`} />
                         <div>
-                          <p className="font-manrope font-bold text-sm text-white">{theme.name}</p>
-                          <p className="text-[11px] text-white/40 font-inter">{theme.desc}</p>
+                          <p className="font-manrope font-bold text-xs text-white">{theme.name}</p>
+                          <p className="text-[10px] text-white/40 font-inter">{theme.desc}</p>
                         </div>
                       </div>
 
                       {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-black shrink-0">
-                          <Check className="w-3 h-3 stroke-[3]" />
+                        <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black shrink-0">
+                          <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
                       )}
                     </button>
@@ -289,10 +286,10 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
           </div>
 
           {/* Footer Close */}
-          <div className="pt-4 border-t border-white/10 flex justify-end relative z-10">
+          <div className="pt-3 border-t border-white/10 flex justify-end relative z-10">
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-manrope font-bold text-xs transition-colors"
+              className="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-manrope font-bold text-xs transition-colors"
             >
               Done
             </button>

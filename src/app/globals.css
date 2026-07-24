@@ -15,6 +15,41 @@ html.light-theme body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
+html.light-theme header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom-color: rgba(226, 232, 240, 0.9) !important;
+  color: #0f172a !important;
+}
+html.light-theme header h1,
+html.light-theme header span {
+  color: #0f172a !important;
+}
+html.light-theme aside {
+  background-color: #ffffff !important;
+  border-right-color: rgba(226, 232, 240, 0.9) !important;
+  color: #0f172a !important;
+}
+html.light-theme aside span,
+html.light-theme aside p {
+  color: #334155 !important;
+}
+html.light-theme .liquid-glass,
+html.light-theme .liquid-glass-strong {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+html.light-theme .prose {
+  color: #1e293b !important;
+}
+html.light-theme .prose p,
+html.light-theme .prose li,
+html.light-theme .prose h1,
+html.light-theme .prose h2,
+html.light-theme .prose h3 {
+  color: #0f172a !important;
+}
 
 html {
   scroll-behavior: smooth;

@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
-import { PixelCourseBackground } from "@/components/PixelCourseBackground";
+import { SandWaveBackground } from "@/components/SandWaveBackground";
 import { auth, db } from "@/lib/firebase";
 import { signOut, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -668,7 +668,7 @@ export default function Dashboard() {
         {/* UPPER REGION: Header & Search Bar (Dot Matrix Background) */}
         <div className="relative w-full flex flex-col items-center pt-40 pb-6 px-6 z-40">
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-            <PixelCourseBackground />
+            <SandWaveBackground />
           </div>
 
           {/* Header Section */}

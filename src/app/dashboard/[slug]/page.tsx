@@ -74,6 +74,7 @@ import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
+import { CourseThemeBackground } from "@/components/CourseThemeBackground";
 import { AccountNavbarWidget } from "@/components/AccountNavbarWidget";
 import { MockExam } from "@/components/MockExam";
 import { AIAssistantDrawer } from "@/components/AIAssistantDrawer";
@@ -1739,17 +1740,13 @@ export default function APDynamicCoursePage() {
         </button>
       </div>
       
-      {/* Glow Background */}
-      <div className="fixed top-0 left-0 right-0 h-screen pointer-events-none -z-10">
-        <div 
-          className="absolute top-[10%] left-[5%] w-[40%] h-[40%] blur-[120px] rounded-full opacity-60"
-          style={{ backgroundColor: `${course.accentColor}10` }}
+      {/* Dynamic Course Page Background Theme */}
+      {progress?.theme !== "light" && (
+        <CourseThemeBackground 
+          themeId={progress?.courseBg || "dark-matrix"} 
+          accentColor={course.accentColor} 
         />
-        <div 
-          className="absolute bottom-[10%] right-[5%] w-[30%] h-[30%] blur-[120px] rounded-full opacity-40"
-          style={{ backgroundColor: `${course.accentColor}08` }}
-        />
-      </div>
+      )}
 
       {/* Header */}
       <header className="h-16 border-b border-white/5 backdrop-blur-xl bg-black/20 flex items-center justify-between px-6 sticky top-0 z-50">
