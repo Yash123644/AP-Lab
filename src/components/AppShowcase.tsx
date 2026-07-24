@@ -20,7 +20,7 @@ export function AppShowcase() {
   ];
 
   return (
-    <section className="relative w-full py-[140px] px-6 md:px-[120px] bg-transparent overflow-hidden">
+    <section className="relative w-full py-[140px] px-4 sm:px-6 md:px-[120px] bg-transparent">
       {/* Seamless blend: fade in from above (deep-navy) and out to below (deep-navy) */}
       <div className="absolute inset-0 bg-gradient-to-b from-deep-navy via-[#0c0d12] to-deep-navy pointer-events-none" />
       {/* Background Decorative Elements - Monochrome dual grid and spotlights */}
@@ -30,7 +30,7 @@ export function AppShowcase() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.015] blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16 text-center">
+        <div className="mb-20 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export function AppShowcase() {
         </div>
 
         {/* Sticky Scroll-Into-Each-Other Stacking Bento Grid */}
-        <div className="relative w-full max-w-6xl mx-auto space-y-12 md:space-y-16 pb-20">
+        <div className="relative w-full max-w-6xl mx-auto space-y-28 md:space-y-36 pb-32">
           
           {/* ROW 1 STICKY STACK (Gamification & Interactive Lessons) */}
           <div className="sticky top-[100px] z-10">
@@ -61,11 +61,11 @@ export function AppShowcase() {
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 onMouseEnter={() => setIsLeaderboardHovered(true)}
                 onMouseLeave={() => setIsLeaderboardHovered(false)}
-                className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl cursor-pointer"
+                className="bg-[#000000] border border-white/15 rounded-[32px] h-[450px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-[0_30px_90px_rgba(0,0,0,0.9)] backdrop-blur-xl cursor-pointer"
               >
                 <div className="text-center relative z-10 flex flex-col items-center">
                   <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">GAMIFICATION</span>
@@ -103,9 +103,9 @@ export function AppShowcase() {
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-2xl"
+                className="bg-[#ffffff] border border-neutral-200 rounded-[32px] h-[450px] flex flex-col justify-between p-8 md:p-10 relative overflow-hidden group shadow-[0_30px_90px_rgba(0,0,0,0.9)] backdrop-blur-xl"
               >
                 <div className="text-center relative z-10 flex flex-col items-center">
                   <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">INTERACTIVE LESSONS</span>
@@ -129,15 +129,15 @@ export function AppShowcase() {
           </div>
 
           {/* ROW 2 STICKY STACK (Embedded Desmos Calculator & Mock Exams) */}
-          <div className="sticky top-[120px] z-20">
+          <div className="sticky top-[125px] z-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               {/* Box 3 (Bottom Left) - EMBEDDED GRAPHING CALCULATOR */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[450px] flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group shadow-[0_25px_80px_rgba(0,0,0,0.7)]"
+                className="bg-[#ffffff] border border-neutral-300 rounded-[32px] h-[460px] flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group shadow-[0_40px_100px_rgba(0,0,0,0.95)] backdrop-blur-2xl"
               >
                 <div className="text-center relative z-10 flex flex-col items-center shrink-0">
                   <span className="text-[10px] font-mono tracking-widest text-emerald-600 font-extrabold uppercase mb-1">EMBEDDED CALCULATOR</span>
@@ -185,9 +185,9 @@ export function AppShowcase() {
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="bg-[#000000] border border-white/10 rounded-[28px] h-[450px] flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group shadow-[0_25px_80px_rgba(0,0,0,0.7)]"
+                className="bg-[#000000] border border-white/20 rounded-[32px] h-[460px] flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group shadow-[0_40px_100px_rgba(0,0,0,0.95)] backdrop-blur-2xl"
               >
                 <div className="text-center relative z-10 flex flex-col items-center shrink-0">
                   <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">EXAM SIMULATOR</span>
@@ -211,15 +211,15 @@ export function AppShowcase() {
           </div>
 
           {/* ROW 3 STICKY STACK (Progress Tracking & Video Lessons) */}
-          <div className="sticky top-[140px] z-30">
+          <div className="sticky top-[150px] z-30">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               {/* Box 5 (Bottom Left) - PROGRESS TRACKING */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-[#000000] border border-white/10 rounded-[28px] h-[440px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-[0_30px_90px_rgba(0,0,0,0.85)] col-span-1"
+                className="bg-[#000000] border border-white/20 rounded-[32px] h-[450px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-[0_50px_120px_rgba(0,0,0,1)] backdrop-blur-2xl col-span-1"
               >
                 <div className="text-left z-10 shrink-0">
                   <span className="text-[10px] font-mono tracking-widest text-white/40 font-bold uppercase mb-1">PROGRESS TRACKING</span>
@@ -305,9 +305,9 @@ export function AppShowcase() {
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="bg-[#ffffff] border border-neutral-200 rounded-[28px] h-[440px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-[0_30px_90px_rgba(0,0,0,0.85)] col-span-1 text-black cursor-pointer hover:border-neutral-300 transition-colors duration-300"
+                className="bg-[#ffffff] border border-neutral-300 rounded-[32px] h-[450px] flex flex-col justify-between p-8 relative overflow-hidden group shadow-[0_50px_120px_rgba(0,0,0,1)] backdrop-blur-2xl col-span-1 text-black cursor-pointer hover:border-neutral-400 transition-colors duration-300"
               >
                 <div className="text-left relative z-10 flex flex-col shrink-0">
                   <span className="text-[10px] font-mono tracking-widest text-black/40 font-bold uppercase mb-1">VIDEO COMPANIONS</span>
