@@ -16,8 +16,8 @@ interface SettingsModalProps {
 export const COURSE_BG_THEMES = [
   {
     id: "dark-matrix",
-    name: "Dark Matrix (Default)",
-    desc: "Crisp dot matrix overlay with floating 8-bit academic icons",
+    name: "Dark Matrix Academic (Default)",
+    desc: "Crisp dot matrix overlay with static 8-bit school supply icons",
     miniPreviewClass: "bg-[#03040a] relative overflow-hidden border border-white/20",
     renderMini: () => (
       <div className="absolute inset-0 bg-[#03040a]">
@@ -27,51 +27,57 @@ export const COURSE_BG_THEMES = [
     )
   },
   {
-    id: "cosmic-nebula",
-    name: "Cosmic Nebula",
-    desc: "Deep indigo & glowing purple cosmic dust ambient light",
-    miniPreviewClass: "bg-[#09071a] relative overflow-hidden border border-purple-500/30",
+    id: "shanghai-night",
+    name: "Shanghai Waterfront 4K",
+    desc: "Illuminated 4K Shanghai Pudong towers & river reflection",
+    miniPreviewClass: "relative overflow-hidden border border-white/20",
     renderMini: () => (
-      <div className="absolute inset-0 bg-gradient-to-br from-[#09071a] via-[#1a0c33] to-[#05030d]">
-        <div className="absolute top-1 left-2 w-3 h-3 rounded-full bg-purple-500/50 blur-[3px]" />
-        <div className="absolute bottom-1 right-2 w-4 h-4 rounded-full bg-indigo-500/40 blur-[4px]" />
-      </div>
+      <img src="https://images.unsplash.com/photo-1506158669146-619067262a00?q=80&w=300&auto=format&fit=crop" alt="Shanghai" className="w-full h-full object-cover" />
     )
   },
   {
-    id: "cyber-grid",
-    name: "Cyber Grid",
-    desc: "Futuristic cyan & emerald neon grid with laser scan beam",
-    miniPreviewClass: "bg-[#040d12] relative overflow-hidden border border-cyan-500/30",
+    id: "toronto-skyline",
+    name: "Toronto Night Waterfront 4K",
+    desc: "Clean 4K Toronto CN tower skyline over calm night water",
+    miniPreviewClass: "relative overflow-hidden border border-white/20",
     renderMini: () => (
-      <div className="absolute inset-0 bg-[#040d12]">
-        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "linear-gradient(to right, rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(6,182,212,0.3) 1px, transparent 1px)", backgroundSize: "8px 8px" }} />
-        <div className="absolute inset-x-0 top-1.5 h-[1px] bg-cyan-400 shadow-[0_0_6px_#06b6d4]" />
-      </div>
+      <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=300&auto=format&fit=crop" alt="Toronto" className="w-full h-full object-cover" />
     )
   },
   {
-    id: "minimal-slate",
-    name: "Minimal Slate",
-    desc: "Ultra-sleek charcoal slate with clean geometric lines",
-    miniPreviewClass: "bg-[#0d0e12] relative overflow-hidden border border-white/15",
+    id: "tokyo-neon",
+    name: "Tokyo Tower & Neon City 4K",
+    desc: "Vibrant high-resolution Tokyo skyline illuminated at night",
+    miniPreviewClass: "relative overflow-hidden border border-white/20",
     renderMini: () => (
-      <div className="absolute inset-0 bg-[#0d0e12]">
-        <div className="absolute top-0 left-0 bottom-0 w-1/3 bg-white/[0.04]" />
-        <div className="absolute bottom-1 left-2 right-2 h-[1px] bg-white/20" />
-      </div>
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=300&auto=format&fit=crop" alt="Tokyo" className="w-full h-full object-cover" />
     )
   },
   {
-    id: "golden-starlight",
-    name: "Golden Starlight",
-    desc: "Warm dark amber & gold starlight particles drifting in 3D",
-    miniPreviewClass: "bg-[#0f0b06] relative overflow-hidden border border-amber-500/30",
+    id: "venice-sunset",
+    name: "Venice Grand Canal 4K",
+    desc: "Serene sunset over historic Venice waterways",
+    miniPreviewClass: "relative overflow-hidden border border-white/20",
     renderMini: () => (
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f0b06] via-[#1a1207] to-[#080502]">
-        <div className="absolute top-1.5 left-2 w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_4px_#fbbf24]" />
-        <div className="absolute bottom-2 right-3 w-1 h-1 rounded-full bg-yellow-300 shadow-[0_0_4px_#fde047]" />
-      </div>
+      <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?q=80&w=300&auto=format&fit=crop" alt="Venice" className="w-full h-full object-cover" />
+    )
+  },
+  {
+    id: "amalfi-coast",
+    name: "Amalfi Coast Nightline 4K",
+    desc: "Clifftop Italian coastal village with warm evening glows",
+    miniPreviewClass: "relative overflow-hidden border border-white/20",
+    renderMini: () => (
+      <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=300&auto=format&fit=crop" alt="Amalfi" className="w-full h-full object-cover" />
+    )
+  },
+  {
+    id: "great-wall",
+    name: "Great Wall Sunset Peaks 4K",
+    desc: "Scenic mountain peaks along the Great Wall of China",
+    miniPreviewClass: "relative overflow-hidden border border-white/20",
+    renderMini: () => (
+      <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=300&auto=format&fit=crop" alt="Great Wall" className="w-full h-full object-cover" />
     )
   }
 ];

@@ -8,6 +8,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { courseRegistry } from "@/lib/courses/course-registry";
 import { useProgress } from "@/context/ProgressContext";
+import { cn } from "@/lib/utils";
 
 interface Message {
   role: "user" | "assistant";
@@ -38,6 +39,9 @@ export function AIAssistantDrawer({
   onClose: () => void,
   initialQuery?: string 
 }) {
+  const { progress, recordTutorMessage } = useProgress();
+  const isLightMode = progress?.theme === "light";
+
   // Resolve course registry details for custom theme coloring
   let registrySlug = course;
   if (registrySlug === "biology") registrySlug = "ap-biology";
@@ -51,8 +55,6 @@ export function AIAssistantDrawer({
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const { progress, recordTutorMessage } = useProgress();
 
   // Resolve count from context (synced to Firestore/LocalStorage)
   const todayStr = new Date().toLocaleDateString('en-CA');
@@ -148,13 +150,16 @@ export function AIAssistantDrawer({
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            className="fixed top-0 right-0 h-full w-full max-w-md bg-[#05060c]/90 border-l border-white/10 z-[100] flex flex-col shadow-[0_0_80px_rgba(0,0,0,0.8)] backdrop-blur-3xl"
+            className={cn(
+              "fixed top-0 right-0 h-full w-full max-w-md border-l z-[100] flex flex-col shadow-2xl backdrop-blur-3xl transition-colors duration-300",
+              isLightMode ? "bg-white border-slate-200 text-slate-900" : "bg-[#05060c]/90 border-white/10 text-white"
+            )}
           >
             {/* Header */}
-            <div className="h-20 border-b border-white/5 flex items-center justify-between px-6 bg-white/[0.01]">
+            <div className={cn("h-20 border-b flex items-center justify-between px-6", isLightMode ? "border-slate-200 bg-slate-50" : "border-white/5 bg-white/[0.01]")}>
               <div className="flex items-center space-x-3.5">
                 <div 
-                  className="w-10 h-10 rounded-full bg-white/[0.02] border flex items-center justify-center relative overflow-hidden group shadow-inner"
+                  className={cn("w-10 h-10 rounded-full border flex items-center justify-center relative overflow-hidden group shadow-inner", isLightMode ? "bg-slate-100" : "bg-white/[0.02]")}
                   style={{ borderColor: `${accentColor}30` }}
                 >
                   <div 
@@ -165,10 +170,10 @@ export function AIAssistantDrawer({
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
-                    <h3 className="font-instrument text-lg text-white font-medium">AI Tutor</h3>
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" title="Active" />
+                    <h3 className={cn("font-instrument text-lg font-medium", isLightMode ? "text-slate-900 font-bold" : "text-white")}>AI Tutor</h3>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" title="Active" />
                   </div>
-                  <p className="text-xs text-white/40 mt-0.5">
+                  <p className={cn("text-xs mt-0.5", isLightMode ? "text-slate-500 font-semibold" : "text-white/40")}>
                     {getCourseDisplayName(course)} • {userMessageCount}/5 messages • Powered by Gemini
                   </p>
                 </div>
@@ -176,7 +181,7 @@ export function AIAssistantDrawer({
               <div className="flex items-center space-x-2">
                 <button 
                   onClick={onClose}
-                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/40 hover:text-white"
+                  className={cn("p-2 rounded-full transition-colors", isLightMode ? "hover:bg-slate-200 text-slate-500 hover:text-slate-900" : "hover:bg-white/10 text-white/40 hover:text-white")}
                   title="Close panel"
                 >
                   <X className="w-5 h-5" />
@@ -195,7 +200,7 @@ export function AIAssistantDrawer({
                     /* User Message Bubble */
                     <div className="max-w-[78%] flex flex-col items-end">
                       <div 
-                        className="rounded-[20px] rounded-br-[4px] px-5 py-2.5 text-sm font-inter leading-relaxed text-white w-full overflow-hidden break-words whitespace-normal"
+                        className="rounded-[20px] rounded-br-[4px] px-5 py-2.5 text-sm font-inter leading-relaxed text-white w-full overflow-hidden break-words whitespace-normal shadow-md"
                         style={{
                           backgroundColor: accentColor,
                         }}
@@ -208,8 +213,14 @@ export function AIAssistantDrawer({
                   ) : (
                     /* AI Assistant Message Bubble */
                     <div className="max-w-[82%] flex flex-col items-start">
-                      <div className="rounded-[20px] rounded-bl-[4px] px-5 py-2.5 text-sm font-inter leading-relaxed text-white/95 bg-[#242429] w-full overflow-hidden break-words whitespace-normal">
-                        <div className="prose prose-invert prose-sm max-w-none leading-relaxed select-text break-words whitespace-normal">
+                      <div className={cn(
+                        "rounded-[20px] rounded-bl-[4px] px-5 py-2.5 text-sm font-inter leading-relaxed w-full overflow-hidden break-words whitespace-normal border shadow-sm",
+                        isLightMode ? "bg-slate-100 border-slate-200 text-slate-900" : "bg-[#242429] border-transparent text-white/95"
+                      )}>
+                        <div className={cn(
+                          "max-w-none leading-relaxed select-text break-words whitespace-normal",
+                          isLightMode ? "prose prose-slate text-slate-900 prose-p:text-slate-800 prose-headings:text-slate-900" : "prose prose-invert prose-sm text-white"
+                        )}>
                           <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
                             {msg.content}
                           </ReactMarkdown>
@@ -223,7 +234,7 @@ export function AIAssistantDrawer({
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="max-w-[82%] flex flex-col items-start">
-                    <div className="rounded-[20px] rounded-bl-[4px] bg-[#242429] p-4 flex space-x-1.5 items-center">
+                    <div className={cn("rounded-[20px] rounded-bl-[4px] p-4 flex space-x-1.5 items-center border", isLightMode ? "bg-slate-100 border-slate-200" : "bg-[#242429] border-transparent")}>
                       <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: accentColor, animationDelay: "0s" }} />
                       <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: accentColor, animationDelay: "0.15s" }} />
                       <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: accentColor, animationDelay: "0.3s" }} />
@@ -235,14 +246,14 @@ export function AIAssistantDrawer({
             </div>
 
             {/* Input & Quick suggestions */}
-            <div className="p-5 border-t border-white/5 bg-[#030408]/90 backdrop-blur-md">
+            <div className={cn("p-5 border-t backdrop-blur-md transition-colors duration-300", isLightMode ? "bg-slate-50 border-slate-200" : "bg-[#030408]/90 border-white/5")}>
               {isLimitReached ? (
                 <div 
-                  className="bg-amber-500/5 border rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2.5 backdrop-blur-md"
+                  className={cn("border rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2.5 backdrop-blur-md", isLightMode ? "bg-amber-50 border-amber-200 text-amber-900" : "bg-amber-500/5 border-white/10 text-white")}
                   style={{ borderColor: `${accentColor}30` }}
                 >
-                  <AlertCircle className="w-5 h-5 text-amber-500/80" />
-                  <p className="text-xs font-inter text-white/70 leading-relaxed">
+                  <AlertCircle className="w-5 h-5 text-amber-500" />
+                  <p className={cn("text-xs font-inter leading-relaxed", isLightMode ? "text-slate-700" : "text-white/70")}>
                     Message limit reached (5/5). Close the drawer or review the resources to continue studying!
                   </p>
                 </div>
@@ -255,17 +266,12 @@ export function AIAssistantDrawer({
                         key={idx}
                         type="button"
                         onClick={() => handleSuggestionClick(s.text)}
-                        className="shrink-0 text-[10px] px-3.5 py-2 rounded-full bg-white/[0.03] border border-white/5 text-white/70 hover:text-white transition-all font-manrope font-semibold"
+                        className={cn(
+                          "shrink-0 text-[10px] px-3.5 py-2 rounded-full border transition-all font-manrope font-semibold cursor-pointer",
+                          isLightMode ? "bg-white border-slate-300 text-slate-800 shadow-sm hover:bg-slate-100" : "bg-white/[0.03] border-white/5 text-white/70 hover:text-white"
+                        )}
                         style={{
-                          borderColor: `${accentColor}15`
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.borderColor = `${accentColor}50`;
-                          e.currentTarget.style.backgroundColor = `${accentColor}12`;
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.borderColor = `${accentColor}15`;
-                          e.currentTarget.style.backgroundColor = `rgba(255,255,255,0.03)`;
+                          borderColor: `${accentColor}25`
                         }}
                       >
                         {s.label}
@@ -273,13 +279,14 @@ export function AIAssistantDrawer({
                     ))}
                   </div>
 
-                  <form onSubmit={handleSubmit} className="relative flex items-center bg-[#1c1c1f] rounded-full border border-white/5 px-4 py-1.5 w-full">
+                  <form onSubmit={handleSubmit} className={cn("relative flex items-center rounded-full border px-4 py-1.5 w-full transition-colors", isLightMode ? "bg-white border-slate-300 text-slate-900 shadow-sm" : "bg-[#1c1c1f] border-white/5 text-white")}>
                     <input
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask a curriculum question..."
-                      className="w-full bg-transparent border-none focus:outline-none text-sm text-white placeholder-white/25 pr-10 font-inter py-1"
+                      placeholder={`Ask about ${getCourseDisplayName(course)}...`}
+                      className={cn("flex-1 bg-transparent text-sm focus:outline-none py-1.5", isLightMode ? "text-slate-900 placeholder-slate-400 font-medium" : "text-white placeholder-white/20")}
+                      disabled={isLoading}
                       style={{
                         caretColor: accentColor
                       }}

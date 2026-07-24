@@ -38,9 +38,9 @@ const folders = [
     accent: "#0088ff",
     bgGradient: "from-[#0088ff] to-[#0044cc]",
     classes: [
-      { name: "AP Biology", slug: "ap-biology", icon: Dna, accent: "#0088ff" },
-      { name: "AP Chemistry", slug: "ap-chemistry", icon: Beaker, accent: "#0088ff" },
-      { name: "AP Physics C", slug: "ap-physics-c", icon: Atom, accent: "#0088ff" }
+      { name: "AP® Biology", slug: "ap-biology", icon: Dna, accent: "#0088ff" },
+      { name: "AP® Chemistry", slug: "ap-chemistry", icon: Beaker, accent: "#0088ff" },
+      { name: "AP® Physics C", slug: "ap-physics-c", icon: Atom, accent: "#0088ff" }
     ]
   },
   {
@@ -51,9 +51,9 @@ const folders = [
     accent: "#a484d7",
     bgGradient: "from-[#8b5cf6] to-[#5b21b6]",
     classes: [
-      { name: "AP US History", slug: "ap-ush", icon: History, accent: "#a484d7" },
-      { name: "AP Psychology", slug: "ap-psych", icon: Brain, accent: "#a484d7" },
-      { name: "AP English Language", slug: "ap-eng-lang", icon: BookOpen, accent: "#a484d7" }
+      { name: "AP® US History", slug: "ap-ush", icon: History, accent: "#a484d7" },
+      { name: "AP® Psychology", slug: "ap-psych", icon: Brain, accent: "#a484d7" },
+      { name: "AP® English Language", slug: "ap-eng-lang", icon: BookOpen, accent: "#a484d7" }
     ]
   },
   {
@@ -64,9 +64,9 @@ const folders = [
     accent: "#34d399",
     bgGradient: "from-[#10b981] to-[#047857]",
     classes: [
-      { name: "AP Calculus BC", slug: "ap-calc-bc", icon: Sigma, accent: "#34d399" },
-      { name: "AP Statistics", slug: "ap-stats", icon: BarChart3, accent: "#34d399" },
-      { name: "AP Comp Sci A", slug: "ap-csa", icon: Binary, accent: "#34d399" }
+      { name: "AP® Calculus BC", slug: "ap-calc-bc", icon: Sigma, accent: "#34d399" },
+      { name: "AP® Statistics", slug: "ap-stats", icon: BarChart3, accent: "#34d399" },
+      { name: "AP® Comp Sci A", slug: "ap-csa", icon: Binary, accent: "#34d399" }
     ]
   },
 ];
@@ -670,7 +670,7 @@ export default function Dashboard() {
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <LightRays
               raysOrigin="top-center"
-              raysColor="#00ffff"
+              raysColor="#f0f9ff"
               raysSpeed={1.5}
               lightSpread={0.8}
               rayLength={1.2}

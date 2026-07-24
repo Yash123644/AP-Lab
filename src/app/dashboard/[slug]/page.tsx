@@ -18,6 +18,7 @@ import {
   RotateCcw,
   User,
   Mail,
+  GraduationCap,
   X,
   Check,
   BarChart2,
@@ -1735,12 +1736,17 @@ export default function APDynamicCoursePage() {
       <div className="fixed bottom-8 right-8 z-[80]">
         <button
           onClick={() => setIsAssistantOpen(true)}
-          className="w-16 h-16 rounded-full flex items-center justify-center liquid-glass border border-white/20 shadow-[0_10px_40px_rgba(255,255,255,0.15)] hover:scale-105 transition-all group"
+          className={cn(
+            "w-16 h-16 rounded-full flex items-center justify-center border shadow-xl hover:scale-105 transition-all group cursor-pointer",
+            isLightMode 
+              ? "bg-slate-900 border-slate-700 text-white shadow-[0_10px_30px_rgba(15,23,42,0.3)]" 
+              : "liquid-glass border-white/20 text-white shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
+          )}
           style={{
-            boxShadow: `0 10px 40px ${course.accentColor}33`
+            boxShadow: isLightMode ? undefined : `0 10px 40px ${course.accentColor}33`
           }}
         >
-          <Activity className="w-8 h-8 text-white group-hover:text-white transition-colors drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+          <Activity className={cn("w-8 h-8 transition-colors", isLightMode ? "text-white" : "text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]")} />
         </button>
       </div>
       
@@ -2845,9 +2851,15 @@ function AccountStatsModal({ course, progress, currentUser, onClose }: AccountSt
               </h3>
               <LevelBadge level={level} />
             </div>
-            <div className="flex items-center space-x-2 text-white/50 text-xs">
-              <Mail className="w-3.5 h-3.5" />
-              <span>{currentUser?.email || "anonymous@theaplab.org"}</span>
+            <div className="flex flex-col gap-1 text-white/50 text-xs">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-3.5 h-3.5" />
+                <span>{currentUser?.email || "student@theaplab.org"}</span>
+              </div>
+              <div className="flex items-center space-x-2 text-emerald-400 font-manrope font-bold text-xs mt-0.5">
+                <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Class of {progress?.graduationYear || progress?.gradYear || "2026"}</span>
+              </div>
             </div>
           </div>
         </div>

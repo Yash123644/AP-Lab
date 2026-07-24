@@ -1,16 +1,22 @@
 "use client";
 
-import React from "react";
+import { useProgress } from "@/context/ProgressContext";
 
 export function PixelCourseBackground() {
+  const { progress } = useProgress();
+  const isLightMode = progress?.theme === "light";
+
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-      {/* Subtle Dot Matrix Grid Overlay */}
+      {/* Subtle Dot Matrix Grid Overlay (White dots in Dark Mode, Light Black dots in Light Mode) */}
       <div 
-        className="absolute -top-10 -bottom-20 left-0 right-0 opacity-15 pointer-events-none"
+        className="absolute -top-10 -bottom-20 left-0 right-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.25) 1.2px, transparent 1.2px)",
-          backgroundSize: "32px 32px"
+          backgroundImage: isLightMode 
+            ? "radial-gradient(circle, rgba(0, 0, 0, 0.18) 1.2px, transparent 1.2px)" 
+            : "radial-gradient(circle, rgba(255, 255, 255, 0.25) 1.2px, transparent 1.2px)",
+          backgroundSize: "32px 32px",
+          opacity: isLightMode ? 0.35 : 0.15
         }}
       />
 
