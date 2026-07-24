@@ -74,6 +74,7 @@ import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
+import { AccountNavbarWidget } from "@/components/AccountNavbarWidget";
 import { MockExam } from "@/components/MockExam";
 import { AIAssistantDrawer } from "@/components/AIAssistantDrawer";
 import { SelectionAIPopover } from "@/components/SelectionAIPopover";
@@ -1781,18 +1782,7 @@ export default function APDynamicCoursePage() {
             </div>
           </div>
         </div>
-        <div className="flex items-center space-x-4">
-          <button 
-            onClick={() => setShowAccountPopup(true)}
-            className="flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all"
-            style={{
-              borderColor: `${course.accentColor}33`
-            }}
-          >
-            <User className="w-4 h-4 text-white/80" />
-            <span className="text-xs font-manrope font-bold uppercase tracking-widest">Account</span>
-          </button>
-        </div>
+          <AccountNavbarWidget onOpenProfile={() => setShowAccountPopup(true)} />
       </header>
 
       <div className="flex flex-1 overflow-hidden">

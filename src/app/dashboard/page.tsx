@@ -23,6 +23,7 @@ import { courseRegistry } from "@/lib/courses/course-registry";
 import { ReviewModal } from "@/components/ReviewModal";
 import { Onboarding } from "@/components/Onboarding";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
+import { AccountNavbarWidget } from "@/components/AccountNavbarWidget";
 import { getLevelForXp, getXpThresholdForLevel } from "@/lib/xpProgression";
 import { DashboardContextMenu } from "@/components/DashboardContextMenu";
 import { FloatingXPOperations } from "@/components/FloatingXPOperations";
@@ -657,13 +658,7 @@ export default function Dashboard() {
           >
             <Star className="w-4.5 h-4.5 text-white/80" />
           </button>
-          <button
-            onClick={() => setShowAccountPopup(true)}
-            className="flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all"
-          >
-            <User className="w-4 h-4 text-white/80" />
-            <span className="text-xs font-manrope font-bold uppercase tracking-widest hidden sm:block">Account</span>
-          </button>
+          <AccountNavbarWidget onOpenProfile={() => setShowAccountPopup(true)} />
         </div>
       </nav>
 

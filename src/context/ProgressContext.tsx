@@ -35,6 +35,8 @@ interface UserProgress {
   goalScore?: number;
   usageIntents?: string[];
   selectedClasses?: string[];
+  theme?: "dark" | "light";
+  courseBg?: string;
 }
 
 interface ProgressContextType {
@@ -45,6 +47,7 @@ interface ProgressContextType {
   recordTutorMessage: () => Promise<void>;
   recordMockExamAttempt: (correctCount: number, totalQuestions: number) => Promise<void>;
   claimSocialXp?: (taskName: string, xpAmount: number) => Promise<void>;
+  updatePreferences?: (prefs: { theme?: "dark" | "light"; courseBg?: string; displayName?: string }) => Promise<void>;
 }
 
 const defaultProgress: UserProgress = {
@@ -939,8 +942,39 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  const updatePreferences = async (prefs: { theme?: "dark" | "light"; courseBg?: string; displayName?: string }) => {
+    try {
+      const updated = {
+        ...progress,
+        ...prefs,
+      };
+
+      if (prefs.theme) {
+        if (prefs.theme === "light") {
+          document.documentElement.classList.add("light-theme");
+        } else {
+          document.documentElement.classList.remove("light-theme");
+        }
+      }
+
+      setProgress(updated);
+
+      if (currentUser) {
+        const localKey = `ap-lab-progress-${currentUser.uid}`;
+        try {
+          localStorage.setItem(localKey, JSON.stringify(updated));
+        } catch (e) {}
+
+        const docRef = doc(db, "userProgress", currentUser.uid);
+        await setDoc(docRef, { ...prefs }, { merge: true });
+      }
+    } catch (err) {
+      console.error("Error updating user preferences:", err);
+    }
+  };
+
   return (
-    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage, recordMockExamAttempt, claimSocialXp }}>
+    <ProgressContext.Provider value={{ progress, loading, completeTopic, recordQuestionAttempt, recordTutorMessage, recordMockExamAttempt, claimSocialXp, updatePreferences }}>
       {children}
       
       {/* Level Up Modal */}
