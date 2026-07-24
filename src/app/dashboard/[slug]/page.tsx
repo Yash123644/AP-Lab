@@ -1836,8 +1836,11 @@ export default function APDynamicCoursePage() {
 
                     {/* Unit Roman Numeral Background decoration */}
                     <div 
-                      className="absolute right-4 bottom-0 text-5xl font-mono font-black opacity-[0.07] group-hover:opacity-[0.14] transition-opacity duration-300 pointer-events-none select-none z-0 tracking-tighter leading-none"
-                      style={{ color: course.accentColor }}
+                      className={cn(
+                        "absolute right-4 bottom-0 text-5xl font-mono font-black transition-opacity duration-300 pointer-events-none select-none z-0 tracking-tighter leading-none",
+                        isLightMode ? "opacity-30 text-slate-700 font-extrabold" : "opacity-[0.07] group-hover:opacity-[0.14]"
+                      )}
+                      style={{ color: isLightMode ? "#334155" : course.accentColor }}
                     >
                       {getRomanNumeral(unit.id)}
                     </div>

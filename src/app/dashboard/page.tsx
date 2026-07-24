@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { LevelBadge } from "@/components/LevelBadge";
 import { LevelLeaderboard } from "@/components/LevelLeaderboard";
-import { DashboardRainBackground } from "@/components/DashboardRainBackground";
+import LightRays from "@/components/LightRays";
 import { auth, db } from "@/lib/firebase";
 import { signOut, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -668,7 +668,17 @@ export default function Dashboard() {
         {/* UPPER REGION: Header & Search Bar (Dot Matrix Background) */}
         <div className="relative w-full flex flex-col items-center pt-40 pb-12 px-6 z-40">
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-            <DashboardRainBackground />
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#00ffff"
+              raysSpeed={1.5}
+              lightSpread={0.8}
+              rayLength={1.2}
+              followMouse={true}
+              mouseInfluence={0.1}
+              noiseAmount={0.1}
+              distortion={0.05}
+            />
           </div>
 
           {/* Header Section */}

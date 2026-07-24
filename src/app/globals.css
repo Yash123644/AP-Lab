@@ -7,70 +7,78 @@
   --foreground: #ededed;
 }
 
-html.light-theme,
-html.light-theme body,
-html.light-theme main {
+html.light-theme .course-page-container,
+html.light-theme .course-page-container main {
   --background: #f8fafc;
   --foreground: #0f172a;
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
-html.light-theme header {
+html.light-theme .course-page-container header {
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-bottom-color: rgba(226, 232, 240, 0.9) !important;
   color: #0f172a !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
-html.light-theme header h1,
-html.light-theme header span {
+html.light-theme .course-page-container header h1,
+html.light-theme .course-page-container header span {
   color: #0f172a !important;
 }
 
-html.light-theme aside {
+html.light-theme .course-page-container aside {
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-right-color: rgba(226, 232, 240, 0.9) !important;
   color: #0f172a !important;
 }
-html.light-theme aside span,
-html.light-theme aside p {
+html.light-theme .course-page-container aside span,
+html.light-theme .course-page-container aside p {
   color: #334155 !important;
 }
 
-html.light-theme .liquid-glass,
-html.light-theme .liquid-glass-strong {
+html.light-theme .settings-modal-card,
+html.light-theme .ai-drawer-card,
+html.light-theme .profile-modal-card {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light-theme .course-page-container .liquid-glass,
+html.light-theme .course-page-container .liquid-glass-strong {
   background-color: #ffffff !important;
   border-color: rgba(226, 232, 240, 0.9) !important;
   color: #0f172a !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
 
-html.light-theme .prose,
-html.light-theme .prose p,
-html.light-theme .prose li,
-html.light-theme .prose h1,
-html.light-theme .prose h2,
-html.light-theme .prose h3,
-html.light-theme .prose h4,
-html.light-theme .prose strong,
-html.light-theme h1,
-html.light-theme h2,
-html.light-theme h3,
-html.light-theme p {
+html.light-theme .course-page-container .prose,
+html.light-theme .course-page-container .prose p,
+html.light-theme .course-page-container .prose li,
+html.light-theme .course-page-container .prose h1,
+html.light-theme .course-page-container .prose h2,
+html.light-theme .course-page-container .prose h3,
+html.light-theme .course-page-container .prose h4,
+html.light-theme .course-page-container .prose strong,
+html.light-theme .course-page-container h1,
+html.light-theme .course-page-container h2,
+html.light-theme .course-page-container h3,
+html.light-theme .course-page-container p {
   color: #0f172a !important;
 }
 
-html.light-theme .text-white,
-html.light-theme .text-white\/90,
-html.light-theme .text-white\/80,
-html.light-theme .text-white\/70,
-html.light-theme .text-white\/60 {
+html.light-theme .course-page-container .text-white,
+html.light-theme .course-page-container .text-white\/90,
+html.light-theme .course-page-container .text-white\/80,
+html.light-theme .course-page-container .text-white\/70,
+html.light-theme .course-page-container .text-white\/60 {
   color: #1e293b !important;
 }
 
-html.light-theme .text-white\/50,
-html.light-theme .text-white\/40,
-html.light-theme .text-white\/30 {
+html.light-theme .course-page-container .text-white\/50,
+html.light-theme .course-page-container .text-white\/40,
+html.light-theme .course-page-container .text-white\/30 {
   color: #64748b !important;
 }
 
